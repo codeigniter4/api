@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">@php namespace &lt;?= $namespace ?&gt;\Database\Migrations;
+
+use CodeIgniter\Database\Migration;
+
+class Migration_create_&lt;?= $tableName ?&gt;_table extends Migration
+{
+&lt;?php if (isset($DBGroup)) : ?&gt;
+	protected $DBGroup = '&lt;?= $DBGroup ?&gt;';
+&lt;?php endif ?&gt;
+
+	public function up()
+	{
+		$this-&gt;forge-&gt;addField([
+			'id'         =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 128,
+				'null'       =&gt; false
+			],
+			'ip_address' =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 45,
+				'null'       =&gt; false
+			],
+			'timestamp'  =&gt; [
+				'type'       =&gt; 'INT',
+				'constraint' =&gt; 10,
+				'unsigned'   =&gt; true,
+				'null'       =&gt; false,
+				'default'    =&gt; 0
+			],
+			'data'       =&gt; [
+				'type'       =&gt; 'TEXT',
+				'null'       =&gt; false,
+				'default'    =&gt; ''
+			],
+		]);
+	&lt;?php if ($matchIP === true) : ?&gt;
+	$this-&gt;forge-&gt;addKey(['id', 'ip_address'], true);
+	&lt;?php else: ?&gt;
+	$this-&gt;forge-&gt;addKey('id', true);
+	&lt;?php endif ?&gt;
+	$this-&gt;forge-&gt;addKey('timestamp');
+		$this-&gt;forge-&gt;createTable('&lt;?= $tableName ?&gt;', true);
+	}
+
+	//--------------------------------------------------------------------
+
+	public function down()
+	{
+		$this-&gt;forge-&gt;dropTable('&lt;?= $tableName ?&gt;', true);
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

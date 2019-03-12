@@ -1,0 +1,236 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Test;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use CodeIgniter\HTTP\RedirectResponse;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class ControllerResponse {
+
+	/**
+	 * @var \CodeIgniter\HTTP\IncomingRequest
+	 */
+	protected $request;
+
+	/**
+	 * @var \CodeIgniter\HTTP\Response
+	 */
+	protected $response;
+
+	/**
+	 * @var string
+	 */
+	protected $body;
+
+	/**
+	 * @var DOMParser
+	 */
+	protected $dom;
+
+	public function __construct()
+	{
+		$this-&gt;dom = new DOMParser();
+	}
+
+	//--------------------------------------------------------------------
+	// Getters / Setters
+	//--------------------------------------------------------------------
+
+	/**
+	 * @param string $body
+	 *
+	 * @return $this
+	 */
+	public function setBody(string $body)
+	{
+		$this-&gt;body = $body;
+
+		if (! empty($body))
+		{
+			$this-&gt;dom = $this-&gt;dom-&gt;withString($body);
+		}
+
+		return $this;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getBody()
+	{
+		return $this-&gt;body;
+	}
+
+	/**
+	 * @param \CodeIgniter\HTTP\RequestInterface $request
+	 *
+	 * @return $this
+	 */
+	public function setRequest(RequestInterface $request)
+	{
+		$this-&gt;request = $request;
+
+		return $this;
+	}
+
+	/**
+	 * @param \CodeIgniter\HTTP\ResponseInterface $response
+	 *
+	 * @return $this
+	 */
+	public function setResponse(ResponseInterface $response)
+	{
+		$this-&gt;response = $response;
+
+		$this-&gt;setBody($response-&gt;getBody() ?? '');
+
+		return $this;
+	}
+
+	/**
+	 * @return \CodeIgniter\HTTP\IncomingRequest
+	 */
+	public function request()
+	{
+		return $this-&gt;request;
+	}
+
+	/**
+	 * @return \CodeIgniter\HTTP\Response
+	 */
+	public function response()
+	{
+		return $this-&gt;response;
+	}
+
+	//--------------------------------------------------------------------
+	// Simple Response Checks
+	//--------------------------------------------------------------------
+
+	/**
+	 * Boils down the possible responses into a bolean valid/not-valid
+	 * response type.
+	 *
+	 * @return boolean
+	 */
+	public function isOK(): bool
+	{
+		// Only 200 and 300 range status codes
+		// are considered valid.
+		if ($this-&gt;response-&gt;getStatusCode() &gt;= 400 || $this-&gt;response-&gt;getStatusCode() &lt; 200)
+		{
+			return false;
+		}
+
+		// Empty bodies are not considered valid.
+		if (empty($this-&gt;response-&gt;getBody()))
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Returns whether or not the Response was a redirect response
+	 *
+	 * @return boolean
+	 */
+	public function isRedirect(): bool
+	{
+		return $this-&gt;response instanceof RedirectResponse;
+	}
+
+	//--------------------------------------------------------------------
+	// Utility
+	//--------------------------------------------------------------------
+
+	public function __call($function, $params)
+	{
+		if (method_exists($this-&gt;dom, $function))
+		{
+			return $this-&gt;dom-&gt;{$function}(...$params);
+		}
+	}
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

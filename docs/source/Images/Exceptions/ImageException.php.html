@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Images\Exceptions;
+
+use CodeIgniter\Exceptions\ExceptionInterface;
+use CodeIgniter\Exceptions\FrameworkException;
+
+class ImageException extends FrameworkException implements ExceptionInterface
+{
+	public static function forMissingAngle()
+	{
+		return new static(lang('Images.rotationAngleRequired'));
+	}
+
+	public static function forInvalidDirection(string $dir = null)
+	{
+		return new static(lang('Images.invalidDirection', [$dir]));
+	}
+
+	public static function forEXIFUnsupported()
+	{
+		return new static(lang('Images.exifNotSupported'));
+	}
+
+	public static function forInvalidImageCreate(string $extra = null)
+	{
+		return new static(lang('Images.unsupportedImagecreate') . ' ' . $extra);
+	}
+
+	public static function forSaveFailed()
+	{
+		return new static(lang('Images.saveFailed'));
+	}
+
+	public static function forInvalidImageLibraryPath(string $path = null)
+	{
+		return new static(lang('Images.libPathInvalid', [$path]));
+	}
+
+	public static function forImageProcessFailed()
+	{
+		return new static(lang('Images.imageProcessFailed'));
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

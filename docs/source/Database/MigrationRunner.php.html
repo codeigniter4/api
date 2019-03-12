@@ -1,0 +1,844 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Database;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use Config\Autoload;
+use CodeIgniter\CLI\CLI;
+use CodeIgniter\Config\BaseConfig;
+use CodeIgniter\Exceptions\ConfigException;
+
+/**
+ * Class MigrationRunner
+ */
+class MigrationRunner
+{
+
+	/**
+	 * Whether or not migrations are allowed to run.
+	 *
+	 * @var boolean
+	 */
+	protected $enabled = false;
+
+	/**
+	 * The type of migrations to use (sequential or timestamp)
+	 *
+	 * @var string
+	 */
+	protected $type;
+
+	/**
+	 * Name of table to store meta information
+	 *
+	 * @var string
+	 */
+	protected $table;
+
+	/**
+	 * The version that current() will take us to.
+	 *
+	 * @var integer
+	 */
+	protected $currentVersion = 0;
+
+	/**
+	 * The Namespace  where migrations can be found.
+	 *
+	 * @var string
+	 */
+	protected $namespace;
+
+	/**
+	 * The database Group to migrate.
+	 *
+	 * @var string
+	 */
+	protected $group;
+
+	/**
+	 * The migration name.
+	 *
+	 * @var string
+	 */
+	protected $name;
+
+	/**
+	 * The pattern used to locate migration file versions.
+	 *
+	 * @var string
+	 */
+	protected $regex;
+
+	/**
+	 * The main database connection. Used to store
+	 * migration information in.
+	 *
+	 * @var ConnectionInterface
+	 */
+	protected $db;
+
+	/**
+	 * If true, will continue instead of throwing
+	 * exceptions.
+	 *
+	 * @var boolean
+	 */
+	protected $silent = false;
+
+	/**
+	 * used to return messages for CLI.
+	 *
+	 * @var boolean
+	 */
+	protected $cliMessages = [];
+
+	/**
+	 * Tracks whether we have already ensured
+	 * the table exists or not.
+	 *
+	 * @var boolean
+	 */
+	protected $tableChecked = false;
+
+	/**
+	 * The full path to locate migration files.
+	 *
+	 * @var string
+	 */
+	protected $path;
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Constructor.
+	 *
+	 * When passing in $db, you may pass any of the following to connect:
+	 * - group name
+	 * - existing connection instance
+	 * - array of database configuration values
+	 *
+	 * @param BaseConfig                                             $config
+	 * @param \CodeIgniter\Database\ConnectionInterface|array|string $db
+	 *
+	 * @throws ConfigException
+	 */
+	public function __construct(BaseConfig $config, $db = null)
+	{
+		$this-&gt;enabled        = $config-&gt;enabled ?? false;
+		$this-&gt;type           = $config-&gt;type ?? 'timestamp';
+		$this-&gt;table          = $config-&gt;table ?? 'migrations';
+		$this-&gt;currentVersion = $config-&gt;currentVersion ?? 0;
+
+		// Default name space is the app namespace
+		$this-&gt;namespace = APP_NAMESPACE;
+
+		// get default database group
+		$config      = config('Database');
+		$this-&gt;group = $config-&gt;defaultGroup;
+		unset($config);
+
+		if (! in_array($this-&gt;type, ['sequential', 'timestamp']))
+		{
+			throw ConfigException::forInvalidMigrationType($this-&gt;type);
+		}
+
+		// Migration basename regex
+		$this-&gt;regex = ($this-&gt;type === 'timestamp') ? '/^\d{14}_(\w+)$/' : '/^\d{3}_(\w+)$/';
+
+		// If no db connection passed in, use
+		// default database group.
+		$this-&gt;db = db_connect($db);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Migrate to a schema version
+	 *
+	 * Calls each migration step required to get to the schema version of
+	 * choice
+	 *
+	 * @param string      $targetVersion Target schema version
+	 * @param string|null $namespace
+	 * @param string|null $group
+	 *
+	 * @return mixed TRUE if no migrations are found, current version string on success, FALSE on failure
+	 * @throws ConfigException
+	 */
+	public function version(string $targetVersion, string $namespace = null, string $group = null)
+	{
+		if (! $this-&gt;enabled)
+		{
+			throw ConfigException::forDisabledMigrations();
+		}
+
+		$this-&gt;ensureTable();
+
+		// Set Namespace if not null
+		if (! is_null($namespace))
+		{
+			$this-&gt;setNamespace($namespace);
+		}
+
+		// Set database group if not null
+		if (! is_null($group))
+		{
+			$this-&gt;setGroup($group);
+		}
+
+		// Sequential versions need adjusting to 3 places so they can be found later.
+		if ($this-&gt;type === 'sequential')
+		{
+			$targetVersion = str_pad($targetVersion, 3, '0', STR_PAD_LEFT);
+		}
+
+		$migrations = $this-&gt;findMigrations();
+
+		if (empty($migrations))
+		{
+			return true;
+		}
+
+		// Get Namespace current version
+		// Note: We use strings, so that timestamp versions work on 32-bit systems
+		$currentVersion = $this-&gt;getVersion();
+		if ($targetVersion &gt; $currentVersion)
+		{
+			// Moving Up
+			$method = 'up';
+			ksort($migrations);
+		}
+		else
+		{
+			// Moving Down, apply in reverse order
+			$method = 'down';
+			krsort($migrations);
+		}
+
+		// Check Migration consistency
+		$this-&gt;checkMigrations($migrations, $method, $targetVersion);
+
+		// loop migration for each namespace (module)
+		foreach ($migrations as $version =&gt; $migration)
+		{
+			// Only include migrations within the scoop
+			if (($method === 'up' &amp;&amp; $version &gt; $currentVersion &amp;&amp; $version &lt;= $targetVersion) || ( $method === 'down' &amp;&amp; $version &lt;= $currentVersion &amp;&amp; $version &gt; $targetVersion)
+			)
+			{
+				include_once $migration-&gt;path;
+				// Get namespaced class name
+				$class = $this-&gt;namespace . '\Database\Migrations\Migration_' . ($migration-&gt;name);
+
+				$this-&gt;setName($migration-&gt;name);
+
+				// Validate the migration file structure
+				if (! class_exists($class, false))
+				{
+					throw new \RuntimeException(sprintf(lang('Migrations.classNotFound'), $class));
+				}
+
+				// Forcing migration to selected database group
+				$instance = new $class(\Config\Database::forge($this-&gt;group));
+
+				if (! is_callable([$instance, $method]))
+				{
+					throw new \RuntimeException(sprintf(lang('Migrations.missingMethod'), $method));
+				}
+
+				$instance-&gt;{$method}();
+				if ($method === 'up')
+				{
+					$this-&gt;addHistory($migration-&gt;version);
+				}
+				elseif ($method === 'down')
+				{
+					$this-&gt;removeHistory($migration-&gt;version);
+				}
+			}
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Sets the schema to the latest migration
+	 *
+	 * @param string|null $namespace
+	 * @param string|null $group
+	 *
+	 * @return mixed    Current version string on success, FALSE on failure
+	 */
+	public function latest(string $namespace = null, string $group = null)
+	{
+		$this-&gt;ensureTable();
+
+		// Set Namespace if not null
+		if (! is_null($namespace))
+		{
+			$this-&gt;setNamespace($namespace);
+		}
+		// Set database group if not null
+		if (! is_null($group))
+		{
+			$this-&gt;setGroup($group);
+		}
+
+		$migrations = $this-&gt;findMigrations();
+
+		$lastMigration = end($migrations)-&gt;version ?? 0;
+
+		// Calculate the last migration step from existing migration
+		// filenames and proceed to the standard version migration
+		return $this-&gt;version($lastMigration);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Sets the schema to the latest migration for all namespaces
+	 *
+	 * @param string|null $group
+	 *
+	 * @return boolean
+	 */
+	public function latestAll(string $group = null)
+	{
+		$this-&gt;ensureTable();
+
+		// Set database group if not null
+		if (! is_null($group))
+		{
+			$this-&gt;setGroup($group);
+		}
+
+		// Get all namespaces form  PSR4 paths.
+		$config     = config('Autoload');
+		$namespaces = $config-&gt;psr4;
+
+		foreach ($namespaces as $namespace =&gt; $path)
+		{
+			$this-&gt;setNamespace($namespace);
+			$migrations = $this-&gt;findMigrations();
+
+			if (empty($migrations))
+			{
+				continue;
+			}
+
+			$lastMigration = end($migrations)-&gt;version;
+			// No New migrations to add
+			if ($lastMigration === $this-&gt;getVersion())
+			{
+				continue;
+			}
+
+			// Calculate the last migration step from existing migration
+			// filenames and proceed to the standard version migration
+			$this-&gt;version($lastMigration);
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Sets the (APP_NAMESPACE) schema to $currentVersion in migration config file
+	 *
+	 * @param string|null $group
+	 *
+	 * @return mixed    TRUE if no migrations are found, current version string on success, FALSE on failure
+	 */
+	public function current(string $group = null)
+	{
+		$this-&gt;ensureTable();
+
+		// Set database group if not null
+		if (! is_null($group))
+		{
+			$this-&gt;setGroup($group);
+		}
+
+		return $this-&gt;version($this-&gt;currentVersion);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Retrieves list of available migration scripts
+	 *
+	 * @return array    list of migrations as $version for one namespace
+	 */
+	public function findMigrations()
+	{
+		$migrations = [];
+		helper('filesystem');
+
+		// If $this-&gt;path contains a valid directory use it.
+		if (! empty($this-&gt;path))
+		{
+			$dir = rtrim($this-&gt;path, DIRECTORY_SEPARATOR) . '/';
+		}
+		// Otherwise, get namespace location form  PSR4 paths
+		// and add Database/Migrations for a standard loation.
+		else
+		{
+			$config = config('Autoload');
+
+			$location = $config-&gt;psr4[$this-&gt;namespace];
+
+			// Setting migration directories.
+			$dir = rtrim($location, DIRECTORY_SEPARATOR) . '/Database/Migrations/';
+		}
+
+		// Load all *_*.php files in the migrations path
+		// We can't use glob if we want it to be testable....
+		$files = get_filenames($dir, true);
+
+		foreach ($files as $file)
+		{
+			if (substr($file, -4) !== '.php')
+			{
+				continue;
+			}
+
+			// Remove the extension
+			$name = basename($file, '.php');
+
+			// Filter out non-migration files
+			if (preg_match($this-&gt;regex, $name))
+			{
+				// Create migration object using stdClass
+				$migration = new \stdClass();
+
+				// Get migration version number
+				$migration-&gt;version = $this-&gt;getMigrationNumber($name);
+				$migration-&gt;name    = $this-&gt;getMigrationName($name);
+				$migration-&gt;path    = ! empty($this-&gt;path) &amp;&amp; strpos($file, $this-&gt;path) !== 0
+					? $this-&gt;path . $file
+					: $file;
+
+				// Add to migrations[version]
+				$migrations[$migration-&gt;version] = $migration;
+			}
+		}
+
+		ksort($migrations);
+
+		return $migrations;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 *  checks if the list of available migration scripts list are consistent
+	 *  if sequential check if no gaps and check if all consistent with migrations table if downgrading
+	 *  if timestamp check if consistent with migrations table if downgrading
+	 *
+	 * @param array  $migrations
+	 * @param string $method
+	 * @param string $targetversion
+	 *
+	 * @return boolean
+	 */
+	protected function checkMigrations(array $migrations, string $method, string $targetversion)
+	{
+		// Check if no migrations found
+		if (empty($migrations))
+		{
+			if ($this-&gt;silent)
+			{
+				return false;
+			}
+			throw new \RuntimeException(lang('Migrations.empty'));
+		}
+
+		// Check if $targetversion file is found
+		if ((int)$targetversion !== 0 &amp;&amp; ! array_key_exists($targetversion, $migrations))
+		{
+			if ($this-&gt;silent)
+			{
+				return false;
+			}
+			throw new \RuntimeException(lang('Migrations.notFound') . $targetversion);
+		}
+
+		ksort($migrations);
+
+		if ($method === 'down')
+		{
+			$history_migrations = $this-&gt;getHistory($this-&gt;group);
+			$history_size       = count($history_migrations) - 1;
+		}
+		// Check for sequence gaps
+		$loop = 0;
+		foreach ($migrations as $migration)
+		{
+			if ($this-&gt;type === 'sequential' &amp;&amp; abs($migration-&gt;version - $loop) &gt; 1)
+			{
+				throw new \RuntimeException(lang('Migrations.gap') . ' ' . $migration-&gt;version);
+			}
+			// Check if all old migration files are all available to do downgrading
+			if ($method === 'down')
+			{
+				if ($loop &lt;= $history_size &amp;&amp; $history_migrations[$loop]['version'] !== $migration-&gt;version)
+				{
+					throw new \RuntimeException(lang('Migrations.gap') . ' ' . $migration-&gt;version);
+				}
+			}
+			$loop ++;
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Sets the path to the base directory that will be used
+	 * when locating migrations. If left null, the value will
+	 * be chosen from $this-&gt;namespace's directory.
+	 *
+	 * @param string|null $path
+	 *
+	 * @return $this
+	 */
+	public function setPath(string $path = null)
+	{
+		$this-&gt;path = $path;
+
+		return $this;
+	}
+
+	/**
+	 * Set namespace.
+	 * Allows other scripts to modify on the fly as needed.
+	 *
+	 * @param string $namespace
+	 *
+	 * @return MigrationRunner
+	 */
+	public function setNamespace(string $namespace)
+	{
+		$this-&gt;namespace = $namespace;
+
+		return $this;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Set database Group.
+	 * Allows other scripts to modify on the fly as needed.
+	 *
+	 * @param string $group
+	 *
+	 * @return MigrationRunner
+	 */
+	public function setGroup(string $group)
+	{
+		$this-&gt;group = $group;
+
+		return $this;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Set migration Name.
+	 *
+	 * @param string $name
+	 *
+	 * @return \CodeIgniter\Database\MigrationRunner
+	 */
+	public function setName(string $name)
+	{
+		$this-&gt;name = $name;
+
+		return $this;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Grabs the full migration history from the database.
+	 *
+	 * @param string $group
+	 *
+	 * @return array
+	 */
+	public function getHistory(string $group = 'default')
+	{
+		$this-&gt;ensureTable();
+
+		$query = $this-&gt;db-&gt;table($this-&gt;table)
+				-&gt;where('group', $group)
+				-&gt;where('namespace', $this-&gt;namespace)
+				-&gt;orderBy('version', 'ASC')
+				-&gt;get();
+
+		if (! $query)
+		{
+			return [];
+		}
+
+		return $query-&gt;getResultArray();
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * If $silent == true, then will not throw exceptions and will
+	 * attempt to continue gracefully.
+	 *
+	 * @param boolean $silent
+	 *
+	 * @return MigrationRunner
+	 */
+	public function setSilent(bool $silent)
+	{
+		$this-&gt;silent = $silent;
+
+		return $this;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Extracts the migration number from a filename
+	 *
+	 * @param string $migration
+	 *
+	 * @return string    Numeric portion of a migration filename
+	 */
+	protected function getMigrationNumber(string $migration)
+	{
+		return sscanf($migration, '%[0-9]+', $number) ? $number : '0';
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Extracts the migration class name from a filename
+	 *
+	 * @param string $migration
+	 *
+	 * @return string    text portion of a migration filename
+	 */
+	protected function getMigrationName(string $migration)
+	{
+		$parts = explode('_', $migration);
+		array_shift($parts);
+
+		return implode('_', $parts);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Retrieves current schema version
+	 *
+	 * @return string    Current migration version
+	 */
+	protected function getVersion()
+	{
+		$this-&gt;ensureTable();
+
+		$row = $this-&gt;db-&gt;table($this-&gt;table)
+				-&gt;select('version')
+				-&gt;where('group', $this-&gt;group)
+				-&gt;where('namespace', $this-&gt;namespace)
+				-&gt;orderBy('version', 'DESC')
+				-&gt;get();
+
+		return $row &amp;&amp; ! is_null($row-&gt;getRow()) ? $row-&gt;getRow()-&gt;version : '0';
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Retrieves current schema version
+	 *
+	 * @return string    Current migration version
+	 */
+	public function getCliMessages()
+	{
+		return $this-&gt;cliMessages;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Stores the current schema version.
+	 *
+	 * @param string $version
+	 *
+	 * @internal param string $migration Migration reached
+	 */
+	protected function addHistory(string $version)
+	{
+		$this-&gt;db-&gt;table($this-&gt;table)
+				-&gt;insert([
+					'version'   =&gt; $version,
+					'name'      =&gt; $this-&gt;name,
+					'group'     =&gt; $this-&gt;group,
+					'namespace' =&gt; $this-&gt;namespace,
+					'time'      =&gt; time(),
+				]);
+		if (is_cli())
+		{
+			$this-&gt;cliMessages[] = &quot;\t&quot; . CLI::color(lang('Migrations.added'), 'yellow') . &quot;($this-&gt;namespace) &quot; . $version . '_' . $this-&gt;name;
+		}
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Removes a single history
+	 *
+	 * @param string $version
+	 */
+	protected function removeHistory(string $version)
+	{
+		$this-&gt;db-&gt;table($this-&gt;table)
+				-&gt;where('version', $version)
+				-&gt;where('group', $this-&gt;group)
+				-&gt;where('namespace', $this-&gt;namespace)
+				-&gt;delete();
+		if (is_cli())
+		{
+			$this-&gt;cliMessages[] = &quot;\t&quot; . CLI::color(lang('Migrations.removed'), 'yellow') . &quot;($this-&gt;namespace) &quot; . $version . '_' . $this-&gt;name;
+		}
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Ensures that we have created our migrations table
+	 * in the database.
+	 */
+	public function ensureTable()
+	{
+		if ($this-&gt;tableChecked || $this-&gt;db-&gt;tableExists($this-&gt;table))
+		{
+			return;
+		}
+
+		$forge = \Config\Database::forge($this-&gt;db);
+
+		$forge-&gt;addField([
+			'version'   =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 255,
+				'null'       =&gt; false,
+			],
+			'name'      =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 255,
+				'null'       =&gt; false,
+			],
+			'group'     =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 255,
+				'null'       =&gt; false,
+			],
+			'namespace' =&gt; [
+				'type'       =&gt; 'VARCHAR',
+				'constraint' =&gt; 255,
+				'null'       =&gt; false,
+			],
+			'time'      =&gt; [
+				'type'       =&gt; 'INT',
+				'constraint' =&gt; 11,
+				'null'       =&gt; false,
+			],
+		]);
+
+		$forge-&gt;createTable($this-&gt;table, true);
+
+		$this-&gt;tableChecked = true;
+	}
+
+	//--------------------------------------------------------------------
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

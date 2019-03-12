@@ -1,0 +1,458 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Session\Handlers;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use CodeIgniter\Config\BaseConfig;
+use CodeIgniter\Session\Exceptions\SessionException;
+
+/**
+ * Session handler using Redis for persistence
+ */
+class RedisHandler extends BaseHandler implements \SessionHandlerInterface
+{
+
+	/**
+	 * phpRedis instance
+	 *
+	 * @var resource
+	 */
+	protected $redis;
+
+	/**
+	 * Key prefix
+	 *
+	 * @var string
+	 */
+	protected $keyPrefix = 'ci_session:';
+
+	/**
+	 * Lock key
+	 *
+	 * @var string
+	 */
+	protected $lockKey;
+
+	/**
+	 * Key exists flag
+	 *
+	 * @var boolean
+	 */
+	protected $keyExists = false;
+
+	/**
+	 * Number of seconds until the session ends.
+	 *
+	 * @var integer
+	 */
+	protected $sessionExpiration = 7200;
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Constructor
+	 *
+	 * @param BaseConfig $config
+	 *
+	 * @throws \Exception
+	 */
+	public function __construct(BaseConfig $config, string $ipAddress)
+	{
+		parent::__construct($config, $ipAddress);
+
+		if (empty($this-&gt;savePath))
+		{
+			throw SessionException::forEmptySavepath();
+		}
+		elseif (preg_match('#(?:tcp://)?([^:?]+)(?:\:(\d+))?(\?.+)?#', $this-&gt;savePath, $matches))
+		{
+			isset($matches[3]) || $matches[3] = ''; // Just to avoid undefined index notices below
+
+			$this-&gt;savePath = [
+				'host'     =&gt; $matches[1],
+				'port'     =&gt; empty($matches[2]) ? null : $matches[2],
+				'password' =&gt; preg_match('#auth=([^\s&amp;]+)#', $matches[3], $match) ? $match[1] : null,
+				'database' =&gt; preg_match('#database=(\d+)#', $matches[3], $match) ? (int) $match[1] : null,
+				'timeout'  =&gt; preg_match('#timeout=(\d+\.\d+)#', $matches[3], $match) ? (float) $match[1] : null,
+			];
+
+			preg_match('#prefix=([^\s&amp;]+)#', $matches[3], $match) &amp;&amp; $this-&gt;keyPrefix = $match[1];
+		}
+		else
+		{
+			throw SessionException::forInvalidSavePathFormat($this-&gt;savePath);
+		}
+
+		if ($this-&gt;matchIP === true)
+		{
+			$this-&gt;keyPrefix .= $this-&gt;ipAddress . ':';
+		}
+
+				$this-&gt;sessionExpiration = $config-&gt;sessionExpiration;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Open
+	 *
+	 * Sanitizes save_path and initializes connection.
+	 *
+	 * @param  string $save_path Server path
+	 * @param  string $name      Session cookie name, unused
+	 * @return boolean
+	 */
+	public function open($save_path, $name)
+	{
+		if (empty($this-&gt;savePath))
+		{
+			return false;
+		}
+
+		$redis = new \Redis();
+
+		if (! $redis-&gt;connect($this-&gt;savePath['host'], $this-&gt;savePath['port'], $this-&gt;savePath['timeout']))
+		{
+			$this-&gt;logger-&gt;error('Session: Unable to connect to Redis with the configured settings.');
+		}
+		elseif (isset($this-&gt;savePath['password']) &amp;&amp; ! $redis-&gt;auth($this-&gt;savePath['password']))
+		{
+			$this-&gt;logger-&gt;error('Session: Unable to authenticate to Redis instance.');
+		}
+		elseif (isset($this-&gt;savePath['database']) &amp;&amp; ! $redis-&gt;select($this-&gt;savePath['database']))
+		{
+			$this-&gt;logger-&gt;error('Session: Unable to select Redis database with index ' . $this-&gt;savePath['database']);
+		}
+		else
+		{
+			$this-&gt;redis = $redis;
+			return true;
+		}
+
+		return false;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Read
+	 *
+	 * Reads session data and acquires a lock
+	 *
+	 * @param string $sessionID Session ID
+	 *
+	 * @return string	Serialized session data
+	 */
+	public function read($sessionID)
+	{
+		if (isset($this-&gt;redis) &amp;&amp; $this-&gt;lockSession($sessionID))
+		{
+			// Needed by write() to detect session_regenerate_id() calls
+			$this-&gt;sessionID = $sessionID;
+
+			$session_data                               = $this-&gt;redis-&gt;get($this-&gt;keyPrefix . $sessionID);
+			is_string($session_data) ? $this-&gt;keyExists = true : $session_data = '';
+
+			$this-&gt;fingerprint = md5($session_data);
+			return $session_data;
+		}
+
+		return false;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Write
+	 *
+	 * Writes (create / update) session data
+	 *
+	 * @param string $sessionID   Session ID
+	 * @param string $sessionData Serialized session data
+	 *
+	 * @return boolean
+	 */
+	public function write($sessionID, $sessionData)
+	{
+		if (! isset($this-&gt;redis))
+		{
+			return false;
+		}
+		// Was the ID regenerated?
+		elseif ($sessionID !== $this-&gt;sessionID)
+		{
+			if (! $this-&gt;releaseLock() || ! $this-&gt;lockSession($sessionID))
+			{
+				return false;
+			}
+
+			$this-&gt;keyExists = false;
+			$this-&gt;sessionID = $sessionID;
+		}
+
+		if (isset($this-&gt;lockKey))
+		{
+			$this-&gt;redis-&gt;setTimeout($this-&gt;lockKey, 300);
+
+			if ($this-&gt;fingerprint !== ($fingerprint = md5($sessionData)) || $this-&gt;keyExists === false)
+			{
+				if ($this-&gt;redis-&gt;set($this-&gt;keyPrefix . $sessionID, $sessionData, $this-&gt;sessionExpiration))
+				{
+					$this-&gt;fingerprint = $fingerprint;
+					$this-&gt;keyExists   = true;
+					return true;
+				}
+
+				return false;
+			}
+
+			return $this-&gt;redis-&gt;setTimeout($this-&gt;keyPrefix . $sessionID, $this-&gt;sessionExpiration);
+		}
+
+		return false;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Close
+	 *
+	 * Releases locks and closes connection.
+	 *
+	 * @return boolean
+	 */
+	public function close()
+	{
+		if (isset($this-&gt;redis))
+		{
+			try
+			{
+				if ($this-&gt;redis-&gt;ping() === '+PONG')
+				{
+					isset($this-&gt;lockKey) &amp;&amp; $this-&gt;redis-&gt;delete($this-&gt;lockKey);
+
+					if (! $this-&gt;redis-&gt;close())
+					{
+						return false;
+					}
+				}
+			}
+			catch (\RedisException $e)
+			{
+				$this-&gt;logger-&gt;error('Session: Got RedisException on close(): ' . $e-&gt;getMessage());
+			}
+
+			$this-&gt;redis = null;
+
+			return true;
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Destroy
+	 *
+	 * Destroys the current session.
+	 *
+	 * @param string $sessionID
+	 *
+	 * @return boolean
+	 */
+	public function destroy($sessionID)
+	{
+		if (isset($this-&gt;redis, $this-&gt;lockKey))
+		{
+			if (($result = $this-&gt;redis-&gt;delete($this-&gt;keyPrefix . $sessionID)) !== 1)
+			{
+				$this-&gt;logger-&gt;debug('Session: Redis::delete() expected to return 1, got ' . var_export($result, true) . ' instead.');
+			}
+
+			return $this-&gt;destroyCookie();
+		}
+
+		return false;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Garbage Collector
+	 *
+	 * Deletes expired sessions
+	 *
+	 * @param  integer $maxlifetime Maximum lifetime of sessions
+	 * @return boolean
+	 */
+	public function gc($maxlifetime)
+	{
+		// Not necessary, Redis takes care of that.
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Get lock
+	 *
+	 * Acquires an (emulated) lock.
+	 *
+	 * @param string $sessionID Session ID
+	 *
+	 * @return boolean
+	 */
+	protected function lockSession(string $sessionID): bool
+	{
+		// PHP 7 reuses the SessionHandler object on regeneration,
+		// so we need to check here if the lock key is for the
+		// correct session ID.
+		if ($this-&gt;lockKey === $this-&gt;keyPrefix . $sessionID . ':lock')
+		{
+			return $this-&gt;redis-&gt;setTimeout($this-&gt;lockKey, 300);
+		}
+
+		// 30 attempts to obtain a lock, in case another request already has it
+		$lock_key = $this-&gt;keyPrefix . $sessionID . ':lock';
+		$attempt  = 0;
+
+		do
+		{
+			if (($ttl = $this-&gt;redis-&gt;ttl($lock_key)) &gt; 0)
+			{
+				sleep(1);
+				continue;
+			}
+
+			if (! $this-&gt;redis-&gt;setex($lock_key, 300, time()))
+			{
+				$this-&gt;logger-&gt;error('Session: Error while trying to obtain lock for ' . $this-&gt;keyPrefix . $sessionID);
+				return false;
+			}
+
+			$this-&gt;lockKey = $lock_key;
+			break;
+		}
+		while (++ $attempt &lt; 30);
+
+		if ($attempt === 30)
+		{
+			log_message('error', 'Session: Unable to obtain lock for ' . $this-&gt;keyPrefix . $sessionID . ' after 30 attempts, aborting.');
+			return false;
+		}
+		elseif ($ttl === -1)
+		{
+			log_message('debug', 'Session: Lock for ' . $this-&gt;keyPrefix . $sessionID . ' had no TTL, overriding.');
+		}
+
+		$this-&gt;lock = true;
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Release lock
+	 *
+	 * Releases a previously acquired lock
+	 *
+	 * @return boolean
+	 */
+	protected function releaseLock(): bool
+	{
+		if (isset($this-&gt;redis, $this-&gt;lockKey) &amp;&amp; $this-&gt;lock)
+		{
+			if (! $this-&gt;redis-&gt;delete($this-&gt;lockKey))
+			{
+				$this-&gt;logger-&gt;error('Session: Error while trying to free lock for ' . $this-&gt;lockKey);
+				return false;
+			}
+
+			$this-&gt;lockKey = null;
+			$this-&gt;lock    = false;
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

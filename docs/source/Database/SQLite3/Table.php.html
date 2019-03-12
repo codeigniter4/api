@@ -1,0 +1,388 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Database\SQLite3;
+
+use CodeIgniter\Database\Exceptions\DataException;
+
+/**
+ * Class Table
+ *
+ * Provides missing features for altering tables that are common
+ * in other supported databases, but are missing from SQLite.
+ * These are needed in order to support migrations during testing
+ * when another database is used as the primary engine, but
+ * SQLite in memory databases are used for faster test execution.
+ *
+ * @package CodeIgniter\Database\SQLite3
+ */
+class Table
+{
+	/**
+	 * All of the fields this table represents.
+	 *
+	 * @var array
+	 */
+	protected $fields = [];
+
+	/**
+	 * All of the unique/primary keys in the table.
+	 *
+	 * @var array
+	 */
+	protected $keys = [];
+
+	/**
+	 * All of the foreign keys in the table.
+	 *
+	 * @var array
+	 */
+	protected $foreignKeys = [];
+
+	/**
+	 * The name of the table we're working with.
+	 *
+	 * @var string
+	 */
+	protected $tableName;
+
+	/**
+	 * The name of the table, with database prefix
+	 *
+	 * @var string
+	 */
+	protected $prefixedTableName;
+
+	/**
+	 * @var Connection
+	 */
+	protected $db;
+
+	/**
+	 * @var Forge
+	 */
+	protected $forge;
+
+	/**
+	 * Table constructor.
+	 *
+	 * @param Connection $db
+	 */
+	public function __construct(Connection $db, Forge $forge)
+	{
+		$this-&gt;db    = $db;
+		$this-&gt;forge = $forge;
+	}
+
+	/**
+	 * Reads an existing database table and
+	 * collects all of the information needed to
+	 * recreate this table.
+	 *
+	 * @param string $table
+	 *
+	 * @return \CodeIgniter\Database\SQLite3\Table
+	 */
+	public function fromTable(string $table)
+	{
+		$this-&gt;prefixedTableName = $table;
+
+		// Remove the prefix, if any, since it's
+		// already been added by the time we get here...
+		$prefix = $this-&gt;db-&gt;DBPrefix;
+		if (! empty($prefix))
+		{
+			if (strpos($table, $prefix) === 0)
+			{
+				$table = substr($table, strlen($prefix));
+			}
+		}
+
+		if (! $this-&gt;db-&gt;tableExists($this-&gt;prefixedTableName))
+		{
+			throw DataException::forTableNotFound($this-&gt;prefixedTableName);
+		}
+
+		$this-&gt;tableName = $table;
+
+		$this-&gt;fields = $this-&gt;formatFields($this-&gt;db-&gt;getFieldData($table));
+
+		$this-&gt;keys = array_merge($this-&gt;keys, $this-&gt;formatKeys($this-&gt;db-&gt;getIndexData($table)));
+
+		$this-&gt;foreignKeys = $this-&gt;db-&gt;getForeignKeyData($table);
+
+		return $this;
+	}
+
+	/**
+	 * Called after `fromTable` and any actions, like `dropColumn`, etc,
+	 * to finalize the action. It creates a temp table, creates the new
+	 * table with modifications, and copies the data over to the new table.
+	 *
+	 * @return boolean
+	 */
+	public function run(): bool
+	{
+		$this-&gt;db-&gt;query('PRAGMA foreign_keys = OFF');
+
+		$this-&gt;db-&gt;transStart();
+
+		$this-&gt;forge-&gt;renameTable($this-&gt;tableName, &quot;temp_{$this-&gt;tableName}&quot;);
+
+		$this-&gt;forge-&gt;reset();
+
+		$this-&gt;createTable();
+
+		$this-&gt;copyData();
+
+		$this-&gt;forge-&gt;dropTable(&quot;temp_{$this-&gt;tableName}&quot;);
+
+		$success = $this-&gt;db-&gt;transComplete();
+
+		$this-&gt;db-&gt;query('PRAGMA foreign_keys = ON');
+
+		return $success;
+	}
+
+	/**
+	 * Drops a column from the table.
+	 *
+	 * @param string $column
+	 *
+	 * @return \CodeIgniter\Database\SQLite3\Table
+	 */
+	public function dropColumn(string $column)
+	{
+		unset($this-&gt;fields[$column]);
+
+		return $this;
+	}
+
+	/**
+	 * Modifies a field, including changing data type,
+	 * renaming, etc.
+	 *
+	 * @param array $field
+	 *
+	 * @return \CodeIgniter\Database\SQLite3\Table
+	 */
+	public function modifyColumn(array $field)
+	{
+		$field = $field[0];
+
+		$oldName = $field['name'];
+		unset($field['name']);
+
+		$this-&gt;fields[$oldName] = $field;
+
+		return $this;
+	}
+
+	/**
+	 * Creates the new table based on our current fields.
+	 */
+	protected function createTable()
+	{
+		$this-&gt;dropIndexes();
+		$this-&gt;db-&gt;resetDataCache();
+
+		// Handle any modified columns.
+		$fields = [];
+		foreach ($this-&gt;fields as $name =&gt; $field)
+		{
+			if (isset($field['new_name']))
+			{
+				$fields[$field['new_name']] = $field;
+				continue;
+			}
+
+			$fields[$name] = $field;
+		}
+
+		$this-&gt;forge-&gt;addField($fields);
+
+		// Unique/Index keys
+		if (is_array($this-&gt;keys))
+		{
+			foreach ($this-&gt;keys as $key)
+			{
+				switch ($key['type'])
+				{
+					case 'primary':
+						$this-&gt;forge-&gt;addPrimaryKey($key['fields']);
+						break;
+					case 'unique':
+						$this-&gt;forge-&gt;addUniqueKey($key['fields']);
+						break;
+					case 'index':
+						$this-&gt;forge-&gt;addKey($key['fields']);
+						break;
+				}
+			}
+		}
+
+		// Foreign Keys
+
+		return $this-&gt;forge-&gt;createTable($this-&gt;tableName);
+	}
+
+	/**
+	 * Copies data from our old table to the new one,
+	 * taking care map data correctly based on any columns
+	 * that have been renamed.
+	 */
+	protected function copyData()
+	{
+		$exFields  = [];
+		$newFields = [];
+
+		foreach ($this-&gt;fields as $name =&gt; $details)
+		{
+			// Are we modifying the column?
+			if (isset($details['new_name']))
+			{
+				$newFields[] = $details['new_name'];
+			}
+			else
+			{
+				$newFields[] = $name;
+			}
+
+			$exFields[] = $name;
+		}
+
+		$exFields  = implode(', ', $exFields);
+		$newFields = implode(', ', $newFields);
+
+		$this-&gt;db-&gt;query(&quot;INSERT INTO {$this-&gt;prefixedTableName}({$newFields}) SELECT {$exFields} FROM {$this-&gt;db-&gt;DBPrefix}temp_{$this-&gt;tableName}&quot;);
+	}
+
+	/**
+	 * Converts fields retrieved from the database to
+	 * the format needed for creating fields with Forge.
+	 *
+	 * @param array|boolean $fields
+	 *
+	 * @return array
+	 */
+	protected function formatFields($fields)
+	{
+		if (! is_array($fields))
+		{
+			return $fields;
+		}
+
+		$return = [];
+
+		foreach ($fields as $field)
+		{
+			$return[$field-&gt;name] = [
+				'type'     =&gt; $field-&gt;type,
+				'default'  =&gt; $field-&gt;default,
+				'nullable' =&gt; $field-&gt;nullable,
+			];
+
+			if ($field-&gt;primary_key)
+			{
+				$this-&gt;keys[$field-&gt;name] = [
+					'fields' =&gt; [$field-&gt;name],
+					'type'   =&gt; 'primary',
+				];
+			}
+		}
+
+		return $return;
+	}
+
+	/**
+	 * Converts keys retrieved from the database to
+	 * the format needed to create later.
+	 *
+	 * @param $keys
+	 *
+	 * @return mixed
+	 */
+	protected function formatKeys($keys)
+	{
+		if (! is_array($keys))
+		{
+			return $keys;
+		}
+
+		$return = [];
+
+		foreach ($keys as $name =&gt; $key)
+		{
+			$return[$name] = [
+				'fields' =&gt; $key-&gt;fields,
+				'type'   =&gt; 'index',
+			];
+		}
+
+		return $return;
+	}
+
+	/**
+	 * Attempts to drop all indexes and constraints
+	 * from the database for this table.
+	 */
+	protected function dropIndexes()
+	{
+		if (! is_array($this-&gt;keys) || ! count($this-&gt;keys))
+		{
+			return;
+		}
+
+		foreach ($this-&gt;keys as $name =&gt; $key)
+		{
+			if ($key['type'] === 'primary' || $key['type'] === 'unique')
+			{
+				continue;
+			}
+
+			$this-&gt;db-&gt;query(&quot;DROP INDEX IF EXISTS '{$name}'&quot;);
+		}
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

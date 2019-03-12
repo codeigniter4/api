@@ -1,0 +1,773 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT    MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+// --------------------------------------------------------------------
+
+/**
+ * CodeIgniter HTML Helper
+ *
+ * @package    CodeIgniter
+ * @subpackage Helpers
+ * @category   Helpers
+ * @author     CodeIgniter Dev Team
+ * @link       https://codeigniter.com/user_guide/helpers/html_helper.html
+ */
+if (! function_exists('ul'))
+{
+	/**
+	 * Unordered List
+	 *
+	 * Generates an HTML unordered list from an single or
+	 * multi-dimensional array.
+	 *
+	 * @param  array  $list
+	 * @param  string $attributes HTML attributes
+	 * @return string
+	 */
+	function ul(array $list, string $attributes = ''): string
+	{
+		return _list('ul', $list, $attributes);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('ol'))
+{
+	/**
+	 * Ordered List
+	 *
+	 * Generates an HTML ordered list from an single or multi-dimensional array.
+	 *
+	 * @param  array  $list
+	 * @param  string $attributes HTML attributes
+	 * @return string
+	 */
+	function ol(array $list, string $attributes = ''): string
+	{
+		return _list('ol', $list, $attributes);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('_list'))
+{
+	/**
+	 * Generates the list
+	 *
+	 * Generates an HTML ordered list from an single or multi-dimensional array.
+	 *
+	 * @param  string  $type
+	 * @param  mixed   $list
+	 * @param  string  $attributes
+	 * @param  integer $depth
+	 * @return string
+	 */
+	function _list(string $type = 'ul', $list = [], string $attributes = '', int $depth = 0): string
+	{
+		// Set the indentation based on the depth
+		$out = str_repeat(' ', $depth)
+				// Write the opening list tag
+				. '&lt;' . $type . stringify_attributes($attributes) . &quot;&gt;\n&quot;;
+
+		// Cycle through the list elements.  If an array is
+		// encountered we will recursively call _list()
+
+		static $_last_list_item = '';
+		foreach ($list as $key =&gt; $val)
+		{
+			$_last_list_item = $key;
+
+			$out .= str_repeat(' ', $depth + 2) . '&lt;li&gt;';
+
+			if (! is_array($val))
+			{
+				$out .= $val;
+			}
+			else
+			{
+				$out .= $_last_list_item
+						. &quot;\n&quot;
+						. _list($type, $val, '', $depth + 4)
+						. str_repeat(' ', $depth + 2);
+			}
+
+			$out .= &quot;&lt;/li&gt;\n&quot;;
+		}
+
+		// Set the indentation for the closing tag and apply it
+		return $out . str_repeat(' ', $depth) . '&lt;/' . $type . &quot;&gt;\n&quot;;
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('img'))
+{
+	/**
+	 * Image
+	 *
+	 * Generates an image element
+	 *
+	 * @param  mixed   $src
+	 * @param  boolean $indexPage
+	 * @param  mixed   $attributes
+	 * @return string
+	 */
+	function img($src = '', bool $indexPage = false, $attributes = ''): string
+	{
+		if (! is_array($src))
+		{
+			$src = ['src' =&gt; $src];
+		}
+
+		if (! isset($src['alt']))
+		{
+			$src['alt'] = $attributes['alt'] ?? '';
+		}
+
+		$img = '&lt;img';
+
+		foreach ($src as $k =&gt; $v)
+		{
+			//Include a protocol if nothing is explicitely defined.
+			if ($k === 'src' &amp;&amp; ! preg_match('#^([a-z]+:)?//#i', $v))
+			{
+				if ($indexPage === true)
+				{
+					$img .= ' src=&quot;' . site_url($v) . '&quot;';
+				}
+				else
+				{
+					$img .= ' src=&quot;' . slash_item('baseURL') . $v . '&quot;';
+				}
+			}
+			else
+			{
+				$img .= ' ' . $k . '=&quot;' . $v . '&quot;';
+			}
+		}
+
+		// prevent passing &quot;alt&quot; to stringify_attributes
+		if (is_array($attributes) &amp;&amp; isset($attributes['alt']))
+		{
+			unset($attributes['alt']);
+		}
+
+		return $img . stringify_attributes($attributes) . ' /&gt;';
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('doctype'))
+{
+	/**
+	 * Doctype
+	 *
+	 * Generates a page document type declaration
+	 *
+	 * Examples of valid options: html5, xhtml-11, xhtml-strict, xhtml-trans,
+	 * xhtml-frame, html4-strict, html4-trans, and html4-frame.
+	 * All values are saved in the doctypes config file.
+	 *
+	 * @param  string $type The doctype to be generated
+	 * @return string
+	 */
+	function doctype(string $type = 'html5'): string
+	{
+		$config   = new \Config\DocTypes();
+		$doctypes = $config-&gt;list;
+		return $doctypes[$type] ?? false;
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('script_tag'))
+{
+	/**
+	 * Script
+	 *
+	 * Generates link to a JS file
+	 *
+	 * @param  mixed   $src       Script source or an array
+	 * @param  boolean $indexPage Should indexPage be added to the JS path
+	 * @return string
+	 */
+	function script_tag($src = '', bool $indexPage = false): string
+	{
+		$script = '&lt;script ';
+		if (! is_array($src))
+		{
+			$src = ['src' =&gt; $src];
+		}
+
+		foreach ($src as $k =&gt; $v)
+		{
+			if ($k === 'src' &amp;&amp; ! preg_match('#^([a-z]+:)?//#i', $v))
+			{
+				if ($indexPage === true)
+				{
+					$script .= 'src=&quot;' . site_url($v) . '&quot; ';
+				}
+				else
+				{
+					$script .= 'src=&quot;' . slash_item('baseURL') . $v . '&quot; ';
+				}
+			}
+			else
+			{
+				$script .= $k . '=&quot;' . $v . '&quot; ';
+			}
+		}
+
+		return $script . 'type=&quot;text/javascript&quot;' . '&gt;&lt;/script&gt;';
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('link_tag'))
+{
+	/**
+	 * Link
+	 *
+	 * Generates link to a CSS file
+	 *
+	 * @param  mixed   $href      Stylesheet href or an array
+	 * @param  string  $rel
+	 * @param  string  $type
+	 * @param  string  $title
+	 * @param  string  $media
+	 * @param  boolean $indexPage should indexPage be added to the CSS path.
+	 * @return string
+	 */
+	function link_tag($href = '', string $rel = 'stylesheet', string $type = 'text/css', string $title = '', string $media = '', bool $indexPage = false): string
+	{
+		$link = '&lt;link ';
+
+		// extract fields if needed
+		if (is_array($href))
+		{
+			$rel       = $href['rel'] ?? $rel;
+			$type      = $href['type'] ?? $type;
+			$title     = $href['title'] ?? $title;
+			$media     = $href['media'] ?? $media;
+			$indexPage = $href['indexPage'] ?? $indexPage;
+			$href      = $href['href'] ?? '';
+		}
+
+		if (! preg_match('#^([a-z]+:)?//#i', $href))
+		{
+			if ($indexPage === true)
+			{
+				$link .= 'href=&quot;' . site_url($href) . '&quot; ';
+			}
+			else
+			{
+				$link .= 'href=&quot;' . slash_item('baseURL') . $href . '&quot; ';
+			}
+		}
+		else
+		{
+			$link .= 'href=&quot;' . $href . '&quot; ';
+		}
+
+		$link .= 'rel=&quot;' . $rel . '&quot; type=&quot;' . $type . '&quot; ';
+
+		if ($media !== '')
+		{
+			$link .= 'media=&quot;' . $media . '&quot; ';
+		}
+
+		if ($title !== '')
+		{
+			$link .= 'title=&quot;' . $title . '&quot; ';
+		}
+
+		return $link . '/&gt;';
+	}
+}
+	// ------------------------------------------------------------------------
+
+if (! function_exists('video'))
+{
+	/**
+	 * Video
+	 *
+	 * Generates a video element to embed videos. The video element can
+	 * contain one or more video sources
+	 *
+	 * @param  mixed   $src                Either a source string or an array of sources
+	 * @param  string  $unsupportedMessage The message to display
+	 *       if the media tag is not supported by the browser
+	 * @param  string  $attributes         HTML attributes
+	 * @param  array   $tracks
+	 * @param  boolean $indexPage
+	 * @return string
+	 */
+	function video($src, string $unsupportedMessage = '', string $attributes = '', array $tracks = [], bool $indexPage = false): string
+	{
+		if (is_array($src))
+		{
+			return _media('video', $src, $unsupportedMessage, $attributes, $tracks);
+		}
+
+		$video = '&lt;video';
+
+		if (_has_protocol($src))
+		{
+			$video .= ' src=&quot;' . $src . '&quot;';
+		}
+		elseif ($indexPage === true)
+		{
+			$video .= ' src=&quot;' . site_url($src) . '&quot;';
+		}
+		else
+		{
+			$video .= ' src=&quot;' . slash_item('baseURL') . $src . '&quot;';
+		}
+
+		if ($attributes !== '')
+		{
+			$video .= ' ' . $attributes;
+		}
+
+		$video .= &quot;&gt;\n&quot;;
+
+		if (! empty($tracks))
+		{
+			foreach ($tracks as $track)
+			{
+				$video .= _space_indent() . $track . &quot;\n&quot;;
+			}
+		}
+
+		if (! empty($unsupportedMessage))
+		{
+			$video .= _space_indent()
+					. $unsupportedMessage
+					. &quot;\n&quot;;
+		}
+
+		$video .= &quot;&lt;/video&gt;\n&quot;;
+
+		return $video;
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('audio'))
+{
+	/**
+	 * Audio
+	 *
+	 * Generates an audio element to embed sounds
+	 *
+	 * @param mixed   $src                Either a source string or an array of sources
+	 * @param string  $unsupportedMessage The message to display if the media tag is not supported by the browser.
+	 * @param string  $attributes         HTML attributes
+	 * @param array   $tracks
+	 * @param boolean $indexPage
+	 *
+	 * @return string
+	 */
+	function audio($src, string $unsupportedMessage = '', string $attributes = '', array $tracks = [], bool $indexPage = false): string
+	{
+		if (is_array($src))
+		{
+			return _media('audio', $src, $unsupportedMessage, $attributes, $tracks);
+		}
+
+		$audio = '&lt;audio';
+
+		if (_has_protocol($src))
+		{
+			$audio .= ' src=&quot;' . $src . '&quot;';
+		}
+		elseif ($indexPage === true)
+		{
+			$audio .= ' src=&quot;' . site_url($src) . '&quot;';
+		}
+		else
+		{
+			$audio .= ' src=&quot;' . slash_item('baseURL') . $src . '&quot;';
+		}
+
+		if ($attributes !== '')
+		{
+			$audio .= ' ' . $attributes;
+		}
+
+		$audio .= '&gt;';
+
+		if (! empty($tracks))
+		{
+			foreach ($tracks as $track)
+			{
+				$audio .= &quot;\n&quot; . _space_indent() . $track;
+			}
+		}
+
+		if (! empty($unsupportedMessage))
+		{
+			$audio .= &quot;\n&quot; . _space_indent() . $unsupportedMessage . &quot;\n&quot;;
+		}
+
+		$audio .= &quot;&lt;/audio&gt;\n&quot;;
+
+		return $audio;
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('_media'))
+{
+	/**
+	 *
+	 * Generate media based tag
+	 *
+	 * @param string $name
+	 * @param array  $types
+	 * @param string $unsupportedMessage
+	 * @param string $attributes
+	 * @param array  $tracks
+	 *
+	 * @return string
+	 */
+	function _media(string $name, array $types = [], string $unsupportedMessage = '', string $attributes = '', array $tracks = []): string
+	{
+		$media = '&lt;' . $name;
+
+		if (empty($attributes))
+		{
+			$media .= '&gt;';
+		}
+		else
+		{
+			$media .= ' ' . $attributes . '&gt;';
+		}
+
+		$media .= &quot;\n&quot;;
+
+		foreach ($types as $option)
+		{
+			$media .= _space_indent() . $option . &quot;\n&quot;;
+		}
+
+		if (! empty($tracks))
+		{
+			foreach ($tracks as $track)
+			{
+				$media .= _space_indent() . $track . &quot;\n&quot;;
+			}
+		}
+
+		if (! empty($unsupportedMessage))
+		{
+			$media .= _space_indent() . $unsupportedMessage . &quot;\n&quot;;
+		}
+
+		$media .= '&lt;/' . $name . &quot;&gt;\n&quot;;
+
+		return $media;
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('source'))
+{
+	/**
+	 * Source
+	 *
+	 * Generates a source element that specifies multiple media resources
+	 * for either audio or video element
+	 *
+	 * @param  string  $src        The path of the media resource
+	 * @param  string  $type       The MIME-type of the resource with
+	 *  optional codecs parameters
+	 * @param  string  $attributes HTML attributes
+	 * @param  boolean $indexPage
+	 * @return string
+	 */
+	function source(string $src, string $type = 'unknown', string $attributes = '', bool $indexPage = false): string
+	{
+		if (! _has_protocol($src))
+		{
+			if ($indexPage === true)
+			{
+				$src = site_url($src);
+			}
+			else
+			{
+				$src = slash_item('baseURL') . $src;
+			}
+		}
+
+		$source = '&lt;source src=&quot;' . $src
+				. '&quot; type=&quot;' . $type . '&quot;';
+
+		if (! empty($attributes))
+		{
+			$source .= ' ' . $attributes;
+		}
+
+		$source .= ' /&gt;';
+
+		return $source;
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('track'))
+{
+	/**
+	 * Track
+	 *
+	 * Generates a track element to specify timed tracks. The tracks are
+	 * formatted in WebVTT format.
+	 *
+	 * @param  string $src         The path of the .VTT file
+	 * @param  string $kind
+	 * @param  string $srcLanguage
+	 * @param  string $label
+	 * @return string
+	 */
+	function track(string $src, string $kind, string $srcLanguage, string $label): string
+	{
+		return '&lt;track src=&quot;' . $src
+				. '&quot; kind=&quot;' . $kind
+				. '&quot; srclang=&quot;' . $srcLanguage
+				. '&quot; label=&quot;' . $label
+				. '&quot; /&gt;';
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('object'))
+{
+	/**
+	 * Object
+	 *
+	 * Generates an object element that represents the media
+	 * as either image or a resource plugin such as audio, video,
+	 * Java applets, ActiveX, PDF and Flash
+	 *
+	 * @param string  $data       A resource URL
+	 * @param string  $type       Content-type of the resource
+	 * @param string  $attributes HTML attributes
+	 * @param array   $params
+	 * @param boolean $indexPage
+	 *
+	 * @return string
+	 */
+	function object(string $data, string $type = 'unknown', string $attributes = '', array $params = [], bool $indexPage = false): string
+	{
+		if (! _has_protocol($data))
+		{
+			if ($indexPage === true)
+			{
+				$data = site_url($data);
+			}
+			else
+			{
+				$data = slash_item('baseURL') . $data;
+			}
+		}
+
+		$object = '&lt;object data=&quot;' . $data . '&quot; '
+				. $attributes . '&gt;';
+
+		if (! empty($params))
+		{
+			$object .= &quot;\n&quot;;
+		}
+
+		foreach ($params as $param)
+		{
+			$object .= _space_indent() . $param . &quot;\n&quot;;
+		}
+
+		$object .= &quot;&lt;/object&gt;\n&quot;;
+
+		return $object;
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('param'))
+{
+	/**
+	 * Param
+	 *
+	 * Generates a param element that defines parameters
+	 * for the object element.
+	 *
+	 * @param  string $name       The name of the parameter
+	 * @param  string $value      The value of the parameter
+	 * @param  string $type       The MIME-type
+	 * @param  string $attributes HTML attributes
+	 * @return string
+	 */
+	function param(string $name, string $value, string $type = 'ref', string $attributes = ''): string
+	{
+		return '&lt;param name=&quot;' . $name
+				. '&quot; type=&quot;' . $type
+				. '&quot; value=&quot;' . $value
+				. '&quot; ' . $attributes . ' /&gt;';
+	}
+}
+
+	// ------------------------------------------------------------------------
+
+if (! function_exists('embed'))
+{
+	/**
+	 * Embed
+	 *
+	 * Generates an embed element
+	 *
+	 * @param  string  $src        The path of the resource to embed
+	 * @param  string  $type       MIME-type
+	 * @param  string  $attributes HTML attributes
+	 * @param  boolean $indexPage
+	 * @return string
+	 */
+	function embed(string $src, string $type = 'unknown', string $attributes = '', bool $indexPage = false): string
+	{
+		if (! _has_protocol($src))
+		{
+			if ($indexPage === true)
+			{
+				$src = site_url($src);
+			}
+			else
+			{
+				$src = slash_item('baseURL') . $src;
+			}
+		}
+
+		return '&lt;embed src=&quot;' . $src
+				. '&quot; type=&quot;' . $type . '&quot; '
+				. $attributes . &quot; /&gt;\n&quot;;
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('_has_protocol'))
+{
+	/**
+	 * @param string $url
+	 *
+	 * @return false|int
+	 */
+	function _has_protocol(string $url)
+	{
+		return preg_match('#^([a-z]+:)?//#i', $url);
+	}
+}
+
+// ------------------------------------------------------------------------
+
+if (! function_exists('_space_indent'))
+{
+	/**
+	 * @param int $depth
+	 *
+	 * @return string
+	 */
+	function _space_indent($depth = 2): string
+	{
+		return str_repeat(' ', $depth);
+	}
+}
+
+// ------------------------------------------------------------------------
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

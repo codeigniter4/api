@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Session\Session
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Constructor.">
+            <span class="description">Constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___get" title="__get :: Magic method to get session variables by simply calling
+ $foo = $session-&gt;foo;">
+            <span class="description">Magic method to get session variables by simply calling
+ $foo = $session-&gt;foo;</span><pre>__get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method___set" title="__set :: Magic method to set variables in the session by simply calling
+ $session-&gt;foo = bar;">
+            <span class="description">Magic method to set variables in the session by simply calling
+ $session-&gt;foo = bar;</span><pre>__set</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_destroy" title="destroy :: Destroys the current session.">
+            <span class="description">Destroys the current session.</span><pre>destroy</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_get" title="get :: Get user data that has been set in the session.">
+            <span class="description">Get user data that has been set in the session.</span><pre>get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getFlashdata" title="getFlashdata :: Retrieve one or more items of flash data from the session.">
+            <span class="description">Retrieve one or more items of flash data from the session.</span><pre>getFlashdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getFlashKeys" title="getFlashKeys :: Retrieve all of the keys for session data marked as flashdata.">
+            <span class="description">Retrieve all of the keys for session data marked as flashdata.</span><pre>getFlashKeys</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getTempdata" title="getTempdata :: Returns either a single piece of tempdata, or all temp data currently
+in the session.">
+            <span class="description">Returns either a single piece of tempdata, or all temp data currently
+in the session.</span><pre>getTempdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getTempKeys" title="getTempKeys :: Retrieve the keys of all session data that have been marked as temporary data.">
+            <span class="description">Retrieve the keys of all session data that have been marked as temporary data.</span><pre>getTempKeys</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_has" title="has :: Returns whether an index exists in the session array.">
+            <span class="description">Returns whether an index exists in the session array.</span><pre>has</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_keepFlashdata" title="keepFlashdata :: Keeps a single piece of flash data alive for one more request.">
+            <span class="description">Keeps a single piece of flash data alive for one more request.</span><pre>keepFlashdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_markAsFlashdata" title="markAsFlashdata :: Mark a session property or properties as flashdata.">
+            <span class="description">Mark a session property or properties as flashdata.</span><pre>markAsFlashdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_markAsTempdata" title="markAsTempdata :: Mark one of more pieces of data as being temporary, meaning that
+it has a set lifespan within the session.">
+            <span class="description">Mark one of more pieces of data as being temporary, meaning that
+it has a set lifespan within the session.</span><pre>markAsTempdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_push" title="push :: Push new value onto session value that is array.">
+            <span class="description">Push new value onto session value that is array.</span><pre>push</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_regenerate" title="regenerate :: Regenerates the session ID.">
+            <span class="description">Regenerates the session ID.</span><pre>regenerate</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_remove" title="remove :: Remove one or more session properties.">
+            <span class="description">Remove one or more session properties.</span><pre>remove</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_removeTempdata" title="removeTempdata :: Removes a single piece of temporary data from the session.">
+            <span class="description">Removes a single piece of temporary data from the session.</span><pre>removeTempdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_set" title="set :: Sets user data into the session.">
+            <span class="description">Sets user data into the session.</span><pre>set</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_setFlashdata" title="setFlashdata :: Sets data into the session that will only last for a single request.">
+            <span class="description">Sets data into the session that will only last for a single request.</span><pre>setFlashdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setLogger" title="setLogger :: Sets a logger.">
+            <span class="description">Sets a logger.</span><pre>setLogger</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_setTempdata" title="setTempdata :: Sets new data into the session, and marks it as temporary data
+with a set lifespan.">
+            <span class="description">Sets new data into the session, and marks it as temporary data
+with a set lifespan.</span><pre>setTempdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_start" title="start :: Initialize the session container and starts up the session.">
+            <span class="description">Initialize the session container and starts up the session.</span><pre>start</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_stop" title="stop :: Does a full stop of the session:">
+            <span class="description">Does a full stop of the session:</span><pre>stop</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_unmarkFlashdata" title="unmarkFlashdata :: Unmark data in the session as flashdata.">
+            <span class="description">Unmark data in the session as flashdata.</span><pre>unmarkFlashdata</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_unmarkTempdata" title="unmarkTempdata :: Unmarks temporary data in the session, effectively removing its
+lifespan and allowing it to live as long as the session does.">
+            <span class="description">Unmarks temporary data in the session, effectively removing its
+lifespan and allowing it to live as long as the session does.</span><pre>unmarkTempdata</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                        <li class="method protected">
+                            <a href="#method_configure" title="configure :: Configuration.">
+                                <span class="description">Configuration.</span><pre>configure</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_configureSidLength" title="configureSidLength :: Configure session ID length">
+                                <span class="description">Configure session ID length</span><pre>configureSidLength</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method_initVars" title="initVars :: Handle temporary variables">
+                                <span class="description">Handle temporary variables</span><pre>initVars</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_setCookie" title="setCookie :: Takes care of setting the cookie on the client side.">
+                                <span class="description">Takes care of setting the cookie on the client side.</span><pre>setCookie</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_setSaveHandler" title="setSaveHandler :: Sets the driver as the session handler in PHP.">
+                                <span class="description">Sets the driver as the session handler in PHP.</span><pre>setSaveHandler</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_startSession" title="startSession :: Starts the session.">
+                                <span class="description">Starts the session.</span><pre>startSession</pre>
+                            </a>
+                        </li>
+                                                                                                                                                            </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Session</h1>
+                <small style="display: block; text-align: right">
+                                                                Implements <a href="../classes/CodeIgniter.Session.SessionInterface.html">\CodeIgniter\Session\SessionInterface</a>
+                                    </small>
+                <p class="short_description">Implementation of CodeIgniter session container.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>Session configuration is done through session variables and cookie related
+variables in app/config/App.php</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Constructor.</h2>
+                            <pre>__construct(\SessionHandlerInterface $driver, \Config\App $config) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Extract configuration settings and save them here.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$driver</h4>
+                                                <code>\SessionHandlerInterface</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>\Config\App</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___get"></a>
+                        <div class="element clickable method public  method___get" data-toggle="collapse" data-target=".method___get .collapse">
+                            <h2>Magic method to get session variables by simply calling
+ $foo = $session-&gt;foo;</h2>
+                            <pre>__get(string $key) : null|string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Identifier of the session property to remove.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>null|string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method___set"></a>
+                        <div class="element clickable method public  method___set" data-toggle="collapse" data-target=".method___set .collapse">
+                            <h2>Magic method to set variables in the session by simply calling
+ $session-&gt;foo = bar;</h2>
+                            <pre>__set(string $key,  $value) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Identifier of the session property to set.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_configure"></a>
+                        <div class="element clickable method protected  method_configure" data-toggle="collapse" data-target=".method_configure .collapse">
+                            <h2>Configuration.</h2>
+                            <pre>configure() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Handle input binds and configuration defaults.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_configureSidLength"></a>
+                        <div class="element clickable method protected  method_configureSidLength" data-toggle="collapse" data-target=".method_configureSidLength .collapse">
+                            <h2>Configure session ID length</h2>
+                            <pre>configureSidLength() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>To make life easier, we used to force SHA-1 and 4 bits per
+character on everyone. And of course, someone was unhappy.</p>
+<p>Then PHP 7.1 broke backwards-compatibility because ext/session
+is such a mess that nobody wants to touch it with a pole stick,
+and the one guy who does, nobody has the energy to argue with.</p>
+<p>So we were forced to make changes, and OF COURSE something was
+going to break and now we have this pile of shit. -- Narf</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_destroy"></a>
+                        <div class="element clickable method public  method_destroy" data-toggle="collapse" data-target=".method_destroy .collapse">
+                            <h2>Destroys the current session.</h2>
+                            <pre>destroy() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_get"></a>
+                        <div class="element clickable method public  method_get" data-toggle="collapse" data-target=".method_get .collapse">
+                            <h2>Get user data that has been set in the session.</h2>
+                            <pre>get(string $key = null) : array|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If the property exists as &quot;normal&quot;, returns it.
+Otherwise, returns an array of any temp or flash data values with the
+property key.</p>
+<p>Replaces the legacy method $session-&gt;userdata();</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Identifier of the session property to retrieve</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array|null</code><p><p>The property value(s)</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFlashdata"></a>
+                        <div class="element clickable method public  method_getFlashdata" data-toggle="collapse" data-target=".method_getFlashdata .collapse">
+                            <h2>Retrieve one or more items of flash data from the session.</h2>
+                            <pre>getFlashdata(string $key = null) : array|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If the item key is null, return all flashdata.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Property identifier</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array|null</code><p><p>The requested property value, or an associative array  of them</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFlashKeys"></a>
+                        <div class="element clickable method public  method_getFlashKeys" data-toggle="collapse" data-target=".method_getFlashKeys .collapse">
+                            <h2>Retrieve all of the keys for session data marked as flashdata.</h2>
+                            <pre>getFlashKeys() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>The property names of all flashdata</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getTempdata"></a>
+                        <div class="element clickable method public  method_getTempdata" data-toggle="collapse" data-target=".method_getTempdata .collapse">
+                            <h2>Returns either a single piece of tempdata, or all temp data currently
+in the session.</h2>
+                            <pre>getTempdata(string $key = null) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Session data key</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Session data value or null if not found.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getTempKeys"></a>
+                        <div class="element clickable method public  method_getTempKeys" data-toggle="collapse" data-target=".method_getTempKeys .collapse">
+                            <h2>Retrieve the keys of all session data that have been marked as temporary data.</h2>
+                            <pre>getTempKeys() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_has"></a>
+                        <div class="element clickable method public  method_has" data-toggle="collapse" data-target=".method_has .collapse">
+                            <h2>Returns whether an index exists in the session array.</h2>
+                            <pre>has(string $key) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Identifier of the session property we are interested in.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_initVars"></a>
+                        <div class="element clickable method protected  method_initVars" data-toggle="collapse" data-target=".method_initVars .collapse">
+                            <h2>Handle temporary variables</h2>
+                            <pre>initVars() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Clears old &quot;flash&quot; data, marks the new one for deletion and handles
+&quot;temp&quot; data deletion.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_keepFlashdata"></a>
+                        <div class="element clickable method public  method_keepFlashdata" data-toggle="collapse" data-target=".method_keepFlashdata .collapse">
+                            <h2>Keeps a single piece of flash data alive for one more request.</h2>
+                            <pre>keepFlashdata(string $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Property identifier or array of them</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_markAsFlashdata"></a>
+                        <div class="element clickable method public  method_markAsFlashdata" data-toggle="collapse" data-target=".method_markAsFlashdata .collapse">
+                            <h2>Mark a session property or properties as flashdata.</h2>
+                            <pre>markAsFlashdata(array|string $key) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>array|string</code><p><p>Property identifier or array of them</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>False if any of the properties are not already set</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_markAsTempdata"></a>
+                        <div class="element clickable method public  method_markAsTempdata" data-toggle="collapse" data-target=".method_markAsTempdata .collapse">
+                            <h2>Mark one of more pieces of data as being temporary, meaning that
+it has a set lifespan within the session.</h2>
+                            <pre>markAsTempdata(string|array $key, integer $ttl = 300) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string|array</code><p><p>Property identifier or array of them</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ttl</h4>
+                                                <code>integer</code><p><p>Time to live, in seconds</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>False if any of the properties were not set</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_push"></a>
+                        <div class="element clickable method public  method_push" data-toggle="collapse" data-target=".method_push .collapse">
+                            <h2>Push new value onto session value that is array.</h2>
+                            <pre>push(string $key, array $data) : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Identifier of the session property we are interested in.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p><p>value to be pushed to existing session key.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_regenerate"></a>
+                        <div class="element clickable method public  method_regenerate" data-toggle="collapse" data-target=".method_regenerate .collapse">
+                            <h2>Regenerates the session ID.</h2>
+                            <pre>regenerate(boolean $destroy = false) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$destroy</h4>
+                                                <code>boolean</code><p><p>Should old session data be destroyed?</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_remove"></a>
+                        <div class="element clickable method public  method_remove" data-toggle="collapse" data-target=".method_remove .collapse">
+                            <h2>Remove one or more session properties.</h2>
+                            <pre>remove(string|array $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If $key is an array, it is interpreted as an array of string property
+identifiers to remove. Otherwise, it is interpreted as the identifier
+of a specific session property to remove.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string|array</code><p><p>Identifier of the session property or properties to remove.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_removeTempdata"></a>
+                        <div class="element clickable method public  method_removeTempdata" data-toggle="collapse" data-target=".method_removeTempdata .collapse">
+                            <h2>Removes a single piece of temporary data from the session.</h2>
+                            <pre>removeTempdata(string $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Session data key</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_set"></a>
+                        <div class="element clickable method public  method_set" data-toggle="collapse" data-target=".method_set .collapse">
+                            <h2>Sets user data into the session.</h2>
+                            <pre>set(string|array $data, string|array $value = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If $data is a string, then it is interpreted as a session property
+key, and  $value is expected to be non-null.</p>
+<p>If $data is an array, it is expected to be an array of key/value pairs
+to be set as session properties.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>string|array</code><p><p>Property name or associative array of properties</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>string|array</code><p><p>Property value if single key provided</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setCookie"></a>
+                        <div class="element clickable method protected  method_setCookie" data-toggle="collapse" data-target=".method_setCookie .collapse">
+                            <h2>Takes care of setting the cookie on the client side.</h2>
+                            <pre>setCookie() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Extracted for testing reasons.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setFlashdata"></a>
+                        <div class="element clickable method public  method_setFlashdata" data-toggle="collapse" data-target=".method_setFlashdata .collapse">
+                            <h2>Sets data into the session that will only last for a single request.</h2>
+                            <pre>setFlashdata(array|string $data, string|array $value = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Perfect for use with single-use status update messages.</p>
+<p>If $data is an array, it is interpreted as an associative array of
+key/value pairs for flashdata properties.
+Otherwise, it is interpreted as the identifier of a specific
+flashdata property, with $value containing the property value.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array|string</code><p><p>Property identifier or associative array of properties</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>string|array</code><p><p>Property value if $data is a scalar</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setLogger"></a>
+                        <div class="element clickable method public  method_setLogger inherited" data-toggle="collapse" data-target=".method_setLogger .collapse">
+                            <h2>Sets a logger.</h2>
+                            <pre>setLogger(\Psr\Log\LoggerInterface $logger) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$logger</h4>
+                                                <code><a href="../classes/Psr.Log.LoggerInterface.html">\Psr\Log\LoggerInterface</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setSaveHandler"></a>
+                        <div class="element clickable method protected  method_setSaveHandler" data-toggle="collapse" data-target=".method_setSaveHandler .collapse">
+                            <h2>Sets the driver as the session handler in PHP.</h2>
+                            <pre>setSaveHandler() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Extracted for easier testing.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setTempdata"></a>
+                        <div class="element clickable method public  method_setTempdata" data-toggle="collapse" data-target=".method_setTempdata .collapse">
+                            <h2>Sets new data into the session, and marks it as temporary data
+with a set lifespan.</h2>
+                            <pre>setTempdata(string|array $data, null $value = null, integer $ttl = 300) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>string|array</code><p><p>Session data key or associative array of items</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>null</code><p><p>Value to store</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ttl</h4>
+                                                <code>integer</code><p><p>Time-to-live in seconds</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_start"></a>
+                        <div class="element clickable method public  method_start" data-toggle="collapse" data-target=".method_start .collapse">
+                            <h2>Initialize the session container and starts up the session.</h2>
+                            <pre>start() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_startSession"></a>
+                        <div class="element clickable method protected  method_startSession" data-toggle="collapse" data-target=".method_startSession .collapse">
+                            <h2>Starts the session.</h2>
+                            <pre>startSession() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Extracted for testing reasons.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_stop"></a>
+                        <div class="element clickable method public  method_stop" data-toggle="collapse" data-target=".method_stop .collapse">
+                            <h2>Does a full stop of the session:</h2>
+                            <pre>stop() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><ul>
+<li>destroys the session</li>
+<li>unsets the session id</li>
+<li>destroys the session cookie</li>
+</ul></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_unmarkFlashdata"></a>
+                        <div class="element clickable method public  method_unmarkFlashdata" data-toggle="collapse" data-target=".method_unmarkFlashdata .collapse">
+                            <h2>Unmark data in the session as flashdata.</h2>
+                            <pre>unmarkFlashdata(mixed $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>mixed</code><p><p>Property identifier or array of them</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_unmarkTempdata"></a>
+                        <div class="element clickable method public  method_unmarkTempdata" data-toggle="collapse" data-target=".method_unmarkTempdata .collapse">
+                            <h2>Unmarks temporary data in the session, effectively removing its
+lifespan and allowing it to live as long as the session does.</h2>
+                            <pre>unmarkTempdata(string|array $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string|array</code><p><p>Property identifier or array of them</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_driver"> </a>
+                            <div class="element clickable property  protected property_driver" data-toggle="collapse" data-target=".property_driver .collapse">
+                                <h2>Instance of the driver to use.</h2>
+                                <pre>driver : \CodeIgniter\Log\Handlers\HandlerInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html">\CodeIgniter\Log\Handlers\HandlerInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionDriverName"> </a>
+                            <div class="element clickable property  protected property_sessionDriverName" data-toggle="collapse" data-target=".property_sessionDriverName .collapse">
+                                <h2>The storage driver to use: files, database, redis, memcached</h2>
+                                <pre>sessionDriverName : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionCookieName"> </a>
+                            <div class="element clickable property  protected property_sessionCookieName" data-toggle="collapse" data-target=".property_sessionCookieName .collapse">
+                                <h2>The session cookie name, must contain only [0-9a-z_-] characters.</h2>
+                                <pre>sessionCookieName : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionExpiration"> </a>
+                            <div class="element clickable property  protected property_sessionExpiration" data-toggle="collapse" data-target=".property_sessionExpiration .collapse">
+                                <h2>The number of SECONDS you want the session to last.</h2>
+                                <pre>sessionExpiration : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Setting it to 0 (zero) means expire when the browser is closed.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionSavePath"> </a>
+                            <div class="element clickable property  protected property_sessionSavePath" data-toggle="collapse" data-target=".property_sessionSavePath .collapse">
+                                <h2>The location to save sessions to, driver dependent.</h2>
+                                <pre>sessionSavePath : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>.</p>
+<p>For the 'files' driver, it's a path to a writable directory.
+WARNING: Only absolute paths are supported!</p>
+<p>For the 'database' driver, it's a table name.</p>
+<p>TODO: address memcache &amp; redis needs</p>
+<p>IMPORTANT: You are REQUIRED to set a valid save path!</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionMatchIP"> </a>
+                            <div class="element clickable property  protected property_sessionMatchIP" data-toggle="collapse" data-target=".property_sessionMatchIP .collapse">
+                                <h2>Whether to match the user&#039;s IP address when reading the session data.</h2>
+                                <pre>sessionMatchIP : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>WARNING: If you're using the database driver, don't forget to update
+your session table's PRIMARY KEY when changing this setting.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionTimeToUpdate"> </a>
+                            <div class="element clickable property  protected property_sessionTimeToUpdate" data-toggle="collapse" data-target=".property_sessionTimeToUpdate .collapse">
+                                <h2>How many seconds between CI regenerating the session ID.</h2>
+                                <pre>sessionTimeToUpdate : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sessionRegenerateDestroy"> </a>
+                            <div class="element clickable property  protected property_sessionRegenerateDestroy" data-toggle="collapse" data-target=".property_sessionRegenerateDestroy .collapse">
+                                <h2>Whether to destroy session data associated with the old session ID
+when auto-regenerating the session ID. When set to FALSE, the data
+will be later deleted by the garbage collector.</h2>
+                                <pre>sessionRegenerateDestroy : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cookieDomain"> </a>
+                            <div class="element clickable property  protected property_cookieDomain" data-toggle="collapse" data-target=".property_cookieDomain .collapse">
+                                <h2>The domain name to use for cookies.</h2>
+                                <pre>cookieDomain : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Set to .your-domain.com for site-wide cookies.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cookiePath"> </a>
+                            <div class="element clickable property  protected property_cookiePath" data-toggle="collapse" data-target=".property_cookiePath .collapse">
+                                <h2>Path used for storing cookies.</h2>
+                                <pre>cookiePath : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Typically will be a forward slash.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cookieSecure"> </a>
+                            <div class="element clickable property  protected property_cookieSecure" data-toggle="collapse" data-target=".property_cookieSecure .collapse">
+                                <h2>Cookie will only be set if a secure HTTPS connection exists.</h2>
+                                <pre>cookieSecure : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_sidRegexp"> </a>
+                            <div class="element clickable property  protected property_sidRegexp" data-toggle="collapse" data-target=".property_sidRegexp .collapse">
+                                <h2>sidRegexp</h2>
+                                <pre>sidRegexp : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_logger"> </a>
+                            <div class="element clickable property  protected property_logger inherited" data-toggle="collapse" data-target=".property_logger .collapse">
+                                <h2>logger</h2>
+                                <pre>logger : \Psr\Log\LoggerInterface</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Psr.Log.LoggerInterface.html">\Psr\Log\LoggerInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\CodeIgniter\Session\Session"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Session.Session.html">Session</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Mon, 11 Mar 2019 20:40:02 -0700.<br/>
+    </footer>
+    </body>
+</html>

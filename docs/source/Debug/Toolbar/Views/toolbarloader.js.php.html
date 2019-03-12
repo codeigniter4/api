@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php if (ENVIRONMENT !== 'testing') : ?&gt;
+document.addEventListener('DOMContentLoaded', loadDoc, false);
+
+function loadDoc(time) {
+	if (isNaN(time)) {
+		time = document.getElementById(&quot;debugbar_loader&quot;).getAttribute(&quot;data-time&quot;);
+		localStorage.setItem('debugbar-time', time);
+	}
+
+	localStorage.setItem('debugbar-time-new', time);
+
+	var url = &quot;&lt;?= rtrim(site_url(), '/') ?&gt;&quot;;
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState === 4 &amp;&amp; this.status === 200) {
+			var toolbar = document.getElementById(&quot;toolbarContainer&quot;);
+			if (!toolbar) {
+				toolbar = document.createElement('div');
+				toolbar.setAttribute('id', 'toolbarContainer');
+				document.body.appendChild(toolbar);
+			}
+
+			// copy for easier manipulation
+			let responseText = this.responseText;
+
+			// get csp blocked parts
+			// the style block is the first and starts at 0
+			{
+				let PosBeg = responseText.indexOf( '&gt;', responseText.indexOf( '&lt;style' ) ) + 1;
+				let PosEnd = responseText.indexOf( '&lt;/style&gt;', PosBeg );
+				document.getElementById( 'debugbar_dynamic_style' ).innerHTML = responseText.substr( PosBeg, PosEnd - PosBeg );
+				responseText = responseText.substr( PosEnd + 8 );
+			}
+			// the script block starts right after style blocks ended
+			{
+				let PosBeg = responseText.indexOf( '&gt;', responseText.indexOf( '&lt;script' ) ) + 1;
+				let PosEnd = responseText.indexOf( '&lt;/script&gt;' );
+				document.getElementById( 'debugbar_dynamic_script' ).innerHTML = responseText.substr( PosBeg, PosEnd - PosBeg );
+				responseText = responseText.substr( PosEnd + 9 );
+			}
+			// check for last style block
+			{
+				let PosBeg = responseText.indexOf( '&gt;', responseText.lastIndexOf( '&lt;style' ) ) + 1;
+				let PosEnd = responseText.indexOf( '&lt;/style&gt;', PosBeg );
+				document.getElementById( 'debugbar_dynamic_style' ).innerHTML += responseText.substr( PosBeg, PosEnd - PosBeg );
+				responseText = responseText.substr( 0, PosBeg + 8 );
+			}
+
+			toolbar.innerHTML = responseText;
+			if (typeof ciDebugBar === 'object') {
+				ciDebugBar.init();
+			}
+		} else if (this.readyState === 4 &amp;&amp; this.status === 404) {
+			console.log('CodeIgniter DebugBar: File &quot;WRITEPATH/debugbar/debugbar_' + time + '&quot; not found.');
+		}
+	};
+
+	xhttp.open(&quot;GET&quot;, url + &quot;?debugbar_time=&quot; + time, true);
+	xhttp.send();
+}
+
+// Track all AJAX requests
+var oldXHR = window.XMLHttpRequest;
+
+function newXHR() {
+	var realXHR = new oldXHR();
+	realXHR.addEventListener(&quot;readystatechange&quot;, function() {
+		// Only success responses and URLs that do not contains &quot;debugbar_time&quot; are tracked
+		if (realXHR.readyState === 4 &amp;&amp; realXHR.status.toString()[0] === '2' &amp;&amp; realXHR.responseURL.indexOf('debugbar_time') === -1) {
+			var debugbarTime = realXHR.getResponseHeader('Debugbar-Time');
+			if (debugbarTime) {
+				var h2 = document.querySelector('#ci-history &gt; h2');
+				h2.innerHTML = 'History &lt;small&gt;You have new debug data.&lt;/small&gt; &lt;button onclick=&quot;loadDoc(' + debugbarTime + ')&quot;&gt;Update&lt;/button&gt;';
+				var badge = document.querySelector('a[data-tab=&quot;ci-history&quot;] &gt; span &gt; .badge');
+				badge.className += ' active';
+			}
+		}
+	}, false);
+	return realXHR;
+}
+
+window.XMLHttpRequest = newXHR;
+&lt;?php endif; ?&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

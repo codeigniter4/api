@@ -1,0 +1,295 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Database\Postgre;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+/**
+ * Forge for Postgre
+ */
+class Forge extends \CodeIgniter\Database\Forge
+{
+
+	/**
+	 * DROP CONSTRAINT statement
+	 *
+	 * @var string
+	 */
+	protected $dropConstraintStr = 'ALTER TABLE %s DROP CONSTRAINT %s';
+
+	/**
+	 * UNSIGNED support
+	 *
+	 * @var array
+	 */
+	protected $_unsigned = [
+		'INT2'     =&gt; 'INTEGER',
+		'SMALLINT' =&gt; 'INTEGER',
+		'INT'      =&gt; 'BIGINT',
+		'INT4'     =&gt; 'BIGINT',
+		'INTEGER'  =&gt; 'BIGINT',
+		'INT8'     =&gt; 'NUMERIC',
+		'BIGINT'   =&gt; 'NUMERIC',
+		'REAL'     =&gt; 'DOUBLE PRECISION',
+		'FLOAT'    =&gt; 'DOUBLE PRECISION',
+	];
+
+	/**
+	 * NULL value representation in CREATE/ALTER TABLE statements
+	 *
+	 * @var string
+	 */
+	protected $_null = 'NULL';
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * CREATE TABLE attributes
+	 *
+	 * @param  array $attributes Associative array of table attributes
+	 * @return string
+	 */
+	protected function _createTableAttributes($attributes)
+	{
+		return '';
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * ALTER TABLE
+	 *
+	 * @param string $alter_type ALTER type
+	 * @param string $table      Table name
+	 * @param mixed  $field      Column definition
+	 *
+	 * @return string|array
+	 */
+	protected function _alterTable($alter_type, $table, $field)
+	{
+		if (in_array($alter_type, ['DROP', 'ADD'], true))
+		{
+			return parent::_alterTable($alter_type, $table, $field);
+		}
+
+		$sql  = 'ALTER TABLE ' . $this-&gt;db-&gt;escapeIdentifiers($table);
+		$sqls = [];
+		foreach ($field as $data)
+		{
+			if ($data['_literal'] !== false)
+			{
+				return false;
+			}
+
+			if (version_compare($this-&gt;db-&gt;getVersion(), '8', '&gt;=') &amp;&amp; isset($data['type']))
+			{
+				$sqls[] = $sql . ' ALTER COLUMN ' . $this-&gt;db-&gt;escapeIdentifiers($data['name'])
+						. &quot; TYPE {$data['type']}{$data['length']}&quot;;
+			}
+
+			if (! empty($data['default']))
+			{
+				$sqls[] = $sql . ' ALTER COLUMN ' . $this-&gt;db-&gt;escapeIdentifiers($data['name'])
+						. &quot; SET DEFAULT {$data['default']}&quot;;
+			}
+
+			if (isset($data['null']))
+			{
+				$sqls[] = $sql . ' ALTER COLUMN ' . $this-&gt;db-&gt;escapeIdentifiers($data['name'])
+						. ($data['null'] === true ? ' DROP' : ' SET') . ' NOT NULL';
+			}
+
+			if (! empty($data['new_name']))
+			{
+				$sqls[] = $sql . ' RENAME COLUMN ' . $this-&gt;db-&gt;escapeIdentifiers($data['name'])
+						. ' TO ' . $this-&gt;db-&gt;escapeIdentifiers($data['new_name']);
+			}
+
+			if (! empty($data['comment']))
+			{
+				$sqls[] = 'COMMENT ON COLUMN' . $this-&gt;db-&gt;escapeIdentifiers($table)
+						. '.' . $this-&gt;db-&gt;escapeIdentifiers($data['name'])
+						. &quot; IS {$data['comment']}&quot;;
+			}
+		}
+
+		return $sqls;
+	}
+
+		//--------------------------------------------------------------------
+
+	/**
+	 * Process column
+	 *
+	 * @param  array $field
+	 * @return string
+	 */
+	protected function _processColumn($field)
+	{
+		return $this-&gt;db-&gt;escapeIdentifiers($field['name'])
+				. ' ' . $field['type'] . $field['length']
+				. $field['default']
+				. $field['null']
+				. $field['auto_increment']
+				. $field['unique'];
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Field attribute TYPE
+	 *
+	 * Performs a data type mapping between different databases.
+	 *
+	 * @param array &amp;$attributes
+	 *
+	 * @return void
+	 */
+	protected function _attributeType(&amp;$attributes)
+	{
+		// Reset field lengths for data types that don't support it
+		if (isset($attributes['CONSTRAINT']) &amp;&amp; stripos($attributes['TYPE'], 'int') !== false)
+		{
+			$attributes['CONSTRAINT'] = null;
+		}
+
+		switch (strtoupper($attributes['TYPE']))
+		{
+			case 'TINYINT':
+				$attributes['TYPE']     = 'SMALLINT';
+				$attributes['UNSIGNED'] = false;
+				return;
+			case 'MEDIUMINT':
+				$attributes['TYPE']     = 'INTEGER';
+				$attributes['UNSIGNED'] = false;
+				return;
+			case 'DATETIME':
+				$attributes['TYPE'] = 'TIMESTAMP';
+			default:
+				return;
+		}
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Field attribute AUTO_INCREMENT
+	 *
+	 * @param array &amp;$attributes
+	 * @param array &amp;$field
+	 *
+	 * @return void
+	 */
+	protected function _attributeAutoIncrement(&amp;$attributes, &amp;$field)
+	{
+		if (! empty($attributes['AUTO_INCREMENT']) &amp;&amp; $attributes['AUTO_INCREMENT'] === true)
+		{
+			$field['type'] = $field['type'] === 'NUMERIC' ? 'BIGSERIAL' : 'SERIAL';
+		}
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Drop Table
+	 *
+	 * Generates a platform-specific DROP TABLE string
+	 *
+	 * @param string  $table     Table name
+	 * @param boolean $if_exists Whether to add an IF EXISTS condition
+	 * @param boolean $cascade
+	 *
+	 * @return string
+	 */
+	protected function _dropTable($table, $if_exists, $cascade)
+	{
+		$sql = parent::_dropTable($table, $if_exists, $cascade);
+
+		if ($cascade === true)
+		{
+			$sql .= ' CASCADE';
+		}
+
+		return $sql;
+	}
+
+	//--------------------------------------------------------------------
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

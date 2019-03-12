@@ -1,0 +1,313 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+namespace CodeIgniter\Test;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use Config\Paths;
+use CodeIgniter\Events\Events;
+use PHPUnit\Framework\TestCase;
+use Tests\Support\Log\TestLogger;
+
+/**
+ * PHPunit test case.
+ */
+class CIUnitTestCase extends TestCase
+{
+
+	use ReflectionHelper;
+
+	/**
+	 * @var \CodeIgniter\CodeIgniter
+	 */
+	protected $app;
+
+	protected function setUp()
+	{
+		parent::setUp();
+
+		if (! $this-&gt;app)
+		{
+			$this-&gt;app = $this-&gt;createApplication();
+		}
+
+		helper('url');
+	}
+
+	/**
+	 * Custom function to hook into CodeIgniter's Logging mechanism
+	 * to check if certain messages were logged during code execution.
+	 *
+	 * @param string $level
+	 * @param null   $expectedMessage
+	 *
+	 * @throws \Exception
+	 */
+	public function assertLogged(string $level, $expectedMessage = null)
+	{
+		$result = TestLogger::didLog($level, $expectedMessage);
+
+		$this-&gt;assertTrue($result);
+		return $result;
+	}
+
+	/**
+	 * Hooks into CodeIgniter's Events system to check if a specific
+	 * event was triggered or not.
+	 *
+	 * @param string $eventName
+	 *
+	 * @return boolean
+	 * @throws \Exception
+	 */
+	public function assertEventTriggered(string $eventName): bool
+	{
+		$found     = false;
+		$eventName = strtolower($eventName);
+
+		foreach (Events::getPerformanceLogs() as $log)
+		{
+			if ($log['event'] !== $eventName)
+			{
+				continue;
+			}
+
+			$found = true;
+			break;
+		}
+
+		$this-&gt;assertTrue($found);
+		return $found;
+	}
+
+	/**
+	 * Hooks into xdebug's headers capture, looking for a specific header
+	 * emitted
+	 *
+	 * @param string  $header     The leading portion of the header we are looking for
+	 * @param boolean $ignoreCase
+	 *
+	 * @throws \Exception
+	 */
+	public function assertHeaderEmitted(string $header, bool $ignoreCase = false): void
+	{
+		$found = false;
+
+		foreach (xdebug_get_headers() as $emitted)
+		{
+			$found = $ignoreCase ?
+					(stripos($emitted, $header) === 0) :
+					(strpos($emitted, $header) === 0);
+			if ($found)
+			{
+				break;
+			}
+		}
+
+		$this-&gt;assertTrue($found, &quot;Didn't find header for {$header}&quot;);
+	}
+
+	/**
+	 * Hooks into xdebug's headers capture, looking for a specific header
+	 * emitted
+	 *
+	 * @param string  $header     The leading portion of the header we don't want to find
+	 * @param boolean $ignoreCase
+	 *
+	 * @throws \Exception
+	 */
+	public function assertHeaderNotEmitted(string $header, bool $ignoreCase = false): void
+	{
+		$found = false;
+
+		foreach (xdebug_get_headers() as $emitted)
+		{
+			$found = $ignoreCase ?
+					(stripos($emitted, $header) === 0) :
+					(strpos($emitted, $header) === 0);
+			if ($found)
+			{
+				break;
+			}
+		}
+
+		$success = ! $found;
+		$this-&gt;assertTrue($success, &quot;Found header for {$header}&quot;);
+	}
+
+	/**
+	 * Custom function to test that two values are &quot;close enough&quot;.
+	 * This is intended for extended execution time testing,
+	 * where the result is close but not exactly equal to the
+	 * expected time, for reasons beyond our control.
+	 *
+	 * @param integer $expected
+	 * @param mixed   $actual
+	 * @param string  $message
+	 * @param integer $tolerance
+	 *
+	 * @throws \Exception
+	 */
+	public function assertCloseEnough(int $expected, $actual, string $message = '', int $tolerance = 1)
+	{
+		$difference = abs($expected - (int) floor($actual));
+
+		$this-&gt;assertLessThanOrEqual($tolerance, $difference, $message);
+	}
+
+	/**
+	 * Custom function to test that two values are &quot;close enough&quot;.
+	 * This is intended for extended execution time testing,
+	 * where the result is close but not exactly equal to the
+	 * expected time, for reasons beyond our control.
+	 *
+	 * @param mixed   $expected
+	 * @param mixed   $actual
+	 * @param string  $message
+	 * @param integer $tolerance
+	 *
+	 * @throws \Exception
+	 */
+	public function assertCloseEnoughString($expected, $actual, string $message = '', int $tolerance = 1)
+	{
+		$expected = (string) $expected;
+		$actual   = (string) $actual;
+		if (strlen($expected) !== strlen($actual))
+		{
+			return false;
+		}
+
+		try
+		{
+			$expected   = (int) substr($expected, -2);
+			$actual     = (int) substr($actual, -2);
+			$difference = abs($expected - $actual);
+
+			$this-&gt;assertLessThanOrEqual($tolerance, $difference, $message);
+		}
+		catch (\Exception $e)
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Loads up an instance of CodeIgniter
+	 * and gets the environment setup.
+	 *
+	 * @return \CodeIgniter\CodeIgniter
+	 */
+	protected function createApplication()
+	{
+		$paths = new Paths();
+
+		return require realpath(__DIR__ . '/../') . '/bootstrap.php';
+	}
+
+	//--------------------------------------------------------------------
+	/**
+	 * Return first matching emitted header.
+	 *
+	 * @param string $header Identifier of the header of interest
+	 * @param bool $ignoreCase
+	 *
+	 * @return string|null The value of the header found, null if not found
+	 */
+		//
+	protected function getHeaderEmitted(string $header, bool $ignoreCase = false): ?string
+	{
+		$found = false;
+
+		foreach (xdebug_get_headers() as $emitted)
+		{
+			$found = $ignoreCase ?
+					(stripos($emitted, $header) === 0) :
+					(strpos($emitted, $header) === 0);
+			if ($found)
+			{
+				return $emitted;
+			}
+		}
+
+		return null;
+	}
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

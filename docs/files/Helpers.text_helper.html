@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>CodeIgniter v4.0.0 API</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+        <script type="text/javascript">
+        function loadExternalCodeSnippets() {
+            Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+                var src = pre.getAttribute('data-src');
+                var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+                var language = 'php';
+
+                var code = document.createElement('code');
+                code.className = 'language-' + language;
+
+                pre.textContent = '';
+
+                code.textContent = 'Loading…';
+
+                pre.appendChild(code);
+
+                var xhr = new XMLHttpRequest();
+
+                xhr.open('GET', src, true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+
+                        if (xhr.status < 400 && xhr.responseText) {
+                            code.textContent = xhr.responseText;
+
+                            Prism.highlightElement(code);
+                        }
+                        else if (xhr.status >= 400) {
+                            code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                        }
+                        else {
+                            code.textContent = '✖ Error: File does not exist or is empty';
+                        }
+                    }
+                };
+
+                xhr.send(null);
+            });
+        }
+
+        $(document).ready(function(){
+            loadExternalCodeSnippets();
+        });
+        $('#source-view').on('shown', function () {
+            loadExternalCodeSnippets();
+        })
+    </script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/CodeIgniter.html">\CodeIgniter</a></li>
+                                                        <li><a href="../namespaces/Psr.html">\Psr</a></li>
+                                                        <li><a href="../namespaces/Zend.html">\Zend</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">670</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-553201089"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-553201089" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2098812006"></a>
+                                <a href="../namespaces/CodeIgniter.html" style="margin-left: 30px; padding-left: 0">CodeIgniter</a>
+            </div>
+            <div id="namespace-2098812006" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1352047070"></a>
+                                <a href="../namespaces/CodeIgniter.API.html" style="margin-left: 30px; padding-left: 0">API</a>
+            </div>
+            <div id="namespace-1352047070" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/CodeIgniter.API.ResponseTrait.html">ResponseTrait</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2037560521"></a>
+                                <a href="../namespaces/CodeIgniter.Autoloader.html" style="margin-left: 30px; padding-left: 0">Autoloader</a>
+            </div>
+            <div id="namespace-2037560521" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Autoloader.Autoloader.html">Autoloader</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Autoloader.FileLocator.html">FileLocator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1153597292"></a>
+                                <a href="../namespaces/CodeIgniter.Cache.html" style="margin-left: 30px; padding-left: 0">Cache</a>
+            </div>
+            <div id="namespace-1153597292" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2113246681"></a>
+                                <a href="../namespaces/CodeIgniter.Cache.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2113246681" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Cache.Exceptions.ExceptionInterface.html">ExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Exceptions.CacheException.html">CacheException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1914180438"></a>
+                                <a href="../namespaces/CodeIgniter.Cache.Handlers.html" style="margin-left: 30px; padding-left: 0">Handlers</a>
+            </div>
+            <div id="namespace-1914180438" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.DummyHandler.html">DummyHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.FileHandler.html">FileHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.MemcachedHandler.html">MemcachedHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.PredisHandler.html">PredisHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.RedisHandler.html">RedisHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.Handlers.WincacheHandler.html">WincacheHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Cache.CacheInterface.html">CacheInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Cache.CacheFactory.html">CacheFactory</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1696966533"></a>
+                                <a href="../namespaces/CodeIgniter.CLI.html" style="margin-left: 30px; padding-left: 0">CLI</a>
+            </div>
+            <div id="namespace-1696966533" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1135110439"></a>
+                                <a href="../namespaces/CodeIgniter.CLI.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1135110439" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.CLI.Exceptions.CLIException.html">CLIException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.CLI.BaseCommand.html">BaseCommand</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.CLI.CLI.html">CLI</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.CLI.CommandRunner.html">CommandRunner</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.CLI.Console.html">Console</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1921467012"></a>
+                                <a href="../namespaces/CodeIgniter.Commands.html" style="margin-left: 30px; padding-left: 0">Commands</a>
+            </div>
+            <div id="namespace-1921467012" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-788295313"></a>
+                                <a href="../namespaces/CodeIgniter.Commands.Database.html" style="margin-left: 30px; padding-left: 0">Database</a>
+            </div>
+            <div id="namespace-788295313" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.CreateMigration.html">CreateMigration</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateCurrent.html">MigrateCurrent</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateLatest.html">MigrateLatest</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateRefresh.html">MigrateRefresh</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateRollback.html">MigrateRollback</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateStatus.html">MigrateStatus</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.MigrateVersion.html">MigrateVersion</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Database.Seed.html">Seed</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-364454801"></a>
+                                <a href="../namespaces/CodeIgniter.Commands.Server.html" style="margin-left: 30px; padding-left: 0">Server</a>
+            </div>
+            <div id="namespace-364454801" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Server.Serve.html">Serve</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-280166941"></a>
+                                <a href="../namespaces/CodeIgniter.Commands.Sessions.html" style="margin-left: 30px; padding-left: 0">Sessions</a>
+            </div>
+            <div id="namespace-280166941" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html">CreateMigration</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1304826065"></a>
+                                <a href="../namespaces/CodeIgniter.Commands.Utilities.html" style="margin-left: 30px; padding-left: 0">Utilities</a>
+            </div>
+            <div id="namespace-1304826065" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Utilities.Namespaces.html">Namespaces</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Utilities.Routes.html">Routes</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.Help.html">Help</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Commands.ListCommands.html">ListCommands</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1947601663"></a>
+                                <a href="../namespaces/CodeIgniter.Config.html" style="margin-left: 30px; padding-left: 0">Config</a>
+            </div>
+            <div id="namespace-1947601663" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Config.AutoloadConfig.html">AutoloadConfig</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.BaseConfig.html">BaseConfig</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.BaseService.html">BaseService</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.DotEnv.html">DotEnv</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.ForeignCharacters.html">ForeignCharacters</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.Services.html">Services</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Config.View.html">View</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-634985746"></a>
+                                <a href="../namespaces/CodeIgniter.Database.html" style="margin-left: 30px; padding-left: 0">Database</a>
+            </div>
+            <div id="namespace-634985746" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-961636972"></a>
+                                <a href="../namespaces/CodeIgniter.Database.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-961636972" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Database.Exceptions.ExceptionInterface.html">ExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Exceptions.DatabaseException.html">DatabaseException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Exceptions.DataException.html">DataException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-81461027"></a>
+                                <a href="../namespaces/CodeIgniter.Database.MySQLi.html" style="margin-left: 30px; padding-left: 0">MySQLi</a>
+            </div>
+            <div id="namespace-81461027" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.Builder.html">Builder</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.Connection.html">Connection</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.Forge.html">Forge</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.PreparedQuery.html">PreparedQuery</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.Result.html">Result</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MySQLi.Utils.html">Utils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-748327740"></a>
+                                <a href="../namespaces/CodeIgniter.Database.Postgre.html" style="margin-left: 30px; padding-left: 0">Postgre</a>
+            </div>
+            <div id="namespace-748327740" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.Builder.html">Builder</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.Connection.html">Connection</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.Forge.html">Forge</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.PreparedQuery.html">PreparedQuery</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.Result.html">Result</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Postgre.Utils.html">Utils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-151744124"></a>
+                                <a href="../namespaces/CodeIgniter.Database.SQLite3.html" style="margin-left: 30px; padding-left: 0">SQLite3</a>
+            </div>
+            <div id="namespace-151744124" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Builder.html">Builder</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Connection.html">Connection</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Forge.html">Forge</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.PreparedQuery.html">PreparedQuery</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Result.html">Result</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Table.html">Table</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.SQLite3.Utils.html">Utils</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">ConnectionInterface</a></li>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Database.PreparedQueryInterface.html">PreparedQueryInterface</a></li>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Database.QueryInterface.html">QueryInterface</a></li>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Database.ResultInterface.html">ResultInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Database.BaseBuilder.html">BaseBuilder</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.BaseConnection.html">BaseConnection</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.BasePreparedQuery.html">BasePreparedQuery</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.BaseResult.html">BaseResult</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.BaseUtils.html">BaseUtils</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Database.html">Database</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Forge.html">Forge</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Migration.html">Migration</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.MigrationRunner.html">MigrationRunner</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Query.html">Query</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Database.Seeder.html">Seeder</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1436530215"></a>
+                                <a href="../namespaces/CodeIgniter.Debug.html" style="margin-left: 30px; padding-left: 0">Debug</a>
+            </div>
+            <div id="namespace-1436530215" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-414303713"></a>
+                                <a href="../namespaces/CodeIgniter.Debug.Toolbar.html" style="margin-left: 30px; padding-left: 0">Toolbar</a>
+            </div>
+            <div id="namespace-414303713" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1257122917"></a>
+                                <a href="../namespaces/CodeIgniter.Debug.Toolbar.Collectors.html" style="margin-left: 30px; padding-left: 0">Collectors</a>
+            </div>
+            <div id="namespace-1257122917" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.BaseCollector.html">BaseCollector</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Config.html">Config</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Database.html">Database</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Events.html">Events</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Files.html">Files</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.History.html">History</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Logs.html">Logs</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Routes.html">Routes</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Timers.html">Timers</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.Collectors.Views.html">Views</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Exceptions.html">Exceptions</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Iterator.html">Iterator</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Timer.html">Timer</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Debug.Toolbar.html">Toolbar</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1243072314"></a>
+                                <a href="../namespaces/CodeIgniter.Events.html" style="margin-left: 30px; padding-left: 0">Events</a>
+            </div>
+            <div id="namespace-1243072314" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Events.Events.html">Events</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-298347135"></a>
+                                <a href="../namespaces/CodeIgniter.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-298347135" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Exceptions.ExceptionInterface.html">ExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.AlertError.html">AlertError</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.CastException.html">CastException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.ConfigException.html">ConfigException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.CriticalError.html">CriticalError</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.DownloadException.html">DownloadException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.EmergencyError.html">EmergencyError</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.FrameworkException.html">FrameworkException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html">PageNotFoundException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-500323917"></a>
+                                <a href="../namespaces/CodeIgniter.Files.html" style="margin-left: 30px; padding-left: 0">Files</a>
+            </div>
+            <div id="namespace-500323917" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-226865702"></a>
+                                <a href="../namespaces/CodeIgniter.Files.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-226865702" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Files.Exceptions.FileException.html">FileException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Files.Exceptions.FileNotFoundException.html">FileNotFoundException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-116128973"></a>
+                                <a href="../namespaces/CodeIgniter.Filters.html" style="margin-left: 30px; padding-left: 0">Filters</a>
+            </div>
+            <div id="namespace-116128973" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-620455369"></a>
+                                <a href="../namespaces/CodeIgniter.Filters.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-620455369" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Filters.Exceptions.FilterException.html">FilterException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Filters.FilterInterface.html">FilterInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Filters.CSRF.html">CSRF</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Filters.DebugToolbar.html">DebugToolbar</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Filters.Filters.html">Filters</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Filters.Honeypot.html">Honeypot</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-939760868"></a>
+                                <a href="../namespaces/CodeIgniter.Format.html" style="margin-left: 30px; padding-left: 0">Format</a>
+            </div>
+            <div id="namespace-939760868" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-242179079"></a>
+                                <a href="../namespaces/CodeIgniter.Format.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-242179079" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Format.Exceptions.FormatException.html">FormatException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Format.FormatterInterface.html">FormatterInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Format.JSONFormatter.html">JSONFormatter</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Format.XMLFormatter.html">XMLFormatter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-26958965"></a>
+                                <a href="../namespaces/CodeIgniter.Honeypot.html" style="margin-left: 30px; padding-left: 0">Honeypot</a>
+            </div>
+            <div id="namespace-26958965" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-214481232"></a>
+                                <a href="../namespaces/CodeIgniter.Honeypot.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-214481232" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Honeypot.Exceptions.HoneypotException.html">HoneypotException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Honeypot.Honeypot.html">Honeypot</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2122172219"></a>
+                                <a href="../namespaces/CodeIgniter.HTTP.html" style="margin-left: 30px; padding-left: 0">HTTP</a>
+            </div>
+            <div id="namespace-2122172219" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-411269181"></a>
+                                <a href="../namespaces/CodeIgniter.HTTP.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-411269181" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html">HTTPException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1936135752"></a>
+                                <a href="../namespaces/CodeIgniter.HTTP.Files.html" style="margin-left: 30px; padding-left: 0">Files</a>
+            </div>
+            <div id="namespace-1936135752" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html">UploadedFileInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Files.FileCollection.html">FileCollection</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">RequestInterface</a></li>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">ResponseInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.CLIRequest.html">CLIRequest</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.CURLRequest.html">CURLRequest</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.DownloadResponse.html">DownloadResponse</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Header.html">Header</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">IncomingRequest</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Message.html">Message</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Negotiate.html">Negotiate</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.RedirectResponse.html">RedirectResponse</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Request.html">Request</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.Response.html">Response</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.URI.html">URI</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.HTTP.UserAgent.html">UserAgent</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-219817412"></a>
+                                <a href="../namespaces/CodeIgniter.I18n.html" style="margin-left: 30px; padding-left: 0">I18n</a>
+            </div>
+            <div id="namespace-219817412" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1748765470"></a>
+                                <a href="../namespaces/CodeIgniter.I18n.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1748765470" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.I18n.Exceptions.I18nException.html">I18nException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.I18n.TimeDifference.html">TimeDifference</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1015046699"></a>
+                                <a href="../namespaces/CodeIgniter.Images.html" style="margin-left: 30px; padding-left: 0">Images</a>
+            </div>
+            <div id="namespace-1015046699" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1190814765"></a>
+                                <a href="../namespaces/CodeIgniter.Images.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1190814765" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Images.Exceptions.ImageException.html">ImageException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-881848276"></a>
+                                <a href="../namespaces/CodeIgniter.Images.Handlers.html" style="margin-left: 30px; padding-left: 0">Handlers</a>
+            </div>
+            <div id="namespace-881848276" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Images.Handlers.BaseHandler.html">BaseHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Images.Handlers.GDHandler.html">GDHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Images.Handlers.ImageMagickHandler.html">ImageMagickHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Images.ImageHandlerInterface.html">ImageHandlerInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Images.Image.html">Image</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1142582480"></a>
+                                <a href="../namespaces/CodeIgniter.Log.html" style="margin-left: 30px; padding-left: 0">Log</a>
+            </div>
+            <div id="namespace-1142582480" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-207637421"></a>
+                                <a href="../namespaces/CodeIgniter.Log.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-207637421" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Log.Exceptions.LogException.html">LogException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-243766339"></a>
+                                <a href="../namespaces/CodeIgniter.Log.Handlers.html" style="margin-left: 30px; padding-left: 0">Handlers</a>
+            </div>
+            <div id="namespace-243766339" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html">HandlerInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Log.Handlers.BaseHandler.html">BaseHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Log.Handlers.ChromeLoggerHandler.html">ChromeLoggerHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Log.Handlers.FileHandler.html">FileHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Log.Logger.html">Logger</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-631840534"></a>
+                                <a href="../namespaces/CodeIgniter.Pager.html" style="margin-left: 30px; padding-left: 0">Pager</a>
+            </div>
+            <div id="namespace-631840534" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1835256099"></a>
+                                <a href="../namespaces/CodeIgniter.Pager.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1835256099" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Pager.Exceptions.PagerException.html">PagerException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Pager.PagerInterface.html">PagerInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Pager.Pager.html">Pager</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Pager.PagerRenderer.html">PagerRenderer</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-186136212"></a>
+                                <a href="../namespaces/CodeIgniter.Router.html" style="margin-left: 30px; padding-left: 0">Router</a>
+            </div>
+            <div id="namespace-186136212" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-357016021"></a>
+                                <a href="../namespaces/CodeIgniter.Router.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-357016021" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Router.Exceptions.RouterException.html">RouterException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">RouteCollectionInterface</a></li>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Router.RouterInterface.html">RouterInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Router.RedirectException.html">RedirectException</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Router.RouteCollection.html">RouteCollection</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Router.Router.html">Router</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-76037229"></a>
+                                <a href="../namespaces/CodeIgniter.Security.html" style="margin-left: 30px; padding-left: 0">Security</a>
+            </div>
+            <div id="namespace-76037229" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1786686310"></a>
+                                <a href="../namespaces/CodeIgniter.Security.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-1786686310" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Security.Exceptions.SecurityException.html">SecurityException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Security.Security.html">Security</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-400253171"></a>
+                                <a href="../namespaces/CodeIgniter.Session.html" style="margin-left: 30px; padding-left: 0">Session</a>
+            </div>
+            <div id="namespace-400253171" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2063600552"></a>
+                                <a href="../namespaces/CodeIgniter.Session.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-2063600552" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Exceptions.SessionException.html">SessionException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-556458918"></a>
+                                <a href="../namespaces/CodeIgniter.Session.Handlers.html" style="margin-left: 30px; padding-left: 0">Handlers</a>
+            </div>
+            <div id="namespace-556458918" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Handlers.BaseHandler.html">BaseHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Handlers.DatabaseHandler.html">DatabaseHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Handlers.FileHandler.html">FileHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Handlers.MemcachedHandler.html">MemcachedHandler</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Handlers.RedisHandler.html">RedisHandler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Session.SessionInterface.html">SessionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Session.Session.html">Session</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1305264347"></a>
+                                <a href="../namespaces/CodeIgniter.Test.html" style="margin-left: 30px; padding-left: 0">Test</a>
+            </div>
+            <div id="namespace-1305264347" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-437240355"></a>
+                                <a href="../namespaces/CodeIgniter.Test.Filters.html" style="margin-left: 30px; padding-left: 0">Filters</a>
+            </div>
+            <div id="namespace-437240355" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Test.Filters.CITestStreamFilter.html">CITestStreamFilter</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/CodeIgniter.Test.ControllerTester.html">ControllerTester</a></li>
+                                                    <li class="trait"><a href="../classes/CodeIgniter.Test.ReflectionHelper.html">ReflectionHelper</a></li>
+                                                                            <li class="class"><a href="../classes/CodeIgniter.Test.CIDatabaseTestCase.html">CIDatabaseTestCase</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Test.ControllerResponse.html">ControllerResponse</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Test.DOMParser.html">DOMParser</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Test.FeatureResponse.html">FeatureResponse</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Test.FeatureTestCase.html">FeatureTestCase</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1937403645"></a>
+                                <a href="../namespaces/CodeIgniter.Throttle.html" style="margin-left: 30px; padding-left: 0">Throttle</a>
+            </div>
+            <div id="namespace-1937403645" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Throttle.ThrottlerInterface.html">ThrottlerInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Throttle.Throttler.html">Throttler</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1267550934"></a>
+                                <a href="../namespaces/CodeIgniter.Typography.html" style="margin-left: 30px; padding-left: 0">Typography</a>
+            </div>
+            <div id="namespace-1267550934" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Typography.Typography.html">Typography</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-471272615"></a>
+                                <a href="../namespaces/CodeIgniter.Validation.html" style="margin-left: 30px; padding-left: 0">Validation</a>
+            </div>
+            <div id="namespace-471272615" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-962570138"></a>
+                                <a href="../namespaces/CodeIgniter.Validation.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-962570138" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.Exceptions.ValidationException.html">ValidationException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.Validation.ValidationInterface.html">ValidationInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.CreditCardRules.html">CreditCardRules</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.FileRules.html">FileRules</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.FormatRules.html">FormatRules</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.Rules.html">Rules</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Validation.Validation.html">Validation</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1131063457"></a>
+                                <a href="../namespaces/CodeIgniter.View.html" style="margin-left: 30px; padding-left: 0">View</a>
+            </div>
+            <div id="namespace-1131063457" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-147829737"></a>
+                                <a href="../namespaces/CodeIgniter.View.Exceptions.html" style="margin-left: 30px; padding-left: 0">Exceptions</a>
+            </div>
+            <div id="namespace-147829737" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.View.Exceptions.ViewException.html">ViewException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/CodeIgniter.View.RendererInterface.html">RendererInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.View.Cell.html">Cell</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.View.Parser.html">Parser</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.View.Plugins.html">Plugins</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.View.View.html">View</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/CodeIgniter.CodeIgniter.html">CodeIgniter</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.ComposerScripts.html">ComposerScripts</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Controller.html">Controller</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Entity.html">Entity</a></li>
+                                                    <li class="class"><a href="../classes/CodeIgniter.Model.html">Model</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1879508480"></a>
+                                <a href="../namespaces/Psr.html" style="margin-left: 30px; padding-left: 0">Psr</a>
+            </div>
+            <div id="namespace-1879508480" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1352074614"></a>
+                                <a href="../namespaces/Psr.Log.html" style="margin-left: 30px; padding-left: 0">Log</a>
+            </div>
+            <div id="namespace-1352074614" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Psr.Log.LoggerAwareInterface.html">LoggerAwareInterface</a></li>
+                                                    <li class="interface"><a href="../classes/Psr.Log.LoggerInterface.html">LoggerInterface</a></li>
+                                                                            <li class="trait"><a href="../classes/Psr.Log.LoggerAwareTrait.html">LoggerAwareTrait</a></li>
+                                                    <li class="trait"><a href="../classes/Psr.Log.LoggerTrait.html">LoggerTrait</a></li>
+                                                                            <li class="class"><a href="../classes/Psr.Log.AbstractLogger.html">AbstractLogger</a></li>
+                                                    <li class="class"><a href="../classes/Psr.Log.InvalidArgumentException.html">InvalidArgumentException</a></li>
+                                                    <li class="class"><a href="../classes/Psr.Log.LogLevel.html">LogLevel</a></li>
+                                                    <li class="class"><a href="../classes/Psr.Log.NullLogger.html">NullLogger</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-469365060"></a>
+                                <a href="../namespaces/Zend.html" style="margin-left: 30px; padding-left: 0">Zend</a>
+            </div>
+            <div id="namespace-469365060" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1294692305"></a>
+                                <a href="../namespaces/Zend.Escaper.html" style="margin-left: 30px; padding-left: 0">Escaper</a>
+            </div>
+            <div id="namespace-1294692305" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1581149684"></a>
+                                <a href="../namespaces/Zend.Escaper.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-1581149684" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Zend.Escaper.Exception.ExceptionInterface.html">ExceptionInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/Zend.Escaper.Exception.InvalidArgumentException.html">InvalidArgumentException</a></li>
+                                                    <li class="class"><a href="../classes/Zend.Escaper.Exception.RuntimeException.html">RuntimeException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Zend.Escaper.Escaper.html">Escaper</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content file">
+                    <nav>
+                                                                    </nav>
+
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+                    <h1><small>Helpers</small>text_helper.php</h1>
+                    <p><em>CodeIgniter</em></p>
+                    <p>An open source application development framework for PHP</p>
+<p>This content is released under the MIT License (MIT)</p>
+<p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+                    
+                    
+                                    </div>
+
+                <aside class="span4 detailsbar">
+                    <dl>
+                                                    <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">\CodeIgniter</div></dd>
+                        
+                                                                                    <dt>See also</dt>
+                                                                                        <dd><a href="https://codeigniter.com"><div class="namespace-wrapper">https://codeigniter.com</div></a></dd>
+                                                    
+                    </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                                    <tr>
+                                <th>
+                                    author
+                                </th>
+                                <td>
+                                                                            <p>EllisLab Dev Team</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    copyright
+                                </th>
+                                <td>
+                                                                            <p>2008-2014 EllisLab, Inc. (<a href="https://ellislab.com/">https://ellislab.com/</a>)</p>
+                                                                            <p>2014-2019 British Columbia Institute of Technology (<a href="https://bcit.ca/">https://bcit.ca/</a>)</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    license
+                                </th>
+                                <td>
+                                                                            <p><a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a> MIT License</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    since
+                                </th>
+                                <td>
+                                                                            <p>Version 1.0.0</p>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <th>
+                                    filesource
+                                </th>
+                                <td>
+                                                                            
+                                                                    </td>
+                            </tr>
+                                            </table>
+
+                </aside>
+            </div>
+
+            
+                        <div class="row-fluid">
+                <section class="span8 content file">
+                    <h2>Functions</h2>
+                </section>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_word_limiter" name="method_word_limiter" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">word_limiter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">word_limiter(string  <span class="argument">$str</span>, integer  <span class="argument">$limit = 100</span>, string  <span class="argument">$end_char = &#039;&amp;#8230;&#039;</span>) : string</pre>
+                <p><em>Word Limiter</em></p>
+                <p>Limits a string to X number of words.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$limit </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$end_char </td>
+                                <td><p>the end character. Usually an ellipsis</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_character_limiter" name="method_character_limiter" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">character_limiter()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">character_limiter(string  <span class="argument">$str</span>, integer  <span class="argument">$n = 500</span>, string  <span class="argument">$end_char = &#039;&amp;#8230;&#039;</span>) : string</pre>
+                <p><em>Character Limiter</em></p>
+                <p>Limits the string based on the character count.  Preserves complete words
+so the character count may not be exactly as specified.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$n </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$end_char </td>
+                                <td><p>the end character. Usually an ellipsis</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ascii_to_entities" name="method_ascii_to_entities" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ascii_to_entities()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ascii_to_entities(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>High ASCII to Entities</em></p>
+                <p>Converts high ASCII text and MS Word special characters to character entities</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_entities_to_ascii" name="method_entities_to_ascii" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">entities_to_ascii()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">entities_to_ascii(string  <span class="argument">$str</span>, boolean  <span class="argument">$all = true</span>) : string</pre>
+                <p><em>Entities to ASCII</em></p>
+                <p>Converts character entities back to ASCII</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$all </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_word_censor" name="method_word_censor" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">word_censor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">word_censor(string  <span class="argument">$str</span>, array  <span class="argument">$censored</span>, string  <span class="argument">$replacement = &#039;&#039;</span>) : string</pre>
+                <p><em>Word Censoring Function</em></p>
+                <p>Supply a string and an array of disallowed words and any
+matched words will be converted to #### or to the replacement
+word you've submitted.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>the text string</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$censored </td>
+                                <td><p>the array of censored words</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$replacement </td>
+                                <td><p>the optional replacement value</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_highlight_code" name="method_highlight_code" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">highlight_code()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">highlight_code(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>Code Highlighter</em></p>
+                <p>Colorizes code strings</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>the text string</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_highlight_phrase" name="method_highlight_phrase" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">highlight_phrase()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">highlight_phrase(string  <span class="argument">$str</span>, string  <span class="argument">$phrase</span>, string  <span class="argument">$tag_open = &#039;&lt;mark&gt;&#039;</span>, string  <span class="argument">$tag_close = &#039;&lt;/mark&gt;&#039;</span>) : string</pre>
+                <p><em>Phrase Highlighter</em></p>
+                <p>Highlights a phrase within a text string</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>the text string</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$phrase </td>
+                                <td><p>the phrase you'd like to highlight</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$tag_open </td>
+                                <td><p>the opening tag to precede the phrase with</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$tag_close </td>
+                                <td><p>the closing tag to end the phrase with</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_convert_accented_characters" name="method_convert_accented_characters" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">convert_accented_characters()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">convert_accented_characters(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>Convert Accented Foreign Characters to ASCII</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>Input string</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_word_wrap" name="method_word_wrap" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">word_wrap()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">word_wrap(string  <span class="argument">$str</span>, integer  <span class="argument">$charlim = 76</span>) : string</pre>
+                <p><em>Word Wrap</em></p>
+                <p>Wraps text at the specified character. Maintains the integrity of words.
+Anything placed between {unwrap}{/unwrap} will not be word wrapped, nor
+will URLs.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>the text string</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$charlim </td>
+                                <td><p>= 76    the number of characters to wrap at</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_ellipsize" name="method_ellipsize" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">ellipsize()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">ellipsize(string  <span class="argument">$str</span>, integer  <span class="argument">$max_length</span>, mixed  <span class="argument">$position = 1</span>, string  <span class="argument">$ellipsis = &#039;&amp;hellip;&#039;</span>) : string</pre>
+                <p><em>Ellipsize String</em></p>
+                <p>This function will strip tags from a string, split it at its max_length and ellipsize</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>String to ellipsize</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$max_length </td>
+                                <td><p>Max length of string</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$position </td>
+                                <td><p>int (1|0) or float, .5, .2, etc for position to split</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ellipsis </td>
+                                <td><p>ellipsis ; Default '...'</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>Ellipsized string</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_strip_slashes" name="method_strip_slashes" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">strip_slashes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">strip_slashes(mixed  <span class="argument">$str</span>) : mixed</pre>
+                <p><em>Strip Slashes</em></p>
+                <p>Removes slashes contained in a string or in an array</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$str </td>
+                                <td><p>string or array</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>string or array</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_strip_quotes" name="method_strip_quotes" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">strip_quotes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">strip_quotes(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>Strip Quotes</em></p>
+                <p>Removes single and double quotes from a string</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_quotes_to_entities" name="method_quotes_to_entities" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">quotes_to_entities()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">quotes_to_entities(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>Quotes to Entities</em></p>
+                <p>Converts single and double quotes to entities</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_reduce_double_slashes" name="method_reduce_double_slashes" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">reduce_double_slashes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">reduce_double_slashes(string  <span class="argument">$str</span>) : string</pre>
+                <p><em>Reduce Double Slashes</em></p>
+                <p>Converts double slashes in a string to a single slash,
+except those found in http://</p>
+<p><a href="http://www.some-site.com//index.php">http://www.some-site.com//index.php</a></p>
+<p>becomes:</p>
+<p><a href="http://www.some-site.com/index.php">http://www.some-site.com/index.php</a></p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_reduce_multiples" name="method_reduce_multiples" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">reduce_multiples()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">reduce_multiples(string  <span class="argument">$str</span>, string  <span class="argument">$character = &#039;,&#039;</span>, boolean  <span class="argument">$trim = false</span>) : string</pre>
+                <p><em>Reduce Multiples</em></p>
+                <p>Reduces multiple instances of a particular character.  Example:</p>
+<p>Fred, Bill,, Joe, Jimmy</p>
+<p>becomes:</p>
+<p>Fred, Bill, Joe, Jimmy</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$character </td>
+                                <td><p>the character you wish to reduce</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$trim </td>
+                                <td><p>TRUE/FALSE - whether to trim the character from the beginning/end</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_random_string" name="method_random_string" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">random_string()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">random_string(string  <span class="argument">$type = &#039;alnum&#039;</span>, integer  <span class="argument">$len = 8</span>) : string</pre>
+                <p><em>Create a Random String</em></p>
+                <p>Useful for generating passwords or hashes.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>Type of random string.  basic, alpha, alnum, numeric, nozero, md5, sha1, and crypto</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$len </td>
+                                <td><p>Number of characters</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_increment_string" name="method_increment_string" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">increment_string()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">increment_string(string  <span class="argument">$str</span>, string  <span class="argument">$separator = &#039;_&#039;</span>, integer  <span class="argument">$first = 1</span>) : string</pre>
+                <p><em>Add&#039;s _1 to a string or increment the ending number to allow _2, _3, etc</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$str </td>
+                                <td><p>Required</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$separator </td>
+                                <td><p>What should the duplicate number be appended with</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$first </td>
+                                <td><p>Which number should be used for the first dupe increment</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_alternator" name="method_alternator" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">alternator()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">alternator() : string</pre>
+                <p><em>Alternator</em></p>
+                <p>Allows strings to be alternated. See docs...</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                        <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_excerpt" name="method_excerpt" class="anchor"></a>
+            <article class="method">
+                <h3 class=" ">excerpt()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">excerpt(string  <span class="argument">$text</span>, string  <span class="argument">$phrase = null</span>, integer  <span class="argument">$radius = 100</span>, string  <span class="argument">$ellipsis = &#039;...&#039;</span>) : string</pre>
+                <p><em>Excerpt.</em></p>
+                <p>Allows to extract a piece of text surrounding a word or phrase.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$text </td>
+                                <td><p>String to search the phrase</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$phrase </td>
+                                <td><p>Phrase that will be searched for.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$radius </td>
+                                <td><p>The amount of characters returned around the phrase.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$ellipsis </td>
+                                <td><p>Ending that will be appended</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                            &mdash; <p>If no $phrase is passed, will generate an excerpt of $radius characters
+from the beginning of $text.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                    <dt>File</dt>
+                    <dd><a href=""><div class="path-wrapper">Helpers/text_helper.php</div></a></dd>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            package
+                        </th>
+                        <td>
+                                                                                            <p>CodeIgniter</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+        </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label"></h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Helpers/text_helper.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/CodeIgniter.html">\CodeIgniter</a></li>
+                                                                            <li><a href="../namespaces/Psr.html">\Psr</a></li>
+                                                                            <li><a href="../namespaces/Zend.html">\Zend</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on March 11th, 2019 at 20:28.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

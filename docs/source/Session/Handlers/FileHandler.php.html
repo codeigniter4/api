@@ -1,0 +1,463 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Session\Handlers;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use CodeIgniter\Config\BaseConfig;
+use CodeIgniter\Session\Exceptions\SessionException;
+
+/**
+ * Session handler using file system for storage
+ */
+class FileHandler extends BaseHandler implements \SessionHandlerInterface
+{
+
+	/**
+	 * Where to save the session files to.
+	 *
+	 * @var string
+	 */
+	protected $savePath;
+
+	/**
+	 * The file handle
+	 *
+	 * @var resource
+	 */
+	protected $fileHandle;
+
+	/**
+	 * File Name
+	 *
+	 * @var resource
+	 */
+	protected $filePath;
+
+	/**
+	 * Whether this is a new file.
+	 *
+	 * @var boolean
+	 */
+	protected $fileNew;
+
+	/**
+	 * @var boolean
+	 */
+	protected $matchIP = false;
+
+	/**
+	 * @var string
+	 */
+	protected $sessionIDRegex;
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Constructor
+	 *
+	 * @param BaseConfig $config
+	 */
+	public function __construct($config, string $ipAddress)
+	{
+		parent::__construct($config, $ipAddress);
+
+		if (! empty($config-&gt;sessionSavePath))
+		{
+			$this-&gt;savePath = rtrim($config-&gt;sessionSavePath, '/\\');
+			ini_set('session.save_path', $config-&gt;sessionSavePath);
+		}
+		else
+		{
+			$sessionPath = rtrim(ini_get('session.save_path'), '/\\');
+
+			if (! $sessionPath)
+			{
+				$sessionPath = WRITEPATH . 'session';
+			}
+
+			$this-&gt;savePath = $sessionPath;
+		}
+
+		$this-&gt;matchIP = $config-&gt;sessionMatchIP;
+
+		$this-&gt;configureSessionIDRegex();
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Open
+	 *
+	 * Sanitizes the save_path directory.
+	 *
+	 * @param string $savePath Path to session files' directory
+	 * @param string $name     Session cookie name
+	 *
+	 * @return boolean
+	 * @throws \Exception
+	 */
+	public function open($savePath, $name): bool
+	{
+		if (! is_dir($savePath))
+		{
+			if (! mkdir($savePath, 0700, true))
+			{
+				throw SessionException::forInvalidSavePath($this-&gt;savePath);
+			}
+		}
+		elseif (! is_writable($savePath))
+		{
+			throw SessionException::forWriteProtectedSavePath($this-&gt;savePath);
+		}
+
+		$this-&gt;savePath = $savePath;
+		$this-&gt;filePath = $this-&gt;savePath . '/'
+						  . $name // we'll use the session cookie name as a prefix to avoid collisions
+						  . ($this-&gt;matchIP ? md5($this-&gt;ipAddress) : '');
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Read
+	 *
+	 * Reads session data and acquires a lock
+	 *
+	 * @param string $sessionID Session ID
+	 *
+	 * @return string    Serialized session data
+	 */
+	public function read($sessionID)
+	{
+		// This might seem weird, but PHP 5.6 introduced session_reset(),
+		// which re-reads session data
+		if ($this-&gt;fileHandle === null)
+		{
+			$this-&gt;fileNew = ! is_file($this-&gt;filePath . $sessionID);
+
+			if (($this-&gt;fileHandle = fopen($this-&gt;filePath . $sessionID, 'c+b')) === false)
+			{
+				$this-&gt;logger-&gt;error(&quot;Session: Unable to open file '&quot; . $this-&gt;filePath . $sessionID . &quot;'.&quot;);
+
+				return false;
+			}
+
+			if (flock($this-&gt;fileHandle, LOCK_EX) === false)
+			{
+				$this-&gt;logger-&gt;error(&quot;Session: Unable to obtain lock for file '&quot; . $this-&gt;filePath . $sessionID . &quot;'.&quot;);
+				fclose($this-&gt;fileHandle);
+				$this-&gt;fileHandle = null;
+
+				return false;
+			}
+
+			// Needed by write() to detect session_regenerate_id() calls
+			$this-&gt;sessionID = $sessionID;
+
+			if ($this-&gt;fileNew)
+			{
+				chmod($this-&gt;filePath . $sessionID, 0600);
+				$this-&gt;fingerprint = md5('');
+
+				return '';
+			}
+		}
+		else
+		{
+			rewind($this-&gt;fileHandle);
+		}
+
+		$session_data = '';
+		for ($read = 0, $length = filesize($this-&gt;filePath . $sessionID); $read &lt; $length; $read += strlen($buffer))
+		{
+			if (($buffer = fread($this-&gt;fileHandle, $length - $read)) === false)
+			{
+				break;
+			}
+
+			$session_data .= $buffer;
+		}
+
+		$this-&gt;fingerprint = md5($session_data);
+
+		return $session_data;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Write
+	 *
+	 * Writes (create / update) session data
+	 *
+	 * @param string $sessionID   Session ID
+	 * @param string $sessionData Serialized session data
+	 *
+	 * @return boolean
+	 */
+	public function write($sessionID, $sessionData): bool
+	{
+		// If the two IDs don't match, we have a session_regenerate_id() call
+		// and we need to close the old handle and open a new one
+		if ($sessionID !== $this-&gt;sessionID &amp;&amp; (! $this-&gt;close() || $this-&gt;read($sessionID) === false))
+		{
+			return false;
+		}
+
+		if (! is_resource($this-&gt;fileHandle))
+		{
+			return false;
+		}
+		elseif ($this-&gt;fingerprint === md5($sessionData))
+		{
+			return ($this-&gt;fileNew) ? true : touch($this-&gt;filePath . $sessionID);
+		}
+
+		if (! $this-&gt;fileNew)
+		{
+			ftruncate($this-&gt;fileHandle, 0);
+			rewind($this-&gt;fileHandle);
+		}
+
+		if (($length = strlen($sessionData)) &gt; 0)
+		{
+			for ($written = 0; $written &lt; $length; $written += $result)
+			{
+				if (($result = fwrite($this-&gt;fileHandle, substr($sessionData, $written))) === false)
+				{
+					break;
+				}
+			}
+
+			if (! is_int($result))
+			{
+				$this-&gt;fingerprint = md5(substr($sessionData, 0, $written));
+				$this-&gt;logger-&gt;error('Session: Unable to write data.');
+
+				return false;
+			}
+		}
+
+		$this-&gt;fingerprint = md5($sessionData);
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Close
+	 *
+	 * Releases locks and closes file descriptor.
+	 *
+	 * @return boolean
+	 */
+	public function close(): bool
+	{
+		if (is_resource($this-&gt;fileHandle))
+		{
+			flock($this-&gt;fileHandle, LOCK_UN);
+			fclose($this-&gt;fileHandle);
+
+			$this-&gt;fileHandle = $this-&gt;fileNew = $this-&gt;sessionID = null;
+
+			return true;
+		}
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Destroy
+	 *
+	 * Destroys the current session.
+	 *
+	 * @param string $session_id Session ID
+	 *
+	 * @return boolean
+	 */
+	public function destroy($session_id): bool
+	{
+		if ($this-&gt;close())
+		{
+			return is_file($this-&gt;filePath . $session_id)
+				? (unlink($this-&gt;filePath . $session_id) &amp;&amp; $this-&gt;destroyCookie()) : true;
+		}
+		elseif ($this-&gt;filePath !== null)
+		{
+			clearstatcache();
+
+			return is_file($this-&gt;filePath . $session_id)
+				? (unlink($this-&gt;filePath . $session_id) &amp;&amp; $this-&gt;destroyCookie()) : true;
+		}
+
+		return false;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Garbage Collector
+	 *
+	 * Deletes expired sessions
+	 *
+	 * @param integer $maxlifetime Maximum lifetime of sessions
+	 *
+	 * @return boolean
+	 */
+	public function gc($maxlifetime): bool
+	{
+		if (! is_dir($this-&gt;savePath) || ($directory = opendir($this-&gt;savePath)) === false)
+		{
+			$this-&gt;logger-&gt;debug(&quot;Session: Garbage collector couldn't list files under directory '&quot; . $this-&gt;savePath . &quot;'.&quot;);
+
+			return false;
+		}
+
+		$ts = time() - $maxlifetime;
+
+		$pattern = $this-&gt;matchIP === true
+			? '[0-9a-f]{32}'
+			: '';
+
+		$pattern = sprintf(
+			'#\A%s' . $pattern . $this-&gt;sessionIDRegex . '\z#',
+			preg_quote($this-&gt;cookieName)
+		);
+
+		while (($file = readdir($directory)) !== false)
+		{
+			// If the filename doesn't match this pattern, it's either not a session file or is not ours
+			if (! preg_match($pattern, $file)
+				|| ! is_file($this-&gt;savePath . DIRECTORY_SEPARATOR . $file)
+				|| ($mtime = filemtime($this-&gt;savePath . DIRECTORY_SEPARATOR . $file)) === false
+				|| $mtime &gt; $ts
+			)
+			{
+				continue;
+			}
+
+			unlink($this-&gt;savePath . DIRECTORY_SEPARATOR . $file);
+		}
+
+		closedir($directory);
+
+		return true;
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Configure Session ID regular expression
+	 */
+	protected function configureSessionIDRegex()
+	{
+		$bitsPerCharacter = (int)ini_get('session.sid_bits_per_character');
+		$SIDLength        = (int)ini_get('session.sid_length');
+
+		if (($bits = $SIDLength * $bitsPerCharacter) &lt; 160)
+		{
+			// Add as many more characters as necessary to reach at least 160 bits
+			$SIDLength += (int)ceil((160 % $bits) / $bitsPerCharacter);
+			ini_set('session.sid_length', $SIDLength);
+		}
+
+		// Yes, 4,5,6 are the only known possible values as of 2016-10-27
+		switch ($bitsPerCharacter)
+		{
+			case 4:
+				$this-&gt;sessionIDRegex = '[0-9a-f]';
+				break;
+			case 5:
+				$this-&gt;sessionIDRegex = '[0-9a-v]';
+				break;
+			case 6:
+				$this-&gt;sessionIDRegex = '[0-9a-zA-Z,-]';
+				break;
+		}
+
+		$this-&gt;sessionIDRegex .= '{' . $SIDLength . '}';
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

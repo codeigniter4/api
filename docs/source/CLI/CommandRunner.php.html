@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+namespace CodeIgniter\CLI;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use CodeIgniter\Config\Services;
+use CodeIgniter\Controller;
+
+class CommandRunner extends Controller
+{
+
+	/**
+	 * Stores the info about found Commands.
+	 *
+	 * @var array
+	 */
+	protected $commands = [];
+
+	/**
+	 * @var \CodeIgniter\Log\Logger
+	 */
+	protected $logger;
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * We map all un-routed CLI methods through this function
+	 * so we have the chance to look for a Command first.
+	 *
+	 * @param string $method
+	 * @param array  ...$params
+	 */
+	public function _remap($method, ...$params)
+	{
+		// The first param is usually empty, so scrap it.
+		if (empty($params[0]))
+		{
+			array_shift($params);
+		}
+
+		$this-&gt;index($params);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * @param array $params
+	 *
+	 * @return mixed
+	 */
+	public function index(array $params)
+	{
+		$command = array_shift($params);
+
+		$this-&gt;createCommandList();
+
+		if (is_null($command))
+		{
+			$command = 'help';
+		}
+
+		return $this-&gt;runCommand($command, $params);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Actually runs the command.
+	 *
+	 * @param string $command
+	 * @param array  $params
+	 *
+	 * @return mixed
+	 */
+	protected function runCommand(string $command, array $params)
+	{
+		if (! isset($this-&gt;commands[$command]))
+		{
+			CLI::error(lang('CLI.commandNotFound', [$command]));
+			CLI::newLine();
+			return;
+		}
+
+		// The file would have already been loaded during the
+		// createCommandList function...
+		$className = $this-&gt;commands[$command]['class'];
+		$class     = new $className($this-&gt;logger, $this);
+
+		return $class-&gt;run($params);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Scans all Commands directories and prepares a list
+	 * of each command with it's group and file.
+	 */
+	protected function createCommandList()
+	{
+		$files = Services::locator()-&gt;listFiles('Commands/');
+
+		// If no matching command files were found, bail
+		if (empty($files))
+		{
+			// This should never happen in unit testing.
+			// if it does, we have far bigger problems!
+			// @codeCoverageIgnoreStart
+			return;
+			// @codeCoverageIgnoreEnd
+		}
+
+		// Loop over each file checking to see if a command with that
+		// alias exists in the class. If so, return it. Otherwise, try the next.
+		foreach ($files as $file)
+		{
+			$className = Services::locator()-&gt;findQualifiedNameFromPath($file);
+			if (empty($className) || ! class_exists($className))
+			{
+				continue;
+			}
+
+			$class = new \ReflectionClass($className);
+
+			if (! $class-&gt;isInstantiable() || ! $class-&gt;isSubclassOf(BaseCommand::class))
+			{
+				continue;
+			}
+
+			$class = new $className($this-&gt;logger, $this);
+
+			// Store it!
+			if ($class-&gt;group !== null)
+			{
+				$this-&gt;commands[$class-&gt;name] = [
+					'class'       =&gt; $className,
+					'file'        =&gt; $file,
+					'group'       =&gt; $class-&gt;group,
+					'description' =&gt; $class-&gt;description,
+				];
+			}
+
+			$class = null;
+			unset($class);
+		}
+
+		asort($this-&gt;commands);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Allows access to the current commands that have been found.
+	 *
+	 * @return array
+	 */
+	public function getCommands()
+	{
+		return $this-&gt;commands;
+	}
+
+	//--------------------------------------------------------------------
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

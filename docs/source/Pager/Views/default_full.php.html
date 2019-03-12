@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php
+/**
+ * @var \CodeIgniter\Pager\PagerRenderer $pager
+ */
+
+$pager-&gt;setSurroundCount(2);
+?&gt;
+
+&lt;nav aria-label=&quot;&lt;?= lang('Pager.pageNavigation') ?&gt;&quot;&gt;
+	&lt;ul class=&quot;pagination&quot;&gt;
+		&lt;?php if ($pager-&gt;hasPrevious()) : ?&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;&lt;?= $pager-&gt;getFirst() ?&gt;&quot; aria-label=&quot;&lt;?= lang('Pager.first') ?&gt;&quot;&gt;
+					&lt;span aria-hidden=&quot;true&quot;&gt;&lt;?= lang('Pager.first') ?&gt;&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;&lt;?= $pager-&gt;getPrevious() ?&gt;&quot; aria-label=&quot;&lt;?= lang('Pager.previous') ?&gt;&quot;&gt;
+					&lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;?php endif ?&gt;
+
+		&lt;?php foreach ($pager-&gt;links() as $link) : ?&gt;
+			&lt;li &lt;?= $link['active'] ? 'class=&quot;active&quot;' : '' ?&gt;&gt;
+				&lt;a href=&quot;&lt;?= $link['uri'] ?&gt;&quot;&gt;
+					&lt;?= $link['title'] ?&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;?php endforeach ?&gt;
+
+		&lt;?php if ($pager-&gt;hasNext()) : ?&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;&lt;?= $pager-&gt;getNext() ?&gt;&quot; aria-label=&quot;&lt;?= lang('Pager.next') ?&gt;&quot;&gt;
+					&lt;span aria-hidden=&quot;true&quot;&gt;&amp;raquo;&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;&lt;?= $pager-&gt;getLast() ?&gt;&quot; aria-label=&quot;&lt;?= lang('Pager.last') ?&gt;&quot;&gt;
+					&lt;span aria-hidden=&quot;true&quot;&gt;&lt;?= lang('Pager.last') ?&gt;&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;?php endif ?&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Cache;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use CodeIgniter\Cache\Exceptions\CacheException;
+
+/**
+ * Class Cache
+ *
+ * A factory for loading the desired
+ *
+ * @package CodeIgniter\Cache
+ */
+class CacheFactory
+{
+	/**
+	 * Attempts to create the desired cache handler, based upon the
+	 *
+	 * @param $config
+	 * @param string $handler
+	 * @param string $backup
+	 *
+	 * @return \CodeIgniter\Cache\CacheInterface
+	 */
+	public static function getHandler($config, string $handler = null, string $backup = null)
+	{
+		if (! isset($config-&gt;validHandlers) || ! is_array($config-&gt;validHandlers))
+		{
+			throw CacheException::forInvalidHandlers();
+		}
+
+		if (! isset($config-&gt;handler) || ! isset($config-&gt;backupHandler))
+		{
+			throw CacheException::forNoBackup();
+		}
+
+		$handler = ! empty($handler) ? $handler : $config-&gt;handler;
+		$backup  = ! empty($backup) ? $backup : $config-&gt;backupHandler;
+
+		if (! array_key_exists($handler, $config-&gt;validHandlers) || ! array_key_exists($backup, $config-&gt;validHandlers))
+		{
+			throw CacheException::forHandlerNotFound();
+		}
+
+		// Get an instance of our handler.
+		$adapter = new $config-&gt;validHandlers[$handler]($config);
+
+		if (! $adapter-&gt;isSupported())
+		{
+			$adapter = new $config-&gt;validHandlers[$backup]($config);
+
+			if (! $adapter-&gt;isSupported())
+			{
+				// Log stuff here, don't throw exception. No need to raise a fuss.
+				// Fall back to the dummy adapter.
+				$adapter = new $config-&gt;validHandlers['dummy']();
+			}
+		}
+
+		$adapter-&gt;initialize();
+
+		return $adapter;
+	}
+
+	//--------------------------------------------------------------------
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

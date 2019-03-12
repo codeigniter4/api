@@ -1,0 +1,416 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\API;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+use Config\Format;
+use CodeIgniter\HTTP\Response;
+
+/**
+ * Response trait.
+ *
+ * Provides common, more readable, methods to provide
+ * consistent HTTP responses under a variety of common
+ * situations when working as an API.
+ *
+ * @property \CodeIgniter\HTTP\IncomingRequest $request
+ * @property \CodeIgniter\HTTP\Response        $response
+ *
+ * @package CodeIgniter\API
+ */
+trait ResponseTrait
+{
+
+	/**
+	 * Allows child classes to override the
+	 * status code that is used in their API.
+	 *
+	 * @var array
+	 */
+	protected $codes = [
+		'created'                   =&gt; 201,
+		'deleted'                   =&gt; 200,
+		'invalid_request'           =&gt; 400,
+		'unsupported_response_type' =&gt; 400,
+		'invalid_scope'             =&gt; 400,
+		'temporarily_unavailable'   =&gt; 400,
+		'invalid_grant'             =&gt; 400,
+		'invalid_credentials'       =&gt; 400,
+		'invalid_refresh'           =&gt; 400,
+		'no_data'                   =&gt; 400,
+		'invalid_data'              =&gt; 400,
+		'access_denied'             =&gt; 401,
+		'unauthorized'              =&gt; 401,
+		'invalid_client'            =&gt; 401,
+		'forbidden'                 =&gt; 403,
+		'resource_not_found'        =&gt; 404,
+		'not_acceptable'            =&gt; 406,
+		'resource_exists'           =&gt; 409,
+		'conflict'                  =&gt; 409,
+		'resource_gone'             =&gt; 410,
+		'payload_too_large'         =&gt; 413,
+		'unsupported_media_type'    =&gt; 415,
+		'too_many_requests'         =&gt; 429,
+		'server_error'              =&gt; 500,
+		'unsupported_grant_type'    =&gt; 501,
+		'not_implemented'           =&gt; 501,
+	];
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Provides a single, simple method to return an API response, formatted
+	 * to match the requested format, with proper content-type and status code.
+	 *
+	 * @param null    $data
+	 * @param integer $status
+	 * @param string  $message
+	 *
+	 * @return mixed
+	 */
+	public function respond($data = null, int $status = null, string $message = '')
+	{
+		// If data is null and status code not provided, exit and bail
+		if ($data === null &amp;&amp; $status === null)
+		{
+			$status = 404;
+
+			// Create the output var here in case of $this-&gt;response([]);
+			$output = null;
+		} // If data is null but status provided, keep the output empty.
+		elseif ($data === null &amp;&amp; is_numeric($status))
+		{
+			$output = null;
+		}
+		else
+		{
+			$status = empty($status) ? 200 : $status;
+			$output = $this-&gt;format($data);
+		}
+
+		return $this-&gt;response-&gt;setBody($output)
+						-&gt;setStatusCode($status, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used for generic failures that no custom methods exist for.
+	 *
+	 * @param string|array $messages
+	 * @param integer|null $status        HTTP status code
+	 * @param string|null  $code          Custom, API-specific, error code
+	 * @param string       $customMessage
+	 *
+	 * @return mixed
+	 */
+	public function fail($messages, int $status = 400, string $code = null, string $customMessage = '')
+	{
+		if (! is_array($messages))
+		{
+			$messages = ['error' =&gt; $messages];
+		}
+
+		$response = [
+			'status'   =&gt; $status,
+			'error'    =&gt; $code === null ? $status : $code,
+			'messages' =&gt; $messages,
+		];
+
+		return $this-&gt;respond($response, $status, $customMessage);
+	}
+
+	//--------------------------------------------------------------------
+	//--------------------------------------------------------------------
+	// Response Helpers
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used after successfully creating a new resource.
+	 *
+	 * @param mixed  $data    Data.
+	 * @param string $message Message.
+	 *
+	 * @return mixed
+	 */
+	public function respondCreated($data = null, string $message = '')
+	{
+		return $this-&gt;respond($data, $this-&gt;codes['created'], $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used after a resource has been successfully deleted.
+	 *
+	 * @param mixed  $data    Data.
+	 * @param string $message Message.
+	 *
+	 * @return mixed
+	 */
+	public function respondDeleted($data = null, string $message = '')
+	{
+		return $this-&gt;respond($data, $this-&gt;codes['deleted'], $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when the client is either didn't send authorization information,
+	 * or had bad authorization credentials. User is encouraged to try again
+	 * with the proper information.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failUnauthorized(string $description = 'Unauthorized', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['unauthorized'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when access is always denied to this resource and no amount
+	 * of trying again will help.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failForbidden(string $description = 'Forbidden', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['forbidden'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when a specified resource cannot be found.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failNotFound(string $description = 'Not Found', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['resource_not_found'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when the data provided by the client cannot be validated.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failValidationError(string $description = 'Bad Request', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['invalid_data'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Use when trying to create a new resource and it already exists.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failResourceExists(string $description = 'Conflict', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['resource_exists'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Use when a resource was previously deleted. This is different than
+	 * Not Found, because here we know the data previously existed, but is now gone,
+	 * where Not Found means we simply cannot find any information about it.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failResourceGone(string $description = 'Gone', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['resource_gone'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when the user has made too many requests for the resource recently.
+	 *
+	 * @param string $description
+	 * @param string $code
+	 * @param string $message
+	 *
+	 * @return mixed
+	 */
+	public function failTooManyRequests(string $description = 'Too Many Requests', string $code = null, string $message = '')
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['too_many_requests'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Used when there is a server error.
+	 *
+	 * @param string      $description The error message to show the user.
+	 * @param string|null $code        A custom, API-specific, error code.
+	 * @param string      $message     A custom &quot;reason&quot; message to return.
+	 *
+	 * @return Response The value of the Response's send() method.
+	 */
+	public function failServerError(string $description = 'Internal Server Error', string $code = null, string $message = ''): Response
+	{
+		return $this-&gt;fail($description, $this-&gt;codes['server_error'], $code, $message);
+	}
+
+	//--------------------------------------------------------------------
+	// Utility Methods
+	//--------------------------------------------------------------------
+
+	/**
+	 * Handles formatting a response. Currently makes some heavy assumptions
+	 * and needs updating! :)
+	 *
+	 * @param null $data
+	 *
+	 * @return null|string
+	 */
+	protected function format($data = null)
+	{
+		// If the data is a string, there's not much we can do to it...
+		if (is_string($data))
+		{
+			// The content type should be text/... and not application/...
+			$contentType = $this-&gt;response-&gt;getHeaderLine('Content-Type');
+			$contentType = str_replace('application/json', 'text/html', $contentType);
+			$contentType = str_replace('application/', 'text/', $contentType);
+			$this-&gt;response-&gt;setContentType($contentType);
+
+			return $data;
+		}
+
+		// Determine correct response type through content negotiation
+		$config = new Format();
+		$format = $this-&gt;request-&gt;negotiate('media', $config-&gt;supportedResponseFormats, false);
+
+		$this-&gt;response-&gt;setContentType($format);
+
+		// if we don't have a formatter, make one
+		if (! isset($this-&gt;formatter))
+		{
+			// if no formatter, use the default
+			$this-&gt;formatter = $config-&gt;getFormatter($format);
+		}
+
+		if ($format !== 'application/json')
+		{
+			// Recursively convert objects into associative arrays
+			// Conversion not required for JSONFormatter
+			$data = json_decode(json_encode($data), true);
+		}
+
+		return $this-&gt;formatter-&gt;format($data);
+	}
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

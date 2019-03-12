@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Config;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+class ForeignCharacters
+{
+	/*
+	  | -------------------------------------------------------------------
+	  | Foreign Characters
+	  | -------------------------------------------------------------------
+	  | This file contains an array of foreign characters for transliteration
+	  | conversion used by the Text helper
+	  |
+	 */
+
+	public $characterList = [
+		'/&auml;|&aelig;|ǽ/'                                                     =&gt; 'ae',
+		'/&ouml;|&oelig;/'                                                       =&gt; 'oe',
+		'/&uuml;/'                                                         =&gt; 'ue',
+		'/&Auml;/'                                                         =&gt; 'Ae',
+		'/&Uuml;/'                                                         =&gt; 'Ue',
+		'/&Ouml;/'                                                         =&gt; 'Oe',
+		'/&Agrave;|&Aacute;|&Acirc;|&Atilde;|&Auml;|&Aring;|Ǻ|Ā|Ă|Ą|Ǎ|&Alpha;|Ά|Ả|Ạ|Ầ|Ẫ|Ẩ|Ậ|Ằ|Ắ|Ẵ|Ẳ|Ặ|А/'         =&gt; 'A',
+		'/&agrave;|&aacute;|&acirc;|&atilde;|&aring;|ǻ|ā|ă|ą|ǎ|&ordf;|&alpha;|ά|ả|ạ|ầ|ấ|ẫ|ẩ|ậ|ằ|ắ|ẵ|ẳ|ặ|а/'       =&gt; 'a',
+		'/Б/'                                                         =&gt; 'B',
+		'/б/'                                                         =&gt; 'b',
+		'/&Ccedil;|Ć|Ĉ|Ċ|Č/'                                                 =&gt; 'C',
+		'/&ccedil;|ć|ĉ|ċ|č/'                                                 =&gt; 'c',
+		'/Д/'                                                         =&gt; 'D',
+		'/д/'                                                         =&gt; 'd',
+		'/&ETH;|Ď|Đ|&Delta;/'                                                   =&gt; 'Dj',
+		'/&eth;|ď|đ|&delta;/'                                                   =&gt; 'dj',
+		'/&Egrave;|&Eacute;|&Ecirc;|&Euml;|Ē|Ĕ|Ė|Ę|Ě|&Epsilon;|Έ|Ẽ|Ẻ|Ẹ|Ề|Ế|Ễ|Ể|Ệ|Е|Э/'                 =&gt; 'E',
+		'/&egrave;|&eacute;|&ecirc;|&euml;|ē|ĕ|ė|ę|ě|έ|&epsilon;|ẽ|ẻ|ẹ|ề|ế|ễ|ể|ệ|е|э/'                 =&gt; 'e',
+		'/Ф/'                                                         =&gt; 'F',
+		'/ф/'                                                         =&gt; 'f',
+		'/Ĝ|Ğ|Ġ|Ģ|&Gamma;|Г|Ґ/'                                             =&gt; 'G',
+		'/ĝ|ğ|ġ|ģ|&gamma;|г|ґ/'                                             =&gt; 'g',
+		'/Ĥ|Ħ/'                                                       =&gt; 'H',
+		'/ĥ|ħ/'                                                       =&gt; 'h',
+		'/&Igrave;|&Iacute;|&Icirc;|&Iuml;|Ĩ|Ī|Ĭ|Ǐ|Į|İ|&Eta;|Ή|Ί|&Iota;|Ϊ|Ỉ|Ị|И|Ы/'                     =&gt; 'I',
+		'/&igrave;|&iacute;|&icirc;|&iuml;|ĩ|ī|ĭ|ǐ|į|ı|&eta;|ή|ί|&iota;|ϊ|ỉ|ị|и|ы|ї/'                   =&gt; 'i',
+		'/Ĵ/'                                                         =&gt; 'J',
+		'/ĵ/'                                                         =&gt; 'j',
+		'/Ķ|&Kappa;|К/'                                                     =&gt; 'K',
+		'/ķ|&kappa;|к/'                                                     =&gt; 'k',
+		'/Ĺ|Ļ|Ľ|Ŀ|Ł|&Lambda;|Л/'                                             =&gt; 'L',
+		'/ĺ|ļ|ľ|ŀ|ł|&lambda;|л/'                                             =&gt; 'l',
+		'/М/'                                                         =&gt; 'M',
+		'/м/'                                                         =&gt; 'm',
+		'/&Ntilde;|Ń|Ņ|Ň|&Nu;|Н/'                                               =&gt; 'N',
+		'/&ntilde;|ń|ņ|ň|ŉ|&nu;|н/'                                             =&gt; 'n',
+		'/&Ograve;|&Oacute;|&Ocirc;|&Otilde;|Ō|Ŏ|Ǒ|Ő|Ơ|&Oslash;|Ǿ|&Omicron;|Ό|&Omega;|Ώ|Ỏ|Ọ|Ồ|Ố|Ỗ|Ổ|Ộ|Ờ|Ớ|Ỡ|Ở|Ợ|О/'   =&gt; 'O',
+		'/&ograve;|&oacute;|&ocirc;|&otilde;|ō|ŏ|ǒ|ő|ơ|&oslash;|ǿ|&ordm;|&omicron;|ό|&omega;|ώ|ỏ|ọ|ồ|ố|ỗ|ổ|ộ|ờ|ớ|ỡ|ở|ợ|о/' =&gt; 'o',
+		'/П/'                                                         =&gt; 'P',
+		'/п/'                                                         =&gt; 'p',
+		'/Ŕ|Ŗ|Ř|&Rho;|Р/'                                                 =&gt; 'R',
+		'/ŕ|ŗ|ř|&rho;|р/'                                                 =&gt; 'r',
+		'/Ś|Ŝ|Ş|Ș|&Scaron;|&Sigma;|С/'                                             =&gt; 'S',
+		'/ś|ŝ|ş|ș|&scaron;|ſ|&sigma;|&sigmaf;|с/'                                         =&gt; 's',
+		'/Ț|Ţ|Ť|Ŧ|&tau;|Т/'                                               =&gt; 'T',
+		'/ț|ţ|ť|ŧ|т/'                                                 =&gt; 't',
+		'/&Ugrave;|&Uacute;|&Ucirc;|Ũ|Ū|Ŭ|Ů|Ű|Ų|Ư|Ǔ|Ǖ|Ǘ|Ǚ|Ǜ|Ũ|Ủ|Ụ|Ừ|Ứ|Ữ|Ử|Ự|У/'           =&gt; 'U',
+		'/&ugrave;|&uacute;|&ucirc;|ũ|ū|ŭ|ů|ű|ų|ư|ǔ|ǖ|ǘ|ǚ|ǜ|&upsilon;|ύ|ϋ|ủ|ụ|ừ|ứ|ữ|ử|ự|у/'       =&gt; 'u',
+		'/Ƴ|Ɏ|Ỵ|Ẏ|Ӳ|Ӯ|Ў|&Yacute;|&Yuml;|Ŷ|&Upsilon;|Ύ|Ϋ|Ỳ|Ỹ|Ỷ|Ỵ|Й/'                       =&gt; 'Y',
+		'/ẙ|ʏ|ƴ|ɏ|ỵ|ẏ|ӳ|ӯ|ў|&yacute;|&yuml;|ŷ|ỳ|ỹ|ỷ|ỵ|й/'                         =&gt; 'y',
+		'/В/'                                                         =&gt; 'V',
+		'/в/'                                                         =&gt; 'v',
+		'/Ŵ/'                                                         =&gt; 'W',
+		'/ŵ/'                                                         =&gt; 'w',
+		'/Ź|Ż|Ž|&Zeta;|З/'                                                 =&gt; 'Z',
+		'/ź|ż|ž|&zeta;|з/'                                                 =&gt; 'z',
+		'/&AElig;|Ǽ/'                                                       =&gt; 'AE',
+		'/&szlig;/'                                                         =&gt; 'ss',
+		'/Ĳ/'                                                         =&gt; 'IJ',
+		'/ĳ/'                                                         =&gt; 'ij',
+		'/&OElig;/'                                                         =&gt; 'OE',
+		'/&fnof;/'                                                         =&gt; 'f',
+		'/&xi;/'                                                         =&gt; 'ks',
+		'/&pi;/'                                                         =&gt; 'p',
+		'/&beta;/'                                                         =&gt; 'v',
+		'/&mu;/'                                                         =&gt; 'm',
+		'/&psi;/'                                                         =&gt; 'ps',
+		'/Ё/'                                                         =&gt; 'Yo',
+		'/ё/'                                                         =&gt; 'yo',
+		'/Є/'                                                         =&gt; 'Ye',
+		'/є/'                                                         =&gt; 'ye',
+		'/Ї/'                                                         =&gt; 'Yi',
+		'/Ж/'                                                         =&gt; 'Zh',
+		'/ж/'                                                         =&gt; 'zh',
+		'/Х/'                                                         =&gt; 'Kh',
+		'/х/'                                                         =&gt; 'kh',
+		'/Ц/'                                                         =&gt; 'Ts',
+		'/ц/'                                                         =&gt; 'ts',
+		'/Ч/'                                                         =&gt; 'Ch',
+		'/ч/'                                                         =&gt; 'ch',
+		'/Ш/'                                                         =&gt; 'Sh',
+		'/ш/'                                                         =&gt; 'sh',
+		'/Щ/'                                                         =&gt; 'Shch',
+		'/щ/'                                                         =&gt; 'shch',
+		'/Ъ|ъ|Ь|ь/'                                                   =&gt; '',
+		'/Ю/'                                                         =&gt; 'Yu',
+		'/ю/'                                                         =&gt; 'yu',
+		'/Я/'                                                         =&gt; 'Ya',
+		'/я/'                                                         =&gt; 'ya',
+	];
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

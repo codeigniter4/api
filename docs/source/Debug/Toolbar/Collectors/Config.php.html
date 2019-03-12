@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Debug\Toolbar\Collectors;
+
+use Config\App;
+use Config\Services;
+use CodeIgniter\CodeIgniter;
+
+class Config
+{
+	public static function display()
+	{
+		$config = config(App::class);
+
+		return [
+			'ciVersion'   =&gt; CodeIgniter::CI_VERSION,
+			'phpVersion'  =&gt; phpversion(),
+			'phpSAPI'     =&gt; php_sapi_name(),
+			'environment' =&gt; ENVIRONMENT,
+			'baseURL'     =&gt; $config-&gt;baseURL,
+			'timezone'    =&gt; app_timezone(),
+			'locale'      =&gt; Services::request()-&gt;getLocale(),
+			'cspEnabled'  =&gt; $config-&gt;CSPEnabled,
+			'salt'        =&gt; $config-&gt;salt,
+		];
+	}
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>

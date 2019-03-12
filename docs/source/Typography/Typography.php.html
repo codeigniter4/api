@@ -1,0 +1,450 @@
+<html>
+    <head>
+        <script
+            type="text/javascript"
+            src="../../js/jquery-1.4.2.min.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shCore.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushJScript.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushPhp.js">
+        </script>
+        <script
+            type="text/javascript"
+            src="../../syntax_highlighter/scripts/shBrushXml.js">
+        </script>
+        <link
+            href="../../syntax_highlighter/styles/shCore.css" rel="stylesheet"
+            type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shCoreEclipse.css"
+            rel="stylesheet" type="text/css"
+        />
+        <link
+            href="../../syntax_highlighter/styles/shThemeWordpress.css"
+            rel="stylesheet" type="text/css"
+        />
+    </head>
+    <body>
+        <pre class="brush: php">&lt;?php namespace CodeIgniter\Typography;
+
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Copyright (c) 2014-2019 British Columbia Institute of Technology
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the &quot;Software&quot;), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * @package    CodeIgniter
+ * @author     CodeIgniter Dev Team
+ * @copyright  2014-2019 British Columbia Institute of Technology (https://bcit.ca/)
+ * @license    https://opensource.org/licenses/MIT	MIT License
+ * @link       https://codeigniter.com
+ * @since      Version 3.0.0
+ * @filesource
+ */
+
+/**
+ * Typography Class
+ */
+class Typography
+{
+
+	/**
+	 * Block level elements that should not be wrapped inside &lt;p&gt; tags
+	 *
+	 * @var string
+	 */
+	public $blockElements = 'address|blockquote|div|dl|fieldset|form|h\d|hr|noscript|object|ol|p|pre|script|table|ul';
+
+	/**
+	 * Elements that should not have &lt;p&gt; and &lt;br /&gt; tags within them.
+	 *
+	 * @var string
+	 */
+	public $skipElements = 'p|pre|ol|ul|dl|object|table|h\d';
+
+	/**
+	 * Tags we want the parser to completely ignore when splitting the string.
+	 *
+	 * @var string
+	 */
+	public $inlineElements = 'a|abbr|acronym|b|bdo|big|br|button|cite|code|del|dfn|em|i|img|ins|input|label|map|kbd|q|samp|select|small|span|strong|sub|sup|textarea|tt|var';
+
+	/**
+	 * array of block level elements that require inner content to be within another block level element
+	 *
+	 * @var array
+	 */
+	public $innerBlockRequired = ['blockquote'];
+
+	/**
+	 * the last block element parsed
+	 *
+	 * @var string
+	 */
+	public $lastBlockElement = '';
+
+	/**
+	 * whether or not to protect quotes within { curly braces }
+	 *
+	 * @var boolean
+	 */
+	public $protectBracedQuotes = false;
+
+	/**
+	 * Auto Typography
+	 *
+	 * This function converts text, making it typographically correct:
+	 *     - Converts double spaces into paragraphs.
+	 *     - Converts single line breaks into &lt;br /&gt; tags
+	 *     - Converts single and double quotes into correctly facing curly quote entities.
+	 *     - Converts three dots into ellipsis.
+	 *     - Converts double dashes into em-dashes.
+	 *  - Converts two spaces into entities
+	 *
+	 * @param string  $str
+	 * @param boolean $reduce_linebreaks whether to reduce more then two consecutive newlines to two
+	 *
+	 * @return string
+	 */
+	public function autoTypography(string $str, bool $reduce_linebreaks = false): string
+	{
+		if ($str === '')
+		{
+			return '';
+		}
+
+		// Standardize Newlines to make matching easier
+		if (strpos($str, &quot;\r&quot;) !== false)
+		{
+			$str = str_replace([&quot;\r\n&quot;, &quot;\r&quot;], &quot;\n&quot;, $str);
+		}
+
+		// Reduce line breaks.  If there are more than two consecutive linebreaks
+		// we'll compress them down to a maximum of two since there's no benefit to more.
+		if ($reduce_linebreaks === false)
+		{
+			$str = preg_replace(&quot;/\n\n+/&quot;, &quot;\n\n&quot;, $str);
+		}
+
+		// HTML comment tags don't conform to patterns of normal tags, so pull them out separately, only if needed
+		$html_comments = [];
+		if (strpos($str, '&lt;!--') !== false &amp;&amp; preg_match_all('#(&lt;!\-\-.*?\-\-&gt;)#s', $str, $matches))
+		{
+			for ($i = 0, $total = count($matches[0]); $i &lt; $total; $i ++)
+			{
+				$html_comments[] = $matches[0][$i];
+				$str             = str_replace($matches[0][$i], '{@HC' . $i . '}', $str);
+			}
+		}
+
+		// match and yank &lt;pre&gt; tags if they exist.  It's cheaper to do this separately since most content will
+		// not contain &lt;pre&gt; tags, and it keeps the PCRE patterns below simpler and faster
+		if (strpos($str, '&lt;pre') !== false)
+		{
+			$str = preg_replace_callback('#&lt;pre.*?&gt;.*?&lt;/pre&gt;#si', [$this, 'protectCharacters'], $str);
+		}
+
+		// Convert quotes within tags to temporary markers.
+		$str = preg_replace_callback('#&lt;.+?&gt;#si', [$this, 'protectCharacters'], $str);
+
+		// Do the same with braces if necessary
+		if ($this-&gt;protectBracedQuotes === false)
+		{
+			$str = preg_replace_callback('#\{.+?\}#si', [$this, 'protectCharacters'], $str);
+		}
+
+		// Convert &quot;ignore&quot; tags to temporary marker.  The parser splits out the string at every tag
+		// it encounters.  Certain inline tags, like image tags, links, span tags, etc. will be
+		// adversely affected if they are split out so we'll convert the opening bracket &lt; temporarily to: {@TAG}
+		$str = preg_replace('#&lt;(/*)(' . $this-&gt;inlineElements . ')([ &gt;])#i', '{@TAG}\\1\\2\\3', $str);
+
+		/* Split the string at every tag. This expression creates an array with this prototype:
+		 *
+		 * 	[array]
+		 * 	{
+		 * 		[0] = &lt;opening tag&gt;
+		 * 		[1] = Content...
+		 * 		[2] = &lt;closing tag&gt;
+		 * 		Etc...
+		 * 	}
+		 */
+		$chunks = preg_split('/(&lt;(?:[^&lt;&gt;]+(?:&quot;[^&quot;]*&quot;|\'[^\']*\')?)+&gt;)/', $str, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+
+		// Build our finalized string.  We cycle through the array, skipping tags, and processing the contained text
+		$str     = '';
+		$process = true;
+
+		for ($i = 0, $c = count($chunks) - 1; $i &lt;= $c; $i ++)
+		{
+			// Are we dealing with a tag? If so, we'll skip the processing for this cycle.
+			// Well also set the &quot;process&quot; flag which allows us to skip &lt;pre&gt; tags and a few other things.
+			if (preg_match('#&lt;(/*)(' . $this-&gt;blockElements . ').*?&gt;#', $chunks[$i], $match))
+			{
+				if (preg_match('#' . $this-&gt;skipElements . '#', $match[2]))
+				{
+					$process = ($match[1] === '/');
+				}
+
+				if ($match[1] === '')
+				{
+					$this-&gt;lastBlockElement = $match[2];
+				}
+
+				$str .= $chunks[$i];
+				continue;
+			}
+
+			if ($process === false)
+			{
+				$str .= $chunks[$i];
+				continue;
+			}
+
+			//  Force a newline to make sure end tags get processed by _format_newlines()
+			if ($i === $c)
+			{
+				$chunks[$i] .= &quot;\n&quot;;
+			}
+
+			//  Convert Newlines into &lt;p&gt; and &lt;br /&gt; tags
+			$str .= $this-&gt;formatNewLines($chunks[$i]);
+		}
+
+		// No opening block level tag? Add it if needed.
+		if (! preg_match('/^\s*&lt;(?:' . $this-&gt;blockElements . ')/i', $str))
+		{
+			$str = preg_replace('/^(.*?)&lt;(' . $this-&gt;blockElements . ')/i', '&lt;p&gt;$1&lt;/p&gt;&lt;$2', $str);
+		}
+
+		// Convert quotes, elipsis, em-dashes, non-breaking spaces, and ampersands
+		$str = $this-&gt;formatCharacters($str);
+
+		// restore HTML comments
+		for ($i = 0, $total = count($html_comments); $i &lt; $total; $i ++)
+		{
+			// remove surrounding paragraph tags, but only if there's an opening paragraph tag
+			// otherwise HTML comments at the ends of paragraphs will have the closing tag removed
+			// if '&lt;p&gt;{@HC1}' then replace &lt;p&gt;{@HC1}&lt;/p&gt; with the comment, else replace only {@HC1} with the comment
+			$str = preg_replace('#(?(?=&lt;p&gt;\{@HC' . $i . '\})&lt;p&gt;\{@HC' . $i . '\}(\s*&lt;/p&gt;)|\{@HC' . $i . '\})#s', $html_comments[$i], $str);
+		}
+
+		// Final clean up
+		$table = [
+			// If the user submitted their own paragraph tags within the text
+			// we will retain them instead of using our tags.
+			'/(&lt;p[^&gt;*?]&gt;)&lt;p&gt;/'                              =&gt; '$1', // &lt;?php BBEdit syntax coloring bug fix
+			// Reduce multiple instances of opening/closing paragraph tags to a single one
+			'#(&lt;/p&gt;)+#'                                     =&gt; '&lt;/p&gt;',
+			'/(&lt;p&gt;\W*&lt;p&gt;)+/'                                =&gt; '&lt;p&gt;',
+			// Clean up stray paragraph tags that appear before block level elements
+			'#&lt;p&gt;&lt;/p&gt;&lt;(' . $this-&gt;blockElements . ')#'      =&gt; '&lt;$1',
+			// Clean up stray non-breaking spaces preceeding block elements
+			'#(&amp;nbsp;\s*)+&lt;(' . $this-&gt;blockElements . ')#' =&gt; '  &lt;$2',
+			// Replace the temporary markers we added earlier
+			'/\{@TAG\}/'                                    =&gt; '&lt;',
+			'/\{@DQ\}/'                                     =&gt; '&quot;',
+			'/\{@SQ\}/'                                     =&gt; &quot;'&quot;,
+			'/\{@DD\}/'                                     =&gt; '--',
+			'/\{@NBS\}/'                                    =&gt; '  ',
+			// An unintended consequence of the _format_newlines function is that
+			// some of the newlines get truncated, resulting in &lt;p&gt; tags
+			// starting immediately after &lt;block&gt; tags on the same line.
+			// This forces a newline after such occurrences, which looks much nicer.
+			&quot;/&gt;&lt;p&gt;\n/&quot;                                      =&gt; &quot;&gt;\n&lt;p&gt;&quot;,
+			// Similarly, there might be cases where a closing &lt;/block&gt; will follow
+			// a closing &lt;/p&gt; tag, so we'll correct it by adding a newline in between
+			'#&lt;/p&gt;&lt;/#'                                      =&gt; &quot;&lt;/p&gt;\n&lt;/&quot;,
+		];
+
+		// Do we need to reduce empty lines?
+		if ($reduce_linebreaks === true)
+		{
+			$table['#&lt;p&gt;\n*&lt;/p&gt;#'] = '';
+		}
+		else
+		{
+			// If we have empty paragraph tags we add a non-breaking space
+			// otherwise most browsers won't treat them as true paragraphs
+			$table['#&lt;p&gt;&lt;/p&gt;#'] = '&lt;p&gt;&amp;nbsp;&lt;/p&gt;';
+		}
+
+		return preg_replace(array_keys($table), $table, $str);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Format Characters
+	 *
+	 * This function mainly converts double and single quotes
+	 * to curly entities, but it also converts em-dashes,
+	 * double spaces, and ampersands
+	 *
+	 * @param  string
+	 * @return string
+	 */
+	public function formatCharacters(string $str): string
+	{
+		static $table;
+
+		if (! isset($table))
+		{
+			$table = [
+				// nested smart quotes, opening and closing
+				// note that rules for grammar (English) allow only for two levels deep
+				// and that single quotes are _supposed_ to always be on the outside
+				// but we'll accommodate both
+				// Note that in all cases, whitespace is the primary determining factor
+				// on which direction to curl, with non-word characters like punctuation
+				// being a secondary factor only after whitespace is addressed.
+				'/\'&quot;(\s|$)/'               =&gt; '&amp;#8217;&amp;#8221;$1',
+				'/(^|\s|&lt;p&gt;)\'&quot;/'           =&gt; '$1&amp;#8216;&amp;#8220;',
+				'/\'&quot;(\W)/'                 =&gt; '&amp;#8217;&amp;#8221;$1',
+				'/(\W)\'&quot;/'                 =&gt; '$1&amp;#8216;&amp;#8220;',
+				'/&quot;\'(\s|$)/'               =&gt; '&amp;#8221;&amp;#8217;$1',
+				'/(^|\s|&lt;p&gt;)&quot;\'/'           =&gt; '$1&amp;#8220;&amp;#8216;',
+				'/&quot;\'(\W)/'                 =&gt; '&amp;#8221;&amp;#8217;$1',
+				'/(\W)&quot;\'/'                 =&gt; '$1&amp;#8220;&amp;#8216;',
+				// single quote smart quotes
+				'/\'(\s|$)/'                =&gt; '&amp;#8217;$1',
+				'/(^|\s|&lt;p&gt;)\'/'            =&gt; '$1&amp;#8216;',
+				'/\'(\W)/'                  =&gt; '&amp;#8217;$1',
+				'/(\W)\'/'                  =&gt; '$1&amp;#8216;',
+				// double quote smart quotes
+				'/&quot;(\s|$)/'                 =&gt; '&amp;#8221;$1',
+				'/(^|\s|&lt;p&gt;)&quot;/'             =&gt; '$1&amp;#8220;',
+				'/&quot;(\W)/'                   =&gt; '&amp;#8221;$1',
+				'/(\W)&quot;/'                   =&gt; '$1&amp;#8220;',
+				// apostrophes
+				&quot;/(\w)'(\w)/&quot;               =&gt; '$1&amp;#8217;$2',
+				// Em dash and ellipses dots
+				'/\s?\-\-\s?/'              =&gt; '&amp;#8212;',
+				'/(\w)\.{3}/'               =&gt; '$1&amp;#8230;',
+				// double space after sentences
+				'/(\W)  /'                  =&gt; '$1&amp;nbsp; ',
+				// ampersands, if not a character entity
+				'/&amp;(?!#?[a-zA-Z0-9]{2,};)/' =&gt; '&amp;amp;',
+			];
+		}
+
+		return preg_replace(array_keys($table), $table, $str);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Format Newlines
+	 *
+	 * Converts newline characters into either &lt;p&gt; tags or &lt;br /&gt;
+	 *
+	 * @param  string
+	 * @return string
+	 */
+	protected function formatNewLines(string $str): string
+	{
+		if ($str === '' || ( strpos($str, &quot;\n&quot;) === false &amp;&amp; ! in_array($this-&gt;lastBlockElement, $this-&gt;innerBlockRequired)))
+		{
+			return $str;
+		}
+
+		// Convert two consecutive newlines to paragraphs
+		$str = str_replace(&quot;\n\n&quot;, &quot;&lt;/p&gt;\n\n&lt;p&gt;&quot;, $str);
+
+		// Convert single spaces to &lt;br /&gt; tags
+		$str = preg_replace(&quot;/([^\n])(\n)([^\n])/&quot;, '\\1&lt;br /&gt;\\2\\3', $str);
+
+		// Wrap the whole enchilada in enclosing paragraphs
+		if ($str !== &quot;\n&quot;)
+		{
+			// We trim off the right-side new line so that the closing &lt;/p&gt; tag
+			// will be positioned immediately following the string, matching
+			// the behavior of the opening &lt;p&gt; tag
+			$str = '&lt;p&gt;' . rtrim($str) . '&lt;/p&gt;';
+		}
+
+		// Remove empty paragraphs if they are on the first line, as this
+		// is a potential unintended consequence of the previous code
+		return preg_replace('/&lt;p&gt;&lt;\/p&gt;(.*)/', '\\1', $str, 1);
+	}
+
+	// ------------------------------------------------------------------------
+
+	/**
+	 * Protect Characters
+	 *
+	 * Protects special characters from being formatted later
+	 * We don't want quotes converted within tags so we'll temporarily convert them to {@DQ} and {@SQ}
+	 * and we don't want double dashes converted to emdash entities, so they are marked with {@DD}
+	 * likewise double spaces are converted to {@NBS} to prevent entity conversion
+	 *
+	 * @param  array
+	 * @return string
+	 */
+	protected function protectCharacters(array $match): string
+	{
+		return str_replace([&quot;'&quot;, '&quot;', '--', '  '], ['{@SQ}', '{@DQ}', '{@DD}', '{@NBS}'], $match[0]);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Convert newlines to HTML line breaks except within PRE tags
+	 *
+	 * @param  string
+	 * @return string
+	 */
+	public function nl2brExceptPre(string $str): string
+	{
+		$newstr = '';
+		for ($ex = explode('pre&gt;', $str), $ct = count($ex), $i = 0; $i &lt; $ct; $i ++)
+		{
+			$newstr .= (($i % 2) === 0) ? nl2br($ex[$i]) : $ex[$i];
+			if ($ct - 1 !== $i)
+			{
+				$newstr .= 'pre&gt;';
+			}
+		}
+
+		return $newstr;
+	}
+
+}
+</pre>
+        <script type="text/javascript">
+             SyntaxHighlighter.all();
+             jQuery('.gutter div').each(function(key, data){
+                jQuery(data).prepend('<a name="L'+jQuery(data).text()+'"/>');
+             });
+        </script>
+    </body>
+</html>
