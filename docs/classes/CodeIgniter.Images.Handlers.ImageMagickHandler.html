@@ -1,878 +1,386 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Images\Handlers\ImageMagickHandler
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » \CodeIgniter\Images\Handlers\ImageMagickHandler</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public inherited">
-        <a href="#method___call" title="__call :: Provide access to the Image class&#039; methods if they don&#039;t exist
-on the handler itself.">
-            <span class="description">Provide access to the Image class&#039; methods if they don&#039;t exist
-on the handler itself.</span><pre>__call</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method___construct" title="__construct :: ">
-            <span class="description"></span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method__crop" title="_crop :: Crops the image.">
-            <span class="description">Crops the image.</span><pre>_crop</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method__flatten" title="_flatten :: Flattens transparencies, default white background">
-            <span class="description">Flattens transparencies, default white background</span><pre>_flatten</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method__getHeight" title="_getHeight :: ">
-            <span class="description"></span><pre>_getHeight</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method__getWidth" title="_getWidth :: ">
-            <span class="description"></span><pre>_getWidth</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method__resize" title="_resize :: Handles the actual resizing of the image.">
-            <span class="description">Handles the actual resizing of the image.</span><pre>_resize</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
-        <a href="#method_crop" title="crop :: Crops the image to the desired height and width. If one of the height/width values
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___call" title="__call() :: Provide access to the Image class' methods if they don't exist
+on the handler itself."><span class="description">Provide access to the Image class' methods if they don't exist
+on the handler itself.</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method__crop" title="_crop() :: Crops the image."><span class="description">Crops the image.</span><pre>_crop()</pre></a></li>
+<li class="method public "><a href="#method__flatten" title="_flatten() :: Flattens transparencies, default white background"><span class="description">Flattens transparencies, default white background</span><pre>_flatten()</pre></a></li>
+<li class="method public "><a href="#method__flip" title="_flip() :: Flips an image along it's vertical or horizontal axis."><span class="description">Flips an image along it's vertical or horizontal axis.</span><pre>_flip()</pre></a></li>
+<li class="method public "><a href="#method__getHeight" title="_getHeight() :: "><span class="description">_getHeight()
+        </span><pre>_getHeight()</pre></a></li>
+<li class="method public "><a href="#method__getWidth" title="_getWidth() :: "><span class="description">_getWidth()
+        </span><pre>_getWidth()</pre></a></li>
+<li class="method public "><a href="#method__resize" title="_resize() :: Handles the actual resizing of the image."><span class="description">Handles the actual resizing of the image.</span><pre>_resize()</pre></a></li>
+<li class="method public inherited"><a href="#method_crop" title="crop() :: Crops the image to the desired height and width. If one of the height/width values
 is not provided, that value will be set the appropriate value based on offsets and
-image dimensions.">
-            <span class="description">Crops the image to the desired height and width. If one of the height/width values
+image dimensions."><span class="description">Crops the image to the desired height and width. If one of the height/width values
 is not provided, that value will be set the appropriate value based on offsets and
-image dimensions.</span><pre>crop</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public inherited">
-        <a href="#method_fit" title="fit :: Combine cropping and resizing into a single command.">
-            <span class="description">Combine cropping and resizing into a single command.</span><pre>fit</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_flatten" title="flatten :: Flattens transparencies, default white background">
-            <span class="description">Flattens transparencies, default white background</span><pre>flatten</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_flip" title="flip :: Flips an image either horizontally or vertically.">
-            <span class="description">Flips an image either horizontally or vertically.</span><pre>flip</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getEXIF" title="getEXIF :: Retrieve the EXIF information from the image, if possible. Returns
-an array of the information, or null if nothing can be found.">
-            <span class="description">Retrieve the EXIF information from the image, if possible. Returns
-an array of the information, or null if nothing can be found.</span><pre>getEXIF</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getFile" title="getFile :: Returns the image instance.">
-            <span class="description">Returns the image instance.</span><pre>getFile</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getHeight" title="getHeight :: ">
-            <span class="description"></span><pre>getHeight</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getResource" title="getResource :: Returns the temporary image used during the image processing.">
-            <span class="description">Returns the temporary image used during the image processing.</span><pre>getResource</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public inherited">
-        <a href="#method_getVersion" title="getVersion :: Get the version of the image library in use.">
-            <span class="description">Get the version of the image library in use.</span><pre>getVersion</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_getWidth" title="getWidth :: ">
-            <span class="description"></span><pre>getWidth</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public inherited">
-        <a href="#method_reorient" title="reorient :: Reads the EXIF information from the image and modifies the orientation
+image dimensions.</span><pre>crop()</pre></a></li>
+<li class="method public inherited"><a href="#method_fit" title="fit() :: Combine cropping and resizing into a single command."><span class="description">Combine cropping and resizing into a single command.</span><pre>fit()</pre></a></li>
+<li class="method public inherited"><a href="#method_flatten" title="flatten() :: Flattens transparencies, default white background"><span class="description">Flattens transparencies, default white background</span><pre>flatten()</pre></a></li>
+<li class="method public inherited"><a href="#method_flip" title="flip() :: Flips an image either horizontally or vertically."><span class="description">Flips an image either horizontally or vertically.</span><pre>flip()</pre></a></li>
+<li class="method public inherited"><a href="#method_getEXIF" title="getEXIF() :: Retrieve the EXIF information from the image, if possible. Returns
+an array of the information, or null if nothing can be found."><span class="description">Retrieve the EXIF information from the image, if possible. Returns
+an array of the information, or null if nothing can be found.</span><pre>getEXIF()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFile" title="getFile() :: Returns the image instance."><span class="description">Returns the image instance.</span><pre>getFile()</pre></a></li>
+<li class="method public inherited"><a href="#method_getHeight" title="getHeight() :: "><span class="description">getHeight()
+        </span><pre>getHeight()</pre></a></li>
+<li class="method public inherited"><a href="#method_getResource" title="getResource() :: Returns the temporary image used during the image processing."><span class="description">Returns the temporary image used during the image processing.</span><pre>getResource()</pre></a></li>
+<li class="method public "><a href="#method_getVersion" title="getVersion() :: Get GD version"><span class="description">Get GD version</span><pre>getVersion()</pre></a></li>
+<li class="method public inherited"><a href="#method_getVersion" title="getVersion() :: Get the version of the image library in use."><span class="description">Get the version of the image library in use.</span><pre>getVersion()</pre></a></li>
+<li class="method public inherited"><a href="#method_getWidth" title="getWidth() :: "><span class="description">getWidth()
+        </span><pre>getWidth()</pre></a></li>
+<li class="method public inherited"><a href="#method_reorient" title="reorient() :: Reads the EXIF information from the image and modifies the orientation
 so that displays correctly in the browser. This is especially an issue
 with images taken by smartphones who always store the image up-right,
-but set the orientation flag to display it correctly.">
-            <span class="description">Reads the EXIF information from the image and modifies the orientation
+but set the orientation flag to display it correctly."><span class="description">Reads the EXIF information from the image and modifies the orientation
 so that displays correctly in the browser. This is especially an issue
 with images taken by smartphones who always store the image up-right,
-but set the orientation flag to display it correctly.</span><pre>reorient</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public inherited">
-        <a href="#method_resize" title="resize :: Resize the image">
-            <span class="description">Resize the image</span><pre>resize</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_rotate" title="rotate :: Rotates the image on the current canvas.">
-            <span class="description">Rotates the image on the current canvas.</span><pre>rotate</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_save" title="save :: Saves any changes that have been made to file.">
-            <span class="description">Saves any changes that have been made to file.</span><pre>save</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_text" title="text :: Overlays a string of text over the image.">
-            <span class="description">Overlays a string of text over the image.</span><pre>text</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_withFile" title="withFile :: Sets another image for this handler to work on.">
-            <span class="description">Sets another image for this handler to work on.</span><pre>withFile</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                            <li class="method protected inherited">
-                            <a href="#method__flip" title="_flip :: Handler-specific method to handle flipping an image along its
-horizontal or vertical axis.">
-                                <span class="description">Handler-specific method to handle flipping an image along its
-horizontal or vertical axis.</span><pre>_flip</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                            <li class="method protected inherited">
-                            <a href="#method__rotate" title="_rotate :: Handler-specific method to handle rotating an image in 90 degree increments.">
-                                <span class="description">Handler-specific method to handle rotating an image in 90 degree increments.</span><pre>_rotate</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method__text" title="_text :: Handler-specific method for overlaying text on an image.">
-                                <span class="description">Handler-specific method for overlaying text on an image.</span><pre>_text</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_calcAspectRatio" title="calcAspectRatio :: ">
-                                <span class="description"></span><pre>calcAspectRatio</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_calcCropCoords" title="calcCropCoords :: Based on the position, will determine the correct x/y coords to
-crop the desired portion from the image.">
-                                <span class="description">Based on the position, will determine the correct x/y coords to
-crop the desired portion from the image.</span><pre>calcCropCoords</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method protected inherited">
-                            <a href="#method_ensureResource" title="ensureResource :: Make the image resource object if needed">
-                                <span class="description">Make the image resource object if needed</span><pre>ensureResource</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
-                            <a href="#method_getResourcePath" title="getResourcePath :: Get Image Resource">
-                                <span class="description">Get Image Resource</span><pre>getResourcePath</pre>
-                            </a>
-                        </li>
-                                                                                                                                                        <li class="method protected inherited">
-                            <a href="#method_process" title="process :: Does the driver-specific processing of the image.">
-                                <span class="description">Does the driver-specific processing of the image.</span><pre>process</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method protected inherited">
-                            <a href="#method_reproportion" title="reproportion :: Re-proportion Image Width/Height">
-                                <span class="description">Re-proportion Image Width/Height</span><pre>reproportion</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>ImageMagickHandler</h1>
-                <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/CodeIgniter.Images.Handlers.BaseHandler.html">\CodeIgniter\Images\Handlers\BaseHandler</a>
-                                                        </small>
-                <p class="short_description">Class ImageMagickHandler</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>To make this library as compatible as possible with the broadest
+but set the orientation flag to display it correctly.</span><pre>reorient()</pre></a></li>
+<li class="method public inherited"><a href="#method_resize" title="resize() :: Resize the image"><span class="description">Resize the image</span><pre>resize()</pre></a></li>
+<li class="method public inherited"><a href="#method_rotate" title="rotate() :: Rotates the image on the current canvas."><span class="description">Rotates the image on the current canvas.</span><pre>rotate()</pre></a></li>
+<li class="method public "><a href="#method_save" title="save() :: Saves any changes that have been made to file. If no new filename is
+provided, the existing image is overwritten, otherwise a copy of the
+file is made at $target."><span class="description">Saves any changes that have been made to file. If no new filename is
+provided, the existing image is overwritten, otherwise a copy of the
+file is made at $target.</span><pre>save()</pre></a></li>
+<li class="method public inherited"><a href="#method_save" title="save() :: Saves any changes that have been made to file."><span class="description">Saves any changes that have been made to file.</span><pre>save()</pre></a></li>
+<li class="method public inherited"><a href="#method_text" title="text() :: Overlays a string of text over the image."><span class="description">Overlays a string of text over the image.</span><pre>text()</pre></a></li>
+<li class="method public inherited"><a href="#method_withFile" title="withFile() :: Sets another image for this handler to work on."><span class="description">Sets another image for this handler to work on.</span><pre>withFile()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method__flip" title="_flip() :: Handler-specific method to handle flipping an image along its
+horizontal or vertical axis."><span class="description">Handler-specific method to handle flipping an image along its
+horizontal or vertical axis.</span><pre>_flip()</pre></a></li>
+<li class="method protected "><a href="#method__rotate" title="_rotate() :: Handles the rotation of an image resource."><span class="description">Handles the rotation of an image resource.</span><pre>_rotate()</pre></a></li>
+<li class="method protected inherited"><a href="#method__rotate" title="_rotate() :: Handler-specific method to handle rotating an image in 90 degree increments."><span class="description">Handler-specific method to handle rotating an image in 90 degree increments.</span><pre>_rotate()</pre></a></li>
+<li class="method protected "><a href="#method__text" title="_text() :: Handler-specific method for overlaying text on an image."><span class="description">Handler-specific method for overlaying text on an image.</span><pre>_text()</pre></a></li>
+<li class="method protected inherited"><a href="#method__text" title="_text() :: Handler-specific method for overlaying text on an image."><span class="description">Handler-specific method for overlaying text on an image.</span><pre>_text()</pre></a></li>
+<li class="method protected inherited"><a href="#method_calcAspectRatio" title="calcAspectRatio() :: "><span class="description">calcAspectRatio()
+        </span><pre>calcAspectRatio()</pre></a></li>
+<li class="method protected inherited"><a href="#method_calcCropCoords" title="calcCropCoords() :: Based on the position, will determine the correct x/y coords to
+crop the desired portion from the image."><span class="description">Based on the position, will determine the correct x/y coords to
+crop the desired portion from the image.</span><pre>calcCropCoords()</pre></a></li>
+<li class="method protected inherited"><a href="#method_ensureResource" title="ensureResource() :: Make the image resource object if needed"><span class="description">Make the image resource object if needed</span><pre>ensureResource()</pre></a></li>
+<li class="method protected "><a href="#method_getResourcePath" title="getResourcePath() :: Get Image Resource"><span class="description">Get Image Resource</span><pre>getResourcePath()</pre></a></li>
+<li class="method protected "><a href="#method_process" title="process() :: Handles all of the grunt work of resizing, etc."><span class="description">Handles all of the grunt work of resizing, etc.</span><pre>process()</pre></a></li>
+<li class="method protected inherited"><a href="#method_process" title="process() :: Does the driver-specific processing of the image."><span class="description">Does the driver-specific processing of the image.</span><pre>process()</pre></a></li>
+<li class="method protected inherited"><a href="#method_reproportion" title="reproportion() :: Re-proportion Image Width/Height"><span class="description">Re-proportion Image Width/Height</span><pre>reproportion()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul><li class="property public "><a href="#property_version" title="$version() :: "><span class="description"></span><pre>$version</pre></a></li></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_config" title="$config() :: "><span class="description"></span><pre>$config</pre></a></li>
+<li class="property protected "><a href="#property_filePermissions" title="$filePermissions() :: "><span class="description"></span><pre>$filePermissions</pre></a></li>
+<li class="property protected "><a href="#property_height" title="$height() :: "><span class="description"></span><pre>$height</pre></a></li>
+<li class="property protected "><a href="#property_image" title="$image() :: The image/file instance
+d"><span class="description"></span><pre>$image</pre></a></li>
+<li class="property protected "><a href="#property_masterDim" title="$masterDim() :: "><span class="description"></span><pre>$masterDim</pre></a></li>
+<li class="property protected "><a href="#property_resource" title="$resource() :: Stores image resource in memory."><span class="description"></span><pre>$resource</pre></a></li>
+<li class="property protected "><a href="#property_resource" title="$resource() :: Temporary image used by the different engines."><span class="description"></span><pre>$resource</pre></a></li>
+<li class="property protected "><a href="#property_textDefaults" title="$textDefaults() :: Default options for text watermarking."><span class="description"></span><pre>$textDefaults</pre></a></li>
+<li class="property protected "><a href="#property_width" title="$width() :: "><span class="description"></span><pre>$width</pre></a></li>
+<li class="property protected "><a href="#property_xAxis" title="$xAxis() :: "><span class="description"></span><pre>$xAxis</pre></a></li>
+<li class="property protected "><a href="#property_yAxis" title="$yAxis() :: "><span class="description"></span><pre>$yAxis</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\Images\Handlers\ImageMagickHandler"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.html">Images</a>
+</li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.Handlers.html">Handlers</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CodeIgniter.Images.Handlers.ImageMagickHandler.html">ImageMagickHandler</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class ImageMagickHandler</p>
+<div class="details">
+<div class="long_description"><p>To make this library as compatible as possible with the broadest
 number of installations, we do not use the Imagick extension,
 but simply use the command line version.</p>
 <p>hmm - the width &amp; height accessors at the end use the imagick extension.</p>
-<p>FIXME - This needs conversion &amp; unit testing, to use the imagick extension</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter\Images\Handlers</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___call"></a>
-                        <div class="element clickable method public  method___call inherited" data-toggle="collapse" data-target=".method___call .collapse">
-                            <h2>Provide access to the Image class&#039; methods if they don&#039;t exist
+<p>FIXME - This needs conversion &amp; unit testing, to use the imagick extension</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.Images.Handlers.html">CodeIgniter\Images\Handlers</a></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler</td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___call"></a><div class="element clickable method public method___call inherited" data-toggle="collapse" data-target=".method___call .collapse" title="public">
+<h2>Provide access to the Image class' methods if they don't exist
 on the handler itself.</h2>
-                            <pre>__call(string $name, array $args = array()) </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$args</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>__construct</h2>
-                            <pre>__construct( $config = null) </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__crop"></a>
-                        <div class="element clickable method public  method__crop" data-toggle="collapse" data-target=".method__crop .collapse">
-                            <h2>Crops the image.</h2>
-                            <pre>_crop() : boolean|\CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean|<a href="../classes/CodeIgniter.Images.Handlers.ImageMagickHandler.html">\CodeIgniter\Images\Handlers\ImageMagickHandler</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__flatten"></a>
-                        <div class="element clickable method public  method__flatten" data-toggle="collapse" data-target=".method__flatten .collapse">
-                            <h2>Flattens transparencies, default white background</h2>
-                            <pre>_flatten(integer $red = 255, integer $green = 255, integer $blue = 255) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$red</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$green</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$blue</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__flip"></a>
-                        <div class="element clickable method protected  method__flip inherited" data-toggle="collapse" data-target=".method__flip .collapse">
-                            <h2>Handler-specific method to handle flipping an image along its
-horizontal or vertical axis.</h2>
-                            <pre>_flip(string $direction) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$direction</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__getHeight"></a>
-                        <div class="element clickable method public  method__getHeight" data-toggle="collapse" data-target=".method__getHeight .collapse">
-                            <h2>_getHeight</h2>
-                            <pre>_getHeight() </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__getWidth"></a>
-                        <div class="element clickable method public  method__getWidth" data-toggle="collapse" data-target=".method__getWidth .collapse">
-                            <h2>_getWidth</h2>
-                            <pre>_getWidth() </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__resize"></a>
-                        <div class="element clickable method public  method__resize" data-toggle="collapse" data-target=".method__resize .collapse">
-                            <h2>Handles the actual resizing of the image.</h2>
-                            <pre>_resize(boolean $maintainRatio = false) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$maintainRatio</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Images.Handlers.ImageMagickHandler.html">\CodeIgniter\Images\Handlers\ImageMagickHandler</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__rotate"></a>
-                        <div class="element clickable method protected  method__rotate inherited" data-toggle="collapse" data-target=".method__rotate .collapse">
-                            <h2>Handler-specific method to handle rotating an image in 90 degree increments.</h2>
-                            <pre>_rotate(integer $angle) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$angle</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method__text"></a>
-                        <div class="element clickable method protected  method__text inherited" data-toggle="collapse" data-target=".method__text .collapse">
-                            <h2>Handler-specific method for overlaying text on an image.</h2>
-                            <pre>_text(string $text, array $options = array()) </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_calcAspectRatio"></a>
-                        <div class="element clickable method protected  method_calcAspectRatio inherited" data-toggle="collapse" data-target=".method_calcAspectRatio .collapse">
-                            <h2>calcAspectRatio</h2>
-                            <pre>calcAspectRatio( $width, null $height = null,  $origWidth,  $origHeight) : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$width</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$height</h4>
-                                                <code>null</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$origWidth</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$origHeight</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_calcCropCoords"></a>
-                        <div class="element clickable method protected  method_calcCropCoords inherited" data-toggle="collapse" data-target=".method_calcCropCoords .collapse">
-                            <h2>Based on the position, will determine the correct x/y coords to
-crop the desired portion from the image.</h2>
-                            <pre>calcCropCoords( $width,  $height,  $origWidth,  $origHeight,  $position) : array</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$width</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$height</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$origWidth</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$origHeight</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$position</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_crop"></a>
-                        <div class="element clickable method public  method_crop inherited" data-toggle="collapse" data-target=".method_crop .collapse">
-                            <h2>Crops the image to the desired height and width. If one of the height/width values
+<pre>__call(string $name, array $args<code> = array()</code>) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$args</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
+        </h2>
+<pre>__construct($config<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$config</h4></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method public method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
+        </h2>
+<pre>__construct($config<code> = null</code>) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$config</h4></div>
+</div></div>
+</div>
+<a id="method__crop"></a><div class="element clickable method public method__crop " data-toggle="collapse" data-target=".method__crop .collapse" title="public">
+<h2>Crops the image.</h2>
+<pre>_crop() : boolean | \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code>
+</div>
+</div></div>
+</div>
+<a id="method__flatten"></a><div class="element clickable method public method__flatten " data-toggle="collapse" data-target=".method__flatten .collapse" title="public">
+<h2>Flattens transparencies, default white background</h2>
+<pre>_flatten(integer $red<code> = 255</code>, integer $green<code> = 255</code>, integer $blue<code> = 255</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$red</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$green</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$blue</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method__flip"></a><div class="element clickable method public method__flip " data-toggle="collapse" data-target=".method__flip .collapse" title="public">
+<h2>Flips an image along it's vertical or horizontal axis.</h2>
+<pre>_flip(string $direction) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::_flip()</td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$direction</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method__getHeight"></a><div class="element clickable method public method__getHeight " data-toggle="collapse" data-target=".method__getHeight .collapse" title="public">
+<h2>_getHeight()
+        </h2>
+<pre>_getHeight() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method__getWidth"></a><div class="element clickable method public method__getWidth " data-toggle="collapse" data-target=".method__getWidth .collapse" title="public">
+<h2>_getWidth()
+        </h2>
+<pre>_getWidth() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method__resize"></a><div class="element clickable method public method__resize " data-toggle="collapse" data-target=".method__resize .collapse" title="public">
+<h2>Handles the actual resizing of the image.</h2>
+<pre>_resize(boolean $maintainRatio<code> = false</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$maintainRatio</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method_crop"></a><div class="element clickable method public method_crop inherited" data-toggle="collapse" data-target=".method_crop .collapse" title="public">
+<h2>Crops the image to the desired height and width. If one of the height/width values
 is not provided, that value will be set the appropriate value based on offsets and
 image dimensions.</h2>
-                            <pre>crop(integer|null $width = null, integer|null $height = null, integer|null $x = null, integer|null $y = null, boolean $maintainRatio = false, string $masterDim = &#039;auto&#039;) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$width</h4>
-                                                <code>integer|null</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$height</h4>
-                                                <code>integer|null</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$x</h4>
-                                                <code>integer|null</code><p><p>X-axis coord to start cropping from the left of image</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$y</h4>
-                                                <code>integer|null</code><p><p>Y-axis coord to start cropping from the top of image</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$maintainRatio</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$masterDim</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_ensureResource"></a>
-                        <div class="element clickable method protected  method_ensureResource inherited" data-toggle="collapse" data-target=".method_ensureResource .collapse">
-                            <h2>Make the image resource object if needed</h2>
-                            <pre>ensureResource() </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_fit"></a>
-                        <div class="element clickable method public  method_fit inherited" data-toggle="collapse" data-target=".method_fit .collapse">
-                            <h2>Combine cropping and resizing into a single command.</h2>
-                            <pre>fit(integer $width, integer $height = null, string $position = &#039;center&#039;) : boolean</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Supported positions:</p>
+<pre>crop(integer|null $width<code> = null</code>, integer|null $height<code> = null</code>, integer|null $x<code> = null</code>, integer|null $y<code> = null</code>, boolean $maintainRatio<code> = false</code>, string $masterDim<code> = 'auto'</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::crop()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code><code>null</code>
+</div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>integer</code><code>null</code>
+</div>
+<div class="subelement argument">
+<h4>$x</h4>
+<code>integer</code><code>null</code><p>X-axis coord to start cropping from the left of image</p></div>
+<div class="subelement argument">
+<h4>$y</h4>
+<code>integer</code><code>null</code><p>Y-axis coord to start cropping from the top of image</p></div>
+<div class="subelement argument">
+<h4>$maintainRatio</h4>
+<code>boolean</code>
+</div>
+<div class="subelement argument">
+<h4>$masterDim</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_fit"></a><div class="element clickable method public method_fit inherited" data-toggle="collapse" data-target=".method_fit .collapse" title="public">
+<h2>Combine cropping and resizing into a single command.</h2>
+<pre>fit(integer $width, integer $height<code> = null</code>, string $position<code> = 'center'</code>) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Supported positions:</p>
 <ul>
 <li>top-left</li>
 <li>top</li>
@@ -884,513 +392,293 @@ image dimensions.</h2>
 <li>bottom</li>
 <li>bottom-right</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$width</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$height</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$position</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_flatten"></a>
-                        <div class="element clickable method public  method_flatten inherited" data-toggle="collapse" data-target=".method_flatten .collapse">
-                            <h2>Flattens transparencies, default white background</h2>
-                            <pre>flatten(integer $red = 255, integer $green = 255, integer $blue = 255) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$red</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$green</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$blue</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_flip"></a>
-                        <div class="element clickable method public  method_flip inherited" data-toggle="collapse" data-target=".method_flip .collapse">
-                            <h2>Flips an image either horizontally or vertically.</h2>
-                            <pre>flip(string $dir = &#039;vertical&#039;) : $this</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$dir</h4>
-                                                <code>string</code><p><p>Either 'vertical' or 'horizontal'</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getEXIF"></a>
-                        <div class="element clickable method public  method_getEXIF inherited" data-toggle="collapse" data-target=".method_getEXIF .collapse">
-                            <h2>Retrieve the EXIF information from the image, if possible. Returns
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::fit()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$position</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_flatten"></a><div class="element clickable method public method_flatten inherited" data-toggle="collapse" data-target=".method_flatten .collapse" title="public">
+<h2>Flattens transparencies, default white background</h2>
+<pre>flatten(integer $red<code> = 255</code>, integer $green<code> = 255</code>, integer $blue<code> = 255</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::flatten()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$red</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$green</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$blue</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_flip"></a><div class="element clickable method public method_flip inherited" data-toggle="collapse" data-target=".method_flip .collapse" title="public">
+<h2>Flips an image either horizontally or vertically.</h2>
+<pre>flip(string $dir<code> = 'vertical'</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::flip()</td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$dir</h4>
+<code>string</code><p>Either 'vertical' or 'horizontal'</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method_getEXIF"></a><div class="element clickable method public method_getEXIF inherited" data-toggle="collapse" data-target=".method_getEXIF .collapse" title="public">
+<h2>Retrieve the EXIF information from the image, if possible. Returns
 an array of the information, or null if nothing can be found.</h2>
-                            <pre>getEXIF(string|null $key = null, boolean $silent = false) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string|null</code><p><p>If specified, will only return this piece of EXIF data.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$silent</h4>
-                                                <code>boolean</code><p><p>If true, will not throw our own exceptions.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getFile"></a>
-                        <div class="element clickable method public  method_getFile inherited" data-toggle="collapse" data-target=".method_getFile .collapse">
-                            <h2>Returns the image instance.</h2>
-                            <pre>getFile() : \CodeIgniter\Images\Image</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Images.Image.html">\CodeIgniter\Images\Image</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getHeight"></a>
-                        <div class="element clickable method public  method_getHeight inherited" data-toggle="collapse" data-target=".method_getHeight .collapse">
-                            <h2>getHeight</h2>
-                            <pre>getHeight() </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getResource"></a>
-                        <div class="element clickable method public  method_getResource inherited" data-toggle="collapse" data-target=".method_getResource .collapse">
-                            <h2>Returns the temporary image used during the image processing.</h2>
-                            <pre>getResource() : resource</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Good for extending the system or doing things this library
+<pre>getEXIF(string|null $key<code> = null</code>, boolean $silent<code> = false</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::getEXIF()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><code>null</code><p>If specified, will only return this piece of EXIF data.</p></div>
+<div class="subelement argument">
+<h4>$silent</h4>
+<code>boolean</code><p>If true, will not throw our own exceptions.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getFile"></a><div class="element clickable method public method_getFile inherited" data-toggle="collapse" data-target=".method_getFile .collapse" title="public">
+<h2>Returns the image instance.</h2>
+<pre>getFile() : \CodeIgniter\Images\Image</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Image</code></div>
+</div></div>
+</div>
+<a id="method_getHeight"></a><div class="element clickable method public method_getHeight inherited" data-toggle="collapse" data-target=".method_getHeight .collapse" title="public">
+<h2>getHeight()
+        </h2>
+<pre>getHeight() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getResource"></a><div class="element clickable method public method_getResource inherited" data-toggle="collapse" data-target=".method_getResource .collapse" title="public">
+<h2>Returns the temporary image used during the image processing.</h2>
+<pre>getResource() : resource</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Good for extending the system or doing things this library
 is not intended to do.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>resource</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getResourcePath"></a>
-                        <div class="element clickable method protected  method_getResourcePath" data-toggle="collapse" data-target=".method_getResourcePath .collapse">
-                            <h2>Get Image Resource</h2>
-                            <pre>getResourcePath() : resource|boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>This simply creates an image resource handle
-based on the type of image being processed.
-Since ImageMagick is used on the cli, we need to
-ensure we have a temporary file on the server
-that we can use.</p>
-<p>To ensure we can use all features, like transparency,
-during the process, we'll use a PNG as the temp file type.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>resource|boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getVersion"></a>
-                        <div class="element clickable method public  method_getVersion inherited" data-toggle="collapse" data-target=".method_getVersion .collapse">
-                            <h2>Get the version of the image library in use.</h2>
-                            <pre>getVersion() : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getWidth"></a>
-                        <div class="element clickable method public  method_getWidth inherited" data-toggle="collapse" data-target=".method_getWidth .collapse">
-                            <h2>getWidth</h2>
-                            <pre>getWidth() </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_process"></a>
-                        <div class="element clickable method protected  method_process inherited" data-toggle="collapse" data-target=".method_process .collapse">
-                            <h2>Does the driver-specific processing of the image.</h2>
-                            <pre>process(string $action) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$action</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_reorient"></a>
-                        <div class="element clickable method public  method_reorient inherited" data-toggle="collapse" data-target=".method_reorient .collapse">
-                            <h2>Reads the EXIF information from the image and modifies the orientation
+<h3>Returns</h3>
+<div class="subelement response"><code>resource</code></div>
+</div></div>
+</div>
+<a id="method_getVersion"></a><div class="element clickable method public method_getVersion " data-toggle="collapse" data-target=".method_getVersion .collapse" title="public">
+<h2>Get GD version</h2>
+<pre>getVersion() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::getVersion()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_getVersion"></a><div class="element clickable method public method_getVersion inherited" data-toggle="collapse" data-target=".method_getVersion .collapse" title="public">
+<h2>Get the version of the image library in use.</h2>
+<pre>getVersion() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getWidth"></a><div class="element clickable method public method_getWidth inherited" data-toggle="collapse" data-target=".method_getWidth .collapse" title="public">
+<h2>getWidth()
+        </h2>
+<pre>getWidth() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_reorient"></a><div class="element clickable method public method_reorient inherited" data-toggle="collapse" data-target=".method_reorient .collapse" title="public">
+<h2>Reads the EXIF information from the image and modifies the orientation
 so that displays correctly in the browser. This is especially an issue
 with images taken by smartphones who always store the image up-right,
 but set the orientation flag to display it correctly.</h2>
-                            <pre>reorient(boolean $silent = false) : $this</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$silent</h4>
-                                                <code>boolean</code><p><p>If true, will ignore exceptions when PHP doesn't support EXIF.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_reproportion"></a>
-                        <div class="element clickable method protected  method_reproportion inherited" data-toggle="collapse" data-target=".method_reproportion .collapse">
-                            <h2>Re-proportion Image Width/Height</h2>
-                            <pre>reproportion() : void</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>When creating thumbs, the desired width/height
-can end up warping the image due to an incorrect
-ratio between the full-sized image and the thumb.</p>
-<p>This function lets us re-proportion the width/height
-if users choose to maintain the aspect ratio when resizing.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_resize"></a>
-                        <div class="element clickable method public  method_resize inherited" data-toggle="collapse" data-target=".method_resize .collapse">
-                            <h2>Resize the image</h2>
-                            <pre>resize(integer $width, integer $height, boolean $maintainRatio = false, string $masterDim = &#039;auto&#039;) : \CodeIgniter\Images\Handlers\BaseHandler</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$width</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$height</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$maintainRatio</h4>
-                                                <code>boolean</code><p><p>If true, will get the closest match possible while keeping aspect ratio true.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$masterDim</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Images.Handlers.BaseHandler.html">\CodeIgniter\Images\Handlers\BaseHandler</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_rotate"></a>
-                        <div class="element clickable method public  method_rotate inherited" data-toggle="collapse" data-target=".method_rotate .collapse">
-                            <h2>Rotates the image on the current canvas.</h2>
-                            <pre>rotate(float $angle) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$angle</h4>
-                                                <code>float</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_save"></a>
-                        <div class="element clickable method public  method_save inherited" data-toggle="collapse" data-target=".method_save .collapse">
-                            <h2>Saves any changes that have been made to file.</h2>
-                            <pre>save(string $target = null, integer $quality = 90) : mixed</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                <span class="label">abstract</span>                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Example:
+<pre>reorient(boolean $silent<code> = false</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::reorient()</td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$silent</h4>
+<code>boolean</code><p>If true, will ignore exceptions when PHP doesn't support EXIF.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method_resize"></a><div class="element clickable method public method_resize inherited" data-toggle="collapse" data-target=".method_resize .collapse" title="public">
+<h2>Resize the image</h2>
+<pre>resize(integer $width, integer $height, boolean $maintainRatio<code> = false</code>, string $masterDim<code> = 'auto'</code>) : \CodeIgniter\Images\Handlers\BaseHandler</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::resize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$maintainRatio</h4>
+<code>boolean</code><p>If true, will get the closest match possible while keeping aspect ratio true.</p></div>
+<div class="subelement argument">
+<h4>$masterDim</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\BaseHandler</code></div>
+</div></div>
+</div>
+<a id="method_rotate"></a><div class="element clickable method public method_rotate inherited" data-toggle="collapse" data-target=".method_rotate .collapse" title="public">
+<h2>Rotates the image on the current canvas.</h2>
+<pre>rotate(float $angle) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::rotate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$angle</h4>
+<code>float</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_save"></a><div class="element clickable method public method_save " data-toggle="collapse" data-target=".method_save .collapse" title="public">
+<h2>Saves any changes that have been made to file. If no new filename is
+provided, the existing image is overwritten, otherwise a copy of the
+file is made at $target.</h2>
+<pre>save(string|null $target<code> = null</code>, integer $quality<code> = 90</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example:
+$image-&gt;resize(100, 200, true)
+-&gt;save();</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::save()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$target</h4>
+<code>string</code><code>null</code>
+</div>
+<div class="subelement argument">
+<h4>$quality</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_save"></a><div class="element clickable method public method_save inherited" data-toggle="collapse" data-target=".method_save .collapse" title="public">
+<h2>Saves any changes that have been made to file.</h2>
+<pre>save(string $target<code> = null</code>, integer $quality<code> = 90</code>) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example:
 $image-&gt;resize(100, 200, true)
 -&gt;save($target);</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$target</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$quality</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_text"></a>
-                        <div class="element clickable method public  method_text inherited" data-toggle="collapse" data-target=".method_text .collapse">
-                            <h2>Overlays a string of text over the image.</h2>
-                            <pre>text(string $text, array $options = array()) : $this</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Valid options:</p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::save()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$target</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$quality</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_text"></a><div class="element clickable method public method_text inherited" data-toggle="collapse" data-target=".method_text .collapse" title="public">
+<h2>Overlays a string of text over the image.</h2>
+<pre>text(string $text, array $options<code> = array()</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Valid options:</p>
 <ul>
 <li>color         Text Color (hex number)</li>
 <li>shadowColor   Color of the shadow (hex number)</li>
@@ -1402,357 +690,389 @@ $image-&gt;resize(100, 200, true)
 <li>fontSize</li>
 <li>shadowOffset</li>
 </ul></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$text</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_withFile"></a>
-                        <div class="element clickable method public  method_withFile inherited" data-toggle="collapse" data-target=".method_withFile .collapse">
-                            <h2>Sets another image for this handler to work on.</h2>
-                            <pre>withFile(string $path) : $this</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Keeps us from needing to continually instantiate the handler.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_version"> </a>
-                            <div class="element clickable property  public property_version" data-toggle="collapse" data-target=".property_version .collapse">
-                                <h2>version</h2>
-                                <pre>version : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_resource"> </a>
-                            <div class="element clickable property  protected property_resource inherited" data-toggle="collapse" data-target=".property_resource .collapse">
-                                <h2>Temporary image used by the different engines.</h2>
-                                <pre>resource : resource</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>resource</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_config"> </a>
-                            <div class="element clickable property  protected property_config inherited" data-toggle="collapse" data-target=".property_config .collapse">
-                                <h2>config</h2>
-                                <pre>config : \Config\Images</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>\Config\Images</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_image"> </a>
-                            <div class="element clickable property  protected property_image inherited" data-toggle="collapse" data-target=".property_image .collapse">
-                                <h2>The image/file instance
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\ImageHandlerInterface::text()</td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method_withFile"></a><div class="element clickable method public method_withFile inherited" data-toggle="collapse" data-target=".method_withFile .collapse" title="public">
+<h2>Sets another image for this handler to work on.</h2>
+<pre>withFile(string $path) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Keeps us from needing to continually instantiate the handler.</p></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method__flip"></a><div class="element clickable method protected method__flip inherited" data-toggle="collapse" data-target=".method__flip .collapse" title="protected">
+<h2>Handler-specific method to handle flipping an image along its
+horizontal or vertical axis.</h2>
+<pre>_flip(string $direction) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$direction</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method__rotate"></a><div class="element clickable method protected method__rotate " data-toggle="collapse" data-target=".method__rotate .collapse" title="protected">
+<h2>Handles the rotation of an image resource.</h2>
+<pre>_rotate(integer $angle) : \CodeIgniter\Images\Handlers\ImageMagickHandler</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Doesn't save the image, but replaces the current resource.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::_rotate()</td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$angle</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code></div>
+</div></div>
+</div>
+<a id="method__rotate"></a><div class="element clickable method protected method__rotate inherited" data-toggle="collapse" data-target=".method__rotate .collapse" title="protected">
+<h2>Handler-specific method to handle rotating an image in 90 degree increments.</h2>
+<pre>_rotate(integer $angle) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$angle</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method__text"></a><div class="element clickable method protected method__text " data-toggle="collapse" data-target=".method__text .collapse" title="protected">
+<h2>Handler-specific method for overlaying text on an image.</h2>
+<pre>_text(string $text, array $options<code> = array()</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::_text()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method__text"></a><div class="element clickable method protected method__text inherited" data-toggle="collapse" data-target=".method__text .collapse" title="protected">
+<h2>Handler-specific method for overlaying text on an image.</h2>
+<pre>_text(string $text, array $options<code> = array()</code>) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+</div></div>
+</div>
+<a id="method_calcAspectRatio"></a><div class="element clickable method protected method_calcAspectRatio inherited" data-toggle="collapse" data-target=".method_calcAspectRatio .collapse" title="protected">
+<h2>calcAspectRatio()
+        </h2>
+<pre>calcAspectRatio($width, null $height<code> = null</code>, $origWidth, $origHeight) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$width</h4></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>null</code>
+</div>
+<div class="subelement argument"><h4>$origWidth</h4></div>
+<div class="subelement argument"><h4>$origHeight</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_calcCropCoords"></a><div class="element clickable method protected method_calcCropCoords inherited" data-toggle="collapse" data-target=".method_calcCropCoords .collapse" title="protected">
+<h2>Based on the position, will determine the correct x/y coords to
+crop the desired portion from the image.</h2>
+<pre>calcCropCoords($width, $height, $origWidth, $origHeight, $position) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$width</h4></div>
+<div class="subelement argument"><h4>$height</h4></div>
+<div class="subelement argument"><h4>$origWidth</h4></div>
+<div class="subelement argument"><h4>$origHeight</h4></div>
+<div class="subelement argument"><h4>$position</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_ensureResource"></a><div class="element clickable method protected method_ensureResource inherited" data-toggle="collapse" data-target=".method_ensureResource .collapse" title="protected">
+<h2>Make the image resource object if needed</h2>
+<pre>ensureResource() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getResourcePath"></a><div class="element clickable method protected method_getResourcePath " data-toggle="collapse" data-target=".method_getResourcePath .collapse" title="protected">
+<h2>Get Image Resource</h2>
+<pre>getResourcePath() : resource | boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This simply creates an image resource handle
+based on the type of image being processed.
+Since ImageMagick is used on the cli, we need to
+ensure we have a temporary file on the server
+that we can use.</p>
+<p>To ensure we can use all features, like transparency,
+during the process, we'll use a PNG as the temp file type.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code><code>boolean</code>
+</div>
+</div></div>
+</div>
+<a id="method_process"></a><div class="element clickable method protected method_process " data-toggle="collapse" data-target=".method_process .collapse" title="protected">
+<h2>Handles all of the grunt work of resizing, etc.</h2>
+<pre>process(string $action, integer $quality<code> = 100</code>) : \CodeIgniter\Images\Handlers\ImageMagickHandler | boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::process()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$quality</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\CodeIgniter\Images\Handlers\ImageMagickHandler</code><code>boolean</code>
+</div>
+</div></div>
+</div>
+<a id="method_process"></a><div class="element clickable method protected method_process inherited" data-toggle="collapse" data-target=".method_process .collapse" title="protected">
+<h2>Does the driver-specific processing of the image.</h2>
+<pre>process(string $action) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_reproportion"></a><div class="element clickable method protected method_reproportion inherited" data-toggle="collapse" data-target=".method_reproportion .collapse" title="protected">
+<h2>Re-proportion Image Width/Height</h2>
+<pre>reproportion() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>When creating thumbs, the desired width/height
+can end up warping the image due to an incorrect
+ratio between the full-sized image and the thumb.</p>
+<p>This function lets us re-proportion the width/height
+if users choose to maintain the aspect ratio when resizing.</p></div></div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_version"> </a><div class="element clickable property public property_version" data-toggle="collapse" data-target=".property_version .collapse" title="public">
+<h2>$version</h2>
+<pre>$version </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse" title="protected">
+<h2>$config</h2>
+<pre>$config : \Config\Images</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_filePermissions"> </a><div class="element clickable property protected property_filePermissions" data-toggle="collapse" data-target=".property_filePermissions .collapse" title="protected">
+<h2>$filePermissions</h2>
+<pre>$filePermissions </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>420</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_height"> </a><div class="element clickable property protected property_height" data-toggle="collapse" data-target=".property_height .collapse" title="protected">
+<h2>$height</h2>
+<pre>$height </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_image"> </a><div class="element clickable property protected property_image" data-toggle="collapse" data-target=".property_image .collapse" title="protected">
+<h2>The image/file instance
 d</h2>
-                                <pre>image : \CodeIgniter\Images\Image</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code><a href="../classes/CodeIgniter.Images.Image.html">\CodeIgniter\Images\Image</a></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_width"> </a>
-                            <div class="element clickable property  protected property_width inherited" data-toggle="collapse" data-target=".property_width .collapse">
-                                <h2>width</h2>
-                                <pre>width : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_height"> </a>
-                            <div class="element clickable property  protected property_height inherited" data-toggle="collapse" data-target=".property_height .collapse">
-                                <h2>height</h2>
-                                <pre>height : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_filePermissions"> </a>
-                            <div class="element clickable property  protected property_filePermissions inherited" data-toggle="collapse" data-target=".property_filePermissions .collapse">
-                                <h2>filePermissions</h2>
-                                <pre>filePermissions : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_xAxis"> </a>
-                            <div class="element clickable property  protected property_xAxis inherited" data-toggle="collapse" data-target=".property_xAxis .collapse">
-                                <h2>xAxis</h2>
-                                <pre>xAxis : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_yAxis"> </a>
-                            <div class="element clickable property  protected property_yAxis inherited" data-toggle="collapse" data-target=".property_yAxis .collapse">
-                                <h2>yAxis</h2>
-                                <pre>yAxis : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_masterDim"> </a>
-                            <div class="element clickable property  protected property_masterDim inherited" data-toggle="collapse" data-target=".property_masterDim .collapse">
-                                <h2>masterDim</h2>
-                                <pre>masterDim : </pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_textDefaults"> </a>
-                            <div class="element clickable property  protected property_textDefaults inherited" data-toggle="collapse" data-target=".property_textDefaults .collapse">
-                                <h2>Default options for text watermarking.</h2>
-                                <pre>textDefaults : array</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\CodeIgniter\Images\Handlers\ImageMagickHandler"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.Handlers.html">Handlers</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Images.Handlers.ImageMagickHandler.html">ImageMagickHandler</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:40:00 -0700.<br/>
-    </footer>
-    </body>
+<pre>$image : \CodeIgniter\Images\Image</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>null</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_masterDim"> </a><div class="element clickable property protected property_masterDim" data-toggle="collapse" data-target=".property_masterDim .collapse" title="protected">
+<h2>$masterDim</h2>
+<pre>$masterDim </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'auto'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_resource"> </a><div class="element clickable property protected property_resource" data-toggle="collapse" data-target=".property_resource .collapse" title="protected">
+<h2>Stores image resource in memory.</h2>
+<pre>$resource : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Images\Handlers\BaseHandler::resource</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_resource"> </a><div class="element clickable property protected property_resource" data-toggle="collapse" data-target=".property_resource .collapse" title="protected">
+<h2>Temporary image used by the different engines.</h2>
+<pre>$resource : resource</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_textDefaults"> </a><div class="element clickable property protected property_textDefaults" data-toggle="collapse" data-target=".property_textDefaults .collapse" title="protected">
+<h2>Default options for text watermarking.</h2>
+<pre>$textDefaults : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array('fontPath' => null, 'fontSize' => 16, 'color' => 'ffffff', 'opacity' => 1.0, 'vAlign' => 'bottom', 'hAlign' => 'center', 'vOffset' => 0, 'hOffset' => 0, 'padding' => 0, 'withShadow' => false, 'shadowColor' => '000000', 'shadowOffset' => 3)</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_width"> </a><div class="element clickable property protected property_width" data-toggle="collapse" data-target=".property_width .collapse" title="protected">
+<h2>$width</h2>
+<pre>$width </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_xAxis"> </a><div class="element clickable property protected property_xAxis" data-toggle="collapse" data-target=".property_xAxis .collapse" title="protected">
+<h2>$xAxis</h2>
+<pre>$xAxis </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_yAxis"> </a><div class="element clickable property protected property_yAxis" data-toggle="collapse" data-target=".property_yAxis .collapse" title="protected">
+<h2>$yAxis</h2>
+<pre>$yAxis </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>0</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:13-07:00.<br></footer></div>
+</div>
+</body>
 </html>

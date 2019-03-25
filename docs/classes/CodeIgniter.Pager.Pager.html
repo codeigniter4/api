@@ -1,1050 +1,621 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Pager\Pager
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » \CodeIgniter\Pager\Pager</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method___construct" title="__construct :: ">
-            <span class="description"></span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        <li class="method public">
-        <a href="#method_getCurrentPage" title="getCurrentPage :: Returns the number of the current page of results.">
-            <span class="description">Returns the number of the current page of results.</span><pre>getCurrentPage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getDetails" title="getDetails :: Returns an array with details about the results, including
-total, per_page, current_page, last_page, next_url, prev_url, from, to.">
-            <span class="description">Returns an array with details about the results, including
-total, per_page, current_page, last_page, next_url, prev_url, from, to.</span><pre>getDetails</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getFirstPage" title="getFirstPage :: Determines the first page # that should be shown.">
-            <span class="description">Determines the first page # that should be shown.</span><pre>getFirstPage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getLastPage" title="getLastPage :: Returns the last page, if we have a total that we can calculate with.">
-            <span class="description">Returns the last page, if we have a total that we can calculate with.</span><pre>getLastPage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getNextPageURI" title="getNextPageURI :: Returns the full URI to the next page of results, or null.">
-            <span class="description">Returns the full URI to the next page of results, or null.</span><pre>getNextPageURI</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPageCount" title="getPageCount :: Returns the total number of pages.">
-            <span class="description">Returns the total number of pages.</span><pre>getPageCount</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPageURI" title="getPageURI :: Returns the URI for a specific page for the specified group.">
-            <span class="description">Returns the URI for a specific page for the specified group.</span><pre>getPageURI</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPerPage" title="getPerPage :: Returns the number of results per page that should be shown.">
-            <span class="description">Returns the number of results per page that should be shown.</span><pre>getPerPage</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPreviousPageURI" title="getPreviousPageURI :: Returns the full URL to the previous page of results, or null.">
-            <span class="description">Returns the full URL to the previous page of results, or null.</span><pre>getPreviousPageURI</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_hasMore" title="hasMore :: Tells whether this group of results has any more pages of results.">
-            <span class="description">Tells whether this group of results has any more pages of results.</span><pre>hasMore</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_links" title="links :: Handles creating and displaying the">
-            <span class="description">Handles creating and displaying the</span><pre>links</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_makeLinks" title="makeLinks :: Allows for a simple, manual, form of pagination where all of the data
-is provided by the user. The URL is the current URI.">
-            <span class="description">Allows for a simple, manual, form of pagination where all of the data
-is provided by the user. The URL is the current URI.</span><pre>makeLinks</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_only" title="only :: Sets only allowed queries on pagination links.">
-            <span class="description">Sets only allowed queries on pagination links.</span><pre>only</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setPath" title="setPath :: Sets the path that an aliased group of links will use.">
-            <span class="description">Sets the path that an aliased group of links will use.</span><pre>setPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_simpleLinks" title="simpleLinks :: Creates simple Next/Previous links, instead of full pagination.">
-            <span class="description">Creates simple Next/Previous links, instead of full pagination.</span><pre>simpleLinks</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_store" title="store :: Stores a set of pagination data for later display. Most commonly used
-by the model to automate the process.">
-            <span class="description">Stores a set of pagination data for later display. Most commonly used
-by the model to automate the process.</span><pre>store</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                <li class="method protected">
-                            <a href="#method_displayLinks" title="displayLinks :: Does the actual work of displaying the view file. Used internally
-by links(), simpleLinks(), and makeLinks().">
-                                <span class="description">Does the actual work of displaying the view file. Used internally
-by links(), simpleLinks(), and makeLinks().</span><pre>displayLinks</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_ensureGroup" title="ensureGroup :: Ensures that an array exists for the group specified.">
-                                <span class="description">Ensures that an array exists for the group specified.</span><pre>ensureGroup</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Pager</h1>
-                <small style="display: block; text-align: right">
-                                                                Implements <a href="../classes/CodeIgniter.Pager.PagerInterface.html">\CodeIgniter\Pager\PagerInterface</a>
-                                    </small>
-                <p class="short_description">Class Pager</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>The Pager class provides semi-automatic and manual methods for creating
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
+        </span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_getCurrentPage" title="getCurrentPage() :: Returns the number of the current page of results."><span class="description">Returns the number of the current page of results.</span><pre>getCurrentPage()</pre></a></li>
+<li class="method public "><a href="#method_getDetails" title="getDetails() :: Returns an array with details about the results, including
+total, per_page, current_page, last_page, next_url, prev_url, from, to."><span class="description">Returns an array with details about the results, including
+total, per_page, current_page, last_page, next_url, prev_url, from, to.</span><pre>getDetails()</pre></a></li>
+<li class="method public "><a href="#method_getFirstPage" title="getFirstPage() :: Determines the first page # that should be shown."><span class="description">Determines the first page # that should be shown.</span><pre>getFirstPage()</pre></a></li>
+<li class="method public "><a href="#method_getLastPage" title="getLastPage() :: Returns the last page, if we have a total that we can calculate with."><span class="description">Returns the last page, if we have a total that we can calculate with.</span><pre>getLastPage()</pre></a></li>
+<li class="method public "><a href="#method_getNextPageURI" title="getNextPageURI() :: Returns the full URI to the next page of results, or null."><span class="description">Returns the full URI to the next page of results, or null.</span><pre>getNextPageURI()</pre></a></li>
+<li class="method public "><a href="#method_getPageCount" title="getPageCount() :: Returns the total number of pages."><span class="description">Returns the total number of pages.</span><pre>getPageCount()</pre></a></li>
+<li class="method public "><a href="#method_getPageURI" title="getPageURI() :: Returns the URI for a specific page for the specified group."><span class="description">Returns the URI for a specific page for the specified group.</span><pre>getPageURI()</pre></a></li>
+<li class="method public "><a href="#method_getPerPage" title="getPerPage() :: Returns the number of results per page that should be shown."><span class="description">Returns the number of results per page that should be shown.</span><pre>getPerPage()</pre></a></li>
+<li class="method public "><a href="#method_getPreviousPageURI" title="getPreviousPageURI() :: Returns the full URL to the previous page of results, or null."><span class="description">Returns the full URL to the previous page of results, or null.</span><pre>getPreviousPageURI()</pre></a></li>
+<li class="method public "><a href="#method_hasMore" title="hasMore() :: Tells whether this group of results has any more pages of results."><span class="description">Tells whether this group of results has any more pages of results.</span><pre>hasMore()</pre></a></li>
+<li class="method public "><a href="#method_links" title="links() :: Handles creating and displaying the"><span class="description">Handles creating and displaying the</span><pre>links()</pre></a></li>
+<li class="method public "><a href="#method_makeLinks" title="makeLinks() :: Allows for a simple, manual, form of pagination where all of the data
+is provided by the user. The URL is the current URI."><span class="description">Allows for a simple, manual, form of pagination where all of the data
+is provided by the user. The URL is the current URI.</span><pre>makeLinks()</pre></a></li>
+<li class="method public "><a href="#method_only" title="only() :: Sets only allowed queries on pagination links."><span class="description">Sets only allowed queries on pagination links.</span><pre>only()</pre></a></li>
+<li class="method public "><a href="#method_setPath" title="setPath() :: Sets the path that an aliased group of links will use."><span class="description">Sets the path that an aliased group of links will use.</span><pre>setPath()</pre></a></li>
+<li class="method public "><a href="#method_simpleLinks" title="simpleLinks() :: Creates simple Next/Previous links, instead of full pagination."><span class="description">Creates simple Next/Previous links, instead of full pagination.</span><pre>simpleLinks()</pre></a></li>
+<li class="method public "><a href="#method_store" title="store() :: Stores a set of pagination data for later display. Most commonly used
+by the model to automate the process."><span class="description">Stores a set of pagination data for later display. Most commonly used
+by the model to automate the process.</span><pre>store()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_displayLinks" title="displayLinks() :: Does the actual work of displaying the view file. Used internally
+by links(), simpleLinks(), and makeLinks()."><span class="description">Does the actual work of displaying the view file. Used internally
+by links(), simpleLinks(), and makeLinks().</span><pre>displayLinks()</pre></a></li>
+<li class="method protected "><a href="#method_ensureGroup" title="ensureGroup() :: Ensures that an array exists for the group specified."><span class="description">Ensures that an array exists for the group specified.</span><pre>ensureGroup()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_config" title="$config() :: Our configuration instance."><span class="description"></span><pre>$config</pre></a></li>
+<li class="property protected "><a href="#property_groups" title="$groups() :: The group data."><span class="description"></span><pre>$groups</pre></a></li>
+<li class="property protected "><a href="#property_only" title="$only() :: List of only permitted queries"><span class="description"></span><pre>$only</pre></a></li>
+<li class="property protected "><a href="#property_segment" title="$segment() :: URI segment for groups if provided."><span class="description"></span><pre>$segment</pre></a></li>
+<li class="property protected "><a href="#property_view" title="$view() :: The view engine to render the links with."><span class="description"></span><pre>$view</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\Pager\Pager"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CodeIgniter.Pager.Pager.html">Pager</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Class Pager</p>
+<div class="details">
+<div class="long_description"><p>The Pager class provides semi-automatic and manual methods for creating
 pagination links and reading the current url's query variable, &quot;page&quot;
 to determine the current page. This class can support multiple
-paginations on a single page.</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter\Pager</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>__construct</h2>
-                            <pre>__construct( $config, \CodeIgniter\View\RendererInterface $view) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$view</h4>
-                                                <code><a href="../classes/CodeIgniter.View.RendererInterface.html">\CodeIgniter\View\RendererInterface</a></code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_displayLinks"></a>
-                        <div class="element clickable method protected  method_displayLinks" data-toggle="collapse" data-target=".method_displayLinks .collapse">
-                            <h2>Does the actual work of displaying the view file. Used internally
-by links(), simpleLinks(), and makeLinks().</h2>
-                            <pre>displayLinks(string $group, string $template) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_ensureGroup"></a>
-                        <div class="element clickable method protected  method_ensureGroup" data-toggle="collapse" data-target=".method_ensureGroup .collapse">
-                            <h2>Ensures that an array exists for the group specified.</h2>
-                            <pre>ensureGroup(string $group) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getCurrentPage"></a>
-                        <div class="element clickable method public  method_getCurrentPage" data-toggle="collapse" data-target=".method_getCurrentPage .collapse">
-                            <h2>Returns the number of the current page of results.</h2>
-                            <pre>getCurrentPage(string|null $group = &#039;default&#039;) : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string|null</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getDetails"></a>
-                        <div class="element clickable method public  method_getDetails" data-toggle="collapse" data-target=".method_getDetails .collapse">
-                            <h2>Returns an array with details about the results, including
+paginations on a single page.</p></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.Pager.html">CodeIgniter\Pager</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>__construct()
+        </h2>
+<pre>__construct($config, \CodeIgniter\View\RendererInterface $view) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$config</h4></div>
+<div class="subelement argument"><h4>$view</h4></div>
+</div></div>
+</div>
+<a id="method_getCurrentPage"></a><div class="element clickable method public method_getCurrentPage " data-toggle="collapse" data-target=".method_getCurrentPage .collapse" title="public">
+<h2>Returns the number of the current page of results.</h2>
+<pre>getCurrentPage(string|null $group<code> = 'default'</code>) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getCurrentPage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getDetails"></a><div class="element clickable method public method_getDetails " data-toggle="collapse" data-target=".method_getDetails .collapse" title="public">
+<h2>Returns an array with details about the results, including
 total, per_page, current_page, last_page, next_url, prev_url, from, to.</h2>
-                            <pre>getDetails(string $group = &#039;default&#039;) : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Does not include the actual data. This data is suitable for adding
+<pre>getDetails(string $group<code> = 'default'</code>) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Does not include the actual data. This data is suitable for adding
 a 'data' object to with the result set and converting to JSON.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getFirstPage"></a>
-                        <div class="element clickable method public  method_getFirstPage" data-toggle="collapse" data-target=".method_getFirstPage .collapse">
-                            <h2>Determines the first page # that should be shown.</h2>
-                            <pre>getFirstPage(string $group = &#039;default&#039;) : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getLastPage"></a>
-                        <div class="element clickable method public  method_getLastPage" data-toggle="collapse" data-target=".method_getLastPage .collapse">
-                            <h2>Returns the last page, if we have a total that we can calculate with.</h2>
-                            <pre>getLastPage(string $group = &#039;default&#039;) : integer|null</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>integer|null</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getNextPageURI"></a>
-                        <div class="element clickable method public  method_getNextPageURI" data-toggle="collapse" data-target=".method_getNextPageURI .collapse">
-                            <h2>Returns the full URI to the next page of results, or null.</h2>
-                            <pre>getNextPageURI(string $group = &#039;default&#039;, boolean $returnObject = false) : string|null</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$returnObject</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|null</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPageCount"></a>
-                        <div class="element clickable method public  method_getPageCount" data-toggle="collapse" data-target=".method_getPageCount .collapse">
-                            <h2>Returns the total number of pages.</h2>
-                            <pre>getPageCount(string|null $group = &#039;default&#039;) : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string|null</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPageURI"></a>
-                        <div class="element clickable method public  method_getPageURI" data-toggle="collapse" data-target=".method_getPageURI .collapse">
-                            <h2>Returns the URI for a specific page for the specified group.</h2>
-                            <pre>getPageURI(integer|null $page = null, string $group = &#039;default&#039;, boolean $returnObject = false) : string|\CodeIgniter\HTTP\URI</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$page</h4>
-                                                <code>integer|null</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$returnObject</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|<a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPerPage"></a>
-                        <div class="element clickable method public  method_getPerPage" data-toggle="collapse" data-target=".method_getPerPage .collapse">
-                            <h2>Returns the number of results per page that should be shown.</h2>
-                            <pre>getPerPage(string $group = &#039;default&#039;) : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPreviousPageURI"></a>
-                        <div class="element clickable method public  method_getPreviousPageURI" data-toggle="collapse" data-target=".method_getPreviousPageURI .collapse">
-                            <h2>Returns the full URL to the previous page of results, or null.</h2>
-                            <pre>getPreviousPageURI(string $group = &#039;default&#039;, boolean $returnObject = false) : string|null</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$returnObject</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|null</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_hasMore"></a>
-                        <div class="element clickable method public  method_hasMore" data-toggle="collapse" data-target=".method_hasMore .collapse">
-                            <h2>Tells whether this group of results has any more pages of results.</h2>
-                            <pre>hasMore(string|null $group = &#039;default&#039;) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string|null</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_links"></a>
-                        <div class="element clickable method public  method_links" data-toggle="collapse" data-target=".method_links .collapse">
-                            <h2>Handles creating and displaying the</h2>
-                            <pre>links(string $group = &#039;default&#039;, string $template = &#039;default_full&#039;) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p><p>The output template alias to render.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_makeLinks"></a>
-                        <div class="element clickable method public  method_makeLinks" data-toggle="collapse" data-target=".method_makeLinks .collapse">
-                            <h2>Allows for a simple, manual, form of pagination where all of the data
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getDetails()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getFirstPage"></a><div class="element clickable method public method_getFirstPage " data-toggle="collapse" data-target=".method_getFirstPage .collapse" title="public">
+<h2>Determines the first page # that should be shown.</h2>
+<pre>getFirstPage(string $group<code> = 'default'</code>) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getFirstPage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getLastPage"></a><div class="element clickable method public method_getLastPage " data-toggle="collapse" data-target=".method_getLastPage .collapse" title="public">
+<h2>Returns the last page, if we have a total that we can calculate with.</h2>
+<pre>getLastPage(string $group<code> = 'default'</code>) : integer | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getLastPage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getNextPageURI"></a><div class="element clickable method public method_getNextPageURI " data-toggle="collapse" data-target=".method_getNextPageURI .collapse" title="public">
+<h2>Returns the full URI to the next page of results, or null.</h2>
+<pre>getNextPageURI(string $group<code> = 'default'</code>, boolean $returnObject<code> = false</code>) : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getNextPageURI()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$returnObject</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_getPageCount"></a><div class="element clickable method public method_getPageCount " data-toggle="collapse" data-target=".method_getPageCount .collapse" title="public">
+<h2>Returns the total number of pages.</h2>
+<pre>getPageCount(string|null $group<code> = 'default'</code>) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getPageCount()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getPageURI"></a><div class="element clickable method public method_getPageURI " data-toggle="collapse" data-target=".method_getPageURI .collapse" title="public">
+<h2>Returns the URI for a specific page for the specified group.</h2>
+<pre>getPageURI(integer|null $page<code> = null</code>, string $group<code> = 'default'</code>, boolean $returnObject<code> = false</code>) : string | \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getPageURI()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><code>null</code>
+</div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$returnObject</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>\CodeIgniter\HTTP\URI</code>
+</div>
+</div></div>
+</div>
+<a id="method_getPerPage"></a><div class="element clickable method public method_getPerPage " data-toggle="collapse" data-target=".method_getPerPage .collapse" title="public">
+<h2>Returns the number of results per page that should be shown.</h2>
+<pre>getPerPage(string $group<code> = 'default'</code>) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getPerPage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getPreviousPageURI"></a><div class="element clickable method public method_getPreviousPageURI " data-toggle="collapse" data-target=".method_getPreviousPageURI .collapse" title="public">
+<h2>Returns the full URL to the previous page of results, or null.</h2>
+<pre>getPreviousPageURI(string $group<code> = 'default'</code>, boolean $returnObject<code> = false</code>) : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::getPreviousPageURI()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$returnObject</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>
+</div>
+</div></div>
+</div>
+<a id="method_hasMore"></a><div class="element clickable method public method_hasMore " data-toggle="collapse" data-target=".method_hasMore .collapse" title="public">
+<h2>Tells whether this group of results has any more pages of results.</h2>
+<pre>hasMore(string|null $group<code> = 'default'</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::hasMore()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_links"></a><div class="element clickable method public method_links " data-toggle="collapse" data-target=".method_links .collapse" title="public">
+<h2>Handles creating and displaying the</h2>
+<pre>links(string $group<code> = 'default'</code>, string $template<code> = 'default_full'</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::links()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The output template alias to render.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_makeLinks"></a><div class="element clickable method public method_makeLinks " data-toggle="collapse" data-target=".method_makeLinks .collapse" title="public">
+<h2>Allows for a simple, manual, form of pagination where all of the data
 is provided by the user. The URL is the current URI.</h2>
-                            <pre>makeLinks(integer $page, integer $perPage, integer $total, string $template = &#039;default_full&#039;, integer $segment) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$page</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$perPage</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$total</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p><p>The output template alias to render.</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$segment</h4>
-                                                <code>integer</code><p><p>(if page number is provided by URI segment)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_only"></a>
-                        <div class="element clickable method public  method_only" data-toggle="collapse" data-target=".method_only .collapse">
-                            <h2>Sets only allowed queries on pagination links.</h2>
-                            <pre>only(array $queries) : \CodeIgniter\Pager\Pager</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$queries</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Pager.Pager.html">\CodeIgniter\Pager\Pager</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setPath"></a>
-                        <div class="element clickable method public  method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
-                            <h2>Sets the path that an aliased group of links will use.</h2>
-                            <pre>setPath(string $path, string $group = &#039;default&#039;) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_simpleLinks"></a>
-                        <div class="element clickable method public  method_simpleLinks" data-toggle="collapse" data-target=".method_simpleLinks .collapse">
-                            <h2>Creates simple Next/Previous links, instead of full pagination.</h2>
-                            <pre>simpleLinks(string $group = &#039;default&#039;, string $template = &#039;default_simple&#039;) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_store"></a>
-                        <div class="element clickable method public  method_store" data-toggle="collapse" data-target=".method_store .collapse">
-                            <h2>Stores a set of pagination data for later display. Most commonly used
+<pre>makeLinks(integer $page, integer $perPage, integer $total, string $template<code> = 'default_full'</code>, integer $segment<code> = 0</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::makeLinks()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$perPage</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$total</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The output template alias to render.</p></div>
+<div class="subelement argument">
+<h4>$segment</h4>
+<code>integer</code><p>(if page number is provided by URI segment)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_only"></a><div class="element clickable method public method_only " data-toggle="collapse" data-target=".method_only .collapse" title="public">
+<h2>Sets only allowed queries on pagination links.</h2>
+<pre>only(array $queries) : \CodeIgniter\Pager\Pager</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$queries</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Pager\Pager</code></div>
+</div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method public method_setPath " data-toggle="collapse" data-target=".method_setPath .collapse" title="public">
+<h2>Sets the path that an aliased group of links will use.</h2>
+<pre>setPath(string $path, string $group<code> = 'default'</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::setPath()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_simpleLinks"></a><div class="element clickable method public method_simpleLinks " data-toggle="collapse" data-target=".method_simpleLinks .collapse" title="public">
+<h2>Creates simple Next/Previous links, instead of full pagination.</h2>
+<pre>simpleLinks(string $group<code> = 'default'</code>, string $template<code> = 'default_simple'</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::simpleLinks()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_store"></a><div class="element clickable method public method_store " data-toggle="collapse" data-target=".method_store .collapse" title="public">
+<h2>Stores a set of pagination data for later display. Most commonly used
 by the model to automate the process.</h2>
-                            <pre>store(string $group, integer $page, integer $perPage, integer $total, integer $segment) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$page</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$perPage</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$total</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$segment</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_groups"> </a>
-                            <div class="element clickable property  protected property_groups" data-toggle="collapse" data-target=".property_groups .collapse">
-                                <h2>The group data.</h2>
-                                <pre>groups : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_segment"> </a>
-                            <div class="element clickable property  protected property_segment" data-toggle="collapse" data-target=".property_segment .collapse">
-                                <h2>URI segment for groups if provided.</h2>
-                                <pre>segment : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_config"> </a>
-                            <div class="element clickable property  protected property_config" data-toggle="collapse" data-target=".property_config .collapse">
-                                <h2>Our configuration instance.</h2>
-                                <pre>config : \Config\Pager</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>\Config\Pager</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_view"> </a>
-                            <div class="element clickable property  protected property_view" data-toggle="collapse" data-target=".property_view .collapse">
-                                <h2>The view engine to render the links with.</h2>
-                                <pre>view : \CodeIgniter\View\RendererInterface</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code><a href="../classes/CodeIgniter.View.RendererInterface.html">\CodeIgniter\View\RendererInterface</a></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_only"> </a>
-                            <div class="element clickable property  protected property_only" data-toggle="collapse" data-target=".property_only .collapse">
-                                <h2>List of only permitted queries</h2>
-                                <pre>only : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\CodeIgniter\Pager\Pager"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Pager.Pager.html">Pager</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:40:07 -0700.<br/>
-    </footer>
-    </body>
+<pre>store(string $group, integer $page, integer $perPage, integer $total, integer $segment<code> = 0</code>) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\CodeIgniter\Pager\PagerInterface::store()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$perPage</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$total</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$segment</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>mixed</code></div>
+</div></div>
+</div>
+<a id="method_displayLinks"></a><div class="element clickable method protected method_displayLinks " data-toggle="collapse" data-target=".method_displayLinks .collapse" title="protected">
+<h2>Does the actual work of displaying the view file. Used internally
+by links(), simpleLinks(), and makeLinks().</h2>
+<pre>displayLinks(string $group, string $template) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_ensureGroup"></a><div class="element clickable method protected method_ensureGroup " data-toggle="collapse" data-target=".method_ensureGroup .collapse" title="protected">
+<h2>Ensures that an array exists for the group specified.</h2>
+<pre>ensureGroup(string $group) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$group</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse" title="protected">
+<h2>Our configuration instance.</h2>
+<pre>$config : \Config\Pager</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_groups"> </a><div class="element clickable property protected property_groups" data-toggle="collapse" data-target=".property_groups .collapse" title="protected">
+<h2>The group data.</h2>
+<pre>$groups : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_only"> </a><div class="element clickable property protected property_only" data-toggle="collapse" data-target=".property_only .collapse" title="protected">
+<h2>List of only permitted queries</h2>
+<pre>$only : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_segment"> </a><div class="element clickable property protected property_segment" data-toggle="collapse" data-target=".property_segment .collapse" title="protected">
+<h2>URI segment for groups if provided.</h2>
+<pre>$segment : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_view"> </a><div class="element clickable property protected property_view" data-toggle="collapse" data-target=".property_view .collapse" title="protected">
+<h2>The view engine to render the links with.</h2>
+<pre>$view : \CodeIgniter\View\RendererInterface</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:19-07:00.<br></footer></div>
+</div>
+</body>
 </html>

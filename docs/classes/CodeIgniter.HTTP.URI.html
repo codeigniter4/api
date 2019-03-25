@@ -1,392 +1,176 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\HTTP\URI
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » \CodeIgniter\HTTP\URI</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method___construct" title="__construct :: Constructor.">
-            <span class="description">Constructor.</span><pre>__construct</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method___toString" title="__toString :: Allow the URI to be output as a string by simply casting it to a string
-or echoing out.">
-            <span class="description">Allow the URI to be output as a string by simply casting it to a string
-or echoing out.</span><pre>__toString</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_addQuery" title="addQuery :: Adds a single new element to the query vars.">
-            <span class="description">Adds a single new element to the query vars.</span><pre>addQuery</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_createURIString" title="createURIString :: Builds a representation of the string from the component parts.">
-            <span class="description">Builds a representation of the string from the component parts.</span><pre>createURIString</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        <li class="method public">
-        <a href="#method_getAuthority" title="getAuthority :: Retrieve the authority component of the URI.">
-            <span class="description">Retrieve the authority component of the URI.</span><pre>getAuthority</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getFragment" title="getFragment :: Retrieve a URI fragment">
-            <span class="description">Retrieve a URI fragment</span><pre>getFragment</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getHost" title="getHost :: Retrieve the host component of the URI.">
-            <span class="description">Retrieve the host component of the URI.</span><pre>getHost</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPath" title="getPath :: Retrieve the path component of the URI.">
-            <span class="description">Retrieve the path component of the URI.</span><pre>getPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getPort" title="getPort :: Retrieve the port component of the URI.">
-            <span class="description">Retrieve the port component of the URI.</span><pre>getPort</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getQuery" title="getQuery :: Retrieve the query string">
-            <span class="description">Retrieve the query string</span><pre>getQuery</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getScheme" title="getScheme :: Retrieve the scheme component of the URI.">
-            <span class="description">Retrieve the scheme component of the URI.</span><pre>getScheme</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getSegment" title="getSegment :: Returns the value of a specific segment of the URI path.">
-            <span class="description">Returns the value of a specific segment of the URI path.</span><pre>getSegment</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getSegments" title="getSegments :: Returns the segments of the path as an array.">
-            <span class="description">Returns the segments of the path as an array.</span><pre>getSegments</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getTotalSegments" title="getTotalSegments :: Returns the total number of segments.">
-            <span class="description">Returns the total number of segments.</span><pre>getTotalSegments</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_getUserInfo" title="getUserInfo :: Retrieve the user information component of the URI.">
-            <span class="description">Retrieve the user information component of the URI.</span><pre>getUserInfo</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_keepQuery" title="keepQuery :: Filters the query variables so that only the keys passed in
-are kept. The rest are removed from the object.">
-            <span class="description">Filters the query variables so that only the keys passed in
-are kept. The rest are removed from the object.</span><pre>keepQuery</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_refreshPath" title="refreshPath :: Sets the path portion of the URI based on segments.">
-            <span class="description">Sets the path portion of the URI based on segments.</span><pre>refreshPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_resolveRelativeURI" title="resolveRelativeURI :: Combines one URI string with this one based on the rules set out in
-RFC 3986 Section 2">
-            <span class="description">Combines one URI string with this one based on the rules set out in
-RFC 3986 Section 2</span><pre>resolveRelativeURI</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setAuthority" title="setAuthority :: Parses the given string an saves the appropriate authority pieces.">
-            <span class="description">Parses the given string an saves the appropriate authority pieces.</span><pre>setAuthority</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setFragment" title="setFragment :: Sets the fragment portion of the URI.">
-            <span class="description">Sets the fragment portion of the URI.</span><pre>setFragment</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setHost" title="setHost :: Sets the host name to use.">
-            <span class="description">Sets the host name to use.</span><pre>setHost</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setPath" title="setPath :: Sets the path portion of the URI.">
-            <span class="description">Sets the path portion of the URI.</span><pre>setPath</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setPort" title="setPort :: Sets the port portion of the URI.">
-            <span class="description">Sets the port portion of the URI.</span><pre>setPort</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setQuery" title="setQuery :: Sets the query portion of the URI, while attempting
-to clean the various parts of the query keys and values.">
-            <span class="description">Sets the query portion of the URI, while attempting
-to clean the various parts of the query keys and values.</span><pre>setQuery</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setQueryArray" title="setQueryArray :: A convenience method to pass an array of items in as the Query
-portion of the URI.">
-            <span class="description">A convenience method to pass an array of items in as the Query
-portion of the URI.</span><pre>setQueryArray</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setScheme" title="setScheme :: Sets the scheme for this URI.">
-            <span class="description">Sets the scheme for this URI.</span><pre>setScheme</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setSegment" title="setSegment :: Set the value of a specific segment of the URI path.">
-            <span class="description">Set the value of a specific segment of the URI path.</span><pre>setSegment</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setURI" title="setURI :: Sets and overwrites any current URI information.">
-            <span class="description">Sets and overwrites any current URI information.</span><pre>setURI</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setUserInfo" title="setUserInfo :: Sets the userInfo/Authority portion of the URI.">
-            <span class="description">Sets the userInfo/Authority portion of the URI.</span><pre>setUserInfo</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_showPassword" title="showPassword :: Temporarily sets the URI to show a password in userInfo. Will
-reset itself after the first call to authority().">
-            <span class="description">Temporarily sets the URI to show a password in userInfo. Will
-reset itself after the first call to authority().</span><pre>showPassword</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_stripQuery" title="stripQuery :: Removes one or more query vars from the URI.">
-            <span class="description">Removes one or more query vars from the URI.</span><pre>stripQuery</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                        <li class="method protected">
-                            <a href="#method_applyParts" title="applyParts :: Saves our parts from a parse_url call.">
-                                <span class="description">Saves our parts from a parse_url call.</span><pre>applyParts</pre>
-                            </a>
-                        </li>
-                                                                                                                    <li class="method protected">
-                            <a href="#method_decode" title="decode :: Checks the value to see if it has been urlencoded and decodes it if so.">
-                                <span class="description">Checks the value to see if it has been urlencoded and decodes it if so.</span><pre>decode</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_filterPath" title="filterPath :: Encodes any dangerous characters, and removes dot segments.">
-                                <span class="description">Encodes any dangerous characters, and removes dot segments.</span><pre>filterPath</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected">
-                            <a href="#method_mergePaths" title="mergePaths :: Given 2 paths, will merge them according to rules set out in RFC 2986,
-Section 5.2">
-                                <span class="description">Given 2 paths, will merge them according to rules set out in RFC 2986,
-Section 5.2</span><pre>mergePaths</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method protected">
-                            <a href="#method_splitQueryPart" title="splitQueryPart :: Split a query value into it&#039;s key/value elements, if both
-are present.">
-                                <span class="description">Split a query value into it&#039;s key/value elements, if both
-are present.</span><pre>splitQueryPart</pre>
-                            </a>
-                        </li>
-                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                                <li class="constant ">
-                    <a href="#constant_CHAR_SUB_DELIMS" title="CHAR_SUB_DELIMS :: Sub-delimiters used in query strings and fragments.">
-                        <span class="description">Sub-delimiters used in query strings and fragments.</span><pre>CHAR_SUB_DELIMS</pre>
-                    </a>
-                </li>
-                                <li class="constant ">
-                    <a href="#constant_CHAR_UNRESERVED" title="CHAR_UNRESERVED :: Unreserved characters used in paths, query strings, and fragments.">
-                        <span class="description">Unreserved characters used in paths, query strings, and fragments.</span><pre>CHAR_UNRESERVED</pre>
-                    </a>
-                </li>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>URI</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">CodeIgniter</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>An open source application development framework for PHP</p>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct() :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString() :: Allow the URI to be output as a string by simply casting it to a string
+or echoing out."><span class="description">Allow the URI to be output as a string by simply casting it to a string
+or echoing out.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addQuery" title="addQuery() :: Adds a single new element to the query vars."><span class="description">Adds a single new element to the query vars.</span><pre>addQuery()</pre></a></li>
+<li class="method public "><a href="#method_createURIString" title="createURIString() :: Builds a representation of the string from the component parts."><span class="description">Builds a representation of the string from the component parts.</span><pre>createURIString()</pre></a></li>
+<li class="method public "><a href="#method_getAuthority" title="getAuthority() :: Retrieve the authority component of the URI."><span class="description">Retrieve the authority component of the URI.</span><pre>getAuthority()</pre></a></li>
+<li class="method public "><a href="#method_getFragment" title="getFragment() :: Retrieve a URI fragment"><span class="description">Retrieve a URI fragment</span><pre>getFragment()</pre></a></li>
+<li class="method public "><a href="#method_getHost" title="getHost() :: Retrieve the host component of the URI."><span class="description">Retrieve the host component of the URI.</span><pre>getHost()</pre></a></li>
+<li class="method public "><a href="#method_getPath" title="getPath() :: Retrieve the path component of the URI."><span class="description">Retrieve the path component of the URI.</span><pre>getPath()</pre></a></li>
+<li class="method public "><a href="#method_getPort" title="getPort() :: Retrieve the port component of the URI."><span class="description">Retrieve the port component of the URI.</span><pre>getPort()</pre></a></li>
+<li class="method public "><a href="#method_getQuery" title="getQuery() :: Retrieve the query string"><span class="description">Retrieve the query string</span><pre>getQuery()</pre></a></li>
+<li class="method public "><a href="#method_getScheme" title="getScheme() :: Retrieve the scheme component of the URI."><span class="description">Retrieve the scheme component of the URI.</span><pre>getScheme()</pre></a></li>
+<li class="method public "><a href="#method_getSegment" title="getSegment() :: Returns the value of a specific segment of the URI path."><span class="description">Returns the value of a specific segment of the URI path.</span><pre>getSegment()</pre></a></li>
+<li class="method public "><a href="#method_getSegments" title="getSegments() :: Returns the segments of the path as an array."><span class="description">Returns the segments of the path as an array.</span><pre>getSegments()</pre></a></li>
+<li class="method public "><a href="#method_getTotalSegments" title="getTotalSegments() :: Returns the total number of segments."><span class="description">Returns the total number of segments.</span><pre>getTotalSegments()</pre></a></li>
+<li class="method public "><a href="#method_getUserInfo" title="getUserInfo() :: Retrieve the user information component of the URI."><span class="description">Retrieve the user information component of the URI.</span><pre>getUserInfo()</pre></a></li>
+<li class="method public "><a href="#method_keepQuery" title="keepQuery() :: Filters the query variables so that only the keys passed in
+are kept. The rest are removed from the object."><span class="description">Filters the query variables so that only the keys passed in
+are kept. The rest are removed from the object.</span><pre>keepQuery()</pre></a></li>
+<li class="method public "><a href="#method_refreshPath" title="refreshPath() :: Sets the path portion of the URI based on segments."><span class="description">Sets the path portion of the URI based on segments.</span><pre>refreshPath()</pre></a></li>
+<li class="method public "><a href="#method_resolveRelativeURI" title="resolveRelativeURI() :: Combines one URI string with this one based on the rules set out in
+RFC 3986 Section 2"><span class="description">Combines one URI string with this one based on the rules set out in
+RFC 3986 Section 2</span><pre>resolveRelativeURI()</pre></a></li>
+<li class="method public "><a href="#method_setAuthority" title="setAuthority() :: Parses the given string an saves the appropriate authority pieces."><span class="description">Parses the given string an saves the appropriate authority pieces.</span><pre>setAuthority()</pre></a></li>
+<li class="method public "><a href="#method_setFragment" title="setFragment() :: Sets the fragment portion of the URI."><span class="description">Sets the fragment portion of the URI.</span><pre>setFragment()</pre></a></li>
+<li class="method public "><a href="#method_setHost" title="setHost() :: Sets the host name to use."><span class="description">Sets the host name to use.</span><pre>setHost()</pre></a></li>
+<li class="method public "><a href="#method_setPath" title="setPath() :: Sets the path portion of the URI."><span class="description">Sets the path portion of the URI.</span><pre>setPath()</pre></a></li>
+<li class="method public "><a href="#method_setPort" title="setPort() :: Sets the port portion of the URI."><span class="description">Sets the port portion of the URI.</span><pre>setPort()</pre></a></li>
+<li class="method public "><a href="#method_setQuery" title="setQuery() :: Sets the query portion of the URI, while attempting
+to clean the various parts of the query keys and values."><span class="description">Sets the query portion of the URI, while attempting
+to clean the various parts of the query keys and values.</span><pre>setQuery()</pre></a></li>
+<li class="method public "><a href="#method_setQueryArray" title="setQueryArray() :: A convenience method to pass an array of items in as the Query
+portion of the URI."><span class="description">A convenience method to pass an array of items in as the Query
+portion of the URI.</span><pre>setQueryArray()</pre></a></li>
+<li class="method public "><a href="#method_setScheme" title="setScheme() :: Sets the scheme for this URI."><span class="description">Sets the scheme for this URI.</span><pre>setScheme()</pre></a></li>
+<li class="method public "><a href="#method_setSegment" title="setSegment() :: Set the value of a specific segment of the URI path."><span class="description">Set the value of a specific segment of the URI path.</span><pre>setSegment()</pre></a></li>
+<li class="method public "><a href="#method_setURI" title="setURI() :: Sets and overwrites any current URI information."><span class="description">Sets and overwrites any current URI information.</span><pre>setURI()</pre></a></li>
+<li class="method public "><a href="#method_setUserInfo" title="setUserInfo() :: Sets the userInfo/Authority portion of the URI."><span class="description">Sets the userInfo/Authority portion of the URI.</span><pre>setUserInfo()</pre></a></li>
+<li class="method public "><a href="#method_showPassword" title="showPassword() :: Temporarily sets the URI to show a password in userInfo. Will
+reset itself after the first call to authority()."><span class="description">Temporarily sets the URI to show a password in userInfo. Will
+reset itself after the first call to authority().</span><pre>showPassword()</pre></a></li>
+<li class="method public "><a href="#method_stripQuery" title="stripQuery() :: Removes one or more query vars from the URI."><span class="description">Removes one or more query vars from the URI.</span><pre>stripQuery()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_applyParts" title="applyParts() :: Saves our parts from a parse_url call."><span class="description">Saves our parts from a parse_url call.</span><pre>applyParts()</pre></a></li>
+<li class="method protected "><a href="#method_decode" title="decode() :: Checks the value to see if it has been urlencoded and decodes it if so."><span class="description">Checks the value to see if it has been urlencoded and decodes it if so.</span><pre>decode()</pre></a></li>
+<li class="method protected "><a href="#method_filterPath" title="filterPath() :: Encodes any dangerous characters, and removes dot segments."><span class="description">Encodes any dangerous characters, and removes dot segments.</span><pre>filterPath()</pre></a></li>
+<li class="method protected "><a href="#method_mergePaths" title="mergePaths() :: Given 2 paths, will merge them according to rules set out in RFC 2986,
+Section 5.2"><span class="description">Given 2 paths, will merge them according to rules set out in RFC 2986,
+Section 5.2</span><pre>mergePaths()</pre></a></li>
+<li class="method protected "><a href="#method_splitQueryPart" title="splitQueryPart() :: Split a query value into it's key/value elements, if both
+are present."><span class="description">Split a query value into it's key/value elements, if both
+are present.</span><pre>splitQueryPart()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_defaultPorts" title="$defaultPorts() :: Default schemes/ports."><span class="description"></span><pre>$defaultPorts</pre></a></li>
+<li class="property protected "><a href="#property_fragment" title="$fragment() :: The name of any fragment."><span class="description"></span><pre>$fragment</pre></a></li>
+<li class="property protected "><a href="#property_host" title="$host() :: URI Host"><span class="description"></span><pre>$host</pre></a></li>
+<li class="property protected "><a href="#property_password" title="$password() :: URI User Password"><span class="description"></span><pre>$password</pre></a></li>
+<li class="property protected "><a href="#property_path" title="$path() :: URI path."><span class="description"></span><pre>$path</pre></a></li>
+<li class="property protected "><a href="#property_port" title="$port() :: URI Port"><span class="description"></span><pre>$port</pre></a></li>
+<li class="property protected "><a href="#property_query" title="$query() :: The query string."><span class="description"></span><pre>$query</pre></a></li>
+<li class="property protected "><a href="#property_scheme" title="$scheme() :: The URI Scheme."><span class="description"></span><pre>$scheme</pre></a></li>
+<li class="property protected "><a href="#property_segments" title="$segments() :: List of URI segments."><span class="description"></span><pre>$segments</pre></a></li>
+<li class="property protected "><a href="#property_showPassword" title="$showPassword() :: Whether passwords should be shown in userInfo/authority calls."><span class="description"></span><pre>$showPassword</pre></a></li>
+<li class="property protected "><a href="#property_uriString" title="$uriString() :: Current URI string"><span class="description"></span><pre>$uriString</pre></a></li>
+<li class="property protected "><a href="#property_user" title="$user() :: URI User Info"><span class="description"></span><pre>$user</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Constants" class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_CHAR_SUB_DELIMS" title="CHAR_SUB_DELIMS() :: Sub-delimiters used in query strings and fragments."><span class="description">Sub-delimiters used in query strings and fragments.</span><pre>CHAR_SUB_DELIMS</pre></a></li>
+<li class="constant  "><a href="#constant_CHAR_UNRESERVED" title="CHAR_UNRESERVED() :: Unreserved characters used in paths, query strings, and fragments."><span class="description">Unreserved characters used in paths, query strings, and fragments.</span><pre>CHAR_UNRESERVED</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\HTTP\URI"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CodeIgniter.HTTP.URI.html">URI</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">CodeIgniter</p>
+<div class="details">
+<div class="long_description"><p>An open source application development framework for PHP</p>
 <p>This content is released under the MIT License (MIT)</p>
 <p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
 <p>Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -403,323 +187,109 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        author
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter Dev Team</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        copyright
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>2014-2019 British Columbia Institute of Technology (<a href="https://bcit.ca/">https://bcit.ca/</a>)</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        license
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p><a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a> MIT License</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        link
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p><a href="https://codeigniter.com">https://codeigniter.com</a></p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        since
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>Version 3.0.0</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        filesource
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method___construct"></a>
-                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Constructor.</h2>
-                            <pre>__construct(string $uri = null) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                            <tr>
-                                                <th>Throws</th>
-                                                <td>
-                                                    <dl>
-                                                                                                            <dt>\InvalidArgumentException</dt>
-                                                        <dd></dd>
-                                                                                                                                                            </dl>
-                                                </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uri</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method___toString"></a>
-                        <div class="element clickable method public  method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
-                            <h2>Allow the URI to be output as a string by simply casting it to a string
+THE SOFTWARE.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.html">CodeIgniter</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">CodeIgniter Dev Team</a></td>
+</tr>
+<tr>
+<th>copyright</th>
+<td>2014-2019 British Columbia Institute of Technology (https://bcit.ca/)</td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="https://opensource.org/licenses/MIT">MIT License</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://codeigniter.com">https://codeigniter.com</a></td>
+</tr>
+<tr>
+<th>since</th>
+<td>Version 3.0.0</td>
+</tr>
+<tr>
+<th>filesource</th>
+<td></td>
+</tr>
+</table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
+<h2>Constructor.</h2>
+<pre>__construct(string $uri<code> = null</code>) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\InvalidArgumentException</code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString " data-toggle="collapse" data-target=".method___toString .collapse" title="public">
+<h2>Allow the URI to be output as a string by simply casting it to a string
 or echoing out.</h2>
-                            <pre>__toString() </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_addQuery"></a>
-                        <div class="element clickable method public  method_addQuery" data-toggle="collapse" data-target=".method_addQuery .collapse">
-                            <h2>Adds a single new element to the query vars.</h2>
-                            <pre>addQuery(string $key, null $value = null) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>null</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_applyParts"></a>
-                        <div class="element clickable method protected  method_applyParts" data-toggle="collapse" data-target=".method_applyParts .collapse">
-                            <h2>Saves our parts from a parse_url call.</h2>
-                            <pre>applyParts( $parts) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$parts</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_createURIString"></a>
-                        <div class="element clickable method public  method_createURIString" data-toggle="collapse" data-target=".method_createURIString .collapse">
-                            <h2>Builds a representation of the string from the component parts.</h2>
-                            <pre>createURIString( $scheme = null,  $authority = null,  $path = null,  $query = null,  $fragment = null) : string</pre>
-                            <div class="labels">
-                                                                <span class="label">static</span>                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$scheme</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$authority</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$query</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fragment</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_decode"></a>
-                        <div class="element clickable method protected  method_decode" data-toggle="collapse" data-target=".method_decode .collapse">
-                            <h2>Checks the value to see if it has been urlencoded and decodes it if so.</h2>
-                            <pre>decode(string $value) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>The urlencode check is not perfect but should catch most cases.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_filterPath"></a>
-                        <div class="element clickable method protected  method_filterPath" data-toggle="collapse" data-target=".method_filterPath .collapse">
-                            <h2>Encodes any dangerous characters, and removes dot segments.</h2>
-                            <pre>filterPath( $path = null) : mixed|string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>While dot segments have valid uses according to the spec,
-this URI class does not allow them.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed|string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getAuthority"></a>
-                        <div class="element clickable method public  method_getAuthority" data-toggle="collapse" data-target=".method_getAuthority .collapse">
-                            <h2>Retrieve the authority component of the URI.</h2>
-                            <pre>getAuthority(boolean $ignorePort = false) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If no authority information is present, this method MUST return an empty
+<pre>__toString() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_addQuery"></a><div class="element clickable method public method_addQuery " data-toggle="collapse" data-target=".method_addQuery .collapse" title="public">
+<h2>Adds a single new element to the query vars.</h2>
+<pre>addQuery(string $key, null $value<code> = null</code>) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_createURIString"></a><div class="element clickable method public method_createURIString " data-toggle="collapse" data-target=".method_createURIString .collapse" title="public">
+<h2>Builds a representation of the string from the component parts.</h2>
+<pre>createURIString($scheme<code> = null</code>, $authority<code> = null</code>, $path<code> = null</code>, $query<code> = null</code>, $fragment<code> = null</code>) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$scheme</h4></div>
+<div class="subelement argument"><h4>$authority</h4></div>
+<div class="subelement argument"><h4>$path</h4></div>
+<div class="subelement argument"><h4>$query</h4></div>
+<div class="subelement argument"><h4>$fragment</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getAuthority"></a><div class="element clickable method public method_getAuthority " data-toggle="collapse" data-target=".method_getAuthority .collapse" title="public">
+<h2>Retrieve the authority component of the URI.</h2>
+<pre>getAuthority(boolean $ignorePort<code> = false</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no authority information is present, this method MUST return an empty
 string.</p>
 <p>The authority syntax of the URI is:</p>
 <pre>
@@ -727,113 +297,53 @@ string.</p>
 </pre>
 <p>If the port component is not set or is the standard port for the current
 scheme, it SHOULD NOT be included.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            https://tools.ietf.org/html/rfc3986#section-3.2
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$ignorePort</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The URI authority, in &quot;[user-info@]host[:port]&quot; format.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getFragment"></a>
-                        <div class="element clickable method public  method_getFragment" data-toggle="collapse" data-target=".method_getFragment .collapse">
-                            <h2>Retrieve a URI fragment</h2>
-                            <pre>getFragment() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getHost"></a>
-                        <div class="element clickable method public  method_getHost" data-toggle="collapse" data-target=".method_getHost .collapse">
-                            <h2>Retrieve the host component of the URI.</h2>
-                            <pre>getHost() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If no host is present, this method MUST return an empty string.</p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="https://tools.ietf.org/html/rfc3986#section-3.2"></a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ignorePort</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI authority, in "[user-info@]host[:port]" format.</div>
+</div></div>
+</div>
+<a id="method_getFragment"></a><div class="element clickable method public method_getFragment " data-toggle="collapse" data-target=".method_getFragment .collapse" title="public">
+<h2>Retrieve a URI fragment</h2>
+<pre>getFragment() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getHost"></a><div class="element clickable method public method_getHost " data-toggle="collapse" data-target=".method_getHost .collapse" title="public">
+<h2>Retrieve the host component of the URI.</h2>
+<pre>getHost() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no host is present, this method MUST return an empty string.</p>
 <p>The value returned MUST be normalized to lowercase, per RFC 3986
 Section 3.2.2.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            <a href="http://tools.ietf.org/html/rfc3986#section-3.2.2">http://tools.ietf.org/html/rfc3986#section-3.2.2</a>
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The URI host.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPath"></a>
-                        <div class="element clickable method public  method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
-                            <h2>Retrieve the path component of the URI.</h2>
-                            <pre>getPath() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>The path can either be empty or absolute (starting with a slash) or
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="http://tools.ietf.org/html/rfc3986#section-3.2.2"></a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI host.</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath " data-toggle="collapse" data-target=".method_getPath .collapse" title="public">
+<h2>Retrieve the path component of the URI.</h2>
+<pre>getPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The path can either be empty or absolute (starting with a slash) or
 rootless (not starting with a slash). Implementations MUST support all
 three syntaxes.</p>
 <p>Normally, the empty path &quot;&quot; and absolute path &quot;/&quot; are considered equal as
@@ -847,239 +357,115 @@ RFC 3986, Sections 2 and 3.3.</p>
 <p>As an example, if the value should include a slash (&quot;/&quot;) not intended as
 delimiter between path segments, that value MUST be passed in encoded
 form (e.g., &quot;%2F&quot;) to the instance.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            https://tools.ietf.org/html/rfc3986#section-2
-                                                                                                                
-                                                                                                                                                                        
-                                                                                                                                                                            https://tools.ietf.org/html/rfc3986#section-3.3
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The URI path.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPort"></a>
-                        <div class="element clickable method public  method_getPort" data-toggle="collapse" data-target=".method_getPort .collapse">
-                            <h2>Retrieve the port component of the URI.</h2>
-                            <pre>getPort() : null|integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If a port is present, and it is non-standard for the current scheme,
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="https://tools.ietf.org/html/rfc3986#section-2"></a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="https://tools.ietf.org/html/rfc3986#section-3.3"></a></td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI path.</div>
+</div></div>
+</div>
+<a id="method_getPort"></a><div class="element clickable method public method_getPort " data-toggle="collapse" data-target=".method_getPort .collapse" title="public">
+<h2>Retrieve the port component of the URI.</h2>
+<pre>getPort() : null | integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a port is present, and it is non-standard for the current scheme,
 this method MUST return it as an integer. If the port is the standard port
 used with the current scheme, this method SHOULD return null.</p>
 <p>If no port is present, and no scheme is present, this method MUST return
 a null value.</p>
 <p>If no port is present, but a scheme is present, this method MAY return
 the standard port for that scheme, but SHOULD return null.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>null|integer</code><p><p>The URI port.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getQuery"></a>
-                        <div class="element clickable method public  method_getQuery" data-toggle="collapse" data-target=".method_getQuery .collapse">
-                            <h2>Retrieve the query string</h2>
-                            <pre>getQuery(array $options = array()) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$options</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getScheme"></a>
-                        <div class="element clickable method public  method_getScheme" data-toggle="collapse" data-target=".method_getScheme .collapse">
-                            <h2>Retrieve the scheme component of the URI.</h2>
-                            <pre>getScheme() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If no scheme is present, this method MUST return an empty string.</p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>null</code><code>integer</code>The URI port.</div>
+</div></div>
+</div>
+<a id="method_getQuery"></a><div class="element clickable method public method_getQuery " data-toggle="collapse" data-target=".method_getQuery .collapse" title="public">
+<h2>Retrieve the query string</h2>
+<pre>getQuery(array $options<code> = array()</code>) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getScheme"></a><div class="element clickable method public method_getScheme " data-toggle="collapse" data-target=".method_getScheme .collapse" title="public">
+<h2>Retrieve the scheme component of the URI.</h2>
+<pre>getScheme() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no scheme is present, this method MUST return an empty string.</p>
 <p>The value returned MUST be normalized to lowercase, per RFC 3986
 Section 3.1.</p>
 <p>The trailing &quot;:&quot; character is not part of the scheme and MUST NOT be
 added.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            https://tools.ietf.org/html/rfc3986#section-3.1
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The URI scheme.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getSegment"></a>
-                        <div class="element clickable method public  method_getSegment" data-toggle="collapse" data-target=".method_getSegment .collapse">
-                            <h2>Returns the value of a specific segment of the URI path.</h2>
-                            <pre>getSegment(integer $number) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$number</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The value of the segment. If no segment is found,
-throws InvalidArgumentError</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getSegments"></a>
-                        <div class="element clickable method public  method_getSegments" data-toggle="collapse" data-target=".method_getSegments .collapse">
-                            <h2>Returns the segments of the path as an array.</h2>
-                            <pre>getSegments() : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getTotalSegments"></a>
-                        <div class="element clickable method public  method_getTotalSegments" data-toggle="collapse" data-target=".method_getTotalSegments .collapse">
-                            <h2>Returns the total number of segments.</h2>
-                            <pre>getTotalSegments() : integer</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getUserInfo"></a>
-                        <div class="element clickable method public  method_getUserInfo" data-toggle="collapse" data-target=".method_getUserInfo .collapse">
-                            <h2>Retrieve the user information component of the URI.</h2>
-                            <pre>getUserInfo() : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If no user information is present, this method MUST return an empty
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="https://tools.ietf.org/html/rfc3986#section-3.1"></a></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI scheme.</div>
+</div></div>
+</div>
+<a id="method_getSegment"></a><div class="element clickable method public method_getSegment " data-toggle="collapse" data-target=".method_getSegment .collapse" title="public">
+<h2>Returns the value of a specific segment of the URI path.</h2>
+<pre>getSegment(integer $number) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The value of the segment. If no segment is found,
+                   throws InvalidArgumentError</div>
+</div></div>
+</div>
+<a id="method_getSegments"></a><div class="element clickable method public method_getSegments " data-toggle="collapse" data-target=".method_getSegments .collapse" title="public">
+<h2>Returns the segments of the path as an array.</h2>
+<pre>getSegments() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getTotalSegments"></a><div class="element clickable method public method_getTotalSegments " data-toggle="collapse" data-target=".method_getTotalSegments .collapse" title="public">
+<h2>Returns the total number of segments.</h2>
+<pre>getTotalSegments() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>integer</code></div>
+</div></div>
+</div>
+<a id="method_getUserInfo"></a><div class="element clickable method public method_getUserInfo " data-toggle="collapse" data-target=".method_getUserInfo .collapse" title="public">
+<h2>Retrieve the user information component of the URI.</h2>
+<pre>getUserInfo() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no user information is present, this method MUST return an empty
 string.</p>
 <p>If a user is present in the URI, this will return that value;
 additionally, if the password is also present, it will be appended to the
@@ -1090,960 +476,553 @@ the password is not a security issue, you can force it to be shown
 with $this-&gt;showPassword();</p>
 <p>The trailing &quot;@&quot; character is not part of the user information and MUST
 NOT be added.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The URI user information, in &quot;username[:password]&quot; format.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_keepQuery"></a>
-                        <div class="element clickable method public  method_keepQuery" data-toggle="collapse" data-target=".method_keepQuery .collapse">
-                            <h2>Filters the query variables so that only the keys passed in
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URI user information, in "username[:password]" format.</div>
+</div></div>
+</div>
+<a id="method_keepQuery"></a><div class="element clickable method public method_keepQuery " data-toggle="collapse" data-target=".method_keepQuery .collapse" title="public">
+<h2>Filters the query variables so that only the keys passed in
 are kept. The rest are removed from the object.</h2>
-                            <pre>keepQuery(array $params) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_mergePaths"></a>
-                        <div class="element clickable method protected  method_mergePaths" data-toggle="collapse" data-target=".method_mergePaths .collapse">
-                            <h2>Given 2 paths, will merge them according to rules set out in RFC 2986,
-Section 5.2</h2>
-                            <pre>mergePaths(\CodeIgniter\HTTP\URI $base, \CodeIgniter\HTTP\URI $reference) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            <a href="http://tools.ietf.org/html/rfc3986#section-5.2.3">http://tools.ietf.org/html/rfc3986#section-5.2.3</a>
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$base</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$reference</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_refreshPath"></a>
-                        <div class="element clickable method public  method_refreshPath" data-toggle="collapse" data-target=".method_refreshPath .collapse">
-                            <h2>Sets the path portion of the URI based on segments.</h2>
-                            <pre>refreshPath() : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_resolveRelativeURI"></a>
-                        <div class="element clickable method public  method_resolveRelativeURI" data-toggle="collapse" data-target=".method_resolveRelativeURI .collapse">
-                            <h2>Combines one URI string with this one based on the rules set out in
+<pre>keepQuery(array $params) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_refreshPath"></a><div class="element clickable method public method_refreshPath " data-toggle="collapse" data-target=".method_refreshPath .collapse" title="public">
+<h2>Sets the path portion of the URI based on segments.</h2>
+<pre>refreshPath() : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_resolveRelativeURI"></a><div class="element clickable method public method_resolveRelativeURI " data-toggle="collapse" data-target=".method_resolveRelativeURI .collapse" title="public">
+<h2>Combines one URI string with this one based on the rules set out in
 RFC 3986 Section 2</h2>
-                            <pre>resolveRelativeURI(string $uri) : \CodeIgniter\HTTP\URI</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            <a href="http://tools.ietf.org/html/rfc3986#section-5.2">http://tools.ietf.org/html/rfc3986#section-5.2</a>
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uri</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setAuthority"></a>
-                        <div class="element clickable method public  method_setAuthority" data-toggle="collapse" data-target=".method_setAuthority .collapse">
-                            <h2>Parses the given string an saves the appropriate authority pieces.</h2>
-                            <pre>setAuthority(string $str) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setFragment"></a>
-                        <div class="element clickable method public  method_setFragment" data-toggle="collapse" data-target=".method_setFragment .collapse">
-                            <h2>Sets the fragment portion of the URI.</h2>
-                            <pre>setFragment(string $string) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            https://tools.ietf.org/html/rfc3986#section-3.5
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$string</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setHost"></a>
-                        <div class="element clickable method public  method_setHost" data-toggle="collapse" data-target=".method_setHost .collapse">
-                            <h2>Sets the host name to use.</h2>
-                            <pre>setHost(string $str) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setPath"></a>
-                        <div class="element clickable method public  method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
-                            <h2>Sets the path portion of the URI.</h2>
-                            <pre>setPath(string $path) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setPort"></a>
-                        <div class="element clickable method public  method_setPort" data-toggle="collapse" data-target=".method_setPort .collapse">
-                            <h2>Sets the port portion of the URI.</h2>
-                            <pre>setPort(integer $port = null) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$port</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setQuery"></a>
-                        <div class="element clickable method public  method_setQuery" data-toggle="collapse" data-target=".method_setQuery .collapse">
-                            <h2>Sets the query portion of the URI, while attempting
+<pre>resolveRelativeURI(string $uri) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="http://tools.ietf.org/html/rfc3986#section-5.2"></a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setAuthority"></a><div class="element clickable method public method_setAuthority " data-toggle="collapse" data-target=".method_setAuthority .collapse" title="public">
+<h2>Parses the given string an saves the appropriate authority pieces.</h2>
+<pre>setAuthority(string $str) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setFragment"></a><div class="element clickable method public method_setFragment " data-toggle="collapse" data-target=".method_setFragment .collapse" title="public">
+<h2>Sets the fragment portion of the URI.</h2>
+<pre>setFragment(string $string) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="https://tools.ietf.org/html/rfc3986#section-3.5"></a></td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setHost"></a><div class="element clickable method public method_setHost " data-toggle="collapse" data-target=".method_setHost .collapse" title="public">
+<h2>Sets the host name to use.</h2>
+<pre>setHost(string $str) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method public method_setPath " data-toggle="collapse" data-target=".method_setPath .collapse" title="public">
+<h2>Sets the path portion of the URI.</h2>
+<pre>setPath(string $path) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setPort"></a><div class="element clickable method public method_setPort " data-toggle="collapse" data-target=".method_setPort .collapse" title="public">
+<h2>Sets the port portion of the URI.</h2>
+<pre>setPort(integer $port<code> = null</code>) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$port</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setQuery"></a><div class="element clickable method public method_setQuery " data-toggle="collapse" data-target=".method_setQuery .collapse" title="public">
+<h2>Sets the query portion of the URI, while attempting
 to clean the various parts of the query keys and values.</h2>
-                            <pre>setQuery(string $query) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$query</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setQueryArray"></a>
-                        <div class="element clickable method public  method_setQueryArray" data-toggle="collapse" data-target=".method_setQueryArray .collapse">
-                            <h2>A convenience method to pass an array of items in as the Query
+<pre>setQuery(string $query) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setQueryArray"></a><div class="element clickable method public method_setQueryArray " data-toggle="collapse" data-target=".method_setQueryArray .collapse" title="public">
+<h2>A convenience method to pass an array of items in as the Query
 portion of the URI.</h2>
-                            <pre>setQueryArray(array $query) : \CodeIgniter\HTTP\URI</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$query</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setScheme"></a>
-                        <div class="element clickable method public  method_setScheme" data-toggle="collapse" data-target=".method_setScheme .collapse">
-                            <h2>Sets the scheme for this URI.</h2>
-                            <pre>setScheme( $str) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Because of the large number of valid schemes we cannot limit this
+<pre>setQueryArray(array $query) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$query</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setScheme"></a><div class="element clickable method public method_setScheme " data-toggle="collapse" data-target=".method_setScheme .collapse" title="public">
+<h2>Sets the scheme for this URI.</h2>
+<pre>setScheme($str) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Because of the large number of valid schemes we cannot limit this
 to only http or https.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    see
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                            https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml
-                                                                                                                
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setSegment"></a>
-                        <div class="element clickable method public  method_setSegment" data-toggle="collapse" data-target=".method_setSegment .collapse">
-                            <h2>Set the value of a specific segment of the URI path.</h2>
-                            <pre>setSegment(integer $number, mixed $value) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Allows to set only existing segments or add new one.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$number</h4>
-                                                <code>integer</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>mixed</code><p><p>(string or int)</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setURI"></a>
-                        <div class="element clickable method public  method_setURI" data-toggle="collapse" data-target=".method_setURI .collapse">
-                            <h2>Sets and overwrites any current URI information.</h2>
-                            <pre>setURI(string|null $uri = null) : \CodeIgniter\HTTP\URI</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$uri</h4>
-                                                <code>string|null</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setUserInfo"></a>
-                        <div class="element clickable method public  method_setUserInfo" data-toggle="collapse" data-target=".method_setUserInfo .collapse">
-                            <h2>Sets the userInfo/Authority portion of the URI.</h2>
-                            <pre>setUserInfo(string $user, string $pass) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$user</h4>
-                                                <code>string</code><p><p>The user's username</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$pass</h4>
-                                                <code>string</code><p><p>The user's password</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_showPassword"></a>
-                        <div class="element clickable method public  method_showPassword" data-toggle="collapse" data-target=".method_showPassword .collapse">
-                            <h2>Temporarily sets the URI to show a password in userInfo. Will
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml"></a></td>
+</tr>
+<tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$str</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setSegment"></a><div class="element clickable method public method_setSegment " data-toggle="collapse" data-target=".method_setSegment .collapse" title="public">
+<h2>Set the value of a specific segment of the URI path.</h2>
+<pre>setSegment(integer $number, mixed $value) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows to set only existing segments or add new one.</p></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$number</h4>
+<code>integer</code>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>(string or int)</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setURI"></a><div class="element clickable method public method_setURI " data-toggle="collapse" data-target=".method_setURI .collapse" title="public">
+<h2>Sets and overwrites any current URI information.</h2>
+<pre>setURI(string|null $uri<code> = null</code>) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uri</h4>
+<code>string</code><code>null</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_setUserInfo"></a><div class="element clickable method public method_setUserInfo " data-toggle="collapse" data-target=".method_setUserInfo .collapse" title="public">
+<h2>Sets the userInfo/Authority portion of the URI.</h2>
+<pre>setUserInfo(string $user, string $pass) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user</h4>
+<code>string</code><p>The user's username</p></div>
+<div class="subelement argument">
+<h4>$pass</h4>
+<code>string</code><p>The user's password</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_showPassword"></a><div class="element clickable method public method_showPassword " data-toggle="collapse" data-target=".method_showPassword .collapse" title="public">
+<h2>Temporarily sets the URI to show a password in userInfo. Will
 reset itself after the first call to authority().</h2>
-                            <pre>showPassword(boolean $val = true) : \CodeIgniter\HTTP\URI</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$val</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_splitQueryPart"></a>
-                        <div class="element clickable method protected  method_splitQueryPart" data-toggle="collapse" data-target=".method_splitQueryPart .collapse">
-                            <h2>Split a query value into it&#039;s key/value elements, if both
+<pre>showPassword(boolean $val<code> = true</code>) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>boolean</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_stripQuery"></a><div class="element clickable method public method_stripQuery " data-toggle="collapse" data-target=".method_stripQuery .collapse" title="public">
+<h2>Removes one or more query vars from the URI.</h2>
+<pre>stripQuery(array $params) : \CodeIgniter\HTTP\URI</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\HTTP\URI</code></div>
+</div></div>
+</div>
+<a id="method_applyParts"></a><div class="element clickable method protected method_applyParts " data-toggle="collapse" data-target=".method_applyParts .collapse" title="protected">
+<h2>Saves our parts from a parse_url call.</h2>
+<pre>applyParts($parts) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$parts</h4></div>
+</div></div>
+</div>
+<a id="method_decode"></a><div class="element clickable method protected method_decode " data-toggle="collapse" data-target=".method_decode .collapse" title="protected">
+<h2>Checks the value to see if it has been urlencoded and decodes it if so.</h2>
+<pre>decode(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The urlencode check is not perfect but should catch most cases.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_filterPath"></a><div class="element clickable method protected method_filterPath " data-toggle="collapse" data-target=".method_filterPath .collapse" title="protected">
+<h2>Encodes any dangerous characters, and removes dot segments.</h2>
+<pre>filterPath($path<code> = null</code>) : mixed | string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>While dot segments have valid uses according to the spec,
+this URI class does not allow them.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$path</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code><code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_mergePaths"></a><div class="element clickable method protected method_mergePaths " data-toggle="collapse" data-target=".method_mergePaths .collapse" title="protected">
+<h2>Given 2 paths, will merge them according to rules set out in RFC 2986,
+Section 5.2</h2>
+<pre>mergePaths(\CodeIgniter\HTTP\URI $base, \CodeIgniter\HTTP\URI $reference) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="http://tools.ietf.org/html/rfc3986#section-5.2.3"></a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$base</h4>
+<code>\CodeIgniter\HTTP\URI</code>
+</div>
+<div class="subelement argument">
+<h4>$reference</h4>
+<code>\CodeIgniter\HTTP\URI</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_splitQueryPart"></a><div class="element clickable method protected method_splitQueryPart " data-toggle="collapse" data-target=".method_splitQueryPart .collapse" title="protected">
+<h2>Split a query value into it's key/value elements, if both
 are present.</h2>
-                            <pre>splitQueryPart( $part) : array|null</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$part</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array|null</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_stripQuery"></a>
-                        <div class="element clickable method public  method_stripQuery" data-toggle="collapse" data-target=".method_stripQuery .collapse">
-                            <h2>Removes one or more query vars from the URI.</h2>
-                            <pre>stripQuery(array $params) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$params</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
-                                                    <a id="constant_CHAR_SUB_DELIMS"> </a>
-                            <div class="element clickable constant  constant_CHAR_SUB_DELIMS" data-toggle="collapse" data-target=".constant_CHAR_SUB_DELIMS .collapse">
-                                <h2>Sub-delimiters used in query strings and fragments.</h2>
-                                <pre>CHAR_SUB_DELIMS</pre>
-                                <div class="labels">
-                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        const
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>string</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-                                    </div>
-                                </div>
-                            </div>
-                                                    <a id="constant_CHAR_UNRESERVED"> </a>
-                            <div class="element clickable constant  constant_CHAR_UNRESERVED" data-toggle="collapse" data-target=".constant_CHAR_UNRESERVED .collapse">
-                                <h2>Unreserved characters used in paths, query strings, and fragments.</h2>
-                                <pre>CHAR_UNRESERVED</pre>
-                                <div class="labels">
-                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        const
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>string</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        
-                                                    </th>
-                                                    <td>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-                                    </div>
-                                </div>
-                            </div>
-                                            
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_uriString"> </a>
-                            <div class="element clickable property  protected property_uriString" data-toggle="collapse" data-target=".property_uriString .collapse">
-                                <h2>Current URI string</h2>
-                                <pre>uriString : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_segments"> </a>
-                            <div class="element clickable property  protected property_segments" data-toggle="collapse" data-target=".property_segments .collapse">
-                                <h2>List of URI segments.</h2>
-                                <pre>segments : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>Starts at 1 instead of 0</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_scheme"> </a>
-                            <div class="element clickable property  protected property_scheme" data-toggle="collapse" data-target=".property_scheme .collapse">
-                                <h2>The URI Scheme.</h2>
-                                <pre>scheme : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_user"> </a>
-                            <div class="element clickable property  protected property_user" data-toggle="collapse" data-target=".property_user .collapse">
-                                <h2>URI User Info</h2>
-                                <pre>user : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_password"> </a>
-                            <div class="element clickable property  protected property_password" data-toggle="collapse" data-target=".property_password .collapse">
-                                <h2>URI User Password</h2>
-                                <pre>password : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_host"> </a>
-                            <div class="element clickable property  protected property_host" data-toggle="collapse" data-target=".property_host .collapse">
-                                <h2>URI Host</h2>
-                                <pre>host : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_port"> </a>
-                            <div class="element clickable property  protected property_port" data-toggle="collapse" data-target=".property_port .collapse">
-                                <h2>URI Port</h2>
-                                <pre>port : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_path"> </a>
-                            <div class="element clickable property  protected property_path" data-toggle="collapse" data-target=".property_path .collapse">
-                                <h2>URI path.</h2>
-                                <pre>path : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_fragment"> </a>
-                            <div class="element clickable property  protected property_fragment" data-toggle="collapse" data-target=".property_fragment .collapse">
-                                <h2>The name of any fragment.</h2>
-                                <pre>fragment : </pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code></code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_query"> </a>
-                            <div class="element clickable property  protected property_query" data-toggle="collapse" data-target=".property_query .collapse">
-                                <h2>The query string.</h2>
-                                <pre>query : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_defaultPorts"> </a>
-                            <div class="element clickable property  protected property_defaultPorts" data-toggle="collapse" data-target=".property_defaultPorts .collapse">
-                                <h2>Default schemes/ports.</h2>
-                                <pre>defaultPorts : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_showPassword"> </a>
-                            <div class="element clickable property  protected property_showPassword" data-toggle="collapse" data-target=".property_showPassword .collapse">
-                                <h2>Whether passwords should be shown in userInfo/authority calls.</h2>
-                                <pre>showPassword : boolean</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>Default to false because URIs often show up in logs</p></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\CodeIgniter\HTTP\URI"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.HTTP.URI.html">URI</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:40:01 -0700.<br/>
-    </footer>
-    </body>
+<pre>splitQueryPart($part) : array | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$part</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>null</code>
+</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_defaultPorts"> </a><div class="element clickable property protected property_defaultPorts" data-toggle="collapse" data-target=".property_defaultPorts .collapse" title="protected">
+<h2>Default schemes/ports.</h2>
+<pre>$defaultPorts : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array('http' => 80, 'https' => 443, 'ftp' => 21, 'sftp' => 22)</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_fragment"> </a><div class="element clickable property protected property_fragment" data-toggle="collapse" data-target=".property_fragment .collapse" title="protected">
+<h2>The name of any fragment.</h2>
+<pre>$fragment : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>''</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_host"> </a><div class="element clickable property protected property_host" data-toggle="collapse" data-target=".property_host .collapse" title="protected">
+<h2>URI Host</h2>
+<pre>$host : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property protected property_password" data-toggle="collapse" data-target=".property_password .collapse" title="protected">
+<h2>URI User Password</h2>
+<pre>$password : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_path"> </a><div class="element clickable property protected property_path" data-toggle="collapse" data-target=".property_path .collapse" title="protected">
+<h2>URI path.</h2>
+<pre>$path : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_port"> </a><div class="element clickable property protected property_port" data-toggle="collapse" data-target=".property_port .collapse" title="protected">
+<h2>URI Port</h2>
+<pre>$port : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_query"> </a><div class="element clickable property protected property_query" data-toggle="collapse" data-target=".property_query .collapse" title="protected">
+<h2>The query string.</h2>
+<pre>$query : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_scheme"> </a><div class="element clickable property protected property_scheme" data-toggle="collapse" data-target=".property_scheme .collapse" title="protected">
+<h2>The URI Scheme.</h2>
+<pre>$scheme : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>'http'</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_segments"> </a><div class="element clickable property protected property_segments" data-toggle="collapse" data-target=".property_segments .collapse" title="protected">
+<h2>List of URI segments.</h2>
+<pre>$segments : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Starts at 1 instead of 0</p></div></div></div>
+</div>
+<a id="property_showPassword"> </a><div class="element clickable property protected property_showPassword" data-toggle="collapse" data-target=".property_showPassword .collapse" title="protected">
+<h2>Whether passwords should be shown in userInfo/authority calls.</h2>
+<pre>$showPassword : boolean</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>false</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Default to false because URIs often show up in logs</p></div></div></div>
+</div>
+<a id="property_uriString"> </a><div class="element clickable property protected property_uriString" data-toggle="collapse" data-target=".property_uriString .collapse" title="protected">
+<h2>Current URI string</h2>
+<pre>$uriString : string</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_user"> </a><div class="element clickable property protected property_user" data-toggle="collapse" data-target=".property_user .collapse" title="protected">
+<h2>URI User Info</h2>
+<pre>$user : </pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_CHAR_SUB_DELIMS"> </a><div class="element clickable constant  constant_CHAR_SUB_DELIMS" data-toggle="collapse" data-target=".constant_CHAR_SUB_DELIMS .collapse" title="">
+<h2>Sub-delimiters used in query strings and fragments.</h2>
+<pre>CHAR_SUB_DELIMS = '!\$&amp;\'\(\)\*\+,;=' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>const</th>
+<td>string</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_CHAR_UNRESERVED"> </a><div class="element clickable constant  constant_CHAR_UNRESERVED" data-toggle="collapse" data-target=".constant_CHAR_UNRESERVED .collapse" title="">
+<h2>Unreserved characters used in paths, query strings, and fragments.</h2>
+<pre>CHAR_UNRESERVED = 'a-zA-Z0-9_\-\.~' </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>const</th>
+<td>string</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:14-07:00.<br></footer></div>
+</div>
+</body>
 </html>

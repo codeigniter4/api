@@ -1,504 +1,269 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>     &raquo; \CodeIgniter\HTTP
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » CodeIgniter\HTTP</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            
-    <div class="row">
-
-        <div class="span4">
-            <div class="btn-group view pull-right" data-toggle="buttons-radio">
-                <button class="btn details" title="Show descriptions and method names">
-                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
-                    <i class="icon-align-justify"></i>
-                </button>
-            </div>
-            <ul class="side-nav nav nav-list">
-                <li class="nav-header">
-                    <i class="icon-map-marker"></i> Namespaces
-                </li>
-                <a href="../namespaces/CodeIgniter.HTTP.html" title="HTTP">
-                    <i class="icon-th"></i> HTTP
-                </a>
-                <ul class="nav nav-list nav-namespaces">
-                        
-        <li>
-        <a href="../namespaces/CodeIgniter.HTTP.Exceptions.html" title="Exceptions">
-            <i class="icon-th"></i> Exceptions
-        </a>
-        <ul class="nav nav-list nav-namespaces">
-                
-    
-        </ul>
-    </li>
-        <li>
-        <a href="../namespaces/CodeIgniter.HTTP.Files.html" title="Files">
-            <i class="icon-th"></i> Files
-        </a>
-        <ul class="nav nav-list nav-namespaces">
-                
-    
-        </ul>
-    </li>
-    
-                </ul>
-            </ul>
-        </div>
-
-        <div class="span8 namespace-contents">
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                                        <div id="interface_RequestInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_RequestInterface .collapse">
-        <h1>RequestInterface<a href="../classes/CodeIgniter.HTTP.RequestInterface.html">¶</a></h1>
-        <p class="short_description">Expected behavior of an HTTP request</p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.RequestInterface.html" class="more">« More »</a>    </div>
-
-                                        <div id="interface_ResponseInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_ResponseInterface .collapse">
-        <h1>ResponseInterface<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">¶</a></h1>
-        <p class="short_description">Representation of an outgoing, getServer-side response.</p>
-        <div class="details collapse">
-                            <p>Per the HTTP specification, this interface includes properties for
-each of the following:</p>
-<ul>
-<li>Protocol version</li>
-<li>Status code and reason phrase</li>
-<li>Headers</li>
-<li>Message body</li>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
 </ul>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.ResponseInterface.html" class="more">« More »</a>    </div>
-
-                
-                                        <div id="class_CLIRequest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CLIRequest .collapse">
-        <h1>CLIRequest<a href="../classes/CodeIgniter.HTTP.CLIRequest.html">¶</a></h1>
-        <p class="short_description">Class CLIRequest</p>
-        <div class="details collapse">
-                            <p>Represents a request from the command-line. Provides additional
-tools to interact with that request since CLI requests are not
-static like HTTP requests might be.</p>
-<p>Portions of this code were initially from the FuelPHP Framework,
-version 1.7.x, and used here under the MIT license they were
-originally made available under.</p>
-<p><a href="http://fuelphp.com">http://fuelphp.com</a></p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.CLIRequest.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_CURLRequest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CURLRequest .collapse">
-        <h1>CURLRequest<a href="../classes/CodeIgniter.HTTP.CURLRequest.html">¶</a></h1>
-        <p class="short_description">Class OutgoingRequest</p>
-        <div class="details collapse">
-                            <p>A lightweight HTTP client for sending synchronous HTTP requests
-via cURL.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.CURLRequest.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_DownloadResponse" class="element ajax clickable class" data-toggle="collapse" data-target="#class_DownloadResponse .collapse">
-        <h1>DownloadResponse<a href="../classes/CodeIgniter.HTTP.DownloadResponse.html">¶</a></h1>
-        <p class="short_description">CodeIgniter</p>
-        <div class="details collapse">
-                            <p>An open source application development framework for PHP</p>
-<p>This content is released under the MIT License (MIT)</p>
-<p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.DownloadResponse.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Header" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Header .collapse">
-        <h1>Header<a href="../classes/CodeIgniter.HTTP.Header.html">¶</a></h1>
-        <p class="short_description">Class Header</p>
-        <div class="details collapse">
-                            <p>Represents a single HTTP header.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Header.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_IncomingRequest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_IncomingRequest .collapse">
-        <h1>IncomingRequest<a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">¶</a></h1>
-        <p class="short_description">Class IncomingRequest</p>
-        <div class="details collapse">
-                            <p>Represents an incoming, getServer-side HTTP request.</p>
-<p>Per the HTTP specification, this interface includes properties for
-each of the following:</p>
-<ul>
-<li>Protocol version</li>
-<li>HTTP method</li>
-<li>URI</li>
-<li>Headers</li>
-<li>Message body</li>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
 </ul>
-<p>Additionally, it encapsulates all data as it has arrived to the
-application from the CGI and/or PHP environment, including:</p>
-<ul>
-<li>The values represented in $_SERVER.</li>
-<li>Any cookies provided (generally via $_COOKIE)</li>
-<li>Query string arguments (generally via $_GET, or as parsed via parse_str())</li>
-<li>Upload files, if any (as represented by $_FILES)</li>
-<li>Deserialized body binds (generally from $_POST)</li>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Namespaces</li>
+<li>
+<a href="../namespaces/CodeIgniter.HTTP.html" title="HTTP"><i class="icon-th"></i>HTTP</a><ul class="nav nav-list nav-namespaces">
+<li>
+<a href="../namespaces/CodeIgniter.HTTP.Exceptions.html" title="Exceptions"><i class="icon-th"></i>Exceptions</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
+<li>
+<a href="../namespaces/CodeIgniter.HTTP.Files.html" title="Files"><i class="icon-th"></i>Files</a><ul class="nav nav-list nav-namespaces"></ul>
+</li>
 </ul>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.IncomingRequest.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Message" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Message .collapse">
-        <h1>Message<a href="../classes/CodeIgniter.HTTP.Message.html">¶</a></h1>
-        <p class="short_description">CodeIgniter</p>
-        <div class="details collapse">
-                            <p>An open source application development framework for PHP</p>
-<p>This content is released under the MIT License (MIT)</p>
-<p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Message.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Negotiate" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Negotiate .collapse">
-        <h1>Negotiate<a href="../classes/CodeIgniter.HTTP.Negotiate.html">¶</a></h1>
-        <p class="short_description">Class Negotiate</p>
-        <div class="details collapse">
-                            <p>Provides methods to negotiate with the HTTP headers to determine the best
-type match between what the application supports and what the requesting
-getServer wants.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Negotiate.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_RedirectResponse" class="element ajax clickable class" data-toggle="collapse" data-target="#class_RedirectResponse .collapse">
-        <h1>RedirectResponse<a href="../classes/CodeIgniter.HTTP.RedirectResponse.html">¶</a></h1>
-        <p class="short_description">Representation of an outgoing, getServer-side response.</p>
-        <div class="details collapse">
-                            <p>Per the HTTP specification, this interface includes properties for
-each of the following:</p>
-<ul>
-<li>Protocol version</li>
-<li>Status code and reason phrase</li>
-<li>Headers</li>
-<li>Message body</li>
+</li>
+<li class="nav-header">
+<i title="Interfaces" class="icon-custom icon-interface"></i> Interfaces</li>
+<li><a href="#ResponseInterface" title="Representation of an outgoing, getServer-side response.">ResponseInterface</a></li>
+<li><a href="#RequestInterface" title="Expected behavior of an HTTP request">RequestInterface</a></li>
+<li class="nav-header">
+<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#Header" title="Class Header">Header</a></li>
+<li><a href="#URI" title="CodeIgniter">URI</a></li>
+<li><a href="#Negotiate" title="Class Negotiate">Negotiate</a></li>
+<li><a href="#CLIRequest" title="Class CLIRequest">CLIRequest</a></li>
+<li><a href="#CURLRequest" title="Class OutgoingRequest">CURLRequest</a></li>
+<li><a href="#DownloadResponse" title="CodeIgniter">DownloadResponse</a></li>
+<li><a href="#IncomingRequest" title="Class IncomingRequest">IncomingRequest</a></li>
+<li><a href="#Response" title="Representation of an outgoing, getServer-side response.">Response</a></li>
+<li><a href="#Request" title="Representation of an iHTTP request.">Request</a></li>
+<li><a href="#UserAgent" title="">UserAgent</a></li>
+<li><a href="#RedirectResponse" title="Representation of an outgoing, getServer-side response.">RedirectResponse</a></li>
+<li><a href="#Message" title="CodeIgniter">Message</a></li>
 </ul>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.RedirectResponse.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Request" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Request .collapse">
-        <h1>Request<a href="../classes/CodeIgniter.HTTP.Request.html">¶</a></h1>
-        <p class="short_description">Representation of an iHTTP request.</p>
-        <div class="details collapse">
-                            <p>An open source application development framework for PHP</p>
-<p>This content is released under the MIT License (MIT)</p>
-<p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Request.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_Response" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Response .collapse">
-        <h1>Response<a href="../classes/CodeIgniter.HTTP.Response.html">¶</a></h1>
-        <p class="short_description">Representation of an outgoing, getServer-side response.</p>
-        <div class="details collapse">
-                            <p>Per the HTTP specification, this interface includes properties for
-each of the following:</p>
-<ul>
-<li>Protocol version</li>
-<li>Status code and reason phrase</li>
-<li>Headers</li>
-<li>Message body</li>
+</div>
+<div class="span8 namespace-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
+</li>
 </ul>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Response.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_URI" class="element ajax clickable class" data-toggle="collapse" data-target="#class_URI .collapse">
-        <h1>URI<a href="../classes/CodeIgniter.HTTP.URI.html">¶</a></h1>
-        <p class="short_description">CodeIgniter</p>
-        <div class="details collapse">
-                            <p>An open source application development framework for PHP</p>
-<p>This content is released under the MIT License (MIT)</p>
-<p>Copyright (c) 2014-2019 British Columbia Institute of Technology</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.URI.html" class="more">« More »</a>    </div>
-
-                                        <div id="class_UserAgent" class="element ajax clickable class" data-toggle="collapse" data-target="#class_UserAgent .collapse">
-        <h1>UserAgent<a href="../classes/CodeIgniter.HTTP.UserAgent.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">
-                            
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.UserAgent.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Files.html">Files</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                                        <div id="interface_UploadedFileInterface" class="element ajax clickable interface" data-toggle="collapse" data-target="#interface_UploadedFileInterface .collapse">
-        <h1>UploadedFileInterface<a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html">¶</a></h1>
-        <p class="short_description">Value object representing a single file uploaded through an
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="RequestInterface" class="element ajax clickable interface">
+<h1>RequestInterface<a href="../classes/CodeIgniter.HTTP.RequestInterface.html">¶</a>
+</h1>
+<p class="short_description">Expected behavior of an HTTP request</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.RequestInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="ResponseInterface" class="element ajax clickable interface">
+<h1>ResponseInterface<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">¶</a>
+</h1>
+<p class="short_description">Representation of an outgoing, getServer-side response.</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="CLIRequest" class="element ajax clickable class">
+<h1>CLIRequest<a href="../classes/CodeIgniter.HTTP.CLIRequest.html">¶</a>
+</h1>
+<p class="short_description">Class CLIRequest</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.CLIRequest.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="CURLRequest" class="element ajax clickable class">
+<h1>CURLRequest<a href="../classes/CodeIgniter.HTTP.CURLRequest.html">¶</a>
+</h1>
+<p class="short_description">Class OutgoingRequest</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.CURLRequest.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="DownloadResponse" class="element ajax clickable class">
+<h1>DownloadResponse<a href="../classes/CodeIgniter.HTTP.DownloadResponse.html">¶</a>
+</h1>
+<p class="short_description">CodeIgniter</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.DownloadResponse.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Header" class="element ajax clickable class">
+<h1>Header<a href="../classes/CodeIgniter.HTTP.Header.html">¶</a>
+</h1>
+<p class="short_description">Class Header</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Header.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="IncomingRequest" class="element ajax clickable class">
+<h1>IncomingRequest<a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">¶</a>
+</h1>
+<p class="short_description">Class IncomingRequest</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.IncomingRequest.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Message" class="element ajax clickable class">
+<h1>Message<a href="../classes/CodeIgniter.HTTP.Message.html">¶</a>
+</h1>
+<p class="short_description">CodeIgniter</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Message.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Negotiate" class="element ajax clickable class">
+<h1>Negotiate<a href="../classes/CodeIgniter.HTTP.Negotiate.html">¶</a>
+</h1>
+<p class="short_description">Class Negotiate</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Negotiate.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="RedirectResponse" class="element ajax clickable class">
+<h1>RedirectResponse<a href="../classes/CodeIgniter.HTTP.RedirectResponse.html">¶</a>
+</h1>
+<p class="short_description">Representation of an outgoing, getServer-side response.</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.RedirectResponse.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Request" class="element ajax clickable class">
+<h1>Request<a href="../classes/CodeIgniter.HTTP.Request.html">¶</a>
+</h1>
+<p class="short_description">Representation of an iHTTP request.</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Request.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="Response" class="element ajax clickable class">
+<h1>Response<a href="../classes/CodeIgniter.HTTP.Response.html">¶</a>
+</h1>
+<p class="short_description">Representation of an outgoing, getServer-side response.</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Response.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="URI" class="element ajax clickable class">
+<h1>URI<a href="../classes/CodeIgniter.HTTP.URI.html">¶</a>
+</h1>
+<p class="short_description">CodeIgniter</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.URI.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="UserAgent" class="element ajax clickable class">
+<h1>UserAgent<a href="../classes/CodeIgniter.HTTP.UserAgent.html">¶</a>
+</h1>
+<p class="short_description"></p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.UserAgent.html" class="more">« More »</a>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Exceptions.html">Exceptions</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="HTTPException" class="element ajax clickable class">
+<h1>HTTPException<a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html">¶</a>
+</h1>
+<p class="short_description">Class FrameworkException</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html" class="more">« More »</a>
+</div>
+</div>
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Files.html">Files</a>
+</li>
+</ul>
+<div class="namespace-indent">
+<h3>
+<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
+<div xmlns:php="http://php.net/xsl" id="UploadedFileInterface" class="element ajax clickable interface">
+<h1>UploadedFileInterface<a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html">¶</a>
+</h1>
+<p class="short_description">Value object representing a single file uploaded through an
 HTTP request. Used by the IncomingRequest class to
 provide files.</p>
-        <div class="details collapse">
-                            <p>Typically, implementors will extend the SplFileInfo class.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html" class="more">« More »</a>    </div>
-
-                
-                                        <div id="class_FileCollection" class="element ajax clickable class" data-toggle="collapse" data-target="#class_FileCollection .collapse">
-        <h1>FileCollection<a href="../classes/CodeIgniter.HTTP.Files.FileCollection.html">¶</a></h1>
-        <p class="short_description">Class FileCollection</p>
-        <div class="details collapse">
-                            <p>Provides easy access to uploaded files for a request.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Files.FileCollection.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-    
-                
-    
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-                
-                
-                
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
-    </li>
-
-    
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Exceptions.html">Exceptions</a>
-    </li>
-
-        </ul>
-
-        
-        
-                    <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
-                
-                
-                                        <div id="class_HTTPException" class="element ajax clickable class" data-toggle="collapse" data-target="#class_HTTPException .collapse">
-        <h1>HTTPException<a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html">¶</a></h1>
-        <p class="short_description">Class FrameworkException</p>
-        <div class="details collapse">
-                            <p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>
-                    </div>
-        <a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html" class="more">« More »</a>    </div>
-
-                            </div>
-            
-    
-    
-        </div>
-    </div>
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:39:59 -0700.<br/>
-    </footer>
-    </body>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html" class="more">« More »</a>
+</div>
+<div xmlns:php="http://php.net/xsl" id="FileCollection" class="element ajax clickable class">
+<h1>FileCollection<a href="../classes/CodeIgniter.HTTP.Files.FileCollection.html">¶</a>
+</h1>
+<p class="short_description">Class FileCollection</p>
+<div class="details collapse"></div>
+<a href="../classes/CodeIgniter.HTTP.Files.FileCollection.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:11-07:00.<br></footer></div>
+</div>
+</body>
 </html>

@@ -1,766 +1,431 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Validation\Rules
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » \CodeIgniter\Validation\Rules</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_differs" title="differs :: The value does not match another field in $data.">
-            <span class="description">The value does not match another field in $data.</span><pre>differs</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_exact_length" title="exact_length :: Returns true if $str is $val characters long.">
-            <span class="description">Returns true if $str is $val characters long.</span><pre>exact_length</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_greater_than" title="greater_than :: Greater than">
-            <span class="description">Greater than</span><pre>greater_than</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_greater_than_equal_to" title="greater_than_equal_to :: Equal to or Greater than">
-            <span class="description">Equal to or Greater than</span><pre>greater_than_equal_to</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_in_list" title="in_list :: Value should be within an array of values">
-            <span class="description">Value should be within an array of values</span><pre>in_list</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_is_unique" title="is_unique :: Checks the database to see if the given value is unique. Can
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list"><li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_differs" title="differs() :: The value does not match another field in $data."><span class="description">The value does not match another field in $data.</span><pre>differs()</pre></a></li>
+<li class="method public "><a href="#method_exact_length" title="exact_length() :: Returns true if $str is $val characters long."><span class="description">Returns true if $str is $val characters long.</span><pre>exact_length()</pre></a></li>
+<li class="method public "><a href="#method_greater_than" title="greater_than() :: Greater than"><span class="description">Greater than</span><pre>greater_than()</pre></a></li>
+<li class="method public "><a href="#method_greater_than_equal_to" title="greater_than_equal_to() :: Equal to or Greater than"><span class="description">Equal to or Greater than</span><pre>greater_than_equal_to()</pre></a></li>
+<li class="method public "><a href="#method_in_list" title="in_list() :: Value should be within an array of values"><span class="description">Value should be within an array of values</span><pre>in_list()</pre></a></li>
+<li class="method public "><a href="#method_is_unique" title="is_unique() :: Checks the database to see if the given value is unique. Can
 ignore a single record by field/value to make it useful during
-record updates.">
-            <span class="description">Checks the database to see if the given value is unique. Can
+record updates."><span class="description">Checks the database to see if the given value is unique. Can
 ignore a single record by field/value to make it useful during
-record updates.</span><pre>is_unique</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_less_than" title="less_than :: Less than">
-            <span class="description">Less than</span><pre>less_than</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_less_than_equal_to" title="less_than_equal_to :: Equal to or Less than">
-            <span class="description">Equal to or Less than</span><pre>less_than_equal_to</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_matches" title="matches :: Matches the value of another field in $data.">
-            <span class="description">Matches the value of another field in $data.</span><pre>matches</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_max_length" title="max_length :: Returns true if $str is $val or fewer characters in length.">
-            <span class="description">Returns true if $str is $val or fewer characters in length.</span><pre>max_length</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_min_length" title="min_length :: Returns true if $str is at least $val length.">
-            <span class="description">Returns true if $str is at least $val length.</span><pre>min_length</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_required" title="required :: Required">
-            <span class="description">Required</span><pre>required</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_required_with" title="required_with :: The field is required when any of the other fields are present
-in the data.">
-            <span class="description">The field is required when any of the other fields are present
-in the data.</span><pre>required_with</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_required_without" title="required_without :: The field is required when all of the other fields are not present
-in the data.">
-            <span class="description">The field is required when all of the other fields are not present
-in the data.</span><pre>required_without</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Rules</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">Rules.</p>
-                <div class="details">
-                    <div class="long_description">
-                        
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter\Validation</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_differs"></a>
-                        <div class="element clickable method public  method_differs" data-toggle="collapse" data-target=".method_differs .collapse">
-                            <h2>The value does not match another field in $data.</h2>
-                            <pre>differs(string $str = null, string $field, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$field</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p><p>Other field/value pairs</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_exact_length"></a>
-                        <div class="element clickable method public  method_exact_length" data-toggle="collapse" data-target=".method_exact_length .collapse">
-                            <h2>Returns true if $str is $val characters long.</h2>
-                            <pre>exact_length(string $str = null, string $val, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$val</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_greater_than"></a>
-                        <div class="element clickable method public  method_greater_than" data-toggle="collapse" data-target=".method_greater_than .collapse">
-                            <h2>Greater than</h2>
-                            <pre>greater_than(string $str = null, string $min, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$min</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_greater_than_equal_to"></a>
-                        <div class="element clickable method public  method_greater_than_equal_to" data-toggle="collapse" data-target=".method_greater_than_equal_to .collapse">
-                            <h2>Equal to or Greater than</h2>
-                            <pre>greater_than_equal_to(string $str = null, string $min, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$min</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_in_list"></a>
-                        <div class="element clickable method public  method_in_list" data-toggle="collapse" data-target=".method_in_list .collapse">
-                            <h2>Value should be within an array of values</h2>
-                            <pre>in_list(string $value = null, string $list, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$list</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_is_unique"></a>
-                        <div class="element clickable method public  method_is_unique" data-toggle="collapse" data-target=".method_is_unique .collapse">
-                            <h2>Checks the database to see if the given value is unique. Can
+record updates.</span><pre>is_unique()</pre></a></li>
+<li class="method public "><a href="#method_less_than" title="less_than() :: Less than"><span class="description">Less than</span><pre>less_than()</pre></a></li>
+<li class="method public "><a href="#method_less_than_equal_to" title="less_than_equal_to() :: Equal to or Less than"><span class="description">Equal to or Less than</span><pre>less_than_equal_to()</pre></a></li>
+<li class="method public "><a href="#method_matches" title="matches() :: Matches the value of another field in $data."><span class="description">Matches the value of another field in $data.</span><pre>matches()</pre></a></li>
+<li class="method public "><a href="#method_max_length" title="max_length() :: Returns true if $str is $val or fewer characters in length."><span class="description">Returns true if $str is $val or fewer characters in length.</span><pre>max_length()</pre></a></li>
+<li class="method public "><a href="#method_min_length" title="min_length() :: Returns true if $str is at least $val length."><span class="description">Returns true if $str is at least $val length.</span><pre>min_length()</pre></a></li>
+<li class="method public "><a href="#method_required" title="required() :: Required"><span class="description">Required</span><pre>required()</pre></a></li>
+<li class="method public "><a href="#method_required_with" title="required_with() :: The field is required when any of the other fields are present
+in the data."><span class="description">The field is required when any of the other fields are present
+in the data.</span><pre>required_with()</pre></a></li>
+<li class="method public "><a href="#method_required_without" title="required_without() :: The field is required when all of the other fields are not present
+in the data."><span class="description">The field is required when all of the other fields are not present
+in the data.</span><pre>required_without()</pre></a></li>
+</ul>
+</li></ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\Validation\Rules"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CodeIgniter.Validation.Rules.html">Rules</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">Rules.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.Validation.html">CodeIgniter\Validation</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_differs"></a><div class="element clickable method public method_differs " data-toggle="collapse" data-target=".method_differs .collapse" title="public">
+<h2>The value does not match another field in $data.</h2>
+<pre>differs(string $str<code> = null</code>, string $field, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Other field/value pairs</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_exact_length"></a><div class="element clickable method public method_exact_length " data-toggle="collapse" data-target=".method_exact_length .collapse" title="public">
+<h2>Returns true if $str is $val characters long.</h2>
+<pre>exact_length(string $str<code> = null</code>, string $val, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>$val = &quot;5&quot; (one) | &quot;5,8,12&quot; (multiple values)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_greater_than"></a><div class="element clickable method public method_greater_than " data-toggle="collapse" data-target=".method_greater_than .collapse" title="public">
+<h2>Greater than</h2>
+<pre>greater_than(string $str<code> = null</code>, string $min, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$min</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_greater_than_equal_to"></a><div class="element clickable method public method_greater_than_equal_to " data-toggle="collapse" data-target=".method_greater_than_equal_to .collapse" title="public">
+<h2>Equal to or Greater than</h2>
+<pre>greater_than_equal_to(string $str<code> = null</code>, string $min, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$min</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_in_list"></a><div class="element clickable method public method_in_list " data-toggle="collapse" data-target=".method_in_list .collapse" title="public">
+<h2>Value should be within an array of values</h2>
+<pre>in_list(string $value<code> = null</code>, string $list, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$list</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_is_unique"></a><div class="element clickable method public method_is_unique " data-toggle="collapse" data-target=".method_is_unique .collapse" title="public">
+<h2>Checks the database to see if the given value is unique. Can
 ignore a single record by field/value to make it useful during
 record updates.</h2>
-                            <pre>is_unique(string $str = null, string $field, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Example:
+<pre>is_unique(string $str<code> = null</code>, string $field, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example:
 is_unique[table.field,ignore_field,ignore_value]
 is_unique[users.email,id,5]</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$field</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_less_than"></a>
-                        <div class="element clickable method public  method_less_than" data-toggle="collapse" data-target=".method_less_than .collapse">
-                            <h2>Less than</h2>
-                            <pre>less_than(string $str = null, string $max) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$max</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_less_than_equal_to"></a>
-                        <div class="element clickable method public  method_less_than_equal_to" data-toggle="collapse" data-target=".method_less_than_equal_to .collapse">
-                            <h2>Equal to or Less than</h2>
-                            <pre>less_than_equal_to(string $str = null, string $max) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$max</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_matches"></a>
-                        <div class="element clickable method public  method_matches" data-toggle="collapse" data-target=".method_matches .collapse">
-                            <h2>Matches the value of another field in $data.</h2>
-                            <pre>matches(string $str = null, string $field, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$field</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p><p>Other field/value pairs</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_max_length"></a>
-                        <div class="element clickable method public  method_max_length" data-toggle="collapse" data-target=".method_max_length .collapse">
-                            <h2>Returns true if $str is $val or fewer characters in length.</h2>
-                            <pre>max_length(string $str = null, string $val, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$val</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_min_length"></a>
-                        <div class="element clickable method public  method_min_length" data-toggle="collapse" data-target=".method_min_length .collapse">
-                            <h2>Returns true if $str is at least $val length.</h2>
-                            <pre>min_length(string $str = null, string $val, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$val</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_required"></a>
-                        <div class="element clickable method public  method_required" data-toggle="collapse" data-target=".method_required .collapse">
-                            <h2>Required</h2>
-                            <pre>required(mixed $str = null) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>mixed</code><p><p>Value</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p><p>True if valid, false if not</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_required_with"></a>
-                        <div class="element clickable method public  method_required_with" data-toggle="collapse" data-target=".method_required_with .collapse">
-                            <h2>The field is required when any of the other fields are present
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_less_than"></a><div class="element clickable method public method_less_than " data-toggle="collapse" data-target=".method_less_than .collapse" title="public">
+<h2>Less than</h2>
+<pre>less_than(string $str<code> = null</code>, string $max) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$max</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_less_than_equal_to"></a><div class="element clickable method public method_less_than_equal_to " data-toggle="collapse" data-target=".method_less_than_equal_to .collapse" title="public">
+<h2>Equal to or Less than</h2>
+<pre>less_than_equal_to(string $str<code> = null</code>, string $max) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$max</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_matches"></a><div class="element clickable method public method_matches " data-toggle="collapse" data-target=".method_matches .collapse" title="public">
+<h2>Matches the value of another field in $data.</h2>
+<pre>matches(string $str<code> = null</code>, string $field, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Other field/value pairs</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_max_length"></a><div class="element clickable method public method_max_length " data-toggle="collapse" data-target=".method_max_length .collapse" title="public">
+<h2>Returns true if $str is $val or fewer characters in length.</h2>
+<pre>max_length(string $str<code> = null</code>, string $val, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_min_length"></a><div class="element clickable method public method_min_length " data-toggle="collapse" data-target=".method_min_length .collapse" title="public">
+<h2>Returns true if $str is at least $val length.</h2>
+<pre>min_length(string $str<code> = null</code>, string $val, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$val</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_required"></a><div class="element clickable method public method_required " data-toggle="collapse" data-target=".method_required .collapse" title="public">
+<h2>Required</h2>
+<pre>required(mixed $str<code> = null</code>) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str</h4>
+<code>mixed</code><p>Value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>True if valid, false if not</div>
+</div></div>
+</div>
+<a id="method_required_with"></a><div class="element clickable method public method_required_with " data-toggle="collapse" data-target=".method_required_with .collapse" title="public">
+<h2>The field is required when any of the other fields are present
 in the data.</h2>
-                            <pre>required_with( $str = null, string $fields, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Example (field is required when the password field is present):</p>
+<pre>required_with($str<code> = null</code>, string $fields, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example (field is required when the password field is present):</p>
 <pre><code>required_with[password]</code></pre></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fields</h4>
-                                                <code>string</code><p><p>List of fields that we should check if present</p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p><p>Complete list of fields from the form</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_required_without"></a>
-                        <div class="element clickable method public  method_required_without" data-toggle="collapse" data-target=".method_required_without .collapse">
-                            <h2>The field is required when all of the other fields are not present
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$str</h4></div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>string</code><p>List of fields that we should check if present</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Complete list of fields from the form</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+<a id="method_required_without"></a><div class="element clickable method public method_required_without " data-toggle="collapse" data-target=".method_required_without .collapse" title="public">
+<h2>The field is required when all of the other fields are not present
 in the data.</h2>
-                            <pre>required_without( $str = null, string $fields, array $data) : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Example (field is required when the id or email field is missing):</p>
+<pre>required_without($str<code> = null</code>, string $fields, array $data) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Example (field is required when the id or email field is missing):</p>
 <pre><code>required_without[id,email]</code></pre></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code></code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$fields</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                        </div>
-            </div>
-            <a id="\CodeIgniter\Validation\Rules"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Validation.Rules.html">Rules</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:40:06 -0700.<br/>
-    </footer>
-    </body>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$str</h4></div>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>boolean</code></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:19-07:00.<br></footer></div>
+</div>
+</body>
 </html>

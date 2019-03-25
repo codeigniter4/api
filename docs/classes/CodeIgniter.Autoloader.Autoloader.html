@@ -1,225 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-    <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Autoloader\Autoloader
-</title>
-    <meta name="author" content=""/>
-    <meta name="description" content=""/>
-
-            <link href="../css/template.css" rel="stylesheet" media="all"/>
-    
-            <!--[if lt IE 9]>
-        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
-        <![endif]-->
-        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
-        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
-        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
-        <script src="../js/bootstrap.js" type="text/javascript"></script>
-        <script src="../js/template.js" type="text/javascript"></script>
-        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
-    
-            <link rel="shortcut icon" href="../img/favicon.ico"/>
-        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
-    </head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>CodeIgniter v4.0 API » \CodeIgniter\Autoloader\Autoloader</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
 <body>
-
-        <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span> <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> </a>
-                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
-
-                <div class="nav-collapse">
-                    <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                API Documentation <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                                                    <li><a>Namespaces</a></li>
-                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
-                                                                                                                                </ul>
-                        </li>
-                        <li class="dropdown" id="charts-menu">
-                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                Charts <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../graph_class.html">
-                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown" id="reports-menu">
-                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                Reports <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="../errors.html">
-                                        <i class="icon-list-alt"></i>&#160;Errors
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../markers.html">
-                                        <i class="icon-list-alt"></i>&#160;Markers
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="../deprecated.html">
-                                        <i class="icon-list-alt"></i>&#160;Deprecated
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="go_to_top">
-            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
-        </div>
-    </div>
-    
-    <div id="___" class="container">
-        <noscript>
-            <div class="alert alert-warning">
-                Javascript is disabled; several features are only available if Javascript is enabled.
-            </div>
-        </noscript>
-
-        
-            <style>
-        .deprecated h2 {
-            text-decoration: line-through;
-        }
-    </style>
-    <div class="row">
-        <div class="span4">
-                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
-        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
-        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-    </div>
-    <div class="btn-group visibility" data-toggle="buttons-checkbox">
-        <button class="btn public active" title="Show public elements">Public</button>
-        <button class="btn protected" title="Show protected elements">Protected</button>
-        <button class="btn private" title="Show private elements">Private</button>
-        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
-    </div>
-
-        <ul class="side-nav nav nav-list">
-        <li class="nav-header">
-            <i class="icon-custom icon-method"></i> Methods
-            <ul>
-                                                                                                    <li class="method public">
-        <a href="#method_addNamespace" title="addNamespace :: Registers namespaces with the autoloader.">
-            <span class="description">Registers namespaces with the autoloader.</span><pre>addNamespace</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_getNamespace" title="getNamespace :: Get namespaces with prefixes as keys and paths as values.">
-            <span class="description">Get namespaces with prefixes as keys and paths as values.</span><pre>getNamespace</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_initialize" title="initialize :: Reads in the configuration array (described above) and stores
-the valid parts that we&#039;ll need.">
-            <span class="description">Reads in the configuration array (described above) and stores
-the valid parts that we&#039;ll need.</span><pre>initialize</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_loadClass" title="loadClass :: Loads the class file for a given class name.">
-            <span class="description">Loads the class file for a given class name.</span><pre>loadClass</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                                                                        <li class="method public">
-        <a href="#method_register" title="register :: Register the loader with the SPL autoloader stack.">
-            <span class="description">Register the loader with the SPL autoloader stack.</span><pre>register</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_removeNamespace" title="removeNamespace :: Removes a single namespace from the psr4 settings.">
-            <span class="description">Removes a single namespace from the psr4 settings.</span><pre>removeNamespace</pre>
-        </a>
-    </li>
-
-                                                                                                                                                                <li class="method public">
-        <a href="#method_sanitizeFilename" title="sanitizeFilename :: Sanitizes a filename, replacing spaces with dashes.">
-            <span class="description">Sanitizes a filename, replacing spaces with dashes.</span><pre>sanitizeFilename</pre>
-        </a>
-    </li>
-
-                                                </ul>
-        </li>
-        <li class="nav-header protected">» Protected
-            <ul>
-                                                                                                                <li class="method protected">
-                            <a href="#method_discoverComposerNamespaces" title="discoverComposerNamespaces :: Locates all PSR4 compatible namespaces from Composer.">
-                                <span class="description">Locates all PSR4 compatible namespaces from Composer.</span><pre>discoverComposerNamespaces</pre>
-                            </a>
-                        </li>
-                                                                                                                                                                                            <li class="method protected">
-                            <a href="#method_loadInNamespace" title="loadInNamespace :: Loads the class file for a given class name.">
-                                <span class="description">Loads the class file for a given class name.</span><pre>loadInNamespace</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
-                            <a href="#method_loadLegacy" title="loadLegacy :: Attempts to load the class from common locations in previous
-version of CodeIgniter, namely &#039;app/Libraries&#039;, and
-&#039;app/Models&#039;.">
-                                <span class="description">Attempts to load the class from common locations in previous
-version of CodeIgniter, namely &#039;app/Libraries&#039;, and
-&#039;app/Models&#039;.</span><pre>loadLegacy</pre>
-                            </a>
-                        </li>
-                                                                                                                                                        <li class="method protected">
-                            <a href="#method_requireFile" title="requireFile :: A central way to require a file is loaded. Split out primarily
-for testing purposes.">
-                                <span class="description">A central way to require a file is loaded. Split out primarily
-for testing purposes.</span><pre>requireFile</pre>
-                            </a>
-                        </li>
-                                                                                    </ul>
-        </li>
-        <li class="nav-header private">» Private
-            <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
-        </li>
-        <li class="nav-header">
-            <i class="icon-custom icon-constant"></i> Constants
-            <ul>
-                            </ul>
-        </li>
-    </ul>
-
-
-        </div>
-
-        <div class="span8">
-            <div class="element class">
-                <h1>Autoloader</h1>
-                <small style="display: block; text-align: right">
-                                                        </small>
-                <p class="short_description">CodeIgniter Autoloader</p>
-                <div class="details">
-                    <div class="long_description">
-                        <p>An autoloader that uses both PSR4 autoloading, and traditional classmaps.</p>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Namespaces</a></li>
+<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
+<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
+<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
+<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
+<li><a>Packages</a></li>
+<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
+<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">555</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
+<div class="btn-group visibility" data-toggle="buttons-checkbox">
+<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
+</div>
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+</div>
+<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
+<li class="nav-header">
+<i title="Methods" class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addNamespace" title="addNamespace() :: Registers namespaces with the autoloader."><span class="description">Registers namespaces with the autoloader.</span><pre>addNamespace()</pre></a></li>
+<li class="method public "><a href="#method_getNamespace" title="getNamespace() :: Get namespaces with prefixes as keys and paths as values."><span class="description">Get namespaces with prefixes as keys and paths as values.</span><pre>getNamespace()</pre></a></li>
+<li class="method public "><a href="#method_initialize" title="initialize() :: Reads in the configuration array (described above) and stores
+the valid parts that we'll need."><span class="description">Reads in the configuration array (described above) and stores
+the valid parts that we'll need.</span><pre>initialize()</pre></a></li>
+<li class="method public "><a href="#method_loadClass" title="loadClass() :: Loads the class file for a given class name."><span class="description">Loads the class file for a given class name.</span><pre>loadClass()</pre></a></li>
+<li class="method public "><a href="#method_register" title="register() :: Register the loader with the SPL autoloader stack."><span class="description">Register the loader with the SPL autoloader stack.</span><pre>register()</pre></a></li>
+<li class="method public "><a href="#method_removeNamespace" title="removeNamespace() :: Removes a single namespace from the psr4 settings."><span class="description">Removes a single namespace from the psr4 settings.</span><pre>removeNamespace()</pre></a></li>
+<li class="method public "><a href="#method_sanitizeFilename" title="sanitizeFilename() :: Sanitizes a filename, replacing spaces with dashes."><span class="description">Sanitizes a filename, replacing spaces with dashes.</span><pre>sanitizeFilename()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_discoverComposerNamespaces" title="discoverComposerNamespaces() :: Locates all PSR4 compatible namespaces from Composer."><span class="description">Locates all PSR4 compatible namespaces from Composer.</span><pre>discoverComposerNamespaces()</pre></a></li>
+<li class="method protected "><a href="#method_loadInNamespace" title="loadInNamespace() :: Loads the class file for a given class name."><span class="description">Loads the class file for a given class name.</span><pre>loadInNamespace()</pre></a></li>
+<li class="method protected "><a href="#method_loadLegacy" title="loadLegacy() :: Attempts to load the class from common locations in previous
+version of CodeIgniter, namely 'app/Libraries', and
+'app/Models'."><span class="description">Attempts to load the class from common locations in previous
+version of CodeIgniter, namely 'app/Libraries', and
+'app/Models'.</span><pre>loadLegacy()</pre></a></li>
+<li class="method protected "><a href="#method_requireFile" title="requireFile() :: A central way to require a file is loaded. Split out primarily
+for testing purposes."><span class="description">A central way to require a file is loaded. Split out primarily
+for testing purposes.</span><pre>requireFile()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i title="Properties" class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_classmap" title="$classmap() :: Stores class name as key, and path as values."><span class="description"></span><pre>$classmap</pre></a></li>
+<li class="property protected "><a href="#property_prefixes" title="$prefixes() :: Stores namespaces as key, and path as values."><span class="description"></span><pre>$prefixes</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\Autoloader\Autoloader"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
+<li>
+<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/CodeIgniter.Autoloader.html">Autoloader</a>
+</li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/CodeIgniter.Autoloader.Autoloader.html">Autoloader</a>
+</li>
+</ul>
+<div xmlns:php="http://php.net/xsl" class="element class">
+<p class="short_description">CodeIgniter Autoloader</p>
+<div class="details">
+<div class="long_description"><p>An autoloader that uses both PSR4 autoloading, and traditional classmaps.</p>
 <p>Given a foo-bar package of classes in the file system at the following paths:</p>
 <pre><code> /path/to/packages/foo-bar/
      /src
@@ -244,441 +145,214 @@ The Config array consists of 2 primary keys, both of which are associative array
  $loader = new \CodeIgniter\Autoloader\Autoloader($Config);
 
  // register the autoloader
- $loader-&gt;register();</code></pre>
-                    </div>
-                    <table class="table table-bordered">
-                                                                                    <tr>
-                                    <th>
-                                        package
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>CodeIgniter\Autoloader</p>
-                                    </td>
-                                </tr>
-                                                                                                                                                                                </table>
-
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
-                                                                <a id="method_addNamespace"></a>
-                        <div class="element clickable method public  method_addNamespace" data-toggle="collapse" data-target=".method_addNamespace .collapse">
-                            <h2>Registers namespaces with the autoloader.</h2>
-                            <pre>addNamespace(array|string $namespace, string $path = null) : \CodeIgniter\Autoloader\Autoloader</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$namespace</h4>
-                                                <code>array|string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$path</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Autoloader.Autoloader.html">\CodeIgniter\Autoloader\Autoloader</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_discoverComposerNamespaces"></a>
-                        <div class="element clickable method protected  method_discoverComposerNamespaces" data-toggle="collapse" data-target=".method_discoverComposerNamespaces .collapse">
-                            <h2>Locates all PSR4 compatible namespaces from Composer.</h2>
-                            <pre>discoverComposerNamespaces() </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getNamespace"></a>
-                        <div class="element clickable method public  method_getNamespace" data-toggle="collapse" data-target=".method_getNamespace .collapse">
-                            <h2>Get namespaces with prefixes as keys and paths as values.</h2>
-                            <pre>getNamespace(\CodeIgniter\Autoloader\string $prefix = null) : array</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>If a prefix param is set, returns only paths to the given prefix.</p></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    var
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$prefix</h4>
-                                                <code>\CodeIgniter\Autoloader\string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>array</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_initialize"></a>
-                        <div class="element clickable method public  method_initialize" data-toggle="collapse" data-target=".method_initialize .collapse">
-                            <h2>Reads in the configuration array (described above) and stores
-the valid parts that we&#039;ll need.</h2>
-                            <pre>initialize(\Config\Autoload $config, \Config\Modules $moduleConfig) : $this</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code>\Config\Autoload</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$moduleConfig</h4>
-                                                <code>\Config\Modules</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadClass"></a>
-                        <div class="element clickable method public  method_loadClass" data-toggle="collapse" data-target=".method_loadClass .collapse">
-                            <h2>Loads the class file for a given class name.</h2>
-                            <pre>loadClass(string $class) : string|false</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$class</h4>
-                                                <code>string</code><p><p>The fully qualified class name.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|false</code><p><p>The mapped file on success, or boolean false
-on failure.</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadInNamespace"></a>
-                        <div class="element clickable method protected  method_loadInNamespace" data-toggle="collapse" data-target=".method_loadInNamespace .collapse">
-                            <h2>Loads the class file for a given class name.</h2>
-                            <pre>loadInNamespace(string $class) : string|false</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$class</h4>
-                                                <code>string</code><p><p>The fully-qualified class name</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|false</code><p><p>The mapped file name on success, or boolean false on fail</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_loadLegacy"></a>
-                        <div class="element clickable method protected  method_loadLegacy" data-toggle="collapse" data-target=".method_loadLegacy .collapse">
-                            <h2>Attempts to load the class from common locations in previous
-version of CodeIgniter, namely &#039;app/Libraries&#039;, and
-&#039;app/Models&#039;.</h2>
-                            <pre>loadLegacy(string $class) : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$class</h4>
-                                                <code>string</code><p><p>The class name. This typically should NOT have a namespace.</p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>The mapped file name on success, or boolean false on failure</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_register"></a>
-                        <div class="element clickable method public  method_register" data-toggle="collapse" data-target=".method_register .collapse">
-                            <h2>Register the loader with the SPL autoloader stack.</h2>
-                            <pre>register() </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                    
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_removeNamespace"></a>
-                        <div class="element clickable method public  method_removeNamespace" data-toggle="collapse" data-target=".method_removeNamespace .collapse">
-                            <h2>Removes a single namespace from the psr4 settings.</h2>
-                            <pre>removeNamespace(string $namespace) : \CodeIgniter\Autoloader\Autoloader</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$namespace</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Autoloader.Autoloader.html">\CodeIgniter\Autoloader\Autoloader</a></code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_requireFile"></a>
-                        <div class="element clickable method protected  method_requireFile" data-toggle="collapse" data-target=".method_requireFile .collapse">
-                            <h2>A central way to require a file is loaded. Split out primarily
-for testing purposes.</h2>
-                            <pre>requireFile(string $file) : string|false</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$file</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string|false</code><p><p>The filename on success, false if the file is not loaded</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_sanitizeFilename"></a>
-                        <div class="element clickable method public  method_sanitizeFilename" data-toggle="collapse" data-target=".method_sanitizeFilename .collapse">
-                            <h2>Sanitizes a filename, replacing spaces with dashes.</h2>
-                            <pre>sanitizeFilename(string $filename) : string</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"><p>Removes special characters that are illegal in filenames on certain
+ $loader-&gt;register();</code></pre></div>
+<table class="table table-bordered"><tr>
+<th>package</th>
+<td><a href="../packages/CodeIgniter.Autoloader.html">CodeIgniter\Autoloader</a></td>
+</tr></table>
+<h3>
+<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addNamespace"></a><div class="element clickable method public method_addNamespace " data-toggle="collapse" data-target=".method_addNamespace .collapse" title="public">
+<h2>Registers namespaces with the autoloader.</h2>
+<pre>addNamespace(array|string $namespace, string $path<code> = null</code>) : \CodeIgniter\Autoloader\Autoloader</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>array</code><code>string</code>
+</div>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Autoloader\Autoloader</code></div>
+</div></div>
+</div>
+<a id="method_getNamespace"></a><div class="element clickable method public method_getNamespace " data-toggle="collapse" data-target=".method_getNamespace .collapse" title="public">
+<h2>Get namespaces with prefixes as keys and paths as values.</h2>
+<pre>getNamespace(\CodeIgniter\Autoloader\string $prefix<code> = null</code>) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a prefix param is set, returns only paths to the given prefix.</p></div>
+<table class="table table-bordered"><tr>
+<th>var</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$prefix</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_initialize"></a><div class="element clickable method public method_initialize " data-toggle="collapse" data-target=".method_initialize .collapse" title="public">
+<h2>Reads in the configuration array (described above) and stores
+the valid parts that we'll need.</h2>
+<pre>initialize(\Config\Autoload $config, \Config\Modules $moduleConfig) : \CodeIgniter\Autoloader\Autoloader</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>fluent</th>
+<td>This method is part of a fluent interface and will return the same instance</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>\Config\Autoload</code>
+</div>
+<div class="subelement argument">
+<h4>$moduleConfig</h4>
+<code>\Config\Modules</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Autoloader\Autoloader</code></div>
+</div></div>
+</div>
+<a id="method_loadClass"></a><div class="element clickable method public method_loadClass " data-toggle="collapse" data-target=".method_loadClass .collapse" title="public">
+<h2>Loads the class file for a given class name.</h2>
+<pre>loadClass(string $class) : string | false</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The fully qualified class name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>false</code>The mapped file on success, or boolean false
+                         on failure.</div>
+</div></div>
+</div>
+<a id="method_register"></a><div class="element clickable method public method_register " data-toggle="collapse" data-target=".method_register .collapse" title="public">
+<h2>Register the loader with the SPL autoloader stack.</h2>
+<pre>register() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_removeNamespace"></a><div class="element clickable method public method_removeNamespace " data-toggle="collapse" data-target=".method_removeNamespace .collapse" title="public">
+<h2>Removes a single namespace from the psr4 settings.</h2>
+<pre>removeNamespace(string $namespace) : \CodeIgniter\Autoloader\Autoloader</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\CodeIgniter\Autoloader\Autoloader</code></div>
+</div></div>
+</div>
+<a id="method_sanitizeFilename"></a><div class="element clickable method public method_sanitizeFilename " data-toggle="collapse" data-target=".method_sanitizeFilename .collapse" title="public">
+<h2>Sanitizes a filename, replacing spaces with dashes.</h2>
+<pre>sanitizeFilename(string $filename) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Removes special characters that are illegal in filenames on certain
 operating systems and special characters requiring special escaping
 to manipulate at the command line. Replaces spaces and consecutive
 dashes with a single dash. Trim period, dash and underscore from beginning
 and end of filename.</p></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$filename</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p><p>The sanitized filename</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                    
-                    
-                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_prefixes"> </a>
-                            <div class="element clickable property  protected property_prefixes" data-toggle="collapse" data-target=".property_prefixes .collapse">
-                                <h2>Stores namespaces as key, and path as values.</h2>
-                                <pre>prefixes : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_classmap"> </a>
-                            <div class="element clickable property  protected property_classmap" data-toggle="collapse" data-target=".property_classmap .collapse">
-                                <h2>Stores class name as key, and path as values.</h2>
-                                <pre>classmap : array</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>array</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                            </div>
-            </div>
-            <a id="\CodeIgniter\Autoloader\Autoloader"></a>
-            <ul class="breadcrumb">
-                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-                    
-    
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Autoloader.html">Autoloader</a></li>
-
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Autoloader.Autoloader.html">Autoloader</a></li>
-            </ul>
-        </div>
-    </div>
-
-    </div>
-
-        <footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
-            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 11 Mar 2019 20:40:04 -0700.<br/>
-    </footer>
-    </body>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The sanitized filename</div>
+</div></div>
+</div>
+<a id="method_discoverComposerNamespaces"></a><div class="element clickable method protected method_discoverComposerNamespaces " data-toggle="collapse" data-target=".method_discoverComposerNamespaces .collapse" title="protected">
+<h2>Locates all PSR4 compatible namespaces from Composer.</h2>
+<pre>discoverComposerNamespaces() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_loadInNamespace"></a><div class="element clickable method protected method_loadInNamespace " data-toggle="collapse" data-target=".method_loadInNamespace .collapse" title="protected">
+<h2>Loads the class file for a given class name.</h2>
+<pre>loadInNamespace(string $class) : string | false</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The fully-qualified class name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>false</code>The mapped file name on success, or boolean false on fail</div>
+</div></div>
+</div>
+<a id="method_loadLegacy"></a><div class="element clickable method protected method_loadLegacy " data-toggle="collapse" data-target=".method_loadLegacy .collapse" title="protected">
+<h2>Attempts to load the class from common locations in previous
+version of CodeIgniter, namely 'app/Libraries', and
+'app/Models'.</h2>
+<pre>loadLegacy(string $class) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name. This typically should NOT have a namespace.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The mapped file name on success, or boolean false on failure</div>
+</div></div>
+</div>
+<a id="method_requireFile"></a><div class="element clickable method protected method_requireFile " data-toggle="collapse" data-target=".method_requireFile .collapse" title="protected">
+<h2>A central way to require a file is loaded. Split out primarily
+for testing purposes.</h2>
+<pre>requireFile(string $file) : string | false</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>false</code>The filename on success, false if the file is not loaded</div>
+</div></div>
+</div>
+<h3>
+<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_classmap"> </a><div class="element clickable property protected property_classmap" data-toggle="collapse" data-target=".property_classmap .collapse" title="protected">
+<h2>Stores class name as key, and path as values.</h2>
+<pre>$classmap : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_prefixes"> </a><div class="element clickable property protected property_prefixes" data-toggle="collapse" data-target=".property_prefixes .collapse" title="protected">
+<h2>Stores namespaces as key, and path as values.</h2>
+<pre>$prefixes : array</pre>
+<div class="row collapse"><div class="detail-description">
+<h3>Default</h3>
+<div class="subelement argument"><code>array()</code></div>
+</div></div>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
+            generated on 2019-03-24T20:48:17-07:00.<br></footer></div>
+</div>
+</body>
 </html>
