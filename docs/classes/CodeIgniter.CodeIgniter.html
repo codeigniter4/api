@@ -1,769 +1,1779 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>CodeIgniter v4.0 API » \CodeIgniter\CodeIgniter</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    CodeIgniter v4.0 API &raquo; \CodeIgniter\CodeIgniter
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
 <body>
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
-<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
-<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
-<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">555</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
-</div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
-<div class="btn-group visibility" data-toggle="buttons-checkbox">
-<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
-</div>
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-</div>
-</div>
-<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
-<li class="nav-header">
-<i title="Methods" class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: "><span class="description">__construct()
-        </span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_cache" title="cache() :: Tells the app that the final output should be cached."><span class="description">Tells the app that the final output should be cached.</span><pre>cache()</pre></a></li>
-<li class="method public "><a href="#method_cachePage" title="cachePage() :: Caches the full response from the current request. Used for
-full-page caching for very high performance."><span class="description">Caches the full response from the current request. Used for
-full-page caching for very high performance.</span><pre>cachePage()</pre></a></li>
-<li class="method public "><a href="#method_displayCache" title="displayCache() :: Determines if a response has been cached for the given URI."><span class="description">Determines if a response has been cached for the given URI.</span><pre>displayCache()</pre></a></li>
-<li class="method public "><a href="#method_displayPerformanceMetrics" title="displayPerformanceMetrics() :: Replaces the memory_usage and elapsed_time tags."><span class="description">Replaces the memory_usage and elapsed_time tags.</span><pre>displayPerformanceMetrics()</pre></a></li>
-<li class="method public "><a href="#method_getPerformanceStats" title="getPerformanceStats() :: Returns an array with our basic performance stats collected."><span class="description">Returns an array with our basic performance stats collected.</span><pre>getPerformanceStats()</pre></a></li>
-<li class="method public "><a href="#method_initialize" title="initialize() :: Handles some basic app and environment setup."><span class="description">Handles some basic app and environment setup.</span><pre>initialize()</pre></a></li>
-<li class="method public "><a href="#method_run" title="run() :: Launch the application!"><span class="description">Launch the application!</span><pre>run()</pre></a></li>
-<li class="method public "><a href="#method_setPath" title="setPath() :: Allows the request path to be set from outside the class,
-instead of relying on CLIRequest or IncomingRequest for the path."><span class="description">Allows the request path to be set from outside the class,
-instead of relying on CLIRequest or IncomingRequest for the path.</span><pre>setPath()</pre></a></li>
-<li class="method public "><a href="#method_setRequest" title="setRequest() :: Sets a Request object to be used for this request."><span class="description">Sets a Request object to be used for this request.</span><pre>setRequest()</pre></a></li>
-<li class="method public "><a href="#method_spoofRequestMethod" title="spoofRequestMethod() :: Modifies the Request Object to use a different method if a POST
-variable called _method is found."><span class="description">Modifies the Request Object to use a different method if a POST
-variable called _method is found.</span><pre>spoofRequestMethod()</pre></a></li>
-<li class="method public "><a href="#method_storePreviousURL" title="storePreviousURL() :: If we have a session object to use, store the current URI
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">CodeIgniter v4.0 API</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_cache" title="cache :: Tells the app that the final output should be cached.">
+            <span class="description">Tells the app that the final output should be cached.</span><pre>cache</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_cachePage" title="cachePage :: Caches the full response from the current request. Used for
+full-page caching for very high performance.">
+            <span class="description">Caches the full response from the current request. Used for
+full-page caching for very high performance.</span><pre>cachePage</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_displayCache" title="displayCache :: Determines if a response has been cached for the given URI.">
+            <span class="description">Determines if a response has been cached for the given URI.</span><pre>displayCache</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_displayPerformanceMetrics" title="displayPerformanceMetrics :: Replaces the memory_usage and elapsed_time tags.">
+            <span class="description">Replaces the memory_usage and elapsed_time tags.</span><pre>displayPerformanceMetrics</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_getPerformanceStats" title="getPerformanceStats :: Returns an array with our basic performance stats collected.">
+            <span class="description">Returns an array with our basic performance stats collected.</span><pre>getPerformanceStats</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_initialize" title="initialize :: Handles some basic app and environment setup.">
+            <span class="description">Handles some basic app and environment setup.</span><pre>initialize</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_run" title="run :: Launch the application!">
+            <span class="description">Launch the application!</span><pre>run</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_setPath" title="setPath :: Allows the request path to be set from outside the class,
+instead of relying on CLIRequest or IncomingRequest for the path.">
+            <span class="description">Allows the request path to be set from outside the class,
+instead of relying on CLIRequest or IncomingRequest for the path.</span><pre>setPath</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setRequest" title="setRequest :: Sets a Request object to be used for this request.">
+            <span class="description">Sets a Request object to be used for this request.</span><pre>setRequest</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_spoofRequestMethod" title="spoofRequestMethod :: Modifies the Request Object to use a different method if a POST
+variable called _method is found.">
+            <span class="description">Modifies the Request Object to use a different method if a POST
+variable called _method is found.</span><pre>spoofRequestMethod</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_storePreviousURL" title="storePreviousURL :: If we have a session object to use, store the current URI
 as the previous URI. This is called just prior to sending the
-response to the client, and will make it available next request."><span class="description">If we have a session object to use, store the current URI
+response to the client, and will make it available next request.">
+            <span class="description">If we have a session object to use, store the current URI
 as the previous URI. This is called just prior to sending the
-response to the client, and will make it available next request.</span><pre>storePreviousURL()</pre></a></li>
-<li class="method public "><a href="#method_useSafeOutput" title='useSafeOutput() :: Set our Response instance to "pretend" mode so that things like
+response to the client, and will make it available next request.</span><pre>storePreviousURL</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_useSafeOutput" title="useSafeOutput :: Set our Response instance to &quot;pretend&quot; mode so that things like
 cookies and headers are not actually sent, allowing PHP 7.2+ to
-not complain when ini_set() function is used.'><span class="description">Set our Response instance to "pretend" mode so that things like
+not complain when ini_set() function is used.">
+            <span class="description">Set our Response instance to &quot;pretend&quot; mode so that things like
 cookies and headers are not actually sent, allowing PHP 7.2+ to
-not complain when ini_set() function is used.</span><pre>useSafeOutput()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="method protected "><a href="#method_bootstrapEnvironment" title="bootstrapEnvironment() :: Load any custom boot files based upon the current environment."><span class="description">Load any custom boot files based upon the current environment.</span><pre>bootstrapEnvironment()</pre></a></li>
-<li class="method protected "><a href="#method_callExit" title="callExit() :: Exits the application, setting the exit code for CLI-based applications
-that might be watching."><span class="description">Exits the application, setting the exit code for CLI-based applications
-that might be watching.</span><pre>callExit()</pre></a></li>
-<li class="method protected "><a href="#method_createController" title="createController() :: Instantiates the controller class."><span class="description">Instantiates the controller class.</span><pre>createController()</pre></a></li>
-<li class="method protected "><a href="#method_detectEnvironment" title="detectEnvironment() :: You can load different configurations depending on your
+not complain when ini_set() function is used.</span><pre>useSafeOutput</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                <li class="method protected">
+                            <a href="#method_bootstrapEnvironment" title="bootstrapEnvironment :: Load any custom boot files based upon the current environment.">
+                                <span class="description">Load any custom boot files based upon the current environment.</span><pre>bootstrapEnvironment</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_callExit" title="callExit :: Exits the application, setting the exit code for CLI-based applications
+that might be watching.">
+                                <span class="description">Exits the application, setting the exit code for CLI-based applications
+that might be watching.</span><pre>callExit</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_createController" title="createController :: Instantiates the controller class.">
+                                <span class="description">Instantiates the controller class.</span><pre>createController</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_detectEnvironment" title="detectEnvironment :: You can load different configurations depending on your
 current environment. Setting the environment also influences
-things like logging and error reporting."><span class="description">You can load different configurations depending on your
+things like logging and error reporting.">
+                                <span class="description">You can load different configurations depending on your
 current environment. Setting the environment also influences
-things like logging and error reporting.</span><pre>detectEnvironment()</pre></a></li>
-<li class="method protected "><a href="#method_determinePath" title="determinePath() :: Determines the path to use for us to try to route to, based
-on user input (setPath), or the CLI/IncomingRequest path."><span class="description">Determines the path to use for us to try to route to, based
-on user input (setPath), or the CLI/IncomingRequest path.</span><pre>determinePath()</pre></a></li>
-<li class="method protected "><a href="#method_display404errors" title="display404errors() :: Displays a 404 Page Not Found error. If set, will try to
-call the 404Override controller/method that was set in routing config."><span class="description">Displays a 404 Page Not Found error. If set, will try to
-call the 404Override controller/method that was set in routing config.</span><pre>display404errors()</pre></a></li>
-<li class="method protected "><a href="#method_forceSecureAccess" title="forceSecureAccess() :: Force Secure Site Access? If the config value 'forceGlobalSecureRequests'
+things like logging and error reporting.</span><pre>detectEnvironment</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_determinePath" title="determinePath :: Determines the path to use for us to try to route to, based
+on user input (setPath), or the CLI/IncomingRequest path.">
+                                <span class="description">Determines the path to use for us to try to route to, based
+on user input (setPath), or the CLI/IncomingRequest path.</span><pre>determinePath</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_display404errors" title="display404errors :: Displays a 404 Page Not Found error. If set, will try to
+call the 404Override controller/method that was set in routing config.">
+                                <span class="description">Displays a 404 Page Not Found error. If set, will try to
+call the 404Override controller/method that was set in routing config.</span><pre>display404errors</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_forceSecureAccess" title="forceSecureAccess :: Force Secure Site Access? If the config value &#039;forceGlobalSecureRequests&#039;
 is true, will enforce that all requests to this site are made through
 HTTPS. Will redirect the user to the current page with HTTPS, as well
 as set the HTTP Strict Transport Security header for those browsers
-that support it."><span class="description">Force Secure Site Access? If the config value 'forceGlobalSecureRequests'
+that support it.">
+                                <span class="description">Force Secure Site Access? If the config value &#039;forceGlobalSecureRequests&#039;
 is true, will enforce that all requests to this site are made through
 HTTPS. Will redirect the user to the current page with HTTPS, as well
 as set the HTTP Strict Transport Security header for those browsers
-that support it.</span><pre>forceSecureAccess()</pre></a></li>
-<li class="method protected "><a href="#method_gatherOutput" title="gatherOutput() :: Gathers the script output from the buffer, replaces some execution
-time tag in the output and displays the debug toolbar, if required."><span class="description">Gathers the script output from the buffer, replaces some execution
-time tag in the output and displays the debug toolbar, if required.</span><pre>gatherOutput()</pre></a></li>
-<li class="method protected "><a href="#method_generateCacheName" title="generateCacheName() :: Generates the cache name to use for our full-page caching."><span class="description">Generates the cache name to use for our full-page caching.</span><pre>generateCacheName()</pre></a></li>
-<li class="method protected "><a href="#method_getRequestObject" title="getRequestObject() :: Get our Request object, (either IncomingRequest or CLIRequest)
+that support it.</span><pre>forceSecureAccess</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_gatherOutput" title="gatherOutput :: Gathers the script output from the buffer, replaces some execution
+time tag in the output and displays the debug toolbar, if required.">
+                                <span class="description">Gathers the script output from the buffer, replaces some execution
+time tag in the output and displays the debug toolbar, if required.</span><pre>gatherOutput</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_generateCacheName" title="generateCacheName :: Generates the cache name to use for our full-page caching.">
+                                <span class="description">Generates the cache name to use for our full-page caching.</span><pre>generateCacheName</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_getRequestObject" title="getRequestObject :: Get our Request object, (either IncomingRequest or CLIRequest)
 and set the server protocol based on the information provided
-by the server."><span class="description">Get our Request object, (either IncomingRequest or CLIRequest)
+by the server.">
+                                <span class="description">Get our Request object, (either IncomingRequest or CLIRequest)
 and set the server protocol based on the information provided
-by the server.</span><pre>getRequestObject()</pre></a></li>
-<li class="method protected "><a href="#method_getResponseObject" title="getResponseObject() :: Get our Response object, and set some default values, including
-the HTTP protocol version and a default successful response."><span class="description">Get our Response object, and set some default values, including
-the HTTP protocol version and a default successful response.</span><pre>getResponseObject()</pre></a></li>
-<li class="method protected "><a href="#method_handleRequest" title="handleRequest() :: Handles the main request logic and fires the controller."><span class="description">Handles the main request logic and fires the controller.</span><pre>handleRequest()</pre></a></li>
-<li class="method protected "><a href="#method_runController" title="runController() :: Runs the controller, allowing for _remap methods to function."><span class="description">Runs the controller, allowing for _remap methods to function.</span><pre>runController()</pre></a></li>
-<li class="method protected "><a href="#method_sendResponse" title="sendResponse() :: Sends the output of this request back to the client."><span class="description">Sends the output of this request back to the client.</span><pre>sendResponse()</pre></a></li>
-<li class="method protected "><a href="#method_startBenchmark" title="startBenchmark() :: Start the Benchmark"><span class="description">Start the Benchmark</span><pre>startBenchmark()</pre></a></li>
-<li class="method protected "><a href="#method_startController" title="startController() :: Now that everything has been setup, this method attempts to run the
-controller method and make the script go. If it's not able to, will
-show the appropriate Page Not Found error."><span class="description">Now that everything has been setup, this method attempts to run the
-controller method and make the script go. If it's not able to, will
-show the appropriate Page Not Found error.</span><pre>startController()</pre></a></li>
-<li class="method protected "><a href="#method_tryToRouteIt" title='tryToRouteIt() :: Try to Route It - As it sounds like, works with the router to
+by the server.</span><pre>getRequestObject</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_getResponseObject" title="getResponseObject :: Get our Response object, and set some default values, including
+the HTTP protocol version and a default successful response.">
+                                <span class="description">Get our Response object, and set some default values, including
+the HTTP protocol version and a default successful response.</span><pre>getResponseObject</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_handleRequest" title="handleRequest :: Handles the main request logic and fires the controller.">
+                                <span class="description">Handles the main request logic and fires the controller.</span><pre>handleRequest</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected">
+                            <a href="#method_runController" title="runController :: Runs the controller, allowing for _remap methods to function.">
+                                <span class="description">Runs the controller, allowing for _remap methods to function.</span><pre>runController</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_sendResponse" title="sendResponse :: Sends the output of this request back to the client.">
+                                <span class="description">Sends the output of this request back to the client.</span><pre>sendResponse</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                            <li class="method protected">
+                            <a href="#method_startBenchmark" title="startBenchmark :: Start the Benchmark">
+                                <span class="description">Start the Benchmark</span><pre>startBenchmark</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_startController" title="startController :: Now that everything has been setup, this method attempts to run the
+controller method and make the script go. If it&#039;s not able to, will
+show the appropriate Page Not Found error.">
+                                <span class="description">Now that everything has been setup, this method attempts to run the
+controller method and make the script go. If it&#039;s not able to, will
+show the appropriate Page Not Found error.</span><pre>startController</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_tryToRouteIt" title="tryToRouteIt :: Try to Route It - As it sounds like, works with the router to
 match a route against the current URI. If the route is a
-"redirect route", will also handle the redirect.'><span class="description">Try to Route It - As it sounds like, works with the router to
+&quot;redirect route&quot;, will also handle the redirect.">
+                                <span class="description">Try to Route It - As it sounds like, works with the router to
 match a route against the current URI. If the route is a
-"redirect route", will also handle the redirect.</span><pre>tryToRouteIt()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header">
-<i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="property protected "><a href="#property_benchmark" title="$benchmark() :: Timer instance."><span class="description"></span><pre>$benchmark</pre></a></li>
-<li class="property protected "><a href="#property_cacheTTL" title="$cacheTTL() :: Cache expiration time"><span class="description"></span><pre>$cacheTTL</pre></a></li>
-<li class="property protected "><a href="#property_config" title="$config() :: Main application configuration"><span class="description"></span><pre>$config</pre></a></li>
-<li class="property protected "><a href="#property_controller" title="$controller() :: Controller to use."><span class="description"></span><pre>$controller</pre></a></li>
-<li class="property protected "><a href="#property_method" title="$method() :: Controller method to invoke."><span class="description"></span><pre>$method</pre></a></li>
-<li class="property protected "><a href="#property_output" title="$output() :: Output handler to use."><span class="description"></span><pre>$output</pre></a></li>
-<li class="property protected "><a href="#property_path" title="$path() :: Request path to use."><span class="description"></span><pre>$path</pre></a></li>
-<li class="property protected "><a href="#property_request" title="$request() :: Current request."><span class="description"></span><pre>$request</pre></a></li>
-<li class="property protected "><a href="#property_response" title="$response() :: Current response."><span class="description"></span><pre>$response</pre></a></li>
-<li class="property protected "><a href="#property_router" title="$router() :: Router to use."><span class="description"></span><pre>$router</pre></a></li>
-<li class="property protected "><a href="#property_startTime" title="$startTime() :: App startup time."><span class="description"></span><pre>$startTime</pre></a></li>
-<li class="property protected "><a href="#property_totalTime" title="$totalTime() :: Total app execution time"><span class="description"></span><pre>$totalTime</pre></a></li>
-<li class="property protected "><a href="#property_useSafeOutput" title='$useSafeOutput() :: Should the Response instance "pretend"
-to keep from setting headers/cookies/etc'><span class="description"></span><pre>$useSafeOutput</pre></a></li>
-</ul>
-</li>
-<li class="nav-header">
-<i title="Constants" class="icon-custom icon-constant"></i> Constants
-                    <ul><li class="constant  "><a href="#constant_CI_VERSION" title="CI_VERSION() :: The current version of CodeIgniter Framework"><span class="description">The current version of CodeIgniter Framework</span><pre>CI_VERSION</pre></a></li></ul>
-</li>
-</ul>
-</div>
-<div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\CodeIgniter\CodeIgniter"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
-<li>
-<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li class="active">
-<span class="divider">\</span><a href="../classes/CodeIgniter.CodeIgniter.html">CodeIgniter</a>
-</li>
-</ul>
-<div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description">This class is the core of the framework, and will analyse the
+&quot;redirect route&quot;, will also handle the redirect.</span><pre>tryToRouteIt</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                                <li class="constant ">
+                    <a href="#constant_CI_VERSION" title="CI_VERSION :: The current version of CodeIgniter Framework">
+                        <span class="description">The current version of CodeIgniter Framework</span><pre>CI_VERSION</pre>
+                    </a>
+                </li>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>CodeIgniter</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">This class is the core of the framework, and will analyse the
 request, route it to a controller, and send back the response.</p>
-<div class="details">
-<div class="long_description"><p>Of course, there are variations to that flow, but this is the brains.</p></div>
-<table class="table table-bordered"><tr>
-<th>package</th>
-<td><a href="../packages/Default.html">Default</a></td>
-</tr></table>
-<h3>
-<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
-<h2>__construct()
-        </h2>
-<pre>__construct($config) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$config</h4></div>
-</div></div>
-</div>
-<a id="method_cache"></a><div class="element clickable method public method_cache " data-toggle="collapse" data-target=".method_cache .collapse" title="public">
-<h2>Tells the app that the final output should be cached.</h2>
-<pre>cache(integer $time) : void</pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$time</h4>
-<code>integer</code>
-</div>
-</div></div>
-</div>
-<a id="method_cachePage"></a><div class="element clickable method public method_cachePage " data-toggle="collapse" data-target=".method_cachePage .collapse" title="public">
-<h2>Caches the full response from the current request. Used for
+                <div class="details">
+                    <div class="long_description">
+                        <p>Of course, there are variations to that flow, but this is the brains.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>CodeIgniter</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct( $config) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_bootstrapEnvironment"></a>
+                        <div class="element clickable method protected  method_bootstrapEnvironment" data-toggle="collapse" data-target=".method_bootstrapEnvironment .collapse">
+                            <h2>Load any custom boot files based upon the current environment.</h2>
+                            <pre>bootstrapEnvironment() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If no boot file exists, we shouldn't continue because something
+is wrong. At the very least, they should have error reporting setup.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_cache"></a>
+                        <div class="element clickable method public  method_cache" data-toggle="collapse" data-target=".method_cache .collapse">
+                            <h2>Tells the app that the final output should be cached.</h2>
+                            <pre>cache(integer $time) : void</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$time</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_cachePage"></a>
+                        <div class="element clickable method public  method_cachePage" data-toggle="collapse" data-target=".method_cachePage .collapse">
+                            <h2>Caches the full response from the current request. Used for
 full-page caching for very high performance.</h2>
-<pre>cachePage(\Config\Cache $config) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$config</h4>
-<code>\Config\Cache</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>mixed</code></div>
-</div></div>
-</div>
-<a id="method_displayCache"></a><div class="element clickable method public method_displayCache " data-toggle="collapse" data-target=".method_displayCache .collapse" title="public">
-<h2>Determines if a response has been cached for the given URI.</h2>
-<pre>displayCache(\Config\Cache $config) : boolean | \CodeIgniter\HTTP\ResponseInterface</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$config</h4>
-<code>\Config\Cache</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\Exception</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code><code>\CodeIgniter\HTTP\ResponseInterface</code>
-</div>
-</div></div>
-</div>
-<a id="method_displayPerformanceMetrics"></a><div class="element clickable method public method_displayPerformanceMetrics " data-toggle="collapse" data-target=".method_displayPerformanceMetrics .collapse" title="public">
-<h2>Replaces the memory_usage and elapsed_time tags.</h2>
-<pre>displayPerformanceMetrics(string $output) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$output</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_getPerformanceStats"></a><div class="element clickable method public method_getPerformanceStats " data-toggle="collapse" data-target=".method_getPerformanceStats .collapse" title="public">
-<h2>Returns an array with our basic performance stats collected.</h2>
-<pre>getPerformanceStats() : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>array</code></div>
-</div></div>
-</div>
-<a id="method_initialize"></a><div class="element clickable method public method_initialize " data-toggle="collapse" data-target=".method_initialize .collapse" title="public">
-<h2>Handles some basic app and environment setup.</h2>
-<pre>initialize() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_run"></a><div class="element clickable method public method_run " data-toggle="collapse" data-target=".method_run .collapse" title="public">
-<h2>Launch the application!</h2>
-<pre>run(\CodeIgniter\Router\RouteCollectionInterface $routes<code> = null</code>, boolean $returnResponse<code> = false</code>) : boolean | \CodeIgniter\HTTP\RequestInterface | \CodeIgniter\HTTP\Response | \CodeIgniter\HTTP\ResponseInterface | mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>This is &quot;the loop&quot; if you will. The main entry point into the script
-that gets the required class instances, fires off the filters,
-tries to route the response, loads the controller and generally
-makes all of the pieces work together.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$routes</h4>
-<code>\CodeIgniter\Router\RouteCollectionInterface</code>
-</div>
-<div class="subelement argument">
-<h4>$returnResponse</h4>
-<code>boolean</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered">
-<tr>
-<th><code>\CodeIgniter\Filters\Exceptions\FilterException</code></th>
-<td></td>
-</tr>
-<tr>
-<th><code>\Exception</code></th>
-<td></td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code><code>\CodeIgniter\HTTP\RequestInterface</code><code>\CodeIgniter\HTTP\Response</code><code>\CodeIgniter\HTTP\ResponseInterface</code><code>mixed</code>
-</div>
-</div></div>
-</div>
-<a id="method_setPath"></a><div class="element clickable method public method_setPath " data-toggle="collapse" data-target=".method_setPath .collapse" title="public">
-<h2>Allows the request path to be set from outside the class,
-instead of relying on CLIRequest or IncomingRequest for the path.</h2>
-<pre>setPath(string $path) : \CodeIgniter\CodeIgniter</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>This is primarily used by the Console.</p></div>
-<table class="table table-bordered"><tr>
-<th>fluent</th>
-<td>This method is part of a fluent interface and will return the same instance</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$path</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>\CodeIgniter\CodeIgniter</code></div>
-</div></div>
-</div>
-<a id="method_setRequest"></a><div class="element clickable method public method_setRequest " data-toggle="collapse" data-target=".method_setRequest .collapse" title="public">
-<h2>Sets a Request object to be used for this request.</h2>
-<pre>setRequest(\CodeIgniter\HTTP\Request $request) : \CodeIgniter\CodeIgniter</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Used when running certain tests.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$request</h4>
-<code>\CodeIgniter\HTTP\Request</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>\CodeIgniter\CodeIgniter</code></div>
-</div></div>
-</div>
-<a id="method_spoofRequestMethod"></a><div class="element clickable method public method_spoofRequestMethod " data-toggle="collapse" data-target=".method_spoofRequestMethod .collapse" title="public">
-<h2>Modifies the Request Object to use a different method if a POST
-variable called _method is found.</h2>
-<pre>spoofRequestMethod() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Does not work on CLI commands.</p></div></div></div>
-</div>
-<a id="method_storePreviousURL"></a><div class="element clickable method public method_storePreviousURL " data-toggle="collapse" data-target=".method_storePreviousURL .collapse" title="public">
-<h2>If we have a session object to use, store the current URI
-as the previous URI. This is called just prior to sending the
-response to the client, and will make it available next request.</h2>
-<pre>storePreviousURL(\CodeIgniter\HTTP\URI $uri) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>This helps provider safer, more reliable previous_url() detection.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$uri</h4>
-<code>\CodeIgniter\HTTP\URI</code>
-</div>
-</div></div>
-</div>
-<a id="method_useSafeOutput"></a><div class="element clickable method public method_useSafeOutput " data-toggle="collapse" data-target=".method_useSafeOutput .collapse" title="public">
-<h2>Set our Response instance to "pretend" mode so that things like
-cookies and headers are not actually sent, allowing PHP 7.2+ to
-not complain when ini_set() function is used.</h2>
-<pre>useSafeOutput(boolean $safe<code> = true</code>) : \CodeIgniter\CodeIgniter</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>fluent</th>
-<td>This method is part of a fluent interface and will return the same instance</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$safe</h4>
-<code>boolean</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>\CodeIgniter\CodeIgniter</code></div>
-</div></div>
-</div>
-<a id="method_bootstrapEnvironment"></a><div class="element clickable method protected method_bootstrapEnvironment " data-toggle="collapse" data-target=".method_bootstrapEnvironment .collapse" title="protected">
-<h2>Load any custom boot files based upon the current environment.</h2>
-<pre>bootstrapEnvironment() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>If no boot file exists, we shouldn't continue because something
-is wrong. At the very least, they should have error reporting setup.</p></div></div></div>
-</div>
-<a id="method_callExit"></a><div class="element clickable method protected method_callExit " data-toggle="collapse" data-target=".method_callExit .collapse" title="protected">
-<h2>Exits the application, setting the exit code for CLI-based applications
+                            <pre>cachePage(\Config\Cache $config) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>\Config\Cache</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_callExit"></a>
+                        <div class="element clickable method protected  method_callExit" data-toggle="collapse" data-target=".method_callExit .collapse">
+                            <h2>Exits the application, setting the exit code for CLI-based applications
 that might be watching.</h2>
-<pre>callExit($code) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Made into a separate method so that it can be mocked during testing
+                            <pre>callExit( $code) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Made into a separate method so that it can be mocked during testing
 without actually stopping script execution.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$code</h4></div>
-</div></div>
-</div>
-<a id="method_createController"></a><div class="element clickable method protected method_createController " data-toggle="collapse" data-target=".method_createController .collapse" title="protected">
-<h2>Instantiates the controller class.</h2>
-<pre>createController() : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>mixed</code></div>
-</div></div>
-</div>
-<a id="method_detectEnvironment"></a><div class="element clickable method protected method_detectEnvironment " data-toggle="collapse" data-target=".method_detectEnvironment .collapse" title="protected">
-<h2>You can load different configurations depending on your
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$code</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createController"></a>
+                        <div class="element clickable method protected  method_createController" data-toggle="collapse" data-target=".method_createController .collapse">
+                            <h2>Instantiates the controller class.</h2>
+                            <pre>createController() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_detectEnvironment"></a>
+                        <div class="element clickable method protected  method_detectEnvironment" data-toggle="collapse" data-target=".method_detectEnvironment .collapse">
+                            <h2>You can load different configurations depending on your
 current environment. Setting the environment also influences
 things like logging and error reporting.</h2>
-<pre>detectEnvironment() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This can be set to anything, but default usage is:</p>
+                            <pre>detectEnvironment() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This can be set to anything, but default usage is:</p>
 <pre><code>development
 testing
-production</code></pre></div></div></div>
-</div>
-<a id="method_determinePath"></a><div class="element clickable method protected method_determinePath " data-toggle="collapse" data-target=".method_determinePath .collapse" title="protected">
-<h2>Determines the path to use for us to try to route to, based
+production</code></pre></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_determinePath"></a>
+                        <div class="element clickable method protected  method_determinePath" data-toggle="collapse" data-target=".method_determinePath .collapse">
+                            <h2>Determines the path to use for us to try to route to, based
 on user input (setPath), or the CLI/IncomingRequest path.</h2>
-<pre>determinePath() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_display404errors"></a><div class="element clickable method protected method_display404errors " data-toggle="collapse" data-target=".method_display404errors .collapse" title="protected">
-<h2>Displays a 404 Page Not Found error. If set, will try to
+                            <pre>determinePath() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_display404errors"></a>
+                        <div class="element clickable method protected  method_display404errors" data-toggle="collapse" data-target=".method_display404errors .collapse">
+                            <h2>Displays a 404 Page Not Found error. If set, will try to
 call the 404Override controller/method that was set in routing config.</h2>
-<pre>display404errors(\CodeIgniter\Exceptions\PageNotFoundException $e) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$e</h4>
-<code>\CodeIgniter\Exceptions\PageNotFoundException</code>
-</div>
-</div></div>
-</div>
-<a id="method_forceSecureAccess"></a><div class="element clickable method protected method_forceSecureAccess " data-toggle="collapse" data-target=".method_forceSecureAccess .collapse" title="protected">
-<h2>Force Secure Site Access? If the config value 'forceGlobalSecureRequests'
+                            <pre>display404errors(\CodeIgniter\Exceptions\PageNotFoundException $e) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$e</h4>
+                                                <code><a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html">\CodeIgniter\Exceptions\PageNotFoundException</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_displayCache"></a>
+                        <div class="element clickable method public  method_displayCache" data-toggle="collapse" data-target=".method_displayCache .collapse">
+                            <h2>Determines if a response has been cached for the given URI.</h2>
+                            <pre>displayCache(\Config\Cache $config) : boolean|\CodeIgniter\HTTP\ResponseInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Exception</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code>\Config\Cache</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean|<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_displayPerformanceMetrics"></a>
+                        <div class="element clickable method public  method_displayPerformanceMetrics" data-toggle="collapse" data-target=".method_displayPerformanceMetrics .collapse">
+                            <h2>Replaces the memory_usage and elapsed_time tags.</h2>
+                            <pre>displayPerformanceMetrics(string $output) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$output</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_forceSecureAccess"></a>
+                        <div class="element clickable method protected  method_forceSecureAccess" data-toggle="collapse" data-target=".method_forceSecureAccess .collapse">
+                            <h2>Force Secure Site Access? If the config value &#039;forceGlobalSecureRequests&#039;
 is true, will enforce that all requests to this site are made through
 HTTPS. Will redirect the user to the current page with HTTPS, as well
 as set the HTTP Strict Transport Security header for those browsers
 that support it.</h2>
-<pre>forceSecureAccess(integer $duration<code> = 31536000</code>) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$duration</h4>
-<code>integer</code><p>How long the Strict Transport Security
-                         should be enforced for this URL.</p></div>
-</div></div>
-</div>
-<a id="method_gatherOutput"></a><div class="element clickable method protected method_gatherOutput " data-toggle="collapse" data-target=".method_gatherOutput .collapse" title="protected">
-<h2>Gathers the script output from the buffer, replaces some execution
+                            <pre>forceSecureAccess(integer $duration = 31536000) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$duration</h4>
+                                                <code>integer</code><p><p>How long the Strict Transport Security
+should be enforced for this URL.</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_gatherOutput"></a>
+                        <div class="element clickable method protected  method_gatherOutput" data-toggle="collapse" data-target=".method_gatherOutput .collapse">
+                            <h2>Gathers the script output from the buffer, replaces some execution
 time tag in the output and displays the debug toolbar, if required.</h2>
-<pre>gatherOutput(null $cacheConfig<code> = null</code>, null $returned<code> = null</code>) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$cacheConfig</h4>
-<code>null</code>
-</div>
-<div class="subelement argument">
-<h4>$returned</h4>
-<code>null</code>
-</div>
-</div></div>
-</div>
-<a id="method_generateCacheName"></a><div class="element clickable method protected method_generateCacheName " data-toggle="collapse" data-target=".method_generateCacheName .collapse" title="protected">
-<h2>Generates the cache name to use for our full-page caching.</h2>
-<pre>generateCacheName($config) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument"><h4>$config</h4></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_getRequestObject"></a><div class="element clickable method protected method_getRequestObject " data-toggle="collapse" data-target=".method_getRequestObject .collapse" title="protected">
-<h2>Get our Request object, (either IncomingRequest or CLIRequest)
+                            <pre>gatherOutput(null $cacheConfig = null, null $returned = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cacheConfig</h4>
+                                                <code>null</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$returned</h4>
+                                                <code>null</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_generateCacheName"></a>
+                        <div class="element clickable method protected  method_generateCacheName" data-toggle="collapse" data-target=".method_generateCacheName .collapse">
+                            <h2>Generates the cache name to use for our full-page caching.</h2>
+                            <pre>generateCacheName( $config) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$config</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getPerformanceStats"></a>
+                        <div class="element clickable method public  method_getPerformanceStats" data-toggle="collapse" data-target=".method_getPerformanceStats .collapse">
+                            <h2>Returns an array with our basic performance stats collected.</h2>
+                            <pre>getPerformanceStats() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getRequestObject"></a>
+                        <div class="element clickable method protected  method_getRequestObject" data-toggle="collapse" data-target=".method_getRequestObject .collapse">
+                            <h2>Get our Request object, (either IncomingRequest or CLIRequest)
 and set the server protocol based on the information provided
 by the server.</h2>
-<pre>getRequestObject() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_getResponseObject"></a><div class="element clickable method protected method_getResponseObject " data-toggle="collapse" data-target=".method_getResponseObject .collapse" title="protected">
-<h2>Get our Response object, and set some default values, including
+                            <pre>getRequestObject() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getResponseObject"></a>
+                        <div class="element clickable method protected  method_getResponseObject" data-toggle="collapse" data-target=".method_getResponseObject .collapse">
+                            <h2>Get our Response object, and set some default values, including
 the HTTP protocol version and a default successful response.</h2>
-<pre>getResponseObject() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_handleRequest"></a><div class="element clickable method protected method_handleRequest " data-toggle="collapse" data-target=".method_handleRequest .collapse" title="protected">
-<h2>Handles the main request logic and fires the controller.</h2>
-<pre>handleRequest(\CodeIgniter\Router\RouteCollectionInterface $routes<code> = null</code>, $cacheConfig, boolean $returnResponse<code> = false</code>) : \CodeIgniter\HTTP\RequestInterface | \CodeIgniter\HTTP\Response | \CodeIgniter\HTTP\ResponseInterface | mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$routes</h4>
-<code>\CodeIgniter\Router\RouteCollectionInterface</code>
-</div>
-<div class="subelement argument"><h4>$cacheConfig</h4></div>
-<div class="subelement argument">
-<h4>$returnResponse</h4>
-<code>boolean</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\CodeIgniter\Router\RedirectException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>\CodeIgniter\HTTP\RequestInterface</code><code>\CodeIgniter\HTTP\Response</code><code>\CodeIgniter\HTTP\ResponseInterface</code><code>mixed</code>
-</div>
-</div></div>
-</div>
-<a id="method_runController"></a><div class="element clickable method protected method_runController " data-toggle="collapse" data-target=".method_runController .collapse" title="protected">
-<h2>Runs the controller, allowing for _remap methods to function.</h2>
-<pre>runController(mixed $class) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>mixed</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>mixed</code></div>
-</div></div>
-</div>
-<a id="method_sendResponse"></a><div class="element clickable method protected method_sendResponse " data-toggle="collapse" data-target=".method_sendResponse .collapse" title="protected">
-<h2>Sends the output of this request back to the client.</h2>
-<pre>sendResponse() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This is what they've been waiting for!</p></div></div></div>
-</div>
-<a id="method_startBenchmark"></a><div class="element clickable method protected method_startBenchmark " data-toggle="collapse" data-target=".method_startBenchmark .collapse" title="protected">
-<h2>Start the Benchmark</h2>
-<pre>startBenchmark() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The timer is used to display total script execution both in the
-debug toolbar, and potentially on the displayed page.</p></div></div></div>
-</div>
-<a id="method_startController"></a><div class="element clickable method protected method_startController " data-toggle="collapse" data-target=".method_startController .collapse" title="protected">
-<h2>Now that everything has been setup, this method attempts to run the
-controller method and make the script go. If it's not able to, will
+                            <pre>getResponseObject() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_handleRequest"></a>
+                        <div class="element clickable method protected  method_handleRequest" data-toggle="collapse" data-target=".method_handleRequest .collapse">
+                            <h2>Handles the main request logic and fires the controller.</h2>
+                            <pre>handleRequest(\CodeIgniter\Router\RouteCollectionInterface $routes = null,  $cacheConfig, boolean $returnResponse = false) : \CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Router\RedirectException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$routes</h4>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cacheConfig</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$returnResponse</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>|<a href="../classes/CodeIgniter.HTTP.Response.html">\CodeIgniter\HTTP\Response</a>|<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a>|mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_initialize"></a>
+                        <div class="element clickable method public  method_initialize" data-toggle="collapse" data-target=".method_initialize .collapse">
+                            <h2>Handles some basic app and environment setup.</h2>
+                            <pre>initialize() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_run"></a>
+                        <div class="element clickable method public  method_run" data-toggle="collapse" data-target=".method_run .collapse">
+                            <h2>Launch the application!</h2>
+                            <pre>run(\CodeIgniter\Router\RouteCollectionInterface $routes = null, boolean $returnResponse = false) : boolean|\CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is &quot;the loop&quot; if you will. The main entry point into the script
+that gets the required class instances, fires off the filters,
+tries to route the response, loads the controller and generally
+makes all of the pieces work together.</p></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Filters\Exceptions\FilterException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Exception</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$routes</h4>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$returnResponse</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean|<a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>|<a href="../classes/CodeIgniter.HTTP.Response.html">\CodeIgniter\HTTP\Response</a>|<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a>|mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_runController"></a>
+                        <div class="element clickable method protected  method_runController" data-toggle="collapse" data-target=".method_runController .collapse">
+                            <h2>Runs the controller, allowing for _remap methods to function.</h2>
+                            <pre>runController(mixed $class) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$class</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sendResponse"></a>
+                        <div class="element clickable method protected  method_sendResponse" data-toggle="collapse" data-target=".method_sendResponse .collapse">
+                            <h2>Sends the output of this request back to the client.</h2>
+                            <pre>sendResponse() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is what they've been waiting for!</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setPath"></a>
+                        <div class="element clickable method public  method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
+                            <h2>Allows the request path to be set from outside the class,
+instead of relying on CLIRequest or IncomingRequest for the path.</h2>
+                            <pre>setPath(string $path) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is primarily used by the Console.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setRequest"></a>
+                        <div class="element clickable method public  method_setRequest" data-toggle="collapse" data-target=".method_setRequest .collapse">
+                            <h2>Sets a Request object to be used for this request.</h2>
+                            <pre>setRequest(\CodeIgniter\HTTP\Request $request) : \CodeIgniter\CodeIgniter</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Used when running certain tests.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.CodeIgniter.html">\CodeIgniter\CodeIgniter</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_spoofRequestMethod"></a>
+                        <div class="element clickable method public  method_spoofRequestMethod" data-toggle="collapse" data-target=".method_spoofRequestMethod .collapse">
+                            <h2>Modifies the Request Object to use a different method if a POST
+variable called _method is found.</h2>
+                            <pre>spoofRequestMethod() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Does not work on CLI commands.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_startBenchmark"></a>
+                        <div class="element clickable method protected  method_startBenchmark" data-toggle="collapse" data-target=".method_startBenchmark .collapse">
+                            <h2>Start the Benchmark</h2>
+                            <pre>startBenchmark() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The timer is used to display total script execution both in the
+debug toolbar, and potentially on the displayed page.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_startController"></a>
+                        <div class="element clickable method protected  method_startController" data-toggle="collapse" data-target=".method_startController .collapse">
+                            <h2>Now that everything has been setup, this method attempts to run the
+controller method and make the script go. If it&#039;s not able to, will
 show the appropriate Page Not Found error.</h2>
-<pre>startController() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_tryToRouteIt"></a><div class="element clickable method protected method_tryToRouteIt " data-toggle="collapse" data-target=".method_tryToRouteIt .collapse" title="protected">
-<h2>Try to Route It - As it sounds like, works with the router to
+                            <pre>startController() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_storePreviousURL"></a>
+                        <div class="element clickable method public  method_storePreviousURL" data-toggle="collapse" data-target=".method_storePreviousURL .collapse">
+                            <h2>If we have a session object to use, store the current URI
+as the previous URI. This is called just prior to sending the
+response to the client, and will make it available next request.</h2>
+                            <pre>storePreviousURL(\CodeIgniter\HTTP\URI $uri) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This helps provider safer, more reliable previous_url() detection.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$uri</h4>
+                                                <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_tryToRouteIt"></a>
+                        <div class="element clickable method protected  method_tryToRouteIt" data-toggle="collapse" data-target=".method_tryToRouteIt .collapse">
+                            <h2>Try to Route It - As it sounds like, works with the router to
 match a route against the current URI. If the route is a
-"redirect route", will also handle the redirect.</h2>
-<pre>tryToRouteIt(\CodeIgniter\Router\RouteCollectionInterface $routes<code> = null</code>) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$routes</h4>
-<code>\CodeIgniter\Router\RouteCollectionInterface</code><p>An collection interface to use in place
-                                        of the config file.</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\CodeIgniter\Router\RedirectException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<h3>
-<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_benchmark"> </a><div class="element clickable property protected property_benchmark" data-toggle="collapse" data-target=".property_benchmark .collapse" title="protected">
-<h2>Timer instance.</h2>
-<pre>$benchmark : \CodeIgniter\Debug\Timer</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_cacheTTL"> </a><div class="element clickable property protected property_cacheTTL" data-toggle="collapse" data-target=".property_cacheTTL .collapse" title="protected">
-<h2>Cache expiration time</h2>
-<pre>$cacheTTL : integer</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>0</code></div>
-</div></div>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse" title="protected">
-<h2>Main application configuration</h2>
-<pre>$config : \Config\App</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_controller"> </a><div class="element clickable property protected property_controller" data-toggle="collapse" data-target=".property_controller .collapse" title="protected">
-<h2>Controller to use.</h2>
-<pre>$controller : string | \Closure</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_method"> </a><div class="element clickable property protected property_method" data-toggle="collapse" data-target=".property_method .collapse" title="protected">
-<h2>Controller method to invoke.</h2>
-<pre>$method : string</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_output"> </a><div class="element clickable property protected property_output" data-toggle="collapse" data-target=".property_output .collapse" title="protected">
-<h2>Output handler to use.</h2>
-<pre>$output : string</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_path"> </a><div class="element clickable property protected property_path" data-toggle="collapse" data-target=".property_path .collapse" title="protected">
-<h2>Request path to use.</h2>
-<pre>$path : string</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_request"> </a><div class="element clickable property protected property_request" data-toggle="collapse" data-target=".property_request .collapse" title="protected">
-<h2>Current request.</h2>
-<pre>$request : \CodeIgniter\HTTP\Request | \CodeIgniter\HTTP\IncomingRequest | \CodeIgniter\HTTP\CLIRequest</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_response"> </a><div class="element clickable property protected property_response" data-toggle="collapse" data-target=".property_response .collapse" title="protected">
-<h2>Current response.</h2>
-<pre>$response : \CodeIgniter\HTTP\ResponseInterface</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_router"> </a><div class="element clickable property protected property_router" data-toggle="collapse" data-target=".property_router .collapse" title="protected">
-<h2>Router to use.</h2>
-<pre>$router : \CodeIgniter\Router\Router</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_startTime"> </a><div class="element clickable property protected property_startTime" data-toggle="collapse" data-target=".property_startTime .collapse" title="protected">
-<h2>App startup time.</h2>
-<pre>$startTime : mixed</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_totalTime"> </a><div class="element clickable property protected property_totalTime" data-toggle="collapse" data-target=".property_totalTime .collapse" title="protected">
-<h2>Total app execution time</h2>
-<pre>$totalTime : float</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_useSafeOutput"> </a><div class="element clickable property protected property_useSafeOutput" data-toggle="collapse" data-target=".property_useSafeOutput .collapse" title="protected">
-<h2>Should the Response instance "pretend"
+&quot;redirect route&quot;, will also handle the redirect.</h2>
+                            <pre>tryToRouteIt(\CodeIgniter\Router\RouteCollectionInterface $routes = null) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Router\RedirectException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$routes</h4>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p><p>An collection interface to use in place
+of the config file.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_useSafeOutput"></a>
+                        <div class="element clickable method public  method_useSafeOutput" data-toggle="collapse" data-target=".method_useSafeOutput .collapse">
+                            <h2>Set our Response instance to &quot;pretend&quot; mode so that things like
+cookies and headers are not actually sent, allowing PHP 7.2+ to
+not complain when ini_set() function is used.</h2>
+                            <pre>useSafeOutput(boolean $safe = true) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$safe</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                                            <h3><i class="icon-custom icon-constant"></i> Constants</h3>
+                                                    <a id="constant_CI_VERSION"> </a>
+                            <div class="element clickable constant  constant_CI_VERSION" data-toggle="collapse" data-target=".constant_CI_VERSION .collapse">
+                                <h2>The current version of CodeIgniter Framework</h2>
+                                <pre>CI_VERSION</pre>
+                                <div class="labels">
+                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                                            
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_startTime"> </a>
+                            <div class="element clickable property  protected property_startTime" data-toggle="collapse" data-target=".property_startTime .collapse">
+                                <h2>App startup time.</h2>
+                                <pre>startTime : mixed</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>mixed</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_totalTime"> </a>
+                            <div class="element clickable property  protected property_totalTime" data-toggle="collapse" data-target=".property_totalTime .collapse">
+                                <h2>Total app execution time</h2>
+                                <pre>totalTime : float</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>float</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_config"> </a>
+                            <div class="element clickable property  protected property_config" data-toggle="collapse" data-target=".property_config .collapse">
+                                <h2>Main application configuration</h2>
+                                <pre>config : \Config\App</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\Config\App</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_benchmark"> </a>
+                            <div class="element clickable property  protected property_benchmark" data-toggle="collapse" data-target=".property_benchmark .collapse">
+                                <h2>Timer instance.</h2>
+                                <pre>benchmark : \CodeIgniter\Debug\Timer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.Debug.Timer.html">\CodeIgniter\Debug\Timer</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_request"> </a>
+                            <div class="element clickable property  protected property_request" data-toggle="collapse" data-target=".property_request .collapse">
+                                <h2>Current request.</h2>
+                                <pre>request : \CodeIgniter\HTTP\Request|\CodeIgniter\HTTP\IncomingRequest|\CodeIgniter\HTTP\CLIRequest</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a>|<a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">\CodeIgniter\HTTP\IncomingRequest</a>|<a href="../classes/CodeIgniter.HTTP.CLIRequest.html">\CodeIgniter\HTTP\CLIRequest</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_response"> </a>
+                            <div class="element clickable property  protected property_response" data-toggle="collapse" data-target=".property_response .collapse">
+                                <h2>Current response.</h2>
+                                <pre>response : \CodeIgniter\HTTP\ResponseInterface</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_router"> </a>
+                            <div class="element clickable property  protected property_router" data-toggle="collapse" data-target=".property_router .collapse">
+                                <h2>Router to use.</h2>
+                                <pre>router : \CodeIgniter\Router\Router</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\CodeIgniter\Router\Router</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_controller"> </a>
+                            <div class="element clickable property  protected property_controller" data-toggle="collapse" data-target=".property_controller .collapse">
+                                <h2>Controller to use.</h2>
+                                <pre>controller : string|\Closure</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string|\Closure</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_method"> </a>
+                            <div class="element clickable property  protected property_method" data-toggle="collapse" data-target=".property_method .collapse">
+                                <h2>Controller method to invoke.</h2>
+                                <pre>method : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_output"> </a>
+                            <div class="element clickable property  protected property_output" data-toggle="collapse" data-target=".property_output .collapse">
+                                <h2>Output handler to use.</h2>
+                                <pre>output : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cacheTTL"> </a>
+                            <div class="element clickable property  protected property_cacheTTL" data-toggle="collapse" data-target=".property_cacheTTL .collapse">
+                                <h2>Cache expiration time</h2>
+                                <pre>cacheTTL : integer</pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_path"> </a>
+                            <div class="element clickable property  protected property_path" data-toggle="collapse" data-target=".property_path .collapse">
+                                <h2>Request path to use.</h2>
+                                <pre>path : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_useSafeOutput"> </a>
+                            <div class="element clickable property  protected property_useSafeOutput" data-toggle="collapse" data-target=".property_useSafeOutput .collapse">
+                                <h2>Should the Response instance &quot;pretend&quot;
 to keep from setting headers/cookies/etc</h2>
-<pre>$useSafeOutput : boolean</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>false</code></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<h3>
-<i title="Constants" class="icon-custom icon-constant"></i> Constants</h3>
-<a id="constant_CI_VERSION"> </a><div class="element clickable constant  constant_CI_VERSION" data-toggle="collapse" data-target=".constant_CI_VERSION .collapse" title="">
-<h2>The current version of CodeIgniter Framework</h2>
-<pre>CI_VERSION = '4.0.0-beta.1' </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
-            generated on 2019-03-25T21:42:29-07:00.<br></footer></div>
-</div>
-</body>
+                                <pre>useSafeOutput : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\CodeIgniter\CodeIgniter"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.CodeIgniter.html">CodeIgniter</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Wed, 27 Mar 2019 21:06:46 -0700.<br/>
+    </footer>
+    </body>
 </html>

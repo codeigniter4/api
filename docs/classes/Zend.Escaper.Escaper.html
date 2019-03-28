@@ -1,497 +1,929 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>CodeIgniter v4.0 API » \Zend\Escaper\Escaper</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    CodeIgniter v4.0 API &raquo; \Zend\Escaper\Escaper
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
 <body>
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
-<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
-<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
-<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">555</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
-</div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<div xmlns:php="http://php.net/xsl" class="btn-toolbar">
-<div class="btn-group visibility" data-toggle="buttons-checkbox">
-<button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button>
-</div>
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-</div>
-</div>
-<ul xmlns:php="http://php.net/xsl" class="side-nav nav nav-list">
-<li class="nav-header">
-<i title="Methods" class="icon-custom icon-method"></i> Methods
-                    <ul>
-<li class="method public "><a href="#method___construct" title="__construct() :: Constructor: Single parameter allows setting of global encoding for use by
-the current object."><span class="description">Constructor: Single parameter allows setting of global encoding for use by
-the current object.</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_escapeCss" title="escapeCss() :: Escape a string for the CSS context. CSS escaping can be applied to any string being
-inserted into CSS and escapes everything except alphanumerics."><span class="description">Escape a string for the CSS context. CSS escaping can be applied to any string being
-inserted into CSS and escapes everything except alphanumerics.</span><pre>escapeCss()</pre></a></li>
-<li class="method public "><a href="#method_escapeHtml" title="escapeHtml() :: Escape a string for the HTML Body context where there are very few characters
-of special meaning. Internally this will use htmlspecialchars()."><span class="description">Escape a string for the HTML Body context where there are very few characters
-of special meaning. Internally this will use htmlspecialchars().</span><pre>escapeHtml()</pre></a></li>
-<li class="method public "><a href="#method_escapeHtmlAttr" title="escapeHtmlAttr() :: Escape a string for the HTML Attribute context. We use an extended set of characters
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">CodeIgniter v4.0 API</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Constructor: Single parameter allows setting of global encoding for use by
+the current object.">
+            <span class="description">Constructor: Single parameter allows setting of global encoding for use by
+the current object.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_escapeCss" title="escapeCss :: Escape a string for the CSS context. CSS escaping can be applied to any string being
+inserted into CSS and escapes everything except alphanumerics.">
+            <span class="description">Escape a string for the CSS context. CSS escaping can be applied to any string being
+inserted into CSS and escapes everything except alphanumerics.</span><pre>escapeCss</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_escapeHtml" title="escapeHtml :: Escape a string for the HTML Body context where there are very few characters
+of special meaning. Internally this will use htmlspecialchars().">
+            <span class="description">Escape a string for the HTML Body context where there are very few characters
+of special meaning. Internally this will use htmlspecialchars().</span><pre>escapeHtml</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_escapeHtmlAttr" title="escapeHtmlAttr :: Escape a string for the HTML Attribute context. We use an extended set of characters
 to escape that are not covered by htmlspecialchars() to cover cases where an attribute
-might be unquoted or quoted illegally (e.g. backticks are valid quotes for IE)."><span class="description">Escape a string for the HTML Attribute context. We use an extended set of characters
+might be unquoted or quoted illegally (e.g. backticks are valid quotes for IE).">
+            <span class="description">Escape a string for the HTML Attribute context. We use an extended set of characters
 to escape that are not covered by htmlspecialchars() to cover cases where an attribute
-might be unquoted or quoted illegally (e.g. backticks are valid quotes for IE).</span><pre>escapeHtmlAttr()</pre></a></li>
-<li class="method public "><a href="#method_escapeJs" title="escapeJs() :: Escape a string for the Javascript context. This does not use json_encode(). An extended
-set of characters are escaped beyond ECMAScript's rules for Javascript literal string
+might be unquoted or quoted illegally (e.g. backticks are valid quotes for IE).</span><pre>escapeHtmlAttr</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_escapeJs" title="escapeJs :: Escape a string for the Javascript context. This does not use json_encode(). An extended
+set of characters are escaped beyond ECMAScript&#039;s rules for Javascript literal string
 escaping in order to prevent misinterpretation of Javascript as HTML leading to the
 injection of special characters and entities. The escaping used should be tolerant
-of cases where HTML escaping was not applied on top of Javascript escaping correctly."><span class="description">Escape a string for the Javascript context. This does not use json_encode(). An extended
-set of characters are escaped beyond ECMAScript's rules for Javascript literal string
+of cases where HTML escaping was not applied on top of Javascript escaping correctly.">
+            <span class="description">Escape a string for the Javascript context. This does not use json_encode(). An extended
+set of characters are escaped beyond ECMAScript&#039;s rules for Javascript literal string
 escaping in order to prevent misinterpretation of Javascript as HTML leading to the
 injection of special characters and entities. The escaping used should be tolerant
-of cases where HTML escaping was not applied on top of Javascript escaping correctly.</span><pre>escapeJs()</pre></a></li>
-<li class="method public "><a href="#method_escapeUrl" title="escapeUrl() :: Escape a string for the URI or Parameter contexts. This should not be used to escape
+of cases where HTML escaping was not applied on top of Javascript escaping correctly.</span><pre>escapeJs</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_escapeUrl" title="escapeUrl :: Escape a string for the URI or Parameter contexts. This should not be used to escape
 an entire URI - only a subcomponent being inserted. The function is a simple proxy
-to rawurlencode() which now implements RFC 3986 since PHP 5.3 completely."><span class="description">Escape a string for the URI or Parameter contexts. This should not be used to escape
+to rawurlencode() which now implements RFC 3986 since PHP 5.3 completely.">
+            <span class="description">Escape a string for the URI or Parameter contexts. This should not be used to escape
 an entire URI - only a subcomponent being inserted. The function is a simple proxy
-to rawurlencode() which now implements RFC 3986 since PHP 5.3 completely.</span><pre>escapeUrl()</pre></a></li>
-<li class="method public "><a href="#method_getEncoding" title="getEncoding() :: Return the encoding that all output/input is expected to be encoded in."><span class="description">Return the encoding that all output/input is expected to be encoded in.</span><pre>getEncoding()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="method protected "><a href="#method_convertEncoding" title="convertEncoding() :: Encoding conversion helper which wraps iconv and mbstring where they exist or throws
-and exception where neither is available."><span class="description">Encoding conversion helper which wraps iconv and mbstring where they exist or throws
-and exception where neither is available.</span><pre>convertEncoding()</pre></a></li>
-<li class="method protected "><a href="#method_cssMatcher" title="cssMatcher() :: Callback function for preg_replace_callback that applies CSS
-escaping to all matches."><span class="description">Callback function for preg_replace_callback that applies CSS
-escaping to all matches.</span><pre>cssMatcher()</pre></a></li>
-<li class="method protected "><a href="#method_fromUtf8" title="fromUtf8() :: Converts a string from UTF-8 to the base encoding. The base encoding is set via this
-class' constructor."><span class="description">Converts a string from UTF-8 to the base encoding. The base encoding is set via this
-class' constructor.</span><pre>fromUtf8()</pre></a></li>
-<li class="method protected "><a href="#method_htmlAttrMatcher" title="htmlAttrMatcher() :: Callback function for preg_replace_callback that applies HTML Attribute
-escaping to all matches."><span class="description">Callback function for preg_replace_callback that applies HTML Attribute
-escaping to all matches.</span><pre>htmlAttrMatcher()</pre></a></li>
-<li class="method protected "><a href="#method_isUtf8" title="isUtf8() :: Checks if a given string appears to be valid UTF-8 or not."><span class="description">Checks if a given string appears to be valid UTF-8 or not.</span><pre>isUtf8()</pre></a></li>
-<li class="method protected "><a href="#method_jsMatcher" title="jsMatcher() :: Callback function for preg_replace_callback that applies Javascript
-escaping to all matches."><span class="description">Callback function for preg_replace_callback that applies Javascript
-escaping to all matches.</span><pre>jsMatcher()</pre></a></li>
-<li class="method protected "><a href="#method_toUtf8" title="toUtf8() :: Converts a string to UTF-8 from the base encoding. The base encoding is set via this
-class' constructor."><span class="description">Converts a string to UTF-8 from the base encoding. The base encoding is set via this
-class' constructor.</span><pre>toUtf8()</pre></a></li>
-</ul>
-</li>
-<li class="nav-header">
-<i title="Properties" class="icon-custom icon-property"></i> Properties
-                    <ul></ul>
-</li>
-<li class="nav-header protected">» Protected
-                    <ul>
-<li class="property protected "><a href="#property_cssMatcher" title="$cssMatcher() :: Static Matcher which escapes characters for CSS Attribute contexts"><span class="description"></span><pre>$cssMatcher</pre></a></li>
-<li class="property protected "><a href="#property_encoding" title="$encoding() :: Current encoding for escaping. If not UTF-8, we convert strings from this encoding
-pre-escaping and back to this encoding post-escaping."><span class="description"></span><pre>$encoding</pre></a></li>
-<li class="property protected "><a href="#property_htmlAttrMatcher" title="$htmlAttrMatcher() :: Static Matcher which escapes characters for HTML Attribute contexts"><span class="description"></span><pre>$htmlAttrMatcher</pre></a></li>
-<li class="property protected "><a href="#property_htmlNamedEntityMap" title="$htmlNamedEntityMap() :: Entity Map mapping Unicode codepoints to any available named HTML entities."><span class="description"></span><pre>$htmlNamedEntityMap</pre></a></li>
-<li class="property protected "><a href="#property_htmlSpecialCharsFlags" title="$htmlSpecialCharsFlags() :: Holds the value of the special flags passed as second parameter to
-htmlspecialchars()."><span class="description"></span><pre>$htmlSpecialCharsFlags</pre></a></li>
-<li class="property protected "><a href="#property_jsMatcher" title="$jsMatcher() :: Static Matcher which escapes characters for Javascript contexts"><span class="description"></span><pre>$jsMatcher</pre></a></li>
-<li class="property protected "><a href="#property_supportedEncodings" title="$supportedEncodings() :: List of all encoding supported by this class"><span class="description"></span><pre>$supportedEncodings</pre></a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="span8">
-<a xmlns:php="http://php.net/xsl" id="\Zend\Escaper\Escaper"></a><ul xmlns:php="http://php.net/xsl" class="breadcrumb">
-<li>
-<a href="../index.html"><i title="Classes" class="icon-custom icon-class"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/Zend.html">Zend</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/Zend.Escaper.html">Escaper</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../classes/Zend.Escaper.Escaper.html">Escaper</a>
-</li>
-</ul>
-<div xmlns:php="http://php.net/xsl" class="element class">
-<p class="short_description">Context specific methods for use in secure output escaping</p>
-<div class="details">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>package</th>
-<td><a href="../packages/Default.html">Default</a></td>
-</tr></table>
-<h3>
-<i title="Methods" class="icon-custom icon-method"></i> Methods</h3>
-<a id="method___construct"></a><div class="element clickable method public method___construct " data-toggle="collapse" data-target=".method___construct .collapse" title="public">
-<h2>Constructor: Single parameter allows setting of global encoding for use by
+to rawurlencode() which now implements RFC 3986 since PHP 5.3 completely.</span><pre>escapeUrl</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_getEncoding" title="getEncoding :: Return the encoding that all output/input is expected to be encoded in.">
+            <span class="description">Return the encoding that all output/input is expected to be encoded in.</span><pre>getEncoding</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                <li class="method protected">
+                            <a href="#method_convertEncoding" title="convertEncoding :: Encoding conversion helper which wraps iconv and mbstring where they exist or throws
+and exception where neither is available.">
+                                <span class="description">Encoding conversion helper which wraps iconv and mbstring where they exist or throws
+and exception where neither is available.</span><pre>convertEncoding</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_cssMatcher" title="cssMatcher :: Callback function for preg_replace_callback that applies CSS
+escaping to all matches.">
+                                <span class="description">Callback function for preg_replace_callback that applies CSS
+escaping to all matches.</span><pre>cssMatcher</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                    <li class="method protected">
+                            <a href="#method_fromUtf8" title="fromUtf8 :: Converts a string from UTF-8 to the base encoding. The base encoding is set via this
+class&#039; constructor.">
+                                <span class="description">Converts a string from UTF-8 to the base encoding. The base encoding is set via this
+class&#039; constructor.</span><pre>fromUtf8</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_htmlAttrMatcher" title="htmlAttrMatcher :: Callback function for preg_replace_callback that applies HTML Attribute
+escaping to all matches.">
+                                <span class="description">Callback function for preg_replace_callback that applies HTML Attribute
+escaping to all matches.</span><pre>htmlAttrMatcher</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_isUtf8" title="isUtf8 :: Checks if a given string appears to be valid UTF-8 or not.">
+                                <span class="description">Checks if a given string appears to be valid UTF-8 or not.</span><pre>isUtf8</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_jsMatcher" title="jsMatcher :: Callback function for preg_replace_callback that applies Javascript
+escaping to all matches.">
+                                <span class="description">Callback function for preg_replace_callback that applies Javascript
+escaping to all matches.</span><pre>jsMatcher</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_toUtf8" title="toUtf8 :: Converts a string to UTF-8 from the base encoding. The base encoding is set via this
+class&#039; constructor.">
+                                <span class="description">Converts a string to UTF-8 from the base encoding. The base encoding is set via this
+class&#039; constructor.</span><pre>toUtf8</pre>
+                            </a>
+                        </li>
+                                                </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Escaper</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Context specific methods for use in secure output escaping</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Constructor: Single parameter allows setting of global encoding for use by
 the current object.</h2>
-<pre>__construct(string $encoding<code> = null</code>) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$encoding</h4>
-<code>string</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\Zend\Escaper\Exception\InvalidArgumentException</code></th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_escapeCss"></a><div class="element clickable method public method_escapeCss " data-toggle="collapse" data-target=".method_escapeCss .collapse" title="public">
-<h2>Escape a string for the CSS context. CSS escaping can be applied to any string being
+                            <pre>__construct(string $encoding = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Zend\Escaper\Exception\InvalidArgumentException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$encoding</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_convertEncoding"></a>
+                        <div class="element clickable method protected  method_convertEncoding" data-toggle="collapse" data-target=".method_convertEncoding .collapse">
+                            <h2>Encoding conversion helper which wraps iconv and mbstring where they exist or throws
+and exception where neither is available.</h2>
+                            <pre>convertEncoding(string $string, string $to, array|string $from) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Zend\Escaper\Exception\RuntimeException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$to</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$from</h4>
+                                                <code>array|string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_cssMatcher"></a>
+                        <div class="element clickable method protected  method_cssMatcher" data-toggle="collapse" data-target=".method_cssMatcher .collapse">
+                            <h2>Callback function for preg_replace_callback that applies CSS
+escaping to all matches.</h2>
+                            <pre>cssMatcher(array $matches) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$matches</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_escapeCss"></a>
+                        <div class="element clickable method public  method_escapeCss" data-toggle="collapse" data-target=".method_escapeCss .collapse">
+                            <h2>Escape a string for the CSS context. CSS escaping can be applied to any string being
 inserted into CSS and escapes everything except alphanumerics.</h2>
-<pre>escapeCss(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_escapeHtml"></a><div class="element clickable method public method_escapeHtml " data-toggle="collapse" data-target=".method_escapeHtml .collapse" title="public">
-<h2>Escape a string for the HTML Body context where there are very few characters
+                            <pre>escapeCss(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_escapeHtml"></a>
+                        <div class="element clickable method public  method_escapeHtml" data-toggle="collapse" data-target=".method_escapeHtml .collapse">
+                            <h2>Escape a string for the HTML Body context where there are very few characters
 of special meaning. Internally this will use htmlspecialchars().</h2>
-<pre>escapeHtml(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_escapeHtmlAttr"></a><div class="element clickable method public method_escapeHtmlAttr " data-toggle="collapse" data-target=".method_escapeHtmlAttr .collapse" title="public">
-<h2>Escape a string for the HTML Attribute context. We use an extended set of characters
+                            <pre>escapeHtml(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_escapeHtmlAttr"></a>
+                        <div class="element clickable method public  method_escapeHtmlAttr" data-toggle="collapse" data-target=".method_escapeHtmlAttr .collapse">
+                            <h2>Escape a string for the HTML Attribute context. We use an extended set of characters
 to escape that are not covered by htmlspecialchars() to cover cases where an attribute
 might be unquoted or quoted illegally (e.g. backticks are valid quotes for IE).</h2>
-<pre>escapeHtmlAttr(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_escapeJs"></a><div class="element clickable method public method_escapeJs " data-toggle="collapse" data-target=".method_escapeJs .collapse" title="public">
-<h2>Escape a string for the Javascript context. This does not use json_encode(). An extended
-set of characters are escaped beyond ECMAScript's rules for Javascript literal string
+                            <pre>escapeHtmlAttr(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_escapeJs"></a>
+                        <div class="element clickable method public  method_escapeJs" data-toggle="collapse" data-target=".method_escapeJs .collapse">
+                            <h2>Escape a string for the Javascript context. This does not use json_encode(). An extended
+set of characters are escaped beyond ECMAScript&#039;s rules for Javascript literal string
 escaping in order to prevent misinterpretation of Javascript as HTML leading to the
 injection of special characters and entities. The escaping used should be tolerant
 of cases where HTML escaping was not applied on top of Javascript escaping correctly.</h2>
-<pre>escapeJs(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"><p>Backslash escaping is not used as it still leaves the escaped character as-is and so
+                            <pre>escapeJs(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Backslash escaping is not used as it still leaves the escaped character as-is and so
 is not useful in a HTML context.</p></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_escapeUrl"></a><div class="element clickable method public method_escapeUrl " data-toggle="collapse" data-target=".method_escapeUrl .collapse" title="public">
-<h2>Escape a string for the URI or Parameter contexts. This should not be used to escape
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_escapeUrl"></a>
+                        <div class="element clickable method public  method_escapeUrl" data-toggle="collapse" data-target=".method_escapeUrl .collapse">
+                            <h2>Escape a string for the URI or Parameter contexts. This should not be used to escape
 an entire URI - only a subcomponent being inserted. The function is a simple proxy
 to rawurlencode() which now implements RFC 3986 since PHP 5.3 completely.</h2>
-<pre>escapeUrl(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_getEncoding"></a><div class="element clickable method public method_getEncoding " data-toggle="collapse" data-target=".method_getEncoding .collapse" title="public">
-<h2>Return the encoding that all output/input is expected to be encoded in.</h2>
-<pre>getEncoding() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_convertEncoding"></a><div class="element clickable method protected method_convertEncoding " data-toggle="collapse" data-target=".method_convertEncoding .collapse" title="protected">
-<h2>Encoding conversion helper which wraps iconv and mbstring where they exist or throws
-and exception where neither is available.</h2>
-<pre>convertEncoding(string $string, string $to, array|string $from) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<div class="subelement argument">
-<h4>$to</h4>
-<code>string</code>
-</div>
-<div class="subelement argument">
-<h4>$from</h4>
-<code>array</code><code>string</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\Zend\Escaper\Exception\RuntimeException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_cssMatcher"></a><div class="element clickable method protected method_cssMatcher " data-toggle="collapse" data-target=".method_cssMatcher .collapse" title="protected">
-<h2>Callback function for preg_replace_callback that applies CSS
+                            <pre>escapeUrl(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_fromUtf8"></a>
+                        <div class="element clickable method protected  method_fromUtf8" data-toggle="collapse" data-target=".method_fromUtf8 .collapse">
+                            <h2>Converts a string from UTF-8 to the base encoding. The base encoding is set via this
+class&#039; constructor.</h2>
+                            <pre>fromUtf8(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getEncoding"></a>
+                        <div class="element clickable method public  method_getEncoding" data-toggle="collapse" data-target=".method_getEncoding .collapse">
+                            <h2>Return the encoding that all output/input is expected to be encoded in.</h2>
+                            <pre>getEncoding() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_htmlAttrMatcher"></a>
+                        <div class="element clickable method protected  method_htmlAttrMatcher" data-toggle="collapse" data-target=".method_htmlAttrMatcher .collapse">
+                            <h2>Callback function for preg_replace_callback that applies HTML Attribute
 escaping to all matches.</h2>
-<pre>cssMatcher(array $matches) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$matches</h4>
-<code>array</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_fromUtf8"></a><div class="element clickable method protected method_fromUtf8 " data-toggle="collapse" data-target=".method_fromUtf8 .collapse" title="protected">
-<h2>Converts a string from UTF-8 to the base encoding. The base encoding is set via this
-class' constructor.</h2>
-<pre>fromUtf8(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_htmlAttrMatcher"></a><div class="element clickable method protected method_htmlAttrMatcher " data-toggle="collapse" data-target=".method_htmlAttrMatcher .collapse" title="protected">
-<h2>Callback function for preg_replace_callback that applies HTML Attribute
+                            <pre>htmlAttrMatcher(array $matches) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$matches</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isUtf8"></a>
+                        <div class="element clickable method protected  method_isUtf8" data-toggle="collapse" data-target=".method_isUtf8 .collapse">
+                            <h2>Checks if a given string appears to be valid UTF-8 or not.</h2>
+                            <pre>isUtf8(string $string) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_jsMatcher"></a>
+                        <div class="element clickable method protected  method_jsMatcher" data-toggle="collapse" data-target=".method_jsMatcher .collapse">
+                            <h2>Callback function for preg_replace_callback that applies Javascript
 escaping to all matches.</h2>
-<pre>htmlAttrMatcher(array $matches) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$matches</h4>
-<code>array</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_isUtf8"></a><div class="element clickable method protected method_isUtf8 " data-toggle="collapse" data-target=".method_isUtf8 .collapse" title="protected">
-<h2>Checks if a given string appears to be valid UTF-8 or not.</h2>
-<pre>isUtf8(string $string) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
-<a id="method_jsMatcher"></a><div class="element clickable method protected method_jsMatcher " data-toggle="collapse" data-target=".method_jsMatcher .collapse" title="protected">
-<h2>Callback function for preg_replace_callback that applies Javascript
-escaping to all matches.</h2>
-<pre>jsMatcher(array $matches) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$matches</h4>
-<code>array</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a id="method_toUtf8"></a><div class="element clickable method protected method_toUtf8 " data-toggle="collapse" data-target=".method_toUtf8 .collapse" title="protected">
-<h2>Converts a string to UTF-8 from the base encoding. The base encoding is set via this
-class' constructor.</h2>
-<pre>toUtf8(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code>
-</div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code>\Zend\Escaper\Exception\RuntimeException</code></th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<h3>
-<i title="Properties" class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_cssMatcher"> </a><div class="element clickable property protected property_cssMatcher" data-toggle="collapse" data-target=".property_cssMatcher .collapse" title="protected">
-<h2>Static Matcher which escapes characters for CSS Attribute contexts</h2>
-<pre>$cssMatcher : callable</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_encoding"> </a><div class="element clickable property protected property_encoding" data-toggle="collapse" data-target=".property_encoding .collapse" title="protected">
-<h2>Current encoding for escaping. If not UTF-8, we convert strings from this encoding
-pre-escaping and back to this encoding post-escaping.</h2>
-<pre>$encoding : string</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>'utf-8'</code></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_htmlAttrMatcher"> </a><div class="element clickable property protected property_htmlAttrMatcher" data-toggle="collapse" data-target=".property_htmlAttrMatcher .collapse" title="protected">
-<h2>Static Matcher which escapes characters for HTML Attribute contexts</h2>
-<pre>$htmlAttrMatcher : callable</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_htmlNamedEntityMap"> </a><div class="element clickable property protected property_htmlNamedEntityMap" data-toggle="collapse" data-target=".property_htmlNamedEntityMap .collapse" title="protected">
-<h2>Entity Map mapping Unicode codepoints to any available named HTML entities.</h2>
-<pre>$htmlNamedEntityMap : array</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>array(34 => 'quot', 38 => 'amp', 60 => 'lt', 62 => 'gt')</code></div>
-</div></div>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"><p>While HTML supports far more named entities, the lowest common denominator
+                            <pre>jsMatcher(array $matches) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$matches</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_toUtf8"></a>
+                        <div class="element clickable method protected  method_toUtf8" data-toggle="collapse" data-target=".method_toUtf8 .collapse">
+                            <h2>Converts a string to UTF-8 from the base encoding. The base encoding is set via this
+class&#039; constructor.</h2>
+                            <pre>toUtf8(string $string) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Zend\Escaper\Exception\RuntimeException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$string</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_htmlNamedEntityMap"> </a>
+                            <div class="element clickable property  protected property_htmlNamedEntityMap" data-toggle="collapse" data-target=".property_htmlNamedEntityMap .collapse">
+                                <h2>Entity Map mapping Unicode codepoints to any available named HTML entities.</h2>
+                                <pre>htmlNamedEntityMap : array</pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>While HTML supports far more named entities, the lowest common denominator
 has become HTML5's XML Serialisation which is restricted to the those named
 entities that XML supports. Using HTML entities would result in this error:
-XML Parsing Error: undefined entity</p></div></div></div>
-</div>
-<a id="property_htmlSpecialCharsFlags"> </a><div class="element clickable property protected property_htmlSpecialCharsFlags" data-toggle="collapse" data-target=".property_htmlSpecialCharsFlags .collapse" title="protected">
-<h2>Holds the value of the special flags passed as second parameter to
+XML Parsing Error: undefined entity</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_encoding"> </a>
+                            <div class="element clickable property  protected property_encoding" data-toggle="collapse" data-target=".property_encoding .collapse">
+                                <h2>Current encoding for escaping. If not UTF-8, we convert strings from this encoding
+pre-escaping and back to this encoding post-escaping.</h2>
+                                <pre>encoding : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_htmlSpecialCharsFlags"> </a>
+                            <div class="element clickable property  protected property_htmlSpecialCharsFlags" data-toggle="collapse" data-target=".property_htmlSpecialCharsFlags .collapse">
+                                <h2>Holds the value of the special flags passed as second parameter to
 htmlspecialchars().</h2>
-<pre>$htmlSpecialCharsFlags : integer</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_jsMatcher"> </a><div class="element clickable property protected property_jsMatcher" data-toggle="collapse" data-target=".property_jsMatcher .collapse" title="protected">
-<h2>Static Matcher which escapes characters for Javascript contexts</h2>
-<pre>$jsMatcher : callable</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="property_supportedEncodings"> </a><div class="element clickable property protected property_supportedEncodings" data-toggle="collapse" data-target=".property_supportedEncodings .collapse" title="protected">
-<h2>List of all encoding supported by this class</h2>
-<pre>$supportedEncodings : array</pre>
-<div class="row collapse"><div class="detail-description">
-<h3>Default</h3>
-<div class="subelement argument"><code>array('iso-8859-1', 'iso8859-1', 'iso-8859-5', 'iso8859-5', 'iso-8859-15', 'iso8859-15', 'utf-8', 'cp866', 'ibm866', '866', 'cp1251', 'windows-1251', 'win-1251', '1251', 'cp1252', 'windows-1252', '1252', 'koi8-r', 'koi8-ru', 'koi8r', 'big5', '950', 'gb2312', '936', 'big5-hkscs', 'shift_jis', 'sjis', 'sjis-win', 'cp932', '932', 'euc-jp', 'eucjp', 'eucjp-win', 'macroman')</code></div>
-</div></div>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
-            generated on 2019-03-25T21:42:31-07:00.<br></footer></div>
-</div>
-</body>
+                                <pre>htmlSpecialCharsFlags : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_htmlAttrMatcher"> </a>
+                            <div class="element clickable property  protected property_htmlAttrMatcher" data-toggle="collapse" data-target=".property_htmlAttrMatcher .collapse">
+                                <h2>Static Matcher which escapes characters for HTML Attribute contexts</h2>
+                                <pre>htmlAttrMatcher : callable</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>callable</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_jsMatcher"> </a>
+                            <div class="element clickable property  protected property_jsMatcher" data-toggle="collapse" data-target=".property_jsMatcher .collapse">
+                                <h2>Static Matcher which escapes characters for Javascript contexts</h2>
+                                <pre>jsMatcher : callable</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>callable</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_cssMatcher"> </a>
+                            <div class="element clickable property  protected property_cssMatcher" data-toggle="collapse" data-target=".property_cssMatcher .collapse">
+                                <h2>Static Matcher which escapes characters for CSS Attribute contexts</h2>
+                                <pre>cssMatcher : callable</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>callable</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_supportedEncodings"> </a>
+                            <div class="element clickable property  protected property_supportedEncodings" data-toggle="collapse" data-target=".property_supportedEncodings .collapse">
+                                <h2>List of all encoding supported by this class</h2>
+                                <pre>supportedEncodings : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Zend\Escaper\Escaper"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Zend.Escaper.html">Escaper</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Zend.Escaper.Escaper.html">Escaper</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Wed, 27 Mar 2019 21:06:47 -0700.<br/>
+    </footer>
+    </body>
 </html>

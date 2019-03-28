@@ -1,277 +1,454 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
-<meta charset="utf-8">
-<title>CodeIgniter v4.0 API » CodeIgniter\Commands</title>
-<meta name="author" content="Mike van Riel">
-<meta name="description" content="">
-<link href="../css/template.css" rel="stylesheet" media="all">
-<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
-<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; \CodeIgniter\Commands
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
 <body>
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner"><div class="container">
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">CodeIgniter v4.0 API</a><div class="nav-collapse"><ul class="nav">
-<li class="dropdown">
-<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Namespaces</a></li>
-<li><a href="../namespaces/CodeIgniter.html"><i class="icon-th"></i> CodeIgniter</a></li>
-<li><a href="../namespaces/Psr.html"><i class="icon-th"></i> Psr</a></li>
-<li><a href="../namespaces/Zend.html"><i class="icon-th"></i> Zend</a></li>
-<li><a href="../namespaces/global.html"><i class="icon-th"></i> global</a></li>
-<li><a>Packages</a></li>
-<li><a href="../packages/CodeIgniter.html"><i class="icon-folder-open"></i> CodeIgniter</a></li>
-<li><a href="../packages/Default.html"><i class="icon-folder-open"></i> Default</a></li>
-</ul>
-</li>
-<li class="dropdown" id="charts-menu">
-<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
-                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
-</li>
-<li class="dropdown" id="reports-menu">
-<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
-                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">555</span></a></li>
-<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
-<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
-</ul>
-</li>
-</ul></div>
-</div></div>
-<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
-</div>
-<div id="___" class="container">
-<noscript><div class="alert alert-warning">
-                            Javascript is disabled; several features are only available
-                            if Javascript is enabled.
-                        </div></noscript>
-<div class="row">
-<div class="span4">
-<div class="btn-group view pull-right" data-toggle="buttons-radio">
-<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
-</div>
-<ul class="side-nav nav nav-list">
-<li class="nav-header">
-<i class="icon-map-marker"></i> Namespaces</li>
-<li>
-<a href="../namespaces/CodeIgniter.Commands.html" title="Commands"><i class="icon-th"></i>Commands</a><ul class="nav nav-list nav-namespaces">
-<li>
-<a href="../namespaces/CodeIgniter.Commands.Database.html" title="Database"><i class="icon-th"></i>Database</a><ul class="nav nav-list nav-namespaces"></ul>
-</li>
-<li>
-<a href="../namespaces/CodeIgniter.Commands.Server.html" title="Server"><i class="icon-th"></i>Server</a><ul class="nav nav-list nav-namespaces"></ul>
-</li>
-<li>
-<a href="../namespaces/CodeIgniter.Commands.Sessions.html" title="Sessions"><i class="icon-th"></i>Sessions</a><ul class="nav nav-list nav-namespaces"></ul>
-</li>
-<li>
-<a href="../namespaces/CodeIgniter.Commands.Utilities.html" title="Utilities"><i class="icon-th"></i>Utilities</a><ul class="nav nav-list nav-namespaces"></ul>
-</li>
-</ul>
-</li>
-<li class="nav-header">
-<i title="Classes" class="icon-custom icon-class"></i> Classes</li>
-<li><a href="#ListCommands" title="CI Help command for the spark script.">ListCommands</a></li>
-<li><a href="#Help" title="CI Help command for the spark script.">Help</a></li>
-</ul>
-</div>
-<div class="span8 namespace-contents">
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
-<div xmlns:php="http://php.net/xsl" id="Help" class="element ajax clickable class">
-<h1>Help<a href="../classes/CodeIgniter.Commands.Help.html">¶</a>
-</h1>
-<p class="short_description">CI Help command for the spark script.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Help.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="ListCommands" class="element ajax clickable class">
-<h1>ListCommands<a href="../classes/CodeIgniter.Commands.ListCommands.html">¶</a>
-</h1>
-<p class="short_description">CI Help command for the spark script.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.ListCommands.html" class="more">« More »</a>
-</div>
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Database.html">Database</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
-<div xmlns:php="http://php.net/xsl" id="CreateMigration" class="element ajax clickable class">
-<h1>CreateMigration<a href="../classes/CodeIgniter.Commands.Database.CreateMigration.html">¶</a>
-</h1>
-<p class="short_description">Creates a new migration file.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.CreateMigration.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateCurrent" class="element ajax clickable class">
-<h1>MigrateCurrent<a href="../classes/CodeIgniter.Commands.Database.MigrateCurrent.html">¶</a>
-</h1>
-<p class="short_description">Migrates the DB to version set in config file, $currentVersion.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateCurrent.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateLatest" class="element ajax clickable class">
-<h1>MigrateLatest<a href="../classes/CodeIgniter.Commands.Database.MigrateLatest.html">¶</a>
-</h1>
-<p class="short_description">Creates a new migration file.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateLatest.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateRefresh" class="element ajax clickable class">
-<h1>MigrateRefresh<a href="../classes/CodeIgniter.Commands.Database.MigrateRefresh.html">¶</a>
-</h1>
-<p class="short_description">Does a rollback followed by a latest to refresh the current state
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">CodeIgniter v4.0 API</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            
+    <div class="row">
+
+        <div class="span4">
+            <div class="btn-group view pull-right" data-toggle="buttons-radio">
+                <button class="btn details" title="Show descriptions and method names">
+                    <i class="icon-list"></i></button><button class="btn simple" title="Show only method names">
+                    <i class="icon-align-justify"></i>
+                </button>
+            </div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">
+                    <i class="icon-map-marker"></i> Namespaces
+                </li>
+                <a href="../namespaces/CodeIgniter.Commands.html" title="Commands">
+                    <i class="icon-th"></i> Commands
+                </a>
+                <ul class="nav nav-list nav-namespaces">
+                        
+        <li>
+        <a href="../namespaces/CodeIgniter.Commands.Database.html" title="Database">
+            <i class="icon-th"></i> Database
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/CodeIgniter.Commands.Server.html" title="Server">
+            <i class="icon-th"></i> Server
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/CodeIgniter.Commands.Sessions.html" title="Sessions">
+            <i class="icon-th"></i> Sessions
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+        <li>
+        <a href="../namespaces/CodeIgniter.Commands.Utilities.html" title="Utilities">
+            <i class="icon-th"></i> Utilities
+        </a>
+        <ul class="nav nav-list nav-namespaces">
+                
+    
+        </ul>
+    </li>
+    
+                </ul>
+            </ul>
+        </div>
+
+        <div class="span8 namespace-contents">
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Help" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Help .collapse">
+        <h1>Help<a href="../classes/CodeIgniter.Commands.Help.html">¶</a></h1>
+        <p class="short_description">CI Help command for the spark script.</p>
+        <div class="details collapse">
+                            <p>Lists the basic usage information for the spark script,
+and provides a way to list help for other commands.</p>
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Help.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_ListCommands" class="element ajax clickable class" data-toggle="collapse" data-target="#class_ListCommands .collapse">
+        <h1>ListCommands<a href="../classes/CodeIgniter.Commands.ListCommands.html">¶</a></h1>
+        <p class="short_description">CI Help command for the spark script.</p>
+        <div class="details collapse">
+                            <p>Lists the basic usage information for the spark script,
+and provides a way to list help for other commands.</p>
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.ListCommands.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Database.html">Database</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CreateMigration" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CreateMigration .collapse">
+        <h1>CreateMigration<a href="../classes/CodeIgniter.Commands.Database.CreateMigration.html">¶</a></h1>
+        <p class="short_description">Creates a new migration file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.CreateMigration.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateCurrent" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateCurrent .collapse">
+        <h1>MigrateCurrent<a href="../classes/CodeIgniter.Commands.Database.MigrateCurrent.html">¶</a></h1>
+        <p class="short_description">Migrates the DB to version set in config file, $currentVersion.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateCurrent.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateLatest" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateLatest .collapse">
+        <h1>MigrateLatest<a href="../classes/CodeIgniter.Commands.Database.MigrateLatest.html">¶</a></h1>
+        <p class="short_description">Creates a new migration file.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateLatest.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateRefresh" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateRefresh .collapse">
+        <h1>MigrateRefresh<a href="../classes/CodeIgniter.Commands.Database.MigrateRefresh.html">¶</a></h1>
+        <p class="short_description">Does a rollback followed by a latest to refresh the current state
 of the database.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateRefresh.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateRollback" class="element ajax clickable class">
-<h1>MigrateRollback<a href="../classes/CodeIgniter.Commands.Database.MigrateRollback.html">¶</a>
-</h1>
-<p class="short_description">Runs all of the migrations in reverse order, until they have
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateRefresh.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateRollback" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateRollback .collapse">
+        <h1>MigrateRollback<a href="../classes/CodeIgniter.Commands.Database.MigrateRollback.html">¶</a></h1>
+        <p class="short_description">Runs all of the migrations in reverse order, until they have
 all been un-applied.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateRollback.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateStatus" class="element ajax clickable class">
-<h1>MigrateStatus<a href="../classes/CodeIgniter.Commands.Database.MigrateStatus.html">¶</a>
-</h1>
-<p class="short_description">Displays a list of all migrations and whether they've been run or not.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateStatus.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="MigrateVersion" class="element ajax clickable class">
-<h1>MigrateVersion<a href="../classes/CodeIgniter.Commands.Database.MigrateVersion.html">¶</a>
-</h1>
-<p class="short_description">Migrates the DB to a specific version.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.MigrateVersion.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="Seed" class="element ajax clickable class">
-<h1>Seed<a href="../classes/CodeIgniter.Commands.Database.Seed.html">¶</a>
-</h1>
-<p class="short_description">Runs the specified Seeder file to populate the database
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateRollback.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateStatus" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateStatus .collapse">
+        <h1>MigrateStatus<a href="../classes/CodeIgniter.Commands.Database.MigrateStatus.html">¶</a></h1>
+        <p class="short_description">Displays a list of all migrations and whether they&#039;ve been run or not.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateStatus.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_MigrateVersion" class="element ajax clickable class" data-toggle="collapse" data-target="#class_MigrateVersion .collapse">
+        <h1>MigrateVersion<a href="../classes/CodeIgniter.Commands.Database.MigrateVersion.html">¶</a></h1>
+        <p class="short_description">Migrates the DB to a specific version.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.MigrateVersion.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Seed" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Seed .collapse">
+        <h1>Seed<a href="../classes/CodeIgniter.Commands.Database.Seed.html">¶</a></h1>
+        <p class="short_description">Runs the specified Seeder file to populate the database
 with some data.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Database.Seed.html" class="more">« More »</a>
-</div>
-</div>
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Server.html">Server</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
-<div xmlns:php="http://php.net/xsl" id="Serve" class="element ajax clickable class">
-<h1>Serve<a href="../classes/CodeIgniter.Commands.Server.Serve.html">¶</a>
-</h1>
-<p class="short_description">Launch the PHP development server</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Server.Serve.html" class="more">« More »</a>
-</div>
-</div>
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Sessions.html">Sessions</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
-<div xmlns:php="http://php.net/xsl" id="CreateMigration" class="element ajax clickable class">
-<h1>CreateMigration<a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html">¶</a>
-</h1>
-<p class="short_description">Creates a migration file for database sessions.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html" class="more">« More »</a>
-</div>
-</div>
-<ul class="breadcrumb">
-<li>
-<a href="../index.html"><i class="icon-th"></i></a><span class="divider">\</span>
-</li>
-<li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
-<li>
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
-</li>
-<li class="active">
-<span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Utilities.html">Utilities</a>
-</li>
-</ul>
-<div class="namespace-indent">
-<h3>
-<i title="Class" class="icon-custom icon-class"></i> Classes, interfaces, and traits</h3>
-<div xmlns:php="http://php.net/xsl" id="Namespaces" class="element ajax clickable class">
-<h1>Namespaces<a href="../classes/CodeIgniter.Commands.Utilities.Namespaces.html">¶</a>
-</h1>
-<p class="short_description">Lists namespaces set in Config\Autoload with their
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Database.Seed.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Utilities.html">Utilities</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Namespaces" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Namespaces .collapse">
+        <h1>Namespaces<a href="../classes/CodeIgniter.Commands.Utilities.Namespaces.html">¶</a></h1>
+        <p class="short_description">Lists namespaces set in Config\Autoload with their
 full server path. Helps you to verify that you have
 the namespaces setup correctly.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Utilities.Namespaces.html" class="more">« More »</a>
-</div>
-<div xmlns:php="http://php.net/xsl" id="Routes" class="element ajax clickable class">
-<h1>Routes<a href="../classes/CodeIgniter.Commands.Utilities.Routes.html">¶</a>
-</h1>
-<p class="short_description">Lists all of the user-defined routes. This will include any Routes files
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Utilities.Namespaces.html" class="more">« More »</a>    </div>
+
+                                        <div id="class_Routes" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Routes .collapse">
+        <h1>Routes<a href="../classes/CodeIgniter.Commands.Utilities.Routes.html">¶</a></h1>
+        <p class="short_description">Lists all of the user-defined routes. This will include any Routes files
 that can be discovered, but will NOT include any routes that are not defined
 in a routes file, but are instead discovered through auto-routing.</p>
-<div class="details collapse"></div>
-<a href="../classes/CodeIgniter.Commands.Utilities.Routes.html" class="more">« More »</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="row"><footer class="span12">
-            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.9.0</a> and<br>
-            generated on 2019-03-25T21:42:23-07:00.<br></footer></div>
-</div>
-</body>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Utilities.Routes.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Sessions.html">Sessions</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_CreateMigration" class="element ajax clickable class" data-toggle="collapse" data-target="#class_CreateMigration .collapse">
+        <h1>CreateMigration<a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html">¶</a></h1>
+        <p class="short_description">Creates a migration file for database sessions.</p>
+        <div class="details collapse">
+                            
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+                
+    
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+                
+                
+                
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
+    </li>
+
+    
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Server.html">Server</a>
+    </li>
+
+        </ul>
+
+        
+        
+                    <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>
+                
+                
+                                        <div id="class_Serve" class="element ajax clickable class" data-toggle="collapse" data-target="#class_Serve .collapse">
+        <h1>Serve<a href="../classes/CodeIgniter.Commands.Server.Serve.html">¶</a></h1>
+        <p class="short_description">Launch the PHP development server</p>
+        <div class="details collapse">
+                            <p>Not testable, as it throws phpunit for a loop :-/</p>
+                    </div>
+        <a href="../classes/CodeIgniter.Commands.Server.Serve.html" class="more">« More »</a>    </div>
+
+                            </div>
+            
+    
+    
+        </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Wed, 27 Mar 2019 21:06:45 -0700.<br/>
+    </footer>
+    </body>
 </html>
