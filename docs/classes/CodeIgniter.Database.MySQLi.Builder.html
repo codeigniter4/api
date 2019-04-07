@@ -909,7 +909,7 @@ about operator precedence.</p>
                                             <a id="method__like_statement"></a>
                         <div class="element clickable method public  method__like_statement inherited" data-toggle="collapse" data-target=".method__like_statement .collapse">
                             <h2>Platform independent LIKE statement builder.</h2>
-                            <pre>_like_statement(string|null $prefix = null, string $column, string|null $not = null, string $bind, boolean $insensitiveSearch = false) : string</pre>
+                            <pre>_like_statement(string $prefix = null, string $column, string $not = null, string $bind, boolean $insensitiveSearch = false) : string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -924,7 +924,7 @@ about operator precedence.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$prefix</h4>
-                                                <code>string|null</code><p></p>
+                                                <code>string</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$column</h4>
@@ -932,7 +932,7 @@ about operator precedence.</p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$not</h4>
-                                                <code>string|null</code><p></p>
+                                                <code>string</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$bind</h4>
@@ -1167,7 +1167,7 @@ then this method maps to 'DELETE FROM table'</p></div>
                                             <a id="method_batchObjectToArray"></a>
                         <div class="element clickable method protected  method_batchObjectToArray inherited" data-toggle="collapse" data-target=".method_batchObjectToArray .collapse">
                             <h2>Object to Array</h2>
-                            <pre>batchObjectToArray(object $object) : array</pre>
+                            <pre>batchObjectToArray(mixed $object) : mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1182,11 +1182,11 @@ then this method maps to 'DELETE FROM table'</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$object</h4>
-                                                <code>object</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>array</code><p></p>
+                                        <code>mixed</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1195,7 +1195,7 @@ then this method maps to 'DELETE FROM table'</p></div>
                         <div class="element clickable method protected  method_compileFinalQuery inherited" data-toggle="collapse" data-target=".method_compileFinalQuery .collapse">
                             <h2>Returns a finalized, compiled query string with the bindings
 inserted and prefixes swapped out.</h2>
-                            <pre>compileFinalQuery(string $sql) : mixed|string</pre>
+                            <pre>compileFinalQuery(string $sql) : string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1214,7 +1214,7 @@ inserted and prefixes swapped out.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed|string</code><p></p>
+                                        <code>string</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1286,7 +1286,7 @@ only if needed.</p></div>
                                             <a id="method_compileSelect"></a>
                         <div class="element clickable method protected  method_compileSelect inherited" data-toggle="collapse" data-target=".method_compileSelect .collapse">
                             <h2>Compile the SELECT statement</h2>
-                            <pre>compileSelect(boolean $select_override = false) : string</pre>
+                            <pre>compileSelect(mixed $select_override = false) : string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1302,7 +1302,7 @@ Should not be called directly.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$select_override</h4>
-                                                <code>boolean</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -1344,7 +1344,7 @@ join() and prefixTable is added only if needed.</p></div>
                                             <a id="method_countAll"></a>
                         <div class="element clickable method public  method_countAll inherited" data-toggle="collapse" data-target=".method_countAll .collapse">
                             <h2>&quot;Count All&quot; query</h2>
-                            <pre>countAll(boolean $reset = true, boolean $test = false) : integer</pre>
+                            <pre>countAll(boolean $reset = true, boolean $test = false) : integer|string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1368,7 +1368,7 @@ the specified database</p></div>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>integer</code><p></p>
+                                        <code>integer|string</code><p><p>when $test = true</p></p>
                                                                     </div>
                             </div>
 
@@ -1376,7 +1376,7 @@ the specified database</p></div>
                                             <a id="method_countAllResults"></a>
                         <div class="element clickable method public  method_countAllResults inherited" data-toggle="collapse" data-target=".method_countAllResults .collapse">
                             <h2>&quot;Count All Results&quot; query</h2>
-                            <pre>countAllResults(boolean $reset = true, boolean $test = false) : integer</pre>
+                            <pre>countAllResults(boolean $reset = true, boolean $test = false) : integer|string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1400,7 +1400,7 @@ returned by an Query Builder query.</p></div>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>integer</code><p></p>
+                                        <code>integer|string</code><p><p>when $test = true</p></p>
                                                                     </div>
                             </div>
 
@@ -1466,7 +1466,7 @@ returned by an Query Builder query.</p></div>
                                             <a id="method_delete"></a>
                         <div class="element clickable method public  method_delete inherited" data-toggle="collapse" data-target=".method_delete .collapse">
                             <h2>Delete</h2>
-                            <pre>delete(mixed $where = &#039;&#039;, mixed $limit = null, boolean $reset_data = true, boolean $returnSQL = false) : mixed</pre>
+                            <pre>delete(mixed $where = &#039;&#039;, integer $limit = null, boolean $reset_data = true, boolean $returnSQL = false) : mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1494,7 +1494,7 @@ returned by an Query Builder query.</p></div>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$limit</h4>
-                                                <code>mixed</code><p><p>The limit clause</p></p>
+                                                <code>integer</code><p><p>The limit clause</p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$reset_data</h4>
@@ -1777,7 +1777,7 @@ named parameters for binding in the Query object later.</h2>
                                             <a id="method_getOperator"></a>
                         <div class="element clickable method protected  method_getOperator inherited" data-toggle="collapse" data-target=".method_getOperator .collapse">
                             <h2>Returns the SQL string operator</h2>
-                            <pre>getOperator(string $str, boolean $list = false) : string</pre>
+                            <pre>getOperator(string $str, boolean $list = false) : mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1800,7 +1800,7 @@ named parameters for binding in the Query object later.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>string</code><p></p>
+                                        <code>mixed</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1836,7 +1836,7 @@ if needed.</h2>
                                             <a id="method_getWhere"></a>
                         <div class="element clickable method public  method_getWhere inherited" data-toggle="collapse" data-target=".method_getWhere .collapse">
                             <h2>Get_Where</h2>
-                            <pre>getWhere(string $where = null, integer $limit = null, integer $offset = null) : \CodeIgniter\Database\ResultInterface</pre>
+                            <pre>getWhere(string|array $where = null, integer $limit = null, integer $offset = null) : \CodeIgniter\Database\ResultInterface</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1851,7 +1851,7 @@ if needed.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$where</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$limit</h4>
@@ -1871,7 +1871,7 @@ if needed.</h2>
                                             <a id="method_groupBy"></a>
                         <div class="element clickable method public  method_groupBy inherited" data-toggle="collapse" data-target=".method_groupBy .collapse">
                             <h2>GROUP BY</h2>
-                            <pre>groupBy(string $by, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>groupBy(string|array $by, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1886,7 +1886,7 @@ if needed.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$by</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
@@ -2031,7 +2031,7 @@ if needed.</h2>
                                             <a id="method_having"></a>
                         <div class="element clickable method public  method_having inherited" data-toggle="collapse" data-target=".method_having .collapse">
                             <h2>HAVING</h2>
-                            <pre>having(string $key, string $value = null, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>having(string|array $key, mixed $value = null, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2046,11 +2046,11 @@ if needed.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>string</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
@@ -2207,7 +2207,7 @@ if needed.</h2>
                                             <a id="method_join"></a>
                         <div class="element clickable method public  method_join inherited" data-toggle="collapse" data-target=".method_join .collapse">
                             <h2>JOIN</h2>
-                            <pre>join(string $table, string $cond, string $type = &#039;&#039;, string $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>join(string $table, string $cond, string $type = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2234,7 +2234,7 @@ if needed.</h2>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
-                                                <code>string</code><p><p>Whether not to try to escape identifiers</p></p>
+                                                <code>boolean</code><p><p>Whether not to try to escape identifiers</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -2350,6 +2350,8 @@ Separates multiple calls with 'AND'.</p></div>
                                                 <th>Throws</th>
                                                 <td>
                                                     <dl>
+                                                                                                            <dt>\CodeIgniter\Database\Exceptions\DataException</dt>
+                                                        <dd></dd>
                                                                                                             <dt>\CodeIgniter\Database\Exceptions\DatabaseException</dt>
                                                         <dd></dd>
                                                                                                                                                             </dl>
@@ -2453,7 +2455,7 @@ Separates multiple calls with 'AND'.</p></div>
                                             <a id="method_objectToArray"></a>
                         <div class="element clickable method protected  method_objectToArray inherited" data-toggle="collapse" data-target=".method_objectToArray .collapse">
                             <h2>Object to Array</h2>
-                            <pre>objectToArray(object $object) : array</pre>
+                            <pre>objectToArray(mixed $object) : mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2468,11 +2470,11 @@ Separates multiple calls with 'AND'.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$object</h4>
-                                                <code>object</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>array</code><p></p>
+                                        <code>mixed</code><p></p>
                                                                     </div>
                             </div>
 
@@ -2507,7 +2509,7 @@ Separates multiple calls with 'AND'.</p></div>
                                             <a id="method_orderBy"></a>
                         <div class="element clickable method public  method_orderBy inherited" data-toggle="collapse" data-target=".method_orderBy .collapse">
                             <h2>ORDER BY</h2>
-                            <pre>orderBy(string $orderby, string $direction = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>orderBy(string $orderBy, string $direction = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2521,7 +2523,7 @@ Separates multiple calls with 'AND'.</p></div>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$orderby</h4>
+                                                <h4>$orderBy</h4>
                                                 <code>string</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
@@ -2571,7 +2573,7 @@ Separates multiple calls with 'AND'.</p></div>
                                             <a id="method_orHaving"></a>
                         <div class="element clickable method public  method_orHaving inherited" data-toggle="collapse" data-target=".method_orHaving .collapse">
                             <h2>OR HAVING</h2>
-                            <pre>orHaving(string $key, string $value = null, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>orHaving(string|array $key, mixed $value = null, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2586,11 +2588,11 @@ Separates multiple calls with 'AND'.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>string</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
@@ -2900,7 +2902,7 @@ joined with 'OR' if appropriate.</p></div>
                                             <a id="method_resetRun"></a>
                         <div class="element clickable method protected  method_resetRun inherited" data-toggle="collapse" data-target=".method_resetRun .collapse">
                             <h2>Resets the query builder values.  Called by the get() function</h2>
-                            <pre>resetRun(array $qb_reset_items) </pre>
+                            <pre>resetRun(array $qb_reset_items) : void</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2910,13 +2912,6 @@ joined with 'OR' if appropriate.</p></div>
                                     <div class="long_description"></div>
 
                                     <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -3000,7 +2995,7 @@ joined with 'OR' if appropriate.</p></div>
                                             <a id="method_select"></a>
                         <div class="element clickable method public  method_select inherited" data-toggle="collapse" data-target=".method_select .collapse">
                             <h2>Select</h2>
-                            <pre>select(string|array $select = &#039;*&#039;, mixed $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>select(string|array $select = &#039;*&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3019,7 +3014,7 @@ joined with 'OR' if appropriate.</p></div>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>boolean</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -3190,7 +3185,7 @@ joined with 'OR' if appropriate.</p></div>
                                             <a id="method_setBind"></a>
                         <div class="element clickable method protected  method_setBind inherited" data-toggle="collapse" data-target=".method_setBind .collapse">
                             <h2>Stores a bind value after ensuring that it&#039;s unique.</h2>
-                            <pre>setBind(string $key, null $value = null, boolean $escape = true) : string</pre>
+                            <pre>setBind(string $key, mixed $value = null, boolean $escape = true) : string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3211,7 +3206,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>null</code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$escape</h4>
@@ -3227,7 +3222,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             <a id="method_setInsertBatch"></a>
                         <div class="element clickable method public  method_setInsertBatch inherited" data-toggle="collapse" data-target=".method_setInsertBatch .collapse">
                             <h2>The &quot;setInsertBatch&quot; function.  Allows key/value pairs to be set for batch inserts</h2>
-                            <pre>setInsertBatch(mixed $key, string $value = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>setInsertBatch(mixed $key, string $value = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder|null</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3254,7 +3249,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Database.BaseBuilder.html">\CodeIgniter\Database\BaseBuilder</a></code><p></p>
+                                        <code><a href="../classes/CodeIgniter.Database.BaseBuilder.html">\CodeIgniter\Database\BaseBuilder</a>|null</code><p></p>
                                                                     </div>
                             </div>
 
@@ -3262,7 +3257,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             <a id="method_setUpdateBatch"></a>
                         <div class="element clickable method public  method_setUpdateBatch inherited" data-toggle="collapse" data-target=".method_setUpdateBatch .collapse">
                             <h2>The &quot;setUpdateBatch&quot; function.  Allows key/value pairs to be set for batch updating</h2>
-                            <pre>setUpdateBatch(array $key, string $index = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <pre>setUpdateBatch(array|object $key, string $index = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder|null</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3286,7 +3281,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>array</code><p></p>
+                                                <code>array|object</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$index</h4>
@@ -3298,7 +3293,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Database.BaseBuilder.html">\CodeIgniter\Database\BaseBuilder</a></code><p></p>
+                                        <code><a href="../classes/CodeIgniter.Database.BaseBuilder.html">\CodeIgniter\Database\BaseBuilder</a>|null</code><p></p>
                                                                     </div>
                             </div>
 
@@ -3306,7 +3301,7 @@ arrays instead, so lets take advantage of that here.</p></div>
                                             <a id="method_trackAliases"></a>
                         <div class="element clickable method protected  method_trackAliases inherited" data-toggle="collapse" data-target=".method_trackAliases .collapse">
                             <h2>Track Aliases</h2>
-                            <pre>trackAliases(string $table) : string</pre>
+                            <pre>trackAliases(string|array $table) : string|void</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3321,11 +3316,11 @@ arrays instead, so lets take advantage of that here.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$table</h4>
-                                                <code>string</code><p><p>The table to inspect</p></p>
+                                                <code>string|array</code><p><p>The table to inspect</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>string</code><p></p>
+                                        <code>string|void</code><p></p>
                                                                     </div>
                             </div>
 
@@ -3449,7 +3444,7 @@ This function maps to &quot;DELETE FROM table&quot;</p></div>
                                             <a id="method_validateInsert"></a>
                         <div class="element clickable method protected  method_validateInsert inherited" data-toggle="collapse" data-target=".method_validateInsert .collapse">
                             <h2>Validate Insert</h2>
-                            <pre>validateInsert() : string</pre>
+                            <pre>validateInsert() : boolean</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -3481,7 +3476,7 @@ has been chosen to be inserted into.</p></div>
 
                                     
                                                                             <h3>Response</h3>
-                                        <code>string</code><p></p>
+                                        <code>boolean</code><p></p>
                                                                     </div>
                             </div>
 
@@ -4033,6 +4028,32 @@ joined with 'AND' if appropriate.</p></div>
                                                                             </div>
                                 </div>
                             </div>
+                                                    <a id="property_QBNoEscape"> </a>
+                            <div class="element clickable property  public property_QBNoEscape inherited" data-toggle="collapse" data-target=".property_QBNoEscape .collapse">
+                                <h2>QB NO ESCAPE data</h2>
+                                <pre>QBNoEscape : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                     <a id="property_QBSet"> </a>
                             <div class="element clickable property  protected property_QBSet inherited" data-toggle="collapse" data-target=".property_QBSet .collapse">
                                 <h2>QB data sets</h2>
@@ -4300,7 +4321,7 @@ allow limit update queries with WHERE.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 27 Mar 2019 21:06:45 -0700.<br/>
+            generated on Sun, 07 Apr 2019 08:44:02 -0700.<br/>
     </footer>
     </body>
 </html>
