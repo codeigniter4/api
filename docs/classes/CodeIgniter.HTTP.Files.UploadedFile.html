@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\HTTP\Files\UploadedFile
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">CodeIgniter v4.0.0 API</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
+                                                                        <li><a href="../namespaces/Psr.html">Psr</a></li>
+                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: Accepts the file information as would be filled in from the $_FILES array.">
+            <span class="description">Accepts the file information as would be filled in from the $_FILES array.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getClientExtension" title="getClientExtension :: Returns the original file extension, based on the file name that
+was uploaded. This is NOT a trusted source.">
+            <span class="description">Returns the original file extension, based on the file name that
+was uploaded. This is NOT a trusted source.</span><pre>getClientExtension</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getClientMimeType" title="getClientMimeType :: Returns the mime type as provided by the client.">
+            <span class="description">Returns the mime type as provided by the client.</span><pre>getClientMimeType</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getClientName" title="getClientName :: Returns the name of the file as provided by the client during upload.">
+            <span class="description">Returns the name of the file as provided by the client during upload.</span><pre>getClientName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getError" title="getError :: Retrieve the error associated with the uploaded file.">
+            <span class="description">Retrieve the error associated with the uploaded file.</span><pre>getError</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getErrorString" title="getErrorString :: Get error string">
+            <span class="description">Get error string</span><pre>getErrorString</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getExtension" title="getExtension :: Overrides SPLFileInfo&#039;s to work with uploaded files, since
+the temp file that&#039;s been uploaded doesn&#039;t have an extension.">
+            <span class="description">Overrides SPLFileInfo&#039;s to work with uploaded files, since
+the temp file that&#039;s been uploaded doesn&#039;t have an extension.</span><pre>getExtension</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getName" title="getName :: Retrieve the filename. This will typically be the filename sent
+by the client, and should not be trusted. If the file has been
+moved, this will return the final name of the moved file.">
+            <span class="description">Retrieve the filename. This will typically be the filename sent
+by the client, and should not be trusted. If the file has been
+moved, this will return the final name of the moved file.</span><pre>getName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getTempName" title="getTempName :: Gets the temporary filename where the file was uploaded to.">
+            <span class="description">Gets the temporary filename where the file was uploaded to.</span><pre>getTempName</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_guessExtension" title="guessExtension :: Attempts to determine the best file extension.">
+            <span class="description">Attempts to determine the best file extension.</span><pre>guessExtension</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_hasMoved" title="hasMoved :: Returns whether the file has been moved or not. If it has,
+the move() method will not work and certain properties, like
+the tempName, will no longer be available.">
+            <span class="description">Returns whether the file has been moved or not. If it has,
+the move() method will not work and certain properties, like
+the tempName, will no longer be available.</span><pre>hasMoved</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_isValid" title="isValid :: Returns whether the file was uploaded successfully, based on whether
+it was uploaded via HTTP and has no errors.">
+            <span class="description">Returns whether the file was uploaded successfully, based on whether
+it was uploaded via HTTP and has no errors.</span><pre>isValid</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_move" title="move :: Move the uploaded file to a new location.">
+            <span class="description">Move the uploaded file to a new location.</span><pre>move</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_store" title="store :: Save the uploaded file to a new location.">
+            <span class="description">Save the uploaded file to a new location.</span><pre>store</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected">
+                            <a href="#method_setPath" title="setPath :: create file target path if
+the set path does not exist">
+                                <span class="description">create file target path if
+the set path does not exist</span><pre>setPath</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>UploadedFile</h1>
+                <small style="display: block; text-align: right">
+                                            Extends \CodeIgniter\Files\File
+                                                                Implements <a href="../classes/CodeIgniter.HTTP.Files.UploadedFileInterface.html">\CodeIgniter\HTTP\Files\UploadedFileInterface</a>
+                                    </small>
+                <p class="short_description">Value object representing a single file uploaded through an
+HTTP request. Used by the IncomingRequest class to
+provide files.</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>Typically, implementors will extend the SplFileInfo class.</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>CodeIgniter\HTTP</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>Accepts the file information as would be filled in from the $_FILES array.</h2>
+                            <pre>__construct(string $path, string $originalName, string $mimeType = null, integer $size = null, integer $error = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p><p>The temporary location of the uploaded file.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$originalName</h4>
+                                                <code>string</code><p><p>The client-provided filename.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mimeType</h4>
+                                                <code>string</code><p><p>The type of file as provided by PHP</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$size</h4>
+                                                <code>integer</code><p><p>The size of the file, in bytes</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$error</h4>
+                                                <code>integer</code><p><p>The error constant of the upload (one of PHP's UPLOADERRXXX constants)</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getClientExtension"></a>
+                        <div class="element clickable method public  method_getClientExtension" data-toggle="collapse" data-target=".method_getClientExtension .collapse">
+                            <h2>Returns the original file extension, based on the file name that
+was uploaded. This is NOT a trusted source.</h2>
+                            <pre>getClientExtension() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>For a trusted version, use guessExtension() instead.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getClientMimeType"></a>
+                        <div class="element clickable method public  method_getClientMimeType" data-toggle="collapse" data-target=".method_getClientMimeType .collapse">
+                            <h2>Returns the mime type as provided by the client.</h2>
+                            <pre>getClientMimeType() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This is NOT a trusted value.
+For a trusted version, use getMimeType() instead.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The media type sent by the client or null if none was provided.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getClientName"></a>
+                        <div class="element clickable method public  method_getClientName" data-toggle="collapse" data-target=".method_getClientName .collapse">
+                            <h2>Returns the name of the file as provided by the client during upload.</h2>
+                            <pre>getClientName() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getError"></a>
+                        <div class="element clickable method public  method_getError" data-toggle="collapse" data-target=".method_getError .collapse">
+                            <h2>Retrieve the error associated with the uploaded file.</h2>
+                            <pre>getError() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>The return value MUST be one of PHP's UPLOAD_ERR_XXX constants.</p>
+<p>If the file was uploaded successfully, this method MUST return
+UPLOAD_ERR_OK.</p>
+<p>Implementations SHOULD return the value stored in the &quot;error&quot; key of
+the file in the $_FILES array.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="http://php.net/manual/en/features.file-upload.errors.php">http://php.net/manual/en/features.file-upload.errors.php</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p><p>One of PHP's UPLOAD_ERR_XXX constants.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getErrorString"></a>
+                        <div class="element clickable method public  method_getErrorString" data-toggle="collapse" data-target=".method_getErrorString .collapse">
+                            <h2>Get error string</h2>
+                            <pre>getErrorString() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getExtension"></a>
+                        <div class="element clickable method public  method_getExtension" data-toggle="collapse" data-target=".method_getExtension .collapse">
+                            <h2>Overrides SPLFileInfo&#039;s to work with uploaded files, since
+the temp file that&#039;s been uploaded doesn&#039;t have an extension.</h2>
+                            <pre>getExtension() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Is simply an alias for guessExtension for a safer method
+than simply relying on the provided extension.
+Additionally it will return clientExtension in case if there are
+other extensions with the same mime type.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getName"></a>
+                        <div class="element clickable method public  method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+                            <h2>Retrieve the filename. This will typically be the filename sent
+by the client, and should not be trusted. If the file has been
+moved, this will return the final name of the moved file.</h2>
+                            <pre>getName() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Do not trust the value returned by this method. A client could send
+a malicious filename with the intention to corrupt or hack your
+application.</p>
+<p>Implementations SHOULD return the value stored in the &quot;name&quot; key of
+the file in the $_FILES array.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The filename sent by the client or null if none was provided.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getTempName"></a>
+                        <div class="element clickable method public  method_getTempName" data-toggle="collapse" data-target=".method_getTempName .collapse">
+                            <h2>Gets the temporary filename where the file was uploaded to.</h2>
+                            <pre>getTempName() : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_guessExtension"></a>
+                        <div class="element clickable method public  method_guessExtension" data-toggle="collapse" data-target=".method_guessExtension .collapse">
+                            <h2>Attempts to determine the best file extension.</h2>
+                            <pre>guessExtension() : string|null</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_hasMoved"></a>
+                        <div class="element clickable method public  method_hasMoved" data-toggle="collapse" data-target=".method_hasMoved .collapse">
+                            <h2>Returns whether the file has been moved or not. If it has,
+the move() method will not work and certain properties, like
+the tempName, will no longer be available.</h2>
+                            <pre>hasMoved() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_isValid"></a>
+                        <div class="element clickable method public  method_isValid" data-toggle="collapse" data-target=".method_isValid .collapse">
+                            <h2>Returns whether the file was uploaded successfully, based on whether
+it was uploaded via HTTP and has no errors.</h2>
+                            <pre>isValid() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_move"></a>
+                        <div class="element clickable method public  method_move" data-toggle="collapse" data-target=".method_move .collapse">
+                            <h2>Move the uploaded file to a new location.</h2>
+                            <pre>move(string $targetPath, string $name = null, boolean $overwrite = false) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>$targetPath may be an absolute path, or a relative path. If it is a
+relative path, resolution should be the same as used by PHP's rename()
+function.</p>
+<p>The original file MUST be removed on completion.</p>
+<p>If this method is called more than once, any subsequent calls MUST raise
+an exception.</p>
+<p>When used in an SAPI environment where $_FILES is populated, when writing
+files via moveTo(), is_uploaded_file() and move_uploaded_file() SHOULD be
+used to ensure permissions and upload status are verified correctly.</p>
+<p>If you wish to move to a stream, use getStream(), as SAPI operations
+cannot guarantee writing to stream destinations.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    see
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="http://php.net/is_uploaded_file">http://php.net/is_uploaded_file</a>
+                                                                                                                
+                                                                                                                                                                        
+                                                                                                                                                                            <a href="http://php.net/move_uploaded_file">http://php.net/move_uploaded_file</a>
+                                                                                                                
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\InvalidArgumentException</dt>
+                                                        <dd><p>if the $path specified is invalid.</p></dd>
+                                                                                                            <dt>\RuntimeException</dt>
+                                                        <dd><p>on any error during the move operation.</p></dd>
+                                                                                                            <dt>\RuntimeException</dt>
+                                                        <dd><p>on the second or subsequent call to the method.</p></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$targetPath</h4>
+                                                <code>string</code><p><p>Path to which to move the uploaded file.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>the name to rename the file to.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$overwrite</h4>
+                                                <code>boolean</code><p><p>State for indicating whether to overwrite the previously generated file with the same
+name or not.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setPath"></a>
+                        <div class="element clickable method protected  method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
+                            <h2>create file target path if
+the set path does not exist</h2>
+                            <pre>setPath(string $path) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$path</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>The path set or created.</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_store"></a>
+                        <div class="element clickable method public  method_store" data-toggle="collapse" data-target=".method_store .collapse">
+                            <h2>Save the uploaded file to a new location.</h2>
+                            <pre>store(string $folderName = null, string $fileName = null) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>By default, upload files are saved in writable/uploads directory. The YYYYMMDD folder
+and random file name will be created.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$folderName</h4>
+                                                <code>string</code><p><p>the folder name to writable/uploads directory.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$fileName</h4>
+                                                <code>string</code><p><p>the name to rename the file to.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p><p>file full path</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_path"> </a>
+                            <div class="element clickable property  protected property_path" data-toggle="collapse" data-target=".property_path .collapse">
+                                <h2>The path to the temporary file.</h2>
+                                <pre>path : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_originalName"> </a>
+                            <div class="element clickable property  protected property_originalName" data-toggle="collapse" data-target=".property_originalName .collapse">
+                                <h2>The original filename as provided by the client.</h2>
+                                <pre>originalName : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_name"> </a>
+                            <div class="element clickable property  protected property_name" data-toggle="collapse" data-target=".property_name .collapse">
+                                <h2>The filename given to a file during a move.</h2>
+                                <pre>name : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_originalMimeType"> </a>
+                            <div class="element clickable property  protected property_originalMimeType" data-toggle="collapse" data-target=".property_originalMimeType .collapse">
+                                <h2>The type of file as provided by PHP</h2>
+                                <pre>originalMimeType : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_error"> </a>
+                            <div class="element clickable property  protected property_error" data-toggle="collapse" data-target=".property_error .collapse">
+                                <h2>The error constant of the upload
+(one of PHP&#039;s UPLOADERRXXX constants)</h2>
+                                <pre>error : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_hasMoved"> </a>
+                            <div class="element clickable property  protected property_hasMoved" data-toggle="collapse" data-target=".property_hasMoved .collapse">
+                                <h2>Whether the file has been moved already or not.</h2>
+                                <pre>hasMoved : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\CodeIgniter\HTTP\Files\UploadedFile"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Files.html">Files</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.HTTP.Files.UploadedFile.html">UploadedFile</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Tue, 20 Aug 2019 09:03:33 -0700.<br/>
+    </footer>
+    </body>
+</html>

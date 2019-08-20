@@ -128,12 +128,12 @@
     </li>
 
                                                                                                                                                                 <li class="method public">
-        <a href="#method_current" title="current :: Sets the (APP_NAMESPACE) schema to $currentVersion in migration config file">
-            <span class="description">Sets the (APP_NAMESPACE) schema to $currentVersion in migration config file</span><pre>current</pre>
+        <a href="#method_clearHistory" title="clearHistory :: Truncates the history table.">
+            <span class="description">Truncates the history table.</span><pre>clearHistory</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_ensureTable" title="ensureTable :: Ensures that we have created our migrations table
 in the database.">
             <span class="description">Ensures that we have created our migrations table
@@ -144,6 +144,18 @@ in the database.</span><pre>ensureTable</pre>
                                                                                                         <li class="method public">
         <a href="#method_findMigrations" title="findMigrations :: Retrieves list of available migration scripts for one namespace">
             <span class="description">Retrieves list of available migration scripts for one namespace</span><pre>findMigrations</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getBatchEnd" title="getBatchEnd :: Returns the version number of the last migration for a batch.">
+            <span class="description">Returns the version number of the last migration for a batch.</span><pre>getBatchEnd</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getBatchStart" title="getBatchStart :: Returns the version number of the first migration for a batch.">
+            <span class="description">Returns the version number of the first migration for a batch.</span><pre>getBatchStart</pre>
         </a>
     </li>
 
@@ -159,6 +171,12 @@ in the database.</span><pre>ensureTable</pre>
         </a>
     </li>
 
+                                                                                                        <li class="method public">
+        <a href="#method_getLastBatch" title="getLastBatch :: Returns the value of the last batch in the database.">
+            <span class="description">Returns the value of the last batch in the database.</span><pre>getLastBatch</pre>
+        </a>
+    </li>
+
                                                                                                                                                                                                                                                                                 <li class="method public">
         <a href="#method_latest" title="latest :: Sets the schema to the latest migration">
             <span class="description">Sets the schema to the latest migration</span><pre>latest</pre>
@@ -171,7 +189,7 @@ in the database.</span><pre>ensureTable</pre>
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public">
+                                                                                                                                                                                                                        <li class="method public">
         <a href="#method_setGroup" title="setGroup :: Set database Group.">
             <span class="description">Set database Group.</span><pre>setGroup</pre>
         </a>
@@ -207,7 +225,7 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_version" title="version :: Migrate to a schema version">
             <span class="description">Migrate to a schema version</span><pre>version</pre>
         </a>
@@ -219,14 +237,17 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
             <ul>
                                                                                                                 <li class="method protected">
                             <a href="#method_checkMigrations" title="checkMigrations :: checks if the list of available migration scripts list are consistent
- if sequential check if no gaps and check if all consistent with migrations table if downgrading
  if timestamp check if consistent with migrations table if downgrading">
                                 <span class="description">checks if the list of available migration scripts list are consistent
- if sequential check if no gaps and check if all consistent with migrations table if downgrading
  if timestamp check if consistent with migrations table if downgrading</span><pre>checkMigrations</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                    <li class="method protected">
+                                                                                                                    <li class="method protected">
+                            <a href="#method_determineDirection" title="determineDirection :: ">
+                                <span class="description"></span><pre>determineDirection</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
                             <a href="#method_getMigrationName" title="getMigrationName :: Extracts the migration class name from a filename">
                                 <span class="description">Extracts the migration class name from a filename</span><pre>getMigrationName</pre>
                             </a>
@@ -242,15 +263,27 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
                             </a>
                         </li>
                                                                                                                                                         <li class="method protected">
+                            <a href="#method_migrate" title="migrate :: Handles the actual running of migrations.">
+                                <span class="description">Handles the actual running of migrations.</span><pre>migrate</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
                             <a href="#method_removeHistory" title="removeHistory :: Removes a single history">
                                 <span class="description">Removes a single history</span><pre>removeHistory</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                    <li class="method protected">
+                            <a href="#method_updateHistory" title="updateHistory :: Given an array of history items will either remove them
+of add them to the table.">
+                                <span class="description">Given an array of history items will either remove them
+of add them to the table.</span><pre>updateHistory</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -338,7 +371,6 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
                                             <a id="method_checkMigrations"></a>
                         <div class="element clickable method protected  method_checkMigrations" data-toggle="collapse" data-target=".method_checkMigrations .collapse">
                             <h2>checks if the list of available migration scripts list are consistent
- if sequential check if no gaps and check if all consistent with migrations table if downgrading
  if timestamp check if consistent with migrations table if downgrading</h2>
                             <pre>checkMigrations(array $migrations, string $method, string $targetVersion) : boolean</pre>
                             <div class="labels">
@@ -372,10 +404,39 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
                             </div>
 
                         </div>
-                                            <a id="method_current"></a>
-                        <div class="element clickable method public  method_current" data-toggle="collapse" data-target=".method_current .collapse">
-                            <h2>Sets the (APP_NAMESPACE) schema to $currentVersion in migration config file</h2>
-                            <pre>current(string|null $group = null) : mixed</pre>
+                                            <a id="method_clearHistory"></a>
+                        <div class="element clickable method public  method_clearHistory" data-toggle="collapse" data-target=".method_clearHistory .collapse">
+                            <h2>Truncates the history table.</h2>
+                            <pre>clearHistory() : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_determineDirection"></a>
+                        <div class="element clickable method protected  method_determineDirection" data-toggle="collapse" data-target=".method_determineDirection .collapse">
+                            <h2>determineDirection</h2>
+                            <pre>determineDirection(string $targetVersion, string $currentVersion, array &$migrations) : array</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -389,12 +450,20 @@ attempt to continue gracefully.</span><pre>setSilent</pre>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$group</h4>
-                                                <code>string|null</code><p></p>
+                                                <h4>$targetVersion</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$currentVersion</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$migrations</h4>
+                                                <code>array</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p><p>Current version string on success, FALSE on failure or no migrations are found</p></p>
+                                        <code>array</code><p></p>
                                                                     </div>
                             </div>
 
@@ -463,6 +532,60 @@ in the database.</h2>
                             </div>
 
                         </div>
+                                            <a id="method_getBatchEnd"></a>
+                        <div class="element clickable method public  method_getBatchEnd" data-toggle="collapse" data-target=".method_getBatchEnd .collapse">
+                            <h2>Returns the version number of the last migration for a batch.</h2>
+                            <pre>getBatchEnd(integer $batch) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$batch</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getBatchStart"></a>
+                        <div class="element clickable method public  method_getBatchStart" data-toggle="collapse" data-target=".method_getBatchStart .collapse">
+                            <h2>Returns the version number of the first migration for a batch.</h2>
+                            <pre>getBatchStart(integer $batch) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$batch</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_getCliMessages"></a>
                         <div class="element clickable method public  method_getCliMessages" data-toggle="collapse" data-target=".method_getCliMessages .collapse">
                             <h2>Retrieves current schema version</h2>
@@ -515,6 +638,35 @@ in the database.</h2>
                                                                             
                                                                             <h3>Response</h3>
                                         <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getLastBatch"></a>
+                        <div class="element clickable method public  method_getLastBatch" data-toggle="collapse" data-target=".method_getLastBatch .collapse">
+                            <h2>Returns the value of the last batch in the database.</h2>
+                            <pre>getLastBatch() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
                                                                     </div>
                             </div>
 
@@ -652,6 +804,41 @@ in the database.</h2>
                                                                                     <div class="subelement argument">
                                                 <h4>$group</h4>
                                                 <code>string|null</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_migrate"></a>
+                        <div class="element clickable method protected  method_migrate" data-toggle="collapse" data-target=".method_migrate .collapse">
+                            <h2>Handles the actual running of migrations.</h2>
+                            <pre>migrate( $direction,  $migrations, string $targetVersion) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$direction</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$migrations</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$targetVersion</h4>
+                                                <code>string</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -823,6 +1010,47 @@ attempt to continue gracefully.</h2>
                             </div>
 
                         </div>
+                                            <a id="method_updateHistory"></a>
+                        <div class="element clickable method protected  method_updateHistory" data-toggle="collapse" data-target=".method_updateHistory .collapse">
+                            <h2>Given an array of history items will either remove them
+of add them to the table.</h2>
+                            <pre>updateHistory(array $histories, string $method, integer $batch) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$histories</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$batch</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_version"></a>
                         <div class="element clickable method public  method_version" data-toggle="collapse" data-target=".method_version .collapse">
                             <h2>Migrate to a schema version</h2>
@@ -897,32 +1125,6 @@ choice</p></div>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_type"> </a>
-                            <div class="element clickable property  protected property_type" data-toggle="collapse" data-target=".property_type .collapse">
-                                <h2>The type of migrations to use (sequential or timestamp)</h2>
-                                <pre>type : string</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
                                                     <a id="property_table"> </a>
                             <div class="element clickable property  protected property_table" data-toggle="collapse" data-target=".property_table .collapse">
                                 <h2>Name of table to store meta information</h2>
@@ -946,32 +1148,6 @@ choice</p></div>
 
                                                                                     <h3>Type(s)</h3>
                                             <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_currentVersion"> </a>
-                            <div class="element clickable property  protected property_currentVersion" data-toggle="collapse" data-target=".property_currentVersion .collapse">
-                                <h2>The version that current() will take us to.</h2>
-                                <pre>currentVersion : integer</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>integer</code>
                                                                             </div>
                                 </div>
                             </div>
@@ -1232,7 +1408,7 @@ the table exists or not.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 06 May 2019 14:58:14 -0700.<br/>
+            generated on Tue, 20 Aug 2019 09:03:35 -0700.<br/>
     </footer>
     </body>
 </html>

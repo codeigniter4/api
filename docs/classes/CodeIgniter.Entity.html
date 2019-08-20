@@ -154,8 +154,8 @@ either through a direct access or a `setCamelCasedProperty()` method.</span><pre
     </li>
 
                                                                                                         <li class="method public">
-        <a href="#method___unset" title="__unset :: Unsets a protected/private class property. Sets the value to null.">
-            <span class="description">Unsets a protected/private class property. Sets the value to null.</span><pre>__unset</pre>
+        <a href="#method___unset" title="__unset :: Unsets an attribute property.">
+            <span class="description">Unsets an attribute property.</span><pre>__unset</pre>
         </a>
     </li>
 
@@ -169,7 +169,25 @@ that may or may not exist.</span><pre>fill</pre>
         </a>
     </li>
 
-                                                                                                                                                                                                                                                                                <li class="method public">
+                                                                                                        <li class="method public">
+        <a href="#method_hasChanged" title="hasChanged :: Checks a property to see if it has changed since the entity was created.">
+            <span class="description">Checks a property to see if it has changed since the entity was created.</span><pre>hasChanged</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_setAttributes" title="setAttributes :: Set raw data array without any mutations">
+            <span class="description">Set raw data array without any mutations</span><pre>setAttributes</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_syncOriginal" title="syncOriginal :: Ensures our &quot;original&quot; values match the current values.">
+            <span class="description">Ensures our &quot;original&quot; values match the current values.</span><pre>syncOriginal</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
         <a href="#method_toArray" title="toArray :: General method that will return all public and protected
 values of this entity as an array. All values are accessed
 through the __get() magic method so will have any casts, etc
@@ -182,12 +200,8 @@ applied to them.</span><pre>toArray</pre>
     </li>
 
                                                                                                         <li class="method public">
-        <a href="#method_toRawArray" title="toRawArray :: Converts the properties of this class into an array. Unlike toArray()
-this will not cast the data or use any magic accessors. It simply
-returns the raw data for use when saving to the model, etc.">
-            <span class="description">Converts the properties of this class into an array. Unlike toArray()
-this will not cast the data or use any magic accessors. It simply
-returns the raw data for use when saving to the model, etc.</span><pre>toRawArray</pre>
+        <a href="#method_toRawArray" title="toRawArray :: Returns the raw values of the current attributes.">
+            <span class="description">Returns the raw values of the current attributes.</span><pre>toRawArray</pre>
         </a>
     </li>
 
@@ -200,12 +214,7 @@ returns the raw data for use when saving to the model, etc.</span><pre>toRawArra
                                 <span class="description">Provides the ability to cast an item as a specific data type.</span><pre>castAs</pre>
                             </a>
                         </li>
-                                                                                                                                                        <li class="method protected">
-                            <a href="#method_hasPropertyChanged" title="hasPropertyChanged :: Checks a property to see if it has changed since the entity was created.">
-                                <span class="description">Checks a property to see if it has changed since the entity was created.</span><pre>hasPropertyChanged</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected">
+                                                                                                                                                                                            <li class="method protected">
                             <a href="#method_mapProperty" title="mapProperty :: Checks the datamap to see if this column name is being mapped,
 and returns the mapped name, if any, or the original name.">
                                 <span class="description">Checks the datamap to see if this column name is being mapped,
@@ -219,7 +228,7 @@ into a \CodeIgniter\I18n\Time object.">
 into a \CodeIgniter\I18n\Time object.</span><pre>mutateDate</pre>
                             </a>
                         </li>
-                                                                                                                        </ul>
+                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
@@ -228,7 +237,7 @@ into a \CodeIgniter\I18n\Time object.</span><pre>mutateDate</pre>
                                 <span class="description">Cast as JSON</span><pre>castAsJson</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -408,7 +417,7 @@ either through a direct access or a `setCamelCasedProperty()` method.</h2>
                         </div>
                                             <a id="method___unset"></a>
                         <div class="element clickable method public  method___unset" data-toggle="collapse" data-target=".method___unset .collapse">
-                            <h2>Unsets a protected/private class property. Sets the value to null.</h2>
+                            <h2>Unsets an attribute property.</h2>
                             <pre>__unset(string $key) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
@@ -416,8 +425,7 @@ either through a direct access or a `setCamelCasedProperty()` method.</h2>
                             
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"><p>However, if there was a default value for the parent class, this
-attribute will be reset to that default value.</p></div>
+                                    <div class="long_description"></div>
 
                                     <table class="table">
                                                                                     <tr>
@@ -533,7 +541,7 @@ attribute will be reset to that default value.</p></div>
                             <h2>Takes an array of key/value pairs and sets them as
 class properties, using any `setCamelCasedProperty()` methods
 that may or may not exist.</h2>
-                            <pre>fill(array $data) : \CodeIgniter\Entity</pre>
+                            <pre>fill(array $data = null) : \CodeIgniter\Entity</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -557,17 +565,17 @@ that may or may not exist.</h2>
                             </div>
 
                         </div>
-                                            <a id="method_hasPropertyChanged"></a>
-                        <div class="element clickable method protected  method_hasPropertyChanged" data-toggle="collapse" data-target=".method_hasPropertyChanged .collapse">
+                                            <a id="method_hasChanged"></a>
+                        <div class="element clickable method public  method_hasChanged" data-toggle="collapse" data-target=".method_hasChanged .collapse">
                             <h2>Checks a property to see if it has changed since the entity was created.</h2>
-                            <pre>hasPropertyChanged(string $key, null $value = null) : boolean</pre>
+                            <pre>hasChanged(string $key = null) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
                             
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"></div>
+                                    <div class="long_description"><p>Or, without a parameter, checks if any properties have changed.</p></div>
 
                                     <table class="table">
                                                                                                                     </table>
@@ -576,10 +584,6 @@ that may or may not exist.</h2>
                                                                                     <div class="subelement argument">
                                                 <h4>$key</h4>
                                                 <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$value</h4>
-                                                <code>null</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -653,6 +657,62 @@ into a \CodeIgniter\I18n\Time object.</h2>
                             </div>
 
                         </div>
+                                            <a id="method_setAttributes"></a>
+                        <div class="element clickable method public  method_setAttributes" data-toggle="collapse" data-target=".method_setAttributes .collapse">
+                            <h2>Set raw data array without any mutations</h2>
+                            <pre>setAttributes(array $data) : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_syncOriginal"></a>
+                        <div class="element clickable method public  method_syncOriginal" data-toggle="collapse" data-target=".method_syncOriginal .collapse">
+                            <h2>Ensures our &quot;original&quot; values match the current values.</h2>
+                            <pre>syncOriginal() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_toArray"></a>
                         <div class="element clickable method public  method_toArray" data-toggle="collapse" data-target=".method_toArray .collapse">
                             <h2>General method that will return all public and protected
@@ -698,9 +758,7 @@ applied to them.</h2>
                         </div>
                                             <a id="method_toRawArray"></a>
                         <div class="element clickable method public  method_toRawArray" data-toggle="collapse" data-target=".method_toRawArray .collapse">
-                            <h2>Converts the properties of this class into an array. Unlike toArray()
-this will not cast the data or use any magic accessors. It simply
-returns the raw data for use when saving to the model, etc.</h2>
+                            <h2>Returns the raw values of the current attributes.</h2>
                             <pre>toRawArray(boolean $onlyChanged = false) : array</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
@@ -728,12 +786,12 @@ returns the raw data for use when saving to the model, etc.</h2>
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property__options"> </a>
-                            <div class="element clickable property  protected property__options" data-toggle="collapse" data-target=".property__options .collapse">
+                                                    <a id="property_datamap"> </a>
+                            <div class="element clickable property  protected property_datamap" data-toggle="collapse" data-target=".property_datamap .collapse">
                                 <h2>Maps names used in sets and gets against unique
 names within the class, allowing independence from
 database column names.</h2>
-                                <pre>_options : </pre>
+                                <pre>datamap : </pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -758,12 +816,89 @@ $datamap = [
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property__original"> </a>
-                            <div class="element clickable property  protected property__original" data-toggle="collapse" data-target=".property__original .collapse">
+                                                    <a id="property_dates"> </a>
+                            <div class="element clickable property  protected property_dates" data-toggle="collapse" data-target=".property_dates .collapse">
+                                <h2>dates</h2>
+                                <pre>dates : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_casts"> </a>
+                            <div class="element clickable property  protected property_casts" data-toggle="collapse" data-target=".property_casts .collapse">
+                                <h2>Array of field names and the type of value to cast them as
+when they are accessed.</h2>
+                                <pre>casts : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_attributes"> </a>
+                            <div class="element clickable property  protected property_attributes" data-toggle="collapse" data-target=".property_attributes .collapse">
+                                <h2>Holds the current values of all class vars.</h2>
+                                <pre>attributes : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_original"> </a>
+                            <div class="element clickable property  protected property_original" data-toggle="collapse" data-target=".property_original .collapse">
                                 <h2>Holds original copies of all class vars so
 we can determine what&#039;s actually been changed
 and not accidentally write nulls where we shouldn&#039;t.</h2>
-                                <pre>_original : array</pre>
+                                <pre>original : array</pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -832,7 +967,7 @@ and not accidentally write nulls where we shouldn&#039;t.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Mon, 06 May 2019 14:58:14 -0700.<br/>
+            generated on Tue, 20 Aug 2019 09:03:35 -0700.<br/>
     </footer>
     </body>
 </html>
