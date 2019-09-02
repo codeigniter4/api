@@ -296,6 +296,12 @@ for grouping items into an admin area, like:</span><pre>group</pre>
     </li>
 
                                                                                                         <li class="method public">
+        <a href="#method_presenter" title="presenter :: Creates a collections of HTTP-verb based routes for a presenter controller.">
+            <span class="description">Creates a collections of HTTP-verb based routes for a presenter controller.</span><pre>presenter</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
         <a href="#method_put" title="put :: Specifies a route that is only available to PUT requests.">
             <span class="description">Specifies a route that is only available to PUT requests.</span><pre>put</pre>
         </a>
@@ -432,7 +438,7 @@ the local PSR4 namespaces, or through selected Composer packages.</span><pre>dis
                                 <span class="description">Given a</span><pre>fillRouteParams</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
@@ -450,7 +456,7 @@ won&#039;t be perfect, but should work for our needs.">
 won&#039;t be perfect, but should work for our needs.</span><pre>determineCurrentSubdomain</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -1508,6 +1514,53 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                             </div>
 
                         </div>
+                                            <a id="method_presenter"></a>
+                        <div class="element clickable method public  method_presenter" data-toggle="collapse" data-target=".method_presenter .collapse">
+                            <h2>Creates a collections of HTTP-verb based routes for a presenter controller.</h2>
+                            <pre>presenter(string $name, array $options = null) : \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Possible Options:
+'controller'    - Customize the name of the controller used in the 'to' route
+'placeholder'   - The regex used by the Router. Defaults to '(:any)'</p>
+<p>Example:</p>
+<pre><code> $route-&gt;presenter('photos');
+
+ // Generates the following routes:
+ HTTP Verb | Path        | Action        | Used for...
+ ----------+-------------+---------------+-----------------
+ GET         /photos             index           showing all array of photo objects
+ GET         /photos/show/{id}   show            showing a specific photo object, all properties
+ GET         /photos/new         new             showing a form for an empty photo object, with default properties
+ POST        /photos/create      create          processing the form for a new photo
+ GET         /photos/edit/{id}   edit            show an editing form for a specific photo object, editable properties
+ POST        /photos/update/{id} update          process the editing form data
+ GET         /photos/remove/{id} remove          show a form to confirm deletion of a specific photo object
+ POST        /photos/delete/{id} delete          deleting the specified photo object</code></pre></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p><p>The name of the controller to route to.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$options</h4>
+                                                <code>array</code><p><p>An list of possible ways to customize the routing.</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_put"></a>
                         <div class="element clickable method public  method_put" data-toggle="collapse" data-target=".method_put .collapse">
                             <h2>Specifies a route that is only available to PUT requests.</h2>
@@ -1590,22 +1643,24 @@ explicit ones needed for it.</h2>
                                 <div class="detail-description">
                                     <div class="long_description"><p>Possible Options:
 'controller'    - Customize the name of the controller used in the 'to' route
-'placeholder'   - The regex used by the Router. Defaults to '(:any)'</p>
-<p>Example:
-$route-&gt;resource('photos');</p>
-<pre><code> // Generates the following routes:
+'placeholder'   - The regex used by the Router. Defaults to '(:any)'
+'websafe'   -  - '1' if only GET and POST HTTP verbs are supported</p>
+<p>Example:</p>
+<pre><code> $route-&gt;resource('photos');
+
+ // Generates the following routes:
  HTTP Verb | Path        | Action        | Used for...
  ----------+-------------+---------------+-----------------
- GET         /photos             index           display a list of photos
- GET         /photos/new         new             new a specific photo
- GET         /photos/{id}/edit   edit            edit a specific photo
- GET         /photos/{id}        show            display a specific photo
- POST        /photos             create          create a new photo
- PUT/PATCH   /photos/{id}        update          update an existing photo
- DELETE      /photos/{id}        delete          delete an existing photo</code></pre>
+ GET         /photos             index           an array of photo objects
+ GET         /photos/new         new             an empty photo object, with default properties
+ GET         /photos/{id}/edit   edit            a specific photo object, editable properties
+ GET         /photos/{id}        show            a specific photo object, all properties
+ POST        /photos             create          a new photo object, to add to the resource
+ DELETE      /photos/{id}        delete          deletes the specified photo object
+ PUT/PATCH   /photos/{id}        update          replacement properties for existing photo</code></pre>
 <p>If 'websafe' option is present, the following paths are also available:</p>
-<pre><code> POST        /photos/{id}        update
- DELETE      /photos/{id}/delete delete</code></pre></div>
+<pre><code> POST       /photos/{id}/delete delete
+ POST        /photos/{id}        update</code></pre></div>
 
                                     <table class="table">
                                                                                                                     </table>
@@ -1613,7 +1668,7 @@ $route-&gt;resource('photos');</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$name</h4>
-                                                <code>string</code><p><p>The name of the controller to route to.</p></p>
+                                                <code>string</code><p><p>The name of the resource/controller to route to.</p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$options</h4>
@@ -2448,7 +2503,7 @@ applied during creation.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Sun, 01 Sep 2019 00:54:47 -0700.<br/>
+            generated on Sun, 01 Sep 2019 21:16:24 -0700.<br/>
     </footer>
     </body>
 </html>
