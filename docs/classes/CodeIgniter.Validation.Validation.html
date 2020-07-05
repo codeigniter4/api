@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -135,7 +135,7 @@ determining whether validation was successful or not.</span><pre>check</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_getError" title="getError :: Returns the error(s) for a specified $field (or empty string if not
 set).">
             <span class="description">Returns the error(s) for a specified $field (or empty string if not
@@ -245,7 +245,16 @@ array values.</span><pre>withRequest</pre>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                        <li class="method protected">
+                                                                                                                                                    <li class="method protected">
+                            <a href="#method_fillPlaceholders" title="fillPlaceholders :: Replace any placeholders within the rules with the values that
+match the &#039;key&#039; of any properties being set. For example, if
+we had the following $data array:">
+                                <span class="description">Replace any placeholders within the rules with the values that
+match the &#039;key&#039; of any properties being set. For example, if
+we had the following $data array:</span><pre>fillPlaceholders</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
                             <a href="#method_getErrorMessage" title="getErrorMessage :: Attempts to find the appropriate error message">
                                 <span class="description">Attempts to find the appropriate error message</span><pre>getErrorMessage</pre>
                             </a>
@@ -277,7 +286,7 @@ so that we can collect all of the first errors.</span><pre>processRules</pre>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -385,6 +394,43 @@ determining whether validation was successful or not.</h2>
                             </div>
 
                         </div>
+                                            <a id="method_fillPlaceholders"></a>
+                        <div class="element clickable method protected  method_fillPlaceholders" data-toggle="collapse" data-target=".method_fillPlaceholders .collapse">
+                            <h2>Replace any placeholders within the rules with the values that
+match the &#039;key&#039; of any properties being set. For example, if
+we had the following $data array:</h2>
+                            <pre>fillPlaceholders(array $rules, array $data) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>[ 'id' =&gt; 13 ]</p>
+<p>and the following rule:</p>
+<p>'required|is_unique[users,email,id,{id}]'</p>
+<p>The value of {id} would be replaced with the actual id in the form data:</p>
+<p>'required|is_unique[users,email,id,13]'</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$rules</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_getError"></a>
                         <div class="element clickable method public  method_getError" data-toggle="collapse" data-target=".method_getError .collapse">
                             <h2>Returns the error(s) for a specified $field (or empty string if not
@@ -416,7 +462,7 @@ set).</h2>
                                             <a id="method_getErrorMessage"></a>
                         <div class="element clickable method protected  method_getErrorMessage" data-toggle="collapse" data-target=".method_getErrorMessage .collapse">
                             <h2>Attempts to find the appropriate error message</h2>
-                            <pre>getErrorMessage(string $rule, string $field, string|null $label = null, string $param = null) : string</pre>
+                            <pre>getErrorMessage(string $rule, string $field, string|null $label = null, string $param = null, string $value = null) : string</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -444,6 +490,10 @@ set).</h2>
                                                                                     <div class="subelement argument">
                                                 <h4>$param</h4>
                                                 <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>string</code><p><p>The value that caused the validation to fail.</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -711,7 +761,7 @@ Config\Validation and stores them locally so we can use them.</h2>
 all of them have been processed. If one fails, it adds
 the error to $this-&gt;errors and moves on to the next,
 so that we can collect all of the first errors.</h2>
-                            <pre>processRules(string $field, string|null $label = null, string $value, array|null $rules = null, array $data) : boolean</pre>
+                            <pre>processRules(string $field, string|null $label = null, string|array $value, array|null $rules = null, array $data) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -734,7 +784,7 @@ so that we can collect all of the first errors.</h2>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p><p>Value to be validated, can be a string or an array</p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$rules</h4>
@@ -1294,7 +1344,7 @@ during validation. Where &#039;key&#039; is the alias.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:27 -0700.<br/>
+            generated on Sun, 05 Jul 2020 05:47:04 +0000.<br/>
     </footer>
     </body>
 </html>

@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -127,7 +127,7 @@
         </a>
     </li>
 
-                                                                                                                                                                                                                                                                                <li class="method public">
+                                                                                                                                                                                                                                                                                                                                        <li class="method public">
         <a href="#method_decrement" title="decrement :: Decrements a numeric column by the specified value.">
             <span class="description">Decrements a numeric column by the specified value.</span><pre>decrement</pre>
         </a>
@@ -136,6 +136,12 @@
                                                                                                         <li class="method public">
         <a href="#method_increment" title="increment :: Increments a numeric column by the specified value.">
             <span class="description">Increments a numeric column by the specified value.</span><pre>increment</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_join" title="join :: JOIN">
+            <span class="description">JOIN</span><pre>join</pre>
         </a>
     </li>
 
@@ -169,11 +175,16 @@
                                 <span class="description">Update_Batch statement</span><pre>_updateBatch</pre>
                             </a>
                         </li>
-                                                                                                                                                            </ul>
+                                                                                <li class="method protected">
+                            <a href="#method_compileIgnore" title="compileIgnore :: Compile Ignore Statement">
+                                <span class="description">Compile Ignore Statement</span><pre>compileIgnore</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -256,7 +267,7 @@ searches according to the current locale.</p></div>
                                                 </th>
                                                 <td>
                                                                                                                                                                         
-                                                                                                                                                                            https://www.postgresql.org/docs/9.2/static/functions-matching.html
+                                                                                                                                                                            <a href="https://www.postgresql.org/docs/9.2/static/functions-matching.html">https://www.postgresql.org/docs/9.2/static/functions-matching.html</a>
                                                                                                                 
                                                                                                     </td>
                                             </tr>
@@ -293,7 +304,7 @@ searches according to the current locale.</p></div>
                                             <a id="method__limit"></a>
                         <div class="element clickable method protected  method__limit" data-toggle="collapse" data-target=".method__limit .collapse">
                             <h2>LIMIT string</h2>
-                            <pre>_limit(string $sql) : string</pre>
+                            <pre>_limit(string $sql, \CodeIgniter\Database\Postgre\bool $offsetIgnore = false) : string</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -309,6 +320,10 @@ searches according to the current locale.</p></div>
                                                                                     <div class="subelement argument">
                                                 <h4>$sql</h4>
                                                 <code>string</code><p><p>SQL Query</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$offsetIgnore</h4>
+                                                <code>\CodeIgniter\Database\Postgre\bool</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -381,6 +396,34 @@ then this method maps to 'DELETE FROM table'</p></div>
                             </div>
 
                         </div>
+                                            <a id="method_compileIgnore"></a>
+                        <div class="element clickable method protected  method_compileIgnore" data-toggle="collapse" data-target=".method_compileIgnore .collapse">
+                            <h2>Compile Ignore Statement</h2>
+                            <pre>compileIgnore(string $statement) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Checks if the ignore option is supported by
+the Database Driver for the specific statement.</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$statement</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_decrement"></a>
                         <div class="element clickable method public  method_decrement" data-toggle="collapse" data-target=".method_decrement .collapse">
                             <h2>Decrements a numeric column by the specified value.</h2>
@@ -394,7 +437,16 @@ then this method maps to 'DELETE FROM table'</p></div>
                                     <div class="long_description"></div>
 
                                     <table class="table">
-                                                                                                                    </table>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Database\Exceptions\DatabaseException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
@@ -425,7 +477,16 @@ then this method maps to 'DELETE FROM table'</p></div>
                                     <div class="long_description"></div>
 
                                     <table class="table">
-                                                                                                                    </table>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Database\Exceptions\DatabaseException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
@@ -439,6 +500,45 @@ then this method maps to 'DELETE FROM table'</p></div>
                                                                             
                                                                             <h3>Response</h3>
                                         <code>mixed</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_join"></a>
+                        <div class="element clickable method public  method_join" data-toggle="collapse" data-target=".method_join .collapse">
+                            <h2>JOIN</h2>
+                            <pre>join(string $table, string $cond, string $type = &#039;&#039;, boolean $escape = null) : \CodeIgniter\Database\BaseBuilder</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Generates the JOIN portion of the query</p></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$table</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cond</h4>
+                                                <code>string</code><p><p>The join condition</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code>string</code><p><p>The type of join</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$escape</h4>
+                                                <code>boolean</code><p><p>Whether not to try to escape identifiers</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>\CodeIgniter\Database\BaseBuilder</code><p></p>
                                                                     </div>
                             </div>
 
@@ -507,6 +607,33 @@ then this method maps to 'DELETE FROM table'</p></div>
                                                                             </div>
                                 </div>
                             </div>
+                                                    <a id="property_supportedIgnoreStatements"> </a>
+                            <div class="element clickable property  protected property_supportedIgnoreStatements" data-toggle="collapse" data-target=".property_supportedIgnoreStatements .collapse">
+                                <h2>Specifies which sql statements
+support the ignore option.</h2>
+                                <pre>supportedIgnoreStatements : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                             </div>
             </div>
             <a id="\CodeIgniter\Database\Postgre\Builder"></a>
@@ -527,7 +654,7 @@ then this method maps to 'DELETE FROM table'</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:28 -0700.<br/>
+            generated on Sun, 05 Jul 2020 05:47:01 +0000.<br/>
     </footer>
     </body>
 </html>

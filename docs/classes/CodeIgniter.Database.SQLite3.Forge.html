@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -175,7 +175,7 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_dropColumn" title="dropColumn :: Column Drop">
             <span class="description">Column Drop</span><pre>dropColumn</pre>
         </a>
@@ -297,11 +297,16 @@
                                 <span class="description">Process primary keys</span><pre>_processPrimaryKeys</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method private">
+                            <a href="#method_databaseExists" title="databaseExists :: Determine if a database exists">
+                                <span class="description">Determine if a database exists</span><pre>databaseExists</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -372,7 +377,7 @@
                                             <a id="method__alterTable"></a>
                         <div class="element clickable method protected  method__alterTable" data-toggle="collapse" data-target=".method__alterTable .collapse">
                             <h2>ALTER TABLE</h2>
-                            <pre>_alterTable(string $alter_type, string $table, mixed $field) : string|array&lt;mixed,string&gt;</pre>
+                            <pre>_alterTable(string $alter_type, string $table, mixed $fields) : string|array&lt;mixed,string&gt;</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -394,7 +399,7 @@
                                                 <code>string</code><p><p>Table name</p></p>
                                             </div>
                                                                                     <div class="subelement argument">
-                                                <h4>$field</h4>
+                                                <h4>$fields</h4>
                                                 <code>mixed</code><p><p>Column definition</p></p>
                                             </div>
                                                                             
@@ -1000,7 +1005,7 @@ from TYPE to UTYPE in case of a match</li>
                                             <a id="method_createDatabase"></a>
                         <div class="element clickable method public  method_createDatabase" data-toggle="collapse" data-target=".method_createDatabase .collapse">
                             <h2>Create database</h2>
-                            <pre>createDatabase(string $db_name) : boolean</pre>
+                            <pre>createDatabase(string $dbName, boolean $ifNotExists = false) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -1023,8 +1028,12 @@ from TYPE to UTYPE in case of a match</li>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$db_name</h4>
+                                                <h4>$dbName</h4>
                                                 <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$ifNotExists</h4>
+                                                <code>boolean</code><p><p>Whether to add IF NOT EXISTS condition</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -1077,10 +1086,46 @@ from TYPE to UTYPE in case of a match</li>
                             </div>
 
                         </div>
+                                            <a id="method_databaseExists"></a>
+                        <div class="element clickable method private  method_databaseExists" data-toggle="collapse" data-target=".method_databaseExists .collapse">
+                            <h2>Determine if a database exists</h2>
+                            <pre>databaseExists(string $dbName) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Database\Exceptions\DatabaseException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dbName</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_dropColumn"></a>
                         <div class="element clickable method public  method_dropColumn" data-toggle="collapse" data-target=".method_dropColumn .collapse">
                             <h2>Column Drop</h2>
-                            <pre>dropColumn(string $table, string $column_name) : mixed</pre>
+                            <pre>dropColumn(string $table, string|array $column_name) : mixed</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -1108,7 +1153,7 @@ from TYPE to UTYPE in case of a match</li>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$column_name</h4>
-                                                <code>string</code><p><p>Column name</p></p>
+                                                <code>string|array</code><p><p>Column name Array or comma separated</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -1120,7 +1165,7 @@ from TYPE to UTYPE in case of a match</li>
                                             <a id="method_dropDatabase"></a>
                         <div class="element clickable method public  method_dropDatabase" data-toggle="collapse" data-target=".method_dropDatabase .collapse">
                             <h2>Drop database</h2>
-                            <pre>dropDatabase(string $db_name) : boolean</pre>
+                            <pre>dropDatabase(string $dbName) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -1143,7 +1188,7 @@ from TYPE to UTYPE in case of a match</li>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$db_name</h4>
+                                                <h4>$dbName</h4>
                                                 <code>string</code><p></p>
                                             </div>
                                                                             
@@ -1450,7 +1495,7 @@ from TYPE to UTYPE in case of a match</li>
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code><a href="../classes/CodeIgniter.Database.BaseConnection.html">\CodeIgniter\Database\BaseConnection</a></code>
+                                            <code>\CodeIgniter\Database\BaseConnection</code>
                                                                             </div>
                                 </div>
                             </div>
@@ -1614,6 +1659,58 @@ from TYPE to UTYPE in case of a match</li>
                             <div class="element clickable property  protected property_createDatabaseStr" data-toggle="collapse" data-target=".property_createDatabaseStr .collapse">
                                 <h2>CREATE DATABASE statement</h2>
                                 <pre>createDatabaseStr : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_createDatabaseIfStr"> </a>
+                            <div class="element clickable property  protected property_createDatabaseIfStr" data-toggle="collapse" data-target=".property_createDatabaseIfStr .collapse">
+                                <h2>CREATE DATABASE IF statement</h2>
+                                <pre>createDatabaseIfStr : string</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_checkDatabaseExistStr"> </a>
+                            <div class="element clickable property  protected property_checkDatabaseExistStr" data-toggle="collapse" data-target=".property_checkDatabaseExistStr .collapse">
+                                <h2>CHECK DATABASE EXIST statement</h2>
+                                <pre>checkDatabaseExistStr : string</pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -1891,7 +1988,7 @@ CREATE TABLE statement.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:28 -0700.<br/>
+            generated on Sun, 05 Jul 2020 05:47:01 +0000.<br/>
     </footer>
     </body>
 </html>

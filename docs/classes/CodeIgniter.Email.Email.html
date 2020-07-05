@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -187,7 +187,7 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
         <a href="#method_setAttachmentCID" title="setAttachmentCID :: Set and return attachment Content-ID">
             <span class="description">Set and return attachment Content-ID</span><pre>setAttachmentCID</pre>
         </a>
@@ -220,12 +220,6 @@
                                                                                                         <li class="method public">
         <a href="#method_setHeader" title="setHeader :: Add a Header Item">
             <span class="description">Add a Header Item</span><pre>setHeader</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public inherited">
-        <a href="#method_setLogger" title="setLogger :: Sets a logger.">
-            <span class="description">Sets a logger.</span><pre>setLogger</pre>
         </a>
     </li>
 
@@ -404,7 +398,12 @@
                                 <span class="description">Send using SMTP</span><pre>sendWithSmtp</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                    <li class="method protected">
+                                                                                                                    <li class="method protected">
+                            <a href="#method_setArchiveValues" title="setArchiveValues :: Determines the values that should be stored in $archive.">
+                                <span class="description">Determines the values that should be stored in $archive.</span><pre>setArchiveValues</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected">
                             <a href="#method_setDate" title="setDate :: Set RFC 822 Date">
                                 <span class="description">Set RFC 822 Date</span><pre>setDate</pre>
                             </a>
@@ -414,7 +413,7 @@
                                 <span class="description">Set Message</span><pre>setErrorMessage</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="method protected">
                             <a href="#method_SMTPAuthenticate" title="SMTPAuthenticate :: SMTP Authenticate">
                                 <span class="description">SMTP Authenticate</span><pre>SMTPAuthenticate</pre>
                             </a>
@@ -1514,6 +1513,35 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                             </div>
 
                         </div>
+                                            <a id="method_setArchiveValues"></a>
+                        <div class="element clickable method protected  method_setArchiveValues" data-toggle="collapse" data-target=".method_setArchiveValues .collapse">
+                            <h2>Determines the values that should be stored in $archive.</h2>
+                            <pre>setArchiveValues() : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>The updated archive values</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_setAttachmentCID"></a>
                         <div class="element clickable method public  method_setAttachmentCID" data-toggle="collapse" data-target=".method_setAttachmentCID .collapse">
                             <h2>Set and return attachment Content-ID</h2>
@@ -1753,38 +1781,6 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                             </div>
 
                         </div>
-                                            <a id="method_setLogger"></a>
-                        <div class="element clickable method public  method_setLogger inherited" data-toggle="collapse" data-target=".method_setLogger .collapse">
-                            <h2>Sets a logger.</h2>
-                            <pre>setLogger(\Psr\Log\LoggerInterface $logger) </pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$logger</h4>
-                                                <code><a href="../classes/Psr.Log.LoggerInterface.html">\Psr\Log\LoggerInterface</a></code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
                                             <a id="method_setMailType"></a>
                         <div class="element clickable method public  method_setMailType" data-toggle="collapse" data-target=".method_setMailType .collapse">
                             <h2>Set Mailtype</h2>
@@ -1981,7 +1977,7 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                                             <a id="method_setTo"></a>
                         <div class="element clickable method public  method_setTo" data-toggle="collapse" data-target=".method_setTo .collapse">
                             <h2>Set Recipients</h2>
-                            <pre>setTo(string $to) : \CodeIgniter\Email\Email</pre>
+                            <pre>setTo(string|array $to) : \CodeIgniter\Email\Email</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -1996,7 +1992,7 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -2279,7 +2275,7 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                                             <a id="method_validateEmail"></a>
                         <div class="element clickable method public  method_validateEmail" data-toggle="collapse" data-target=".method_validateEmail .collapse">
                             <h2>Validate Email Address</h2>
-                            <pre>validateEmail(string $email) : boolean</pre>
+                            <pre>validateEmail(string|array $email) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -2294,7 +2290,7 @@ Valid options are: 'headers', 'subject', 'body'</p></p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$email</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|array</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -2323,10 +2319,10 @@ Introduced to prevent RCE via sendmail's -f option.</p></div>
                                                 </th>
                                                 <td>
                                                                                                                                                                         
-                                                                                                                                                                            https://github.com/codeigniter4/CodeIgniter/issues/4963
+                                                                                                                                                                            <a href="https://github.com/codeigniter4/CodeIgniter/issues/4963">https://github.com/codeigniter4/CodeIgniter/issues/4963</a>
                                                                                                                 
                                                                                                                                                                         
-                                                                                                                                                                            https://gist.github.com/Zenexer/40d02da5e07f151adeaeeaa11af9ab36
+                                                                                                                                                                            <a href="https://gist.github.com/Zenexer/40d02da5e07f151adeaeeaa11af9ab36">https://gist.github.com/Zenexer/40d02da5e07f151adeaeeaa11af9ab36</a>
                                                                                                                 
                                                                                                     </td>
                                             </tr>
@@ -2422,6 +2418,58 @@ Introduced to prevent RCE via sendmail's -f option.</p></div>
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_archive"> </a>
+                            <div class="element clickable property  public property_archive" data-toggle="collapse" data-target=".property_archive .collapse">
+                                <h2>Properties from the last successful send.</h2>
+                                <pre>archive : array|null</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array|null</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_tmpArchive"> </a>
+                            <div class="element clickable property  protected property_tmpArchive" data-toggle="collapse" data-target=".property_tmpArchive .collapse">
+                                <h2>Properties to be added to the next archive.</h2>
+                                <pre>tmpArchive : array</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                     <a id="property_fromEmail"> </a>
                             <div class="element clickable property  public property_fromEmail" data-toggle="collapse" data-target=".property_fromEmail .collapse">
                                 <h2>fromEmail</h2>
@@ -3627,32 +3675,6 @@ excluding language suffix.</p></div>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_logger"> </a>
-                            <div class="element clickable property  protected property_logger inherited" data-toggle="collapse" data-target=".property_logger .collapse">
-                                <h2>logger</h2>
-                                <pre>logger : \Psr\Log\LoggerInterface</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code><a href="../classes/Psr.Log.LoggerInterface.html">\Psr\Log\LoggerInterface</a></code>
-                                                                            </div>
-                                </div>
-                            </div>
                                                             </div>
             </div>
             <a id="\CodeIgniter\Email\Email"></a>
@@ -3673,7 +3695,7 @@ excluding language suffix.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:28 -0700.<br/>
+            generated on Sun, 05 Jul 2020 05:46:59 +0000.<br/>
     </footer>
     </body>
 </html>
