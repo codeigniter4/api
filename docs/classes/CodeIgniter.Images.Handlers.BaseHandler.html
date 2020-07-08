@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -207,7 +207,7 @@ an array of the information, or null if nothing can be found.</span><pre>getEXIF
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public">
+                                                                                                                                                                                                                        <li class="method public">
         <a href="#method_reorient" title="reorient :: Reads the EXIF information from the image and modifies the orientation
 so that displays correctly in the browser. This is especially an issue
 with images taken by smartphones who always store the image up-right,
@@ -246,6 +246,12 @@ but set the orientation flag to display it correctly.</span><pre>reorient</pre>
                                                                                                         <li class="method public">
         <a href="#method_withFile" title="withFile :: Sets another image for this handler to work on.">
             <span class="description">Sets another image for this handler to work on.</span><pre>withFile</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_withResource" title="withResource :: Load the temporary image used during the image processing.">
+            <span class="description">Load the temporary image used during the image processing.</span><pre>withResource</pre>
         </a>
     </li>
 
@@ -288,6 +294,11 @@ crop the desired portion from the image.</span><pre>calcCropCoords</pre>
                             </a>
                         </li>
                                                                                                                                                                                                                                                                                                                                                                                                                     <li class="method protected">
+                            <a href="#method_image" title="image :: Verifies that a file has been supplied and it is an image.">
+                                <span class="description">Verifies that a file has been supplied and it is an image.</span><pre>image</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
                             <a href="#method_process" title="process :: Does the driver-specific processing of the image.">
                                 <span class="description">Does the driver-specific processing of the image.</span><pre>process</pre>
                             </a>
@@ -297,11 +308,11 @@ crop the desired portion from the image.</span><pre>calcCropCoords</pre>
                                 <span class="description">Re-proportion Image Width/Height</span><pre>reproportion</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -334,7 +345,7 @@ crop the desired portion from the image.</span><pre>calcCropCoords</pre>
                                                                                 <p>CodeIgniter</p>
                                     </td>
                                 </tr>
-                                                                                                                                                                                                                                                                                                                                            </table>
+                                                                                                                                                                                </table>
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
                                                                 <a id="method___call"></a>
@@ -372,7 +383,7 @@ on the handler itself.</h2>
                                             <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
                             <h2>Constructor.</h2>
-                            <pre>__construct(\CodeIgniter\Images\Handlers\type $config = null) </pre>
+                            <pre>__construct(\Config\Images|null $config = null) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -394,7 +405,7 @@ on the handler itself.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\CodeIgniter\Images\Handlers\type</code><p></p>
+                                                <code>\Config\Images|null</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -405,7 +416,7 @@ on the handler itself.</h2>
                         <div class="element clickable method protected  method__flip" data-toggle="collapse" data-target=".method__flip .collapse">
                             <h2>Handler-specific method to handle flipping an image along its
 horizontal or vertical axis.</h2>
-                            <pre>_flip(string $direction) : mixed</pre>
+                            <pre>_flip(string $direction) : $this</pre>
                             <div class="labels">
                                                                                                                                 <span class="label">abstract</span>                                                            </div>
 
@@ -424,7 +435,7 @@ horizontal or vertical axis.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p></p>
+                                        <code>$this</code><p></p>
                                                                     </div>
                             </div>
 
@@ -495,7 +506,7 @@ horizontal or vertical axis.</h2>
                                             <a id="method_calcAspectRatio"></a>
                         <div class="element clickable method protected  method_calcAspectRatio" data-toggle="collapse" data-target=".method_calcAspectRatio .collapse">
                             <h2>Calculate image aspect ratio.</h2>
-                            <pre>calcAspectRatio( $width, null $height = null,  $origWidth,  $origHeight) : array</pre>
+                            <pre>calcAspectRatio(integer|float $width, integer|float|null $height = null, integer|float $origWidth, integer|float $origHeight) : array</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -510,19 +521,19 @@ horizontal or vertical axis.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$width</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$height</h4>
-                                                <code>null</code><p></p>
+                                                <code>integer|float|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$origWidth</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$origHeight</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -535,7 +546,7 @@ horizontal or vertical axis.</h2>
                         <div class="element clickable method protected  method_calcCropCoords" data-toggle="collapse" data-target=".method_calcCropCoords .collapse">
                             <h2>Based on the position, will determine the correct x/y coords to
 crop the desired portion from the image.</h2>
-                            <pre>calcCropCoords( $width,  $height,  $origWidth,  $origHeight,  $position) : array</pre>
+                            <pre>calcCropCoords(integer|float $width, integer|float $height, integer|float $origWidth, integer|float $origHeight, string $position) : array</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -550,23 +561,23 @@ crop the desired portion from the image.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$width</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$height</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$origWidth</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$origHeight</h4>
-                                                <code></code><p></p>
+                                                <code>integer|float</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$position</h4>
-                                                <code></code><p></p>
+                                                <code>string</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -607,7 +618,7 @@ crop the desired portion from the image.</h2>
                             <h2>Crops the image to the desired height and width. If one of the height/width values
 is not provided, that value will be set the appropriate value based on offsets and
 image dimensions.</h2>
-                            <pre>crop(integer|null $width = null, integer|null $height = null, integer|null $x = null, integer|null $y = null, boolean $maintainRatio = false, string $masterDim = &#039;auto&#039;) : mixed</pre>
+                            <pre>crop(integer|null $width = null, integer|null $height = null, integer|null $x = null, integer|null $y = null, boolean $maintainRatio = false, string $masterDim = &#039;auto&#039;) : $this</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -646,7 +657,7 @@ image dimensions.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p></p>
+                                        <code>$this</code><p></p>
                                                                     </div>
                             </div>
 
@@ -656,7 +667,7 @@ image dimensions.</h2>
                             <h2>Make the image resource object if needed</h2>
                             <pre>ensureResource() </pre>
                             <div class="labels">
-                                                                                                                                                                                            </div>
+                                                                                                                                <span class="label">abstract</span>                                                            </div>
 
                             
                             <div class="row collapse">
@@ -688,7 +699,7 @@ image dimensions.</h2>
                                             <a id="method_fit"></a>
                         <div class="element clickable method public  method_fit" data-toggle="collapse" data-target=".method_fit .collapse">
                             <h2>Combine cropping and resizing into a single command.</h2>
-                            <pre>fit(integer $width, integer $height = null, string $position = &#039;center&#039;) : boolean</pre>
+                            <pre>fit(integer $width, integer $height = null, string $position = &#039;center&#039;) : $this</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -726,7 +737,7 @@ image dimensions.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>boolean</code><p></p>
+                                        <code>$this</code><p></p>
                                                                     </div>
                             </div>
 
@@ -734,7 +745,7 @@ image dimensions.</h2>
                                             <a id="method_flatten"></a>
                         <div class="element clickable method public  method_flatten" data-toggle="collapse" data-target=".method_flatten .collapse">
                             <h2>Flattens transparencies, default white background</h2>
-                            <pre>flatten(integer $red = 255, integer $green = 255, integer $blue = 255) : mixed</pre>
+                            <pre>flatten(integer $red = 255, integer $green = 255, integer $blue = 255) : $this</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -761,7 +772,7 @@ image dimensions.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p></p>
+                                        <code>$this</code><p></p>
                                                                     </div>
                             </div>
 
@@ -857,7 +868,7 @@ an array of the information, or null if nothing can be found.</h2>
                                             <a id="method_getHeight"></a>
                         <div class="element clickable method public  method_getHeight" data-toggle="collapse" data-target=".method_getHeight .collapse">
                             <h2>Return image height.</h2>
-                            <pre>getHeight() : \CodeIgniter\Images\Handlers\type</pre>
+                            <pre>getHeight() : integer</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -878,7 +889,7 @@ an array of the information, or null if nothing can be found.</h2>
 
                                     
                                                                             <h3>Response</h3>
-                                        <code>\CodeIgniter\Images\Handlers\type</code><p></p>
+                                        <code>integer</code><p></p>
                                                                     </div>
                             </div>
 
@@ -967,6 +978,44 @@ is not intended to do.</p></div>
                                     
                                                                             <h3>Response</h3>
                                         <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_image"></a>
+                        <div class="element clickable method protected  method_image" data-toggle="collapse" data-target=".method_image .collapse">
+                            <h2>Verifies that a file has been supplied and it is an image.</h2>
+                            <pre>image() : \CodeIgniter\Images\Image</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\CodeIgniter\Images\Exceptions\ImageException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.Images.Image.html">\CodeIgniter\Images\Image</a></code><p><p>The image instance</p></p>
                                                                     </div>
                             </div>
 
@@ -1101,7 +1150,7 @@ if users choose to maintain the aspect ratio when resizing.</p></div>
                                             <a id="method_rotate"></a>
                         <div class="element clickable method public  method_rotate" data-toggle="collapse" data-target=".method_rotate .collapse">
                             <h2>Rotates the image on the current canvas.</h2>
-                            <pre>rotate(float $angle) : mixed</pre>
+                            <pre>rotate(float $angle) : $this</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -1120,7 +1169,7 @@ if users choose to maintain the aspect ratio when resizing.</p></div>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p></p>
+                                        <code>$this</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1128,7 +1177,7 @@ if users choose to maintain the aspect ratio when resizing.</p></div>
                                             <a id="method_save"></a>
                         <div class="element clickable method public  method_save" data-toggle="collapse" data-target=".method_save .collapse">
                             <h2>Saves any changes that have been made to file.</h2>
-                            <pre>save(string $target = null, integer $quality = 90) : mixed</pre>
+                            <pre>save(string|null $target = null, integer $quality = 90) : boolean</pre>
                             <div class="labels">
                                                                                                                                 <span class="label">abstract</span>                                                            </div>
 
@@ -1145,7 +1194,7 @@ $image-&gt;resize(100, 200, true)
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$target</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$quality</h4>
@@ -1153,7 +1202,7 @@ $image-&gt;resize(100, 200, true)
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>mixed</code><p></p>
+                                        <code>boolean</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1227,6 +1276,36 @@ $image-&gt;resize(100, 200, true)
                             </div>
 
                         </div>
+                                            <a id="method_withResource"></a>
+                        <div class="element clickable method public  method_withResource" data-toggle="collapse" data-target=".method_withResource .collapse">
+                            <h2>Load the temporary image used during the image processing.</h2>
+                            <pre>withResource() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Some functions e.g. save() will only copy and not compress
+your image otherwise.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
@@ -1279,6 +1358,32 @@ $image-&gt;resize(100, 200, true)
 
                                                                                     <h3>Type(s)</h3>
                                             <code><a href="../classes/CodeIgniter.Images.Image.html">\CodeIgniter\Images\Image</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_verified"> </a>
+                            <div class="element clickable property  protected property_verified" data-toggle="collapse" data-target=".property_verified .collapse">
+                                <h2>Whether the image file has been confirmed.</h2>
+                                <pre>verified : boolean</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
                                                                             </div>
                                 </div>
                             </div>
@@ -1337,7 +1442,7 @@ $image-&gt;resize(100, 200, true)
                                                     <a id="property_filePermissions"> </a>
                             <div class="element clickable property  protected property_filePermissions" data-toggle="collapse" data-target=".property_filePermissions .collapse">
                                 <h2>File permission mask.</h2>
-                                <pre>filePermissions : \CodeIgniter\Images\Handlers\type</pre>
+                                <pre>filePermissions : integer</pre>
                                 <div class="labels">
                                                                                                         </div>
                                 <div class="row collapse">
@@ -1356,7 +1461,7 @@ $image-&gt;resize(100, 200, true)
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code>\CodeIgniter\Images\Handlers\type</code>
+                                            <code>integer</code>
                                                                             </div>
                                 </div>
                             </div>
@@ -1510,7 +1615,7 @@ $image-&gt;resize(100, 200, true)
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:28 -0700.<br/>
+            generated on Wed, 08 Jul 2020 20:17:41 +0000.<br/>
     </footer>
     </body>
 </html>
