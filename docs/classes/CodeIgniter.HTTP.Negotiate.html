@@ -45,7 +45,7 @@
                                                                     <li><a>Namespaces</a></li>
                                                                         <li><a href="../namespaces/CodeIgniter.html">CodeIgniter</a></li>
                                                                         <li><a href="../namespaces/Psr.html">Psr</a></li>
-                                                                        <li><a href="../namespaces/Zend.html">Zend</a></li>
+                                                                        <li><a href="../namespaces/Laminas.html">Laminas</a></li>
                                                                                                                                 </ul>
                         </li>
                         <li class="dropdown" id="charts-menu">
@@ -157,7 +157,15 @@ by the client.</span><pre>language</pre>
         </a>
     </li>
 
-                                                                                                                                                                                                                        <li class="method public">
+                                                                                                                                                                <li class="method public">
+        <a href="#method_matchLocales" title="matchLocales :: Will match locales against their broader pairs, so that fr-FR would
+match a supported localed of fr">
+            <span class="description">Will match locales against their broader pairs, so that fr-FR would
+match a supported localed of fr</span><pre>matchLocales</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
         <a href="#method_matchTypes" title="matchTypes :: Compares the types/subtypes of an acceptable Media type and
 the supported string.">
             <span class="description">Compares the types/subtypes of an acceptable Media type and
@@ -203,7 +211,7 @@ against a given Accept* header string.</span><pre>getBestMatch</pre>
                                 <span class="description">Match-maker</span><pre>match</pre>
                             </a>
                         </li>
-                                                                                <li class="method protected">
+                                                                                                                    <li class="method protected">
                             <a href="#method_matchParameters" title="matchParameters :: Checks two Accept values with matching &#039;values&#039; to see if their
 &#039;params&#039; are the same.">
                                 <span class="description">Checks two Accept values with matching &#039;values&#039; to see if their
@@ -214,7 +222,7 @@ against a given Accept* header string.</span><pre>getBestMatch</pre>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -263,7 +271,7 @@ getServer wants.</p>
                                                                 <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
                             <h2>Constructor</h2>
-                            <pre>__construct(\CodeIgniter\HTTP\RequestInterface $request = null) </pre>
+                            <pre>__construct(\CodeIgniter\HTTP\RequestInterface|null $request = null) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -285,7 +293,7 @@ getServer wants.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$request</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>|null</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -356,7 +364,7 @@ type is returned.</p></div>
                         <div class="element clickable method protected  method_getBestMatch" data-toggle="collapse" data-target=".method_getBestMatch .collapse">
                             <h2>Does the grunt work of comparing any of the app-supported values
 against a given Accept* header string.</h2>
-                            <pre>getBestMatch(array $supported, string $header = null, boolean $enforceTypes = false, boolean $strictMatch = false) : string</pre>
+                            <pre>getBestMatch(array $supported, string $header = null, boolean $enforceTypes = false, boolean $strictMatch = false, boolean $matchLocales = false) : string</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -385,6 +393,10 @@ against a given Accept* header string.</h2>
                                                 <h4>$strictMatch</h4>
                                                 <code>boolean</code><p><p>If TRUE, will return empty string on no match.
 If FALSE, will return the first supported element.</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$matchLocales</h4>
+                                                <code>boolean</code><p><p>If TRUE, will match locale sub-types to a broad type (fr-FR = fr)</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -426,7 +438,7 @@ type is returned.</p></div>
                                             <a id="method_match"></a>
                         <div class="element clickable method protected  method_match" data-toggle="collapse" data-target=".method_match .collapse">
                             <h2>Match-maker</h2>
-                            <pre>match(array $acceptable, string $supported, boolean $enforceTypes = false) : boolean</pre>
+                            <pre>match(array $acceptable, string $supported, boolean $enforceTypes = false, boolean $matchLocales = false) : boolean</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -450,6 +462,42 @@ type is returned.</p></div>
                                                                                     <div class="subelement argument">
                                                 <h4>$enforceTypes</h4>
                                                 <code>boolean</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$matchLocales</h4>
+                                                <code>boolean</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_matchLocales"></a>
+                        <div class="element clickable method public  method_matchLocales" data-toggle="collapse" data-target=".method_matchLocales .collapse">
+                            <h2>Will match locales against their broader pairs, so that fr-FR would
+match a supported localed of fr</h2>
+                            <pre>matchLocales(array $acceptable, array $supported) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$acceptable</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$supported</h4>
+                                                <code>array</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -660,7 +708,7 @@ If FALSE, will return the first supported element.</p></p>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Fri, 20 Sep 2019 17:08:27 -0700.<br/>
+            generated on Mon, 13 Jul 2020 02:25:23 +0000.<br/>
     </footer>
     </body>
 </html>
