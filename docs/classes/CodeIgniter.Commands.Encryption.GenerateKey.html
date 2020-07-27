@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Commands\Sessions\CreateMigration
+    <title>    CodeIgniter v4.0.0 API &raquo; \CodeIgniter\Commands\Encryption\GenerateKey
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -137,25 +137,25 @@
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public inherited">
+                                                                                                                                                                                                                                                                                <li class="method public inherited">
         <a href="#method_getPad" title="getPad :: Get pad for $key =&gt; $value array output">
             <span class="description">Get pad for $key =&gt; $value array output</span><pre>getPad</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public inherited">
+                                                                                                                                                                <li class="method public inherited">
         <a href="#method_run" title="run :: Actually execute a command.">
             <span class="description">Actually execute a command.</span><pre>run</pre>
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public inherited">
+                                                                                                                                                                                                                        <li class="method public inherited">
         <a href="#method_showHelp" title="showHelp :: show Help include (usage,arguments,description,options)">
             <span class="description">show Help include (usage,arguments,description,options)</span><pre>showHelp</pre>
         </a>
     </li>
 
-                                                </ul>
+                                                                                                        </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
@@ -164,18 +164,43 @@
                                 <span class="description">Can be used by a command to run other commands.</span><pre>call</pre>
                             </a>
                         </li>
-                                                                                                                                                        <li class="method protected inherited">
+                                                                                <li class="method protected">
+                            <a href="#method_confirmOverwrite" title="confirmOverwrite :: Checks whether to overwrite existing encryption key.">
+                                <span class="description">Checks whether to overwrite existing encryption key.</span><pre>confirmOverwrite</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected">
+                            <a href="#method_generateRandomKey" title="generateRandomKey :: Generates a key and encodes it.">
+                                <span class="description">Generates a key and encodes it.</span><pre>generateRandomKey</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_keyPattern" title="keyPattern :: Get the regex of the current encryption key.">
+                                <span class="description">Get the regex of the current encryption key.</span><pre>keyPattern</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_setNewEncryptionKey" title="setNewEncryptionKey :: Sets the new encryption key in your .env file.">
+                                <span class="description">Sets the new encryption key in your .env file.</span><pre>setNewEncryptionKey</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
                             <a href="#method_showError" title="showError :: A simple method to display an error with line/file,
 in child commands.">
                                 <span class="description">A simple method to display an error with line/file,
 in child commands.</span><pre>showError</pre>
                             </a>
                         </li>
-                                                                                    </ul>
+                                                                                                                    <li class="method protected">
+                            <a href="#method_writeNewEncryptionKeyToFile" title="writeNewEncryptionKeyToFile :: Writes the new encryption key to .env file.">
+                                <span class="description">Writes the new encryption key to .env file.</span><pre>writeNewEncryptionKeyToFile</pre>
+                            </a>
+                        </li>
+                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                            </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -189,11 +214,11 @@ in child commands.</span><pre>showError</pre>
 
         <div class="span8">
             <div class="element class">
-                <h1>CreateMigration</h1>
+                <h1>GenerateKey</h1>
                 <small style="display: block; text-align: right">
                                             Extends <a href="../classes/CodeIgniter.CLI.BaseCommand.html">\CodeIgniter\CLI\BaseCommand</a>
                                                         </small>
-                <p class="short_description">Creates a migration file for database sessions.</p>
+                <p class="short_description">Generates a new encryption key.</p>
                 <div class="details">
                     <div class="long_description">
                         
@@ -205,7 +230,7 @@ in child commands.</span><pre>showError</pre>
                                                                             </th>
                                     <td>
                                                                                     
-                                                                                <p>CodeIgniter\Commands</p>
+                                                                                <p>CodeIgniter</p>
                                     </td>
                                 </tr>
                                                                                                                                                                                 </table>
@@ -341,6 +366,64 @@ in child commands.</span><pre>showError</pre>
                             </div>
 
                         </div>
+                                            <a id="method_confirmOverwrite"></a>
+                        <div class="element clickable method protected  method_confirmOverwrite" data-toggle="collapse" data-target=".method_confirmOverwrite .collapse">
+                            <h2>Checks whether to overwrite existing encryption key.</h2>
+                            <pre>confirmOverwrite(array $params) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_generateRandomKey"></a>
+                        <div class="element clickable method protected  method_generateRandomKey" data-toggle="collapse" data-target=".method_generateRandomKey .collapse">
+                            <h2>Generates a key and encodes it.</h2>
+                            <pre>generateRandomKey(string $prefix, integer $length) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$prefix</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$length</h4>
+                                                <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_getPad"></a>
                         <div class="element clickable method public  method_getPad inherited" data-toggle="collapse" data-target=".method_getPad .collapse">
                             <h2>Get pad for $key =&gt; $value array output</h2>
@@ -368,6 +451,33 @@ in child commands.</span><pre>showError</pre>
                                                                             
                                                                             <h3>Response</h3>
                                         <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_keyPattern"></a>
+                        <div class="element clickable method protected  method_keyPattern" data-toggle="collapse" data-target=".method_keyPattern .collapse">
+                            <h2>Get the regex of the current encryption key.</h2>
+                            <pre>keyPattern(string $oldKey) : string</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$oldKey</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
                                                                     </div>
                             </div>
 
@@ -400,6 +510,37 @@ in child commands.</span><pre>showError</pre>
                                                 <code>array</code><p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setNewEncryptionKey"></a>
+                        <div class="element clickable method protected  method_setNewEncryptionKey" data-toggle="collapse" data-target=".method_setNewEncryptionKey .collapse">
+                            <h2>Sets the new encryption key in your .env file.</h2>
+                            <pre>setNewEncryptionKey(string $key, array $params) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
                                                                     </div>
                             </div>
 
@@ -471,6 +612,37 @@ in child commands.</h2>
                             </div>
 
                         </div>
+                                            <a id="method_writeNewEncryptionKeyToFile"></a>
+                        <div class="element clickable method protected  method_writeNewEncryptionKeyToFile" data-toggle="collapse" data-target=".method_writeNewEncryptionKeyToFile .collapse">
+                            <h2>Writes the new encryption key to .env file.</h2>
+                            <pre>writeNewEncryptionKeyToFile(\CodeIgniter\Commands\Encryption\string $oldKey, \CodeIgniter\Commands\Encryption\string $newKey) : boolean</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$oldKey</h4>
+                                                <code>\CodeIgniter\Commands\Encryption\string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$newKey</h4>
+                                                <code>\CodeIgniter\Commands\Encryption\string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
@@ -527,32 +699,6 @@ when listing commands.</h2>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_description"> </a>
-                            <div class="element clickable property  protected property_description inherited" data-toggle="collapse" data-target=".property_description .collapse">
-                                <h2>the Command&#039;s short description</h2>
-                                <pre>description : string</pre>
-                                <div class="labels">
-                                    <span class="label">inherited</span>                                                                    </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code>string</code>
-                                                                            </div>
-                                </div>
-                            </div>
                                                     <a id="property_usage"> </a>
                             <div class="element clickable property  protected property_usage inherited" data-toggle="collapse" data-target=".property_usage .collapse">
                                 <h2>the Command&#039;s usage description</h2>
@@ -579,10 +725,36 @@ when listing commands.</h2>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_arguments"> </a>
-                            <div class="element clickable property  protected property_arguments inherited" data-toggle="collapse" data-target=".property_arguments .collapse">
-                                <h2>the Command&#039;s Arguments description</h2>
-                                <pre>arguments : array</pre>
+                                                    <a id="property_description"> </a>
+                            <div class="element clickable property  protected property_description inherited" data-toggle="collapse" data-target=".property_description .collapse">
+                                <h2>the Command&#039;s short description</h2>
+                                <pre>description : string</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_options"> </a>
+                            <div class="element clickable property  protected property_options inherited" data-toggle="collapse" data-target=".property_options .collapse">
+                                <h2>the Command&#039;s options description</h2>
+                                <pre>options : array</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
@@ -605,10 +777,10 @@ when listing commands.</h2>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_options"> </a>
-                            <div class="element clickable property  protected property_options inherited" data-toggle="collapse" data-target=".property_options .collapse">
-                                <h2>the Command&#039;s options description</h2>
-                                <pre>options : array</pre>
+                                                    <a id="property_arguments"> </a>
+                            <div class="element clickable property  protected property_arguments inherited" data-toggle="collapse" data-target=".property_arguments .collapse">
+                                <h2>the Command&#039;s Arguments description</h2>
+                                <pre>arguments : array</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
@@ -761,14 +933,14 @@ so commands can call other commands.</h2>
                             </div>
                                                             </div>
             </div>
-            <a id="\CodeIgniter\Commands\Sessions\CreateMigration"></a>
+            <a id="\CodeIgniter\Commands\Encryption\GenerateKey"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Sessions.html">Sessions</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Encryption.html">Encryption</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Commands.Sessions.CreateMigration.html">CreateMigration</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Commands.Encryption.GenerateKey.html">GenerateKey</a></li>
             </ul>
         </div>
     </div>
