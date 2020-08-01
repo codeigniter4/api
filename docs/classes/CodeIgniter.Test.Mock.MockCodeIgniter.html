@@ -388,7 +388,7 @@ request, route it to a controller, and send back the response.</p>
                                                                 <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
                             <h2>Constructor.</h2>
-                            <pre>__construct(\CodeIgniter\type $config) </pre>
+                            <pre>__construct(\Config\App $config) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -410,7 +410,7 @@ request, route it to a controller, and send back the response.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\CodeIgniter\type</code><p></p>
+                                                <code>\Config\App</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -779,7 +779,7 @@ should be enforced for this URL.</p></p>
                         <div class="element clickable method protected  method_gatherOutput inherited" data-toggle="collapse" data-target=".method_gatherOutput .collapse">
                             <h2>Gathers the script output from the buffer, replaces some execution
 time tag in the output and displays the debug toolbar, if required.</h2>
-                            <pre>gatherOutput(null $cacheConfig = null, null $returned = null) </pre>
+                            <pre>gatherOutput(\Config\Cache|null $cacheConfig = null, mixed|null $returned = null) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -801,11 +801,11 @@ time tag in the output and displays the debug toolbar, if required.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$cacheConfig</h4>
-                                                <code>null</code><p></p>
+                                                <code>\Config\Cache|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$returned</h4>
-                                                <code>null</code><p></p>
+                                                <code>mixed|null</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -942,7 +942,7 @@ the HTTP protocol version and a default successful response.</h2>
                                             <a id="method_handleRequest"></a>
                         <div class="element clickable method protected  method_handleRequest inherited" data-toggle="collapse" data-target=".method_handleRequest .collapse">
                             <h2>Handles the main request logic and fires the controller.</h2>
-                            <pre>handleRequest(\CodeIgniter\Router\RouteCollectionInterface $routes = null,  $cacheConfig, boolean $returnResponse = false) : \CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
+                            <pre>handleRequest(\CodeIgniter\Router\RouteCollectionInterface|null $routes = null, \Config\Cache $cacheConfig, boolean $returnResponse = false) : \CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -966,11 +966,11 @@ the HTTP protocol version and a default successful response.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$routes</h4>
-                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$cacheConfig</h4>
-                                                <code></code><p></p>
+                                                <code>\Config\Cache</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$returnResponse</h4>
@@ -1054,7 +1054,7 @@ the HTTP protocol version and a default successful response.</h2>
                                             <a id="method_run"></a>
                         <div class="element clickable method public  method_run inherited" data-toggle="collapse" data-target=".method_run .collapse">
                             <h2>Launch the application!</h2>
-                            <pre>run(\CodeIgniter\Router\RouteCollectionInterface $routes = null, boolean $returnResponse = false) : boolean|\CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
+                            <pre>run(\CodeIgniter\Router\RouteCollectionInterface|null $routes = null, boolean $returnResponse = false) : boolean|\CodeIgniter\HTTP\RequestInterface|\CodeIgniter\HTTP\Response|\CodeIgniter\HTTP\ResponseInterface|mixed</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1083,7 +1083,7 @@ makes all of the pieces work together.</p></div>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$routes</h4>
-                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$returnResponse</h4>
@@ -1357,7 +1357,7 @@ response to the client, and will make it available next request.</h2>
                             <h2>Try to Route It - As it sounds like, works with the router to
 match a route against the current URI. If the route is a
 &quot;redirect route&quot;, will also handle the redirect.</h2>
-                            <pre>tryToRouteIt(\CodeIgniter\Router\RouteCollectionInterface $routes = null) : string</pre>
+                            <pre>tryToRouteIt(\CodeIgniter\Router\RouteCollectionInterface|null $routes = null) : string</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1381,7 +1381,7 @@ match a route against the current URI. If the route is a
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$routes</h4>
-                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p><p>An collection interface to use in place
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a>|null</code><p><p>An collection interface to use in place
 of the config file.</p></p>
                                             </div>
                                                                             
@@ -1804,7 +1804,7 @@ to keep from setting headers/cookies/etc</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Sat, 01 Aug 2020 10:33:41 +0000.<br/>
+            generated on Sat, 01 Aug 2020 10:57:29 +0000.<br/>
     </footer>
     </body>
 </html>
