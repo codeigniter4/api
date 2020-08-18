@@ -537,7 +537,7 @@ spl_autoload_register method, and helper methods.</h2>
                         <div class="element clickable method public  method_cache" data-toggle="collapse" data-target=".method_cache .collapse">
                             <h2>The cache class provides a simple way to store and retrieve
 complex data for later.</h2>
-                            <pre>cache(\Config\Cache $config = null, boolean $getShared = true) : \CodeIgniter\Cache\CacheInterface</pre>
+                            <pre>cache(\Config\Cache|null $config = null, boolean $getShared = true) : \CodeIgniter\Cache\CacheInterface</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -552,7 +552,7 @@ complex data for later.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\Cache</code><p></p>
+                                                <code>\Config\Cache|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -569,7 +569,7 @@ complex data for later.</h2>
                         <div class="element clickable method public  method_clirequest" data-toggle="collapse" data-target=".method_clirequest .collapse">
                             <h2>The CLI Request class provides for ways to interact with
 a command line request.</h2>
-                            <pre>clirequest(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\CLIRequest</pre>
+                            <pre>clirequest(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\CLIRequest</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -584,7 +584,7 @@ a command line request.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -600,7 +600,7 @@ a command line request.</h2>
                                             <a id="method_commands"></a>
                         <div class="element clickable method public  method_commands" data-toggle="collapse" data-target=".method_commands .collapse">
                             <h2>The commands utility for running and working with CLI commands.</h2>
-                            <pre>commands(boolean $getShared = true) : \CodeIgniter\CLI\Commands|mixed</pre>
+                            <pre>commands(boolean $getShared = true) : \CodeIgniter\CLI\Commands</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -619,7 +619,7 @@ a command line request.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.CLI.Commands.html">\CodeIgniter\CLI\Commands</a>|mixed</code><p></p>
+                                        <code><a href="../classes/CodeIgniter.CLI.Commands.html">\CodeIgniter\CLI\Commands</a></code><p></p>
                                                                     </div>
                             </div>
 
@@ -628,7 +628,7 @@ a command line request.</h2>
                         <div class="element clickable method public  method_curlrequest" data-toggle="collapse" data-target=".method_curlrequest .collapse">
                             <h2>The CURL Request class acts as a simple HTTP client for interacting
 with other servers, typically through APIs.</h2>
-                            <pre>curlrequest(array $options = array(), \CodeIgniter\HTTP\ResponseInterface $response = null, \Config\App $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\CURLRequest</pre>
+                            <pre>curlrequest(array $options = array(), \CodeIgniter\HTTP\ResponseInterface|null $response = null, \Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\CURLRequest</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -647,11 +647,11 @@ with other servers, typically through APIs.</h2>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$response</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -701,7 +701,7 @@ the service, if available.</h2>
                                             <a id="method_email"></a>
                         <div class="element clickable method public  method_email" data-toggle="collapse" data-target=".method_email .collapse">
                             <h2>The Email class allows you to send email via mail, sendmail, SMTP.</h2>
-                            <pre>email(null $config = null, boolean $getShared = true) : \CodeIgniter\Email\Email|mixed</pre>
+                            <pre>email(\Config\Email|array|null $config = null, boolean $getShared = true) : \CodeIgniter\Email\Email|mixed</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -716,7 +716,7 @@ the service, if available.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>null</code><p></p>
+                                                <code>\Config\Email|array|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -732,7 +732,7 @@ the service, if available.</h2>
                                             <a id="method_encrypter"></a>
                         <div class="element clickable method public  method_encrypter" data-toggle="collapse" data-target=".method_encrypter .collapse">
                             <h2>The Encryption class provides two-way encryption.</h2>
-                            <pre>encrypter(mixed $config = null, boolean $getShared = false) : \CodeIgniter\Encryption\EncrypterInterface</pre>
+                            <pre>encrypter(\Config\Encryption|null $config = null, boolean $getShared = false) : \CodeIgniter\Encryption\EncrypterInterface</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -747,7 +747,7 @@ the service, if available.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>\Config\Encryption|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -763,7 +763,7 @@ the service, if available.</h2>
                                             <a id="method_exceptions"></a>
                         <div class="element clickable method public  method_exceptions" data-toggle="collapse" data-target=".method_exceptions .collapse">
                             <h2>The Exceptions class holds the methods that handle:</h2>
-                            <pre>exceptions(\Config\Exceptions $config = null, \CodeIgniter\HTTP\IncomingRequest $request = null, \CodeIgniter\HTTP\Response $response = null, boolean $getShared = true) : \CodeIgniter\Debug\Exceptions</pre>
+                            <pre>exceptions(\Config\Exceptions|null $config = null, \CodeIgniter\HTTP\IncomingRequest|null $request = null, \CodeIgniter\HTTP\Response|null $response = null, boolean $getShared = true) : \CodeIgniter\Debug\Exceptions</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -784,15 +784,15 @@ the service, if available.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\Exceptions</code><p></p>
+                                                <code>\Config\Exceptions|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$request</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">\CodeIgniter\HTTP\IncomingRequest</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.IncomingRequest.html">\CodeIgniter\HTTP\IncomingRequest</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$response</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.Response.html">\CodeIgniter\HTTP\Response</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.Response.html">\CodeIgniter\HTTP\Response</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -811,7 +811,7 @@ the service, if available.</h2>
 is executed. During before filters, the request can be modified,
 and actions taken based on the request, while after filters can
 act on or modify the response itself before it is sent to the client.</h2>
-                            <pre>filters(mixed $config = null, boolean $getShared = true) : \CodeIgniter\Filters\Filters</pre>
+                            <pre>filters(\Config\Filters|null $config = null, boolean $getShared = true) : \CodeIgniter\Filters\Filters</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -826,7 +826,7 @@ act on or modify the response itself before it is sent to the client.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>\Config\Filters|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -874,7 +874,7 @@ act on or modify the response itself before it is sent to the client.</h2>
                         <div class="element clickable method public  method_honeypot" data-toggle="collapse" data-target=".method_honeypot .collapse">
                             <h2>The Honeypot provides a secret input on forms that bots should NOT
 fill in, providing an additional safeguard when accepting user input.</h2>
-                            <pre>honeypot(\CodeIgniter\Config\BaseConfig|null $config = null, boolean $getShared = true) : \CodeIgniter\Honeypot\Honeypot|mixed</pre>
+                            <pre>honeypot(\Config\Honeypot|null $config = null, boolean $getShared = true) : \CodeIgniter\Honeypot\Honeypot</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -889,7 +889,7 @@ fill in, providing an additional safeguard when accepting user input.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code><a href="../classes/CodeIgniter.Config.BaseConfig.html">\CodeIgniter\Config\BaseConfig</a>|null</code><p></p>
+                                                <code>\Config\Honeypot|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -897,7 +897,7 @@ fill in, providing an additional safeguard when accepting user input.</h2>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.Honeypot.Honeypot.html">\CodeIgniter\Honeypot\Honeypot</a>|mixed</code><p></p>
+                                        <code><a href="../classes/CodeIgniter.Honeypot.Honeypot.html">\CodeIgniter\Honeypot\Honeypot</a></code><p></p>
                                                                     </div>
                             </div>
 
@@ -941,7 +941,7 @@ of the handler. Used like Services::image()-&gt;withFile($path)-&gt;rotate(90)-&
                                             <a id="method_injectMock"></a>
                         <div class="element clickable method public  method_injectMock inherited" data-toggle="collapse" data-target=".method_injectMock .collapse">
                             <h2>Inject mock object for testing.</h2>
-                            <pre>injectMock(string $name,  $mock) </pre>
+                            <pre>injectMock(string $name, mixed $mock) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                <span class="label">static</span>                                                                                                                            </div>
 
@@ -967,7 +967,7 @@ of the handler. Used like Services::image()-&gt;withFile($path)-&gt;rotate(90)-&
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$mock</h4>
-                                                <code></code><p></p>
+                                                <code>mixed</code><p></p>
                                             </div>
                                                                             
                                                                     </div>
@@ -1006,7 +1006,7 @@ optimizing applications.</h2>
                                             <a id="method_language"></a>
                         <div class="element clickable method public  method_language" data-toggle="collapse" data-target=".method_language .collapse">
                             <h2>Responsible for loading the language string translations.</h2>
-                            <pre>language(string $locale = null, boolean $getShared = true) : \CodeIgniter\Language\Language</pre>
+                            <pre>language(string|null $locale = null, boolean $getShared = true) : \CodeIgniter\Language\Language</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1021,7 +1021,7 @@ optimizing applications.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$locale</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1094,7 +1094,7 @@ multiple handlers that process the actual logging.</h2>
                                             <a id="method_migrations"></a>
                         <div class="element clickable method public  method_migrations" data-toggle="collapse" data-target=".method_migrations .collapse">
                             <h2>Return the appropriate Migration runner.</h2>
-                            <pre>migrations(\CodeIgniter\Config\BaseConfig $config = null, \CodeIgniter\Database\ConnectionInterface $db = null, boolean $getShared = true) : \CodeIgniter\Database\MigrationRunner</pre>
+                            <pre>migrations(\Config\Migrations|null $config = null, \CodeIgniter\Database\ConnectionInterface|null $db = null, boolean $getShared = true) : \CodeIgniter\Database\MigrationRunner</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1109,11 +1109,11 @@ multiple handlers that process the actual logging.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code><a href="../classes/CodeIgniter.Config.BaseConfig.html">\CodeIgniter\Config\BaseConfig</a></code><p></p>
+                                                <code>\Config\Migrations|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$db</h4>
-                                                <code><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">\CodeIgniter\Database\ConnectionInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">\CodeIgniter\Database\ConnectionInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1131,7 +1131,7 @@ multiple handlers that process the actual logging.</h2>
                             <h2>The Negotiate class provides the content negotiation features for
 working the request to determine correct language, encoding, charset,
 and more.</h2>
-                            <pre>negotiator(\CodeIgniter\HTTP\RequestInterface $request = null, boolean $getShared = true) : \CodeIgniter\HTTP\Negotiate</pre>
+                            <pre>negotiator(\CodeIgniter\HTTP\RequestInterface|null $request = null, boolean $getShared = true) : \CodeIgniter\HTTP\Negotiate</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1146,7 +1146,7 @@ and more.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$request</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1162,7 +1162,7 @@ and more.</h2>
                                             <a id="method_pager"></a>
                         <div class="element clickable method public  method_pager" data-toggle="collapse" data-target=".method_pager .collapse">
                             <h2>Return the appropriate pagination handler.</h2>
-                            <pre>pager(mixed $config = null, \CodeIgniter\View\RendererInterface $view = null, boolean $getShared = true) : \CodeIgniter\Pager\Pager</pre>
+                            <pre>pager(\Config\Pager|null $config = null, \CodeIgniter\View\RendererInterface|null $view = null, boolean $getShared = true) : \CodeIgniter\Pager\Pager</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1177,11 +1177,11 @@ and more.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>\Config\Pager|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$view</h4>
-                                                <code><a href="../classes/CodeIgniter.View.RendererInterface.html">\CodeIgniter\View\RendererInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.View.RendererInterface.html">\CodeIgniter\View\RendererInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1197,7 +1197,7 @@ and more.</h2>
                                             <a id="method_parser"></a>
                         <div class="element clickable method public  method_parser" data-toggle="collapse" data-target=".method_parser .collapse">
                             <h2>The Parser is a simple template parser.</h2>
-                            <pre>parser(string $viewPath = null, mixed $config = null, boolean $getShared = true) : \CodeIgniter\View\Parser</pre>
+                            <pre>parser(string|null $viewPath = null, \Config\View|null $config = null, boolean $getShared = true) : \CodeIgniter\View\Parser</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1212,11 +1212,11 @@ and more.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$viewPath</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>\Config\View|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1232,7 +1232,7 @@ and more.</h2>
                                             <a id="method_redirectResponse"></a>
                         <div class="element clickable method public  method_redirectResponse" data-toggle="collapse" data-target=".method_redirectResponse .collapse">
                             <h2>The Redirect class provides nice way of working with redirects.</h2>
-                            <pre>redirectResponse(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\Response</pre>
+                            <pre>redirectResponse(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\Response</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1247,7 +1247,7 @@ and more.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1263,7 +1263,7 @@ and more.</h2>
                                             <a id="method_renderer"></a>
                         <div class="element clickable method public  method_renderer" data-toggle="collapse" data-target=".method_renderer .collapse">
                             <h2>The Renderer class is the class that actually displays a file to the user.</h2>
-                            <pre>renderer(string $viewPath = null, mixed $config = null, boolean $getShared = true) : \CodeIgniter\View\View</pre>
+                            <pre>renderer(string|null $viewPath = null, \Config\View|null $config = null, boolean $getShared = true) : \CodeIgniter\View\View</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1279,11 +1279,11 @@ service could easily be replaced by a template engine if the user needed to.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$viewPath</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>\Config\View|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1299,7 +1299,7 @@ service could easily be replaced by a template engine if the user needed to.</p>
                                             <a id="method_request"></a>
                         <div class="element clickable method public  method_request" data-toggle="collapse" data-target=".method_request .collapse">
                             <h2>The Request class models an HTTP request.</h2>
-                            <pre>request(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\IncomingRequest</pre>
+                            <pre>request(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\IncomingRequest</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1314,7 +1314,7 @@ service could easily be replaced by a template engine if the user needed to.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1362,7 +1362,7 @@ service could easily be replaced by a template engine if the user needed to.</p>
                                             <a id="method_response"></a>
                         <div class="element clickable method public  method_response" data-toggle="collapse" data-target=".method_response .collapse">
                             <h2>The Response class models an HTTP response.</h2>
-                            <pre>response(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\Response</pre>
+                            <pre>response(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\HTTP\Response</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1377,7 +1377,7 @@ service could easily be replaced by a template engine if the user needed to.</p>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1394,7 +1394,7 @@ service could easily be replaced by a template engine if the user needed to.</p>
                         <div class="element clickable method public  method_router" data-toggle="collapse" data-target=".method_router .collapse">
                             <h2>The Router class uses a RouteCollection&#039;s array of routes, and determines
 the correct Controller and Method to execute.</h2>
-                            <pre>router(\CodeIgniter\Router\RouteCollectionInterface $routes = null, \CodeIgniter\HTTP\Request $request = null, boolean $getShared = true) : \CodeIgniter\Router\Router</pre>
+                            <pre>router(\CodeIgniter\Router\RouteCollectionInterface|null $routes = null, \CodeIgniter\HTTP\Request|null $request = null, boolean $getShared = true) : \CodeIgniter\Router\Router</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1409,11 +1409,11 @@ the correct Controller and Method to execute.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$routes</h4>
-                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$request</h4>
-                                                <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>
+                                                <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a>|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1458,7 +1458,7 @@ a collection of routes.</h2>
                         <div class="element clickable method public  method_security" data-toggle="collapse" data-target=".method_security .collapse">
                             <h2>The Security class provides a few handy tools for keeping the site
 secure, most notably the CSRF protection tools.</h2>
-                            <pre>security(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\Security\Security</pre>
+                            <pre>security(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\Security\Security</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1473,7 +1473,7 @@ secure, most notably the CSRF protection tools.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1489,7 +1489,7 @@ secure, most notably the CSRF protection tools.</h2>
                                             <a id="method_session"></a>
                         <div class="element clickable method public  method_session" data-toggle="collapse" data-target=".method_session .collapse">
                             <h2>Return the session manager.</h2>
-                            <pre>session(\Config\App $config = null, boolean $getShared = true) : \CodeIgniter\Session\Session</pre>
+                            <pre>session(\Config\App|null $config = null, boolean $getShared = true) : \CodeIgniter\Session\Session</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1504,7 +1504,7 @@ secure, most notably the CSRF protection tools.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\App</code><p></p>
+                                                <code>\Config\App|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1576,7 +1576,7 @@ application.</h2>
                                             <a id="method_toolbar"></a>
                         <div class="element clickable method public  method_toolbar" data-toggle="collapse" data-target=".method_toolbar .collapse">
                             <h2>Return the debug toolbar.</h2>
-                            <pre>toolbar(\Config\Toolbar $config = null, boolean $getShared = true) : \CodeIgniter\Debug\Toolbar</pre>
+                            <pre>toolbar(\Config\Toolbar|null $config = null, boolean $getShared = true) : \CodeIgniter\Debug\Toolbar</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1591,7 +1591,7 @@ application.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\Toolbar</code><p></p>
+                                                <code>\Config\Toolbar|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1665,7 +1665,7 @@ application.</h2>
                                             <a id="method_validation"></a>
                         <div class="element clickable method public  method_validation" data-toggle="collapse" data-target=".method_validation .collapse">
                             <h2>The Validation class provides tools for validating input data.</h2>
-                            <pre>validation(\Config\Validation $config = null, boolean $getShared = true) : \CodeIgniter\Validation\Validation</pre>
+                            <pre>validation(\Config\Validation|null $config = null, boolean $getShared = true) : \CodeIgniter\Validation\Validation</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -1680,7 +1680,7 @@ application.</h2>
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$config</h4>
-                                                <code>\Config\Validation</code><p></p>
+                                                <code>\Config\Validation|null</code><p></p>
                                             </div>
                                                                                     <div class="subelement argument">
                                                 <h4>$getShared</h4>
@@ -1849,7 +1849,7 @@ have been requested as a &quot;shared&quot; instance.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Tue, 18 Aug 2020 15:28:44 +0000.<br/>
+            generated on Tue, 18 Aug 2020 19:36:07 +0000.<br/>
     </footer>
     </body>
 </html>
