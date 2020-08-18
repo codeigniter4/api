@@ -143,13 +143,13 @@
         </a>
     </li>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
+                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
         <a href="#method_run" title="run :: Actually execute a command.">
             <span class="description">Actually execute a command.</span><pre>run</pre>
         </a>
     </li>
 
-                                                                                                                                                                                                                        <li class="method public inherited">
+                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
         <a href="#method_showHelp" title="showHelp :: Show Help includes (Usage, Arguments, Description, Options).">
             <span class="description">Show Help includes (Usage, Arguments, Description, Options).</span><pre>showHelp</pre>
         </a>
@@ -217,19 +217,21 @@ migration files where the basename has a date component.</span><pre>modifyBasena
                                 <span class="description">Parses the class name and checks if it is already qualified.</span><pre>qualifyClassName</pre>
                             </a>
                         </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_replaceClass" title="replaceClass :: Replaces the class name for a given template.">
-                                <span class="description">Replaces the class name for a given template.</span><pre>replaceClass</pre>
-                            </a>
-                        </li>
-                                                                                <li class="method protected inherited">
-                            <a href="#method_replaceNamespace" title="replaceNamespace :: Replaces the namespace for a given template.">
-                                <span class="description">Replaces the namespace for a given template.</span><pre>replaceNamespace</pre>
-                            </a>
-                        </li>
                                                                                                                     <li class="method protected inherited">
+                            <a href="#method_sanitizeClassName" title="sanitizeClassName :: Trims input, normalize separators, and ensures
+all paths are in Pascal case.">
+                                <span class="description">Trims input, normalize separators, and ensures
+all paths are in Pascal case.</span><pre>sanitizeClassName</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
                             <a href="#method_setPad" title="setPad :: Pads our string out so that all titles are the same length to nicely line up descriptions.">
                                 <span class="description">Pads our string out so that all titles are the same length to nicely line up descriptions.</span><pre>setPad</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_setReplacements" title="setReplacements :: Performs the necessary replacements.">
+                                <span class="description">Performs the necessary replacements.</span><pre>setReplacements</pre>
                             </a>
                         </li>
                                                                                 <li class="method protected inherited">
@@ -700,68 +702,6 @@ migration files where the basename has a date component.</h2>
                             </div>
 
                         </div>
-                                            <a id="method_replaceClass"></a>
-                        <div class="element clickable method protected  method_replaceClass inherited" data-toggle="collapse" data-target=".method_replaceClass .collapse">
-                            <h2>Replaces the class name for a given template.</h2>
-                            <pre>replaceClass(string $template, string $class) : string</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$class</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>string</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_replaceNamespace"></a>
-                        <div class="element clickable method protected  method_replaceNamespace inherited" data-toggle="collapse" data-target=".method_replaceNamespace .collapse">
-                            <h2>Replaces the namespace for a given template.</h2>
-                            <pre>replaceNamespace(string &$template, string $class) : $this</pre>
-                            <div class="labels">
-                                <span class="label">inherited</span>                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                                                    </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$template</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$class</h4>
-                                                <code>string</code><p></p>
-                                            </div>
-                                                                            
-                                                                            <h3>Response</h3>
-                                        <code>$this</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
                                             <a id="method_run"></a>
                         <div class="element clickable method public  method_run inherited" data-toggle="collapse" data-target=".method_run .collapse">
                             <h2>Actually execute a command.</h2>
@@ -790,6 +730,34 @@ migration files where the basename has a date component.</h2>
                                                 <code>array</code><p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_sanitizeClassName"></a>
+                        <div class="element clickable method protected  method_sanitizeClassName inherited" data-toggle="collapse" data-target=".method_sanitizeClassName .collapse">
+                            <h2>Trims input, normalize separators, and ensures
+all paths are in Pascal case.</h2>
+                            <pre>sanitizeClassName(string $class) : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$class</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
                                                                     </div>
                             </div>
 
@@ -825,6 +793,37 @@ migration files where the basename has a date component.</h2>
                                                                                     <div class="subelement argument">
                                                 <h4>$indent</h4>
                                                 <code>integer</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setReplacements"></a>
+                        <div class="element clickable method protected  method_setReplacements inherited" data-toggle="collapse" data-target=".method_setReplacements .collapse">
+                            <h2>Performs the necessary replacements.</h2>
+                            <pre>setReplacements(string $template, string $class) : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$template</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$class</h4>
+                                                <code>string</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -1192,8 +1191,8 @@ when listing commands.</h2>
                             </div>
                                                     <a id="property_commands"> </a>
                             <div class="element clickable property  protected property_commands inherited" data-toggle="collapse" data-target=".property_commands .collapse">
-                                <h2>Instance of the CommandRunner controller
-so commands can call other commands.</h2>
+                                <h2>Instance of Commands so
+commands can call other commands.</h2>
                                 <pre>commands : \CodeIgniter\CLI\Commands</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
@@ -1312,7 +1311,7 @@ so commands can call other commands.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Tue, 18 Aug 2020 02:56:57 +0000.<br/>
+            generated on Tue, 18 Aug 2020 15:28:52 +0000.<br/>
     </footer>
     </body>
 </html>
