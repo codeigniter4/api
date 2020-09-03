@@ -119,6 +119,10 @@
             <span class="description">Returns the processed filters array.</span><pre>getFilters</pre>
         </a>
     </li>    <li class="methodpublic">
+        <a href="#method_getFiltersClass" title="getFiltersClass ::Returns the filtersClass array.">
+            <span class="description">Returns the filtersClass array.</span><pre>getFiltersClass</pre>
+        </a>
+    </li>    <li class="methodpublic">
         <a href="#method_initialize" title="initialize ::Runs through our list of filters provided by the configuration
 object to get them ready for use, including getting uri masks
 to proper regex, removing those we can from the possibilities
@@ -142,6 +146,10 @@ uri and position.</span><pre>run</pre>
         </li>
         <li class="nav-header protected">» Protected
             <ul>                        <li class="methodprotected">
+                            <a href="#method_processAliasesToClass" title="processAliasesToClass ::Maps filter aliases to the equivalent filter classes">
+                                <span class="description">Maps filter aliases to the equivalent filter classes</span><pre>processAliasesToClass</pre>
+                            </a>
+                        </li>                        <li class="methodprotected">
                             <a href="#method_processFilters" title="processFilters ::Add any applicable configured filters to the mix.">
                                 <span class="description">Add any applicable configured filters to the mix.</span><pre>processFilters</pre>
                             </a>
@@ -327,6 +335,23 @@ are passed to the filter when executed.</p></div>
                                         <code>array</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getFiltersClass"></a>
+                        <div class="element clickable methodpublic method_getFiltersClass" data-toggle="collapse" data-target=".method_getFiltersClass .collapse">
+                            <h2>Returns the filtersClass array.</h2>
+                            <pre>getFiltersClass(): array</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>array</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_initialize"></a>
                         <div class="element clickable methodpublic method_initialize" data-toggle="collapse" data-target=".method_initialize .collapse">
                             <h2>Runs through our list of filters provided by the configuration
@@ -367,6 +392,31 @@ process the rows.</p></div>
                                                 <code>mixed</code><p><p>The path patterns to test</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p><p>True if any of the paths apply to the URI</p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_processAliasesToClass"></a>
+                        <div class="element clickable methodprotected method_processAliasesToClass" data-toggle="collapse" data-target=".method_processAliasesToClass .collapse">
+                            <h2>Maps filter aliases to the equivalent filter classes</h2>
+                            <pre>processAliasesToClass(\CodeIgniter\Filters\string $position): void</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>                                                        <dt>\CodeIgniter\Filters\Exceptions\FilterException</dt>
+                                                        <dd></dd>                                                    </dl>
+                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$position</h4>
+                                                <code>\CodeIgniter\Filters\string</code><p></p>
+                                            </div>                                </div>
                             </div>
 
                         </div>                        <a id="method_processFilters"></a>
@@ -465,6 +515,39 @@ uri and position.</h2>
                                 <h2>The processed filters that will
 be used to check against.</h2>
                                 <pre>filters :array</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_filtersClass"> </a>
+                            <div class="element clickable propertyprotected property_filtersClass" data-toggle="collapse" data-target=".property_filtersClass .collapse">
+                                <h2>The collection of filters&#039; class names that will
+be used to execute in each position.</h2>
+                                <pre>filtersClass :array</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_argumentsClass"> </a>
+                            <div class="element clickable propertyprotected property_argumentsClass" data-toggle="collapse" data-target=".property_argumentsClass .collapse">
+                                <h2>Any arguments to be passed to filtersClass.</h2>
+                                <pre>argumentsClass :array</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -587,6 +670,6 @@ on the filter lists.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onWed, 02 Sep 2020 20:51:21 +0000.<br/>
+            generated onThu, 03 Sep 2020 05:02:26 +0000.<br/>
     </footer></body>
 </html>
