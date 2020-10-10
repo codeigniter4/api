@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Config\View</title>
+    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Config\Factory</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>        <link href="../css/template.css" rel="stylesheet" media="all"/>        <!--[if lt IE 9]>
         <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -135,14 +135,15 @@ options into a config file.</span><pre>registerProperties</pre>
 
         <div class="span8">
             <div class="element class">
-                <h1>View</h1>
+                <h1>Factory</h1>
                 <small style="display: block; text-align: right">                        Extends<a href="../classes/CodeIgniter.Config.BaseConfig.html">\CodeIgniter\Config\BaseConfig</a>                </small>
-                <p class="short_description">View configuration</p>
+                <p class="short_description">Factories Configuration file.</p>
                 <div class="details">
-                    <div class="long_description"><p>Not intended to be used on its own, this class will attempt to
-automatically populate the child class' properties with values
-from the environment.</p>
-<p>These can be set within the .env file.</p>
+                    <div class="long_description"><p>Provides overriding directives for how
+Factories should handle discovery and
+instantiation of specific components.
+Each property should correspond to the
+lowercase, plural component name.</p>
                     </div>
                     <table class="table table-bordered">                                <tr>
                                     <th>package                                    </th>
@@ -245,48 +246,12 @@ options into a config file.</h2>
                                             </tr>                                    </table>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_filters"> </a>
-                            <div class="element clickable propertypublic property_filters" data-toggle="collapse" data-target=".property_filters .collapse">
-                                <h2>Parser Filters map a filter name with any PHP callable. When the
-Parser prepares a variable for display, it will chain it
-through the filters in the order defined, inserting any parameters.</h2>
-                                <pre>filters :</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"><p>To prevent potential abuse, all filters MUST be defined here
-in order for them to be available for use within the Parser.</p></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code></code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_plugins"> </a>
-                            <div class="element clickable propertypublic property_plugins" data-toggle="collapse" data-target=".property_plugins .collapse">
-                                <h2>Parser Plugins provide a way to extend the functionality provided
-by the core Parser by creating aliases that will be replaced with
-any callable. Can be single or tag pair.</h2>
-                                <pre>plugins :</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code></code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_coreFilters"> </a>
-                            <div class="element clickable propertyprotected property_coreFilters" data-toggle="collapse" data-target=".property_coreFilters .collapse">
-                                <h2>Built-in View filters.</h2>
-                                <pre>coreFilters :array</pre>
-                                <div class="labels">                                </div>
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_default"> </a>
+                            <div class="element clickable propertypublic property_default" data-toggle="collapse" data-target=".property_default .collapse">
+                                <h2>Supplies a default configuration to merge for
+all unspecified factory configuration values.</h2>
+                                <pre>default :array</pre>
+                                <div class="labels"><span class="label">static</span>                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -298,10 +263,11 @@ any callable. Can be single or tag pair.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
                                 </div>
-                            </div>                            <a id="property_corePlugins"> </a>
-                            <div class="element clickable propertyprotected property_corePlugins" data-toggle="collapse" data-target=".property_corePlugins .collapse">
-                                <h2>Built-in View plugins.</h2>
-                                <pre>corePlugins :array</pre>
+                            </div>                            <a id="property_models"> </a>
+                            <div class="element clickable propertypublic property_models" data-toggle="collapse" data-target=".property_models .collapse">
+                                <h2>Specifies that Models should always favor child
+classes to allow easy extension of module Models.</h2>
+                                <pre>models :array</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -365,11 +331,11 @@ for rapidly setting config class properties.</h2>
                                 </div>
                             </div>                </div>
             </div>
-            <a id="\CodeIgniter\Config\View"></a>
+            <a id="\CodeIgniter\Config\Factory"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
     <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Config.html">Config</a></li>
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Config.View.html">View</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Config.Factory.html">Factory</a></li>
             </ul>
         </div>
     </div>    </div>    <footer class="span12">

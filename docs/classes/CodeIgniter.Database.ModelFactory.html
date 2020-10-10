@@ -107,8 +107,8 @@
             <span class="description">Helper method for injecting mock instances while testing.</span><pre>injectMock</pre>
         </a>
     </li>    <li class="methodpublic">
-        <a href="#method_reset" title="reset ::Resets the instances array">
-            <span class="description">Resets the instances array</span><pre>reset</pre>
+        <a href="#method_reset" title="reset ::Resets the static arrays">
+            <span class="description">Resets the static arrays</span><pre>reset</pre>
         </a>
     </li>            </ul>
         </li>
@@ -116,11 +116,7 @@
             <ul>            </ul>
         </li>
         <li class="nav-header private">» Private
-            <ul>                        <li class="methodprivate">
-                            <a href="#method_createClass" title="createClass ::Finds a Model class and creates an instance">
-                                <span class="description">Finds a Model class and creates an instance</span><pre>createClass</pre>
-                            </a>
-                        </li>            </ul>
+            <ul>            </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -133,36 +129,21 @@
             <div class="element class">
                 <h1>ModelFactory</h1>
                 <small style="display: block; text-align: right">                </small>
-                <p class="short_description"></p>
+                <p class="short_description">Returns new or shared Model instances</p>
                 <div class="details">
                     <div class="long_description">
                     </div>
                     <table class="table table-bordered">                                <tr>
+                                    <th>deprecated                                    </th>
+                                    <td><p>Use CodeIgniter\Config\Factories::models()</p>
+                                    </td>
+                                </tr>                                <tr>
                                     <th>package                                    </th>
                                     <td><p>Default</p>
                                     </td>
                                 </tr>                    </table>
 
-                    <h3><i class="icon-custom icon-method"></i> Methods</h3>                        <a id="method_createClass"></a>
-                        <div class="element clickable methodprivate method_createClass" data-toggle="collapse" data-target=".method_createClass .collapse">
-                            <h2>Finds a Model class and creates an instance</h2>
-                            <pre>createClass(string $name,\CodeIgniter\Database\ConnectionInterface|null &$connection = null): mixed|null</pre>
-                            <div class="labels"><span class="label">static</span>                            </div>
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$name</h4>
-                                                <code>string</code><p><p>Classname</p></p>
-                                            </div>                                            <div class="subelement argument">
-                                                <h4>$connection</h4>
-                                                <code><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">\CodeIgniter\Database\ConnectionInterface</a>|null</code><p></p>
-                                            </div>                                        <h3>Response</h3>
-                                        <code>mixed|null</code><p></p>                                </div>
-                            </div>
-
-                        </div>                        <a id="method_get"></a>
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>                        <a id="method_get"></a>
                         <div class="element clickable methodpublic method_get" data-toggle="collapse" data-target=".method_get .collapse">
                             <h2>Creates new Model instances or returns a shared instance</h2>
                             <pre>get(string $name,boolean $getShared = true,\CodeIgniter\Database\ConnectionInterface $connection = null): mixed|null</pre>
@@ -187,7 +168,7 @@
                         </div>                        <a id="method_injectMock"></a>
                         <div class="element clickable methodpublic method_injectMock" data-toggle="collapse" data-target=".method_injectMock .collapse">
                             <h2>Helper method for injecting mock instances while testing.</h2>
-                            <pre>injectMock(string $class,object $instance)</pre>
+                            <pre>injectMock(string $name,object $instance)</pre>
                             <div class="labels"><span class="label">static</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -198,7 +179,7 @@
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$class</h4>
+                                                <h4>$name</h4>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$instance</h4>
@@ -208,7 +189,7 @@
 
                         </div>                        <a id="method_reset"></a>
                         <div class="element clickable methodpublic method_reset" data-toggle="collapse" data-target=".method_reset .collapse">
-                            <h2>Resets the instances array</h2>
+                            <h2>Resets the static arrays</h2>
                             <pre>reset()</pre>
                             <div class="labels"><span class="label">static</span>                            </div>
                             <div class="row collapse">
@@ -226,24 +207,7 @@
                                             </tr>                                    </table>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_instances"> </a>
-                            <div class="element clickable propertyprivate property_instances" data-toggle="collapse" data-target=".property_instances .collapse">
-                                <h2>Cache for instance of any models that
-have been requested as &quot;shared&quot; instance.</h2>
-                                <pre>instances :array</pre>
-                                <div class="labels"><span class="label">static</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
-                                </div>
-                            </div>                </div>
+                        </div>                </div>
             </div>
             <a id="\CodeIgniter\Database\ModelFactory"></a>
             <ul class="breadcrumb">
@@ -256,6 +220,6 @@ have been requested as &quot;shared&quot; instance.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onSat, 10 Oct 2020 18:07:37 +0000.<br/>
+            generated onSat, 10 Oct 2020 18:13:04 +0000.<br/>
     </footer></body>
 </html>
