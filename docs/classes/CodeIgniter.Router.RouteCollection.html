@@ -330,6 +330,10 @@ the local PSR4 namespaces, or through selected Composer packages.</span><pre>dis
                                 <span class="description">Given a</span><pre>fillRouteParams</pre>
                             </a>
                         </li>                        <li class="methodprotected">
+                            <a href="#method_loadRoutesOptions" title="loadRoutesOptions ::Load routes options based on verb">
+                                <span class="description">Load routes options based on verb</span><pre>loadRoutesOptions</pre>
+                            </a>
+                        </li>                        <li class="methodprotected">
                             <a href="#method_localizeRoute" title="localizeRoute ::Replaces the {locale} tag with the current application locale">
                                 <span class="description">Replaces the {locale} tag with the current application locale</span><pre>localizeRoute</pre>
                             </a>
@@ -425,7 +429,7 @@ $routes-&gt;add('news', 'Posts::index');</p></div>
                             <h2>Registers a new constraint with the system. Constraints are used
 by the routes as placeholders for regular expressions to make defining
 the routes more human-friendly.</h2>
-                            <pre>addPlaceholder(string|array $placeholder,string $pattern = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>addPlaceholder(string|array $placeholder,string|null $pattern = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -437,7 +441,7 @@ multiple placeholders added at once.</p></div>
                                                 <code>string|array</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$pattern</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>                                </div>
                             </div>
@@ -738,7 +742,7 @@ or the controller/string.</h2>
 with any parameters it might have. Parameters are found by splitting
 the parameter name on a colon to separate the filter name from the parameter list,
 and the splitting the result on commas. So:</h2>
-                            <pre>getFilterForRoute(string $search): string</pre>
+                            <pre>getFilterForRoute(string $search,string|null $verb = null): string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -748,6 +752,9 @@ and the splitting the result on commas. So:</h2>
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$search</h4>
                                                 <code>string</code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$verb</h4>
+                                                <code>string|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
                             </div>
@@ -788,7 +795,7 @@ and the splitting the result on commas. So:</h2>
                         </div>                        <a id="method_getRoutes"></a>
                         <div class="element clickable methodpublic method_getRoutes" data-toggle="collapse" data-target=".method_getRoutes .collapse">
                             <h2>Returns the raw array of available routes.</h2>
-                            <pre>getRoutes(mixed $verb = null): array</pre>
+                            <pre>getRoutes(string|null $verb = null): array</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -796,7 +803,7 @@ and the splitting the result on commas. So:</h2>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$verb</h4>
-                                                <code>mixed</code><p></p>
+                                                <code>string|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>array</code><p></p>                                </div>
                             </div>
@@ -804,7 +811,7 @@ and the splitting the result on commas. So:</h2>
                         </div>                        <a id="method_getRoutesOptions"></a>
                         <div class="element clickable methodpublic method_getRoutesOptions" data-toggle="collapse" data-target=".method_getRoutesOptions .collapse">
                             <h2>Returns one or all routes options</h2>
-                            <pre>getRoutesOptions(string $from = null): array</pre>
+                            <pre>getRoutesOptions(string|null $from = null,string|null $verb = null): array</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -812,7 +819,10 @@ and the splitting the result on commas. So:</h2>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$from</h4>
-                                                <code>string</code><p></p>
+                                                <code>string|null</code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$verb</h4>
+                                                <code>string|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>array</code><p></p>                                </div>
                             </div>
@@ -865,7 +875,7 @@ $route-&gt;resource('users');
                         </div>                        <a id="method_isFiltered"></a>
                         <div class="element clickable methodpublic method_isFiltered" data-toggle="collapse" data-target=".method_isFiltered .collapse">
                             <h2>Checks a route (using the &quot;from&quot;) to see if it&#039;s filtered or not.</h2>
-                            <pre>isFiltered(string $search): boolean</pre>
+                            <pre>isFiltered(string $search,string|null $verb = null): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -874,6 +884,9 @@ $route-&gt;resource('users');
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$search</h4>
                                                 <code>string</code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$verb</h4>
+                                                <code>string|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p></p>                                </div>
                             </div>
@@ -892,6 +905,22 @@ $route-&gt;resource('users');
                                                 <code>string</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_loadRoutesOptions"></a>
+                        <div class="element clickable methodprotected method_loadRoutesOptions" data-toggle="collapse" data-target=".method_loadRoutesOptions .collapse">
+                            <h2>Load routes options based on verb</h2>
+                            <pre>loadRoutesOptions(string|null $verb = null): array</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$verb</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>array</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_localizeRoute"></a>
@@ -913,7 +942,7 @@ $route-&gt;resource('users');
                         </div>                        <a id="method_map"></a>
                         <div class="element clickable methodpublic method_map" data-toggle="collapse" data-target=".method_map .collapse">
                             <h2>A shortcut method to add a number of routes at a single time.</h2>
-                            <pre>map(array $routes = array(),array $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>map(array $routes = array(),array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -925,7 +954,7 @@ define the method used.</p></div>
                                                 <code>array</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
-                                                <code>array</code><p></p>
+                                                <code>array|null</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code><a href="../classes/CodeIgniter.Router.RouteCollectionInterface.html">\CodeIgniter\Router\RouteCollectionInterface</a></code><p></p>                                </div>
                             </div>
@@ -1646,6 +1675,6 @@ applied during creation.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onSun, 11 Oct 2020 08:27:15 +0000.<br/>
+            generated onSun, 11 Oct 2020 12:36:51 +0000.<br/>
     </footer></body>
 </html>
