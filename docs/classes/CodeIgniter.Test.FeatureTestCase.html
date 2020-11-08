@@ -171,6 +171,14 @@ is equal to $expected.</span><pre>seeNumRecords</pre>
             <span class="description">Don&#039;t run any events while running this test.</span><pre>skipEvents</pre>
         </a>
     </li>    <li class="methodpublic inherited">
+        <a href="#method_withBody" title="withBody ::Set the raw body for the request">
+            <span class="description">Set the raw body for the request</span><pre>withBody</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_withBodyFormat" title="withBodyFormat ::Set the format the request&#039;s body should have.">
+            <span class="description">Set the format the request&#039;s body should have.</span><pre>withBodyFormat</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_withHeaders" title="withHeaders ::Set request&#039;s headers">
             <span class="description">Set request&#039;s headers</span><pre>withHeaders</pre>
         </a>
@@ -194,6 +202,10 @@ relevant to the request, like $_POST data.</span><pre>populateGlobals</pre>
                         </li>                        <li class="methodprotected inherited">
                             <a href="#method_regressDatabase" title="regressDatabase ::Regress migrations as defined by the class">
                                 <span class="description">Regress migrations as defined by the class</span><pre>regressDatabase</pre>
+                            </a>
+                        </li>                        <li class="methodprotected inherited">
+                            <a href="#method_setRequestBody" title="setRequestBody ::Set the request&#039;s body formatted according to the value in $this-&gt;bodyFormat.">
+                                <span class="description">Set the request&#039;s body formatted according to the value in $this-&gt;bodyFormat.</span><pre>setRequestBody</pre>
                             </a>
                         </li>                        <li class="methodprotected inherited">
                             <a href="#method_setUp" title="setUp ::Ensures that the database is cleaned up to a known state
@@ -661,6 +673,27 @@ is equal to $expected.</h2>
                                             </div>                                </div>
                             </div>
 
+                        </div>                        <a id="method_setRequestBody"></a>
+                        <div class="element clickable methodprotected method_setRequestBody inherited" data-toggle="collapse" data-target=".method_setRequestBody .collapse">
+                            <h2>Set the request&#039;s body formatted according to the value in $this-&gt;bodyFormat.</h2>
+                            <pre>setRequestBody(\CodeIgniter\HTTP\Request $request,null|array $params = null): \CodeIgniter\HTTP\Request</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This allows the body to be formatted in a way that the controller is going to
+expect as in the case of testing a JSON or XML API.</p></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>null|array</code><p><p>The parameters to be formatted and put in the body. If this is empty, it will get the
+what has been loaded into the request global of the request class.</p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_setUp"></a>
                         <div class="element clickable methodprotected method_setUp inherited" data-toggle="collapse" data-target=".method_setUp .collapse">
                             <h2>Ensures that the database is cleaned up to a known state
@@ -760,6 +793,38 @@ removing any rows inserted via $this-&gt;hasInDatabase()</h2>
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_withBody"></a>
+                        <div class="element clickable methodpublic method_withBody inherited" data-toggle="collapse" data-target=".method_withBody .collapse">
+                            <h2>Set the raw body for the request</h2>
+                            <pre>withBody(mixed $body): $this</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$body</h4>
+                                                <code>mixed</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>$this</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_withBodyFormat"></a>
+                        <div class="element clickable methodpublic method_withBodyFormat inherited" data-toggle="collapse" data-target=".method_withBodyFormat .collapse">
+                            <h2>Set the format the request&#039;s body should have.</h2>
+                            <pre>withBodyFormat(string $format): $this</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$format</h4>
+                                                <code>string</code><p><p>The desired format. Currently supported formats: xml, json</p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>$this</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_withHeaders"></a>
@@ -882,6 +947,40 @@ before running the test.</h2>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_bodyFormat"> </a>
+                            <div class="element clickable propertyprotected property_bodyFormat" data-toggle="collapse" data-target=".property_bodyFormat .collapse">
+                                <h2>Allows for formatting the request body to what
+the controller is going to expect</h2>
+                                <pre>bodyFormat :string</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>string</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_requestBody"> </a>
+                            <div class="element clickable propertyprotected property_requestBody" data-toggle="collapse" data-target=".property_requestBody .collapse">
+                                <h2>Allows for directly setting the body to what
+it needs to be.</h2>
+                                <pre>requestBody :mixed</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>mixed</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_refresh"> </a>
                             <div class="element clickable propertyprotected property_refresh inherited" data-toggle="collapse" data-target=".property_refresh .collapse">
@@ -1044,6 +1143,6 @@ rows inserted via $this-&gt;hasInDatabase();</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onThu, 05 Nov 2020 19:32:41 +0000.<br/>
+            generated onSun, 08 Nov 2020 11:54:03 +0000.<br/>
     </footer></body>
 </html>
