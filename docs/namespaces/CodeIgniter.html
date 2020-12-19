@@ -564,100 +564,143 @@ download</p>        </div><a href="../classes/CodeIgniter.ComposerScripts.html" 
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Files.html">Files</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Files.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Autoloader.html">Autoloader</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FileException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileException .collapse">
-        <h1>FileException<a href="../classes/CodeIgniter.Files.Exceptions.FileException.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Files.Exceptions.FileException.html" class="more">« More »</a>    </div>    <div id="class_FileNotFoundException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileNotFoundException .collapse">
-        <h1>FileNotFoundException<a href="../classes/CodeIgniter.Files.Exceptions.FileNotFoundException.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Files.Exceptions.FileNotFoundException.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Autoloader" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Autoloader .collapse">
+        <h1>Autoloader<a href="../classes/CodeIgniter.Autoloader.Autoloader.html">¶</a></h1>
+        <p class="short_description">CodeIgniter Autoloader</p>
+        <div class="details collapse"><p>An autoloader that uses both PSR4 autoloading, and traditional classmaps.</p>
+<p>Given a foo-bar package of classes in the file system at the following paths:</p>
+<pre><code> /path/to/packages/foo-bar/
+     /src
+         Baz.php         # Foo\Bar\Baz
+         Qux/
+             Quux.php    # Foo\Bar\Qux\Quux</code></pre>
+<p>you can add the path to the configuration array that is passed in the constructor.
+The Config array consists of 2 primary keys, both of which are associative arrays:
+'psr4', and 'classmap'.</p>
+<pre><code> $Config = [
+     'psr4' =&gt; [
+         'Foo\Bar'   =&gt; '/path/to/packages/foo-bar'
+     ],
+     'classmap' =&gt; [
+         'MyClass'   =&gt; '/path/to/class/file.php'
+     ]
+ ];</code></pre>
+<p>Example:</p>
+<pre><code> &lt;?php
+ // our configuration array
+ $Config = [ ... ];
+ $loader = new \CodeIgniter\Autoloader\Autoloader($Config);
+
+ // register the autoloader
+ $loader-&gt;register();</code></pre>        </div><a href="../classes/CodeIgniter.Autoloader.Autoloader.html" class="more">« More »</a>    </div>    <div id="class_FileLocator" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileLocator .collapse">
+        <h1>FileLocator<a href="../classes/CodeIgniter.Autoloader.FileLocator.html">¶</a></h1>
+        <p class="short_description">Class FileLocator</p>
+        <div class="details collapse"><p>Allows loading non-class files in a namespaced manner.
+Works with Helpers, Views, etc.</p>        </div><a href="../classes/CodeIgniter.Autoloader.FileLocator.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.html">I18n</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_CacheInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_CacheInterface .collapse">
-        <h1>CacheInterface<a href="../classes/CodeIgniter.Cache.CacheInterface.html">¶</a></h1>
-        <p class="short_description">Cache interface</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.CacheInterface.html" class="more">« More »</a>    </div>    <div id="class_CacheFactory" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CacheFactory .collapse">
-        <h1>CacheFactory<a href="../classes/CodeIgniter.Cache.CacheFactory.html">¶</a></h1>
-        <p class="short_description">Class Cache</p>
-        <div class="details collapse"><p>A factory for loading the desired</p>        </div><a href="../classes/CodeIgniter.Cache.CacheFactory.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Time" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Time .collapse">
+        <h1>Time<a href="../classes/CodeIgniter.I18n.Time.html">¶</a></h1>
+        <p class="short_description">Class Time</p>
+        <div class="details collapse"><p>A localized date/time package inspired
+by Nesbot/Carbon and CakePHP/Chronos.</p>
+<p>Requires the intl PHP extension.</p>        </div><a href="../classes/CodeIgniter.I18n.Time.html" class="more">« More »</a>    </div>    <div id="class_TimeDifference" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_TimeDifference .collapse">
+        <h1>TimeDifference<a href="../classes/CodeIgniter.I18n.TimeDifference.html">¶</a></h1>
+        <p class="short_description">Class TimeDifference</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.I18n.TimeDifference.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.html">I18n</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.Exceptions.html">Exceptions</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
-        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Cache.Exceptions.ExceptionInterface.html">¶</a></h1>
-        <p class="short_description">Provides a domain-level interface for broad capture
-of all framework-related exceptions.</p>
-        <div class="details collapse"><p>catch (\CodeIgniter\Cache\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Cache.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_CacheException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CacheException .collapse">
-        <h1>CacheException<a href="../classes/CodeIgniter.Cache.Exceptions.CacheException.html">¶</a></h1>
-        <p class="short_description">CacheException</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Exceptions.CacheException.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_I18nException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_I18nException .collapse">
+        <h1>I18nException<a href="../classes/CodeIgniter.I18n.Exceptions.I18nException.html">¶</a></h1>
+        <p class="short_description">I18nException</p>
+        <div class="details collapse"><p>A collection of exceptions thrown by the framework
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.I18n.Exceptions.I18nException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.Handlers.html">Handlers</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.API.html">API</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_DummyHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DummyHandler .collapse">
-        <h1>DummyHandler<a href="../classes/CodeIgniter.Cache.Handlers.DummyHandler.html">¶</a></h1>
-        <p class="short_description">Dummy cache handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.DummyHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
-        <h1>FileHandler<a href="../classes/CodeIgniter.Cache.Handlers.FileHandler.html">¶</a></h1>
-        <p class="short_description">File system cache handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.FileHandler.html" class="more">« More »</a>    </div>    <div id="class_MemcachedHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_MemcachedHandler .collapse">
-        <h1>MemcachedHandler<a href="../classes/CodeIgniter.Cache.Handlers.MemcachedHandler.html">¶</a></h1>
-        <p class="short_description">Mamcached cache handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.MemcachedHandler.html" class="more">« More »</a>    </div>    <div id="class_PredisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PredisHandler .collapse">
-        <h1>PredisHandler<a href="../classes/CodeIgniter.Cache.Handlers.PredisHandler.html">¶</a></h1>
-        <p class="short_description">Predis cache handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.PredisHandler.html" class="more">« More »</a>    </div>    <div id="class_RedisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_RedisHandler .collapse">
-        <h1>RedisHandler<a href="../classes/CodeIgniter.Cache.Handlers.RedisHandler.html">¶</a></h1>
-        <p class="short_description">Redis cache handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.RedisHandler.html" class="more">« More »</a>    </div>    <div id="class_WincacheHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_WincacheHandler .collapse">
-        <h1>WincacheHandler<a href="../classes/CodeIgniter.Cache.Handlers.WincacheHandler.html">¶</a></h1>
-        <p class="short_description">Cache handler for WinCache from Microsoft &amp; IIS.</p>
-        <div class="details collapse"><p>Windows-only, so not testable on travis-ci.
-Unusable methods flagged for code coverage ignoring.</p>        </div><a href="../classes/CodeIgniter.Cache.Handlers.WincacheHandler.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="trait_ResponseTrait" class="element ajax clickabletrait" data-toggle="collapse" data-target="#trait_ResponseTrait .collapse">
+        <h1>ResponseTrait<a href="../classes/CodeIgniter.API.ResponseTrait.html">¶</a></h1>
+        <p class="short_description">Response trait.</p>
+        <div class="details collapse"><p>Provides common, more readable, methods to provide
+consistent HTTP responses under a variety of common
+situations when working as an API.</p>        </div><a href="../classes/CodeIgniter.API.ResponseTrait.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Modules.html">Modules</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Typography.html">Typography</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Modules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Modules .collapse">
-        <h1>Modules<a href="../classes/CodeIgniter.Modules.Modules.html">¶</a></h1>
-        <p class="short_description">Modules Class</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Modules.Modules.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Typography" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Typography .collapse">
+        <h1>Typography<a href="../classes/CodeIgniter.Typography.Typography.html">¶</a></h1>
+        <p class="short_description">Typography Class</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Typography.Typography.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.html">Format</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FormatterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FormatterInterface .collapse">
+        <h1>FormatterInterface<a href="../classes/CodeIgniter.Format.FormatterInterface.html">¶</a></h1>
+        <p class="short_description">Formatter interface</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.FormatterInterface.html" class="more">« More »</a>    </div>    <div id="class_Format" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Format .collapse">
+        <h1>Format<a href="../classes/CodeIgniter.Format.Format.html">¶</a></h1>
+        <p class="short_description">The Format class is a convenient place to create Formatters.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.Format.html" class="more">« More »</a>    </div>    <div id="class_JSONFormatter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_JSONFormatter .collapse">
+        <h1>JSONFormatter<a href="../classes/CodeIgniter.Format.JSONFormatter.html">¶</a></h1>
+        <p class="short_description">JSON data formatter</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.JSONFormatter.html" class="more">« More »</a>    </div>    <div id="class_XMLFormatter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_XMLFormatter .collapse">
+        <h1>XMLFormatter<a href="../classes/CodeIgniter.Format.XMLFormatter.html">¶</a></h1>
+        <p class="short_description">XML data formatter</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.XMLFormatter.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.html">Format</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FormatException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FormatException .collapse">
+        <h1>FormatException<a href="../classes/CodeIgniter.Format.Exceptions.FormatException.html">¶</a></h1>
+        <p class="short_description">FormatException</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.Exceptions.FormatException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -768,6 +811,23 @@ each of the following:</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
     </li>
     <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_HTTPException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_HTTPException .collapse">
+        <h1>HTTPException<a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html">¶</a></h1>
+        <p class="short_description">Things that can go wrong with HTTP</p>
+        <div class="details collapse"><p>A collection of exceptions thrown by the framework
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
+    </li>
+    <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Files.html">Files</a>
     </li>
         </ul>            <div class="namespace-indent">
@@ -791,17 +851,232 @@ provide files.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_HTTPException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_HTTPException .collapse">
-        <h1>HTTPException<a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html">¶</a></h1>
-        <p class="short_description">Things that can go wrong with HTTP</p>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Logger" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Logger .collapse">
+        <h1>Logger<a href="../classes/CodeIgniter.Log.Logger.html">¶</a></h1>
+        <p class="short_description">The CodeIgntier Logger</p>
+        <div class="details collapse"><p>The message MUST be a string or object implementing __toString().</p>
+<p>The message MAY contain placeholders in the form: {foo} where foo
+will be replaced by the context data in key &quot;foo&quot;.</p>
+<p>The context array can contain arbitrary data, the only assumption that
+can be made by implementors is that if an Exception instance is given
+to produce a stack trace, it MUST be in a key named &quot;exception&quot;.</p>        </div><a href="../classes/CodeIgniter.Log.Logger.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.Handlers.html">Handlers</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_HandlerInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_HandlerInterface .collapse">
+        <h1>HandlerInterface<a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html">¶</a></h1>
+        <p class="short_description">Expected behavior for a Log handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html" class="more">« More »</a>    </div>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
+        <h1>BaseHandler<a href="../classes/CodeIgniter.Log.Handlers.BaseHandler.html">¶</a></h1>
+        <p class="short_description">Base class for logging</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_ChromeLoggerHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ChromeLoggerHandler .collapse">
+        <h1>ChromeLoggerHandler<a href="../classes/CodeIgniter.Log.Handlers.ChromeLoggerHandler.html">¶</a></h1>
+        <p class="short_description">Class ChromeLoggerHandler</p>
+        <div class="details collapse"><p>Allows for logging items to the Chrome console for debugging.
+Requires the ChromeLogger extension installed in your browser.</p>        </div><a href="../classes/CodeIgniter.Log.Handlers.ChromeLoggerHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
+        <h1>FileHandler<a href="../classes/CodeIgniter.Log.Handlers.FileHandler.html">¶</a></h1>
+        <p class="short_description">Log error messages to file system</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.FileHandler.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_LogException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_LogException .collapse">
+        <h1>LogException<a href="../classes/CodeIgniter.Log.Exceptions.LogException.html">¶</a></h1>
+        <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.HTTP.Exceptions.HTTPException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Log.Exceptions.LogException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.html">Filters</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FilterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FilterInterface .collapse">
+        <h1>FilterInterface<a href="../classes/CodeIgniter.Filters.FilterInterface.html">¶</a></h1>
+        <p class="short_description">Filter interface</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.FilterInterface.html" class="more">« More »</a>    </div>    <div id="class_CSRF" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CSRF .collapse">
+        <h1>CSRF<a href="../classes/CodeIgniter.Filters.CSRF.html">¶</a></h1>
+        <p class="short_description">CSRF filter.</p>
+        <div class="details collapse"><p>This filter is not intended to be used from the command line.</p>        </div><a href="../classes/CodeIgniter.Filters.CSRF.html" class="more">« More »</a>    </div>    <div id="class_DebugToolbar" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DebugToolbar .collapse">
+        <h1>DebugToolbar<a href="../classes/CodeIgniter.Filters.DebugToolbar.html">¶</a></h1>
+        <p class="short_description">Debug toolbar filter</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.DebugToolbar.html" class="more">« More »</a>    </div>    <div id="class_Filters" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Filters .collapse">
+        <h1>Filters<a href="../classes/CodeIgniter.Filters.Filters.html">¶</a></h1>
+        <p class="short_description">Filters</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Filters.html" class="more">« More »</a>    </div>    <div id="class_Honeypot" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Honeypot .collapse">
+        <h1>Honeypot<a href="../classes/CodeIgniter.Filters.Honeypot.html">¶</a></h1>
+        <p class="short_description">Honeypot filter</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Honeypot.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.html">Filters</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FilterException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FilterException .collapse">
+        <h1>FilterException<a href="../classes/CodeIgniter.Filters.Exceptions.FilterException.html">¶</a></h1>
+        <p class="short_description">FilterException</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Exceptions.FilterException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ValidationInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ValidationInterface .collapse">
+        <h1>ValidationInterface<a href="../classes/CodeIgniter.Validation.ValidationInterface.html">¶</a></h1>
+        <p class="short_description">Expected behavior of a validator</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.ValidationInterface.html" class="more">« More »</a>    </div>    <div id="class_CreditCardRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CreditCardRules .collapse">
+        <h1>CreditCardRules<a href="../classes/CodeIgniter.Validation.CreditCardRules.html">¶</a></h1>
+        <p class="short_description">Class CreditCardRules</p>
+        <div class="details collapse"><p>Provides validation methods for common credit-card inputs.</p>        </div><a href="../classes/CodeIgniter.Validation.CreditCardRules.html" class="more">« More »</a>    </div>    <div id="class_FileRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileRules .collapse">
+        <h1>FileRules<a href="../classes/CodeIgniter.Validation.FileRules.html">¶</a></h1>
+        <p class="short_description">File validation rules</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.FileRules.html" class="more">« More »</a>    </div>    <div id="class_FormatRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FormatRules .collapse">
+        <h1>FormatRules<a href="../classes/CodeIgniter.Validation.FormatRules.html">¶</a></h1>
+        <p class="short_description">Format validation Rules.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.FormatRules.html" class="more">« More »</a>    </div>    <div id="class_Rules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Rules .collapse">
+        <h1>Rules<a href="../classes/CodeIgniter.Validation.Rules.html">¶</a></h1>
+        <p class="short_description">Validation Rules.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.Rules.html" class="more">« More »</a>    </div>    <div id="class_Validation" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Validation .collapse">
+        <h1>Validation<a href="../classes/CodeIgniter.Validation.Validation.html">¶</a></h1>
+        <p class="short_description">Validator</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.Validation.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ValidationException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ValidationException .collapse">
+        <h1>ValidationException<a href="../classes/CodeIgniter.Validation.Exceptions.ValidationException.html">¶</a></h1>
+        <p class="short_description">Class FrameworkException</p>
+        <div class="details collapse"><p>A collection of exceptions thrown by the framework
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Validation.Exceptions.ValidationException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.html">CLI</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseCommand" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseCommand .collapse">
+        <h1>BaseCommand<a href="../classes/CodeIgniter.CLI.BaseCommand.html">¶</a></h1>
+        <p class="short_description">Class BaseCommand</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.BaseCommand.html" class="more">« More »</a>    </div>    <div id="class_CommandRunner" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CommandRunner .collapse">
+        <h1>CommandRunner<a href="../classes/CodeIgniter.CLI.CommandRunner.html">¶</a></h1>
+        <p class="short_description">Command runner</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.CommandRunner.html" class="more">« More »</a>    </div>    <div id="class_Commands" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Commands .collapse">
+        <h1>Commands<a href="../classes/CodeIgniter.CLI.Commands.html">¶</a></h1>
+        <p class="short_description">Class Commands</p>
+        <div class="details collapse"><p>Core functionality for running, listing, etc commands.</p>        </div><a href="../classes/CodeIgniter.CLI.Commands.html" class="more">« More »</a>    </div>    <div id="class_Console" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Console .collapse">
+        <h1>Console<a href="../classes/CodeIgniter.CLI.Console.html">¶</a></h1>
+        <p class="short_description">Console</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.Console.html" class="more">« More »</a>    </div>    <div id="class_GeneratorCommand" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_GeneratorCommand .collapse">
+        <h1>GeneratorCommand<a href="../classes/CodeIgniter.CLI.GeneratorCommand.html">¶</a></h1>
+        <p class="short_description">GeneratorCommand can be used as base class
+for creating commands that generates a file.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.GeneratorCommand.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.html">CLI</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_CLIException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CLIException .collapse">
+        <h1>CLIException<a href="../classes/CodeIgniter.CLI.Exceptions.CLIException.html">¶</a></h1>
+        <p class="short_description">CLIException</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.Exceptions.CLIException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
+        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Exceptions.ExceptionInterface.html">¶</a></h1>
+        <p class="short_description">Provides a domain-level interface for broad capture
+of all framework-related exceptions.</p>
+        <div class="details collapse"><p>catch (\CodeIgniter\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_AlertError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_AlertError .collapse">
+        <h1>AlertError<a href="../classes/CodeIgniter.Exceptions.AlertError.html">¶</a></h1>
+        <p class="short_description">Error: Action must be taken immediately (system/db down, etc)</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.AlertError.html" class="more">« More »</a>    </div>    <div id="class_CastException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CastException .collapse">
+        <h1>CastException<a href="../classes/CodeIgniter.Exceptions.CastException.html">¶</a></h1>
+        <p class="short_description">Cast Exceptions.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.CastException.html" class="more">« More »</a>    </div>    <div id="class_ConfigException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ConfigException .collapse">
+        <h1>ConfigException<a href="../classes/CodeIgniter.Exceptions.ConfigException.html">¶</a></h1>
+        <p class="short_description">Exception for automatic logging.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.ConfigException.html" class="more">« More »</a>    </div>    <div id="class_CriticalError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CriticalError .collapse">
+        <h1>CriticalError<a href="../classes/CodeIgniter.Exceptions.CriticalError.html">¶</a></h1>
+        <p class="short_description">Error: Critical conditions, like component unavailble, etc.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.CriticalError.html" class="more">« More »</a>    </div>    <div id="class_DownloadException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DownloadException .collapse">
+        <h1>DownloadException<a href="../classes/CodeIgniter.Exceptions.DownloadException.html">¶</a></h1>
+        <p class="short_description">Class DownloadException</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.DownloadException.html" class="more">« More »</a>    </div>    <div id="class_EmergencyError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_EmergencyError .collapse">
+        <h1>EmergencyError<a href="../classes/CodeIgniter.Exceptions.EmergencyError.html">¶</a></h1>
+        <p class="short_description">Error: system is unusable</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.EmergencyError.html" class="more">« More »</a>    </div>    <div id="class_FrameworkException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FrameworkException .collapse">
+        <h1>FrameworkException<a href="../classes/CodeIgniter.Exceptions.FrameworkException.html">¶</a></h1>
+        <p class="short_description">Class FrameworkException</p>
+        <div class="details collapse"><p>A collection of exceptions thrown by the framework
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Exceptions.FrameworkException.html" class="more">« More »</a>    </div>    <div id="class_ModelException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ModelException .collapse">
+        <h1>ModelException<a href="../classes/CodeIgniter.Exceptions.ModelException.html">¶</a></h1>
+        <p class="short_description">Model Exceptions.</p>
+        <div class="details collapse"><p>A collection of exceptions thrown by the framework
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Exceptions.ModelException.html" class="more">« More »</a>    </div>    <div id="class_PageNotFoundException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PageNotFoundException .collapse">
+        <h1>PageNotFoundException<a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -829,16 +1104,13 @@ and provides a way to list help for other commands.</p>        </div><a href="..
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Cache.html">Cache</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Server.html">Server</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ClearCache" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearCache .collapse">
-        <h1>ClearCache<a href="../classes/CodeIgniter.Commands.Cache.ClearCache.html">¶</a></h1>
-        <p class="short_description">Clears current cache.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Cache.ClearCache.html" class="more">« More »</a>    </div>    <div id="class_InfoCache" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_InfoCache .collapse">
-        <h1>InfoCache<a href="../classes/CodeIgniter.Commands.Cache.InfoCache.html">¶</a></h1>
-        <p class="short_description">Shows information on the cache.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Cache.InfoCache.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Serve" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Serve .collapse">
+        <h1>Serve<a href="../classes/CodeIgniter.Commands.Server.Serve.html">¶</a></h1>
+        <p class="short_description">Launch the PHP development server</p>
+        <div class="details collapse"><p>Not testable, as it throws phpunit for a loop :-/</p>        </div><a href="../classes/CodeIgniter.Commands.Server.Serve.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -871,13 +1143,16 @@ in a routes file, but are instead discovered through auto-routing.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Server.html">Server</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Housekeeping.html">Housekeeping</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Serve" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Serve .collapse">
-        <h1>Serve<a href="../classes/CodeIgniter.Commands.Server.Serve.html">¶</a></h1>
-        <p class="short_description">Launch the PHP development server</p>
-        <div class="details collapse"><p>Not testable, as it throws phpunit for a loop :-/</p>        </div><a href="../classes/CodeIgniter.Commands.Server.Serve.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ClearDebugbar" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearDebugbar .collapse">
+        <h1>ClearDebugbar<a href="../classes/CodeIgniter.Commands.Housekeeping.ClearDebugbar.html">¶</a></h1>
+        <p class="short_description">ClearDebugbar Command</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Housekeeping.ClearDebugbar.html" class="more">« More »</a>    </div>    <div id="class_ClearLogs" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearLogs .collapse">
+        <h1>ClearLogs<a href="../classes/CodeIgniter.Commands.Housekeeping.ClearLogs.html">¶</a></h1>
+        <p class="short_description">ClearLogs command.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Housekeeping.ClearLogs.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -887,13 +1162,16 @@ in a routes file, but are instead discovered through auto-routing.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Encryption.html">Encryption</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Cache.html">Cache</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_GenerateKey" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_GenerateKey .collapse">
-        <h1>GenerateKey<a href="../classes/CodeIgniter.Commands.Encryption.GenerateKey.html">¶</a></h1>
-        <p class="short_description">Generates a new encryption key.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Encryption.GenerateKey.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ClearCache" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearCache .collapse">
+        <h1>ClearCache<a href="../classes/CodeIgniter.Commands.Cache.ClearCache.html">¶</a></h1>
+        <p class="short_description">Clears current cache.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Cache.ClearCache.html" class="more">« More »</a>    </div>    <div id="class_InfoCache" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_InfoCache .collapse">
+        <h1>InfoCache<a href="../classes/CodeIgniter.Commands.Cache.InfoCache.html">¶</a></h1>
+        <p class="short_description">Shows information on the cache.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Cache.InfoCache.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -945,16 +1223,13 @@ creation command.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.html">Commands</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Housekeeping.html">Housekeeping</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Commands.Encryption.html">Encryption</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ClearDebugbar" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearDebugbar .collapse">
-        <h1>ClearDebugbar<a href="../classes/CodeIgniter.Commands.Housekeeping.ClearDebugbar.html">¶</a></h1>
-        <p class="short_description">ClearDebugbar Command</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Housekeeping.ClearDebugbar.html" class="more">« More »</a>    </div>    <div id="class_ClearLogs" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ClearLogs .collapse">
-        <h1>ClearLogs<a href="../classes/CodeIgniter.Commands.Housekeeping.ClearLogs.html">¶</a></h1>
-        <p class="short_description">ClearLogs command.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Housekeeping.ClearLogs.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_GenerateKey" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_GenerateKey .collapse">
+        <h1>GenerateKey<a href="../classes/CodeIgniter.Commands.Encryption.GenerateKey.html">¶</a></h1>
+        <p class="short_description">Generates a new encryption key.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Commands.Encryption.GenerateKey.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -995,19 +1270,6 @@ with some data.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Events.html">Events</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Events" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Events .collapse">
-        <h1>Events<a href="../classes/CodeIgniter.Events.Events.html">¶</a></h1>
-        <p class="short_description">Events</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Events.Events.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Throttle.html">Throttle</a>
     </li>
         </ul>            <div class="namespace-indent">
@@ -1028,6 +1290,74 @@ for the purposes of this implementation.</p>        </div><a href="../classes/Co
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_CacheInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_CacheInterface .collapse">
+        <h1>CacheInterface<a href="../classes/CodeIgniter.Cache.CacheInterface.html">¶</a></h1>
+        <p class="short_description">Cache interface</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.CacheInterface.html" class="more">« More »</a>    </div>    <div id="class_CacheFactory" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CacheFactory .collapse">
+        <h1>CacheFactory<a href="../classes/CodeIgniter.Cache.CacheFactory.html">¶</a></h1>
+        <p class="short_description">Class Cache</p>
+        <div class="details collapse"><p>A factory for loading the desired</p>        </div><a href="../classes/CodeIgniter.Cache.CacheFactory.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.Handlers.html">Handlers</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_DummyHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DummyHandler .collapse">
+        <h1>DummyHandler<a href="../classes/CodeIgniter.Cache.Handlers.DummyHandler.html">¶</a></h1>
+        <p class="short_description">Dummy cache handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.DummyHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
+        <h1>FileHandler<a href="../classes/CodeIgniter.Cache.Handlers.FileHandler.html">¶</a></h1>
+        <p class="short_description">File system cache handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.FileHandler.html" class="more">« More »</a>    </div>    <div id="class_MemcachedHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_MemcachedHandler .collapse">
+        <h1>MemcachedHandler<a href="../classes/CodeIgniter.Cache.Handlers.MemcachedHandler.html">¶</a></h1>
+        <p class="short_description">Mamcached cache handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.MemcachedHandler.html" class="more">« More »</a>    </div>    <div id="class_PredisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PredisHandler .collapse">
+        <h1>PredisHandler<a href="../classes/CodeIgniter.Cache.Handlers.PredisHandler.html">¶</a></h1>
+        <p class="short_description">Predis cache handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.PredisHandler.html" class="more">« More »</a>    </div>    <div id="class_RedisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_RedisHandler .collapse">
+        <h1>RedisHandler<a href="../classes/CodeIgniter.Cache.Handlers.RedisHandler.html">¶</a></h1>
+        <p class="short_description">Redis cache handler</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Handlers.RedisHandler.html" class="more">« More »</a>    </div>    <div id="class_WincacheHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_WincacheHandler .collapse">
+        <h1>WincacheHandler<a href="../classes/CodeIgniter.Cache.Handlers.WincacheHandler.html">¶</a></h1>
+        <p class="short_description">Cache handler for WinCache from Microsoft &amp; IIS.</p>
+        <div class="details collapse"><p>Windows-only, so not testable on travis-ci.
+Unusable methods flagged for code coverage ignoring.</p>        </div><a href="../classes/CodeIgniter.Cache.Handlers.WincacheHandler.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.html">Cache</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Cache.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
+        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Cache.Exceptions.ExceptionInterface.html">¶</a></h1>
+        <p class="short_description">Provides a domain-level interface for broad capture
+of all framework-related exceptions.</p>
+        <div class="details collapse"><p>catch (\CodeIgniter\Cache\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Cache.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_CacheException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CacheException .collapse">
+        <h1>CacheException<a href="../classes/CodeIgniter.Cache.Exceptions.CacheException.html">¶</a></h1>
+        <p class="short_description">CacheException</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Cache.Exceptions.CacheException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.html">Images</a>
     </li>
         </ul>            <div class="namespace-indent">
@@ -1038,23 +1368,6 @@ for the purposes of this implementation.</p>        </div><a href="../classes/Co
         <h1>Image<a href="../classes/CodeIgniter.Images.Image.html">¶</a></h1>
         <p class="short_description">Encapsulation of an Image file</p>
         <div class="details collapse">        </div><a href="../classes/CodeIgniter.Images.Image.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.html">Images</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ImageException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ImageException .collapse">
-        <h1>ImageException<a href="../classes/CodeIgniter.Images.Exceptions.ImageException.html">¶</a></h1>
-        <p class="short_description">Class FrameworkException</p>
-        <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Images.Exceptions.ImageException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -1087,346 +1400,201 @@ but simply use the command line version.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.html">Honeypot</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.html">Images</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Images.Exceptions.html">Exceptions</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Honeypot" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Honeypot .collapse">
-        <h1>Honeypot<a href="../classes/CodeIgniter.Honeypot.Honeypot.html">¶</a></h1>
-        <p class="short_description">class Honeypot</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Honeypot.Honeypot.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.html">Honeypot</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_HoneypotException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_HoneypotException .collapse">
-        <h1>HoneypotException<a href="../classes/CodeIgniter.Honeypot.Exceptions.HoneypotException.html">¶</a></h1>
-        <p class="short_description">Exception for automatic logging.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Honeypot.Exceptions.HoneypotException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_EncrypterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_EncrypterInterface .collapse">
-        <h1>EncrypterInterface<a href="../classes/CodeIgniter.Encryption.EncrypterInterface.html">¶</a></h1>
-        <p class="short_description">CodeIgniter Encryption Handler</p>
-        <div class="details collapse"><p>Provides two-way keyed encryption</p>        </div><a href="../classes/CodeIgniter.Encryption.EncrypterInterface.html" class="more">« More »</a>    </div>    <div id="class_Encryption" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Encryption .collapse">
-        <h1>Encryption<a href="../classes/CodeIgniter.Encryption.Encryption.html">¶</a></h1>
-        <p class="short_description">CodeIgniter Encryption Manager</p>
-        <div class="details collapse"><p>Provides two-way keyed encryption via PHP's Sodium and/or OpenSSL extensions.
-This class determines the driver, cipher, and mode to use, and then
-initializes the appropriate encryption handler.</p>        </div><a href="../classes/CodeIgniter.Encryption.Encryption.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_EncryptionException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_EncryptionException .collapse">
-        <h1>EncryptionException<a href="../classes/CodeIgniter.Encryption.Exceptions.EncryptionException.html">¶</a></h1>
-        <p class="short_description">Encryption exception</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Exceptions.EncryptionException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.Handlers.html">Handlers</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
-        <h1>BaseHandler<a href="../classes/CodeIgniter.Encryption.Handlers.BaseHandler.html">¶</a></h1>
-        <p class="short_description">Base class for encryption handling</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_OpenSSLHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_OpenSSLHandler .collapse">
-        <h1>OpenSSLHandler<a href="../classes/CodeIgniter.Encryption.Handlers.OpenSSLHandler.html">¶</a></h1>
-        <p class="short_description">Encryption handling for OpenSSL library</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.OpenSSLHandler.html" class="more">« More »</a>    </div>    <div id="class_SodiumHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SodiumHandler .collapse">
-        <h1>SodiumHandler<a href="../classes/CodeIgniter.Encryption.Handlers.SodiumHandler.html">¶</a></h1>
-        <p class="short_description">SodiumHandler uses libsodium in encryption.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.SodiumHandler.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
-        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Exceptions.ExceptionInterface.html">¶</a></h1>
-        <p class="short_description">Provides a domain-level interface for broad capture
-of all framework-related exceptions.</p>
-        <div class="details collapse"><p>catch (\CodeIgniter\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_AlertError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_AlertError .collapse">
-        <h1>AlertError<a href="../classes/CodeIgniter.Exceptions.AlertError.html">¶</a></h1>
-        <p class="short_description">Error: Action must be taken immediately (system/db down, etc)</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.AlertError.html" class="more">« More »</a>    </div>    <div id="class_CastException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CastException .collapse">
-        <h1>CastException<a href="../classes/CodeIgniter.Exceptions.CastException.html">¶</a></h1>
-        <p class="short_description">Cast Exceptions.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.CastException.html" class="more">« More »</a>    </div>    <div id="class_ConfigException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ConfigException .collapse">
-        <h1>ConfigException<a href="../classes/CodeIgniter.Exceptions.ConfigException.html">¶</a></h1>
-        <p class="short_description">Exception for automatic logging.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.ConfigException.html" class="more">« More »</a>    </div>    <div id="class_CriticalError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CriticalError .collapse">
-        <h1>CriticalError<a href="../classes/CodeIgniter.Exceptions.CriticalError.html">¶</a></h1>
-        <p class="short_description">Error: Critical conditions, like component unavailble, etc.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.CriticalError.html" class="more">« More »</a>    </div>    <div id="class_DownloadException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DownloadException .collapse">
-        <h1>DownloadException<a href="../classes/CodeIgniter.Exceptions.DownloadException.html">¶</a></h1>
-        <p class="short_description">Class DownloadException</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.DownloadException.html" class="more">« More »</a>    </div>    <div id="class_EmergencyError" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_EmergencyError .collapse">
-        <h1>EmergencyError<a href="../classes/CodeIgniter.Exceptions.EmergencyError.html">¶</a></h1>
-        <p class="short_description">Error: system is unusable</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.EmergencyError.html" class="more">« More »</a>    </div>    <div id="class_FrameworkException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FrameworkException .collapse">
-        <h1>FrameworkException<a href="../classes/CodeIgniter.Exceptions.FrameworkException.html">¶</a></h1>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ImageException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ImageException .collapse">
+        <h1>ImageException<a href="../classes/CodeIgniter.Images.Exceptions.ImageException.html">¶</a></h1>
         <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Exceptions.FrameworkException.html" class="more">« More »</a>    </div>    <div id="class_ModelException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ModelException .collapse">
-        <h1>ModelException<a href="../classes/CodeIgniter.Exceptions.ModelException.html">¶</a></h1>
-        <p class="short_description">Model Exceptions.</p>
-        <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Exceptions.ModelException.html" class="more">« More »</a>    </div>    <div id="class_PageNotFoundException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PageNotFoundException .collapse">
-        <h1>PageNotFoundException<a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Exceptions.PageNotFoundException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Images.Exceptions.ImageException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.html">CLI</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.html">View</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseCommand" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseCommand .collapse">
-        <h1>BaseCommand<a href="../classes/CodeIgniter.CLI.BaseCommand.html">¶</a></h1>
-        <p class="short_description">Class BaseCommand</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.BaseCommand.html" class="more">« More »</a>    </div>    <div id="class_CommandRunner" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CommandRunner .collapse">
-        <h1>CommandRunner<a href="../classes/CodeIgniter.CLI.CommandRunner.html">¶</a></h1>
-        <p class="short_description">Command runner</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.CommandRunner.html" class="more">« More »</a>    </div>    <div id="class_Commands" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Commands .collapse">
-        <h1>Commands<a href="../classes/CodeIgniter.CLI.Commands.html">¶</a></h1>
-        <p class="short_description">Class Commands</p>
-        <div class="details collapse"><p>Core functionality for running, listing, etc commands.</p>        </div><a href="../classes/CodeIgniter.CLI.Commands.html" class="more">« More »</a>    </div>    <div id="class_Console" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Console .collapse">
-        <h1>Console<a href="../classes/CodeIgniter.CLI.Console.html">¶</a></h1>
-        <p class="short_description">Console</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.Console.html" class="more">« More »</a>    </div>    <div id="class_GeneratorCommand" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_GeneratorCommand .collapse">
-        <h1>GeneratorCommand<a href="../classes/CodeIgniter.CLI.GeneratorCommand.html">¶</a></h1>
-        <p class="short_description">GeneratorCommand can be used as base class
-for creating commands that generates a file.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.GeneratorCommand.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_RendererInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_RendererInterface .collapse">
+        <h1>RendererInterface<a href="../classes/CodeIgniter.View.RendererInterface.html">¶</a></h1>
+        <p class="short_description">Interface RendererInterface</p>
+        <div class="details collapse"><p>The interface used for displaying Views and/or theme files.</p>        </div><a href="../classes/CodeIgniter.View.RendererInterface.html" class="more">« More »</a>    </div>    <div id="class_Cell" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Cell .collapse">
+        <h1>Cell<a href="../classes/CodeIgniter.View.Cell.html">¶</a></h1>
+        <p class="short_description">Class Cell</p>
+        <div class="details collapse"><p>A simple class that can call any other class that can be loaded,
+and echo out it's result. Intended for displaying small blocks of
+content within views that can be managed by other libraries and
+not require they are loaded within controller.</p>
+<p>Used with the helper function, it's use will look like:</p>
+<pre><code>    viewCell('\Some\Class::method', 'limit=5 sort=asc', 60, 'cache-name');</code></pre>
+<p>Parameters are matched up with the callback method's arguments of the same name:</p>
+<pre><code>    class Class {
+        function method($limit, $sort)
+    }</code></pre>
+<p>Alternatively, the params will be passed into the callback method as a simple array
+if matching params are not found.</p>
+<pre><code>    class Class {
+        function method(array $params=null)
+    }</code></pre>        </div><a href="../classes/CodeIgniter.View.Cell.html" class="more">« More »</a>    </div>    <div id="class_Parser" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Parser .collapse">
+        <h1>Parser<a href="../classes/CodeIgniter.View.Parser.html">¶</a></h1>
+        <p class="short_description">Class for parsing pseudo-vars</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.View.Parser.html" class="more">« More »</a>    </div>    <div id="class_Plugins" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Plugins .collapse">
+        <h1>Plugins<a href="../classes/CodeIgniter.View.Plugins.html">¶</a></h1>
+        <p class="short_description">View plugins</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.View.Plugins.html" class="more">« More »</a>    </div>    <div id="class_Table" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Table .collapse">
+        <h1>Table<a href="../classes/CodeIgniter.View.Table.html">¶</a></h1>
+        <p class="short_description">HTML Table Generating Class</p>
+        <div class="details collapse"><p>Lets you create tables manually or from database result objects, or arrays.</p>        </div><a href="../classes/CodeIgniter.View.Table.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.html">CLI</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.html">View</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.CLI.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.Exceptions.html">Exceptions</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_CLIException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CLIException .collapse">
-        <h1>CLIException<a href="../classes/CodeIgniter.CLI.Exceptions.CLIException.html">¶</a></h1>
-        <p class="short_description">CLIException</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.CLI.Exceptions.CLIException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Autoloader.html">Autoloader</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Autoloader" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Autoloader .collapse">
-        <h1>Autoloader<a href="../classes/CodeIgniter.Autoloader.Autoloader.html">¶</a></h1>
-        <p class="short_description">CodeIgniter Autoloader</p>
-        <div class="details collapse"><p>An autoloader that uses both PSR4 autoloading, and traditional classmaps.</p>
-<p>Given a foo-bar package of classes in the file system at the following paths:</p>
-<pre><code> /path/to/packages/foo-bar/
-     /src
-         Baz.php         # Foo\Bar\Baz
-         Qux/
-             Quux.php    # Foo\Bar\Qux\Quux</code></pre>
-<p>you can add the path to the configuration array that is passed in the constructor.
-The Config array consists of 2 primary keys, both of which are associative arrays:
-'psr4', and 'classmap'.</p>
-<pre><code> $Config = [
-     'psr4' =&gt; [
-         'Foo\Bar'   =&gt; '/path/to/packages/foo-bar'
-     ],
-     'classmap' =&gt; [
-         'MyClass'   =&gt; '/path/to/class/file.php'
-     ]
- ];</code></pre>
-<p>Example:</p>
-<pre><code> &lt;?php
- // our configuration array
- $Config = [ ... ];
- $loader = new \CodeIgniter\Autoloader\Autoloader($Config);
-
- // register the autoloader
- $loader-&gt;register();</code></pre>        </div><a href="../classes/CodeIgniter.Autoloader.Autoloader.html" class="more">« More »</a>    </div>    <div id="class_FileLocator" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileLocator .collapse">
-        <h1>FileLocator<a href="../classes/CodeIgniter.Autoloader.FileLocator.html">¶</a></h1>
-        <p class="short_description">Class FileLocator</p>
-        <div class="details collapse"><p>Allows loading non-class files in a namespaced manner.
-Works with Helpers, Views, etc.</p>        </div><a href="../classes/CodeIgniter.Autoloader.FileLocator.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.html">Format</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FormatterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FormatterInterface .collapse">
-        <h1>FormatterInterface<a href="../classes/CodeIgniter.Format.FormatterInterface.html">¶</a></h1>
-        <p class="short_description">Formatter interface</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.FormatterInterface.html" class="more">« More »</a>    </div>    <div id="class_Format" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Format .collapse">
-        <h1>Format<a href="../classes/CodeIgniter.Format.Format.html">¶</a></h1>
-        <p class="short_description">The Format class is a convenient place to create Formatters.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.Format.html" class="more">« More »</a>    </div>    <div id="class_JSONFormatter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_JSONFormatter .collapse">
-        <h1>JSONFormatter<a href="../classes/CodeIgniter.Format.JSONFormatter.html">¶</a></h1>
-        <p class="short_description">JSON data formatter</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.JSONFormatter.html" class="more">« More »</a>    </div>    <div id="class_XMLFormatter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_XMLFormatter .collapse">
-        <h1>XMLFormatter<a href="../classes/CodeIgniter.Format.XMLFormatter.html">¶</a></h1>
-        <p class="short_description">XML data formatter</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.XMLFormatter.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.html">Format</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Format.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FormatException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FormatException .collapse">
-        <h1>FormatException<a href="../classes/CodeIgniter.Format.Exceptions.FormatException.html">¶</a></h1>
-        <p class="short_description">FormatException</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Format.Exceptions.FormatException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Logger" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Logger .collapse">
-        <h1>Logger<a href="../classes/CodeIgniter.Log.Logger.html">¶</a></h1>
-        <p class="short_description">The CodeIgntier Logger</p>
-        <div class="details collapse"><p>The message MUST be a string or object implementing __toString().</p>
-<p>The message MAY contain placeholders in the form: {foo} where foo
-will be replaced by the context data in key &quot;foo&quot;.</p>
-<p>The context array can contain arbitrary data, the only assumption that
-can be made by implementors is that if an Exception instance is given
-to produce a stack trace, it MUST be in a key named &quot;exception&quot;.</p>        </div><a href="../classes/CodeIgniter.Log.Logger.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_LogException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_LogException .collapse">
-        <h1>LogException<a href="../classes/CodeIgniter.Log.Exceptions.LogException.html">¶</a></h1>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ViewException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ViewException .collapse">
+        <h1>ViewException<a href="../classes/CodeIgniter.View.Exceptions.ViewException.html">¶</a></h1>
         <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Log.Exceptions.LogException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.View.Exceptions.ViewException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.html">Log</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Log.Handlers.html">Handlers</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Email.html">Email</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_HandlerInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_HandlerInterface .collapse">
-        <h1>HandlerInterface<a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html">¶</a></h1>
-        <p class="short_description">Expected behavior for a Log handler</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.HandlerInterface.html" class="more">« More »</a>    </div>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
-        <h1>BaseHandler<a href="../classes/CodeIgniter.Log.Handlers.BaseHandler.html">¶</a></h1>
-        <p class="short_description">Base class for logging</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_ChromeLoggerHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ChromeLoggerHandler .collapse">
-        <h1>ChromeLoggerHandler<a href="../classes/CodeIgniter.Log.Handlers.ChromeLoggerHandler.html">¶</a></h1>
-        <p class="short_description">Class ChromeLoggerHandler</p>
-        <div class="details collapse"><p>Allows for logging items to the Chrome console for debugging.
-Requires the ChromeLogger extension installed in your browser.</p>        </div><a href="../classes/CodeIgniter.Log.Handlers.ChromeLoggerHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
-        <h1>FileHandler<a href="../classes/CodeIgniter.Log.Handlers.FileHandler.html">¶</a></h1>
-        <p class="short_description">Log error messages to file system</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Log.Handlers.FileHandler.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Email" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Email .collapse">
+        <h1>Email<a href="../classes/CodeIgniter.Email.Email.html">¶</a></h1>
+        <p class="short_description">CodeIgniter Email Class</p>
+        <div class="details collapse"><p>Permits email to be sent using Mail, Sendmail, or SMTP.</p>        </div><a href="../classes/CodeIgniter.Email.Email.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_PagerInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_PagerInterface .collapse">
-        <h1>PagerInterface<a href="../classes/CodeIgniter.Pager.PagerInterface.html">¶</a></h1>
-        <p class="short_description">Expected behavior for a Pager</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Pager.PagerInterface.html" class="more">« More »</a>    </div>    <div id="class_PagerRenderer" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PagerRenderer .collapse">
-        <h1>PagerRenderer<a href="../classes/CodeIgniter.Pager.PagerRenderer.html">¶</a></h1>
-        <p class="short_description">Class PagerRenderer</p>
-        <div class="details collapse"><p>This class is passed to the view that describes the pagination,
-and is used to get the link information and provide utility
-methods needed to work with pagination.</p>        </div><a href="../classes/CodeIgniter.Pager.PagerRenderer.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_SessionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_SessionInterface .collapse">
+        <h1>SessionInterface<a href="../classes/CodeIgniter.Session.SessionInterface.html">¶</a></h1>
+        <p class="short_description">Expected behavior of a session container used with CodeIgniter.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.SessionInterface.html" class="more">« More »</a>    </div>    <div id="class_Session" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Session .collapse">
+        <h1>Session<a href="../classes/CodeIgniter.Session.Session.html">¶</a></h1>
+        <p class="short_description">Implementation of CodeIgniter session container.</p>
+        <div class="details collapse"><p>Session configuration is done through session variables and cookie related
+variables in app/config/App.php</p>        </div><a href="../classes/CodeIgniter.Session.Session.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.Handlers.html">Handlers</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_PagerException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PagerException .collapse">
-        <h1>PagerException<a href="../classes/CodeIgniter.Pager.Exceptions.PagerException.html">¶</a></h1>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ArrayHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ArrayHandler .collapse">
+        <h1>ArrayHandler<a href="../classes/CodeIgniter.Session.Handlers.ArrayHandler.html">¶</a></h1>
+        <p class="short_description">Session handler using static array for storage.</p>
+        <div class="details collapse"><p>Intended only for use during testing.</p>        </div><a href="../classes/CodeIgniter.Session.Handlers.ArrayHandler.html" class="more">« More »</a>    </div>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
+        <h1>BaseHandler<a href="../classes/CodeIgniter.Session.Handlers.BaseHandler.html">¶</a></h1>
+        <p class="short_description">Base class for session handling</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_DatabaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DatabaseHandler .collapse">
+        <h1>DatabaseHandler<a href="../classes/CodeIgniter.Session.Handlers.DatabaseHandler.html">¶</a></h1>
+        <p class="short_description">Session handler using current Database for storage</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.DatabaseHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
+        <h1>FileHandler<a href="../classes/CodeIgniter.Session.Handlers.FileHandler.html">¶</a></h1>
+        <p class="short_description">Session handler using file system for storage</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.FileHandler.html" class="more">« More »</a>    </div>    <div id="class_MemcachedHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_MemcachedHandler .collapse">
+        <h1>MemcachedHandler<a href="../classes/CodeIgniter.Session.Handlers.MemcachedHandler.html">¶</a></h1>
+        <p class="short_description">Session handler using Memcache for persistence</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.MemcachedHandler.html" class="more">« More »</a>    </div>    <div id="class_RedisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_RedisHandler .collapse">
+        <h1>RedisHandler<a href="../classes/CodeIgniter.Session.Handlers.RedisHandler.html">¶</a></h1>
+        <p class="short_description">Session handler using Redis for persistence</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.RedisHandler.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_SessionException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SessionException .collapse">
+        <h1>SessionException<a href="../classes/CodeIgniter.Session.Exceptions.SessionException.html">¶</a></h1>
         <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Pager.Exceptions.PagerException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Session.Exceptions.SessionException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Config.html">Config</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_AutoloadConfig" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_AutoloadConfig .collapse">
+        <h1>AutoloadConfig<a href="../classes/CodeIgniter.Config.AutoloadConfig.html">¶</a></h1>
+        <p class="short_description">AUTOLOADER</p>
+        <div class="details collapse"><p>This file defines the namespaces and class maps so the Autoloader
+can find the files as needed.</p>        </div><a href="../classes/CodeIgniter.Config.AutoloadConfig.html" class="more">« More »</a>    </div>    <div id="class_BaseConfig" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseConfig .collapse">
+        <h1>BaseConfig<a href="../classes/CodeIgniter.Config.BaseConfig.html">¶</a></h1>
+        <p class="short_description">Class BaseConfig</p>
+        <div class="details collapse"><p>Not intended to be used on its own, this class will attempt to
+automatically populate the child class' properties with values
+from the environment.</p>
+<p>These can be set within the .env file.</p>        </div><a href="../classes/CodeIgniter.Config.BaseConfig.html" class="more">« More »</a>    </div>    <div id="class_Config" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Config .collapse">
+        <h1>Config<a href="../classes/CodeIgniter.Config.Config.html">¶</a></h1>
+        <p class="short_description">Class Config</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Config.Config.html" class="more">« More »</a>    </div>    <div id="class_Factory" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Factory .collapse">
+        <h1>Factory<a href="../classes/CodeIgniter.Config.Factory.html">¶</a></h1>
+        <p class="short_description">Factories Configuration file.</p>
+        <div class="details collapse"><p>Provides overriding directives for how
+Factories should handle discovery and
+instantiation of specific components.
+Each property should correspond to the
+lowercase, plural component name.</p>        </div><a href="../classes/CodeIgniter.Config.Factory.html" class="more">« More »</a>    </div>    <div id="class_ForeignCharacters" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ForeignCharacters .collapse">
+        <h1>ForeignCharacters<a href="../classes/CodeIgniter.Config.ForeignCharacters.html">¶</a></h1>
+        <p class="short_description">Describes foreign characters for transliteration with the text helper.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Config.ForeignCharacters.html" class="more">« More »</a>    </div>    <div id="class_Services" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Services .collapse">
+        <h1>Services<a href="../classes/CodeIgniter.Config.Services.html">¶</a></h1>
+        <p class="short_description">Services Configuration file.</p>
+        <div class="details collapse"><p>Services are simply other classes/libraries that the system uses
+to do its job. This is used by CodeIgniter to allow the core of the
+framework to be swapped out easily without affecting the usage within
+the rest of your application.</p>
+<p>This is used in place of a Dependency Injection container primarily
+due to its simplicity, which allows a better long-term maintenance
+of the applications built on top of CodeIgniter. A bonus side-effect
+is that IDEs are able to determine what class you are calling
+whereas with DI Containers there usually isn't a way for them to do this.</p>        </div><a href="../classes/CodeIgniter.Config.Services.html" class="more">« More »</a>    </div>    <div id="class_View" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_View .collapse">
+        <h1>View<a href="../classes/CodeIgniter.Config.View.html">¶</a></h1>
+        <p class="short_description">View configuration</p>
+        <div class="details collapse"><p>Not intended to be used on its own, this class will attempt to
+automatically populate the child class' properties with values
+from the environment.</p>
+<p>These can be set within the .env file.</p>        </div><a href="../classes/CodeIgniter.Config.View.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -1484,16 +1652,14 @@ to produce a stack trace, it MUST be in a key named &quot;exception&quot;.</p>  
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.html">Test</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.Interfaces.html">Interfaces</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.Filters.html">Filters</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FabricatorModel" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FabricatorModel .collapse">
-        <h1>FabricatorModel<a href="../classes/CodeIgniter.Test.Interfaces.FabricatorModel.html">¶</a></h1>
-        <p class="short_description">FabricatorModel</p>
-        <div class="details collapse"><p>An interface defining the required methods and properties
-needed for a model to qualify for use with the Fabricator class.
-While interfaces cannot enforce properties, the following
-are required for use with Fabricator:</p>        </div><a href="../classes/CodeIgniter.Test.Interfaces.FabricatorModel.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_CITestStreamFilter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CITestStreamFilter .collapse">
+        <h1>CITestStreamFilter<a href="../classes/CodeIgniter.Test.Filters.CITestStreamFilter.html">¶</a></h1>
+        <p class="short_description">Class to extract an output snapshot.</p>
+        <div class="details collapse"><p>Used to capture output during unit testing, so that it can
+be used in assertions.</p>        </div><a href="../classes/CodeIgniter.Test.Filters.CITestStreamFilter.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -1617,103 +1783,16 @@ that doesn't interact with the session or cookies at all.</p>        </div><a hr
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.html">Test</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.Filters.html">Filters</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.Interfaces.html">Interfaces</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_CITestStreamFilter" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CITestStreamFilter .collapse">
-        <h1>CITestStreamFilter<a href="../classes/CodeIgniter.Test.Filters.CITestStreamFilter.html">¶</a></h1>
-        <p class="short_description">Class to extract an output snapshot.</p>
-        <div class="details collapse"><p>Used to capture output during unit testing, so that it can
-be used in assertions.</p>        </div><a href="../classes/CodeIgniter.Test.Filters.CITestStreamFilter.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Language.html">Language</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Language" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Language .collapse">
-        <h1>Language<a href="../classes/CodeIgniter.Language.Language.html">¶</a></h1>
-        <p class="short_description">Handle system messages and localization.</p>
-        <div class="details collapse"><p>Locale-based, built on top of PHP internationalization.</p>        </div><a href="../classes/CodeIgniter.Language.Language.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Config.html">Config</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_AutoloadConfig" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_AutoloadConfig .collapse">
-        <h1>AutoloadConfig<a href="../classes/CodeIgniter.Config.AutoloadConfig.html">¶</a></h1>
-        <p class="short_description">AUTOLOADER</p>
-        <div class="details collapse"><p>This file defines the namespaces and class maps so the Autoloader
-can find the files as needed.</p>        </div><a href="../classes/CodeIgniter.Config.AutoloadConfig.html" class="more">« More »</a>    </div>    <div id="class_BaseConfig" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseConfig .collapse">
-        <h1>BaseConfig<a href="../classes/CodeIgniter.Config.BaseConfig.html">¶</a></h1>
-        <p class="short_description">Class BaseConfig</p>
-        <div class="details collapse"><p>Not intended to be used on its own, this class will attempt to
-automatically populate the child class' properties with values
-from the environment.</p>
-<p>These can be set within the .env file.</p>        </div><a href="../classes/CodeIgniter.Config.BaseConfig.html" class="more">« More »</a>    </div>    <div id="class_Config" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Config .collapse">
-        <h1>Config<a href="../classes/CodeIgniter.Config.Config.html">¶</a></h1>
-        <p class="short_description">Class Config</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Config.Config.html" class="more">« More »</a>    </div>    <div id="class_Factory" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Factory .collapse">
-        <h1>Factory<a href="../classes/CodeIgniter.Config.Factory.html">¶</a></h1>
-        <p class="short_description">Factories Configuration file.</p>
-        <div class="details collapse"><p>Provides overriding directives for how
-Factories should handle discovery and
-instantiation of specific components.
-Each property should correspond to the
-lowercase, plural component name.</p>        </div><a href="../classes/CodeIgniter.Config.Factory.html" class="more">« More »</a>    </div>    <div id="class_ForeignCharacters" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ForeignCharacters .collapse">
-        <h1>ForeignCharacters<a href="../classes/CodeIgniter.Config.ForeignCharacters.html">¶</a></h1>
-        <p class="short_description">Describes foreign characters for transliteration with the text helper.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Config.ForeignCharacters.html" class="more">« More »</a>    </div>    <div id="class_Services" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Services .collapse">
-        <h1>Services<a href="../classes/CodeIgniter.Config.Services.html">¶</a></h1>
-        <p class="short_description">Services Configuration file.</p>
-        <div class="details collapse"><p>Services are simply other classes/libraries that the system uses
-to do its job. This is used by CodeIgniter to allow the core of the
-framework to be swapped out easily without affecting the usage within
-the rest of your application.</p>
-<p>This is used in place of a Dependency Injection container primarily
-due to its simplicity, which allows a better long-term maintenance
-of the applications built on top of CodeIgniter. A bonus side-effect
-is that IDEs are able to determine what class you are calling
-whereas with DI Containers there usually isn't a way for them to do this.</p>        </div><a href="../classes/CodeIgniter.Config.Services.html" class="more">« More »</a>    </div>    <div id="class_View" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_View .collapse">
-        <h1>View<a href="../classes/CodeIgniter.Config.View.html">¶</a></h1>
-        <p class="short_description">View configuration</p>
-        <div class="details collapse"><p>Not intended to be used on its own, this class will attempt to
-automatically populate the child class' properties with values
-from the environment.</p>
-<p>These can be set within the .env file.</p>        </div><a href="../classes/CodeIgniter.Config.View.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Typography.html">Typography</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Typography" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Typography .collapse">
-        <h1>Typography<a href="../classes/CodeIgniter.Typography.Typography.html">¶</a></h1>
-        <p class="short_description">Typography Class</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Typography.Typography.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Email.html">Email</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Email" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Email .collapse">
-        <h1>Email<a href="../classes/CodeIgniter.Email.Email.html">¶</a></h1>
-        <p class="short_description">CodeIgniter Email Class</p>
-        <div class="details collapse"><p>Permits email to be sent using Mail, Sendmail, or SMTP.</p>        </div><a href="../classes/CodeIgniter.Email.Email.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FabricatorModel" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FabricatorModel .collapse">
+        <h1>FabricatorModel<a href="../classes/CodeIgniter.Test.Interfaces.FabricatorModel.html">¶</a></h1>
+        <p class="short_description">FabricatorModel</p>
+        <div class="details collapse"><p>An interface defining the required methods and properties
+needed for a model to qualify for use with the Fabricator class.
+While interfaces cannot enforce properties, the following
+are required for use with Fabricator:</p>        </div><a href="../classes/CodeIgniter.Test.Interfaces.FabricatorModel.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -1763,35 +1842,118 @@ that can only be determined at run time.</p>        </div><a href="../classes/Co
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.html">I18n</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Files.html">Files</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Files.Exceptions.html">Exceptions</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Time" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Time .collapse">
-        <h1>Time<a href="../classes/CodeIgniter.I18n.Time.html">¶</a></h1>
-        <p class="short_description">Class Time</p>
-        <div class="details collapse"><p>A localized date/time package inspired
-by Nesbot/Carbon and CakePHP/Chronos.</p>
-<p>Requires the intl PHP extension.</p>        </div><a href="../classes/CodeIgniter.I18n.Time.html" class="more">« More »</a>    </div>    <div id="class_TimeDifference" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_TimeDifference .collapse">
-        <h1>TimeDifference<a href="../classes/CodeIgniter.I18n.TimeDifference.html">¶</a></h1>
-        <p class="short_description">Class TimeDifference</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.I18n.TimeDifference.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FileException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileException .collapse">
+        <h1>FileException<a href="../classes/CodeIgniter.Files.Exceptions.FileException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Files.Exceptions.FileException.html" class="more">« More »</a>    </div>    <div id="class_FileNotFoundException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileNotFoundException .collapse">
+        <h1>FileNotFoundException<a href="../classes/CodeIgniter.Files.Exceptions.FileNotFoundException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Files.Exceptions.FileNotFoundException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.html">I18n</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.I18n.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.RESTful.html">RESTful</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_I18nException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_I18nException .collapse">
-        <h1>I18nException<a href="../classes/CodeIgniter.I18n.Exceptions.I18nException.html">¶</a></h1>
-        <p class="short_description">I18nException</p>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseResource" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseResource .collapse">
+        <h1>BaseResource<a href="../classes/CodeIgniter.RESTful.BaseResource.html">¶</a></h1>
+        <p class="short_description">Class Controller</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.RESTful.BaseResource.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_EncrypterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_EncrypterInterface .collapse">
+        <h1>EncrypterInterface<a href="../classes/CodeIgniter.Encryption.EncrypterInterface.html">¶</a></h1>
+        <p class="short_description">CodeIgniter Encryption Handler</p>
+        <div class="details collapse"><p>Provides two-way keyed encryption</p>        </div><a href="../classes/CodeIgniter.Encryption.EncrypterInterface.html" class="more">« More »</a>    </div>    <div id="class_Encryption" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Encryption .collapse">
+        <h1>Encryption<a href="../classes/CodeIgniter.Encryption.Encryption.html">¶</a></h1>
+        <p class="short_description">CodeIgniter Encryption Manager</p>
+        <div class="details collapse"><p>Provides two-way keyed encryption via PHP's Sodium and/or OpenSSL extensions.
+This class determines the driver, cipher, and mode to use, and then
+initializes the appropriate encryption handler.</p>        </div><a href="../classes/CodeIgniter.Encryption.Encryption.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.Handlers.html">Handlers</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
+        <h1>BaseHandler<a href="../classes/CodeIgniter.Encryption.Handlers.BaseHandler.html">¶</a></h1>
+        <p class="short_description">Base class for encryption handling</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_OpenSSLHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_OpenSSLHandler .collapse">
+        <h1>OpenSSLHandler<a href="../classes/CodeIgniter.Encryption.Handlers.OpenSSLHandler.html">¶</a></h1>
+        <p class="short_description">Encryption handling for OpenSSL library</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.OpenSSLHandler.html" class="more">« More »</a>    </div>    <div id="class_SodiumHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SodiumHandler .collapse">
+        <h1>SodiumHandler<a href="../classes/CodeIgniter.Encryption.Handlers.SodiumHandler.html">¶</a></h1>
+        <p class="short_description">SodiumHandler uses libsodium in encryption.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Handlers.SodiumHandler.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.html">Encryption</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_EncryptionException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_EncryptionException .collapse">
+        <h1>EncryptionException<a href="../classes/CodeIgniter.Encryption.Exceptions.EncryptionException.html">¶</a></h1>
+        <p class="short_description">Encryption exception</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Encryption.Exceptions.EncryptionException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Security.html">Security</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Security.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_SecurityException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SecurityException .collapse">
+        <h1>SecurityException<a href="../classes/CodeIgniter.Security.Exceptions.SecurityException.html">¶</a></h1>
+        <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.I18n.Exceptions.I18nException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Security.Exceptions.SecurityException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Language.html">Language</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Language" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Language .collapse">
+        <h1>Language<a href="../classes/CodeIgniter.Language.Language.html">¶</a></h1>
+        <p class="short_description">Handle system messages and localization.</p>
+        <div class="details collapse"><p>Locale-based, built on top of PHP internationalization.</p>        </div><a href="../classes/CodeIgniter.Language.Language.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -1865,23 +2027,6 @@ that elapses between two points.</p>        </div><a href="../classes/CodeIgnite
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Security.html">Security</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Security.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_SecurityException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SecurityException .collapse">
-        <h1>SecurityException<a href="../classes/CodeIgniter.Security.Exceptions.SecurityException.html">¶</a></h1>
-        <p class="short_description">Class FrameworkException</p>
-        <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Security.Exceptions.SecurityException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
     </li>
         </ul>            <div class="namespace-indent">
@@ -1936,6 +2081,29 @@ SQL statements.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
     </li>
     <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
+        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Database.Exceptions.ExceptionInterface.html">¶</a></h1>
+        <p class="short_description">Provides a domain-level interface for broad capture
+of all database-related exceptions.</p>
+        <div class="details collapse"><p>catch (\CodeIgniter\Database\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Database.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_DatabaseException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DatabaseException .collapse">
+        <h1>DatabaseException<a href="../classes/CodeIgniter.Database.Exceptions.DatabaseException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Exceptions.DatabaseException.html" class="more">« More »</a>    </div>    <div id="class_DataException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DataException .collapse">
+        <h1>DataException<a href="../classes/CodeIgniter.Database.Exceptions.DataException.html">¶</a></h1>
+        <p class="short_description"></p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Exceptions.DataException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
+    </li>
+    <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.SQLite3.html">SQLite3</a>
     </li>
         </ul>            <div class="namespace-indent">
@@ -1974,51 +2142,28 @@ SQLite in memory databases are used for faster test execution.</p>        </div>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.MySQLi.html">MySQLi</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.Postgre.html">Postgre</a>
     </li>
         </ul>            <div class="namespace-indent">
                 <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Builder" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Builder .collapse">
-        <h1>Builder<a href="../classes/CodeIgniter.Database.MySQLi.Builder.html">¶</a></h1>
-        <p class="short_description">Builder for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Builder.html" class="more">« More »</a>    </div>    <div id="class_Connection" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Connection .collapse">
-        <h1>Connection<a href="../classes/CodeIgniter.Database.MySQLi.Connection.html">¶</a></h1>
-        <p class="short_description">Connection for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Connection.html" class="more">« More »</a>    </div>    <div id="class_Forge" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Forge .collapse">
-        <h1>Forge<a href="../classes/CodeIgniter.Database.MySQLi.Forge.html">¶</a></h1>
-        <p class="short_description">Forge for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Forge.html" class="more">« More »</a>    </div>    <div id="class_PreparedQuery" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PreparedQuery .collapse">
-        <h1>PreparedQuery<a href="../classes/CodeIgniter.Database.MySQLi.PreparedQuery.html">¶</a></h1>
-        <p class="short_description">Prepared query for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.PreparedQuery.html" class="more">« More »</a>    </div>    <div id="class_Result" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Result .collapse">
-        <h1>Result<a href="../classes/CodeIgniter.Database.MySQLi.Result.html">¶</a></h1>
-        <p class="short_description">Result for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Result.html" class="more">« More »</a>    </div>    <div id="class_Utils" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Utils .collapse">
-        <h1>Utils<a href="../classes/CodeIgniter.Database.MySQLi.Utils.html">¶</a></h1>
-        <p class="short_description">Utils for MySQLi</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Utils.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ExceptionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ExceptionInterface .collapse">
-        <h1>ExceptionInterface<a href="../classes/CodeIgniter.Database.Exceptions.ExceptionInterface.html">¶</a></h1>
-        <p class="short_description">Provides a domain-level interface for broad capture
-of all database-related exceptions.</p>
-        <div class="details collapse"><p>catch (\CodeIgniter\Database\Exceptions\ExceptionInterface) { ... }</p>        </div><a href="../classes/CodeIgniter.Database.Exceptions.ExceptionInterface.html" class="more">« More »</a>    </div>    <div id="class_DatabaseException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DatabaseException .collapse">
-        <h1>DatabaseException<a href="../classes/CodeIgniter.Database.Exceptions.DatabaseException.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Exceptions.DatabaseException.html" class="more">« More »</a>    </div>    <div id="class_DataException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DataException .collapse">
-        <h1>DataException<a href="../classes/CodeIgniter.Database.Exceptions.DataException.html">¶</a></h1>
-        <p class="short_description"></p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Exceptions.DataException.html" class="more">« More »</a>    </div>            </div>
+        <h1>Builder<a href="../classes/CodeIgniter.Database.Postgre.Builder.html">¶</a></h1>
+        <p class="short_description">Builder for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Builder.html" class="more">« More »</a>    </div>    <div id="class_Connection" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Connection .collapse">
+        <h1>Connection<a href="../classes/CodeIgniter.Database.Postgre.Connection.html">¶</a></h1>
+        <p class="short_description">Connection for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Connection.html" class="more">« More »</a>    </div>    <div id="class_Forge" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Forge .collapse">
+        <h1>Forge<a href="../classes/CodeIgniter.Database.Postgre.Forge.html">¶</a></h1>
+        <p class="short_description">Forge for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Forge.html" class="more">« More »</a>    </div>    <div id="class_PreparedQuery" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PreparedQuery .collapse">
+        <h1>PreparedQuery<a href="../classes/CodeIgniter.Database.Postgre.PreparedQuery.html">¶</a></h1>
+        <p class="short_description">Prepared query for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.PreparedQuery.html" class="more">« More »</a>    </div>    <div id="class_Result" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Result .collapse">
+        <h1>Result<a href="../classes/CodeIgniter.Database.Postgre.Result.html">¶</a></h1>
+        <p class="short_description">Result for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Result.html" class="more">« More »</a>    </div>    <div id="class_Utils" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Utils .collapse">
+        <h1>Utils<a href="../classes/CodeIgniter.Database.Postgre.Utils.html">¶</a></h1>
+        <p class="short_description">Utils for Postgre</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Utils.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
@@ -2059,268 +2204,123 @@ of all database-related exceptions.</p>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.html">Database</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.Postgre.html">Postgre</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Database.MySQLi.html">MySQLi</a>
     </li>
         </ul>            <div class="namespace-indent">
                 <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Builder" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Builder .collapse">
-        <h1>Builder<a href="../classes/CodeIgniter.Database.Postgre.Builder.html">¶</a></h1>
-        <p class="short_description">Builder for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Builder.html" class="more">« More »</a>    </div>    <div id="class_Connection" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Connection .collapse">
-        <h1>Connection<a href="../classes/CodeIgniter.Database.Postgre.Connection.html">¶</a></h1>
-        <p class="short_description">Connection for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Connection.html" class="more">« More »</a>    </div>    <div id="class_Forge" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Forge .collapse">
-        <h1>Forge<a href="../classes/CodeIgniter.Database.Postgre.Forge.html">¶</a></h1>
-        <p class="short_description">Forge for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Forge.html" class="more">« More »</a>    </div>    <div id="class_PreparedQuery" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PreparedQuery .collapse">
-        <h1>PreparedQuery<a href="../classes/CodeIgniter.Database.Postgre.PreparedQuery.html">¶</a></h1>
-        <p class="short_description">Prepared query for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.PreparedQuery.html" class="more">« More »</a>    </div>    <div id="class_Result" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Result .collapse">
-        <h1>Result<a href="../classes/CodeIgniter.Database.Postgre.Result.html">¶</a></h1>
-        <p class="short_description">Result for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Result.html" class="more">« More »</a>    </div>    <div id="class_Utils" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Utils .collapse">
-        <h1>Utils<a href="../classes/CodeIgniter.Database.Postgre.Utils.html">¶</a></h1>
-        <p class="short_description">Utils for Postgre</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.Postgre.Utils.html" class="more">« More »</a>    </div>            </div>
+        <h1>Builder<a href="../classes/CodeIgniter.Database.MySQLi.Builder.html">¶</a></h1>
+        <p class="short_description">Builder for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Builder.html" class="more">« More »</a>    </div>    <div id="class_Connection" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Connection .collapse">
+        <h1>Connection<a href="../classes/CodeIgniter.Database.MySQLi.Connection.html">¶</a></h1>
+        <p class="short_description">Connection for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Connection.html" class="more">« More »</a>    </div>    <div id="class_Forge" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Forge .collapse">
+        <h1>Forge<a href="../classes/CodeIgniter.Database.MySQLi.Forge.html">¶</a></h1>
+        <p class="short_description">Forge for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Forge.html" class="more">« More »</a>    </div>    <div id="class_PreparedQuery" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PreparedQuery .collapse">
+        <h1>PreparedQuery<a href="../classes/CodeIgniter.Database.MySQLi.PreparedQuery.html">¶</a></h1>
+        <p class="short_description">Prepared query for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.PreparedQuery.html" class="more">« More »</a>    </div>    <div id="class_Result" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Result .collapse">
+        <h1>Result<a href="../classes/CodeIgniter.Database.MySQLi.Result.html">¶</a></h1>
+        <p class="short_description">Result for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Result.html" class="more">« More »</a>    </div>    <div id="class_Utils" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Utils .collapse">
+        <h1>Utils<a href="../classes/CodeIgniter.Database.MySQLi.Utils.html">¶</a></h1>
+        <p class="short_description">Utils for MySQLi</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Database.MySQLi.Utils.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.html">View</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.html">Honeypot</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_RendererInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_RendererInterface .collapse">
-        <h1>RendererInterface<a href="../classes/CodeIgniter.View.RendererInterface.html">¶</a></h1>
-        <p class="short_description">Interface RendererInterface</p>
-        <div class="details collapse"><p>The interface used for displaying Views and/or theme files.</p>        </div><a href="../classes/CodeIgniter.View.RendererInterface.html" class="more">« More »</a>    </div>    <div id="class_Cell" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Cell .collapse">
-        <h1>Cell<a href="../classes/CodeIgniter.View.Cell.html">¶</a></h1>
-        <p class="short_description">Class Cell</p>
-        <div class="details collapse"><p>A simple class that can call any other class that can be loaded,
-and echo out it's result. Intended for displaying small blocks of
-content within views that can be managed by other libraries and
-not require they are loaded within controller.</p>
-<p>Used with the helper function, it's use will look like:</p>
-<pre><code>    viewCell('\Some\Class::method', 'limit=5 sort=asc', 60, 'cache-name');</code></pre>
-<p>Parameters are matched up with the callback method's arguments of the same name:</p>
-<pre><code>    class Class {
-        function method($limit, $sort)
-    }</code></pre>
-<p>Alternatively, the params will be passed into the callback method as a simple array
-if matching params are not found.</p>
-<pre><code>    class Class {
-        function method(array $params=null)
-    }</code></pre>        </div><a href="../classes/CodeIgniter.View.Cell.html" class="more">« More »</a>    </div>    <div id="class_Parser" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Parser .collapse">
-        <h1>Parser<a href="../classes/CodeIgniter.View.Parser.html">¶</a></h1>
-        <p class="short_description">Class for parsing pseudo-vars</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.View.Parser.html" class="more">« More »</a>    </div>    <div id="class_Plugins" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Plugins .collapse">
-        <h1>Plugins<a href="../classes/CodeIgniter.View.Plugins.html">¶</a></h1>
-        <p class="short_description">View plugins</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.View.Plugins.html" class="more">« More »</a>    </div>    <div id="class_Table" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Table .collapse">
-        <h1>Table<a href="../classes/CodeIgniter.View.Table.html">¶</a></h1>
-        <p class="short_description">HTML Table Generating Class</p>
-        <div class="details collapse"><p>Lets you create tables manually or from database result objects, or arrays.</p>        </div><a href="../classes/CodeIgniter.View.Table.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Honeypot" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Honeypot .collapse">
+        <h1>Honeypot<a href="../classes/CodeIgniter.Honeypot.Honeypot.html">¶</a></h1>
+        <p class="short_description">class Honeypot</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Honeypot.Honeypot.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.html">View</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.html">Honeypot</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.View.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Honeypot.Exceptions.html">Exceptions</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ViewException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ViewException .collapse">
-        <h1>ViewException<a href="../classes/CodeIgniter.View.Exceptions.ViewException.html">¶</a></h1>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_HoneypotException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_HoneypotException .collapse">
+        <h1>HoneypotException<a href="../classes/CodeIgniter.Honeypot.Exceptions.HoneypotException.html">¶</a></h1>
+        <p class="short_description">Exception for automatic logging.</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Honeypot.Exceptions.HoneypotException.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_PagerInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_PagerInterface .collapse">
+        <h1>PagerInterface<a href="../classes/CodeIgniter.Pager.PagerInterface.html">¶</a></h1>
+        <p class="short_description">Expected behavior for a Pager</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Pager.PagerInterface.html" class="more">« More »</a>    </div>    <div id="class_PagerRenderer" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PagerRenderer .collapse">
+        <h1>PagerRenderer<a href="../classes/CodeIgniter.Pager.PagerRenderer.html">¶</a></h1>
+        <p class="short_description">Class PagerRenderer</p>
+        <div class="details collapse"><p>This class is passed to the view that describes the pagination,
+and is used to get the link information and provide utility
+methods needed to work with pagination.</p>        </div><a href="../classes/CodeIgniter.Pager.PagerRenderer.html" class="more">« More »</a>    </div>            </div>
+        <ul class="breadcrumb">
+            <li><a href="../index.html"><i class="icon-th"></i></a></li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.html">Pager</a>
+    </li>
+    <li>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Pager.Exceptions.html">Exceptions</a>
+    </li>
+        </ul>            <div class="namespace-indent">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_PagerException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_PagerException .collapse">
+        <h1>PagerException<a href="../classes/CodeIgniter.Pager.Exceptions.PagerException.html">¶</a></h1>
         <p class="short_description">Class FrameworkException</p>
         <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.View.Exceptions.ViewException.html" class="more">« More »</a>    </div>            </div>
+that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Pager.Exceptions.PagerException.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.html">Filters</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Modules.html">Modules</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_FilterInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_FilterInterface .collapse">
-        <h1>FilterInterface<a href="../classes/CodeIgniter.Filters.FilterInterface.html">¶</a></h1>
-        <p class="short_description">Filter interface</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.FilterInterface.html" class="more">« More »</a>    </div>    <div id="class_CSRF" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CSRF .collapse">
-        <h1>CSRF<a href="../classes/CodeIgniter.Filters.CSRF.html">¶</a></h1>
-        <p class="short_description">CSRF filter.</p>
-        <div class="details collapse"><p>This filter is not intended to be used from the command line.</p>        </div><a href="../classes/CodeIgniter.Filters.CSRF.html" class="more">« More »</a>    </div>    <div id="class_DebugToolbar" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DebugToolbar .collapse">
-        <h1>DebugToolbar<a href="../classes/CodeIgniter.Filters.DebugToolbar.html">¶</a></h1>
-        <p class="short_description">Debug toolbar filter</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.DebugToolbar.html" class="more">« More »</a>    </div>    <div id="class_Filters" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Filters .collapse">
-        <h1>Filters<a href="../classes/CodeIgniter.Filters.Filters.html">¶</a></h1>
-        <p class="short_description">Filters</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Filters.html" class="more">« More »</a>    </div>    <div id="class_Honeypot" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Honeypot .collapse">
-        <h1>Honeypot<a href="../classes/CodeIgniter.Filters.Honeypot.html">¶</a></h1>
-        <p class="short_description">Honeypot filter</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Honeypot.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Modules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Modules .collapse">
+        <h1>Modules<a href="../classes/CodeIgniter.Modules.Modules.html">¶</a></h1>
+        <p class="short_description">Modules Class</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Modules.Modules.html" class="more">« More »</a>    </div>            </div>
         <ul class="breadcrumb">
             <li><a href="../index.html"><i class="icon-th"></i></a></li>
     <li>
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
     </li>
     <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.html">Filters</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Filters.Exceptions.html">Exceptions</a>
+        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Events.html">Events</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_FilterException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FilterException .collapse">
-        <h1>FilterException<a href="../classes/CodeIgniter.Filters.Exceptions.FilterException.html">¶</a></h1>
-        <p class="short_description">FilterException</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Filters.Exceptions.FilterException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.RESTful.html">RESTful</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_BaseResource" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseResource .collapse">
-        <h1>BaseResource<a href="../classes/CodeIgniter.RESTful.BaseResource.html">¶</a></h1>
-        <p class="short_description">Class Controller</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.RESTful.BaseResource.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.API.html">API</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="trait_ResponseTrait" class="element ajax clickabletrait" data-toggle="collapse" data-target="#trait_ResponseTrait .collapse">
-        <h1>ResponseTrait<a href="../classes/CodeIgniter.API.ResponseTrait.html">¶</a></h1>
-        <p class="short_description">Response trait.</p>
-        <div class="details collapse"><p>Provides common, more readable, methods to provide
-consistent HTTP responses under a variety of common
-situations when working as an API.</p>        </div><a href="../classes/CodeIgniter.API.ResponseTrait.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_ValidationInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ValidationInterface .collapse">
-        <h1>ValidationInterface<a href="../classes/CodeIgniter.Validation.ValidationInterface.html">¶</a></h1>
-        <p class="short_description">Expected behavior of a validator</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.ValidationInterface.html" class="more">« More »</a>    </div>    <div id="class_CreditCardRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_CreditCardRules .collapse">
-        <h1>CreditCardRules<a href="../classes/CodeIgniter.Validation.CreditCardRules.html">¶</a></h1>
-        <p class="short_description">Class CreditCardRules</p>
-        <div class="details collapse"><p>Provides validation methods for common credit-card inputs.</p>        </div><a href="../classes/CodeIgniter.Validation.CreditCardRules.html" class="more">« More »</a>    </div>    <div id="class_FileRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileRules .collapse">
-        <h1>FileRules<a href="../classes/CodeIgniter.Validation.FileRules.html">¶</a></h1>
-        <p class="short_description">File validation rules</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.FileRules.html" class="more">« More »</a>    </div>    <div id="class_FormatRules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FormatRules .collapse">
-        <h1>FormatRules<a href="../classes/CodeIgniter.Validation.FormatRules.html">¶</a></h1>
-        <p class="short_description">Format validation Rules.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.FormatRules.html" class="more">« More »</a>    </div>    <div id="class_Rules" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Rules .collapse">
-        <h1>Rules<a href="../classes/CodeIgniter.Validation.Rules.html">¶</a></h1>
-        <p class="short_description">Validation Rules.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.Rules.html" class="more">« More »</a>    </div>    <div id="class_Validation" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Validation .collapse">
-        <h1>Validation<a href="../classes/CodeIgniter.Validation.Validation.html">¶</a></h1>
-        <p class="short_description">Validator</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Validation.Validation.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.html">Validation</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Validation.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ValidationException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ValidationException .collapse">
-        <h1>ValidationException<a href="../classes/CodeIgniter.Validation.Exceptions.ValidationException.html">¶</a></h1>
-        <p class="short_description">Class FrameworkException</p>
-        <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Validation.Exceptions.ValidationException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_SessionInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_SessionInterface .collapse">
-        <h1>SessionInterface<a href="../classes/CodeIgniter.Session.SessionInterface.html">¶</a></h1>
-        <p class="short_description">Expected behavior of a session container used with CodeIgniter.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.SessionInterface.html" class="more">« More »</a>    </div>    <div id="class_Session" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Session .collapse">
-        <h1>Session<a href="../classes/CodeIgniter.Session.Session.html">¶</a></h1>
-        <p class="short_description">Implementation of CodeIgniter session container.</p>
-        <div class="details collapse"><p>Session configuration is done through session variables and cookie related
-variables in app/config/App.php</p>        </div><a href="../classes/CodeIgniter.Session.Session.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.Exceptions.html">Exceptions</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_SessionException" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_SessionException .collapse">
-        <h1>SessionException<a href="../classes/CodeIgniter.Session.Exceptions.SessionException.html">¶</a></h1>
-        <p class="short_description">Class FrameworkException</p>
-        <div class="details collapse"><p>A collection of exceptions thrown by the framework
-that can only be determined at run time.</p>        </div><a href="../classes/CodeIgniter.Session.Exceptions.SessionException.html" class="more">« More »</a>    </div>            </div>
-        <ul class="breadcrumb">
-            <li><a href="../index.html"><i class="icon-th"></i></a></li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.html">CodeIgniter</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.html">Session</a>
-    </li>
-    <li>
-        <span class="divider">\</span><a href="../namespaces/CodeIgniter.Session.Handlers.html">Handlers</a>
-    </li>
-        </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_ArrayHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_ArrayHandler .collapse">
-        <h1>ArrayHandler<a href="../classes/CodeIgniter.Session.Handlers.ArrayHandler.html">¶</a></h1>
-        <p class="short_description">Session handler using static array for storage.</p>
-        <div class="details collapse"><p>Intended only for use during testing.</p>        </div><a href="../classes/CodeIgniter.Session.Handlers.ArrayHandler.html" class="more">« More »</a>    </div>    <div id="class_BaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_BaseHandler .collapse">
-        <h1>BaseHandler<a href="../classes/CodeIgniter.Session.Handlers.BaseHandler.html">¶</a></h1>
-        <p class="short_description">Base class for session handling</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.BaseHandler.html" class="more">« More »</a>    </div>    <div id="class_DatabaseHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DatabaseHandler .collapse">
-        <h1>DatabaseHandler<a href="../classes/CodeIgniter.Session.Handlers.DatabaseHandler.html">¶</a></h1>
-        <p class="short_description">Session handler using current Database for storage</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.DatabaseHandler.html" class="more">« More »</a>    </div>    <div id="class_FileHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_FileHandler .collapse">
-        <h1>FileHandler<a href="../classes/CodeIgniter.Session.Handlers.FileHandler.html">¶</a></h1>
-        <p class="short_description">Session handler using file system for storage</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.FileHandler.html" class="more">« More »</a>    </div>    <div id="class_MemcachedHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_MemcachedHandler .collapse">
-        <h1>MemcachedHandler<a href="../classes/CodeIgniter.Session.Handlers.MemcachedHandler.html">¶</a></h1>
-        <p class="short_description">Session handler using Memcache for persistence</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.MemcachedHandler.html" class="more">« More »</a>    </div>    <div id="class_RedisHandler" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_RedisHandler .collapse">
-        <h1>RedisHandler<a href="../classes/CodeIgniter.Session.Handlers.RedisHandler.html">¶</a></h1>
-        <p class="short_description">Session handler using Redis for persistence</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Session.Handlers.RedisHandler.html" class="more">« More »</a>    </div>            </div>
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="class_Events" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Events .collapse">
+        <h1>Events<a href="../classes/CodeIgniter.Events.Events.html">¶</a></h1>
+        <p class="short_description">Events</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.Events.Events.html" class="more">« More »</a>    </div>            </div>
         </div>
     </div>    </div>    <footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onTue, 15 Dec 2020 16:06:13 +0000.<br/>
+            generated onSat, 19 Dec 2020 19:36:12 +0000.<br/>
     </footer></body>
 </html>
