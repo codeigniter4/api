@@ -1026,7 +1026,7 @@ function is placed</p></div>
                                             </tr>                                            <tr>
                                                 <th>see
                                                 </th>
-                                                <td>\(\Config\Services::response())->deleteCookie()<a href="../classes/CodeIgniter.HTTP.Response.html#method_deleteCookie">\CodeIgniter\HTTP\Response::deleteCookie()</a>                                                </td>
+                                                <td>\(\Config\Services::response())->deleteCookie()\CodeIgniter\HTTP\Response::deleteCookie()                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$name</h4>
                                                 <code>mixed</code><p></p>
@@ -2425,7 +2425,7 @@ array in the first parameter containing all the values.</p></div>
                                             </tr>                                            <tr>
                                                 <th>see
                                                 </th>
-                                                <td>\(\Config\Services::response())->setCookie()<a href="../classes/CodeIgniter.HTTP.Response.html#method_setCookie">\CodeIgniter\HTTP\Response::setCookie()</a>                                                </td>
+                                                <td>\(\Config\Services::response())->setCookie()\CodeIgniter\HTTP\Response::setCookie()                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$name</h4>
                                                 <code>string|array</code><p><p>Cookie name or array containing binds</p></p>
@@ -3164,13 +3164,22 @@ situations when working as an API.</p>        </div><a href="../classes/CodeIgni
         <span class="divider">\</span><a href="../namespaces/CodeIgniter.HTTP.html">HTTP</a>
     </li>
         </ul>            <div class="namespace-indent">
-                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="interface_RequestInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_RequestInterface .collapse">
+                <h3><i class="icon-custom icon-class"></i> Classes, interfaces and traits</h3>    <div id="trait_RequestTrait" class="element ajax clickabletrait" data-toggle="collapse" data-target="#trait_RequestTrait .collapse">
+        <h1>RequestTrait<a href="../classes/CodeIgniter.HTTP.RequestTrait.html">¶</a></h1>
+        <p class="short_description">Request Trait</p>
+        <div class="details collapse"><p>Additional methods to make a PSR-7 Request class
+compliant with the framework's own RequestInterface.</p>        </div><a href="../classes/CodeIgniter.HTTP.RequestTrait.html" class="more">« More »</a>    </div>    <div id="trait_ResponseTrait" class="element ajax clickabletrait" data-toggle="collapse" data-target="#trait_ResponseTrait .collapse">
+        <h1>ResponseTrait<a href="../classes/CodeIgniter.HTTP.ResponseTrait.html">¶</a></h1>
+        <p class="short_description">Request Trait</p>
+        <div class="details collapse"><p>Additional methods to make a PSR-7 Response class
+compliant with the framework's own ResponseInterface.</p>        </div><a href="../classes/CodeIgniter.HTTP.ResponseTrait.html" class="more">« More »</a>    </div>    <div id="interface_RequestInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_RequestInterface .collapse">
         <h1>RequestInterface<a href="../classes/CodeIgniter.HTTP.RequestInterface.html">¶</a></h1>
         <p class="short_description">Expected behavior of an HTTP request</p>
         <div class="details collapse">        </div><a href="../classes/CodeIgniter.HTTP.RequestInterface.html" class="more">« More »</a>    </div>    <div id="interface_ResponseInterface" class="element ajax clickableinterface" data-toggle="collapse" data-target="#interface_ResponseInterface .collapse">
         <h1>ResponseInterface<a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">¶</a></h1>
         <p class="short_description">Representation of an outgoing, getServer-side response.</p>
-        <div class="details collapse"><p>Per the HTTP specification, this interface includes properties for
+        <div class="details collapse"><p>Most of these methods are supplied by ResponseTrait.</p>
+<p>Per the HTTP specification, this interface includes properties for
 each of the following:</p>
 <ul>
 <li>Protocol version</li>
@@ -3197,7 +3206,14 @@ to help defeat XSS attacks.</p>
 via cURL.</p>        </div><a href="../classes/CodeIgniter.HTTP.CURLRequest.html" class="more">« More »</a>    </div>    <div id="class_DownloadResponse" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_DownloadResponse .collapse">
         <h1>DownloadResponse<a href="../classes/CodeIgniter.HTTP.DownloadResponse.html">¶</a></h1>
         <p class="short_description">HTTP response when a download is requested.</p>
-        <div class="details collapse">        </div><a href="../classes/CodeIgniter.HTTP.DownloadResponse.html" class="more">« More »</a>    </div>    <div id="class_Header" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Header .collapse">
+        <div class="details collapse"><p>Per the HTTP specification, this interface includes properties for
+each of the following:</p>
+<ul>
+<li>Protocol version</li>
+<li>Status code and reason phrase</li>
+<li>Headers</li>
+<li>Message body</li>
+</ul>        </div><a href="../classes/CodeIgniter.HTTP.DownloadResponse.html" class="more">« More »</a>    </div>    <div id="class_Header" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Header .collapse">
         <h1>Header<a href="../classes/CodeIgniter.HTTP.Header.html">¶</a></h1>
         <p class="short_description">Class Header</p>
         <div class="details collapse"><p>Represents a single HTTP header.</p>        </div><a href="../classes/CodeIgniter.HTTP.Header.html" class="more">« More »</a>    </div>    <div id="class_IncomingRequest" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_IncomingRequest .collapse">
@@ -3221,7 +3237,10 @@ application from the CGI and/or PHP environment, including:</p>
 <li>Query string arguments (generally via $_GET, or as parsed via parse_str())</li>
 <li>Upload files, if any (as represented by $_FILES)</li>
 <li>Deserialized body binds (generally from $_POST)</li>
-</ul>        </div><a href="../classes/CodeIgniter.HTTP.IncomingRequest.html" class="more">« More »</a>    </div>    <div id="class_Negotiate" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Negotiate .collapse">
+</ul>        </div><a href="../classes/CodeIgniter.HTTP.IncomingRequest.html" class="more">« More »</a>    </div>    <div id="class_Message" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Message .collapse">
+        <h1>Message<a href="../classes/CodeIgniter.HTTP.Message.html">¶</a></h1>
+        <p class="short_description">An HTTP message</p>
+        <div class="details collapse">        </div><a href="../classes/CodeIgniter.HTTP.Message.html" class="more">« More »</a>    </div>    <div id="class_Negotiate" class="element ajax clickableclass" data-toggle="collapse" data-target="#class_Negotiate .collapse">
         <h1>Negotiate<a href="../classes/CodeIgniter.HTTP.Negotiate.html">¶</a></h1>
         <p class="short_description">Class Negotiate</p>
         <div class="details collapse"><p>Provides methods to negotiate with the HTTP headers to determine the best
@@ -4775,6 +4794,6 @@ that can only be determined at run time.</p>        </div><a href="../classes/Co
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onMon, 21 Dec 2020 20:36:48 +0000.<br/>
+            generated onMon, 21 Dec 2020 20:51:40 +0000.<br/>
     </footer></body>
 </html>

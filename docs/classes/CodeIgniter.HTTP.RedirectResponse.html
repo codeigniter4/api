@@ -115,8 +115,8 @@
             <span class="description">Force a download.</span><pre>download</pre>
         </a>
     </li>    <li class="methodpublic inherited">
-        <a href="#method_getBody" title="getBody ::Grabs the current body.">
-            <span class="description">Grabs the current body.</span><pre>getBody</pre>
+        <a href="#method_getBody" title="getBody ::Returns the Message&#039;s body.">
+            <span class="description">Returns the Message&#039;s body.</span><pre>getBody</pre>
         </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_getCookie" title="getCookie ::Returns the cookie">
@@ -127,12 +127,34 @@
             <span class="description">Returns all cookies currently set.</span><pre>getCookies</pre>
         </a>
     </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeader" title="getHeader ::Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.">
+            <span class="description">Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.</span><pre>getHeader</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeaderLine" title="getHeaderLine ::Retrieves a comma-separated string of the values for a single header.">
+            <span class="description">Retrieves a comma-separated string of the values for a single header.</span><pre>getHeaderLine</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeaders" title="getHeaders ::Returns an array containing all headers.">
+            <span class="description">Returns an array containing all headers.</span><pre>getHeaders</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getJSON" title="getJSON ::Returns the current body, converted to JSON is it isn&#039;t already.">
             <span class="description">Returns the current body, converted to JSON is it isn&#039;t already.</span><pre>getJSON</pre>
         </a>
     </li>    <li class="methodpublic inherited">
+        <a href="#method_getProtocolVersion" title="getProtocolVersion ::Returns the HTTP Protocol Version.">
+            <span class="description">Returns the HTTP Protocol Version.</span><pre>getProtocolVersion</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getReason" title="getReason ::Gets the response response phrase associated with the status code.">
             <span class="description">Gets the response response phrase associated with the status code.</span><pre>getReason</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getReasonPhrase" title="getReasonPhrase ::Gets the response reason phrase associated with the status code.">
+            <span class="description">Gets the response reason phrase associated with the status code.</span><pre>getReasonPhrase</pre>
         </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_getStatusCode" title="getStatusCode ::Gets the response status code.">
@@ -145,6 +167,14 @@
     </li>    <li class="methodpublic inherited">
         <a href="#method_hasCookie" title="hasCookie ::Checks to see if the Response has a specified cookie or not.">
             <span class="description">Checks to see if the Response has a specified cookie or not.</span><pre>hasCookie</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_hasHeader" title="hasHeader ::Determines whether a header exists.">
+            <span class="description">Determines whether a header exists.</span><pre>hasHeader</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_isJSON" title="isJSON ::Determines if this is a json message based on the Content-Type header">
+            <span class="description">Determines if this is a json message based on the Content-Type header</span><pre>isJSON</pre>
         </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_noCache" title="noCache ::Sets the appropriate headers to ensure this response
@@ -308,6 +338,10 @@ each of the following:</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">                                            <tr>
+                                                <th>todo
+                                                </th>
+                                                <td><p>Recommend removing reliance on config injection</p>                                                </td>
+                                            </tr>                                            <tr>
                                                 <th>
                                                 </th>
                                                 <td>                                                </td>
@@ -413,8 +447,8 @@ and sets the correct Content-Type header for our response.</h2>
 
                         </div>                        <a id="method_getBody"></a>
                         <div class="element clickable methodpublic method_getBody inherited" data-toggle="collapse" data-target=".method_getBody .collapse">
-                            <h2>Grabs the current body.</h2>
-                            <pre>getBody(): mixed|string</pre>
+                            <h2>Returns the Message&#039;s body.</h2>
+                            <pre>getBody(): mixed</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -425,7 +459,7 @@ and sets the correct Content-Type header for our response.</h2>
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Response</h3>
-                                        <code>mixed|string</code><p></p>                                </div>
+                                        <code>mixed</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_getCookie"></a>
@@ -464,6 +498,69 @@ and sets the correct Content-Type header for our response.</h2>
                                         <code>array</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getHeader"></a>
+                        <div class="element clickable methodpublicdeprecated method_getHeader inherited" data-toggle="collapse" data-target=".method_getHeader .collapse">
+                            <h2>Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.</h2>
+                            <pre>getHeader(string $name): array|\CodeIgniter\HTTP\Header|null</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use Message::header() to make room for PSR-7</p>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>array|<a href="../classes/CodeIgniter.HTTP.Header.html">\CodeIgniter\HTTP\Header</a>|null</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getHeaderLine"></a>
+                        <div class="element clickable methodpublic method_getHeaderLine inherited" data-toggle="collapse" data-target=".method_getHeaderLine .collapse">
+                            <h2>Retrieves a comma-separated string of the values for a single header.</h2>
+                            <pre>getHeaderLine(string $name): string</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.</p>
+<p>NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</p></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>string</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getHeaders"></a>
+                        <div class="element clickable methodpublicdeprecated method_getHeaders inherited" data-toggle="collapse" data-target=".method_getHeaders .collapse">
+                            <h2>Returns an array containing all headers.</h2>
+                            <pre>getHeaders(): \CodeIgniter\HTTP\array&lt;string,Header&gt;</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use Message::headers() to make room for PSR-7</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>\CodeIgniter\HTTP\array<string,Header></code><p><p>An array of the request headers</p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_getJSON"></a>
                         <div class="element clickable methodpublic method_getJSON inherited" data-toggle="collapse" data-target=".method_getJSON .collapse">
                             <h2>Returns the current body, converted to JSON is it isn&#039;t already.</h2>
@@ -487,8 +584,25 @@ and sets the correct Content-Type header for our response.</h2>
                                         <code>mixed|string</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getProtocolVersion"></a>
+                        <div class="element clickable methodpublic method_getProtocolVersion inherited" data-toggle="collapse" data-target=".method_getProtocolVersion .collapse">
+                            <h2>Returns the HTTP Protocol Version.</h2>
+                            <pre>getProtocolVersion(): string</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>string</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_getReason"></a>
-                        <div class="element clickable methodpublic method_getReason inherited" data-toggle="collapse" data-target=".method_getReason .collapse">
+                        <div class="element clickable methodpublicdeprecated method_getReason inherited" data-toggle="collapse" data-target=".method_getReason .collapse">
                             <h2>Gets the response response phrase associated with the status code.</h2>
                             <pre>getReason(): string</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
@@ -501,11 +615,40 @@ and sets the correct Content-Type header for our response.</h2>
                                                 </th>
                                                 <td><a href="http://tools.ietf.org/html/rfc7231#section-6">http://tools.ietf.org/html/rfc7231#section-6</a><a href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml</a>                                                </td>
                                             </tr>                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use getReasonPhrase()</p>                                                </td>
+                                            </tr>                                            <tr>
                                                 <th>
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getReasonPhrase"></a>
+                        <div class="element clickable methodpublic method_getReasonPhrase inherited" data-toggle="collapse" data-target=".method_getReasonPhrase .collapse">
+                            <h2>Gets the response reason phrase associated with the status code.</h2>
+                            <pre>getReasonPhrase(): string</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Because a reason phrase is not a required element in a response
+status line, the reason phrase value MAY be null. Implementations MAY
+choose to return the default RFC 7231 recommended reason phrase (or those
+listed in the IANA HTTP Status Code Registry) for the response's
+status code.</p></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>link
+                                                </th>
+                                                <td><p><a href="http://tools.ietf.org/html/rfc7231#section-6">http://tools.ietf.org/html/rfc7231#section-6</a></p><p><a href="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml</a></p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>string</code><p><p>Reason phrase; must return an empty string if none present.</p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_getStatusCode"></a>
@@ -571,6 +714,43 @@ to understand and satisfy the request.</p></div>
                                         <code>boolean</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_hasHeader"></a>
+                        <div class="element clickable methodpublic method_hasHeader inherited" data-toggle="collapse" data-target=".method_hasHeader .collapse">
+                            <h2>Determines whether a header exists.</h2>
+                            <pre>hasHeader(string $name): boolean</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>boolean</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_isJSON"></a>
+                        <div class="element clickable methodpublicdeprecated method_isJSON inherited" data-toggle="collapse" data-target=".method_isJSON .collapse">
+                            <h2>Determines if this is a json message based on the Content-Type header</h2>
+                            <pre>isJSON(): boolean</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use header calls directly</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>boolean</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_noCache"></a>
                         <div class="element clickable methodpublic method_noCache inherited" data-toggle="collapse" data-target=".method_noCache .collapse">
                             <h2>Sets the appropriate headers to ensure this response
@@ -582,6 +762,14 @@ is not cached by the browsers.</h2>
                                     <div class="long_description"></div>
 
                                     <table class="table">                                            <tr>
+                                                <th>todo
+                                                </th>
+                                                <td><p>Recommend researching these directives, might need: 'private', 'no-transform', 'no-store', 'must-revalidate'</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>see
+                                                </th>
+                                                <td><a href="../classes/CodeIgniter.HTTP.DownloadResponse.html#method_noCache">\CodeIgniter\HTTP\DownloadResponse::noCache()</a>                                                </td>
+                                            </tr>                                            <tr>
                                                 <th>
                                                 </th>
                                                 <td>                                                </td>
@@ -596,7 +784,8 @@ is not cached by the browsers.</h2>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"></div>
+                                    <div class="long_description"><p>Note that this is not a part of the interface so
+should not be relied on outside of internal testing.</p></div>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$pretend</h4>
@@ -897,6 +1086,10 @@ preferably, an instance of DateTime.</p></div>
                                                 <th>see
                                                 </th>
                                                 <td><a href="http://tools.ietf.org/html/rfc5988">http://tools.ietf.org/html/rfc5988</a>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>todo
+                                                </th>
+                                                <td><p>Recommend moving to Pager</p>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$pager</h4>
                                                 <code><a href="../classes/CodeIgniter.Pager.PagerInterface.html">\CodeIgniter\Pager\PagerInterface</a></code><p></p>
@@ -1074,7 +1267,7 @@ packaged up with the response.</h2>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
-                                        <div class="long_description"><p>If null, will use the default provided for the status code.</p></div>
+                                        <div class="long_description"><p>If empty string, will use the default provided for the status code.</p></div>
 
                                         <table class="table">                                                <tr>
                                                     <th>var
@@ -1090,7 +1283,8 @@ packaged up with the response.</h2>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
-                                        <div class="long_description"></div>
+                                        <div class="long_description"><p>The status code is a 3-digit integer result code of the server's attempt
+to understand and satisfy the request.</p></div>
 
                                         <table class="table">                                                <tr>
                                                     <th>var
@@ -1243,22 +1437,6 @@ packaged up with the response.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
                                 </div>
-                            </div>                            <a id="property_pretend"> </a>
-                            <div class="element clickable propertyprotected property_pretend inherited" data-toggle="collapse" data-target=".property_pretend .collapse">
-                                <h2>If true, will not write output. Useful during testing.</h2>
-                                <pre>pretend :boolean</pre>
-                                <div class="labels"><span class="label">inherited</span>                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>boolean</code>                                    </div>
-                                </div>
                             </div>                            <a id="property_bodyFormat"> </a>
                             <div class="element clickable propertyprotected property_bodyFormat inherited" data-toggle="collapse" data-target=".property_bodyFormat .collapse">
                                 <h2>Type of format the body is in.</h2>
@@ -1275,6 +1453,54 @@ packaged up with the response.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
+                            </div>                            <a id="property_protocolVersion"> </a>
+                            <div class="element clickable propertyprotected property_protocolVersion inherited" data-toggle="collapse" data-target=".property_protocolVersion .collapse">
+                                <h2>Protocol version</h2>
+                                <pre>protocolVersion :string</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>string</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_validProtocolVersions"> </a>
+                            <div class="element clickable propertyprotected property_validProtocolVersions inherited" data-toggle="collapse" data-target=".property_validProtocolVersions .collapse">
+                                <h2>List of valid protocol versions</h2>
+                                <pre>validProtocolVersions :array</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_body"> </a>
+                            <div class="element clickable propertyprotected property_body inherited" data-toggle="collapse" data-target=".property_body .collapse">
+                                <h2>Message body</h2>
+                                <pre>body :mixed</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>mixed</code>                                    </div>
+                                </div>
                             </div>                </div>
             </div>
             <a id="\CodeIgniter\HTTP\RedirectResponse"></a>
@@ -1288,6 +1514,6 @@ packaged up with the response.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onMon, 21 Dec 2020 20:36:49 +0000.<br/>
+            generated onMon, 21 Dec 2020 20:51:41 +0000.<br/>
     </footer></body>
 </html>

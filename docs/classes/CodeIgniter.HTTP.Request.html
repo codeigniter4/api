@@ -102,15 +102,33 @@
         <a href="#method___construct" title="__construct ::Constructor.">
             <span class="description">Constructor.</span><pre>__construct</pre>
         </a>
-    </li>    <li class="methodpublic">
+    </li>    <li class="methodpublic inherited">
         <a href="#method_fetchGlobal" title="fetchGlobal ::Fetches one or more items from a global, like cookies, get, post, etc.">
             <span class="description">Fetches one or more items from a global, like cookies, get, post, etc.</span><pre>fetchGlobal</pre>
         </a>
-    </li>    <li class="methodpublic">
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getBody" title="getBody ::Returns the Message&#039;s body.">
+            <span class="description">Returns the Message&#039;s body.</span><pre>getBody</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getEnv" title="getEnv ::Fetch an item from the $_ENV array.">
             <span class="description">Fetch an item from the $_ENV array.</span><pre>getEnv</pre>
         </a>
-    </li>    <li class="methodpublic">
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeader" title="getHeader ::Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.">
+            <span class="description">Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.</span><pre>getHeader</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeaderLine" title="getHeaderLine ::Retrieves a comma-separated string of the values for a single header.">
+            <span class="description">Retrieves a comma-separated string of the values for a single header.</span><pre>getHeaderLine</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getHeaders" title="getHeaders ::Returns an array containing all headers.">
+            <span class="description">Returns an array containing all headers.</span><pre>getHeaders</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getIPAddress" title="getIPAddress ::Gets the user&#039;s IP address.">
             <span class="description">Gets the user&#039;s IP address.</span><pre>getIPAddress</pre>
         </a>
@@ -118,15 +136,31 @@
         <a href="#method_getMethod" title="getMethod ::Get the request method.">
             <span class="description">Get the request method.</span><pre>getMethod</pre>
         </a>
-    </li>    <li class="methodpublic">
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_getProtocolVersion" title="getProtocolVersion ::Returns the HTTP Protocol Version.">
+            <span class="description">Returns the HTTP Protocol Version.</span><pre>getProtocolVersion</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getServer" title="getServer ::Fetch an item from the $_SERVER array.">
             <span class="description">Fetch an item from the $_SERVER array.</span><pre>getServer</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_getUri" title="getUri ::Retrieves the URI instance.">
+            <span class="description">Retrieves the URI instance.</span><pre>getUri</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_hasHeader" title="hasHeader ::Determines whether a header exists.">
+            <span class="description">Determines whether a header exists.</span><pre>hasHeader</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
+        <a href="#method_isJSON" title="isJSON ::Determines if this is a json message based on the Content-Type header">
+            <span class="description">Determines if this is a json message based on the Content-Type header</span><pre>isJSON</pre>
         </a>
     </li>    <li class="methodpublic">
         <a href="#method_isValidIP" title="isValidIP ::Validate an IP address">
             <span class="description">Validate an IP address</span><pre>isValidIP</pre>
         </a>
-    </li>    <li class="methodpublic">
+    </li>    <li class="methodpublic inherited">
         <a href="#method_setGlobal" title="setGlobal ::Allows manually setting the value of PHP global, like $_GET, $_POST, etc.">
             <span class="description">Allows manually setting the value of PHP global, like $_GET, $_POST, etc.</span><pre>setGlobal</pre>
         </a>
@@ -134,10 +168,14 @@
         <a href="#method_setMethod" title="setMethod ::Sets the request method. Used when spoofing the request.">
             <span class="description">Sets the request method. Used when spoofing the request.</span><pre>setMethod</pre>
         </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_withMethod" title="withMethod ::Returns an instance with the specified method.">
+            <span class="description">Returns an instance with the specified method.</span><pre>withMethod</pre>
+        </a>
     </li>            </ul>
         </li>
         <li class="nav-header protected">» Protected
-            <ul>                        <li class="methodprotected">
+            <ul>                        <li class="methodprotected inherited">
                             <a href="#method_populateGlobals" title="populateGlobals ::Saves a copy of the current state of one of several PHP globals
 so we can retrieve them later.">
                                 <span class="description">Saves a copy of the current state of one of several PHP globals
@@ -158,7 +196,7 @@ so we can retrieve them later.</span><pre>populateGlobals</pre>
         <div class="span8">
             <div class="element class">
                 <h1>Request</h1>
-                <small style="display: block; text-align: right">                        Extends\CodeIgniter\HTTP\Message                        Implements<a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>                </small>
+                <small style="display: block; text-align: right">                        Extends<a href="../classes/CodeIgniter.HTTP.Message.html">\CodeIgniter\HTTP\Message</a>                        Implements\CodeIgniter\HTTP\MessageInterface, <a href="../classes/CodeIgniter.HTTP.RequestInterface.html">\CodeIgniter\HTTP\RequestInterface</a>                </small>
                 <p class="short_description">Representation of an HTTP request.</p>
                 <div class="details">
                     <div class="long_description">
@@ -170,15 +208,19 @@ so we can retrieve them later.</span><pre>populateGlobals</pre>
                                 </tr>                    </table>
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>                        <a id="method___construct"></a>
-                        <div class="element clickable methodpublic method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                        <div class="element clickable methodpublicdeprecated method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
                             <h2>Constructor.</h2>
-                            <pre>__construct(object $config)</pre>
+                            <pre>__construct(object $config = null)</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
                                     <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>The $config is no longer needed and will be removed in a future version</p>                                                </td>
+                                            </tr>                                            <tr>
                                                 <th>
                                                 </th>
                                                 <td>                                                </td>
@@ -189,10 +231,10 @@ so we can retrieve them later.</span><pre>populateGlobals</pre>
                             </div>
 
                         </div>                        <a id="method_fetchGlobal"></a>
-                        <div class="element clickable methodpublic method_fetchGlobal" data-toggle="collapse" data-target=".method_fetchGlobal .collapse">
+                        <div class="element clickable methodpublic method_fetchGlobal inherited" data-toggle="collapse" data-target=".method_fetchGlobal .collapse">
                             <h2>Fetches one or more items from a global, like cookies, get, post, etc.</h2>
                             <pre>fetchGlobal(string $method,string|array|null $index = null,integer|null $filter = null,mixed $flags = null): mixed</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"><p>Can optionally filter the input when you retrieve it by passing in
@@ -217,11 +259,28 @@ filter_input_array method.</p>
                                         <code>mixed</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getBody"></a>
+                        <div class="element clickable methodpublic method_getBody inherited" data-toggle="collapse" data-target=".method_getBody .collapse">
+                            <h2>Returns the Message&#039;s body.</h2>
+                            <pre>getBody(): mixed</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>mixed</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_getEnv"></a>
-                        <div class="element clickable methodpublic method_getEnv" data-toggle="collapse" data-target=".method_getEnv .collapse">
+                        <div class="element clickable methodpublic method_getEnv inherited" data-toggle="collapse" data-target=".method_getEnv .collapse">
                             <h2>Fetch an item from the $_ENV array.</h2>
                             <pre>getEnv(null $index = null,null $filter = null,null $flags = null): mixed</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
@@ -239,11 +298,74 @@ filter_input_array method.</p>
                                         <code>mixed</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getHeader"></a>
+                        <div class="element clickable methodpublicdeprecated method_getHeader inherited" data-toggle="collapse" data-target=".method_getHeader .collapse">
+                            <h2>Returns a single header object. If multiple headers with the same
+name exist, then will return an array of header objects.</h2>
+                            <pre>getHeader(string $name): array|\CodeIgniter\HTTP\Header|null</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use Message::header() to make room for PSR-7</p>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>array|<a href="../classes/CodeIgniter.HTTP.Header.html">\CodeIgniter\HTTP\Header</a>|null</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getHeaderLine"></a>
+                        <div class="element clickable methodpublic method_getHeaderLine inherited" data-toggle="collapse" data-target=".method_getHeaderLine .collapse">
+                            <h2>Retrieves a comma-separated string of the values for a single header.</h2>
+                            <pre>getHeaderLine(string $name): string</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.</p>
+<p>NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</p></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>string</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getHeaders"></a>
+                        <div class="element clickable methodpublicdeprecated method_getHeaders inherited" data-toggle="collapse" data-target=".method_getHeaders .collapse">
+                            <h2>Returns an array containing all headers.</h2>
+                            <pre>getHeaders(): \CodeIgniter\HTTP\array&lt;string,Header&gt;</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use Message::headers() to make room for PSR-7</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>\CodeIgniter\HTTP\array<string,Header></code><p><p>An array of the request headers</p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_getIPAddress"></a>
-                        <div class="element clickable methodpublic method_getIPAddress" data-toggle="collapse" data-target=".method_getIPAddress .collapse">
+                        <div class="element clickable methodpublic method_getIPAddress inherited" data-toggle="collapse" data-target=".method_getIPAddress .collapse">
                             <h2>Gets the user&#039;s IP address.</h2>
                             <pre>getIPAddress(): string</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
@@ -257,26 +379,47 @@ filter_input_array method.</p>
                             </div>
 
                         </div>                        <a id="method_getMethod"></a>
-                        <div class="element clickable methodpublic method_getMethod" data-toggle="collapse" data-target=".method_getMethod .collapse">
+                        <div class="element clickable methodpublicdeprecated method_getMethod" data-toggle="collapse" data-target=".method_getMethod .collapse">
                             <h2>Get the request method.</h2>
                             <pre>getMethod(boolean $upper = false): string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"></div>
+                                    <div class="long_description"><p>An extension of PSR-7's getMethod to allow casing.</p></div>
 
-                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>The $upper functionality will be removed and this will revert to its PSR-7 equivalent</p>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$upper</h4>
                                                 <code>boolean</code><p><p>Whether to return in upper or lower case.</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getProtocolVersion"></a>
+                        <div class="element clickable methodpublic method_getProtocolVersion inherited" data-toggle="collapse" data-target=".method_getProtocolVersion .collapse">
+                            <h2>Returns the HTTP Protocol Version.</h2>
+                            <pre>getProtocolVersion(): string</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>string</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_getServer"></a>
-                        <div class="element clickable methodpublic method_getServer" data-toggle="collapse" data-target=".method_getServer .collapse">
+                        <div class="element clickable methodpublic method_getServer inherited" data-toggle="collapse" data-target=".method_getServer .collapse">
                             <h2>Fetch an item from the $_SERVER array.</h2>
                             <pre>getServer(string|array|null $index = null,integer|null $filter = null,null $flags = null): mixed</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
@@ -294,8 +437,62 @@ filter_input_array method.</p>
                                         <code>mixed</code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_getUri"></a>
+                        <div class="element clickable methodpublic method_getUri" data-toggle="collapse" data-target=".method_getUri .collapse">
+                            <h2>Retrieves the URI instance.</h2>
+                            <pre>getUri(): \CodeIgniter\HTTP\URI</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_hasHeader"></a>
+                        <div class="element clickable methodpublic method_hasHeader inherited" data-toggle="collapse" data-target=".method_hasHeader .collapse">
+                            <h2>Determines whether a header exists.</h2>
+                            <pre>hasHeader(string $name): boolean</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>boolean</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_isJSON"></a>
+                        <div class="element clickable methodpublicdeprecated method_isJSON inherited" data-toggle="collapse" data-target=".method_isJSON .collapse">
+                            <h2>Determines if this is a json message based on the Content-Type header</h2>
+                            <pre>isJSON(): boolean</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use header calls directly</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>boolean</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_isValidIP"></a>
-                        <div class="element clickable methodpublic method_isValidIP" data-toggle="collapse" data-target=".method_isValidIP .collapse">
+                        <div class="element clickable methodpublicdeprecated method_isValidIP" data-toggle="collapse" data-target=".method_isValidIP .collapse">
                             <h2>Validate an IP address</h2>
                             <pre>isValidIP(string $ip = null,string $which = null): boolean</pre>
                             <div class="labels">                            </div>
@@ -303,7 +500,11 @@ filter_input_array method.</p>
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
-                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use Validation instead</p>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$ip</h4>
                                                 <code>string</code><p><p>IP Address</p></p>
                                             </div>                                            <div class="subelement argument">
@@ -314,11 +515,11 @@ filter_input_array method.</p>
                             </div>
 
                         </div>                        <a id="method_populateGlobals"></a>
-                        <div class="element clickable methodprotected method_populateGlobals" data-toggle="collapse" data-target=".method_populateGlobals .collapse">
+                        <div class="element clickable methodprotected method_populateGlobals inherited" data-toggle="collapse" data-target=".method_populateGlobals .collapse">
                             <h2>Saves a copy of the current state of one of several PHP globals
 so we can retrieve them later.</h2>
                             <pre>populateGlobals(string $method)</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
@@ -334,10 +535,10 @@ so we can retrieve them later.</h2>
                             </div>
 
                         </div>                        <a id="method_setGlobal"></a>
-                        <div class="element clickable methodpublic method_setGlobal" data-toggle="collapse" data-target=".method_setGlobal .collapse">
+                        <div class="element clickable methodpublic method_setGlobal inherited" data-toggle="collapse" data-target=".method_setGlobal .collapse">
                             <h2>Allows manually setting the value of PHP global, like $_GET, $_POST, etc.</h2>
                             <pre>setGlobal(string $method,mixed $value): $this</pre>
-                            <div class="labels">                            </div>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
@@ -353,9 +554,29 @@ so we can retrieve them later.</h2>
                             </div>
 
                         </div>                        <a id="method_setMethod"></a>
-                        <div class="element clickable methodpublic method_setMethod" data-toggle="collapse" data-target=".method_setMethod .collapse">
+                        <div class="element clickable methodpublicdeprecated method_setMethod" data-toggle="collapse" data-target=".method_setMethod .collapse">
                             <h2>Sets the request method. Used when spoofing the request.</h2>
                             <pre>setMethod(string $method): \CodeIgniter\HTTP\Request</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use withMethod() instead for immutability</p>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_withMethod"></a>
+                        <div class="element clickable methodpublic method_withMethod" data-toggle="collapse" data-target=".method_withMethod .collapse">
+                            <h2>Returns an instance with the specified method.</h2>
+                            <pre>withMethod(string $method): self</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -365,27 +586,11 @@ so we can retrieve them later.</h2>
                                                 <h4>$method</h4>
                                                 <code>string</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code><a href="../classes/CodeIgniter.HTTP.Request.html">\CodeIgniter\HTTP\Request</a></code><p></p>                                </div>
+                                        <code>self</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_ipAddress"> </a>
-                            <div class="element clickable propertyprotected property_ipAddress" data-toggle="collapse" data-target=".property_ipAddress .collapse">
-                                <h2>IP address of the current user.</h2>
-                                <pre>ipAddress :string</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_proxyIPs"> </a>
-                            <div class="element clickable propertyprotected property_proxyIPs" data-toggle="collapse" data-target=".property_proxyIPs .collapse">
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_proxyIPs"> </a>
+                            <div class="element clickable propertydeprecatedprotected property_proxyIPs" data-toggle="collapse" data-target=".property_proxyIPs .collapse">
                                 <h2>Proxy IPs</h2>
                                 <pre>proxyIPs :string|array</pre>
                                 <div class="labels">                                </div>
@@ -397,6 +602,10 @@ so we can retrieve them later.</h2>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Check the App config directly</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string|array</code>                                    </div>
                                 </div>
@@ -416,11 +625,10 @@ so we can retrieve them later.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
-                            </div>                            <a id="property_globals"> </a>
-                            <div class="element clickable propertyprotected property_globals" data-toggle="collapse" data-target=".property_globals .collapse">
-                                <h2>Stores values we&#039;ve retrieved from
-PHP globals.</h2>
-                                <pre>globals :array</pre>
+                            </div>                            <a id="property_uri"> </a>
+                            <div class="element clickable propertyprotected property_uri" data-toggle="collapse" data-target=".property_uri .collapse">
+                                <h2>A URI instance.</h2>
+                                <pre>uri :\CodeIgniter\HTTP\URI</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -431,7 +639,92 @@ PHP globals.</h2>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_ipAddress"> </a>
+                            <div class="element clickable propertydeprecatedprotected property_ipAddress inherited" data-toggle="collapse" data-target=".property_ipAddress .collapse">
+                                <h2>IP address of the current user.</h2>
+                                <pre>ipAddress :string</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Will become private in a future release</p>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>string</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_globals"> </a>
+                            <div class="element clickable propertyprotected property_globals inherited" data-toggle="collapse" data-target=".property_globals .collapse">
+                                <h2>Stores values we&#039;ve retrieved from
+PHP globals.</h2>
+                                <pre>globals :array</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_protocolVersion"> </a>
+                            <div class="element clickable propertyprotected property_protocolVersion inherited" data-toggle="collapse" data-target=".property_protocolVersion .collapse">
+                                <h2>Protocol version</h2>
+                                <pre>protocolVersion :string</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>string</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_validProtocolVersions"> </a>
+                            <div class="element clickable propertyprotected property_validProtocolVersions inherited" data-toggle="collapse" data-target=".property_validProtocolVersions .collapse">
+                                <h2>List of valid protocol versions</h2>
+                                <pre>validProtocolVersions :array</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_body"> </a>
+                            <div class="element clickable propertyprotected property_body inherited" data-toggle="collapse" data-target=".property_body .collapse">
+                                <h2>Message body</h2>
+                                <pre>body :mixed</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>mixed</code>                                    </div>
                                 </div>
                             </div>                </div>
             </div>
@@ -446,6 +739,6 @@ PHP globals.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onMon, 21 Dec 2020 20:36:49 +0000.<br/>
+            generated onMon, 21 Dec 2020 20:51:41 +0000.<br/>
     </footer></body>
 </html>
