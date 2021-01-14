@@ -143,8 +143,14 @@ moved, this will return the final name of the moved file.</span><pre>getName</pr
             <span class="description">Gets the temporary filename where the file was uploaded to.</span><pre>getTempName</pre>
         </a>
     </li>    <li class="methodpublic">
-        <a href="#method_guessExtension" title="guessExtension ::Attempts to determine the best file extension.">
-            <span class="description">Attempts to determine the best file extension.</span><pre>guessExtension</pre>
+        <a href="#method_guessExtension" title="guessExtension ::Attempts to determine the best file extension from the file&#039;s
+mime type. In contrast to getExtension, this method will return
+an empty string if it fails to determine an extension instead of
+falling back to the unsecure clientExtension.">
+            <span class="description">Attempts to determine the best file extension from the file&#039;s
+mime type. In contrast to getExtension, this method will return
+an empty string if it fails to determine an extension instead of
+falling back to the unsecure clientExtension.</span><pre>guessExtension</pre>
         </a>
     </li>    <li class="methodpublic">
         <a href="#method_hasMoved" title="hasMoved ::Returns whether the file has been moved or not. If it has,
@@ -339,10 +345,11 @@ the temp file that&#039;s been uploaded doesn&#039;t have an extension.</h2>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"><p>Is simply an alias for guessExtension for a safer method
-than simply relying on the provided extension.
-Additionally it will return clientExtension in case if there are
-other extensions with the same mime type.</p></div>
+                                    <div class="long_description"><p>This method tries to guess the extension from the files mime
+type but will return the clientExtension if it fails to do so.</p>
+<p>This method will always return a more or less helpfull extension
+but might be insecure if the mime type is not machted. Consider
+using guessExtension for a more safe version.</p></div>
 
                                     <table class="table">                                            <tr>
                                                 <th>
@@ -397,7 +404,10 @@ the file in the $_FILES array.</p></div>
 
                         </div>                        <a id="method_guessExtension"></a>
                         <div class="element clickable methodpublic method_guessExtension" data-toggle="collapse" data-target=".method_guessExtension .collapse">
-                            <h2>Attempts to determine the best file extension.</h2>
+                            <h2>Attempts to determine the best file extension from the file&#039;s
+mime type. In contrast to getExtension, this method will return
+an empty string if it fails to determine an extension instead of
+falling back to the unsecure clientExtension.</h2>
                             <pre>guessExtension(): string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
@@ -641,6 +651,6 @@ and random file name will be created.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onWed, 13 Jan 2021 01:25:04 +0000.<br/>
+            generated onThu, 14 Jan 2021 17:20:24 +0000.<br/>
     </footer></body>
 </html>
