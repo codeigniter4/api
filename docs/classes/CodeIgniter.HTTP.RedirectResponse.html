@@ -127,6 +127,10 @@
             <span class="description">Returns all cookies currently set.</span><pre>getCookies</pre>
         </a>
     </li>    <li class="methodpublic inherited">
+        <a href="#method_getCookieStore" title="getCookieStore ::Returns the `CookieStore` instance.">
+            <span class="description">Returns the `CookieStore` instance.</span><pre>getCookieStore</pre>
+        </a>
+    </li>    <li class="methodpublic inherited">
         <a href="#method_getHeader" title="getHeader ::Returns a single header object. If multiple headers with the same
 name exist, then will return an array of header objects.">
             <span class="description">Returns a single header object. If multiple headers with the same
@@ -461,7 +465,7 @@ and sets the correct Content-Type header for our response.</h2>
                         </div>                        <a id="method_getCookie"></a>
                         <div class="element clickable methodpublic method_getCookie inherited" data-toggle="collapse" data-target=".method_getCookie .collapse">
                             <h2>Returns the cookie</h2>
-                            <pre>getCookie(string|null $name = null,string $prefix = &#039;&#039;): mixed</pre>
+                            <pre>getCookie(string|null $name = null,string $prefix = &#039;&#039;): array&lt;mixed,\CodeIgniter\HTTP\Cookie\Cookie&gt;|\CodeIgniter\HTTP\Cookie\Cookie|null</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -474,13 +478,13 @@ and sets the correct Content-Type header for our response.</h2>
                                                 <h4>$prefix</h4>
                                                 <code>string</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>array&lt;mixed,\CodeIgniter\HTTP\Cookie\Cookie&gt;|\CodeIgniter\HTTP\Cookie\Cookie|null</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_getCookies"></a>
                         <div class="element clickable methodpublic method_getCookies inherited" data-toggle="collapse" data-target=".method_getCookies .collapse">
                             <h2>Returns all cookies currently set.</h2>
-                            <pre>getCookies(): array</pre>
+                            <pre>getCookies(): array&lt;mixed,\CodeIgniter\HTTP\Cookie\Cookie&gt;</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -491,7 +495,24 @@ and sets the correct Content-Type header for our response.</h2>
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Response</h3>
-                                        <code>array</code><p></p>                                </div>
+                                        <code>array&lt;mixed,\CodeIgniter\HTTP\Cookie\Cookie&gt;</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_getCookieStore"></a>
+                        <div class="element clickable methodpublic method_getCookieStore inherited" data-toggle="collapse" data-target=".method_getCookieStore .collapse">
+                            <h2>Returns the `CookieStore` instance.</h2>
+                            <pre>getCookieStore(): \CodeIgniter\HTTP\Cookie\CookieStore</pre>
+                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.HTTP.Cookie.CookieStore.html">\CodeIgniter\HTTP\Cookie\CookieStore</a></code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_getHeader"></a>
@@ -1300,8 +1321,24 @@ to understand and satisfy the request.</p></div>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code><a href="../classes/CodeIgniter.HTTP.ContentSecurityPolicy.html">\CodeIgniter\HTTP\ContentSecurityPolicy</a></code>                                    </div>
                                 </div>
+                            </div>                            <a id="property_cookieStore"> </a>
+                            <div class="element clickable propertyprotected property_cookieStore inherited" data-toggle="collapse" data-target=".property_cookieStore .collapse">
+                                <h2>CookieStore instance.</h2>
+                                <pre>cookieStore :\CodeIgniter\HTTP\Cookie\CookieStore</pre>
+                                <div class="labels"><span class="label">inherited</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.HTTP.Cookie.CookieStore.html">\CodeIgniter\HTTP\Cookie\CookieStore</a></code>                                    </div>
+                                </div>
                             </div>                            <a id="property_cookiePrefix"> </a>
-                            <div class="element clickable propertyprotected property_cookiePrefix inherited" data-toggle="collapse" data-target=".property_cookiePrefix .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookiePrefix inherited" data-toggle="collapse" data-target=".property_cookiePrefix .collapse">
                                 <h2>Set a cookie name prefix if you need to avoid collisions</h2>
                                 <pre>cookiePrefix :string</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1313,11 +1350,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookieDomain"> </a>
-                            <div class="element clickable propertyprotected property_cookieDomain inherited" data-toggle="collapse" data-target=".property_cookieDomain .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookieDomain inherited" data-toggle="collapse" data-target=".property_cookieDomain .collapse">
                                 <h2>Set to .your-domain.com for site-wide cookies</h2>
                                 <pre>cookieDomain :string</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1329,11 +1370,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookiePath"> </a>
-                            <div class="element clickable propertyprotected property_cookiePath inherited" data-toggle="collapse" data-target=".property_cookiePath .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookiePath inherited" data-toggle="collapse" data-target=".property_cookiePath .collapse">
                                 <h2>Typically will be a forward slash</h2>
                                 <pre>cookiePath :string</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1345,11 +1390,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookieSecure"> </a>
-                            <div class="element clickable propertyprotected property_cookieSecure inherited" data-toggle="collapse" data-target=".property_cookieSecure .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookieSecure inherited" data-toggle="collapse" data-target=".property_cookieSecure .collapse">
                                 <h2>Cookie will only be set if a secure HTTPS connection exists.</h2>
                                 <pre>cookieSecure :boolean</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1361,11 +1410,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>boolean</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookieHTTPOnly"> </a>
-                            <div class="element clickable propertyprotected property_cookieHTTPOnly inherited" data-toggle="collapse" data-target=".property_cookieHTTPOnly .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookieHTTPOnly inherited" data-toggle="collapse" data-target=".property_cookieHTTPOnly .collapse">
                                 <h2>Cookie will only be accessible via HTTP(S) (no javascript)</h2>
                                 <pre>cookieHTTPOnly :boolean</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1377,11 +1430,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>boolean</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookieSameSite"> </a>
-                            <div class="element clickable propertyprotected property_cookieSameSite inherited" data-toggle="collapse" data-target=".property_cookieSameSite .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookieSameSite inherited" data-toggle="collapse" data-target=".property_cookieSameSite .collapse">
                                 <h2>Cookie SameSite setting</h2>
                                 <pre>cookieSameSite :string</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1393,11 +1450,15 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_cookies"> </a>
-                            <div class="element clickable propertyprotected property_cookies inherited" data-toggle="collapse" data-target=".property_cookies .collapse">
+                            <div class="element clickable propertydeprecatedprotected property_cookies inherited" data-toggle="collapse" data-target=".property_cookies .collapse">
                                 <h2>Stores all cookies that were set in the response.</h2>
                                 <pre>cookies :array</pre>
                                 <div class="labels"><span class="label">inherited</span>                                </div>
@@ -1409,6 +1470,10 @@ to understand and satisfy the request.</p></div>
                                                     <th>var
                                                     </th>
                                                     <td>                                                    </td>
+                                                </tr>                                                <tr>
+                                                    <th>deprecated
+                                                    </th>
+                                                    <td><p>Use the dedicated Cookie class instead.</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
                                 </div>
@@ -1489,6 +1554,6 @@ to understand and satisfy the request.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onFri, 12 Feb 2021 08:02:32 +0000.<br/>
+            generated onFri, 12 Feb 2021 16:47:41 +0000.<br/>
     </footer></body>
 </html>
