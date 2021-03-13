@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Encryption\Handlers\BaseHandler</title>
+    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Test\Constraints\SeeInDatabase</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>        <link href="../css/template.css" rel="stylesheet" media="all"/>        <!--[if lt IE 9]>
         <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -99,23 +99,27 @@
         <li class="nav-header">
             <i class="icon-custom icon-method"></i> Methods
             <ul>    <li class="methodpublic">
-        <a href="#method___construct" title="__construct ::Constructor">
-            <span class="description">Constructor</span><pre>__construct</pre>
+        <a href="#method___construct" title="__construct ::SeeInDatabase constructor.">
+            <span class="description">SeeInDatabase constructor.</span><pre>__construct</pre>
         </a>
     </li>    <li class="methodpublic">
-        <a href="#method___get" title="__get ::__get() magic, providing readonly access to some of our properties">
-            <span class="description">__get() magic, providing readonly access to some of our properties</span><pre>__get</pre>
+        <a href="#method_failureDescription" title="failureDescription ::Get the description of the failure">
+            <span class="description">Get the description of the failure</span><pre>failureDescription</pre>
         </a>
     </li>    <li class="methodpublic">
-        <a href="#method___isset" title="__isset ::__isset() magic, providing checking for some of our properties">
-            <span class="description">__isset() magic, providing checking for some of our properties</span><pre>__isset</pre>
+        <a href="#method_matches" title="matches ::Check if data is found in the table">
+            <span class="description">Check if data is found in the table</span><pre>matches</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_toString" title="toString ::Gets a string representation of the constraint">
+            <span class="description">Gets a string representation of the constraint</span><pre>toString</pre>
         </a>
     </li>            </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>                        <li class="methodprotected">
-                            <a href="#method_substr" title="substr ::Byte-safe substr()">
-                                <span class="description">Byte-safe substr()</span><pre>substr</pre>
+                            <a href="#method_getAdditionalInfo" title="getAdditionalInfo ::Gets additional records similar to $data.">
+                                <span class="description">Gets additional records similar to $data.</span><pre>getAdditionalInfo</pre>
                             </a>
                         </li>            </ul>
         </li>
@@ -131,9 +135,9 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>BaseHandler</h1>
-                <small style="display: block; text-align: right">                        Implements<a href="../classes/CodeIgniter.Encryption.EncrypterInterface.html">\CodeIgniter\Encryption\EncrypterInterface</a>                </small>
-                <p class="short_description">Base class for encryption handling</p>
+                <h1>SeeInDatabase</h1>
+                <small style="display: block; text-align: right">                        Extends\PHPUnit\Framework\Constraint\Constraint                </small>
+                <p class="short_description"></p>
                 <div class="details">
                     <div class="long_description">
                     </div>
@@ -145,8 +149,8 @@
 
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>                        <a id="method___construct"></a>
                         <div class="element clickable methodpublic method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Constructor</h2>
-                            <pre>__construct(\Config\Encryption|null $config = null)</pre>
+                            <h2>SeeInDatabase constructor.</h2>
+                            <pre>__construct(\CodeIgniter\Database\ConnectionInterface $db,array $data)</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -157,69 +161,83 @@
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$config</h4>
-                                                <code>\Config\Encryption|null</code><p></p>
+                                                <h4>$db</h4>
+                                                <code><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">\CodeIgniter\Database\ConnectionInterface</a></code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array</code><p></p>
                                             </div>                                </div>
                             </div>
 
-                        </div>                        <a id="method___get"></a>
-                        <div class="element clickable methodpublic method___get" data-toggle="collapse" data-target=".method___get .collapse">
-                            <h2>__get() magic, providing readonly access to some of our properties</h2>
-                            <pre>__get(string $key): mixed</pre>
+                        </div>                        <a id="method_failureDescription"></a>
+                        <div class="element clickable methodpublic method_failureDescription" data-toggle="collapse" data-target=".method_failureDescription .collapse">
+                            <h2>Get the description of the failure</h2>
+                            <pre>failureDescription(mixed $table): string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Property name</p></p>
+                                                <h4>$table</h4>
+                                                <code>mixed</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>string</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <a id="method___isset"></a>
-                        <div class="element clickable methodpublic method___isset" data-toggle="collapse" data-target=".method___isset .collapse">
-                            <h2>__isset() magic, providing checking for some of our properties</h2>
-                            <pre>__isset(string $key): boolean</pre>
+                        </div>                        <a id="method_getAdditionalInfo"></a>
+                        <div class="element clickable methodprotected method_getAdditionalInfo" data-toggle="collapse" data-target=".method_getAdditionalInfo .collapse">
+                            <h2>Gets additional records similar to $data.</h2>
+                            <pre>getAdditionalInfo(string $table): string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Property name</p></p>
+                                                <h4>$table</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>string</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_matches"></a>
+                        <div class="element clickable methodpublic method_matches" data-toggle="collapse" data-target=".method_matches .collapse">
+                            <h2>Check if data is found in the table</h2>
+                            <pre>matches(mixed $table): boolean</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$table</h4>
+                                                <code>mixed</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <a id="method_substr"></a>
-                        <div class="element clickable methodprotected method_substr" data-toggle="collapse" data-target=".method_substr .collapse">
-                            <h2>Byte-safe substr()</h2>
-                            <pre>substr(string $str,integer $start,integer $length = null): string</pre>
-                            <div class="labels"><span class="label">static</span>                            </div>
+                        </div>                        <a id="method_toString"></a>
+                        <div class="element clickable methodpublic method_toString" data-toggle="collapse" data-target=".method_toString .collapse">
+                            <h2>Gets a string representation of the constraint</h2>
+                            <pre>toString(integer $options): string</pre>
+                            <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$str</h4>
-                                                <code>string</code><p></p>
-                                            </div>                                            <div class="subelement argument">
-                                                <h4>$start</h4>
-                                                <code>integer</code><p></p>
-                                            </div>                                            <div class="subelement argument">
-                                                <h4>$length</h4>
+                                                <h4>$options</h4>
                                                 <code>integer</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_logger"> </a>
-                            <div class="element clickable propertyprotected property_logger" data-toggle="collapse" data-target=".property_logger .collapse">
-                                <h2>Logger instance to record error messages and warnings.</h2>
-                                <pre>logger :\Psr\Log\LoggerInterface</pre>
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_show"> </a>
+                            <div class="element clickable propertyprotected property_show" data-toggle="collapse" data-target=".property_show .collapse">
+                                <h2>The number of results that will show in the database
+in case of failure.</h2>
+                                <pre>show :integer</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -230,15 +248,47 @@
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>\Psr\Log\LoggerInterface</code>                                    </div>
+                                            <code>integer</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_db"> </a>
+                            <div class="element clickable propertyprotected property_db" data-toggle="collapse" data-target=".property_db .collapse">
+                                <h2>db</h2>
+                                <pre>db :\CodeIgniter\Database\ConnectionInterface</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code><a href="../classes/CodeIgniter.Database.ConnectionInterface.html">\CodeIgniter\Database\ConnectionInterface</a></code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_data"> </a>
+                            <div class="element clickable propertyprotected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+                                <h2>Data used to compare results against.</h2>
+                                <pre>data :array</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
                                 </div>
                             </div>                </div>
             </div>
-            <a id="\CodeIgniter\Encryption\Handlers\BaseHandler"></a>
+            <a id="\CodeIgniter\Test\Constraints\SeeInDatabase"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Encryption.Handlers.html">Handlers</a></li>
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Encryption.Handlers.BaseHandler.html">BaseHandler</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Test.Constraints.html">Constraints</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Test.Constraints.SeeInDatabase.html">SeeInDatabase</a></li>
             </ul>
         </div>
     </div>    </div>    <footer class="span12">
