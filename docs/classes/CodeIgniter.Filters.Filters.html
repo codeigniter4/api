@@ -133,6 +133,10 @@ to proper regex, removing those we can from the possibilities
 based on HTTP method, etc.</span><pre>initialize</pre>
         </a>
     </li>    <li class="methodpublic">
+        <a href="#method_reset" title="reset ::Restores instance to its pre-initialized state.">
+            <span class="description">Restores instance to its pre-initialized state.</span><pre>reset</pre>
+        </a>
+    </li>    <li class="methodpublic">
         <a href="#method_run" title="run ::Runs through all of the filters for the specified
 uri and position.">
             <span class="description">Runs through all of the filters for the specified
@@ -456,6 +460,24 @@ process the rows.</p></div>
                                             </tr>                                    </table>                                </div>
                             </div>
 
+                        </div>                        <a id="method_reset"></a>
+                        <div class="element clickable methodpublic method_reset" data-toggle="collapse" data-target=".method_reset .collapse">
+                            <h2>Restores instance to its pre-initialized state.</h2>
+                            <pre>reset(): $this</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Most useful for testing so the service can be
+re-initialized to a different path.</p></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>$this</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_run"></a>
                         <div class="element clickable methodpublic method_run" data-toggle="collapse" data-target=".method_run .collapse">
                             <h2>Runs through all of the filters for the specified
@@ -501,57 +523,7 @@ uri and position.</h2>
                                             </div>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_filters"> </a>
-                            <div class="element clickable propertyprotected property_filters" data-toggle="collapse" data-target=".property_filters .collapse">
-                                <h2>The processed filters that will
-be used to check against.</h2>
-                                <pre>filters :array</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_filtersClass"> </a>
-                            <div class="element clickable propertyprotected property_filtersClass" data-toggle="collapse" data-target=".property_filtersClass .collapse">
-                                <h2>The collection of filters&#039; class names that will
-be used to execute in each position.</h2>
-                                <pre>filtersClass :array</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_argumentsClass"> </a>
-                            <div class="element clickable propertyprotected property_argumentsClass" data-toggle="collapse" data-target=".property_argumentsClass .collapse">
-                                <h2>Any arguments to be passed to filtersClass.</h2>
-                                <pre>argumentsClass :array</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_config"> </a>
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_config"> </a>
                             <div class="element clickable propertyprotected property_config" data-toggle="collapse" data-target=".property_config .collapse">
                                 <h2>The original config file</h2>
                                 <pre>config :\Config\Filters</pre>
@@ -599,6 +571,22 @@ be used to execute in each position.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code><a href="../classes/CodeIgniter.HTTP.ResponseInterface.html">\CodeIgniter\HTTP\ResponseInterface</a></code>                                    </div>
                                 </div>
+                            </div>                            <a id="property_modules"> </a>
+                            <div class="element clickable propertyprotected property_modules" data-toggle="collapse" data-target=".property_modules .collapse">
+                                <h2>Handle to the modules config.</h2>
+                                <pre>modules :\Config\Modules</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>\Config\Modules</code>                                    </div>
+                                </div>
                             </div>                            <a id="property_initialized"> </a>
                             <div class="element clickable propertyprotected property_initialized" data-toggle="collapse" data-target=".property_initialized .collapse">
                                 <h2>Whether we&#039;ve done initial processing
@@ -616,6 +604,40 @@ on the filter lists.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>boolean</code>                                    </div>
                                 </div>
+                            </div>                            <a id="property_filters"> </a>
+                            <div class="element clickable propertyprotected property_filters" data-toggle="collapse" data-target=".property_filters .collapse">
+                                <h2>The processed filters that will
+be used to check against.</h2>
+                                <pre>filters :array</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
+                            </div>                            <a id="property_filtersClass"> </a>
+                            <div class="element clickable propertyprotected property_filtersClass" data-toggle="collapse" data-target=".property_filtersClass .collapse">
+                                <h2>The collection of filters&#039; class names that will
+be used to execute in each position.</h2>
+                                <pre>filtersClass :array</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array</code>                                    </div>
+                                </div>
                             </div>                            <a id="property_arguments"> </a>
                             <div class="element clickable propertyprotected property_arguments" data-toggle="collapse" data-target=".property_arguments .collapse">
                                 <h2>Any arguments to be passed to filters.</h2>
@@ -632,10 +654,10 @@ on the filter lists.</h2>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
                                 </div>
-                            </div>                            <a id="property_modules"> </a>
-                            <div class="element clickable propertyprotected property_modules" data-toggle="collapse" data-target=".property_modules .collapse">
-                                <h2>Handle to the modules config.</h2>
-                                <pre>modules :\Config\Modules</pre>
+                            </div>                            <a id="property_argumentsClass"> </a>
+                            <div class="element clickable propertyprotected property_argumentsClass" data-toggle="collapse" data-target=".property_argumentsClass .collapse">
+                                <h2>Any arguments to be passed to filtersClass.</h2>
+                                <pre>argumentsClass :array</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -646,7 +668,7 @@ on the filter lists.</h2>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>\Config\Modules</code>                                    </div>
+                                            <code>array</code>                                    </div>
                                 </div>
                             </div>                </div>
             </div>
@@ -661,6 +683,6 @@ on the filter lists.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onWed, 17 Mar 2021 13:06:13 +0000.<br/>
+            generated onThu, 18 Mar 2021 02:25:30 +0000.<br/>
     </footer></body>
 </html>
