@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Exceptions\ModelException</title>
+    <title>CodeIgniter v4.0.0 API &raquo;\CodeIgniter\Cookie\Exceptions\CookieException</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>        <link href="../css/template.css" rel="stylesheet" media="all"/>        <!--[if lt IE 9]>
         <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -102,6 +102,10 @@
         <a href="#method_forCopyError" title="forCopyError ::">
             <span class="description"></span><pre>forCopyError</pre>
         </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forEmptyCookieName" title="forEmptyCookieName ::Thrown when the cookie name is empty.">
+            <span class="description">Thrown when the cookie name is empty.</span><pre>forEmptyCookieName</pre>
+        </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_forEnabledZlibOutputCompression" title="forEnabledZlibOutputCompression ::">
             <span class="description"></span><pre>forEnabledZlibOutputCompression</pre>
@@ -110,25 +114,59 @@
         <a href="#method_forFabricatorCreateFailed" title="forFabricatorCreateFailed ::">
             <span class="description"></span><pre>forFabricatorCreateFailed</pre>
         </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidCookieInstance" title="forInvalidCookieInstance ::Thrown when the `CookieStore` class is filled with invalid Cookie objects.">
+            <span class="description">Thrown when the `CookieStore` class is filled with invalid Cookie objects.</span><pre>forInvalidCookieInstance</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidCookieName" title="forInvalidCookieName ::Thrown when the cookie name contains invalid characters per RFC 2616.">
+            <span class="description">Thrown when the cookie name contains invalid characters per RFC 2616.</span><pre>forInvalidCookieName</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidExpiresTime" title="forInvalidExpiresTime ::Thrown for invalid type given for the &quot;Expires&quot; attribute.">
+            <span class="description">Thrown for invalid type given for the &quot;Expires&quot; attribute.</span><pre>forInvalidExpiresTime</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidExpiresValue" title="forInvalidExpiresValue ::Thrown when the value provided for &quot;Expires&quot; is invalid.">
+            <span class="description">Thrown when the value provided for &quot;Expires&quot; is invalid.</span><pre>forInvalidExpiresValue</pre>
+        </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_forInvalidFile" title="forInvalidFile ::">
             <span class="description"></span><pre>forInvalidFile</pre>
         </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidHostPrefix" title="forInvalidHostPrefix ::Thrown when using the `__Host-` prefix but the `Secure` flag is not
+set, the `Domain` is set, and the `Path` is not `/`.">
+            <span class="description">Thrown when using the `__Host-` prefix but the `Secure` flag is not
+set, the `Domain` is set, and the `Path` is not `/`.</span><pre>forInvalidHostPrefix</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidSameSite" title="forInvalidSameSite ::Thrown when the `SameSite` attribute given is not of the valid types.">
+            <span class="description">Thrown when the `SameSite` attribute given is not of the valid types.</span><pre>forInvalidSameSite</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidSameSiteNone" title="forInvalidSameSiteNone ::Thrown when the `SameSite` attribute is set to `None` but the `Secure`
+attribute is not set.">
+            <span class="description">Thrown when the `SameSite` attribute is set to `None` but the `Secure`
+attribute is not set.</span><pre>forInvalidSameSiteNone</pre>
+        </a>
+    </li>    <li class="methodpublic">
+        <a href="#method_forInvalidSecurePrefix" title="forInvalidSecurePrefix ::Thrown when using the `__Secure-` prefix but the `Secure` attribute
+is not set to true.">
+            <span class="description">Thrown when using the `__Secure-` prefix but the `Secure` attribute
+is not set to true.</span><pre>forInvalidSecurePrefix</pre>
+        </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_forMissingExtension" title="forMissingExtension ::">
             <span class="description"></span><pre>forMissingExtension</pre>
-        </a>
-    </li>    <li class="methodpublic">
-        <a href="#method_forNoDateFormat" title="forNoDateFormat ::">
-            <span class="description"></span><pre>forNoDateFormat</pre>
         </a>
     </li>    <li class="methodpublic inherited">
         <a href="#method_forNoHandlers" title="forNoHandlers ::">
             <span class="description"></span><pre>forNoHandlers</pre>
         </a>
     </li>    <li class="methodpublic">
-        <a href="#method_forNoPrimaryKey" title="forNoPrimaryKey ::">
-            <span class="description"></span><pre>forNoPrimaryKey</pre>
+        <a href="#method_forUnknownCookieInstance" title="forUnknownCookieInstance ::Thrown when the queried Cookie object does not exist in the cookie collection.">
+            <span class="description">Thrown when the queried Cookie object does not exist in the cookie collection.</span><pre>forUnknownCookieInstance</pre>
         </a>
     </li>            </ul>
         </li>
@@ -147,9 +185,9 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>ModelException</h1>
+                <h1>CookieException</h1>
                 <small style="display: block; text-align: right">                        Extends<a href="../classes/CodeIgniter.Exceptions.FrameworkException.html">\CodeIgniter\Exceptions\FrameworkException</a>                </small>
-                <p class="short_description">Model Exceptions.</p>
+                <p class="short_description">CookieException is thrown for invalid cookies initialization and management.</p>
                 <div class="details">
                     <div class="long_description"><p>A collection of exceptions thrown by the framework
 that can only be determined at run time.</p>
@@ -181,6 +219,23 @@ that can only be determined at run time.</p>
                                                 <h4>$path</h4>
                                                 <code>\CodeIgniter\Exceptions\string</code><p></p>
                                             </div>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forEmptyCookieName"></a>
+                        <div class="element clickable methodpublic method_forEmptyCookieName" data-toggle="collapse" data-target=".method_forEmptyCookieName .collapse">
+                            <h2>Thrown when the cookie name is empty.</h2>
+                            <pre>forEmptyCookieName(): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_forEnabledZlibOutputCompression"></a>
@@ -229,6 +284,71 @@ that can only be determined at run time.</p>
                                             </div>                                </div>
                             </div>
 
+                        </div>                        <a id="method_forInvalidCookieInstance"></a>
+                        <div class="element clickable methodpublic method_forInvalidCookieInstance" data-toggle="collapse" data-target=".method_forInvalidCookieInstance .collapse">
+                            <h2>Thrown when the `CookieStore` class is filled with invalid Cookie objects.</h2>
+                            <pre>forInvalidCookieInstance(\CodeIgniter\Cookie\Exceptions\array&lt;string|\CodeIgniter\Cookie\Exceptions\integer&gt; $data): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>\CodeIgniter\Cookie\Exceptions\array<string|\CodeIgniter\Cookie\Exceptions\integer></code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidCookieName"></a>
+                        <div class="element clickable methodpublic method_forInvalidCookieName" data-toggle="collapse" data-target=".method_forInvalidCookieName .collapse">
+                            <h2>Thrown when the cookie name contains invalid characters per RFC 2616.</h2>
+                            <pre>forInvalidCookieName(string $name): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$name</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidExpiresTime"></a>
+                        <div class="element clickable methodpublic method_forInvalidExpiresTime" data-toggle="collapse" data-target=".method_forInvalidExpiresTime .collapse">
+                            <h2>Thrown for invalid type given for the &quot;Expires&quot; attribute.</h2>
+                            <pre>forInvalidExpiresTime(string $type): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$type</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidExpiresValue"></a>
+                        <div class="element clickable methodpublic method_forInvalidExpiresValue" data-toggle="collapse" data-target=".method_forInvalidExpiresValue .collapse">
+                            <h2>Thrown when the value provided for &quot;Expires&quot; is invalid.</h2>
+                            <pre>forInvalidExpiresValue(): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_forInvalidFile"></a>
                         <div class="element clickable methodpublic method_forInvalidFile inherited" data-toggle="collapse" data-target=".method_forInvalidFile .collapse">
                             <h2>forInvalidFile</h2>
@@ -252,6 +372,76 @@ that can only be determined at run time.</p>
                                             </div>                                </div>
                             </div>
 
+                        </div>                        <a id="method_forInvalidHostPrefix"></a>
+                        <div class="element clickable methodpublic method_forInvalidHostPrefix" data-toggle="collapse" data-target=".method_forInvalidHostPrefix .collapse">
+                            <h2>Thrown when using the `__Host-` prefix but the `Secure` flag is not
+set, the `Domain` is set, and the `Path` is not `/`.</h2>
+                            <pre>forInvalidHostPrefix(): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidSameSite"></a>
+                        <div class="element clickable methodpublic method_forInvalidSameSite" data-toggle="collapse" data-target=".method_forInvalidSameSite .collapse">
+                            <h2>Thrown when the `SameSite` attribute given is not of the valid types.</h2>
+                            <pre>forInvalidSameSite(string $sameSite): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$sameSite</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidSameSiteNone"></a>
+                        <div class="element clickable methodpublic method_forInvalidSameSiteNone" data-toggle="collapse" data-target=".method_forInvalidSameSiteNone .collapse">
+                            <h2>Thrown when the `SameSite` attribute is set to `None` but the `Secure`
+attribute is not set.</h2>
+                            <pre>forInvalidSameSiteNone(): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_forInvalidSecurePrefix"></a>
+                        <div class="element clickable methodpublic method_forInvalidSecurePrefix" data-toggle="collapse" data-target=".method_forInvalidSecurePrefix .collapse">
+                            <h2>Thrown when using the `__Secure-` prefix but the `Secure` attribute
+is not set to true.</h2>
+                            <pre>forInvalidSecurePrefix(): static</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                    </table>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_forMissingExtension"></a>
                         <div class="element clickable methodpublic method_forMissingExtension inherited" data-toggle="collapse" data-target=".method_forMissingExtension .collapse">
                             <h2>forMissingExtension</h2>
@@ -271,29 +461,6 @@ that can only be determined at run time.</p>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$extension</h4>
-                                                <code>\CodeIgniter\Exceptions\string</code><p></p>
-                                            </div>                                </div>
-                            </div>
-
-                        </div>                        <a id="method_forNoDateFormat"></a>
-                        <div class="element clickable methodpublic method_forNoDateFormat" data-toggle="collapse" data-target=".method_forNoDateFormat .collapse">
-                            <h2>forNoDateFormat</h2>
-                            <pre>forNoDateFormat(\CodeIgniter\Exceptions\string $modelName)</pre>
-                            <div class="labels"><span class="label">static</span>                            </div>
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$modelName</h4>
                                                 <code>\CodeIgniter\Exceptions\string</code><p></p>
                                             </div>                                </div>
                             </div>
@@ -321,36 +488,29 @@ that can only be determined at run time.</p>
                                             </div>                                </div>
                             </div>
 
-                        </div>                        <a id="method_forNoPrimaryKey"></a>
-                        <div class="element clickable methodpublic method_forNoPrimaryKey" data-toggle="collapse" data-target=".method_forNoPrimaryKey .collapse">
-                            <h2>forNoPrimaryKey</h2>
-                            <pre>forNoPrimaryKey(\CodeIgniter\Exceptions\string $modelName)</pre>
+                        </div>                        <a id="method_forUnknownCookieInstance"></a>
+                        <div class="element clickable methodpublic method_forUnknownCookieInstance" data-toggle="collapse" data-target=".method_forUnknownCookieInstance .collapse">
+                            <h2>Thrown when the queried Cookie object does not exist in the cookie collection.</h2>
+                            <pre>forUnknownCookieInstance(array&lt;mixed,string&gt; $data): static</pre>
                             <div class="labels"><span class="label">static</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
-                                    <table class="table">                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$modelName</h4>
-                                                <code>\CodeIgniter\Exceptions\string</code><p></p>
-                                            </div>                                </div>
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$data</h4>
+                                                <code>array&lt;mixed,string&gt;</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>static</code><p></p>                                </div>
                             </div>
 
                         </div>                </div>
             </div>
-            <a id="\CodeIgniter\Exceptions\ModelException"></a>
+            <a id="\CodeIgniter\Cookie\Exceptions\CookieException"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
-    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Exceptions.html">Exceptions</a></li>
-                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Exceptions.ModelException.html">ModelException</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/CodeIgniter.Cookie.Exceptions.html">Exceptions</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/CodeIgniter.Cookie.Exceptions.CookieException.html">CookieException</a></li>
             </ul>
         </div>
     </div>    </div>    <footer class="span12">
