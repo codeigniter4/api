@@ -117,6 +117,10 @@ the valid parts that we&#039;ll need.</span><pre>initialize</pre>
             <span class="description">Loads the class file for a given class name.</span><pre>loadClass</pre>
         </a>
     </li>    <li class="methodpublic">
+        <a href="#method_loadClassmap" title="loadClassmap ::Load a class using available class mapping.">
+            <span class="description">Load a class using available class mapping.</span><pre>loadClassmap</pre>
+        </a>
+    </li>    <li class="methodpublic">
         <a href="#method_register" title="register ::Register the loader with the SPL autoloader stack.">
             <span class="description">Register the loader with the SPL autoloader stack.</span><pre>register</pre>
         </a>
@@ -132,8 +136,8 @@ the valid parts that we&#039;ll need.</span><pre>initialize</pre>
         </li>
         <li class="nav-header protected">» Protected
             <ul>                        <li class="methodprotected">
-                            <a href="#method_discoverComposerNamespaces" title="discoverComposerNamespaces ::Locates all PSR4 compatible namespaces from Composer.">
-                                <span class="description">Locates all PSR4 compatible namespaces from Composer.</span><pre>discoverComposerNamespaces</pre>
+                            <a href="#method_discoverComposerNamespaces" title="discoverComposerNamespaces ::Locates autoload information from Composer, if available.">
+                                <span class="description">Locates autoload information from Composer, if available.</span><pre>discoverComposerNamespaces</pre>
                             </a>
                         </li>                        <li class="methodprotected">
                             <a href="#method_includeFile" title="includeFile ::A central way to include a file. Split out primarily for testing purposes.">
@@ -163,30 +167,30 @@ the valid parts that we&#039;ll need.</span><pre>initialize</pre>
                 <div class="details">
                     <div class="long_description"><p>An autoloader that uses both PSR4 autoloading, and traditional classmaps.</p>
 <p>Given a foo-bar package of classes in the file system at the following paths:</p>
-<pre><code> /path/to/packages/foo-bar/
-     /src
-         Baz.php         # Foo\Bar\Baz
-         Qux/
-             Quux.php    # Foo\Bar\Qux\Quux</code></pre>
+<pre><code>     /path/to/packages/foo-bar/
+         /src
+             Baz.php         # Foo\Bar\Baz
+             Qux/
+                 Quux.php    # Foo\Bar\Qux\Quux</code></pre>
 <p>you can add the path to the configuration array that is passed in the constructor.
 The Config array consists of 2 primary keys, both of which are associative arrays:
 'psr4', and 'classmap'.</p>
-<pre><code> $Config = [
-     'psr4' =&gt; [
-         'Foo\Bar'   =&gt; '/path/to/packages/foo-bar'
-     ],
-     'classmap' =&gt; [
-         'MyClass'   =&gt; '/path/to/class/file.php'
-     ]
- ];</code></pre>
+<pre><code>     $Config = [
+         'psr4' =&gt; [
+             'Foo\Bar'   =&gt; '/path/to/packages/foo-bar'
+         ],
+         'classmap' =&gt; [
+             'MyClass'   =&gt; '/path/to/class/file.php'
+         ]
+     ];</code></pre>
 <p>Example:</p>
-<pre><code> &lt;?php
- // our configuration array
- $Config = [ ... ];
- $loader = new \CodeIgniter\Autoloader\Autoloader($Config);
+<pre><code>     &lt;?php
+     // our configuration array
+     $Config = [ ... ];
+     $loader = new \CodeIgniter\Autoloader\Autoloader($Config);
 
- // register the autoloader
- $loader-&gt;register();</code></pre>
+     // register the autoloader
+     $loader-&gt;register();</code></pre>
                     </div>
                     <table class="table table-bordered">                                <tr>
                                     <th>package                                    </th>
@@ -215,18 +219,14 @@ The Config array consists of 2 primary keys, both of which are associative array
 
                         </div>                        <a id="method_discoverComposerNamespaces"></a>
                         <div class="element clickable methodprotected method_discoverComposerNamespaces" data-toggle="collapse" data-target=".method_discoverComposerNamespaces .collapse">
-                            <h2>Locates all PSR4 compatible namespaces from Composer.</h2>
-                            <pre>discoverComposerNamespaces()</pre>
+                            <h2>Locates autoload information from Composer, if available.</h2>
+                            <pre>discoverComposerNamespaces(): void</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
                                     <table class="table">                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                            <tr>
                                                 <th>
                                                 </th>
                                                 <td>                                                </td>
@@ -300,6 +300,22 @@ the valid parts that we&#039;ll need.</h2>
                                             </div>                                        <h3>Response</h3>
                                         <code>string|false</code><p><p>The mapped file on success, or boolean false
 on failure.</p></p>                                </div>
+                            </div>
+
+                        </div>                        <a id="method_loadClassmap"></a>
+                        <div class="element clickable methodpublic method_loadClassmap" data-toggle="collapse" data-target=".method_loadClassmap .collapse">
+                            <h2>Load a class using available class mapping.</h2>
+                            <pre>loadClassmap(string $class): string|false</pre>
+                            <div class="labels">                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$class</h4>
+                                                <code>string</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>string|false</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_loadInNamespace"></a>
@@ -377,7 +393,7 @@ and end of filename.</p></div>
                         </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_prefixes"> </a>
                             <div class="element clickable propertyprotected property_prefixes" data-toggle="collapse" data-target=".property_prefixes .collapse">
                                 <h2>Stores namespaces as key, and path as values.</h2>
-                                <pre>prefixes :array</pre>
+                                <pre>prefixes :\CodeIgniter\Autoloader\array&lt;string,</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -386,14 +402,14 @@ and end of filename.</p></div>
                                         <table class="table">                                                <tr>
                                                     <th>var
                                                     </th>
-                                                    <td>                                                    </td>
+                                                    <td><p>array<string>&gt;</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
+                                            <code>\CodeIgniter\Autoloader\array<string,</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_classmap"> </a>
                             <div class="element clickable propertyprotected property_classmap" data-toggle="collapse" data-target=".property_classmap .collapse">
                                 <h2>Stores class name as key, and path as values.</h2>
-                                <pre>classmap :array</pre>
+                                <pre>classmap :\CodeIgniter\Autoloader\array&lt;string,</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -402,9 +418,9 @@ and end of filename.</p></div>
                                         <table class="table">                                                <tr>
                                                     <th>var
                                                     </th>
-                                                    <td>                                                    </td>
+                                                    <td><p>string&gt;</p>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>array</code>                                    </div>
+                                            <code>\CodeIgniter\Autoloader\array<string,</code>                                    </div>
                                 </div>
                             </div>                </div>
             </div>
@@ -419,6 +435,6 @@ and end of filename.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onSat, 24 Apr 2021 16:46:25 +0000.<br/>
+            generated onSat, 24 Apr 2021 17:53:08 +0000.<br/>
     </footer></body>
 </html>
