@@ -159,6 +159,10 @@ more flexible timeZone handling">
 more flexible timeZone handling</span><pre>createFromFormat</pre>
         </a>
     </li>    <li class="methodpublic">
+        <a href="#method_createFromInstance" title="createFromInstance ::Takes an instance of DateTimeInterface and returns an instance of Time with it&#039;s same values.">
+            <span class="description">Takes an instance of DateTimeInterface and returns an instance of Time with it&#039;s same values.</span><pre>createFromInstance</pre>
+        </a>
+    </li>    <li class="methodpublic">
         <a href="#method_createFromTime" title="createFromTime ::Returns a new instance with the date set to today, and the time set to the values passed in.">
             <span class="description">Returns a new instance with the date set to today, and the time set to the values passed in.</span><pre>createFromTime</pre>
         </a>
@@ -738,6 +742,31 @@ more flexible timeZone handling</h2>
                                         <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a></code><p></p>                                </div>
                             </div>
 
+                        </div>                        <a id="method_createFromInstance"></a>
+                        <div class="element clickable methodpublic method_createFromInstance" data-toggle="collapse" data-target=".method_createFromInstance .collapse">
+                            <h2>Takes an instance of DateTimeInterface and returns an instance of Time with it&#039;s same values.</h2>
+                            <pre>createFromInstance(\DateTimeInterface $dateTime,string|null $locale = null): \CodeIgniter\I18n\Time</pre>
+                            <div class="labels"><span class="label">static</span>                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>                                                        <dt>\Exception</dt>
+                                                        <dd></dd>                                                    </dl>
+                                                </td>
+                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                                <h4>$dateTime</h4>
+                                                <code>\DateTimeInterface</code><p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$locale</h4>
+                                                <code>string|null</code><p></p>
+                                            </div>                                        <h3>Response</h3>
+                                        <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a></code><p></p>                                </div>
+                            </div>
+
                         </div>                        <a id="method_createFromTime"></a>
                         <div class="element clickable methodpublic method_createFromTime" data-toggle="collapse" data-target=".method_createFromTime .collapse">
                             <h2>Returns a new instance with the date set to today, and the time set to the values passed in.</h2>
@@ -828,7 +857,7 @@ more flexible timeZone handling</h2>
                         </div>                        <a id="method_equals"></a>
                         <div class="element clickable methodpublic method_equals" data-toggle="collapse" data-target=".method_equals .collapse">
                             <h2>Determines if the datetime passed in is equal to the current instance.</h2>
-                            <pre>equals(\CodeIgniter\I18n\Time|\DateTime|string $testTime,string|null $timezone = null): boolean</pre>
+                            <pre>equals(\CodeIgniter\I18n\Time|\DateTimeInterface|string $testTime,string|null $timezone = null): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -844,7 +873,7 @@ converted to UTC and compared that way.</p></div>
                                                 </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$testTime</h4>
-                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTime|string</code><p></p>
+                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTimeInterface|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$timezone</h4>
                                                 <code>string|null</code><p></p>
@@ -1311,7 +1340,7 @@ how long ago, or how long from now, a date is, like:</h2>
                             </div>
 
                         </div>                        <a id="method_instance"></a>
-                        <div class="element clickable methodpublic method_instance" data-toggle="collapse" data-target=".method_instance .collapse">
+                        <div class="element clickable methodpublicdeprecated method_instance" data-toggle="collapse" data-target=".method_instance .collapse">
                             <h2>Takes an instance of DateTime and returns an instance of Time with it&#039;s same values.</h2>
                             <pre>instance(\DateTime $dateTime,string|null $locale = null): \CodeIgniter\I18n\Time</pre>
                             <div class="labels"><span class="label">static</span>                            </div>
@@ -1320,6 +1349,14 @@ how long ago, or how long from now, a date is, like:</h2>
                                     <div class="long_description"></div>
 
                                     <table class="table">                                            <tr>
+                                                <th>deprecated
+                                                </th>
+                                                <td><p>Use createFromInstance() instead</p>                                                </td>
+                                            </tr>                                            <tr>
+                                                <th>codeCoverageIgnore
+                                                </th>
+                                                <td>                                                </td>
+                                            </tr>                                            <tr>
                                                 <th>Throws</th>
                                                 <td>
                                                     <dl>                                                        <dt>\Exception</dt>
@@ -1444,7 +1481,7 @@ $time = Time::parse('first day of December 2008');</p></div>
                         </div>                        <a id="method_sameAs"></a>
                         <div class="element clickable methodpublic method_sameAs" data-toggle="collapse" data-target=".method_sameAs .collapse">
                             <h2>Ensures that the times are identical, taking timezone into account.</h2>
-                            <pre>sameAs(\CodeIgniter\I18n\Time|\DateTime|string $testTime,string|null $timezone = null): boolean</pre>
+                            <pre>sameAs(\CodeIgniter\I18n\Time|\DateTimeInterface|string $testTime,string|null $timezone = null): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1458,7 +1495,7 @@ $time = Time::parse('first day of December 2008');</p></div>
                                                 </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$testTime</h4>
-                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTime|string</code><p></p>
+                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTimeInterface|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$timezone</h4>
                                                 <code>string|null</code><p></p>
@@ -1580,7 +1617,7 @@ $time = Time::parse('first day of December 2008');</p></div>
                         <div class="element clickable methodpublic method_setTestNow" data-toggle="collapse" data-target=".method_setTestNow .collapse">
                             <h2>Creates an instance of Time that will be returned during testing
 when calling &#039;Time::now&#039; instead of the current time.</h2>
-                            <pre>setTestNow(\CodeIgniter\I18n\Time|\DateTime|string|null $datetime = null,\DateTimeZone|string|null $timezone = null,string|null $locale = null)</pre>
+                            <pre>setTestNow(\CodeIgniter\I18n\Time|\DateTimeInterface|string|null $datetime = null,\DateTimeZone|string|null $timezone = null,string|null $locale = null)</pre>
                             <div class="labels"><span class="label">static</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1598,7 +1635,7 @@ when calling &#039;Time::now&#039; instead of the current time.</h2>
                                                 </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$datetime</h4>
-                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTime|string|null</code><p></p>
+                                                <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTimeInterface|string|null</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$timezone</h4>
                                                 <code>\DateTimeZone|string|null</code><p></p>
@@ -2077,7 +2114,7 @@ when calling &#039;Time::now&#039; instead of the current time.</h2>
                             </div>                            <a id="property_testNow"> </a>
                             <div class="element clickable propertyprotected property_testNow" data-toggle="collapse" data-target=".property_testNow .collapse">
                                 <h2>testNow</h2>
-                                <pre>testNow :\CodeIgniter\I18n\Time|\DateTime|null</pre>
+                                <pre>testNow :static|\DateTimeInterface|null</pre>
                                 <div class="labels"><span class="label">static</span>                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -2088,7 +2125,7 @@ when calling &#039;Time::now&#039; instead of the current time.</h2>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code><a href="../classes/CodeIgniter.I18n.Time.html">\CodeIgniter\I18n\Time</a>|\DateTime|null</code>                                    </div>
+                                            <code>static|\DateTimeInterface|null</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_date"> </a>
                             <div class="element clickable propertypublic property_date" data-toggle="collapse" data-target=".property_date .collapse">
@@ -2119,6 +2156,6 @@ when calling &#039;Time::now&#039; instead of the current time.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onSat, 01 May 2021 16:27:57 +0000.<br/>
+            generated onSat, 01 May 2021 17:03:37 +0000.<br/>
     </footer></body>
 </html>
