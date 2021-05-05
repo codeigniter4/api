@@ -114,7 +114,7 @@
         <a href="#method_delete" title="delete ::Deletes a specific item from the cache store.">
             <span class="description">Deletes a specific item from the cache store.</span><pre>delete</pre>
         </a>
-    </li>    <li class="methodpublic inherited">
+    </li>    <li class="methodpublic">
         <a href="#method_deleteMatching" title="deleteMatching ::Deletes items from the cache store matching a given pattern.">
             <span class="description">Deletes items from the cache store matching a given pattern.</span><pre>deleteMatching</pre>
         </a>
@@ -142,10 +142,6 @@
         <a href="#method_isSupported" title="isSupported ::Determines if the driver is supported on this system.">
             <span class="description">Determines if the driver is supported on this system.</span><pre>isSupported</pre>
         </a>
-    </li>    <li class="methodpublic inherited">
-        <a href="#method_remember" title="remember ::Get an item from the cache, or execute the given Closure and store the result.">
-            <span class="description">Get an item from the cache, or execute the given Closure and store the result.</span><pre>remember</pre>
-        </a>
     </li>    <li class="methodpublic">
         <a href="#method_save" title="save ::Saves an item to the cache store.">
             <span class="description">Saves an item to the cache store.</span><pre>save</pre>
@@ -168,7 +164,7 @@
         <div class="span8">
             <div class="element class">
                 <h1>PredisHandler</h1>
-                <small style="display: block; text-align: right">                        Extends<a href="../classes/CodeIgniter.Cache.Handlers.BaseHandler.html">\CodeIgniter\Cache\Handlers\BaseHandler</a>                </small>
+                <small style="display: block; text-align: right">                        Extends\CodeIgniter\Cache\Handlers\BaseHandler                </small>
                 <p class="short_description">Predis cache handler</p>
                 <div class="details">
                     <div class="long_description">
@@ -251,28 +247,19 @@
                             </div>
 
                         </div>                        <a id="method_deleteMatching"></a>
-                        <div class="element clickable methodpublic method_deleteMatching inherited" data-toggle="collapse" data-target=".method_deleteMatching .collapse">
+                        <div class="element clickable methodpublic method_deleteMatching" data-toggle="collapse" data-target=".method_deleteMatching .collapse">
                             <h2>Deletes items from the cache store matching a given pattern.</h2>
-                            <pre>deleteMatching(string $pattern)</pre>
-                            <div class="labels"><span class="label">inherited</span>                            </div>
+                            <pre>deleteMatching(string $pattern): integer</pre>
+                            <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
                                     <div class="long_description"></div>
 
-                                    <table class="table">                                            <tr>
-                                                <th>
-                                                </th>
-                                                <td>                                                </td>
-                                            </tr>                                            <tr>
-                                                <th>Throws</th>
-                                                <td>
-                                                    <dl>                                                        <dt>\Exception</dt>
-                                                        <dd></dd>                                                    </dl>
-                                                </td>
-                                            </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
+                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$pattern</h4>
                                                 <code>string</code><p><p>Cache items glob-style pattern</p></p>
-                                            </div>                                </div>
+                                            </div>                                        <h3>Response</h3>
+                                        <code>integer</code><p><p>The number of deleted items</p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_get"></a>
@@ -382,28 +369,6 @@ with at least the 'expires' key for absolute epoch expiry (or null).</p></p>    
                                         <code>boolean</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <a id="method_remember"></a>
-                        <div class="element clickable methodpublic method_remember inherited" data-toggle="collapse" data-target=".method_remember .collapse">
-                            <h2>Get an item from the cache, or execute the given Closure and store the result.</h2>
-                            <pre>remember(string $key,integer $ttl,\Closure $callback): mixed</pre>
-                            <div class="labels"><span class="label">inherited</span>                            </div>
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$key</h4>
-                                                <code>string</code><p><p>Cache item name</p></p>
-                                            </div>                                            <div class="subelement argument">
-                                                <h4>$ttl</h4>
-                                                <code>integer</code><p><p>Time to live</p></p>
-                                            </div>                                            <div class="subelement argument">
-                                                <h4>$callback</h4>
-                                                <code>\Closure</code><p><p>Callback return value</p></p>
-                                            </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
-                            </div>
-
                         </div>                        <a id="method_save"></a>
                         <div class="element clickable methodpublic method_save" data-toggle="collapse" data-target=".method_save .collapse">
                             <h2>Saves an item to the cache store.</h2>
@@ -426,23 +391,7 @@ with at least the 'expires' key for absolute epoch expiry (or null).</p></p>    
                                         <code>boolean</code><p><p>Success or failure</p></p>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_prefix"> </a>
-                            <div class="element clickable propertyprotected property_prefix" data-toggle="collapse" data-target=".property_prefix .collapse">
-                                <h2>Prefixed to all cache names.</h2>
-                                <pre>prefix :string</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_config"> </a>
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_config"> </a>
                             <div class="element clickable propertyprotected property_config" data-toggle="collapse" data-target=".property_config .collapse">
                                 <h2>Default config</h2>
                                 <pre>config :array</pre>
@@ -487,6 +436,6 @@ with at least the 'expires' key for absolute epoch expiry (or null).</p></p>    
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onWed, 05 May 2021 18:17:40 +0000.<br/>
+            generated onWed, 05 May 2021 18:45:42 +0000.<br/>
     </footer></body>
 </html>
