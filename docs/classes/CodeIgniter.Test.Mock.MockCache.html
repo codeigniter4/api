@@ -164,7 +164,7 @@
         <div class="span8">
             <div class="element class">
                 <h1>MockCache</h1>
-                <small style="display: block; text-align: right">                        Implements<a href="../classes/CodeIgniter.Cache.CacheInterface.html">\CodeIgniter\Cache\CacheInterface</a>                </small>
+                <small style="display: block; text-align: right">                        Extends\CodeIgniter\Cache\Handlers\BaseHandler                        Implements<a href="../classes/CodeIgniter.Cache.CacheInterface.html">\CodeIgniter\Cache\CacheInterface</a>                </small>
                 <p class="short_description"></p>
                 <div class="details">
                     <div class="long_description">
@@ -178,7 +178,7 @@
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>                        <a id="method_clean"></a>
                         <div class="element clickable methodpublic method_clean" data-toggle="collapse" data-target=".method_clean .collapse">
                             <h2>Will delete all items in the entire cache.</h2>
-                            <pre>clean(): mixed</pre>
+                            <pre>clean(): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -189,13 +189,13 @@
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>boolean</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_decrement"></a>
                         <div class="element clickable methodpublic method_decrement" data-toggle="collapse" data-target=".method_decrement .collapse">
                             <h2>Performs atomic decrementation of a raw stored value.</h2>
-                            <pre>decrement(string $key,integer $offset = 1): mixed</pre>
+                            <pre>decrement(string $key,integer $offset = 1): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -208,13 +208,13 @@
                                                 <h4>$offset</h4>
                                                 <code>integer</code><p><p>Step/value to increase by</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>boolean</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_delete"></a>
                         <div class="element clickable methodpublic method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
                             <h2>Deletes a specific item from the cache store.</h2>
-                            <pre>delete(string $key): mixed</pre>
+                            <pre>delete(string $key): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -224,13 +224,13 @@
                                                 <h4>$key</h4>
                                                 <code>string</code><p><p>Cache item name</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>boolean</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_deleteMatching"></a>
                         <div class="element clickable methodpublic method_deleteMatching" data-toggle="collapse" data-target=".method_deleteMatching .collapse">
                             <h2>Deletes items from the cache store matching a given pattern.</h2>
-                            <pre>deleteMatching(string $pattern): boolean</pre>
+                            <pre>deleteMatching(string $pattern): integer</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -240,7 +240,7 @@
                                                 <h4>$pattern</h4>
                                                 <code>string</code><p><p>Cache items glob-style pattern</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>boolean</code><p></p>                                </div>
+                                        <code>integer</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_get"></a>
@@ -280,7 +280,7 @@ varies depending on the handler.</p></div>
                         </div>                        <a id="method_getMetaData"></a>
                         <div class="element clickable methodpublic method_getMetaData" data-toggle="collapse" data-target=".method_getMetaData .collapse">
                             <h2>Returns detailed information about the specific item in the cache.</h2>
-                            <pre>getMetaData(string $key): mixed</pre>
+                            <pre>getMetaData(string $key): array|null</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -290,13 +290,14 @@ varies depending on the handler.</p></div>
                                                 <h4>$key</h4>
                                                 <code>string</code><p><p>Cache item name.</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>array|null</code><p><p>Returns null if the item does not exist, otherwise array&lt;string, mixed&gt;
+with at least the 'expire' key for absolute epoch expiry (or null).</p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_increment"></a>
                         <div class="element clickable methodpublic method_increment" data-toggle="collapse" data-target=".method_increment .collapse">
                             <h2>Performs atomic incrementation of a raw stored value.</h2>
-                            <pre>increment(string $key,integer $offset = 1): mixed</pre>
+                            <pre>increment(string $key,integer $offset = 1): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -309,7 +310,7 @@ varies depending on the handler.</p></div>
                                                 <h4>$offset</h4>
                                                 <code>integer</code><p><p>Step/value to increase by</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>boolean</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_initialize"></a>
@@ -374,7 +375,7 @@ varies depending on the handler.</p></div>
                         </div>                        <a id="method_save"></a>
                         <div class="element clickable methodpublic method_save" data-toggle="collapse" data-target=".method_save .collapse">
                             <h2>Saves an item to the cache store.</h2>
-                            <pre>save(string $key,mixed $value,integer $ttl = 60,boolean $raw = false): mixed</pre>
+                            <pre>save(string $key,mixed $value,integer $ttl = 60,boolean $raw = false): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -394,26 +395,10 @@ allow usage of increment() and decrement().</p></div>
                                                 <h4>$raw</h4>
                                                 <code>boolean</code><p><p>Whether to store the raw value.</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>mixed</code><p></p>                                </div>
+                                        <code>boolean</code><p></p>                                </div>
                             </div>
 
-                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_prefix"> </a>
-                            <div class="element clickable propertyprotected property_prefix" data-toggle="collapse" data-target=".property_prefix .collapse">
-                                <h2>Prefixed to all cache names.</h2>
-                                <pre>prefix :string</pre>
-                                <div class="labels">                                </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">                                                <tr>
-                                                    <th>var
-                                                    </th>
-                                                    <td>                                                    </td>
-                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string</code>                                    </div>
-                                </div>
-                            </div>                            <a id="property_cache"> </a>
+                        </div>                        <h3><i class="icon-custom icon-property"></i> Properties</h3>                            <a id="property_cache"> </a>
                             <div class="element clickable propertyprotected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
                                 <h2>Mock cache storage.</h2>
                                 <pre>cache :array</pre>
@@ -429,6 +414,22 @@ allow usage of increment() and decrement().</p></div>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
                                             <code>array</code>                                    </div>
                                 </div>
+                            </div>                            <a id="property_expirations"> </a>
+                            <div class="element clickable propertyprotected property_expirations" data-toggle="collapse" data-target=".property_expirations .collapse">
+                                <h2>Expiration times.</h2>
+                                <pre>expirations :array&lt;mixed,\CodeIgniter\Test\Mock\?int&gt;</pre>
+                                <div class="labels">                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">                                                <tr>
+                                                    <th>var
+                                                    </th>
+                                                    <td>                                                    </td>
+                                                </tr>                                        </table>                                            <h3>Type(s)</h3>
+                                            <code>array&lt;mixed,\CodeIgniter\Test\Mock\?int&gt;</code>                                    </div>
+                                </div>
                             </div>                </div>
             </div>
             <a id="\CodeIgniter\Test\Mock\MockCache"></a>
@@ -442,6 +443,6 @@ allow usage of increment() and decrement().</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onWed, 05 May 2021 18:45:43 +0000.<br/>
+            generated onThu, 06 May 2021 01:17:58 +0000.<br/>
     </footer></body>
 </html>
