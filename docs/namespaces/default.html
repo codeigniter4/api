@@ -916,21 +916,21 @@ off and add them after the link.</p></div>
                             </div>
         </div><a href="../namespaces/default.html#function_auto_link" class="more">« More »</a>    </div>    <div id="function_base_url" class="element ajax clickablefunction" data-toggle="collapse" data-target="#function_base_url .collapse">
         <h1>base_url<a href="../namespaces/default.html#function_base_url">¶</a></h1>
-        <p class="short_description">Return the base URL to use in views</p>
+        <p class="short_description">Returns the base URL as defined by the App config.</p>
         <div class="details collapse">
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"></div>
+                                    <div class="long_description"><p>Base URLs are trimmed site URLs without the index page.</p></div>
 
                                     <table class="table">                                            <tr>
                                                 <th>package
                                                 </th>
                                                 <td><p>Default</p>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$uri</h4>
+                                                <h4>$relativePath</h4>
                                                 <code>mixed</code><p><p>URI string or array of URI segments</p></p>
                                             </div>                                            <div class="subelement argument">
-                                                <h4>$protocol</h4>
+                                                <h4>$scheme</h4>
                                                 <code>string</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
@@ -1021,12 +1021,11 @@ E.g. 0 cats, 1 cat, 2 cats, ...</p></div>
                             </div>
         </div><a href="../namespaces/default.html#function_counted" class="more">« More »</a>    </div>    <div id="function_current_url" class="element ajax clickablefunction" data-toggle="collapse" data-target="#function_current_url .collapse">
         <h1>current_url<a href="../namespaces/default.html#function_current_url">¶</a></h1>
-        <p class="short_description">Current URL</p>
+        <p class="short_description">Returns the current full URL based on the IncomingRequest.</p>
         <div class="details collapse">
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"><p>Returns the full URL (including segments) of the page where this
-function is placed</p></div>
+                                    <div class="long_description"><p>String returns ignore query and fragment parts.</p></div>
 
                                     <table class="table">                                            <tr>
                                                 <th>package
@@ -1034,7 +1033,10 @@ function is placed</p></div>
                                                 <td><p>Default</p>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$returnObject</h4>
-                                                <code>boolean</code><p><p>True to return an object instead of a strong</p></p>
+                                                <code>boolean</code><p><p>True to return an object instead of a string</p></p>
+                                            </div>                                            <div class="subelement argument">
+                                                <h4>$request</h4>
+                                                <code>\CodeIgniter\HTTP\IncomingRequest|null</code><p><p>A request to use when retrieving the path</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string|<a href="../classes/CodeIgniter.HTTP.URI.html">\CodeIgniter\HTTP\URI</a></code><p></p>                                </div>
                             </div>
@@ -2625,7 +2627,7 @@ re-populate an input field or textarea</p></div>
                             </div>
         </div><a href="../namespaces/default.html#function_singular" class="more">« More »</a>    </div>    <div id="function_site_url" class="element ajax clickablefunction" data-toggle="collapse" data-target="#function_site_url .collapse">
         <h1>site_url<a href="../namespaces/default.html#function_site_url">¶</a></h1>
-        <p class="short_description">Return a site URL to use in views</p>
+        <p class="short_description">Returns a site URL as defined by the App config.</p>
         <div class="details collapse">
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -2636,13 +2638,13 @@ re-populate an input field or textarea</p></div>
                                                 </th>
                                                 <td><p>Default</p>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
-                                                <h4>$uri</h4>
+                                                <h4>$relativePath</h4>
                                                 <code>mixed</code><p><p>URI string or array of URI segments</p></p>
                                             </div>                                            <div class="subelement argument">
-                                                <h4>$protocol</h4>
+                                                <h4>$scheme</h4>
                                                 <code>string|null</code><p></p>
                                             </div>                                            <div class="subelement argument">
-                                                <h4>$altConfig</h4>
+                                                <h4>$config</h4>
                                                 <code>\Config\App|null</code><p><p>Alternate configuration to use</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>string</code><p></p>                                </div>
@@ -4964,6 +4966,6 @@ that can only be determined at run time.</p>        </div><a href="../classes/Co
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onTue, 11 May 2021 18:23:26 +0000.<br/>
+            generated onThu, 13 May 2021 17:31:25 +0000.<br/>
     </footer></body>
 </html>
