@@ -290,7 +290,7 @@ that doesn't interact with the session or cookies at all.</p>
                         <div class="element clickable methodpublic method___get inherited" data-toggle="collapse" data-target=".method___get .collapse">
                             <h2>Magic method to get session variables by simply calling
  $foo = $session-&gt;foo;</h2>
-                            <pre>__get(string $key): null|string</pre>
+                            <pre>__get(string $key): string|null</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -300,7 +300,7 @@ that doesn't interact with the session or cookies at all.</p>
                                                 <h4>$key</h4>
                                                 <code>string</code><p><p>Identifier of the session property to remove.</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>null|string</code><p></p>                                </div>
+                                        <code>string|null</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method___isset"></a>
@@ -324,7 +324,7 @@ Mostly used by internal PHP functions, users should stick to has()</p></div>
                         <div class="element clickable methodpublic method___set inherited" data-toggle="collapse" data-target=".method___set .collapse">
                             <h2>Magic method to set variables in the session by simply calling
  $session-&gt;foo = bar;</h2>
-                            <pre>__set(string $key,string|array $value)</pre>
+                            <pre>__set(string $key,array|string $value)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -339,7 +339,7 @@ Mostly used by internal PHP functions, users should stick to has()</p></div>
                                                 <code>string</code><p><p>Identifier of the session property to set.</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                </div>
                             </div>
 
@@ -567,7 +567,7 @@ in the session.</h2>
                         <div class="element clickable methodpublic method_markAsTempdata inherited" data-toggle="collapse" data-target=".method_markAsTempdata .collapse">
                             <h2>Mark one of more pieces of data as being temporary, meaning that
 it has a set lifespan within the session.</h2>
-                            <pre>markAsTempdata(string|array $key,integer $ttl = 300): boolean</pre>
+                            <pre>markAsTempdata(array|string $key,integer $ttl = 300): boolean</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -575,7 +575,7 @@ it has a set lifespan within the session.</h2>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p><p>Property identifier or array of them</p></p>
+                                                <code>array|string</code><p><p>Property identifier or array of them</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$ttl</h4>
                                                 <code>integer</code><p><p>Time to live, in seconds</p></p>
@@ -623,7 +623,7 @@ it has a set lifespan within the session.</h2>
                         </div>                        <a id="method_remove"></a>
                         <div class="element clickable methodpublic method_remove inherited" data-toggle="collapse" data-target=".method_remove .collapse">
                             <h2>Remove one or more session properties.</h2>
-                            <pre>remove(string|array $key)</pre>
+                            <pre>remove(array|string $key)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -637,7 +637,7 @@ of a specific session property to remove.</p></div>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p><p>Identifier of the session property or properties to remove.</p></p>
+                                                <code>array|string</code><p><p>Identifier of the session property or properties to remove.</p></p>
                                             </div>                                </div>
                             </div>
 
@@ -663,7 +663,7 @@ of a specific session property to remove.</p></div>
                         </div>                        <a id="method_set"></a>
                         <div class="element clickable methodpublic method_set inherited" data-toggle="collapse" data-target=".method_set .collapse">
                             <h2>Sets user data into the session.</h2>
-                            <pre>set(string|array $data,mixed $value = null)</pre>
+                            <pre>set(array|string $data,mixed $value = null)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -678,7 +678,7 @@ to be set as session properties.</p></div>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$data</h4>
-                                                <code>string|array</code><p><p>Property name or associative array of properties</p></p>
+                                                <code>array|string</code><p><p>Property name or associative array of properties</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$value</h4>
                                                 <code>mixed</code><p><p>Property value if single key provided</p></p>
@@ -712,7 +712,7 @@ to be set as session properties.</p></div>
                         </div>                        <a id="method_setFlashdata"></a>
                         <div class="element clickable methodpublic method_setFlashdata inherited" data-toggle="collapse" data-target=".method_setFlashdata .collapse">
                             <h2>Sets data into the session that will only last for a single request.</h2>
-                            <pre>setFlashdata(array|string $data,string|array $value = null)</pre>
+                            <pre>setFlashdata(array|string $data,array|string $value = null)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -731,7 +731,7 @@ flashdata property, with $value containing the property value.</p></div>
                                                 <code>array|string</code><p><p>Property identifier or associative array of properties</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$value</h4>
-                                                <code>string|array</code><p><p>Property value if $data is a scalar</p></p>
+                                                <code>array|string</code><p><p>Property value if $data is a scalar</p></p>
                                             </div>                                </div>
                             </div>
 
@@ -759,7 +759,7 @@ flashdata property, with $value containing the property value.</p></div>
                         <div class="element clickable methodpublic method_setTempdata inherited" data-toggle="collapse" data-target=".method_setTempdata .collapse">
                             <h2>Sets new data into the session, and marks it as temporary data
 with a set lifespan.</h2>
-                            <pre>setTempdata(string|array $data,null $value = null,integer $ttl = 300)</pre>
+                            <pre>setTempdata(array|string $data,null $value = null,integer $ttl = 300)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -771,7 +771,7 @@ with a set lifespan.</h2>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$data</h4>
-                                                <code>string|array</code><p><p>Session data key or associative array of items</p></p>
+                                                <code>array|string</code><p><p>Session data key or associative array of items</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$value</h4>
                                                 <code>null</code><p><p>Value to store</p></p>
@@ -865,7 +865,7 @@ with a set lifespan.</h2>
                         <div class="element clickable methodpublic method_unmarkTempdata inherited" data-toggle="collapse" data-target=".method_unmarkTempdata .collapse">
                             <h2>Unmarks temporary data in the session, effectively removing its
 lifespan and allowing it to live as long as the session does.</h2>
-                            <pre>unmarkTempdata(string|array $key)</pre>
+                            <pre>unmarkTempdata(array|string $key)</pre>
                             <div class="labels"><span class="label">inherited</span>                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -877,7 +877,7 @@ lifespan and allowing it to live as long as the session does.</h2>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p><p>Property identifier or array of them</p></p>
+                                                <code>array|string</code><p><p>Property identifier or array of them</p></p>
                                             </div>                                </div>
                             </div>
 
@@ -1194,6 +1194,6 @@ Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onTue, 15 Jun 2021 13:45:42 +0000.<br/>
+            generated onTue, 15 Jun 2021 13:56:58 +0000.<br/>
     </footer></body>
 </html>

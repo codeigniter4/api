@@ -433,7 +433,7 @@ $routes-&gt;add('news', 'Posts::index');</p></div>
                             <h2>Registers a new constraint with the system. Constraints are used
 by the routes as placeholders for regular expressions to make defining
 the routes more human-friendly.</h2>
-                            <pre>addPlaceholder(string|array $placeholder,string|null $pattern = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>addPlaceholder(array|string $placeholder,string|null $pattern = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -442,7 +442,7 @@ multiple placeholders added at once.</p></div>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$placeholder</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$pattern</h4>
                                                 <code>string|null</code><p></p>
@@ -494,7 +494,7 @@ on this page request.</h2>
                         </div>                        <a id="method_cli"></a>
                         <div class="element clickable methodpublic method_cli" data-toggle="collapse" data-target=".method_cli .collapse">
                             <h2>Specifies a route that is only available to command-line requests.</h2>
-                            <pre>cli(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>cli(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -505,7 +505,7 @@ on this page request.</h2>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -518,7 +518,7 @@ on this page request.</h2>
                             <h2>Does the heavy lifting of creating an actual route. You must specify
 the request method(s) that this route will work for. They can be separated
 by a pipe character &quot;|&quot; if there is more than one.</h2>
-                            <pre>create(string $verb,string $from,string|array $to,array|null $options = null)</pre>
+                            <pre>create(string $verb,string $from,array|string $to,array|null $options = null)</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -536,7 +536,7 @@ by a pipe character &quot;|&quot; if there is more than one.</h2>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -546,7 +546,7 @@ by a pipe character &quot;|&quot; if there is more than one.</h2>
                         </div>                        <a id="method_delete"></a>
                         <div class="element clickable methodpublic method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
                             <h2>Specifies a route that is only available to DELETE requests.</h2>
-                            <pre>delete(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>delete(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -557,7 +557,7 @@ by a pipe character &quot;|&quot; if there is more than one.</h2>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -652,7 +652,7 @@ the local PSR4 namespaces, or through selected Composer packages.</h2>
                         </div>                        <a id="method_get"></a>
                         <div class="element clickable methodpublic method_get" data-toggle="collapse" data-target=".method_get .collapse">
                             <h2>Specifies a route that is only available to GET requests.</h2>
-                            <pre>get(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>get(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -663,7 +663,7 @@ the local PSR4 namespaces, or through selected Composer packages.</h2>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -675,7 +675,7 @@ the local PSR4 namespaces, or through selected Composer packages.</h2>
                         <div class="element clickable methodpublic method_get404Override" data-toggle="collapse" data-target=".method_get404Override .collapse">
                             <h2>Returns the 404 Override setting, which can be null, a closure
 or the controller/string.</h2>
-                            <pre>get404Override(): string|\Closure|null</pre>
+                            <pre>get404Override(): \Closure|string|null</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -686,7 +686,7 @@ or the controller/string.</h2>
                                                 </th>
                                                 <td>                                                </td>
                                             </tr>                                    </table>                                        <h3>Response</h3>
-                                        <code>string|\Closure|null</code><p></p>                                </div>
+                                        <code>\Closure|string|null</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_getDefaultController"></a>
@@ -857,7 +857,7 @@ $route-&gt;resource('users');
                         </div>                        <a id="method_head"></a>
                         <div class="element clickable methodpublic method_head" data-toggle="collapse" data-target=".method_head .collapse">
                             <h2>Specifies a route that is only available to HEAD requests.</h2>
-                            <pre>head(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>head(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -868,7 +868,7 @@ $route-&gt;resource('users');
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -966,7 +966,7 @@ define the method used.</p></div>
                         </div>                        <a id="method_match"></a>
                         <div class="element clickable methodpublic method_match" data-toggle="collapse" data-target=".method_match .collapse">
                             <h2>Specifies a single route to match for multiple HTTP Verbs.</h2>
-                            <pre>match(array $verbs = array(),string $from = &#039;&#039;,string|array $to = &#039;&#039;,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>match(array $verbs = array(),string $from = &#039;&#039;,array|string $to = &#039;&#039;,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -981,7 +981,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -992,7 +992,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                         </div>                        <a id="method_options"></a>
                         <div class="element clickable methodpublic method_options" data-toggle="collapse" data-target=".method_options .collapse">
                             <h2>Specifies a route that is only available to OPTIONS requests.</h2>
-                            <pre>options(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>options(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1003,7 +1003,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -1014,7 +1014,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                         </div>                        <a id="method_patch"></a>
                         <div class="element clickable methodpublic method_patch" data-toggle="collapse" data-target=".method_patch .collapse">
                             <h2>Specifies a route that is only available to PATCH requests.</h2>
-                            <pre>patch(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>patch(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1025,7 +1025,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -1036,7 +1036,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                         </div>                        <a id="method_post"></a>
                         <div class="element clickable methodpublic method_post" data-toggle="collapse" data-target=".method_post .collapse">
                             <h2>Specifies a route that is only available to POST requests.</h2>
-                            <pre>post(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>post(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1047,7 +1047,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -1093,7 +1093,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                         </div>                        <a id="method_put"></a>
                         <div class="element clickable methodpublic method_put" data-toggle="collapse" data-target=".method_put .collapse">
                             <h2>Specifies a route that is only available to PUT requests.</h2>
-                            <pre>put(string $from,string|array $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
+                            <pre>put(string $from,array|string $to,array|null $options = null): \CodeIgniter\Router\RouteCollectionInterface</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1104,7 +1104,7 @@ $route-&gt;match( ['get', 'post'], 'users/(:num)', 'users/$1);</p></div>
                                                 <code>string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$to</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$options</h4>
                                                 <code>array|null</code><p></p>
@@ -1174,7 +1174,7 @@ explicit ones needed for it.</h2>
                         </div>                        <a id="method_reverseRoute"></a>
                         <div class="element clickable methodpublic method_reverseRoute" data-toggle="collapse" data-target=".method_reverseRoute .collapse">
                             <h2>Attempts to look up a route based on its destination.</h2>
-                            <pre>reverseRoute(string $search,mixed $params): string|false</pre>
+                            <pre>reverseRoute(string $search,mixed $params): false|string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -1192,7 +1192,7 @@ and get the route that leads to it.</p>
                                                 <h4>$params</h4>
                                                 <code>mixed</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>string|false</code><p></p>                                </div>
+                                        <code>false|string</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_set404Override"></a>
@@ -1490,7 +1490,7 @@ when it doesn&#039;t match defined routes.</h2>
                             <div class="element clickable propertyprotected property_override404" data-toggle="collapse" data-target=".property_override404 .collapse">
                                 <h2>A callable that will be shown
 when the route cannot be matched.</h2>
-                                <pre>override404 :string|\Closure</pre>
+                                <pre>override404 :\Closure|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1501,7 +1501,7 @@ when the route cannot be matched.</h2>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|\Closure</code>                                    </div>
+                                            <code>\Closure|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_placeholders"> </a>
                             <div class="element clickable propertyprotected property_placeholders" data-toggle="collapse" data-target=".property_placeholders .collapse">
@@ -1727,6 +1727,6 @@ applied during creation.</h2>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onTue, 15 Jun 2021 13:45:42 +0000.<br/>
+            generated onTue, 15 Jun 2021 13:56:59 +0000.<br/>
     </footer></body>
 </html>

@@ -278,7 +278,7 @@ SQL statements.</p>
                         </div>                        <a id="method__alterTable"></a>
                         <div class="element clickable methodprotected method__alterTable" data-toggle="collapse" data-target=".method__alterTable .collapse">
                             <h2>ALTER TABLE</h2>
-                            <pre>_alterTable(string $alterType,string $table,mixed $fields): string|array&lt;mixed,string&gt;|false</pre>
+                            <pre>_alterTable(string $alterType,string $table,mixed $fields): false|string|array&lt;mixed,string&gt;</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -294,7 +294,7 @@ SQL statements.</p>
                                                 <h4>$fields</h4>
                                                 <code>mixed</code><p><p>Column definition</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>string|array&lt;mixed,string&gt;|false</code><p></p>                                </div>
+                                        <code>false|string|array&lt;mixed,string&gt;</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method__attributeAutoIncrement"></a>
@@ -318,7 +318,7 @@ SQL statements.</p>
                         </div>                        <a id="method__attributeDefault"></a>
                         <div class="element clickable methodprotected method__attributeDefault" data-toggle="collapse" data-target=".method__attributeDefault .collapse">
                             <h2>Field attribute DEFAULT</h2>
-                            <pre>_attributeDefault(array &$attributes,array &$field): null|void</pre>
+                            <pre>_attributeDefault(array &$attributes,array &$field): void|null</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -331,7 +331,7 @@ SQL statements.</p>
                                                 <h4>$field</h4>
                                                 <code>array</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>null|void</code><p></p>                                </div>
+                                        <code>void|null</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method__attributeType"></a>
@@ -370,7 +370,7 @@ SQL statements.</p>
                         </div>                        <a id="method__attributeUnsigned"></a>
                         <div class="element clickable methodprotected method__attributeUnsigned" data-toggle="collapse" data-target=".method__attributeUnsigned .collapse">
                             <h2>Field attribute UNSIGNED</h2>
-                            <pre>_attributeUnsigned(array &$attributes,array &$field): null|void</pre>
+                            <pre>_attributeUnsigned(array &$attributes,array &$field): void|null</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -391,7 +391,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <h4>$field</h4>
                                                 <code>array</code><p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>null|void</code><p></p>                                </div>
+                                        <code>void|null</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method__createTable"></a>
@@ -435,7 +435,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method__dropTable"></a>
                         <div class="element clickable methodprotected method__dropTable" data-toggle="collapse" data-target=".method__dropTable .collapse">
                             <h2>Drop Table</h2>
-                            <pre>_dropTable(string $table,boolean $ifExists,boolean $cascade): string|boolean</pre>
+                            <pre>_dropTable(string $table,boolean $ifExists,boolean $cascade): boolean|string</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -451,7 +451,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <h4>$cascade</h4>
                                                 <code>boolean</code><p><p>Whether to add an CASCADE condition</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>string|boolean</code><p></p>                                </div>
+                                        <code>boolean|string</code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method__processColumn"></a>
@@ -537,7 +537,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_addColumn"></a>
                         <div class="element clickable methodpublic method_addColumn" data-toggle="collapse" data-target=".method_addColumn .collapse">
                             <h2>Column Add</h2>
-                            <pre>addColumn(string $table,string|array $field): boolean</pre>
+                            <pre>addColumn(string $table,array|string $field): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -554,7 +554,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <code>string</code><p><p>Table name</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$field</h4>
-                                                <code>string|array</code><p><p>Column definition</p></p>
+                                                <code>array|string</code><p><p>Column definition</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p></p>                                </div>
                             </div>
@@ -612,7 +612,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_addKey"></a>
                         <div class="element clickable methodpublic method_addKey" data-toggle="collapse" data-target=".method_addKey .collapse">
                             <h2>Add Key</h2>
-                            <pre>addKey(string|array $key,boolean $primary = false,boolean $unique = false): \CodeIgniter\Database\Forge</pre>
+                            <pre>addKey(array|string $key,boolean $primary = false,boolean $unique = false): \CodeIgniter\Database\Forge</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -620,7 +620,7 @@ from TYPE to UTYPE in case of a match</li>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$primary</h4>
                                                 <code>boolean</code><p></p>
@@ -634,7 +634,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_addPrimaryKey"></a>
                         <div class="element clickable methodpublic method_addPrimaryKey" data-toggle="collapse" data-target=".method_addPrimaryKey .collapse">
                             <h2>Add Primary Key</h2>
-                            <pre>addPrimaryKey(string|array $key): \CodeIgniter\Database\Forge</pre>
+                            <pre>addPrimaryKey(array|string $key): \CodeIgniter\Database\Forge</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -642,7 +642,7 @@ from TYPE to UTYPE in case of a match</li>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code><a href="../classes/CodeIgniter.Database.Forge.html">\CodeIgniter\Database\Forge</a></code><p></p>                                </div>
                             </div>
@@ -650,7 +650,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_addUniqueKey"></a>
                         <div class="element clickable methodpublic method_addUniqueKey" data-toggle="collapse" data-target=".method_addUniqueKey .collapse">
                             <h2>Add Unique Key</h2>
-                            <pre>addUniqueKey(string|array $key): \CodeIgniter\Database\Forge</pre>
+                            <pre>addUniqueKey(array|string $key): \CodeIgniter\Database\Forge</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -658,7 +658,7 @@ from TYPE to UTYPE in case of a match</li>
 
                                     <table class="table">                                    </table>                                        <h3>Arguments</h3>                                            <div class="subelement argument">
                                                 <h4>$key</h4>
-                                                <code>string|array</code><p></p>
+                                                <code>array|string</code><p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code><a href="../classes/CodeIgniter.Database.Forge.html">\CodeIgniter\Database\Forge</a></code><p></p>                                </div>
                             </div>
@@ -741,7 +741,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_dropColumn"></a>
                         <div class="element clickable methodpublic method_dropColumn" data-toggle="collapse" data-target=".method_dropColumn .collapse">
                             <h2>Column Drop</h2>
-                            <pre>dropColumn(string $table,string|array $columnName): mixed</pre>
+                            <pre>dropColumn(string $table,array|string $columnName): mixed</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -758,7 +758,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <code>string</code><p><p>Table name</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$columnName</h4>
-                                                <code>string|array</code><p><p>Column name Array or comma separated</p></p>
+                                                <code>array|string</code><p><p>Column name Array or comma separated</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>mixed</code><p></p>                                </div>
                             </div>
@@ -788,7 +788,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_dropForeignKey"></a>
                         <div class="element clickable methodpublic method_dropForeignKey" data-toggle="collapse" data-target=".method_dropForeignKey .collapse">
                             <h2>Foreign Key Drop</h2>
-                            <pre>dropForeignKey(string $table,string $foreignName): boolean|\CodeIgniter\Database\BaseResult|\CodeIgniter\Database\Query|false|mixed</pre>
+                            <pre>dropForeignKey(string $table,string $foreignName): \CodeIgniter\Database\BaseResult|boolean|false|mixed|\CodeIgniter\Database\Query</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -807,7 +807,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <h4>$foreignName</h4>
                                                 <code>string</code><p><p>Foreign name</p></p>
                                             </div>                                        <h3>Response</h3>
-                                        <code>boolean|<a href="../classes/CodeIgniter.Database.BaseResult.html">\CodeIgniter\Database\BaseResult</a>|<a href="../classes/CodeIgniter.Database.Query.html">\CodeIgniter\Database\Query</a>|false|mixed</code><p></p>                                </div>
+                                        <code><a href="../classes/CodeIgniter.Database.BaseResult.html">\CodeIgniter\Database\BaseResult</a>|boolean|false|mixed|<a href="../classes/CodeIgniter.Database.Query.html">\CodeIgniter\Database\Query</a></code><p></p>                                </div>
                             </div>
 
                         </div>                        <a id="method_dropTable"></a>
@@ -858,7 +858,7 @@ from TYPE to UTYPE in case of a match</li>
                         </div>                        <a id="method_modifyColumn"></a>
                         <div class="element clickable methodpublic method_modifyColumn" data-toggle="collapse" data-target=".method_modifyColumn .collapse">
                             <h2>Column Modify</h2>
-                            <pre>modifyColumn(string $table,string|array $field): boolean</pre>
+                            <pre>modifyColumn(string $table,array|string $field): boolean</pre>
                             <div class="labels">                            </div>
                             <div class="row collapse">
                                 <div class="detail-description">
@@ -875,7 +875,7 @@ from TYPE to UTYPE in case of a match</li>
                                                 <code>string</code><p><p>Table name</p></p>
                                             </div>                                            <div class="subelement argument">
                                                 <h4>$field</h4>
-                                                <code>string|array</code><p><p>Column definition</p></p>
+                                                <code>array|string</code><p><p>Column definition</p></p>
                                             </div>                                        <h3>Response</h3>
                                         <code>boolean</code><p></p>                                </div>
                             </div>
@@ -1036,7 +1036,7 @@ from TYPE to UTYPE in case of a match</li>
                             </div>                            <a id="property_createDatabaseStr"> </a>
                             <div class="element clickable propertyprotected property_createDatabaseStr" data-toggle="collapse" data-target=".property_createDatabaseStr .collapse">
                                 <h2>CREATE DATABASE statement</h2>
-                                <pre>createDatabaseStr :string|false</pre>
+                                <pre>createDatabaseStr :false|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1047,7 +1047,7 @@ from TYPE to UTYPE in case of a match</li>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|false</code>                                    </div>
+                                            <code>false|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_createDatabaseIfStr"> </a>
                             <div class="element clickable propertyprotected property_createDatabaseIfStr" data-toggle="collapse" data-target=".property_createDatabaseIfStr .collapse">
@@ -1084,7 +1084,7 @@ from TYPE to UTYPE in case of a match</li>
                             </div>                            <a id="property_dropDatabaseStr"> </a>
                             <div class="element clickable propertyprotected property_dropDatabaseStr" data-toggle="collapse" data-target=".property_dropDatabaseStr .collapse">
                                 <h2>DROP DATABASE statement</h2>
-                                <pre>dropDatabaseStr :string|false</pre>
+                                <pre>dropDatabaseStr :false|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1095,7 +1095,7 @@ from TYPE to UTYPE in case of a match</li>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|false</code>                                    </div>
+                                            <code>false|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_createTableStr"> </a>
                             <div class="element clickable propertyprotected property_createTableStr" data-toggle="collapse" data-target=".property_createTableStr .collapse">
@@ -1116,7 +1116,7 @@ from TYPE to UTYPE in case of a match</li>
                             </div>                            <a id="property_createTableIfStr"> </a>
                             <div class="element clickable propertyprotected property_createTableIfStr" data-toggle="collapse" data-target=".property_createTableIfStr .collapse">
                                 <h2>CREATE TABLE IF statement</h2>
-                                <pre>createTableIfStr :string|boolean</pre>
+                                <pre>createTableIfStr :boolean|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1127,7 +1127,7 @@ from TYPE to UTYPE in case of a match</li>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|boolean</code>                                    </div>
+                                            <code>boolean|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_createTableKeys"> </a>
                             <div class="element clickable propertyprotected property_createTableKeys" data-toggle="collapse" data-target=".property_createTableKeys .collapse">
@@ -1149,7 +1149,7 @@ CREATE TABLE statement.</p></div>
                             </div>                            <a id="property_dropTableIfStr"> </a>
                             <div class="element clickable propertyprotected property_dropTableIfStr" data-toggle="collapse" data-target=".property_dropTableIfStr .collapse">
                                 <h2>DROP TABLE IF EXISTS statement</h2>
-                                <pre>dropTableIfStr :string|boolean</pre>
+                                <pre>dropTableIfStr :boolean|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1160,12 +1160,12 @@ CREATE TABLE statement.</p></div>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|boolean</code>                                    </div>
+                                            <code>boolean|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_renameTableStr"> </a>
                             <div class="element clickable propertyprotected property_renameTableStr" data-toggle="collapse" data-target=".property_renameTableStr .collapse">
                                 <h2>RENAME TABLE statement</h2>
-                                <pre>renameTableStr :string|false</pre>
+                                <pre>renameTableStr :false|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1176,12 +1176,12 @@ CREATE TABLE statement.</p></div>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|false</code>                                    </div>
+                                            <code>false|string</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_unsigned"> </a>
                             <div class="element clickable propertyprotected property_unsigned" data-toggle="collapse" data-target=".property_unsigned .collapse">
                                 <h2>UNSIGNED support</h2>
-                                <pre>unsigned :boolean|array</pre>
+                                <pre>unsigned :array|boolean</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1192,12 +1192,12 @@ CREATE TABLE statement.</p></div>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>boolean|array</code>                                    </div>
+                                            <code>array|boolean</code>                                    </div>
                                 </div>
                             </div>                            <a id="property_default"> </a>
                             <div class="element clickable propertyprotected property_default" data-toggle="collapse" data-target=".property_default .collapse">
                                 <h2>DEFAULT value representation in CREATE/ALTER TABLE statements</h2>
-                                <pre>default :string|false</pre>
+                                <pre>default :false|string</pre>
                                 <div class="labels">                                </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
@@ -1208,7 +1208,7 @@ CREATE TABLE statement.</p></div>
                                                     </th>
                                                     <td>                                                    </td>
                                                 </tr>                                        </table>                                            <h3>Type(s)</h3>
-                                            <code>string|false</code>                                    </div>
+                                            <code>false|string</code>                                    </div>
                                 </div>
                             </div>                </div>
             </div>
@@ -1223,6 +1223,6 @@ CREATE TABLE statement.</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor</a> and<br/>
-            generated onTue, 15 Jun 2021 13:45:43 +0000.<br/>
+            generated onTue, 15 Jun 2021 13:57:00 +0000.<br/>
     </footer></body>
 </html>
