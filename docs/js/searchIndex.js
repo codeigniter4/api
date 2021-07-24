@@ -696,6 +696,36 @@ Search.appendIndex(
             "summary": "Callbacks\u0020for\u0020afterDelete",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterDelete"
         },                {
+            "fqsen": "\\APPPATH",
+            "name": "APPPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_APPPATH"
+        },                {
+            "fqsen": "\\ROOTPATH",
+            "name": "ROOTPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ROOTPATH"
+        },                {
+            "fqsen": "\\SYSTEMPATH",
+            "name": "SYSTEMPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_SYSTEMPATH"
+        },                {
+            "fqsen": "\\WRITEPATH",
+            "name": "WRITEPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_WRITEPATH"
+        },                {
+            "fqsen": "\\TESTPATH",
+            "name": "TESTPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_TESTPATH"
+        },                {
+            "fqsen": "\\VENDORPATH",
+            "name": "VENDORPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_VENDORPATH"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheFactory",
             "name": "CacheFactory",
             "summary": "Class\u0020Cache",
@@ -10531,6 +10561,21 @@ Search.appendIndex(
             "summary": "Entity\u0020encapsulation,\u0020for\u0020use\u0020with\u0020CodeIgniter\\Model",
             "url": "classes/CodeIgniter-Entity.html"
         },                {
+            "fqsen": "\\EVENT_PRIORITY_LOW",
+            "name": "EVENT_PRIORITY_LOW",
+            "summary": "",
+            "url": "namespaces/default.html#constant_EVENT_PRIORITY_LOW"
+        },                {
+            "fqsen": "\\EVENT_PRIORITY_NORMAL",
+            "name": "EVENT_PRIORITY_NORMAL",
+            "summary": "",
+            "url": "namespaces/default.html#constant_EVENT_PRIORITY_NORMAL"
+        },                {
+            "fqsen": "\\EVENT_PRIORITY_HIGH",
+            "name": "EVENT_PRIORITY_HIGH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_EVENT_PRIORITY_HIGH"
+        },                {
             "fqsen": "\\CodeIgniter\\Events\\Events",
             "name": "Events",
             "summary": "Events",
@@ -18205,6 +18250,11 @@ Search.appendIndex(
             "name": "getTempKeys",
             "summary": "Retrieve\u0020the\u0020keys\u0020of\u0020all\u0020session\u0020data\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020temporary\u0020data.",
             "url": "classes/CodeIgniter-Session-SessionInterface.html#method_getTempKeys"
+        },                {
+            "fqsen": "\\ENVIRONMENT",
+            "name": "ENVIRONMENT",
+            "summary": "",
+            "url": "namespaces/default.html#constant_ENVIRONMENT"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIDatabaseTestCase",
             "name": "CIDatabaseTestCase",
