@@ -11088,7 +11088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Honeypot\u003A\u003Abefore\u0028\u0029",
             "name": "before",
-            "summary": "Checks\u0020if\u0020Honeypot\u0020field\u0020is\u0020empty\u003B\u0020if\u0020not\nthen\u0020the\u0020requester\u0020is\u0020a\u0020bot",
+            "summary": "Checks\u0020if\u0020Honeypot\u0020field\u0020is\u0020empty,\u0020if\u0020not\u0020then\u0020the\nrequester\u0020is\u0020a\u0020bot",
             "url": "classes/CodeIgniter-Filters-Honeypot.html#method_before"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Honeypot\u003A\u003Aafter\u0028\u0029",
