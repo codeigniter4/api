@@ -19386,11 +19386,6 @@ Search.appendIndex(
             "summary": "Class\u0020BaseBuilder",
             "url": "classes/CodeIgniter-Test-Mock-MockBuilder.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockBuilder\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor",
-            "url": "classes/CodeIgniter-Test-Mock-MockBuilder.html#method___construct"
-        },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCache",
             "name": "MockCache",
             "summary": "Base\u0020class\u0020for\u0020cache\u0020handling",
