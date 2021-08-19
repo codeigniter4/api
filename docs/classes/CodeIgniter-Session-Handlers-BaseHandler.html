@@ -255,7 +255,7 @@ varies between</dd>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor</dd>
+<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_destroyCookie">destroyCookie()</a>
@@ -270,7 +270,14 @@ when session_destroy() is called.</dd>
     <span>
                         &nbsp;: bool    </span>
 </dt>
-<dd>Fail</dd>
+<dd>Drivers other than the &#039;files&#039; one don&#039;t (need to) use the
+session.save_path INI setting, but that leads to confusing
+error messages emitted by PHP when open() or write() fail,
+as the message contains session.save_path ...
+
+To work around the problem, the drivers will call this method
+so that the INI is set just in time for the error message to
+be properly generated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_lockSession">lockSession()</a>
@@ -684,17 +691,17 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -736,7 +743,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
@@ -770,25 +777,24 @@ when session_destroy() is called.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Fail</p>
+        <p class="phpdocumentor-summary">Drivers other than the &#039;files&#039; one don&#039;t (need to) use the
+session.save_path INI setting, but that leads to confusing
+error messages emitted by PHP when open() or write() fail,
+as the message contains session.save_path ...
+
+To work around the problem, the drivers will call this method
+so that the INI is set just in time for the error message to
+be properly generated.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">fail</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
-        <section class="phpdocumentor-description"><p>Drivers other than the 'files' one don't (need to) use the
-session.save_path INI setting, but that leads to confusing
-error messages emitted by PHP when open() or write() fail,
-as the message contains session.save_path ...
-To work around the problem, the drivers will call this method
-so that the INI is set just in time for the error message to
-be properly generated.</p>
-</section>
-
+    
     
     
 
@@ -811,7 +817,7 @@ be properly generated.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 
     </aside>
 
@@ -857,7 +863,7 @@ do acquire a lock.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 
