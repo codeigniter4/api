@@ -18538,12 +18538,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter",
             "name": "CITestStreamFilter",
-            "summary": "Class\u0020to\u0020extract\u0020an\u0020output\u0020snapshot.",
+            "summary": "Used\u0020to\u0020capture\u0020output\u0020during\u0020unit\u0020testing,\u0020so\u0020that\u0020it\u0020can\nbe\u0020used\u0020in\u0020assertions.",
             "url": "classes/CodeIgniter-Test-Filters-CITestStreamFilter.html"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter\u003A\u003Afilter\u0028\u0029",
             "name": "filter",
-            "summary": "Output\u0020filtering\u0020\u002D\u0020catch\u0020it\u0020all.",
+            "summary": "This\u0020method\u0020is\u0020called\u0020whenever\u0020data\u0020is\u0020read\u0020from\u0020or\u0020written\u0020to\u0020the\nattached\u0020stream\u0020\u0028such\u0020as\u0020with\u0020fread\u0028\u0029\u0020or\u0020fwrite\u0028\u0029\u0029.",
             "url": "classes/CodeIgniter-Test-Filters-CITestStreamFilter.html#method_filter"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter\u003A\u003A\u0024buffer",
