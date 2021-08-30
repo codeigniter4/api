@@ -10451,61 +10451,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Files-Exceptions-FileNotFoundException.html#method_forFileNotFound"
         },                {
-            "fqsen": "\\CodeIgniter\\Files\\File",
-            "name": "File",
-            "summary": "Wrapper\u0020for\u0020PHP\u0027s\u0020built\u002Din\u0020SplFileInfo,\u0020with\u0020goodies.",
-            "url": "classes/CodeIgniter-Files-File.html"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Run\u0020our\u0020SplFileInfo\u0020constructor\u0020with\u0020an\u0020optional\u0020verification\nthat\u0020the\u0020path\u0020is\u0020really\u0020a\u0020file.",
-            "url": "classes/CodeIgniter-Files-File.html#method___construct"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSize\u0028\u0029",
-            "name": "getSize",
-            "summary": "Retrieve\u0020the\u0020file\u0020size.",
-            "url": "classes/CodeIgniter-Files-File.html#method_getSize"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSizeByUnit\u0028\u0029",
-            "name": "getSizeByUnit",
-            "summary": "Retrieve\u0020the\u0020file\u0020size\u0020by\u0020unit.",
-            "url": "classes/CodeIgniter-Files-File.html#method_getSizeByUnit"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AguessExtension\u0028\u0029",
-            "name": "guessExtension",
-            "summary": "Attempts\u0020to\u0020determine\u0020the\u0020file\u0020extension\u0020based\u0020on\u0020the\u0020trusted\ngetType\u0028\u0029\u0020method.\u0020If\u0020the\u0020mime\u0020type\u0020is\u0020unknown,\u0020will\u0020return\u0020null.",
-            "url": "classes/CodeIgniter-Files-File.html#method_guessExtension"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetMimeType\u0028\u0029",
-            "name": "getMimeType",
-            "summary": "Retrieve\u0020the\u0020media\u0020type\u0020of\u0020the\u0020file.\u0020SHOULD\u0020not\u0020use\u0020information\u0020from\nthe\u0020\u0024_FILES\u0020array,\u0020but\u0020should\u0020use\u0020other\u0020methods\u0020to\u0020more\u0020accurately\ndetermine\u0020the\u0020type\u0020of\u0020file,\u0020like\u0020finfo,\u0020or\u0020mime_content_type\u0028\u0029.",
-            "url": "classes/CodeIgniter-Files-File.html#method_getMimeType"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetRandomName\u0028\u0029",
-            "name": "getRandomName",
-            "summary": "Generates\u0020a\u0020random\u0020names\u0020based\u0020on\u0020a\u0020simple\u0020hash\u0020and\u0020the\u0020time,\u0020with\nthe\u0020correct\u0020file\u0020extension\u0020attached.",
-            "url": "classes/CodeIgniter-Files-File.html#method_getRandomName"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003Amove\u0028\u0029",
-            "name": "move",
-            "summary": "Moves\u0020a\u0020file\u0020to\u0020a\u0020new\u0020location.",
-            "url": "classes/CodeIgniter-Files-File.html#method_move"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetDestination\u0028\u0029",
-            "name": "getDestination",
-            "summary": "Returns\u0020the\u0020destination\u0020path\u0020for\u0020the\u0020move\u0020operation\u0020where\u0020overwriting\u0020is\u0020not\u0020expected.",
-            "url": "classes/CodeIgniter-Files-File.html#method_getDestination"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003A\u0024size",
-            "name": "size",
-            "summary": "The\u0020files\u0020size\u0020in\u0020bytes",
-            "url": "classes/CodeIgniter-Files-File.html#property_size"
-        },                {
-            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003A\u0024originalMimeType",
-            "name": "originalMimeType",
-            "summary": "Original\u0020MimeType",
-            "url": "classes/CodeIgniter-Files-File.html#property_originalMimeType"
-        },                {
             "fqsen": "\\CodeIgniter\\Filters\\CSRF",
             "name": "CSRF",
             "summary": "CSRF\u0020filter.",
