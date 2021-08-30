@@ -8156,11 +8156,6 @@ Search.appendIndex(
             "summary": "Compile\u0020the\u0020SELECT\u0020statement",
             "url": "classes/CodeIgniter-Database-SQLSRV-Builder.html#method_compileSelect"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Builder\u003A\u003AwhereHaving\u0028\u0029",
-            "name": "whereHaving",
-            "summary": "WHERE,\u0020HAVING",
-            "url": "classes/CodeIgniter-Database-SQLSRV-Builder.html#method_whereHaving"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Builder\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Compiles\u0020the\u0020select\u0020statement\u0020based\u0020on\u0020the\u0020other\u0020functions\u0020called\nand\u0020runs\u0020the\u0020query",
