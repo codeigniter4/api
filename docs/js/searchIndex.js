@@ -8543,7 +8543,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003Ainitialize\u0028\u0029",
@@ -8593,7 +8593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AcleanPath\u0028\u0029",
             "name": "cleanPath",
-            "summary": "Clean\u0020Path",
+            "summary": "This\u0020makes\u0020nicer\u0020looking\u0020paths\u0020for\u0020the\u0020error\u0020output.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_cleanPath"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AdescribeMemory\u0028\u0029",
