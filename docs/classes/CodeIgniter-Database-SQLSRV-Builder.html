@@ -83,6 +83,7 @@
                                             <li><a href="namespaces/codeigniter-log.html"><abbr title="\CodeIgniter\Log">Log</abbr></a></li>
                                             <li><a href="namespaces/codeigniter-modules.html"><abbr title="\CodeIgniter\Modules">Modules</abbr></a></li>
                                             <li><a href="namespaces/codeigniter-pager.html"><abbr title="\CodeIgniter\Pager">Pager</abbr></a></li>
+                                            <li><a href="namespaces/codeigniter-publisher.html"><abbr title="\CodeIgniter\Publisher">Publisher</abbr></a></li>
                                             <li><a href="namespaces/codeigniter-restful.html"><abbr title="\CodeIgniter\RESTful">RESTful</abbr></a></li>
                                             <li><a href="namespaces/codeigniter-router.html"><abbr title="\CodeIgniter\Router">Router</abbr></a></li>
                                             <li><a href="namespaces/codeigniter-security.html"><abbr title="\CodeIgniter\Security">Security</abbr></a></li>
@@ -427,12 +428,11 @@ support the ignore option.</dd>
 <dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_countAll">countAll()</a>
+    <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method_countAll">countAll()</a>
     <span>
                         &nbsp;: int|string    </span>
 </dt>
-<dd>Generates a platform-specific query string that counts all records in
-the particular table</dd>
+<dd>&quot;Count All&quot; query</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_countAllResults">countAllResults()</a>
@@ -967,11 +967,11 @@ about operator precedence.</dd>
 <dd>Generates a platform-specific insert string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch">_insertBatch()</a>
+    <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method__insertBatch">_insertBatch()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Generates a platform-specific insert string from the supplied data.</dd>
+<dd>Insert batch statement</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__like">_like()</a>
@@ -1017,11 +1017,11 @@ on match delete and insert</dd>
 <dd>Generates a platform-specific update string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch">_updateBatch()</a>
+    <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method__updateBatch">_updateBatch()</a>
     <span>
                         &nbsp;: string    </span>
 </dt>
-<dd>Generates a platform-specific batch update string from the supplied data</dd>
+<dd>Update_Batch statement</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__whereIn">_whereIn()</a>
@@ -2386,23 +2386,25 @@ and prefixed.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_countAll">
         countAll()
-        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_countAll" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method_countAll" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1446</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a platform-specific query string that counts all records in
-the particular table</p>
+        <p class="phpdocumentor-summary">&quot;Count All&quot; query</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">countAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Generates a platform-specific query string that counts all records in
+the particular table</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2410,7 +2412,8 @@ the particular table</p>
                 : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                  = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Are we want to clear query builder values?</p>
+</section>
 
             </dd>
             </dl>
@@ -2420,7 +2423,9 @@ the particular table</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int|string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>when $test = true</p>
+</section>
+
     
 </article>
                     <article
@@ -2514,7 +2519,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
@@ -2566,7 +2571,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">513</span>
 
     </aside>
 
@@ -2769,7 +2774,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">524</span>
+    <span class="phpdocumentor-element-found-in__line">608</span>
 
     </aside>
 
@@ -3719,7 +3724,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">197</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -5239,7 +5244,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 
     </aside>
 
@@ -5649,7 +5654,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -5665,7 +5670,7 @@ joined with &#039;OR&#039; if appropriate.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Field value, if $key is a single field</p>
@@ -6250,7 +6255,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">416</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 
     </aside>
 
@@ -6398,22 +6403,24 @@ about operator precedence.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__insertBatch">
         _insertBatch()
-        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method__insertBatch" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1627</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a platform-specific insert string from the supplied data.</p>
+        <p class="phpdocumentor-summary">Insert batch statement</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">_insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Generates a platform-specific insert string from the supplied data.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -6715,7 +6722,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">309</span>
 
     </aside>
 
@@ -6767,7 +6774,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">318</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -6875,7 +6882,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -6922,22 +6929,24 @@ then this method maps to 'DELETE FROM table'</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__updateBatch">
         _updateBatch()
-        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1995</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates a platform-specific batch update string from the supplied data</p>
+        <p class="phpdocumentor-summary">Update_Batch statement</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
                 <span class="phpdocumentor-signature__name">_updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Generates a platform-specific batch update string from the supplied data</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -7361,7 +7370,7 @@ only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">549</span>
 
     </aside>
 
@@ -7839,7 +7848,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">435</span>
 
     </aside>
 
@@ -8378,7 +8387,7 @@ chosen to be update.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -8430,7 +8439,7 @@ chosen to be update.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/Builder.php"><a href="files/system-database-sqlsrv-builder.html"><abbr title="system/Database/SQLSRV/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
