@@ -6908,7 +6908,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003AcompileIgnore\u0028\u0029",
             "name": "compileIgnore",
-            "summary": "Compile\u0020Ignore\u0020Statement",
+            "summary": "Checks\u0020if\u0020the\u0020ignore\u0020option\u0020is\u0020supported\u0020by\nthe\u0020Database\u0020Driver\u0020for\u0020the\u0020specific\u0020statement.",
             "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_compileIgnore"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003AorderBy\u0028\u0029",
@@ -6925,6 +6925,11 @@ Search.appendIndex(
             "name": "decrement",
             "summary": "Decrements\u0020a\u0020numeric\u0020column\u0020by\u0020the\u0020specified\u0020value.",
             "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_decrement"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003Areplace\u0028\u0029",
+            "name": "replace",
+            "summary": "Compiles\u0020an\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query.",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_replace"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003A_insert\u0028\u0029",
             "name": "_insert",
