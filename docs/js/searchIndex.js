@@ -6686,6 +6686,11 @@ Search.appendIndex(
             "summary": "DEFAULT\u0020value\u0020representation\u0020in\u0020CREATE\/ALTER\u0020TABLE\u0020statements",
             "url": "classes/CodeIgniter-Database-Forge.html#property_default"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A\u0024dropConstraintStr",
+            "name": "dropConstraintStr",
+            "summary": "DROP\u0020CONSTRAINT\u0020statement",
+            "url": "classes/CodeIgniter-Database-Forge.html#property_dropConstraintStr"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Migration",
             "name": "Migration",
             "summary": "Class\u0020Migration",
