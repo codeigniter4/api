@@ -11261,6 +11261,11 @@ Search.appendIndex(
             "summary": "Ensures\u0020that\u0020a\u0020specific\u0020filter\u0020is\u0020on\u0020and\u0020enabled\u0020for\u0020the\u0020current\u0020request.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_enableFilter"
         },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AenableFilters\u0028\u0029",
+            "name": "enableFilters",
+            "summary": "Ensures\u0020that\u0020specific\u0020filters\u0020is\u0020on\u0020and\u0020enabled\u0020for\u0020the\u0020current\u0020request.",
+            "url": "classes/CodeIgniter-Filters-Filters.html#method_enableFilters"
+        },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AgetArguments\u0028\u0029",
             "name": "getArguments",
             "summary": "Returns\u0020the\u0020arguments\u0020for\u0020a\u0020specified\u0020key,\u0020or\u0020all.",
@@ -17271,6 +17276,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020filter\u0020that\u0020should\u0020be\u0020applied\u0020for\u0020a\u0020single\u0020route,\u0020along\nwith\u0020any\u0020parameters\u0020it\u0020might\u0020have.\u0020Parameters\u0020are\u0020found\u0020by\u0020splitting\nthe\u0020parameter\u0020name\u0020on\u0020a\u0020colon\u0020to\u0020separate\u0020the\u0020filter\u0020name\u0020from\u0020the\u0020parameter\u0020list,\nand\u0020the\u0020splitting\u0020the\u0020result\u0020on\u0020commas.\u0020So\u003A",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getFilterForRoute"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AgetFiltersForRoute\u0028\u0029",
+            "name": "getFiltersForRoute",
+            "summary": "Returns\u0020the\u0020filters\u0020that\u0020should\u0020be\u0020applied\u0020for\u0020a\u0020single\u0020route,\u0020along\nwith\u0020any\u0020parameters\u0020it\u0020might\u0020have.\u0020Parameters\u0020are\u0020found\u0020by\u0020splitting\nthe\u0020parameter\u0020name\u0020on\u0020a\u0020colon\u0020to\u0020separate\u0020the\u0020filter\u0020name\u0020from\u0020the\u0020parameter\u0020list,\nand\u0020the\u0020splitting\u0020the\u0020result\u0020on\u0020commas.\u0020So\u003A",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getFiltersForRoute"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AfillRouteParams\u0028\u0029",
             "name": "fillRouteParams",
             "summary": "Given\u0020a",
@@ -17516,6 +17526,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020filter\u0020info\u0020for\u0020the\u0020matched\u0020route,\u0020if\u0020any.",
             "url": "classes/CodeIgniter-Router-Router.html#method_getFilter"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AgetFilters\u0028\u0029",
+            "name": "getFilters",
+            "summary": "Returns\u0020the\u0020filter\u0020info\u0020for\u0020the\u0020matched\u0020route,\u0020if\u0020any.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_getFilters"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AcontrollerName\u0028\u0029",
             "name": "controllerName",
             "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020matched\u0020controller.",
@@ -17655,6 +17670,11 @@ Search.appendIndex(
             "name": "filterInfo",
             "summary": "The\u0020filter\u0020info\u0020from\u0020Route\u0020Collection\nif\u0020the\u0020matched\u0020route\u0020should\u0020be\u0020filtered.",
             "url": "classes/CodeIgniter-Router-Router.html#property_filterInfo"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024filtersInfo",
+            "name": "filtersInfo",
+            "summary": "The\u0020filter\u0020info\u0020from\u0020Route\u0020Collection\nif\u0020the\u0020matched\u0020route\u0020should\u0020be\u0020filtered.",
+            "url": "classes/CodeIgniter-Router-Router.html#property_filtersInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface",
             "name": "RouterInterface",
