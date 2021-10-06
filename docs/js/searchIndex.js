@@ -5626,6 +5626,11 @@ Search.appendIndex(
             "summary": "This\u0020function\u0020enables\u0020you\u0020to\u0020call\u0020PHP\u0020database\u0020functions\u0020that\u0020are\u0020not\u0020natively\u0020included\nin\u0020CodeIgniter,\u0020in\u0020a\u0020platform\u0020independent\u0020manner.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_callFunction"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetDriverFunctionPrefix\u0028\u0029",
+            "name": "getDriverFunctionPrefix",
+            "summary": "Get\u0020the\u0020prefix\u0020of\u0020the\u0020function\u0020to\u0020access\u0020the\u0020DB.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getDriverFunctionPrefix"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AlistTables\u0028\u0029",
             "name": "listTables",
             "summary": "Returns\u0020an\u0020array\u0020of\u0020table\u0020names",
@@ -7380,6 +7385,11 @@ Search.appendIndex(
             "name": "execute",
             "summary": "Executes\u0020the\u0020query\u0020against\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_execute"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003AgetDriverFunctionPrefix\u0028\u0029",
+            "name": "getDriverFunctionPrefix",
+            "summary": "Get\u0020the\u0020prefix\u0020of\u0020the\u0020function\u0020to\u0020access\u0020the\u0020DB.",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_getDriverFunctionPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003AaffectedRows\u0028\u0029",
             "name": "affectedRows",
@@ -9220,6 +9230,11 @@ Search.appendIndex(
             "name": "icon",
             "summary": "Display\u0020the\u0020icon.",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Database.html#method_icon"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Database\u003A\u003AgetConnections\u0028\u0029",
+            "name": "getConnections",
+            "summary": "Gets\u0020the\u0020connections\u0020from\u0020the\u0020database\u0020config",
+            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Database.html#method_getConnections"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Database\u003A\u003A\u0024hasTimeline",
             "name": "hasTimeline",
