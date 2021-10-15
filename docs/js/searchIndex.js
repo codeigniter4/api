@@ -6491,6 +6491,11 @@ Search.appendIndex(
             "summary": "Add\u0020Foreign\u0020Key",
             "url": "classes/CodeIgniter-Database-Forge.html#method_addForeignKey"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003AdropKey\u0028\u0029",
+            "name": "dropKey",
+            "summary": "Drop\u0020Key",
+            "url": "classes/CodeIgniter-Database-Forge.html#method_dropKey"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003AdropForeignKey\u0028\u0029",
             "name": "dropForeignKey",
             "summary": "",
@@ -6695,6 +6700,11 @@ Search.appendIndex(
             "name": "dropConstraintStr",
             "summary": "DROP\u0020CONSTRAINT\u0020statement",
             "url": "classes/CodeIgniter-Database-Forge.html#property_dropConstraintStr"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A\u0024dropIndexStr",
+            "name": "dropIndexStr",
+            "summary": "DROP\u0020INDEX\u0020statement",
+            "url": "classes/CodeIgniter-Database-Forge.html#property_dropIndexStr"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Migration",
             "name": "Migration",
@@ -7146,6 +7156,11 @@ Search.appendIndex(
             "summary": "Process\u0020indexes",
             "url": "classes/CodeIgniter-Database-MySQLi-Forge.html#method__processIndexes"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge\u003A\u003AdropKey\u0028\u0029",
+            "name": "dropKey",
+            "summary": "Drop\u0020Key",
+            "url": "classes/CodeIgniter-Database-MySQLi-Forge.html#method_dropKey"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge\u003A\u003A\u0024createDatabaseStr",
             "name": "createDatabaseStr",
             "summary": "CREATE\u0020DATABASE\u0020statement",
@@ -7540,6 +7555,11 @@ Search.appendIndex(
             "name": "dropConstraintStr",
             "summary": "DROP\u0020CONSTRAINT\u0020statement",
             "url": "classes/CodeIgniter-Database-Postgre-Forge.html#property_dropConstraintStr"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Forge\u003A\u003A\u0024dropIndexStr",
+            "name": "dropIndexStr",
+            "summary": "DROP\u0020INDEX\u0020statement",
+            "url": "classes/CodeIgniter-Database-Postgre-Forge.html#property_dropIndexStr"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Forge\u003A\u003A\u0024_unsigned",
             "name": "_unsigned",
@@ -8256,6 +8276,11 @@ Search.appendIndex(
             "summary": "Foreign\u0020Key\u0020Drop",
             "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#method_dropForeignKey"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003A\u0024dropIndexStr",
+            "name": "dropIndexStr",
+            "summary": "DROP\u0020INDEX\u0020statement",
+            "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#property_dropIndexStr"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003A\u0024db",
             "name": "db",
             "summary": "The\u0020active\u0020database\u0020connection.",
@@ -8790,6 +8815,11 @@ Search.appendIndex(
             "name": "dropConstraintStr",
             "summary": "DROP\u0020CONSTRAINT\u0020statement",
             "url": "classes/CodeIgniter-Database-SQLSRV-Forge.html#property_dropConstraintStr"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003A\u0024dropIndexStr",
+            "name": "dropIndexStr",
+            "summary": "DROP\u0020INDEX\u0020statement",
+            "url": "classes/CodeIgniter-Database-SQLSRV-Forge.html#property_dropIndexStr"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003A\u0024createDatabaseIfStr",
             "name": "createDatabaseIfStr",
