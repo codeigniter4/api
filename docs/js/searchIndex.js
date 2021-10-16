@@ -17781,6 +17781,11 @@ Search.appendIndex(
             "summary": "Constructor.",
             "url": "classes/CodeIgniter-Security-Security.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AconfigureCookie\u0028\u0029",
+            "name": "configureCookie",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#method_configureCookie"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003ACSRFVerify\u0028\u0029",
             "name": "CSRFVerify",
             "summary": "CSRF\u0020Verify",
@@ -17800,6 +17805,11 @@ Search.appendIndex(
             "name": "verify",
             "summary": "CSRF\u0020Verify",
             "url": "classes/CodeIgniter-Security-Security.html#method_verify"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetPostedToken\u0028\u0029",
+            "name": "getPostedToken",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#method_getPostedToken"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetHash\u0028\u0029",
             "name": "getHash",
@@ -17840,6 +17850,16 @@ Search.appendIndex(
             "name": "generateHash",
             "summary": "Generates\u0020the\u0020CSRF\u0020Hash.",
             "url": "classes/CodeIgniter-Security-Security.html#method_generateHash"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AisHashInCookie\u0028\u0029",
+            "name": "isHashInCookie",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#method_isHashInCookie"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AsaveHashInCookie\u0028\u0029",
+            "name": "saveHashInCookie",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#method_saveHashInCookie"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AsendCookie\u0028\u0029",
             "name": "sendCookie",
@@ -17895,6 +17915,16 @@ Search.appendIndex(
             "name": "samesite",
             "summary": "CSRF\u0020SameSite",
             "url": "classes/CodeIgniter-Security-Security.html#property_samesite"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#property_request"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024rawCookieName",
+            "name": "rawCookieName",
+            "summary": "CSRF\u0020Cookie\u0020Name\u0020without\u0020Prefix",
+            "url": "classes/CodeIgniter-Security-Security.html#property_rawCookieName"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\SecurityInterface",
             "name": "SecurityInterface",
