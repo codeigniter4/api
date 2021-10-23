@@ -245,7 +245,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -279,6 +279,20 @@ Cross-Site Request Forgery attacks.</p>
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/CodeIgniter-Security-Security.html#constant_CSRF_PROTECTION_COOKIE">CSRF_PROTECTION_COOKIE</a>
+    <span>
+        &nbsp;= &#039;cookie&#039;                    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a href="classes/CodeIgniter-Security-Security.html#constant_CSRF_PROTECTION_SESSION">CSRF_PROTECTION_SESSION</a>
+    <span>
+        &nbsp;= &#039;session&#039;                    </span>
+</dt>
+<dd></dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Security-Security.html#property_cookie">$cookie</a>
     <span>
@@ -292,6 +306,13 @@ Cross-Site Request Forgery attacks.</p>
                 &nbsp;: string            </span>
 </dt>
 <dd>CSRF Cookie Name</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Security-Security.html#property_csrfProtection">$csrfProtection</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd>CSRF Protection Method</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Security-Security.html#property_expires">$expires</a>
@@ -355,6 +376,13 @@ Cross-Site Request Forgery attacks.</p>
                 &nbsp;: <a href="classes/CodeIgniter-HTTP-RequestInterface.html"><abbr title="\CodeIgniter\HTTP\RequestInterface">RequestInterface</abbr></a>            </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Security-Security.html#property_session">$session</a>
+    <span>
+                &nbsp;: <a href="classes/CodeIgniter-Session-Session.html"><abbr title="\CodeIgniter\Session\Session">Session</abbr></a>            </span>
+</dt>
+<dd>Session instance.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Security-Security.html#method___construct">__construct()</a>
@@ -469,9 +497,23 @@ Cross-Site Request Forgery attacks.</p>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Security-Security.html#method_configureSession">configureSession()</a>
+    <span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Security-Security.html#method_getPostedToken">getPostedToken()</a>
     <span>
                         &nbsp;: string|null    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Security-Security.html#method_isCSRFCookie">isCSRFCookie()</a>
+    <span>
+                        &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
@@ -485,7 +527,14 @@ Cross-Site Request Forgery attacks.</p>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Security-Security.html#method_saveHashInCookie">saveHashInCookie()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Security-Security.html#method_saveHashInSession">saveHashInSession()</a>
+    <span>
+                        &nbsp;: void    </span>
 </dt>
 <dd></dd>
 
@@ -494,6 +543,70 @@ Cross-Site Request Forgery attacks.</p>
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/CodeIgniter-Security-Security.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_CSRF_PROTECTION_COOKIE">
+        CSRF_PROTECTION_COOKIE
+        <a href="classes/CodeIgniter-Security-Security.html#constant_CSRF_PROTECTION_COOKIE" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">31</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">CSRF_PROTECTION_COOKIE</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;cookie&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_CSRF_PROTECTION_SESSION">
+        CSRF_PROTECTION_SESSION
+        <a href="classes/CodeIgniter-Security-Security.html#constant_CSRF_PROTECTION_SESSION" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">CSRF_PROTECTION_SESSION</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;session&#039;</span>
+</code>
+
+
+        <section class="phpdocumentor-description"></section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -517,7 +630,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -550,7 +663,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
@@ -576,6 +689,43 @@ Cross-Site Request Forgery attacks.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_csrfProtection">
+        $csrfProtection
+        <a href="classes/CodeIgniter-Security-Security.html#property_csrfProtection" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">CSRF Protection Method</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$csrfProtection</span>
+     = <span class="phpdocumentor-signature__default-value">self::CSRF_PROTECTION_COOKIE</span></code>
+
+        <section class="phpdocumentor-description"><p>Protection Method for Cross Site Request Forgery protection.</p>
+</section>
+
+        <section class="phpdocumentor-description"><p>'cookie' or 'session'</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_expires">
         $expires
         <a href="classes/CodeIgniter-Security-Security.html#property_expires" class="headerlink"><i class="fas fa-link"></i></a>
@@ -585,7 +735,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -621,7 +771,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -656,7 +806,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -691,7 +841,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
@@ -726,7 +876,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 
     </aside>
 
@@ -761,7 +911,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 
     </aside>
 
@@ -819,7 +969,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -854,7 +1004,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -887,7 +1037,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
@@ -896,6 +1046,39 @@ Cross-Site Request Forgery attacks.</p>
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-HTTP-RequestInterface.html"><abbr title="\CodeIgniter\HTTP\RequestInterface">RequestInterface</abbr></a></span>
     <span class="phpdocumentor-signature__name">$request</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_session">
+        $session
+        <a href="classes/CodeIgniter-Security-Security.html#property_session" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Session instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Session-Session.html"><abbr title="\CodeIgniter\Session\Session">Session</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$session</span>
     </code>
 
     
@@ -923,7 +1106,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">137</span>
+    <span class="phpdocumentor-element-found-in__line">157</span>
 
     </aside>
 
@@ -970,7 +1153,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 
     </aside>
 
@@ -1044,7 +1227,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">311</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 
     </aside>
 
@@ -1077,7 +1260,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -1132,7 +1315,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -1187,7 +1370,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">328</span>
 
     </aside>
 
@@ -1220,7 +1403,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">303</span>
+    <span class="phpdocumentor-element-found-in__line">344</span>
 
     </aside>
 
@@ -1253,7 +1436,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">336</span>
 
     </aside>
 
@@ -1286,7 +1469,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">364</span>
 
     </aside>
 
@@ -1339,7 +1522,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">350</span>
+    <span class="phpdocumentor-element-found-in__line">391</span>
 
     </aside>
 
@@ -1400,7 +1583,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">331</span>
+    <span class="phpdocumentor-element-found-in__line">372</span>
 
     </aside>
 
@@ -1433,7 +1616,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">264</span>
 
     </aside>
 
@@ -1491,7 +1674,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 
     </aside>
 
@@ -1539,7 +1722,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">446</span>
 
     </aside>
 
@@ -1572,7 +1755,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">448</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 
     </aside>
 
@@ -1616,7 +1799,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">201</span>
 
     </aside>
 
@@ -1653,6 +1836,39 @@ parameter, $relative_path to TRUE.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_configureSession">
+        configureSession()
+        <a href="classes/CodeIgniter-Security-Security.html#method_configureSession" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">196</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">configureSession</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getPostedToken">
         getPostedToken()
         <a href="classes/CodeIgniter-Security-Security.html#method_getPostedToken" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1660,7 +1876,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 
     </aside>
 
@@ -1697,6 +1913,39 @@ parameter, $relative_path to TRUE.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_isCSRFCookie">
+        isCSRFCookie()
+        <a href="classes/CodeIgniter-Security-Security.html#method_isCSRFCookie" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">191</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">isCSRFCookie</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isHashInCookie">
         isHashInCookie()
         <a href="classes/CodeIgniter-Security-Security.html#method_isHashInCookie" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1704,7 +1953,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
@@ -1737,14 +1986,14 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">431</span>
+    <span class="phpdocumentor-element-found-in__line">482</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                <span class="phpdocumentor-signature__name">saveHashInCookie</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">saveHashInCookie</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1752,7 +2001,40 @@ parameter, $relative_path to TRUE.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_saveHashInSession">
+        saveHashInSession()
+        <a href="classes/CodeIgniter-Security-Security.html#method_saveHashInSession" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">522</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                <span class="phpdocumentor-signature__name">saveHashInSession</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
         
     
