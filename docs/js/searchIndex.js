@@ -19816,11 +19816,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Test-Mock-MockAppConfig.html#property_proxyIPs"
         },                {
-            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockAppConfig\u003A\u003A\u0024CSRFProtection",
-            "name": "CSRFProtection",
-            "summary": "",
-            "url": "classes/CodeIgniter-Test-Mock-MockAppConfig.html#property_CSRFProtection"
-        },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockAppConfig\u003A\u003A\u0024CSRFTokenName",
             "name": "CSRFTokenName",
             "summary": "",
@@ -20050,11 +20045,6 @@ Search.appendIndex(
             "name": "proxyIPs",
             "summary": "",
             "url": "classes/CodeIgniter-Test-Mock-MockCLIConfig.html#property_proxyIPs"
-        },                {
-            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCLIConfig\u003A\u003A\u0024CSRFProtection",
-            "name": "CSRFProtection",
-            "summary": "",
-            "url": "classes/CodeIgniter-Test-Mock-MockCLIConfig.html#property_CSRFProtection"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCLIConfig\u003A\u003A\u0024CSRFTokenName",
             "name": "CSRFTokenName",
