@@ -20481,10 +20481,10 @@ Search.appendIndex(
             "summary": "Class\u0020Security",
             "url": "classes/CodeIgniter-Test-Mock-MockSecurity.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurity\u003A\u003AsendCookie\u0028\u0029",
-            "name": "sendCookie",
-            "summary": "CSRF\u0020Send\u0020Cookie",
-            "url": "classes/CodeIgniter-Test-Mock-MockSecurity.html#method_sendCookie"
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurity\u003A\u003AdoSendCookie\u0028\u0029",
+            "name": "doSendCookie",
+            "summary": "Actual\u0020dispatching\u0020of\u0020cookies.",
+            "url": "classes/CodeIgniter-Test-Mock-MockSecurity.html#method_doSendCookie"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurityConfig",
             "name": "MockSecurityConfig",
