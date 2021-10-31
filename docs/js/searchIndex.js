@@ -5396,6 +5396,16 @@ Search.appendIndex(
             "summary": "Tables\u0020relation\u0020types",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_joinTypes"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024isLiteralStr",
+            "name": "isLiteralStr",
+            "summary": "Strings\u0020that\u0020determine\u0020if\u0020a\u0020string\u0020represents\u0020a\u0020literal\u0020value\u0020or\u0020a\u0020field\u0020name",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_isLiteralStr"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024pregOperators",
+            "name": "pregOperators",
+            "summary": "RegExp\u0020used\u0020to\u0020get\u0020operators",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_pregOperators"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection",
             "name": "BaseConnection",
             "summary": "",
@@ -5860,6 +5870,11 @@ Search.appendIndex(
             "name": "likeEscapeChar",
             "summary": "ESCAPE\u0020character",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#property_likeEscapeChar"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024pregEscapeChar",
+            "name": "pregEscapeChar",
+            "summary": "RegExp\u0020used\u0020to\u0020escape\u0020identifiers",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#property_pregEscapeChar"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024dataCache",
             "name": "dataCache",
