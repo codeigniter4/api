@@ -299,6 +299,13 @@ and get back the set options.</p>
 <dd>The setting values</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultConfig">$defaultConfig</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>The default setting values</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_delay">$delay</a>
     <span>
                 &nbsp;: float            </span>
@@ -392,6 +399,20 @@ option is true.</dd>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd>List of valid protocol versions</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultOptions">$defaultOptions</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>The default options from the constructor. Applied to all requests.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_shareOptions">$shareOptions</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd>Whether share options between requests or not.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-HTTP-Request.html#method___construct">__construct()</a>
@@ -711,8 +732,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</dd>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Takes all headers current part of this request and adds them
-to the cURL request.</dd>
+<dd>Adds $this-&gt;headers to the cURL request.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-HTTP-MessageTrait.html#method_getHeaderName">getHeaderName()</a>
@@ -745,6 +765,13 @@ so we can retrieve them later.</dd>
 </dt>
 <dd>If the $url is a relative URL, will attempt to create
 a full URL by prepending $this-&gt;baseURI to it.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-HTTP-CURLRequest.html#method_resetOptions">resetOptions()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Reset all options to default.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Test-Mock-MockCURLRequest.html#method_sendRequest">sendRequest()</a>
@@ -831,7 +858,7 @@ our Response object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -897,7 +924,7 @@ our Response object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -907,6 +934,39 @@ our Response object.</dd>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$config</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_defaultConfig">
+        $defaultConfig
+        <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultConfig" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">53</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The default setting values</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$defaultConfig</span>
      = <span class="phpdocumentor-signature__default-value">[&#039;timeout&#039; =&gt; 0.0, &#039;connect_timeout&#039; =&gt; 150, &#039;debug&#039; =&gt; false, &#039;verify&#039; =&gt; true]</span></code>
 
     
@@ -930,7 +990,7 @@ our Response object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1263,7 +1323,7 @@ and their normal-case key as it is in $headers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -1297,7 +1357,7 @@ option is true.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -1376,6 +1436,75 @@ option is true.</p>
      = <span class="phpdocumentor-signature__default-value">[&#039;1.0&#039;, &#039;1.1&#039;, &#039;2.0&#039;]</span></code>
 
     
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_defaultOptions">
+        $defaultOptions
+        <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultOptions" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">88</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The default options from the constructor. Applied to all requests.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$defaultOptions</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_shareOptions">
+        $shareOptions
+        <a href="classes/CodeIgniter-HTTP-CURLRequest.html#property_shareOptions" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">98</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether share options between requests or not.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$shareOptions</span>
+    </code>
+
+        <section class="phpdocumentor-description"><p>If true, all the options won't be reset between requests.
+It may cause an error request with unnecessary headers.</p>
+</section>
+
     
     
 
@@ -1554,7 +1683,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
@@ -1682,7 +1811,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -2342,7 +2471,7 @@ and supply your own delimiter when concatenating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
@@ -2549,7 +2678,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 
     </aside>
 
@@ -2601,7 +2730,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
@@ -2686,7 +2815,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
@@ -2791,7 +2920,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -2887,7 +3016,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 
     </aside>
 
@@ -2947,7 +3076,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">290</span>
+    <span class="phpdocumentor-element-found-in__line">341</span>
 
     </aside>
 
@@ -2999,7 +3128,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 
     </aside>
 
@@ -3103,7 +3232,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -3258,7 +3387,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 
     </aside>
 
@@ -3514,7 +3643,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">414</span>
+    <span class="phpdocumentor-element-found-in__line">455</span>
 
     </aside>
 
@@ -3558,7 +3687,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">385</span>
+    <span class="phpdocumentor-element-found-in__line">426</span>
 
     </aside>
 
@@ -3610,12 +3739,11 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">356</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Takes all headers current part of this request and adds them
-to the cURL request.</p>
+        <p class="phpdocumentor-summary">Adds $this-&gt;headers to the cURL request.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -3700,7 +3828,7 @@ normal-case version of the header.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -3790,7 +3918,7 @@ so we can retrieve them later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">312</span>
 
     </aside>
 
@@ -3818,6 +3946,39 @@ a full URL by prepending $this-&gt;baseURI to it.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetOptions">
+        resetOptions()
+        <a href="classes/CodeIgniter-HTTP-CURLRequest.html#method_resetOptions" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">158</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reset all options to default.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">resetOptions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -3880,7 +4041,7 @@ and grabbing the output.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 
     </aside>
 
@@ -3946,7 +4107,7 @@ and grabbing the output.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/CURLRequest.php"><a href="files/system-http-curlrequest.html"><abbr title="system/HTTP/CURLRequest.php">CURLRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">468</span>
 
     </aside>
 

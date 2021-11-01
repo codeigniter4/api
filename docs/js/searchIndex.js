@@ -12471,6 +12471,11 @@ Search.appendIndex(
             "summary": "Sends\u0020an\u0020HTTP\u0020request\u0020to\u0020the\u0020specified\u0020\u0024url.\u0020If\u0020this\u0020is\u0020a\u0020relative\nURL,\u0020it\u0020will\u0020be\u0020merged\u0020with\u0020\u0024this\u002D\u003EbaseURI\u0020to\u0020form\u0020a\u0020complete\u0020URL.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_request"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AresetOptions\u0028\u0029",
+            "name": "resetOptions",
+            "summary": "Reset\u0020all\u0020options\u0020to\u0020default.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_resetOptions"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Convenience\u0020method\u0020for\u0020sending\u0020a\u0020GET\u0020request.",
@@ -12543,7 +12548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyRequestHeaders\u0028\u0029",
             "name": "applyRequestHeaders",
-            "summary": "Takes\u0020all\u0020headers\u0020current\u0020part\u0020of\u0020this\u0020request\u0020and\u0020adds\u0020them\nto\u0020the\u0020cURL\u0020request.",
+            "summary": "Adds\u0020\u0024this\u002D\u003Eheaders\u0020to\u0020the\u0020cURL\u0020request.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyRequestHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyMethod\u0028\u0029",
@@ -12586,6 +12591,11 @@ Search.appendIndex(
             "summary": "The\u0020setting\u0020values",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_config"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024defaultConfig",
+            "name": "defaultConfig",
+            "summary": "The\u0020default\u0020setting\u0020values",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultConfig"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024redirectDefaults",
             "name": "redirectDefaults",
             "summary": "Default\u0020values\u0020for\u0020when\u0020\u0027allow_redirects\u0027\noption\u0020is\u0020true.",
@@ -12595,6 +12605,16 @@ Search.appendIndex(
             "name": "delay",
             "summary": "The\u0020number\u0020of\u0020milliseconds\u0020to\u0020delay\u0020before\nsending\u0020the\u0020request.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_delay"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024defaultOptions",
+            "name": "defaultOptions",
+            "summary": "The\u0020default\u0020options\u0020from\u0020the\u0020constructor.\u0020Applied\u0020to\u0020all\u0020requests.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024shareOptions",
+            "name": "shareOptions",
+            "summary": "Whether\u0020share\u0020options\u0020between\u0020requests\u0020or\u0020not.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_shareOptions"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse",
             "name": "DownloadResponse",
