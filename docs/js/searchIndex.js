@@ -12163,7 +12163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest",
             "name": "CLIRequest",
-            "summary": "Class\u0020CLIRequest",
+            "summary": "Represents\u0020a\u0020request\u0020from\u0020the\u0020command\u002Dline.\u0020Provides\u0020additional\ntools\u0020to\u0020interact\u0020with\u0020that\u0020request\u0020since\u0020CLI\u0020requests\u0020are\u0020not\nstatic\u0020like\u0020HTTP\u0020requests\u0020might\u0020be.",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003A__construct\u0028\u0029",
@@ -12458,7 +12458,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest",
             "name": "CURLRequest",
-            "summary": "Class\u0020OutgoingRequest",
+            "summary": "A\u0020lightweight\u0020HTTP\u0020client\u0020for\u0020sending\u0020synchronous\u0020HTTP\u0020requests\u0020via\u0020cURL.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A__construct\u0028\u0029",
@@ -17143,7 +17143,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection",
             "name": "RouteCollection",
-            "summary": "Class\u0020RouteCollection",
+            "summary": "",
             "url": "classes/CodeIgniter-Router-RouteCollection.html"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A__construct\u0028\u0029",
