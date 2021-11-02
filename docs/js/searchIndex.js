@@ -11001,6 +11001,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Exceptions-PageNotFoundException.html#method_forMethodNotFound"
         },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException\u003A\u003Alang\u0028\u0029",
+            "name": "lang",
+            "summary": "Get\u0020translated\u0020system\u0020message",
+            "url": "classes/CodeIgniter-Exceptions-PageNotFoundException.html#method_lang"
+        },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException\u003A\u003A\u0024code",
             "name": "code",
             "summary": "Error\u0020code",
