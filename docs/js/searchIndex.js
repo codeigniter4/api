@@ -11283,7 +11283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AdiscoverFilters\u0028\u0029",
             "name": "discoverFilters",
-            "summary": "If\u0020discoverFilters\u0020is\u0020enabled\u0020in\u0020Config\u0020then\u0020system\u0020will\u0020try\u0020to\nauto\u002Ddiscover\u0020custom\u0020filters\u0020files\u0020in\u0020Namespaces\u0020and\u0020allow\u0020access\u0020to\nthe\u0020config\u0020object\u0020via\u0020the\u0020variable\u0020\u0024customfilters\u0020as\u0020with\u0020the\u0020routes\u0020file",
+            "summary": "If\u0020discoverFilters\u0020is\u0020enabled\u0020in\u0020Config\u0020then\u0020system\u0020will\u0020try\u0020to\nauto\u002Ddiscover\u0020custom\u0020filters\u0020files\u0020in\u0020Namespaces\u0020and\u0020allow\u0020access\u0020to\nthe\u0020config\u0020object\u0020via\u0020the\u0020variable\u0020\u0024filters\u0020as\u0020with\u0020the\u0020routes\u0020file",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_discoverFilters"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AsetResponse\u0028\u0029",

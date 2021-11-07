@@ -444,7 +444,7 @@ uri and position.</dd>
 </dt>
 <dd>If discoverFilters is enabled in Config then system will try to
 auto-discover custom filters files in Namespaces and allow access to
-the config object via the variable $customfilters as with the routes file</dd>
+the config object via the variable $filters as with the routes file</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Filters-Filters.html#method_pathApplies">pathApplies()</a>
@@ -852,7 +852,7 @@ on the filter lists.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
@@ -923,7 +923,7 @@ Intended for use within routes files.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
@@ -994,7 +994,7 @@ are passed to the filter when executed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 
     </aside>
 
@@ -1050,7 +1050,7 @@ are passed to the filter when executed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -1094,7 +1094,7 @@ are passed to the filter when executed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1127,7 +1127,7 @@ are passed to the filter when executed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -1160,7 +1160,7 @@ are passed to the filter when executed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 
     </aside>
 
@@ -1171,11 +1171,11 @@ based on HTTP method, etc.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">initialize</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Filters-Filters.html"><abbr title="\CodeIgniter\Filters\Filters">Filters</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">initialize</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Filters-Filters.html"><abbr title="\CodeIgniter\Filters\Filters">Filters</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>The resulting $this-&gt;filters is an array of only filters
 that should be applied to this request.</p>
-<p>We go ahead an process the entire tree because we'll need to
+<p>We go ahead and process the entire tree because we'll need to
 run through both a before and after and don't want to double
 process the rows.</p>
 </section>
@@ -1184,10 +1184,11 @@ process the rows.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$uri</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1212,7 +1213,7 @@ process the rows.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -1248,7 +1249,7 @@ re-initialized to a different path.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 
     </aside>
 
@@ -1315,7 +1316,7 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">148</span>
 
     </aside>
 
@@ -1359,7 +1360,7 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">490</span>
+    <span class="phpdocumentor-element-found-in__line">488</span>
 
     </aside>
 
@@ -1417,7 +1418,7 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">458</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
@@ -1460,7 +1461,7 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 
     </aside>
 
@@ -1503,7 +1504,7 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">437</span>
 
     </aside>
 
@@ -1536,13 +1537,13 @@ uri and position.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">If discoverFilters is enabled in Config then system will try to
 auto-discover custom filters files in Namespaces and allow access to
-the config object via the variable $customfilters as with the routes file</p>
+the config object via the variable $filters as with the routes file</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
@@ -1574,7 +1575,7 @@ $filters-&gt;aliases['custom-auth'] = \Acme\Blob\Filters\BlobAuth::class;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Filters/Filters.php"><a href="files/system-filters-filters.html"><abbr title="system/Filters/Filters.php">Filters.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">522</span>
+    <span class="phpdocumentor-element-found-in__line">520</span>
 
     </aside>
 
