@@ -21018,8 +21018,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\FormatRules\u003A\u003Avalid_url\u0028\u0029",
             "name": "valid_url",
-            "summary": "Checks\u0020a\u0020URL\u0020to\u0020ensure\u0020it\u0027s\u0020formed\u0020correctly.",
+            "summary": "Checks\u0020a\u0020string\u0020to\u0020ensure\u0020it\u0020is\u0020\u0028loosely\u0029\u0020a\u0020URL.",
             "url": "classes/CodeIgniter-Validation-FormatRules.html#method_valid_url"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\FormatRules\u003A\u003Avalid_url_strict\u0028\u0029",
+            "name": "valid_url_strict",
+            "summary": "Checks\u0020a\u0020URL\u0020to\u0020ensure\u0020it\u0027s\u0020formed\u0020correctly.",
+            "url": "classes/CodeIgniter-Validation-FormatRules.html#method_valid_url_strict"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\FormatRules\u003A\u003Avalid_date\u0028\u0029",
             "name": "valid_date",
