@@ -17866,6 +17866,16 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020CSRF\u0020Hash.",
             "url": "classes/CodeIgniter-Security-Security.html#method_getHash"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003Arandomize\u0028\u0029",
+            "name": "randomize",
+            "summary": "Randomize\u0020hash\u0020to\u0020avoid\u0020BREACH\u0020attacks.",
+            "url": "classes/CodeIgniter-Security-Security.html#method_randomize"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003Aderandomize\u0028\u0029",
+            "name": "derandomize",
+            "summary": "Derandomize\u0020the\u0020token.",
+            "url": "classes/CodeIgniter-Security-Security.html#method_derandomize"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetTokenName\u0028\u0029",
             "name": "getTokenName",
             "summary": "Returns\u0020the\u0020CSRF\u0020Token\u0020Name.",
@@ -17936,10 +17946,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Security-Security.html#constant_CSRF_PROTECTION_SESSION"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003ACSRF_HASH_BYTES",
+            "name": "CSRF_HASH_BYTES",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#constant_CSRF_HASH_BYTES"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024csrfProtection",
             "name": "csrfProtection",
             "summary": "CSRF\u0020Protection\u0020Method",
             "url": "classes/CodeIgniter-Security-Security.html#property_csrfProtection"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024tokenRandomize",
+            "name": "tokenRandomize",
+            "summary": "CSRF\u0020Token\u0020Randomization",
+            "url": "classes/CodeIgniter-Security-Security.html#property_tokenRandomize"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024hash",
             "name": "hash",
@@ -20525,6 +20545,11 @@ Search.appendIndex(
             "name": "doSendCookie",
             "summary": "Actual\u0020dispatching\u0020of\u0020cookies.",
             "url": "classes/CodeIgniter-Test-Mock-MockSecurity.html#method_doSendCookie"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurity\u003A\u003Arandomize\u0028\u0029",
+            "name": "randomize",
+            "summary": "Randomize\u0020hash\u0020to\u0020avoid\u0020BREACH\u0020attacks.",
+            "url": "classes/CodeIgniter-Test-Mock-MockSecurity.html#method_randomize"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurityConfig",
             "name": "MockSecurityConfig",
