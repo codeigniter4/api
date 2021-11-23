@@ -11421,6 +11421,41 @@ Search.appendIndex(
             "summary": "Attach\u0020a\u0020honeypot\u0020to\u0020the\u0020current\u0020response.",
             "url": "classes/CodeIgniter-Filters-Honeypot.html#method_after"
         },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars",
+            "name": "InvalidChars",
+            "summary": "InvalidChars\u0020filter.",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Check\u0020invalid\u0020characters.",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "We\u0020don\u0027t\u0020have\u0020anything\u0020to\u0020do\u0020here.",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#method_after"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003AcheckEncoding\u0028\u0029",
+            "name": "checkEncoding",
+            "summary": "Check\u0020the\u0020character\u0020encoding\u0020is\u0020valid\u0020UTF\u002D8.",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#method_checkEncoding"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003AcheckControl\u0028\u0029",
+            "name": "checkControl",
+            "summary": "Check\u0020for\u0020the\u0020presence\u0020of\u0020control\u0020characters\u0020except\u0020line\u0020breaks\u0020and\u0020tabs.",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#method_checkControl"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003A\u0024source",
+            "name": "source",
+            "summary": "Data\u0020source",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#property_source"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\InvalidChars\u003A\u003A\u0024controlCodeRegex",
+            "name": "controlCodeRegex",
+            "summary": "Regular\u0020expressions\u0020for\u0020valid\u0020control\u0020codes",
+            "url": "classes/CodeIgniter-Filters-InvalidChars.html#property_controlCodeRegex"
+        },                {
             "fqsen": "\\CodeIgniter\\Format\\Exceptions\\FormatException",
             "name": "FormatException",
             "summary": "FormatException",
@@ -17805,6 +17840,16 @@ Search.appendIndex(
             "name": "forDisallowedAction",
             "summary": "",
             "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forDisallowedAction"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidUTF8Chars\u0028\u0029",
+            "name": "forInvalidUTF8Chars",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forInvalidUTF8Chars"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidControlChars\u0028\u0029",
+            "name": "forInvalidControlChars",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forInvalidControlChars"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidSameSite\u0028\u0029",
             "name": "forInvalidSameSite",
