@@ -21183,7 +21183,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003Arequired\u0028\u0029",
             "name": "required",
-            "summary": "Required",
+            "summary": "",
             "url": "classes/CodeIgniter-Validation-Rules.html#method_required"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003Arequired_with\u0028\u0029",
