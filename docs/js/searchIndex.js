@@ -5563,7 +5563,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Atable\u0028\u0029",
             "name": "table",
-            "summary": "Returns\u0020an\u0020instance\u0020of\u0020the\u0020query\u0020builder\u0020for\u0020this\u0020connection.",
+            "summary": "Returns\u0020a\u0020non\u002Dshared\u0020new\u0020instance\u0020of\u0020the\u0020query\u0020builder\u0020for\u0020this\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_table"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Aprepare\u0028\u0029",
