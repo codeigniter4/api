@@ -14273,7 +14273,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait",
             "name": "ResponseTrait",
-            "summary": "Request\u0020Trait",
+            "summary": "Response\u0020Trait",
             "url": "classes/CodeIgniter-HTTP-ResponseTrait.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AsetStatusCode\u0028\u0029",
@@ -14343,7 +14343,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AsendHeaders\u0028\u0029",
             "name": "sendHeaders",
-            "summary": "Sends\u0020the\u0020headers\u0020of\u0020this\u0020HTTP\u0020request\u0020to\u0020the\u0020browser.",
+            "summary": "Sends\u0020the\u0020headers\u0020of\u0020this\u0020HTTP\u0020response\u0020to\u0020the\u0020browser.",
             "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_sendHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AsendBody\u0028\u0029",
@@ -14390,6 +14390,21 @@ Search.appendIndex(
             "name": "sendCookies",
             "summary": "Actually\u0020sets\u0020the\u0020cookies.",
             "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_sendCookies"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AdispatchCookies\u0028\u0029",
+            "name": "dispatchCookies",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_dispatchCookies"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AdoSetRawCookie\u0028\u0029",
+            "name": "doSetRawCookie",
+            "summary": "Extracted\u0020call\u0020to\u0020\u0060setrawcookie\u0028\u0029\u0060\u0020in\u0020order\u0020to\u0020run\u0020unit\u0020tests\u0020on\u0020it.",
+            "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_doSetRawCookie"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AdoSetCookie\u0028\u0029",
+            "name": "doSetCookie",
+            "summary": "Extracted\u0020call\u0020to\u0020\u0060setcookie\u0028\u0029\u0060\u0020in\u0020order\u0020to\u0020run\u0020unit\u0020tests\u0020on\u0020it.",
+            "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_doSetCookie"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003Adownload\u0028\u0029",
             "name": "download",
