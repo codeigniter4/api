@@ -11456,6 +11456,26 @@ Search.appendIndex(
             "summary": "Regular\u0020expressions\u0020for\u0020valid\u0020control\u0020codes",
             "url": "classes/CodeIgniter-Filters-InvalidChars.html#property_controlCodeRegex"
         },                {
+            "fqsen": "\\CodeIgniter\\Filters\\SecureHeaders",
+            "name": "SecureHeaders",
+            "summary": "Add\u0020Common\u0020Security\u0020Headers",
+            "url": "classes/CodeIgniter-Filters-SecureHeaders.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\SecureHeaders\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "We\u0020don\u0027t\u0020have\u0020anything\u0020to\u0020do\u0020here.",
+            "url": "classes/CodeIgniter-Filters-SecureHeaders.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\SecureHeaders\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Add\u0020security\u0020headers.",
+            "url": "classes/CodeIgniter-Filters-SecureHeaders.html#method_after"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\SecureHeaders\u003A\u003A\u0024headers",
+            "name": "headers",
+            "summary": "",
+            "url": "classes/CodeIgniter-Filters-SecureHeaders.html#property_headers"
+        },                {
             "fqsen": "\\CodeIgniter\\Format\\Exceptions\\FormatException",
             "name": "FormatException",
             "summary": "FormatException",
