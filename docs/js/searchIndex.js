@@ -22001,6 +22001,11 @@ Search.appendIndex(
             "summary": "Logs\u0020performance\u0020data\u0020for\u0020rendering\u0020a\u0020view.",
             "url": "classes/CodeIgniter-View-View.html#method_logPerformance"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\View\u003A\u003AprepareTemplateData\u0028\u0029",
+            "name": "prepareTemplateData",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-View.html#method_prepareTemplateData"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024data",
             "name": "data",
             "summary": "Data\u0020that\u0020is\u0020made\u0020available\u0020to\u0020the\u0020Views.",
