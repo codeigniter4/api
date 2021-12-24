@@ -5266,6 +5266,16 @@ Search.appendIndex(
             "summary": "Returns\u0020a\u0020clone\u0020of\u0020a\u0020Base\u0020Builder\u0020with\u0020reset\u0020query\u0020builder\u0020values.",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_cleanClone"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AisSubquery\u0028\u0029",
+            "name": "isSubquery",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_isSubquery"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AbuildSubquery\u0028\u0029",
+            "name": "buildSubquery",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_buildSubquery"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024resetDeleteData",
             "name": "resetDeleteData",
             "summary": "Reset\u0020DELETE\u0020data\u0020flag",
