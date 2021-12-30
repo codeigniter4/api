@@ -8661,6 +8661,16 @@ Search.appendIndex(
             "summary": "Stores\u0020the\u0020results\u0020of\u0020each\u0020of\u0020the\u0020tests.",
             "url": "classes/CodeIgniter-Debug-Iterator.html#property_results"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Kint\\RichRenderer",
+            "name": "RichRenderer",
+            "summary": "Overrides\u0020RichRenderer\u003A\u003ApreRender\u0028\u0029\u0020for\u0020CSP",
+            "url": "classes/CodeIgniter-Debug-Kint-RichRenderer.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Kint\\RichRenderer\u003A\u003ApreRender\u0028\u0029",
+            "name": "preRender",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-Kint-RichRenderer.html#method_preRender"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Timer",
             "name": "Timer",
             "summary": "Class\u0020Timer",
@@ -21775,6 +21785,11 @@ Search.appendIndex(
             "name": "Debug",
             "summary": "",
             "url": "namespaces/codeigniter-debug.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Kint",
+            "name": "Kint",
+            "summary": "",
+            "url": "namespaces/codeigniter-debug-kint.html"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors",
             "name": "Collectors",
