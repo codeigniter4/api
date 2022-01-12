@@ -2916,6 +2916,16 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020meta\u0020tag\u0020for\u0020use\u0020within\u0020javascript\u0020calls.",
             "url": "namespaces/default.html#function_csrf_meta"
         },                {
+            "fqsen": "\\csp_style_nonce\u0028\u0029",
+            "name": "csp_style_nonce",
+            "summary": "Generates\u0020a\u0020nonce\u0020attribute\u0020for\u0020style\u0020tag.",
+            "url": "namespaces/default.html#function_csp_style_nonce"
+        },                {
+            "fqsen": "\\csp_script_nonce\u0028\u0029",
+            "name": "csp_script_nonce",
+            "summary": "Generates\u0020a\u0020nonce\u0020attribute\u0020for\u0020script\u0020tag.",
+            "url": "namespaces/default.html#function_csp_script_nonce"
+        },                {
             "fqsen": "\\db_connect\u0028\u0029",
             "name": "db_connect",
             "summary": "Grabs\u0020a\u0020database\u0020connection\u0020and\u0020returns\u0020it\u0020to\u0020the\u0020user.",
@@ -3425,6 +3435,11 @@ Search.appendIndex(
             "name": "commands",
             "summary": "The\u0020commands\u0020utility\u0020for\u0020running\u0020and\u0020working\u0020with\u0020CLI\u0020commands.",
             "url": "classes/CodeIgniter-Config-Services.html#method_commands"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Acsp\u0028\u0029",
+            "name": "csp",
+            "summary": "Content\u0020Security\u0020Policy",
+            "url": "classes/CodeIgniter-Config-Services.html#method_csp"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Acurlrequest\u0028\u0029",
             "name": "curlrequest",
@@ -11866,6 +11881,21 @@ Search.appendIndex(
             "summary": "Constructor.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003Aenabled\u0028\u0029",
+            "name": "enabled",
+            "summary": "Whether\u0020Content\u0020Security\u0020Policy\u0020is\u0020being\u0020enforced.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_enabled"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AgetStyleNonce\u0028\u0029",
+            "name": "getStyleNonce",
+            "summary": "Get\u0020the\u0020nonce\u0020for\u0020the\u0020style\u0020tag.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_getStyleNonce"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AgetScriptNonce\u0028\u0029",
+            "name": "getScriptNonce",
+            "summary": "Get\u0020the\u0020nonce\u0020for\u0020the\u0020script\u0020tag.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_getScriptNonce"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003Afinalize\u0028\u0029",
             "name": "finalize",
             "summary": "Compiles\u0020and\u0020sets\u0020the\u0020appropriate\u0020headers\u0020in\u0020the\u0020request.",
@@ -12081,6 +12111,31 @@ Search.appendIndex(
             "summary": "Used\u0020for\u0020security\u0020enforcement",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleNonce",
+            "name": "styleNonce",
+            "summary": "Nonce\u0020for\u0020style",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonce"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptNonce",
+            "name": "scriptNonce",
+            "summary": "Nonce\u0020for\u0020script",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonce"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleNonceTag",
+            "name": "styleNonceTag",
+            "summary": "Nonce\u0020tag\u0020for\u0020style",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonceTag"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptNonceTag",
+            "name": "scriptNonceTag",
+            "summary": "Nonce\u0020tag\u0020for\u0020script",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonceTag"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024autoNonce",
+            "name": "autoNonce",
+            "summary": "Replace\u0020nonce\u0020tag\u0020automatically",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_autoNonce"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024tempHeaders",
             "name": "tempHeaders",
             "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020since\u0020we\u0020have\nto\u0020build\u0020ourself\u0020before\u0020passing\u0020to\u0020Response.",
@@ -12090,6 +12145,11 @@ Search.appendIndex(
             "name": "reportOnlyHeaders",
             "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020to\u0020build\nthat\u0020should\u0020only\u0020be\u0020reported.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnlyHeaders"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024CSPEnabled",
+            "name": "CSPEnabled",
+            "summary": "Whether\u0020Content\u0020Security\u0020Policy\u0020is\u0020being\u0020enforced.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_CSPEnabled"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest",
             "name": "CURLRequest",
@@ -21340,6 +21400,16 @@ Search.appendIndex(
             "name": "siteURL",
             "summary": "Wrap\u0020helper\u0020function\u0020to\u0020use\u0020as\u0020view\u0020plugin.",
             "url": "classes/CodeIgniter-View-Plugins.html#method_siteURL"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Plugins\u003A\u003AcspScriptNonce\u0028\u0029",
+            "name": "cspScriptNonce",
+            "summary": "Wrap\u0020csp_script_nonce\u0028\u0029\u0020function\u0020to\u0020use\u0020as\u0020view\u0020plugin.",
+            "url": "classes/CodeIgniter-View-Plugins.html#method_cspScriptNonce"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Plugins\u003A\u003AcspStyleNonce\u0028\u0029",
+            "name": "cspStyleNonce",
+            "summary": "Wrap\u0020csp_style_nonce\u0028\u0029\u0020function\u0020to\u0020use\u0020as\u0020view\u0020plugin.",
+            "url": "classes/CodeIgniter-View-Plugins.html#method_cspStyleNonce"
         },                {
             "fqsen": "\\CodeIgniter\\View\\RendererInterface",
             "name": "RendererInterface",
