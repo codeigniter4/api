@@ -4366,6 +4366,11 @@ Search.appendIndex(
             "summary": "Generates\u0020the\u0020FROM\u0020portion\u0020of\u0020the\u0020query",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_from"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AfromSubquery\u0028\u0029",
+            "name": "fromSubquery",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_fromSubquery"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003Ajoin\u0028\u0029",
             "name": "join",
             "summary": "Generates\u0020the\u0020JOIN\u0020portion\u0020of\u0020the\u0020query",
@@ -5145,6 +5150,11 @@ Search.appendIndex(
             "name": "table",
             "summary": "Returns\u0020a\u0020non\u002Dshared\u0020new\u0020instance\u0020of\u0020the\u0020query\u0020builder\u0020for\u0020this\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_table"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AnewQuery\u0028\u0029",
+            "name": "newQuery",
+            "summary": "Returns\u0020a\u0020new\u0020instance\u0020of\u0020the\u0020BaseBuilder\u0020class\u0020with\u0020a\u0020cleared\u0020FROM\u0020clause.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_newQuery"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Aprepare\u0028\u0029",
             "name": "prepare",
