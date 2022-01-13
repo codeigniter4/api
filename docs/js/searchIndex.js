@@ -10566,6 +10566,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Exceptions-ModelException.html#method_forNoDateFormat"
         },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\ModelException\u003A\u003AforMethodNotAvailable\u0028\u0029",
+            "name": "forMethodNotAvailable",
+            "summary": "",
+            "url": "classes/CodeIgniter-Exceptions-ModelException.html#method_forMethodNotAvailable"
+        },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException",
             "name": "PageNotFoundException",
             "summary": "",
@@ -16116,6 +16121,11 @@ Search.appendIndex(
             "summary": "Provides\u0020direct\u0020access\u0020to\u0020method\u0020in\u0020the\u0020builder\u0020\u0028if\u0020available\u0029\nand\u0020the\u0020database\u0020connection.",
             "url": "classes/CodeIgniter-Model.html#method___call"
         },                {
+            "fqsen": "\\CodeIgniter\\Model\u003A\u003AcheckBuilderMethod\u0028\u0029",
+            "name": "checkBuilderMethod",
+            "summary": "Checks\u0020the\u0020Builder\u0020method\u0020name\u0020that\u0020should\u0020not\u0020be\u0020used\u0020in\u0020the\u0020Model.",
+            "url": "classes/CodeIgniter-Model.html#method_checkBuilderMethod"
+        },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AclassToArray\u0028\u0029",
             "name": "classToArray",
             "summary": "Takes\u0020a\u0020class\u0020an\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
@@ -16145,6 +16155,11 @@ Search.appendIndex(
             "name": "escape",
             "summary": "Escape\u0020array\u0020that\u0020maps\u0020usage\u0020of\u0020escape\nflag\u0020for\u0020every\u0020parameter.",
             "url": "classes/CodeIgniter-Model.html#property_escape"
+        },                {
+            "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024builderMethodsNotAvailable",
+            "name": "builderMethodsNotAvailable",
+            "summary": "Builder\u0020method\u0020names\u0020that\u0020should\u0020not\u0020be\u0020used\u0020in\u0020the\u0020Model.",
+            "url": "classes/CodeIgniter-Model.html#property_builderMethodsNotAvailable"
         },                {
             "fqsen": "\\CodeIgniter\\Modules\\Modules",
             "name": "Modules",
