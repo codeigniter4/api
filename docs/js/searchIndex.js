@@ -3626,6 +3626,11 @@ Search.appendIndex(
             "summary": "Built\u002Din\u0020View\u0020plugins.",
             "url": "classes/CodeIgniter-Config-View.html#property_corePlugins"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A\u0024decorators",
+            "name": "decorators",
+            "summary": "View\u0020Decorators\u0020are\u0020class\u0020methods\u0020that\u0020will\u0020be\u0020run\u0020in\u0020sequence\u0020to\nhave\u0020a\u0020chance\u0020to\u0020alter\u0020the\u0020generated\u0020output\u0020just\u0020prior\u0020to\u0020caching\nthe\u0020results.",
+            "url": "classes/CodeIgniter-Config-View.html#property_decorators"
+        },                {
             "fqsen": "\\CodeIgniter\\Controller",
             "name": "Controller",
             "summary": "Class\u0020Controller",
@@ -21426,6 +21431,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-View-Exceptions-ViewException.html#method_forTagSyntaxError"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Exceptions\\ViewException\u003A\u003AforInvalidDecorator\u0028\u0029",
+            "name": "forInvalidDecorator",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-Exceptions-ViewException.html#method_forInvalidDecorator"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Filters",
             "name": "Filters",
             "summary": "View\u0020filters",
@@ -22010,6 +22020,26 @@ Search.appendIndex(
             "name": "sectionStack",
             "summary": "The\u0020name\u0020of\u0020the\u0020current\u0020section\u0020being\u0020rendered,\nif\u0020any.",
             "url": "classes/CodeIgniter-View-View.html#property_sectionStack"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\ViewDecoratorInterface",
+            "name": "ViewDecoratorInterface",
+            "summary": "View\u0020Decorators\u0020are\u0020simple\u0020classes\u0020that\u0020are\u0020given\u0020the\nchance\u0020to\u0020modify\u0020the\u0020output\u0020from\u0020the\u0020view\u0028\u0029\u0020calls\nprior\u0020to\u0020it\u0020being\u0020cached.",
+            "url": "classes/CodeIgniter-View-ViewDecoratorInterface.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\ViewDecoratorInterface\u003A\u003Adecorate\u0028\u0029",
+            "name": "decorate",
+            "summary": "Takes\u0020\u0024html\u0020and\u0020has\u0020a\u0020chance\u0020to\u0020alter\u0020it.",
+            "url": "classes/CodeIgniter-View-ViewDecoratorInterface.html#method_decorate"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\ViewDecoratorTrait",
+            "name": "ViewDecoratorTrait",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-ViewDecoratorTrait.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\ViewDecoratorTrait\u003A\u003AdecorateOutput\u0028\u0029",
+            "name": "decorateOutput",
+            "summary": "Runs\u0020the\u0020generated\u0020output\u0020through\u0020any\u0020declared\nview\u0020decorators.",
+            "url": "classes/CodeIgniter-View-ViewDecoratorTrait.html#method_decorateOutput"
         },                {
             "fqsen": "\\",
             "name": "\\",
