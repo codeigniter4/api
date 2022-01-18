@@ -193,7 +193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator\u003A\u003AgetClassname\u0028\u0029",
             "name": "getClassname",
-            "summary": "Examines\u0020a\u0020file\u0020and\u0020returns\u0020the\u0020fully\u0020qualified\u0020domain\u0020name.",
+            "summary": "Examines\u0020a\u0020file\u0020and\u0020returns\u0020the\u0020fully\u0020qualified\u0020class\u0020name.",
             "url": "classes/CodeIgniter-Autoloader-FileLocator.html#method_getClassname"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator\u003A\u003Asearch\u0028\u0029",
@@ -223,7 +223,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator\u003A\u003AlistNamespaceFiles\u0028\u0029",
             "name": "listNamespaceFiles",
-            "summary": "Scans\u0020the\u0020provided\u0020namespace,\u0020returning\u0020a\u0020list\u0020of\u0020all\u0020files\nthat\u0020are\u0020contained\u0020within\u0020the\u0020subpath\u0020specified\u0020by\u0020\u0024path.",
+            "summary": "Scans\u0020the\u0020provided\u0020namespace,\u0020returning\u0020a\u0020list\u0020of\u0020all\u0020files\nthat\u0020are\u0020contained\u0020within\u0020the\u0020sub\u0020path\u0020specified\u0020by\u0020\u0024path.",
             "url": "classes/CodeIgniter-Autoloader-FileLocator.html#method_listNamespaceFiles"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator\u003A\u003AlegacyLocate\u0028\u0029",
@@ -528,12 +528,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AobjectToArray\u0028\u0029",
             "name": "objectToArray",
-            "summary": "Takes\u0020a\u0020class\u0020an\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
+            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
             "url": "classes/CodeIgniter-BaseModel.html#method_objectToArray"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AobjectToRawArray\u0028\u0029",
             "name": "objectToRawArray",
-            "summary": "Takes\u0020a\u0020class\u0020an\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020with\u0020raw\u0020values.",
+            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020its\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020with\u0020raw\u0020values.",
             "url": "classes/CodeIgniter-BaseModel.html#method_objectToRawArray"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtransformDataToArray\u0028\u0029",
