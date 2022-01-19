@@ -10243,7 +10243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AmapProperty\u0028\u0029",
             "name": "mapProperty",
-            "summary": "Checks\u0020the\u0020datamap\u0020to\u0020see\u0020if\u0020this\u0020column\u0020name\u0020is\u0020being\u0020mapped,\nand\u0020returns\u0020the\u0020mapped\u0020name,\u0020if\u0020any,\u0020or\u0020the\u0020original\u0020name.",
+            "summary": "Checks\u0020the\u0020datamap\u0020to\u0020see\u0020if\u0020this\u0020property\u0020name\u0020is\u0020being\u0020mapped,\nand\u0020returns\u0020the\u0020db\u0020column\u0020name,\u0020if\u0020any,\u0020or\u0020the\u0020original\u0020property\u0020name.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_mapProperty"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AmutateDate\u0028\u0029",
@@ -10285,6 +10285,16 @@ Search.appendIndex(
             "name": "__unset",
             "summary": "Unsets\u0020an\u0020attribute\u0020property.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method___unset"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AisMappedDbColumn\u0028\u0029",
+            "name": "isMappedDbColumn",
+            "summary": "Whether\u0020this\u0020key\u0020is\u0020mapped\u0020db\u0020column\u0020name\u003F",
+            "url": "classes/CodeIgniter-Entity-Entity.html#method_isMappedDbColumn"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AhasMappedProperty\u0028\u0029",
+            "name": "hasMappedProperty",
+            "summary": "Whether\u0020this\u0020key\u0020has\u0020mapped\u0020property\u003F",
+            "url": "classes/CodeIgniter-Entity-Entity.html#method_hasMappedProperty"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024datamap",
             "name": "datamap",
