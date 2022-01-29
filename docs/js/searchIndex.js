@@ -19331,6 +19331,16 @@ Search.appendIndex(
             "summary": "Allows\u0020for\u0020directly\u0020setting\u0020the\u0020body\u0020to\u0020what\nit\u0020needs\u0020to\u0020be.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_requestBody"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\ConfigFromArrayTrait",
+            "name": "ConfigFromArrayTrait",
+            "summary": "",
+            "url": "classes/CodeIgniter-Test-ConfigFromArrayTrait.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\ConfigFromArrayTrait\u003A\u003AcreateConfigFromArray\u0028\u0029",
+            "name": "createConfigFromArray",
+            "summary": "Creates\u0020a\u0020Config\u0020instance\u0020from\u0020an\u0020array.",
+            "url": "classes/CodeIgniter-Test-ConfigFromArrayTrait.html#method_createConfigFromArray"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\Constraints\\SeeInDatabase",
             "name": "SeeInDatabase",
             "summary": "",
