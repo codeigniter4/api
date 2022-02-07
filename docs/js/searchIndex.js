@@ -2906,6 +2906,81 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-ControllerMethodReader.html#property_namespace"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector",
+            "name": "FilterCollector",
+            "summary": "Collects\u0020filters\u0020for\u0020a\u0020route.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AcreateRouter\u0028\u0029",
+            "name": "createRouter",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createRouter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AcreateFilters\u0028\u0029",
+            "name": "createFilters",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder",
+            "name": "FilterFinder",
+            "summary": "Finds\u0020filters.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003AgetRouteFilters\u0028\u0029",
+            "name": "getRouteFilters",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_getRouteFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003Afind\u0028\u0029",
+            "name": "find",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_find"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003A\u0024router",
+            "name": "router",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#property_router"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003A\u0024filters",
+            "name": "filters",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#property_filters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator",
+            "name": "SampleURIGenerator",
+            "summary": "Generate\u0020a\u0020sample\u0020URI\u0020path\u0020from\u0020route\u0020key\u0020regex.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-SampleURIGenerator.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-SampleURIGenerator.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-SampleURIGenerator.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator\u003A\u003A\u0024routes",
+            "name": "routes",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-SampleURIGenerator.html#property_routes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\SampleURIGenerator\u003A\u003A\u0024samples",
+            "name": "samples",
+            "summary": "Sample\u0020URI\u0020path\u0020for\u0020placeholder.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-SampleURIGenerator.html#property_samples"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes",
             "name": "Routes",
             "summary": "Lists\u0020all\u0020the\u0020routes.\u0020This\u0020will\u0020include\u0020any\u0020Routes\u0020files\nthat\u0020can\u0020be\u0020discovered,\u0020and\u0020will\u0020include\u0020routes\u0020that\u0020are\u0020not\u0020defined\nin\u0020routes\u0020files,\u0020but\u0020are\u0020instead\u0020discovered\u0020through\u0020auto\u002Drouting.",
@@ -11463,7 +11538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AenableFilters\u0028\u0029",
             "name": "enableFilters",
-            "summary": "Ensures\u0020that\u0020specific\u0020filters\u0020is\u0020on\u0020and\u0020enabled\u0020for\u0020the\u0020current\u0020request.",
+            "summary": "Ensures\u0020that\u0020specific\u0020filters\u0020are\u0020on\u0020and\u0020enabled\u0020for\u0020the\u0020current\u0020request.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_enableFilters"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AgetArguments\u0028\u0029",
