@@ -9378,7 +9378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\BaseCollector\u003A\u003AcleanPath\u0028\u0029",
             "name": "cleanPath",
-            "summary": "Clean\u0020Path",
+            "summary": "This\u0020makes\u0020nicer\u0020looking\u0020paths\u0020for\u0020the\u0020error\u0020output.",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-BaseCollector.html#method_cleanPath"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\BaseCollector\u003A\u003AgetBadgeValue\u0028\u0029",
@@ -21053,7 +21053,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\TestLogger\u003A\u003Acleanup\u0028\u0029",
             "name": "cleanup",
-            "summary": "",
+            "summary": "Expose\u0020filenames.",
             "url": "classes/CodeIgniter-Test-TestLogger.html#method_cleanup"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\TestLogger\u003A\u003A\u0024op_logs",
