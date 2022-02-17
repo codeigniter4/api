@@ -9696,6 +9696,11 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020syntax\u002Dhighlighted\u0020version\u0020of\u0020a\u0020PHP\u0020file.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_highlightFile"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003ArenderBacktrace\u0028\u0029",
+            "name": "renderBacktrace",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_renderBacktrace"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A\u0024ob_level",
             "name": "ob_level",
             "summary": "Nesting\u0020level\u0020of\u0020the\u0020output\u0020buffering\u0020mechanism",
