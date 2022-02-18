@@ -1881,6 +1881,21 @@ Search.appendIndex(
             "summary": "Should\u0020the\u0020Response\u0020instance\u0020\u0022pretend\u0022\nto\u0020keep\u0020from\u0020setting\u0020headers\/cookies\/etc",
             "url": "classes/CodeIgniter-CodeIgniter.html#property_useSafeOutput"
         },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AisSparked\u0028\u0029",
+            "name": "isSparked",
+            "summary": "Invoked\u0020via\u0020spark\u0020command\u003F",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_isSparked"
+        },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AisPhpCli\u0028\u0029",
+            "name": "isPhpCli",
+            "summary": "Invoked\u0020via\u0020php\u002Dcli\u0020command\u003F",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_isPhpCli"
+        },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AisWeb\u0028\u0029",
+            "name": "isWeb",
+            "summary": "Web\u0020access\u003F",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_isWeb"
+        },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AhandleRequest\u0028\u0029",
             "name": "handleRequest",
             "summary": "Handles\u0020the\u0020main\u0020request\u0020logic\u0020and\u0020fires\u0020the\u0020controller.",
@@ -2011,6 +2026,11 @@ Search.appendIndex(
             "summary": "Exits\u0020the\u0020application,\u0020setting\u0020the\u0020exit\u0020code\u0020for\u0020CLI\u002Dbased\u0020applications\nthat\u0020might\u0020be\u0020watching.",
             "url": "classes/CodeIgniter-CodeIgniter.html#method_callExit"
         },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AsetContext\u0028\u0029",
+            "name": "setContext",
+            "summary": "Sets\u0020the\u0020app\u0020context.",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_setContext"
+        },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003ACI_VERSION",
             "name": "CI_VERSION",
             "summary": "The\u0020current\u0020version\u0020of\u0020CodeIgniter\u0020Framework",
@@ -2080,6 +2100,11 @@ Search.appendIndex(
             "name": "path",
             "summary": "Request\u0020path\u0020to\u0020use.",
             "url": "classes/CodeIgniter-CodeIgniter.html#property_path"
+        },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "Context\n\u0020web\u003A\u0020\u0020\u0020\u0020\u0020Invoked\u0020by\u0020HTTP\u0020request\n\u0020php\u002Dcli\u003A\u0020Invoked\u0020by\u0020CLI\u0020via\u0020\u0060php\u0020public\/index.php\u0060\n\u0020spark\u003A\u0020\u0020\u0020Invoked\u0020by\u0020CLI\u0020via\u0020the\u0020\u0060spark\u0060\u0020command",
+            "url": "classes/CodeIgniter-CodeIgniter.html#property_context"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Cache\\ClearCache",
             "name": "ClearCache",
@@ -20985,6 +21010,11 @@ Search.appendIndex(
             "name": "callExit",
             "summary": "Exits\u0020the\u0020application,\u0020setting\u0020the\u0020exit\u0020code\u0020for\u0020CLI\u002Dbased\u0020applications\nthat\u0020might\u0020be\u0020watching.",
             "url": "classes/CodeIgniter-Test-Mock-MockCodeIgniter.html#method_callExit"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCodeIgniter\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "Context\n\u0020web\u003A\u0020\u0020\u0020\u0020\u0020Invoked\u0020by\u0020HTTP\u0020request\n\u0020php\u002Dcli\u003A\u0020Invoked\u0020by\u0020CLI\u0020via\u0020\u0060php\u0020public\/index.php\u0060\n\u0020spark\u003A\u0020\u0020\u0020Invoked\u0020by\u0020CLI\u0020via\u0020the\u0020\u0060spark\u0060\u0020command",
+            "url": "classes/CodeIgniter-Test-Mock-MockCodeIgniter.html#property_context"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockConnection",
             "name": "MockConnection",
