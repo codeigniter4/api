@@ -4283,8 +4283,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Controller\u003A\u003Avalidate\u0028\u0029",
             "name": "validate",
-            "summary": "A\u0020shortcut\u0020to\u0020performing\u0020validation\u0020on\u0020input\u0020data.\u0020If\u0020validation\nis\u0020not\u0020successful,\u0020a\u0020\u0024errors\u0020property\u0020will\u0020be\u0020set\u0020on\u0020this\u0020class.",
+            "summary": "A\u0020shortcut\u0020to\u0020performing\u0020validation\u0020on\u0020Request\u0020data.",
             "url": "classes/CodeIgniter-Controller.html#method_validate"
+        },                {
+            "fqsen": "\\CodeIgniter\\Controller\u003A\u003AvalidateData\u0028\u0029",
+            "name": "validateData",
+            "summary": "A\u0020shortcut\u0020to\u0020performing\u0020validation\u0020on\u0020any\u0020input\u0020data.",
+            "url": "classes/CodeIgniter-Controller.html#method_validateData"
+        },                {
+            "fqsen": "\\CodeIgniter\\Controller\u003A\u003AsetValidator\u0028\u0029",
+            "name": "setValidator",
+            "summary": "",
+            "url": "classes/CodeIgniter-Controller.html#method_setValidator"
         },                {
             "fqsen": "\\CodeIgniter\\Controller\u003A\u003A\u0024helpers",
             "name": "helpers",
