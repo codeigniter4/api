@@ -13693,7 +13693,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Files\\FileCollection\u003A\u003AgetValueDotNotationSyntax\u0028\u0029",
             "name": "getValueDotNotationSyntax",
-            "summary": "Navigate\u0020through\u0020a\u0020array\u0020looking\u0020for\u0020a\u0020particular\u0020index",
+            "summary": "Navigate\u0020through\u0020an\u0020array\u0020looking\u0020for\u0020a\u0020particular\u0020index",
             "url": "classes/CodeIgniter-HTTP-Files-FileCollection.html#method_getValueDotNotationSyntax"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Files\\FileCollection\u003A\u003A\u0024files",
