@@ -12946,6 +12946,11 @@ Search.appendIndex(
             "summary": "Returns\u0020an\u0020associative\u0020array\u0020of\u0020all\u0020CLI\u0020options\u0020found,\u0020with\ntheir\u0020values.",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getOptions"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetArgs\u0028\u0029",
+            "name": "getArgs",
+            "summary": "Returns\u0020an\u0020array\u0020of\u0020all\u0020CLI\u0020arguments\u0020\u0028segments\u0020and\u0020options\u0029.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getArgs"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetSegments\u0028\u0029",
             "name": "getSegments",
             "summary": "Returns\u0020the\u0020path\u0020segments.",
@@ -12980,6 +12985,11 @@ Search.appendIndex(
             "name": "options",
             "summary": "Command\u0020line\u0020options\u0020and\u0020their\u0020values.",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html#property_options"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003A\u0024args",
+            "name": "args",
+            "summary": "Command\u0020line\u0020arguments\u0020\u0028segments\u0020and\u0020options\u0029.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#property_args"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003A\u0024method",
             "name": "method",
