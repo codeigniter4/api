@@ -15326,6 +15326,11 @@ Search.appendIndex(
             "summary": "Formats\u0020the\u0020URI\u0020as\u0020a\u0020string.",
             "url": "classes/CodeIgniter-HTTP-URI.html#method___toString"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\URI\u003A\u003AchangeSchemeAndPath\u0028\u0029",
+            "name": "changeSchemeAndPath",
+            "summary": "Change\u0020the\u0020path\u0020\u0028and\u0020scheme\u0029\u0020assuming\u0020URIs\u0020with\u0020the\u0020same\u0020host\u0020as\u0020baseURL\nshould\u0020be\u0020relative\u0020to\u0020the\u0020project\u0027s\u0020configuration.",
+            "url": "classes/CodeIgniter-HTTP-URI.html#method_changeSchemeAndPath"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\URI\u003A\u003AsetAuthority\u0028\u0029",
             "name": "setAuthority",
             "summary": "Parses\u0020the\u0020given\u0020string\u0020and\u0020saves\u0020the\u0020appropriate\u0020authority\u0020pieces.",
