@@ -18221,6 +18221,16 @@ Search.appendIndex(
             "summary": "Does\u0020the\u0020heavy\u0020lifting\u0020of\u0020creating\u0020an\u0020actual\u0020route.\u0020You\u0020must\u0020specify\nthe\u0020request\u0020method\u0028s\u0029\u0020that\u0020this\u0020route\u0020will\u0020work\u0020for.\u0020They\u0020can\u0020be\u0020separated\nby\u0020a\u0020pipe\u0020character\u0020\u0022\u007C\u0022\u0020if\u0020there\u0020is\u0020more\u0020than\u0020one.",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_create"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AprocessArrayCallableSyntax\u0028\u0029",
+            "name": "processArrayCallableSyntax",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_processArrayCallableSyntax"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AgetMethodParams\u0028\u0029",
+            "name": "getMethodParams",
+            "summary": "Returns\u0020the\u0020method\u0020param\u0020string\u0020like\u0020\u0060\/\u00241\/\u00242\u0060\u0020for\u0020placeholders",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getMethodParams"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AcheckSubdomains\u0028\u0029",
             "name": "checkSubdomains",
             "summary": "Compares\u0020the\u0020subdomain\u0028s\u0029\u0020passed\u0020in\u0020against\u0020the\u0020current\u0020subdomain\non\u0020this\u0020page\u0020request.",
