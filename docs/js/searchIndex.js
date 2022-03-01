@@ -20831,6 +20831,11 @@ Search.appendIndex(
             "summary": "Class\u0020BaseBuilder",
             "url": "classes/CodeIgniter-Test-Mock-MockBuilder.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockBuilder\u003A\u003A\u0024supportedIgnoreStatements",
+            "name": "supportedIgnoreStatements",
+            "summary": "Specifies\u0020which\u0020sql\u0020statements\nsupport\u0020the\u0020ignore\u0020option.",
+            "url": "classes/CodeIgniter-Test-Mock-MockBuilder.html#property_supportedIgnoreStatements"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCache",
             "name": "MockCache",
             "summary": "Base\u0020class\u0020for\u0020cache\u0020handling",
