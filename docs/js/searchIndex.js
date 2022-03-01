@@ -5011,6 +5011,11 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020SELECT\u0020COUNT\u0028field\u0029\u0020portion\u0020of\u0020a\u0020query",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_selectCount"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AselectSubquery\u0028\u0029",
+            "name": "selectSubquery",
+            "summary": "Adds\u0020a\u0020subquery\u0020to\u0020the\u0020selection",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_selectSubquery"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AmaxMinAvgSum\u0028\u0029",
             "name": "maxMinAvgSum",
             "summary": "SELECT\u0020\u005BMAX\u007CMIN\u007CAVG\u007CSUM\u007CCOUNT\u005D\u0028\u0029",
