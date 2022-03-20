@@ -12803,7 +12803,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\current_url\u0028\u0029",
             "name": "current_url",
-            "summary": "Returns\u0020the\u0020current\u0020full\u0020URL\u0020based\u0020on\u0020the\u0020IncomingRequest.",
+            "summary": "Returns\u0020the\u0020current\u0020full\u0020URL\u0020based\u0020on\u0020the\u0020Config\\App\u0020settings\u0020and\u0020IncomingRequest.",
             "url": "namespaces/default.html#function_current_url"
         },                {
             "fqsen": "\\previous_url\u0028\u0029",
