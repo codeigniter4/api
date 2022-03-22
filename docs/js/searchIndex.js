@@ -17996,6 +17996,11 @@ Search.appendIndex(
             "summary": "Throw\u0020when\u0020route\u0020is\u0020not\u0020valid.",
             "url": "classes/CodeIgniter-Router-Exceptions-RouterException.html#method_forInvalidRoute"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RouterException\u003A\u003AforDynamicController\u0028\u0029",
+            "name": "forDynamicController",
+            "summary": "Throw\u0020when\u0020dynamic\u0020controller.",
+            "url": "classes/CodeIgniter-Router-Exceptions-RouterException.html#method_forDynamicController"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection",
             "name": "RouteCollection",
             "summary": "",
