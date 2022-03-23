@@ -251,12 +251,14 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Session handler using current Database for storage</p>
+            <p class="phpdocumentor-summary">Base database session handler</p>
 
+    <section class="phpdocumentor-description"><p>Do not use this class. Use database specific handler class.</p>
+</section>
 
 
 
@@ -353,7 +355,7 @@
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>The database type, for locking purposes.</dd>
+<dd>The database type</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_rowExists">$rowExists</a>
@@ -373,7 +375,7 @@ varies between</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_sessionID">$sessionID</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 <dd>Current session ID</dd>
 
@@ -434,6 +436,13 @@ varies between</dd>
 <dd>Writes the session data to the session storage.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_decodeData">decodeData()</a>
+    <span>
+                                &nbsp;: false|string    </span>
+</dt>
+<dd>Decodes column data</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_destroyCookie">destroyCookie()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -456,11 +465,20 @@ so that the INI is set just in time for the error message to
 be properly generated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_lockSession">lockSession()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_lockSession">lockSession()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Lock the session.</dd>
+<dd>A dummy method allowing drivers with no locking functionality
+(databases other than PostgreSQL and MySQL) to act as if they
+do acquire a lock.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_prepareData">prepareData()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Prepare data to insert/update</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_releaseLock">releaseLock()</a>
@@ -468,6 +486,13 @@ be properly generated.</dd>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Releases the lock, if any.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_setSelect">setSelect()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Sets SELECT clause</dd>
 
         </dl>
 
@@ -662,7 +687,7 @@ be properly generated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -695,7 +720,7 @@ be properly generated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 
     </aside>
 
@@ -860,11 +885,11 @@ be properly generated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The database type, for locking purposes.</p>
+        <p class="phpdocumentor-summary">The database type</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -893,7 +918,7 @@ be properly generated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -968,7 +993,7 @@ varies between</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$sessionID</span>
     </code>
 
@@ -993,7 +1018,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1030,7 +1055,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -1095,7 +1120,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -1128,7 +1153,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -1173,7 +1198,7 @@ varies between</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">252</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1221,7 +1246,7 @@ for the last max_lifetime seconds will be removed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1275,7 +1300,7 @@ for the last max_lifetime seconds will be removed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -1323,7 +1348,7 @@ If nothing was read, it must return false.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1360,6 +1385,49 @@ If nothing was read, it must return false.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_decodeData">
+        decodeData()
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_decodeData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">161</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Decodes column data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">decodeData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|string</span>
             &mdash;
         
     
@@ -1446,16 +1514,18 @@ be properly generated.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_lockSession">
         lockSession()
-        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_lockSession" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_lockSession" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">264</span>
+    <span class="phpdocumentor-element-found-in__line">133</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Lock the session.</p>
+        <p class="phpdocumentor-summary">A dummy method allowing drivers with no locking functionality
+(databases other than PostgreSQL and MySQL) to act as if they
+do acquire a lock.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1488,6 +1558,50 @@ be properly generated.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_prepareData">
+        prepareData()
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_prepareData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">224</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Prepare data to insert/update</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">prepareData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_releaseLock">
         releaseLock()
         <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_releaseLock" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1495,7 +1609,7 @@ be properly generated.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
@@ -1511,6 +1625,50 @@ be properly generated.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setSelect">
+        setSelect()
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_setSelect" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">149</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets SELECT clause</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">setSelect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$builder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$builder</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     

@@ -228,14 +228,15 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter.html">CodeIgniter</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-session.html">Session</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-session-handlers.html">Handlers</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-session-handlers-database.html">Database</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    MemcachedHandler
+    PostgreHandler
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html"><abbr title="\CodeIgniter\Session\Handlers\BaseHandler">BaseHandler</abbr></a>
+        extends <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html"><abbr title="\CodeIgniter\Session\Handlers\DatabaseHandler">DatabaseHandler</abbr></a>
     </span>
     
             <div class="phpdocumentor-element__package">
@@ -249,13 +250,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Session handler using Memcache for persistence</p>
+            <p class="phpdocumentor-summary">Session handler for Postgre</p>
 
 
 
@@ -307,6 +308,20 @@
 <dd>Cookie secure?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_db">$db</a>
+    <span>
+                        &nbsp;: <a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>            </span>
+</dt>
+<dd>The DB Connection instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_DBGroup">$DBGroup</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>The database group to use for storage.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_fingerprint">$fingerprint</a>
     <span>
                         &nbsp;: string            </span>
@@ -321,25 +336,11 @@
 <dd>User&#039;s IP address.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_keyPrefix">$keyPrefix</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>Key prefix</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_lock">$lock</a>
     <span>
                         &nbsp;: mixed            </span>
 </dt>
 <dd>Lock placeholder.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_lockKey">$lockKey</a>
-    <span>
-                        &nbsp;: string|null            </span>
-</dt>
-<dd>Lock key</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_matchIP">$matchIP</a>
@@ -349,11 +350,18 @@
 <dd>Match IP addresses for cookies?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_memcached">$memcached</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_platform">$platform</a>
     <span>
-                        &nbsp;: <abbr title="\Memcached">Memcached</abbr>|null            </span>
+                        &nbsp;: string            </span>
 </dt>
-<dd>Memcached instance</dd>
+<dd>The database type</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_rowExists">$rowExists</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Row exists flag</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_savePath">$savePath</a>
@@ -364,67 +372,74 @@
 varies between</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_sessionExpiration">$sessionExpiration</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-<dd>Number of seconds until the session ends.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_sessionID">$sessionID</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
 <dd>Current session ID</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_table">$table</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>The name of the table to store session info.</dd>
+
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method___construct">__construct()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_close">close()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_close">close()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Closes the current session.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_destroy">destroy()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_destroy">destroy()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Destroys a session</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_gc">gc()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_gc">gc()</a>
     <span>
                                 &nbsp;: false|int    </span>
 </dt>
 <dd>Cleans up expired sessions.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_open">open()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_open">open()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Re-initialize existing session, or creates a new one.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_read">read()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_read">read()</a>
     <span>
                                 &nbsp;: false|string    </span>
 </dt>
 <dd>Reads the session data from the session storage, and returns the results.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_write">write()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_write">write()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Writes the session data to the session storage.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_decodeData">decodeData()</a>
+    <span>
+                                &nbsp;: false|string    </span>
+</dt>
+<dd>Decodes column data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method_destroyCookie">destroyCookie()</a>
@@ -449,18 +464,32 @@ so that the INI is set just in time for the error message to
 be properly generated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_lockSession">lockSession()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_lockSession">lockSession()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Acquires an emulated lock.</dd>
+<dd>Lock the session.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_releaseLock">releaseLock()</a>
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_prepareData">prepareData()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Prepare data to insert/update</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_releaseLock">releaseLock()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Releases a previously acquired lock</dd>
+<dd>Releases the lock, if any.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_setSelect">setSelect()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Sets SELECT clause</dd>
 
         </dl>
 
@@ -472,7 +501,7 @@ be properly generated.</dd>
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -646,6 +675,72 @@ be properly generated.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_db">
+        $db
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">47</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The DB Connection instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$db</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_DBGroup">
+        $DBGroup
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_DBGroup" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">33</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The database group to use for storage.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$DBGroup</span>
+    </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_fingerprint">
         $fingerprint
         <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_fingerprint" class="headerlink"><i class="fas fa-link"></i></a>
@@ -712,39 +807,6 @@ be properly generated.</dd>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_keyPrefix">
-        $keyPrefix
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_keyPrefix" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Key prefix</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$keyPrefix</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;ci_session:&#039;</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_lock">
         $lock
         <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_lock" class="headerlink"><i class="fas fa-link"></i></a>
@@ -765,39 +827,6 @@ be properly generated.</dd>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$lock</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_lockKey">
-        $lockKey
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_lockKey" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">43</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Lock key</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$lockKey</span>
-    </code>
 
     
     
@@ -844,26 +873,59 @@ be properly generated.</dd>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_memcached">
-        $memcached
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_memcached" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_platform">
+        $platform
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_platform" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Memcached instance</p>
+        <p class="phpdocumentor-summary">The database type</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><abbr title="\Memcached">Memcached</abbr>|null</span>
-    <span class="phpdocumentor-signature__name">$memcached</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$platform</span>
     </code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_rowExists">
+        $rowExists
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_rowExists" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Row exists flag</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$rowExists</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
 
     
     
@@ -911,39 +973,6 @@ varies between</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_sessionExpiration">
-        $sessionExpiration
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_sessionExpiration" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">50</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Number of seconds until the session ends.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$sessionExpiration</span>
-     = <span class="phpdocumentor-signature__default-value">7200</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_sessionID">
         $sessionID
         <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_sessionID" class="headerlink"><i class="fas fa-link"></i></a>
@@ -970,12 +999,45 @@ varies between</p>
     
 
 </article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_table">
+        $table
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_table" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The name of the table to store session info.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$table</span>
+    </code>
+
+    
+    
+    
+
+</article>
             </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -985,12 +1047,12 @@ varies between</p>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-BaseHandler.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/BaseHandler.php"><a href="files/system-session-handlers-basehandler.html"><abbr title="system/Session/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -999,7 +1061,8 @@ varies between</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ipAddress</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-    
+        <section class="phpdocumentor-description"></section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1021,20 +1084,6 @@ varies between</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Session-Exceptions-SessionException.html"><abbr title="\CodeIgniter\Session\Exceptions\SessionException">SessionException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -1050,12 +1099,12 @@ varies between</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_close">
         close()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_close" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_close" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 
     </aside>
 
@@ -1083,12 +1132,12 @@ varies between</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_destroy">
         destroy()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_destroy" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_destroy" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">215</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -1128,12 +1177,12 @@ varies between</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_gc">
         gc()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_gc" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_gc" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -1176,12 +1225,12 @@ for the last max_lifetime seconds will be removed.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_open">
         open()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_open" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_open" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -1230,12 +1279,12 @@ for the last max_lifetime seconds will be removed.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_read">
         read()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_read" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -1278,12 +1327,12 @@ If nothing was read, it must return false.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_write">
         write()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_write" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_write" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/DatabaseHandler.php"><a href="files/system-session-handlers-databasehandler.html"><abbr title="system/Session/Handlers/DatabaseHandler.php">DatabaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1320,6 +1369,49 @@ If nothing was read, it must return false.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_decodeData">
+        decodeData()
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_decodeData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">38</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Decodes column data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">decodeData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|string</span>
             &mdash;
         
     
@@ -1406,16 +1498,16 @@ be properly generated.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_lockSession">
         lockSession()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_lockSession" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_lockSession" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">245</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Acquires an emulated lock.</p>
+        <p class="phpdocumentor-summary">Lock the session.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1429,8 +1521,7 @@ be properly generated.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Session ID</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
@@ -1449,18 +1540,62 @@ be properly generated.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_releaseLock">
-        releaseLock()
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_releaseLock" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_prepareData">
+        prepareData()
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_prepareData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/MemcachedHandler.php"><a href="files/system-session-handlers-memcachedhandler.html"><abbr title="system/Session/Handlers/MemcachedHandler.php">MemcachedHandler.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Releases a previously acquired lock</p>
+        <p class="phpdocumentor-summary">Prepare data to insert/update</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">prepareData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$data</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_releaseLock">
+        releaseLock()
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_releaseLock" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">86</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Releases the lock, if any.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1472,6 +1607,50 @@ be properly generated.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setSelect">
+        setSelect()
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_setSelect" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Handlers/Database/PostgreHandler.php"><a href="files/system-session-handlers-database-postgrehandler.html"><abbr title="system/Session/Handlers/Database/PostgreHandler.php">PostgreHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">26</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets SELECT clause</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">setSelect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$builder</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$builder</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -1554,7 +1733,7 @@ be properly generated.</p>
 </section>
             </div>
         </div>
-        <a href="classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

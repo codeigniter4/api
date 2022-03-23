@@ -5728,7 +5728,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetPlatform\u0028\u0029",
             "name": "getPlatform",
-            "summary": "The\u0020name\u0020of\u0020the\u0020platform\u0020in\u0020use\u0020\u0028MySQLi,\u0020mssql,\u0020etc\u0029",
+            "summary": "The\u0020name\u0020of\u0020the\u0020platform\u0020in\u0020use\u0020\u0028MySQLi,\u0020Postgre,\u0020SQLite3,\u0020OCI8,\u0020etc\u0029",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getPlatform"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetVersion\u0028\u0029",
@@ -19101,9 +19101,59 @@ Search.appendIndex(
             "summary": "User\u0027s\u0020IP\u0020address.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_ipAddress"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\MySQLiHandler",
+            "name": "MySQLiHandler",
+            "summary": "Session\u0020handler\u0020for\u0020MySQLi",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-MySQLiHandler.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\MySQLiHandler\u003A\u003AlockSession\u0028\u0029",
+            "name": "lockSession",
+            "summary": "Lock\u0020the\u0020session.",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-MySQLiHandler.html#method_lockSession"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\MySQLiHandler\u003A\u003AreleaseLock\u0028\u0029",
+            "name": "releaseLock",
+            "summary": "Releases\u0020the\u0020lock,\u0020if\u0020any.",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-MySQLiHandler.html#method_releaseLock"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler",
+            "name": "PostgreHandler",
+            "summary": "Session\u0020handler\u0020for\u0020Postgre",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003AsetSelect\u0028\u0029",
+            "name": "setSelect",
+            "summary": "Sets\u0020SELECT\u0020clause",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_setSelect"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003AdecodeData\u0028\u0029",
+            "name": "decodeData",
+            "summary": "Decodes\u0020column\u0020data",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_decodeData"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003AprepareData\u0028\u0029",
+            "name": "prepareData",
+            "summary": "Prepare\u0020data\u0020to\u0020insert\/update",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_prepareData"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003Agc\u0028\u0029",
+            "name": "gc",
+            "summary": "Cleans\u0020up\u0020expired\u0020sessions.",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_gc"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003AlockSession\u0028\u0029",
+            "name": "lockSession",
+            "summary": "Lock\u0020the\u0020session.",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_lockSession"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database\\PostgreHandler\u003A\u003AreleaseLock\u0028\u0029",
+            "name": "releaseLock",
+            "summary": "Releases\u0020the\u0020lock,\u0020if\u0020any.",
+            "url": "classes/CodeIgniter-Session-Handlers-Database-PostgreHandler.html#method_releaseLock"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler",
             "name": "DatabaseHandler",
-            "summary": "Session\u0020handler\u0020using\u0020current\u0020Database\u0020for\u0020storage",
+            "summary": "Base\u0020database\u0020session\u0020handler",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A__construct\u0028\u0029",
@@ -19121,10 +19171,25 @@ Search.appendIndex(
             "summary": "Reads\u0020the\u0020session\u0020data\u0020from\u0020the\u0020session\u0020storage,\u0020and\u0020returns\u0020the\u0020results.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_read"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AsetSelect\u0028\u0029",
+            "name": "setSelect",
+            "summary": "Sets\u0020SELECT\u0020clause",
+            "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_setSelect"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AdecodeData\u0028\u0029",
+            "name": "decodeData",
+            "summary": "Decodes\u0020column\u0020data",
+            "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_decodeData"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Awrite\u0028\u0029",
             "name": "write",
             "summary": "Writes\u0020the\u0020session\u0020data\u0020to\u0020the\u0020session\u0020storage.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_write"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AprepareData\u0028\u0029",
+            "name": "prepareData",
+            "summary": "Prepare\u0020data\u0020to\u0020insert\/update",
+            "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_prepareData"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Aclose\u0028\u0029",
             "name": "close",
@@ -19140,11 +19205,6 @@ Search.appendIndex(
             "name": "gc",
             "summary": "Cleans\u0020up\u0020expired\u0020sessions.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_gc"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AlockSession\u0028\u0029",
-            "name": "lockSession",
-            "summary": "Lock\u0020the\u0020session.",
-            "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_lockSession"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AreleaseLock\u0028\u0029",
             "name": "releaseLock",
@@ -19168,7 +19228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024platform",
             "name": "platform",
-            "summary": "The\u0020database\u0020type,\u0020for\u0020locking\u0020purposes.",
+            "summary": "The\u0020database\u0020type",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_platform"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024rowExists",
@@ -23545,6 +23605,11 @@ Search.appendIndex(
             "name": "Handlers",
             "summary": "",
             "url": "namespaces/codeigniter-session-handlers.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\Database",
+            "name": "Database",
+            "summary": "",
+            "url": "namespaces/codeigniter-session-handlers-database.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session",
             "name": "Session",
