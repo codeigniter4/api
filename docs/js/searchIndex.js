@@ -22791,6 +22791,11 @@ Search.appendIndex(
             "summary": "Over\u002Dride\u0020the\u0020substitution\u0020field\u0020delimiters.",
             "url": "classes/CodeIgniter-View-Parser.html#method_setDelimiters"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AsetConditionalDelimiters\u0028\u0029",
+            "name": "setConditionalDelimiters",
+            "summary": "Over\u002Dride\u0020the\u0020substitution\u0020conditional\u0020delimiters.",
+            "url": "classes/CodeIgniter-View-Parser.html#method_setConditionalDelimiters"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AreplaceSingle\u0028\u0029",
             "name": "replaceSingle",
             "summary": "Handles\u0020replacing\u0020a\u0020pseudo\u002Dvariable\u0020with\u0020the\u0020actual\u0020content.\u0020Will\u0020double\u002Dcheck\nfor\u0020escaping\u0020brackets.",
@@ -22840,6 +22845,16 @@ Search.appendIndex(
             "name": "rightDelimiter",
             "summary": "Right\u0020delimiter\u0020character\u0020for\u0020pseudo\u0020vars",
             "url": "classes/CodeIgniter-View-Parser.html#property_rightDelimiter"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024leftConditionalDelimiter",
+            "name": "leftConditionalDelimiter",
+            "summary": "Left\u0020delimiter\u0020characters\u0020for\u0020conditionals",
+            "url": "classes/CodeIgniter-View-Parser.html#property_leftConditionalDelimiter"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024rightConditionalDelimiter",
+            "name": "rightConditionalDelimiter",
+            "summary": "Right\u0020delimiter\u0020characters\u0020for\u0020conditionals",
+            "url": "classes/CodeIgniter-View-Parser.html#property_rightConditionalDelimiter"
         },                {
             "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024noparseBlocks",
             "name": "noparseBlocks",
