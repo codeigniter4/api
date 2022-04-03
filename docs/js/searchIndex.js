@@ -111,6 +111,11 @@ Search.appendIndex(
             "summary": "Reads\u0020in\u0020the\u0020configuration\u0020array\u0020\u0028described\u0020above\u0029\u0020and\u0020stores\nthe\u0020valid\u0020parts\u0020that\u0020we\u0027ll\u0020need.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_initialize"
         },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AloadComposerInfo\u0028\u0029",
+            "name": "loadComposerInfo",
+            "summary": "",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_loadComposerInfo"
+        },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003Aregister\u0028\u0029",
             "name": "register",
             "summary": "Register\u0020the\u0020loader\u0020with\u0020the\u0020SPL\u0020autoloader\u0020stack.",
@@ -155,6 +160,16 @@ Search.appendIndex(
             "name": "sanitizeFilename",
             "summary": "Sanitizes\u0020a\u0020filename,\u0020replacing\u0020spaces\u0020with\u0020dashes.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_sanitizeFilename"
+        },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AloadComposerNamespaces\u0028\u0029",
+            "name": "loadComposerNamespaces",
+            "summary": "",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_loadComposerNamespaces"
+        },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AloadComposerClassmap\u0028\u0029",
+            "name": "loadComposerClassmap",
+            "summary": "",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_loadComposerClassmap"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AdiscoverComposerNamespaces\u0028\u0029",
             "name": "discoverComposerNamespaces",
