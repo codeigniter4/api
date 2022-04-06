@@ -14426,6 +14426,11 @@ Search.appendIndex(
             "summary": "Specifies\u0020that\u0020the\u0020current\u0020\u0024_GET\u0020and\u0020\u0024_POST\u0020arrays\u0020should\u0020be\npackaged\u0020up\u0020with\u0020the\u0020response.",
             "url": "classes/CodeIgniter-HTTP-RedirectResponse.html#method_withInput"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\RedirectResponse\u003A\u003AwithErrors\u0028\u0029",
+            "name": "withErrors",
+            "summary": "Set\u0020validation\u0020errors\u0020in\u0020the\u0020session.",
+            "url": "classes/CodeIgniter-HTTP-RedirectResponse.html#method_withErrors"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RedirectResponse\u003A\u003Awith\u0028\u0029",
             "name": "with",
             "summary": "Adds\u0020a\u0020key\u0020and\u0020message\u0020to\u0020the\u0020session\u0020as\u0020Flashdata.",
