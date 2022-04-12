@@ -18021,6 +18021,11 @@ Search.appendIndex(
             "summary": "Throw\u0020when\u0020dynamic\u0020controller.",
             "url": "classes/CodeIgniter-Router-Exceptions-RouterException.html#method_forDynamicController"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RouterException\u003A\u003AforInvalidControllerName\u0028\u0029",
+            "name": "forInvalidControllerName",
+            "summary": "Throw\u0020when\u0020controller\u0020name\u0020has\u0020\u0060\/\u0060.",
+            "url": "classes/CodeIgniter-Router-Exceptions-RouterException.html#method_forInvalidControllerName"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection",
             "name": "RouteCollection",
             "summary": "",
