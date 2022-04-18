@@ -1521,6 +1521,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020given\u0020text\u0020with\u0020the\u0020correct\u0020color\u0020codes\u0020for\u0020a\u0020foreground\u0020and\noptionally\u0020a\u0020background\u0020color.",
             "url": "classes/CodeIgniter-CLI-CLI.html#method_color"
         },                {
+            "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003AgetColoredText\u0028\u0029",
+            "name": "getColoredText",
+            "summary": "",
+            "url": "classes/CodeIgniter-CLI-CLI.html#method_getColoredText"
+        },                {
             "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003Astrlen\u0028\u0029",
             "name": "strlen",
             "summary": "Get\u0020the\u0020number\u0020of\u0020characters\u0020in\u0020string\u0020having\u0020encoded\u0020characters\nand\u0020ignores\u0020styles\u0020set\u0020by\u0020the\u0020color\u0028\u0029\u0020function",
