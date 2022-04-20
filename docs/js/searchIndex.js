@@ -17986,6 +17986,86 @@ Search.appendIndex(
             "summary": "Process\u0020the\u0020deletion\u0020of\u0020a\u0020specific\u0020resource\u0020object",
             "url": "classes/CodeIgniter-RESTful-ResourcePresenter.html#method_delete"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter",
+            "name": "AutoRouter",
+            "summary": "Router\u0020for\u0020Auto\u002DRouting",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AgetRoute\u0028\u0029",
+            "name": "getRoute",
+            "summary": "Attempts\u0020to\u0020match\u0020a\u0020URI\u0020path\u0020against\u0020Controllers\u0020and\u0020directories\nfound\u0020in\u0020APPPATH\/Controllers,\u0020to\u0020find\u0020a\u0020matching\u0020route.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_getRoute"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AsetTranslateURIDashes\u0028\u0029",
+            "name": "setTranslateURIDashes",
+            "summary": "Tells\u0020the\u0020system\u0020whether\u0020we\u0020should\u0020translate\u0020URI\u0020dashes\u0020or\u0020not\nin\u0020the\u0020URI\u0020from\u0020a\u0020dash\u0020to\u0020an\u0020underscore.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_setTranslateURIDashes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AscanControllers\u0028\u0029",
+            "name": "scanControllers",
+            "summary": "Scans\u0020the\u0020controller\u0020directory,\u0020attempting\u0020to\u0020locate\u0020a\u0020controller\u0020matching\u0020the\u0020supplied\u0020uri\u0020\u0024segments",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_scanControllers"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AisValidSegment\u0028\u0029",
+            "name": "isValidSegment",
+            "summary": "Returns\u0020true\u0020if\u0020the\u0020supplied\u0020\u0024segment\u0020string\u0020represents\u0020a\u0020valid\u0020PSR\u002D4\u0020compliant\u0020namespace\/directory\u0020segment",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_isValidSegment"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AsetDirectory\u0028\u0029",
+            "name": "setDirectory",
+            "summary": "Sets\u0020the\u0020sub\u002Ddirectory\u0020that\u0020the\u0020controller\u0020is\u0020in.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_setDirectory"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024directory",
+            "name": "directory",
+            "summary": "Sub\u002Ddirectory\u0020that\u0020contains\u0020the\u0020requested\u0020controller\u0020class.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_directory"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AcontrollerName\u0028\u0029",
+            "name": "controllerName",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_controllerName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AmethodName\u0028\u0029",
+            "name": "methodName",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#method_methodName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024protectedControllers",
+            "name": "protectedControllers",
+            "summary": "List\u0020of\u0020controllers\u0020registered\u0020for\u0020the\u0020CLI\u0020verb\u0020that\u0020should\u0020not\u0020be\u0020accessed\u0020in\u0020the\u0020web.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_protectedControllers"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024controller",
+            "name": "controller",
+            "summary": "The\u0020name\u0020of\u0020the\u0020controller\u0020class.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_controller"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024method",
+            "name": "method",
+            "summary": "The\u0020name\u0020of\u0020the\u0020method\u0020to\u0020use.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_method"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024translateURIDashes",
+            "name": "translateURIDashes",
+            "summary": "Whether\u0020dashes\u0020in\u0020URI\u0027s\u0020should\u0020be\u0020converted\nto\u0020underscores\u0020when\u0020determining\u0020method\u0020names.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_translateURIDashes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024httpVerb",
+            "name": "httpVerb",
+            "summary": "HTTP\u0020verb\u0020for\u0020the\u0020request.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_httpVerb"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024defaultNamespace",
+            "name": "defaultNamespace",
+            "summary": "Default\u0020namespace\u0020for\u0020controllers.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_defaultNamespace"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RedirectException",
             "name": "RedirectException",
             "summary": "RedirectException",
@@ -18296,6 +18376,11 @@ Search.appendIndex(
             "summary": "Enable\u0020or\u0020Disable\u0020sorting\u0020routes\u0020by\u0020priority",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_setPrioritize"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AgetRegisteredControllers\u0028\u0029",
+            "name": "getRegisteredControllers",
+            "summary": "Get\u0020all\u0020controllers\u0020in\u0020Route\u0020Handlers",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getRegisteredControllers"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024defaultNamespace",
             "name": "defaultNamespace",
             "summary": "The\u0020namespace\u0020to\u0020be\u0020added\u0020to\u0020any\u0020Controllers.",
@@ -18498,7 +18583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "Scans\u0020the\u0020URI\u0020and\u0020attempts\u0020to\u0020match\u0020the\u0020current\u0020URI\u0020to\u0020the\none\u0020of\u0020the\u0020defined\u0020routes\u0020in\u0020the\u0020RouteCollection.",
+            "summary": "Finds\u0020the\u0020controller\u0020method\u0020corresponding\u0020to\u0020the\u0020URI.",
             "url": "classes/CodeIgniter-Router-Router.html#method_handle"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AgetFilter\u0028\u0029",
@@ -18568,12 +18653,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AcheckRoutes\u0028\u0029",
             "name": "checkRoutes",
-            "summary": "Compares\u0020the\u0020uri\u0020string\u0020against\u0020the\u0020routes\u0020that\u0020the\nRouteCollection\u0020class\u0020defined\u0020for\u0020us,\u0020attempting\u0020to\u0020find\u0020a\u0020match.",
+            "summary": "Checks\u0020Defined\u0020Routs.",
             "url": "classes/CodeIgniter-Router-Router.html#method_checkRoutes"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AautoRoute\u0028\u0029",
             "name": "autoRoute",
-            "summary": "Attempts\u0020to\u0020match\u0020a\u0020URI\u0020path\u0020against\u0020Controllers\u0020and\u0020directories\nfound\u0020in\u0020APPPATH\/Controllers,\u0020to\u0020find\u0020a\u0020matching\u0020route.",
+            "summary": "Checks\u0020Auto\u0020Routs.",
             "url": "classes/CodeIgniter-Router-Router.html#method_autoRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AvalidateRequest\u0028\u0029",
@@ -18656,6 +18741,11 @@ Search.appendIndex(
             "summary": "The\u0020filter\u0020info\u0020from\u0020Route\u0020Collection\nif\u0020the\u0020matched\u0020route\u0020should\u0020be\u0020filtered.",
             "url": "classes/CodeIgniter-Router-Router.html#property_filtersInfo"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024autoRouter",
+            "name": "autoRouter",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Router.html#property_autoRouter"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface",
             "name": "RouterInterface",
             "summary": "Expected\u0020behavior\u0020of\u0020a\u0020Router.",
@@ -18668,7 +18758,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "Scans\u0020the\u0020URI\u0020and\u0020attempts\u0020to\u0020match\u0020the\u0020current\u0020URI\u0020to\u0020the\none\u0020of\u0020the\u0020defined\u0020routes\u0020in\u0020the\u0020RouteCollection.",
+            "summary": "Finds\u0020the\u0020controller\u0020method\u0020corresponding\u0020to\u0020the\u0020URI.",
             "url": "classes/CodeIgniter-Router-RouterInterface.html#method_handle"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface\u003A\u003AcontrollerName\u0028\u0029",
@@ -18678,7 +18768,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface\u003A\u003AmethodName\u0028\u0029",
             "name": "methodName",
-            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020method\u0020to\u0020run\u0020in\u0020the\nchosen\u0020container.",
+            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020method\u0020in\u0020the\u0020controller\u0020to\u0020run.",
             "url": "classes/CodeIgniter-Router-RouterInterface.html#method_methodName"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface\u003A\u003Aparams\u0028\u0029",
@@ -18688,7 +18778,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface\u003A\u003AsetIndexPage\u0028\u0029",
             "name": "setIndexPage",
-            "summary": "Sets\u0020the\u0020value\u0020that\u0020should\u0020be\u0020used\u0020to\u0020match\u0020the\u0020index.php\u0020file.\u0020Defaults\nto\u0020index.php\u0020but\u0020this\u0020allows\u0020you\u0020to\u0020modify\u0020it\u0020in\u0020case\u0020your\u0020are\u0020using\nsomething\u0020like\u0020mod_rewrite\u0020to\u0020remove\u0020the\u0020page.\u0020This\u0020allows\u0020you\u0020to\u0020set\nit\u0020a\u0020blank.",
+            "summary": "Sets\u0020the\u0020value\u0020that\u0020should\u0020be\u0020used\u0020to\u0020match\u0020the\u0020index.php\u0020file.\u0020Defaults\nto\u0020index.php\u0020but\u0020this\u0020allows\u0020you\u0020to\u0020modify\u0020it\u0020in\u0020case\u0020you\u0020are\u0020using\nsomething\u0020like\u0020mod_rewrite\u0020to\u0020remove\u0020the\u0020page.\u0020This\u0020allows\u0020you\u0020to\u0020set\nit\u0020a\u0020blank.",
             "url": "classes/CodeIgniter-Router-RouterInterface.html#method_setIndexPage"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException",
@@ -23621,15 +23711,15 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/codeigniter-restful.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\Exceptions",
-            "name": "Exceptions",
-            "summary": "",
-            "url": "namespaces/codeigniter-router-exceptions.html"
-        },                {
             "fqsen": "\\CodeIgniter\\Router",
             "name": "Router",
             "summary": "",
             "url": "namespaces/codeigniter-router.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Exceptions",
+            "name": "Exceptions",
+            "summary": "",
+            "url": "namespaces/codeigniter-router-exceptions.html"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions",
             "name": "Exceptions",
