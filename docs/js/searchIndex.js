@@ -7193,7 +7193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A\u0024namespace",
             "name": "namespace",
-            "summary": "The\u0020Namespace\u0020\u0020where\u0020migrations\u0020can\u0020be\u0020found.",
+            "summary": "The\u0020Namespace\u0020where\u0020migrations\u0020can\u0020be\u0020found.",
             "url": "classes/CodeIgniter-Database-MigrationRunner.html#property_namespace"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A\u0024group",
