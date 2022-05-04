@@ -8626,6 +8626,36 @@ Search.appendIndex(
             "summary": "Swaps\u0020out\u0020one\u0020table\u0020prefix\u0020for\u0020a\u0020new\u0020one.",
             "url": "classes/CodeIgniter-Database-QueryInterface.html#method_swapPrefix"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql",
+            "name": "RawSql",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-RawSql.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-RawSql.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql\u003A\u003A__toString\u0028\u0029",
+            "name": "__toString",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-RawSql.html#method___toString"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql\u003A\u003Awith\u0028\u0029",
+            "name": "with",
+            "summary": "Create\u0020new\u0020instance\u0020with\u0020new\u0020SQL\u0020string",
+            "url": "classes/CodeIgniter-Database-RawSql.html#method_with"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql\u003A\u003AgetBindingKey\u0028\u0029",
+            "name": "getBindingKey",
+            "summary": "Returns\u0020unique\u0020id\u0020for\u0020binding\u0020key",
+            "url": "classes/CodeIgniter-Database-RawSql.html#method_getBindingKey"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\RawSql\u003A\u003A\u0024string",
+            "name": "string",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-RawSql.html#property_string"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\ResultInterface",
             "name": "ResultInterface",
             "summary": "Interface\u0020ResultInterface",
