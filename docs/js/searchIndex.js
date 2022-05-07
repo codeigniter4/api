@@ -3351,6 +3351,91 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouteCollector.html#property_defaultMethod"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector",
+            "name": "AutoRouteCollector",
+            "summary": "Collects\u0020data\u0020for\u0020Auto\u0020Routing\u0020Improved.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003AaddFilters\u0028\u0029",
+            "name": "addFilters",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#method_addFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003AgenerateSampleUri\u0028\u0029",
+            "name": "generateSampleUri",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#method_generateSampleUri"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A\u0024namespace",
+            "name": "namespace",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#property_namespace"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A\u0024defaultController",
+            "name": "defaultController",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#property_defaultController"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A\u0024defaultMethod",
+            "name": "defaultMethod",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#property_defaultMethod"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A\u0024httpMethods",
+            "name": "httpMethods",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#property_httpMethods"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003A\u0024protectedControllers",
+            "name": "protectedControllers",
+            "summary": "List\u0020of\u0020controllers\u0020in\u0020Defined\u0020Routes\u0020that\u0020should\u0020not\u0020be\u0020accessed\u0020via\u0020Auto\u002DRouting.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#property_protectedControllers"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader",
+            "name": "ControllerMethodReader",
+            "summary": "Reads\u0020a\u0020controller\u0020and\u0020returns\u0020a\u0020list\u0020of\u0020auto\u0020route\u0020listing.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003Aread\u0028\u0029",
+            "name": "read",
+            "summary": "Returns\u0020found\u0020route\u0020info\u0020in\u0020the\u0020controller.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_read"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetUriByClass\u0028\u0029",
+            "name": "getUriByClass",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByClass"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetRouteWithoutController\u0028\u0029",
+            "name": "getRouteWithoutController",
+            "summary": "Gets\u0020a\u0020route\u0020without\u0020default\u0020controller.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getRouteWithoutController"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003A\u0024namespace",
+            "name": "namespace",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_namespace"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003A\u0024httpMethods",
+            "name": "httpMethods",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_httpMethods"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\ControllerFinder",
             "name": "ControllerFinder",
             "summary": "Finds\u0020all\u0020controllers\u0020in\u0020a\u0020namespace\u0020for\u0020auto\u0020route\u0020listing.",
@@ -3416,6 +3501,11 @@ Search.appendIndex(
             "summary": "Collects\u0020filters\u0020for\u0020a\u0020route.",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method___construct"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "",
@@ -3430,6 +3520,11 @@ Search.appendIndex(
             "name": "createFilters",
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003A\u0024resetRoutes",
+            "name": "resetRoutes",
+            "summary": "Whether\u0020to\u0020reset\u0020Defined\u0020Routes.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#property_resetRoutes"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder",
             "name": "FilterFinder",
@@ -23610,6 +23705,11 @@ Search.appendIndex(
             "name": "Routes",
             "summary": "",
             "url": "namespaces/codeigniter-commands-utilities-routes.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved",
+            "name": "AutoRouterImproved",
+            "summary": "",
+            "url": "namespaces/codeigniter-commands-utilities-routes-autorouterimproved.html"
         },                {
             "fqsen": "\\CodeIgniter\\Config",
             "name": "Config",

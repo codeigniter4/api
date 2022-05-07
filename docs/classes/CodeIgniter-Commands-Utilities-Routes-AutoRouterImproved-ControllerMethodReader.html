@@ -229,11 +229,12 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-commands.html">Commands</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-commands-utilities.html">Utilities</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-commands-utilities-routes.html">Routes</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-commands-utilities-routes-autorouterimproved.html">AutoRouterImproved</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    FilterCollector
+    ControllerMethodReader
 
     
             <div class="phpdocumentor-element__package">
@@ -247,13 +248,13 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Collects filters for a route.</p>
+            <p class="phpdocumentor-summary">Reads a controller and returns a list of auto route listing.</p>
 
 
 
@@ -270,37 +271,44 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#property_resetRoutes">$resetRoutes</a>
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_httpMethods">$httpMethods</a>
     <span>
-                        &nbsp;: bool            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd>Whether to reset Defined Routes.</dd>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_namespace">$namespace</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method___construct">__construct()</a>
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_get">get()</a>
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_read">read()</a>
+    <span>
+                                &nbsp;: array&lt;int, array&lt;string, array|string&gt;&gt;    </span>
+</dt>
+<dd>Returns found route info in the controller.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getRouteWithoutController">getRouteWithoutController()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd></dd>
+<dd>Gets a route without default controller.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createFilters">createFilters()</a>
+    <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByClass">getUriByClass()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Filters-Filters.html"><abbr title="\CodeIgniter\Filters\Filters">Filters</abbr></a>    </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createRouter">createRouter()</a>
-    <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Router-Router.html"><abbr title="\CodeIgniter\Router\Router">Router</abbr></a>    </span>
+                                &nbsp;: string    </span>
 </dt>
 <dd></dd>
 
@@ -314,7 +322,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -323,31 +331,63 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_resetRoutes">
-        $resetRoutes
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#property_resetRoutes" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_httpMethods">
+        $httpMethods
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_httpMethods" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Whether to reset Defined Routes.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$resetRoutes</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$httpMethods</span>
     </code>
 
-        <section class="phpdocumentor-description"><p>If set to true, route filters are not found.</p>
-</section>
+        <section class="phpdocumentor-description"></section>
 
         <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_namespace">
+        $namespace
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_namespace" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">25</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$namespace</span>
+    </code>
+
+    
+        <section class="phpdocumentor-description"><p>the default namespace</p>
+</section>
 
     
 
@@ -357,7 +397,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -367,28 +407,36 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resetRoutes</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$namespace</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$httpMethods</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$resetRoutes</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+                <span class="phpdocumentor-signature__argument__name">$namespace</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the default namespace</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$httpMethods</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
@@ -409,41 +457,156 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_get">
-        get()
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_read">
+        read()
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_read" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
-    
+        <p class="phpdocumentor-summary">Returns found route info in the controller.</p>
+
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">read</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultController</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;Home&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultMethod</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;index&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string, array|string&gt;&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$method</span>
+                <span class="phpdocumentor-signature__argument__name">$class</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>HTTP method</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                <span class="phpdocumentor-signature__argument__name">$defaultController</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;Home&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$defaultMethod</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;index&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string $class</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list&lt;array&lt;string, string|array&gt;&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string, array|string&gt;&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRouteWithoutController">
+        getRouteWithoutController()
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getRouteWithoutController" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">156</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Gets a route without default controller.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getRouteWithoutController</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$classShortname</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultController</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uriByClass</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$classname</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$methodName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$httpVerb</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$classShortname</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>URI path to find filters for</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$defaultController</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uriByClass</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$classname</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$methodName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$httpVerb</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>
@@ -462,29 +625,28 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_createFilters">
-        createFilters()
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createFilters" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getUriByClass">
+        getUriByClass()
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByClass" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php"><a href="files/system-commands-utilities-routes-autorouterimproved-controllermethodreader.html"><abbr title="system/Commands/Utilities/Routes/AutoRouterImproved/ControllerMethodReader.php">ControllerMethodReader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">createFilters</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-Request.html"><abbr title="\CodeIgniter\HTTP\Request">Request</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Filters-Filters.html"><abbr title="\CodeIgniter\Filters\Filters">Filters</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">getUriByClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$classname</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-Request.html"><abbr title="\CodeIgniter\HTTP\Request">Request</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$classname</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -493,55 +655,28 @@
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string $classname</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Filters-Filters.html"><abbr title="\CodeIgniter\Filters\Filters">Filters</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_createRouter">
-        createRouter()
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_createRouter" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Utilities/Routes/FilterCollector.php"><a href="files/system-commands-utilities-routes-filtercollector.html"><abbr title="system/Commands/Utilities/Routes/FilterCollector.php">FilterCollector.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+            <section class="phpdocumentor-description"><p>URI path part from the folder(s) and controller</p>
+</section>
 
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">createRouter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-Request.html"><abbr title="\CodeIgniter\HTTP\Request">Request</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-Router.html"><abbr title="\CodeIgniter\Router\Router">Router</abbr></a></span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-Request.html"><abbr title="\CodeIgniter\HTTP\Request">Request</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-Router.html"><abbr title="\CodeIgniter\Router\Router">Router</abbr></a></span>
-            &mdash;
-        
     
 </article>
             </section>
@@ -622,7 +757,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
