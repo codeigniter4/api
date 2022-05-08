@@ -18711,6 +18711,11 @@ Search.appendIndex(
             "summary": "Route\u0020priority\u0020detection\u0020flag.",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#property_prioritizeDetected"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024httpHost",
+            "name": "httpHost",
+            "summary": "The\u0020current\u0020hostname\u0020from\u0020\u0024_SERVER\u005B\u0027HTTP_HOST\u0027\u005D",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#property_httpHost"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface",
             "name": "RouteCollectionInterface",
             "summary": "Interface\u0020RouteCollectionInterface",
