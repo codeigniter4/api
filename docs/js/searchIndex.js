@@ -11701,21 +11701,6 @@ Search.appendIndex(
             "summary": "Entity\u0020encapsulation,\u0020for\u0020use\u0020with\u0020CodeIgniter\\Model",
             "url": "classes/CodeIgniter-Entity.html"
         },                {
-            "fqsen": "\\EVENT_PRIORITY_LOW",
-            "name": "EVENT_PRIORITY_LOW",
-            "summary": "",
-            "url": "namespaces/default.html#constant_EVENT_PRIORITY_LOW"
-        },                {
-            "fqsen": "\\EVENT_PRIORITY_NORMAL",
-            "name": "EVENT_PRIORITY_NORMAL",
-            "summary": "",
-            "url": "namespaces/default.html#constant_EVENT_PRIORITY_NORMAL"
-        },                {
-            "fqsen": "\\EVENT_PRIORITY_HIGH",
-            "name": "EVENT_PRIORITY_HIGH",
-            "summary": "",
-            "url": "namespaces/default.html#constant_EVENT_PRIORITY_HIGH"
-        },                {
             "fqsen": "\\CodeIgniter\\Events\\Events",
             "name": "Events",
             "summary": "Events",
@@ -11770,6 +11755,21 @@ Search.appendIndex(
             "name": "getPerformanceLogs",
             "summary": "Getter\u0020for\u0020the\u0020performance\u0020log\u0020records.",
             "url": "classes/CodeIgniter-Events-Events.html#method_getPerformanceLogs"
+        },                {
+            "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003APRIORITY_LOW",
+            "name": "PRIORITY_LOW",
+            "summary": "",
+            "url": "classes/CodeIgniter-Events-Events.html#constant_PRIORITY_LOW"
+        },                {
+            "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003APRIORITY_NORMAL",
+            "name": "PRIORITY_NORMAL",
+            "summary": "",
+            "url": "classes/CodeIgniter-Events-Events.html#constant_PRIORITY_NORMAL"
+        },                {
+            "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003APRIORITY_HIGH",
+            "name": "PRIORITY_HIGH",
+            "summary": "",
+            "url": "classes/CodeIgniter-Events-Events.html#constant_PRIORITY_HIGH"
         },                {
             "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003A\u0024initialized",
             "name": "initialized",
