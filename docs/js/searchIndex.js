@@ -19031,6 +19031,11 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020default\u0020controller\u0020based\u0020on\u0020the\u0020info\u0020set\u0020in\u0020the\u0020RouteCollection.",
             "url": "classes/CodeIgniter-Router-Router.html#method_setDefaultController"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AsetMatchedRoute\u0028\u0029",
+            "name": "setMatchedRoute",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Router.html#method_setMatchedRoute"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024collection",
             "name": "collection",
             "summary": "A\u0020RouteCollection\u0020instance.",
