@@ -5371,6 +5371,21 @@ Search.appendIndex(
             "summary": "Platform\u0020independent\u0020LIKE\u0020statement\u0020builder.",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method__like_statement"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003Aunion\u0028\u0029",
+            "name": "union",
+            "summary": "Add\u0020UNION\u0020statement",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_union"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AunionAll\u0028\u0029",
+            "name": "unionAll",
+            "summary": "Add\u0020UNION\u0020ALL\u0020statement",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_unionAll"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AaddUnionStatement\u0028\u0029",
+            "name": "addUnionStatement",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_addUnionStatement"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AgroupStart\u0028\u0029",
             "name": "groupStart",
             "summary": "Starts\u0020a\u0020query\u0020group.",
@@ -5671,6 +5686,11 @@ Search.appendIndex(
             "summary": "Escapes\u0020identifiers\u0020in\u0020ORDER\u0020BY\u0020statements\u0020at\u0020execution\u0020time.",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_compileOrderBy"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AunionInjection\u0028\u0029",
+            "name": "unionInjection",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_unionInjection"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AobjectToArray\u0028\u0029",
             "name": "objectToArray",
             "summary": "Takes\u0020an\u0020object\u0020as\u0020input\u0020and\u0020converts\u0020the\u0020class\u0020variables\u0020to\u0020array\u0020key\/vals",
@@ -5795,6 +5815,11 @@ Search.appendIndex(
             "name": "QBOrderBy",
             "summary": "QB\u0020ORDER\u0020BY\u0020data",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_QBOrderBy"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024QBUnion",
+            "name": "QBUnion",
+            "summary": "QB\u0020UNION\u0020data",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_QBUnion"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024QBNoEscape",
             "name": "QBNoEscape",
