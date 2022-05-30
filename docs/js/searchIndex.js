@@ -9081,6 +9081,11 @@ Search.appendIndex(
             "summary": "Connection\u0020for\u0020SQLite3",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "Initializes\u0020the\u0020database\u0020connection\/settings.",
+            "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method_initialize"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003Aconnect\u0028\u0029",
             "name": "connect",
             "summary": "Connect\u0020to\u0020the\u0020database.",
@@ -9200,6 +9205,11 @@ Search.appendIndex(
             "name": "escapeChar",
             "summary": "Identifier\u0020escape\u0020character",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#property_escapeChar"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A\u0024foreignKeys",
+            "name": "foreignKeys",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#property_foreignKeys"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge",
             "name": "Forge",
