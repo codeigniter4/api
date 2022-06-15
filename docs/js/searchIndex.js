@@ -20831,6 +20831,16 @@ Search.appendIndex(
             "summary": "Asserts\u0020that\u0020the\u0020number\u0020of\u0020rows\u0020in\u0020the\u0020database\u0020that\u0020match\u0020\u0024where\nis\u0020equal\u0020to\u0020\u0024expected.",
             "url": "classes/CodeIgniter-Test-DatabaseTestTrait.html#method_seeNumRecords"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\DatabaseTestTrait\u003A\u003AdisableDBDebug\u0028\u0029",
+            "name": "disableDBDebug",
+            "summary": "Sets\u0020\u0024DBDebug\u0020to\u0020false.",
+            "url": "classes/CodeIgniter-Test-DatabaseTestTrait.html#method_disableDBDebug"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\DatabaseTestTrait\u003A\u003AenableDBDebug\u0028\u0029",
+            "name": "enableDBDebug",
+            "summary": "Sets\u0020\u0024DBDebug\u0020to\u0020true.",
+            "url": "classes/CodeIgniter-Test-DatabaseTestTrait.html#method_enableDBDebug"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\DatabaseTestTrait\u003A\u003A\u0024doneMigration",
             "name": "doneMigration",
             "summary": "Is\u0020db\u0020migration\u0020done\u0020once\u0020or\u0020more\u0020than\u0020once\u003F",
