@@ -14493,7 +14493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageInterface\u003A\u003ApopulateHeaders\u0028\u0029",
             "name": "populateHeaders",
-            "summary": "Populates\u0020the\u0020\u0024headers\u0020array\u0020with\u0020any\u0020headers\u0020the\u0020getServer\u0020knows\u0020about.",
+            "summary": "Populates\u0020the\u0020\u0024headers\u0020array\u0020with\u0020any\u0020headers\u0020the\u0020server\u0020knows\u0020about.",
             "url": "classes/CodeIgniter-HTTP-MessageInterface.html#method_populateHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageInterface\u003A\u003Aheaders\u0028\u0029",
@@ -14548,7 +14548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageTrait\u003A\u003ApopulateHeaders\u0028\u0029",
             "name": "populateHeaders",
-            "summary": "Populates\u0020the\u0020\u0024headers\u0020array\u0020with\u0020any\u0020headers\u0020the\u0020getServer\u0020knows\u0020about.",
+            "summary": "Populates\u0020the\u0020\u0024headers\u0020array\u0020with\u0020any\u0020headers\u0020the\u0020server\u0020knows\u0020about.",
             "url": "classes/CodeIgniter-HTTP-MessageTrait.html#method_populateHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageTrait\u003A\u003A\u0024headers",
@@ -14833,7 +14833,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Response",
             "name": "Response",
-            "summary": "Representation\u0020of\u0020an\u0020outgoing,\u0020getServer\u002Dside\u0020response.",
+            "summary": "Representation\u0020of\u0020an\u0020outgoing,\u0020server\u002Dside\u0020response.",
             "url": "classes/CodeIgniter-HTTP-Response.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Response\u003A\u003A__construct\u0028\u0029",
@@ -14878,7 +14878,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseInterface",
             "name": "ResponseInterface",
-            "summary": "Representation\u0020of\u0020an\u0020outgoing,\u0020getServer\u002Dside\u0020response.",
+            "summary": "Representation\u0020of\u0020an\u0020outgoing,\u0020server\u002Dside\u0020response.",
             "url": "classes/CodeIgniter-HTTP-ResponseInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseInterface\u003A\u003AgetStatusCode\u0028\u0029",
