@@ -19996,6 +19996,11 @@ Search.appendIndex(
             "summary": "Regenerates\u0020the\u0020session\u0020ID.",
             "url": "classes/CodeIgniter-Session-Session.html#method_regenerate"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AremoveOldSessionCookie\u0028\u0029",
+            "name": "removeOldSessionCookie",
+            "summary": "",
+            "url": "classes/CodeIgniter-Session-Session.html#method_removeOldSessionCookie"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
             "summary": "Destroys\u0020the\u0020current\u0020session.",
