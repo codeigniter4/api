@@ -6188,7 +6188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024pretend",
             "name": "pretend",
-            "summary": "If\u0020true,\u0020no\u0020queries\u0020will\u0020actually\u0020be\nran\u0020against\u0020the\u0020database.",
+            "summary": "If\u0020true,\u0020no\u0020queries\u0020will\u0020actually\u0020be\nrun\u0020against\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#property_pretend"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AresetDataCache\u0028\u0029",
