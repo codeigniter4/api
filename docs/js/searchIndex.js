@@ -16103,7 +16103,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\Time\u003A\u003AgetAge\u0028\u0029",
             "name": "getAge",
-            "summary": "Returns\u0020the\u0020age\u0020in\u0020years\u0020from\u0020the\u0020\u0022current\u0022\u0020date\u0020and\u0020\u0027now\u0027",
+            "summary": "Returns\u0020the\u0020age\u0020in\u0020years\u0020from\u0020the\u0020date\u0020and\u0020\u0027now\u0027",
             "url": "classes/CodeIgniter-I18n-Time.html#method_getAge"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\Time\u003A\u003AgetQuarter\u0028\u0029",
