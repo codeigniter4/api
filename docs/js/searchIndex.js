@@ -5568,7 +5568,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003Areplace\u0028\u0029",
             "name": "replace",
-            "summary": "Compiles\u0020an\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query",
+            "summary": "Compiles\u0020a\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_replace"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A_replace\u0028\u0029",
