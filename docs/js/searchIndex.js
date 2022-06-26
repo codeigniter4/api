@@ -1943,7 +1943,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AgetRequestObject\u0028\u0029",
             "name": "getRequestObject",
-            "summary": "Get\u0020our\u0020Request\u0020object,\u0020\u0028either\u0020IncomingRequest\u0020or\u0020CLIRequest\u0029\nand\u0020set\u0020the\u0020server\u0020protocol\u0020based\u0020on\u0020the\u0020information\u0020provided\nby\u0020the\u0020server.",
+            "summary": "Get\u0020our\u0020Request\u0020object,\u0020\u0028either\u0020IncomingRequest\u0020or\u0020CLIRequest\u0029.",
             "url": "classes/CodeIgniter-CodeIgniter.html#method_getRequestObject"
         },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AgetResponseObject\u0028\u0029",
@@ -4286,11 +4286,6 @@ Search.appendIndex(
             "summary": "The\u0020cache\u0020class\u0020provides\u0020a\u0020simple\u0020way\u0020to\u0020store\u0020and\u0020retrieve\ncomplex\u0020data\u0020for\u0020later.",
             "url": "classes/CodeIgniter-Config-Services.html#method_cache"
         },                {
-            "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Aclirequest\u0028\u0029",
-            "name": "clirequest",
-            "summary": "The\u0020CLI\u0020Request\u0020class\u0020provides\u0020for\u0020ways\u0020to\u0020interact\u0020with\na\u0020command\u0020line\u0020request.",
-            "url": "classes/CodeIgniter-Config-Services.html#method_clirequest"
-        },                {
             "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Acodeigniter\u0028\u0029",
             "name": "codeigniter",
             "summary": "CodeIgniter,\u0020the\u0020core\u0020of\u0020the\u0020framework.",
@@ -4388,7 +4383,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Arequest\u0028\u0029",
             "name": "request",
-            "summary": "The\u0020Request\u0020class\u0020models\u0020an\u0020HTTP\u0020request.",
+            "summary": "Returns\u0020the\u0020current\u0020Request\u0020object.",
             "url": "classes/CodeIgniter-Config-Services.html#method_request"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Services\u003A\u003Aresponse\u0028\u0029",
@@ -10043,7 +10038,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A\u0024request",
             "name": "request",
-            "summary": "The\u0020incoming\u0020request.",
+            "summary": "The\u0020request.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#property_request"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A\u0024response",
