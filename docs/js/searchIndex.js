@@ -8451,6 +8451,26 @@ Search.appendIndex(
             "summary": "Identifier\u0020escape\u0020character",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#property_escapeChar"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A\u0024connect_timeout",
+            "name": "connect_timeout",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#property_connect_timeout"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#property_options"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A\u0024sslmode",
+            "name": "sslmode",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#property_sslmode"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A\u0024service",
+            "name": "service",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#property_service"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Forge",
             "name": "Forge",
             "summary": "Forge\u0020for\u0020Postgre",
@@ -21735,6 +21755,11 @@ Search.appendIndex(
             "name": "returnValues",
             "summary": "",
             "url": "classes/CodeIgniter-Test-Mock-MockConnection.html#property_returnValues"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockConnection\u003A\u003A\u0024schema",
+            "name": "schema",
+            "summary": "Database\u0020schema\u0020for\u0020Postgre\u0020and\u0020SQLSRV",
+            "url": "classes/CodeIgniter-Test-Mock-MockConnection.html#property_schema"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockConnection\u003A\u003A\u0024database",
             "name": "database",
