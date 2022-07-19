@@ -15388,7 +15388,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AformatBody\u0028\u0029",
             "name": "formatBody",
-            "summary": "Handles\u0020conversion\u0020of\u0020the\u0020of\u0020the\u0020data\u0020into\u0020the\u0020appropriate\u0020format,\nand\u0020sets\u0020the\u0020correct\u0020Content\u002DType\u0020header\u0020for\u0020our\u0020response.",
+            "summary": "Handles\u0020conversion\u0020of\u0020the\u0020data\u0020into\u0020the\u0020appropriate\u0020format,\nand\u0020sets\u0020the\u0020correct\u0020Content\u002DType\u0020header\u0020for\u0020our\u0020response.",
             "url": "classes/CodeIgniter-HTTP-ResponseTrait.html#method_formatBody"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseTrait\u003A\u003AnoCache\u0028\u0029",
