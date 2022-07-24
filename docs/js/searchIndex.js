@@ -11858,7 +11858,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\CastException\u003A\u003A\u0024code",
             "name": "code",
-            "summary": "Error\u0020code",
+            "summary": "Exit\u0020status\u0020code",
             "url": "classes/CodeIgniter-Exceptions-CastException.html#property_code"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\ConfigException",
@@ -11873,7 +11873,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\ConfigException\u003A\u003A\u0024code",
             "name": "code",
-            "summary": "Error\u0020code",
+            "summary": "Exit\u0020status\u0020code",
             "url": "classes/CodeIgniter-Exceptions-ConfigException.html#property_code"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\CriticalError",
@@ -12018,7 +12018,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException\u003A\u003A\u0024code",
             "name": "code",
-            "summary": "Error\u0020code",
+            "summary": "HTTP\u0020status\u0020code",
             "url": "classes/CodeIgniter-Exceptions-PageNotFoundException.html#property_code"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\TestException",
@@ -18463,7 +18463,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RedirectException\u003A\u003A\u0024code",
             "name": "code",
-            "summary": "Status\u0020code\u0020for\u0020redirects",
+            "summary": "HTTP\u0020status\u0020code\u0020for\u0020redirects",
             "url": "classes/CodeIgniter-Router-Exceptions-RedirectException.html#property_code"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RouterException",
