@@ -19238,7 +19238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetCSRFHash\u0028\u0029",
             "name": "getCSRFHash",
-            "summary": "Returns\u0020the\u0020CSRF\u0020Hash.",
+            "summary": "Returns\u0020the\u0020CSRF\u0020Token.",
             "url": "classes/CodeIgniter-Security-Security.html#method_getCSRFHash"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetCSRFTokenName\u0028\u0029",
@@ -19251,6 +19251,11 @@ Search.appendIndex(
             "summary": "CSRF\u0020Verify",
             "url": "classes/CodeIgniter-Security-Security.html#method_verify"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AremoveTokenInRequest\u0028\u0029",
+            "name": "removeTokenInRequest",
+            "summary": "Remove\u0020token\u0020in\u0020POST\u0020or\u0020JSON\u0020request\u0020data",
+            "url": "classes/CodeIgniter-Security-Security.html#method_removeTokenInRequest"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetPostedToken\u0028\u0029",
             "name": "getPostedToken",
             "summary": "",
@@ -19258,7 +19263,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetHash\u0028\u0029",
             "name": "getHash",
-            "summary": "Returns\u0020the\u0020CSRF\u0020Hash.",
+            "summary": "Returns\u0020the\u0020CSRF\u0020Token.",
             "url": "classes/CodeIgniter-Security-Security.html#method_getHash"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003Arandomize\u0028\u0029",
@@ -19301,9 +19306,14 @@ Search.appendIndex(
             "summary": "Sanitize\u0020Filename",
             "url": "classes/CodeIgniter-Security-Security.html#method_sanitizeFilename"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003ArestoreHash\u0028\u0029",
+            "name": "restoreHash",
+            "summary": "Restore\u0020hash\u0020from\u0020Session\u0020or\u0020Cookie",
+            "url": "classes/CodeIgniter-Security-Security.html#method_restoreHash"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgenerateHash\u0028\u0029",
             "name": "generateHash",
-            "summary": "Generates\u0020the\u0020CSRF\u0020Hash.",
+            "summary": "Generates\u0020\u0028Regenerate\u0029\u0020the\u0020CSRF\u0020Hash.",
             "url": "classes/CodeIgniter-Security-Security.html#method_generateHash"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AisHashInCookie\u0028\u0029",
@@ -19358,7 +19368,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024hash",
             "name": "hash",
-            "summary": "CSRF\u0020Hash",
+            "summary": "CSRF\u0020Hash\u0020\u0028without\u0020randomization\u0029",
             "url": "classes/CodeIgniter-Security-Security.html#property_hash"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024tokenName",
@@ -19378,7 +19388,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024cookieName",
             "name": "cookieName",
-            "summary": "CSRF\u0020Cookie\u0020Name",
+            "summary": "CSRF\u0020Cookie\u0020Name\u0020\u0028with\u0020Prefix\u0029",
             "url": "classes/CodeIgniter-Security-Security.html#property_cookieName"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024expires",
@@ -19415,6 +19425,11 @@ Search.appendIndex(
             "name": "session",
             "summary": "Session\u0020instance.",
             "url": "classes/CodeIgniter-Security-Security.html#property_session"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003A\u0024hashInCookie",
+            "name": "hashInCookie",
+            "summary": "CSRF\u0020Hash\u0020in\u0020Request\u0020Cookie",
+            "url": "classes/CodeIgniter-Security-Security.html#property_hashInCookie"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\SecurityInterface",
             "name": "SecurityInterface",

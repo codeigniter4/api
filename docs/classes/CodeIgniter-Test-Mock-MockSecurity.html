@@ -307,7 +307,7 @@ Cross-Site Request Forgery attacks.</p>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>CSRF Cookie Name</dd>
+<dd>CSRF Cookie Name (with Prefix)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Security-Security.html#property_csrfProtection">$csrfProtection</a>
@@ -328,7 +328,7 @@ Cross-Site Request Forgery attacks.</p>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd>CSRF Hash</dd>
+<dd>CSRF Hash (without randomization)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Security-Security.html#property_headerName">$headerName</a>
@@ -371,6 +371,13 @@ Cross-Site Request Forgery attacks.</p>
                         &nbsp;: bool            </span>
 </dt>
 <dd>CSRF Token Randomization</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Security-Security.html#property_hashInCookie">$hashInCookie</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+<dd>CSRF Hash in Request Cookie</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/CodeIgniter-Security-Security.html#property_rawCookieName">$rawCookieName</a>
@@ -419,7 +426,7 @@ Cross-Site Request Forgery attacks.</p>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd>Returns the CSRF Hash.</dd>
+<dd>Returns the CSRF Token.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Security-Security.html#method_getCSRFTokenName">getCSRFTokenName()</a>
@@ -433,7 +440,7 @@ Cross-Site Request Forgery attacks.</p>
     <span>
                                 &nbsp;: string|null    </span>
 </dt>
-<dd>Returns the CSRF Hash.</dd>
+<dd>Returns the CSRF Token.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Security-Security.html#method_getHeaderName">getHeaderName()</a>
@@ -496,7 +503,7 @@ Cross-Site Request Forgery attacks.</p>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Generates the CSRF Hash.</dd>
+<dd>Generates (Regenerate) the CSRF Hash.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Test-Mock-MockSecurity.html#method_randomize">randomize()</a>
@@ -546,6 +553,20 @@ Cross-Site Request Forgery attacks.</p>
                                 &nbsp;: bool    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Security-Security.html#method_removeTokenInRequest">removeTokenInRequest()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Remove token in POST or JSON request data</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Security-Security.html#method_restoreHash">restoreHash()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Restore hash from Session or Cookie</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Security-Security.html#method_saveHashInCookie">saveHashInCookie()</a>
@@ -719,7 +740,7 @@ Cross-Site Request Forgery attacks.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">CSRF Cookie Name</p>
+        <p class="phpdocumentor-summary">CSRF Cookie Name (with Prefix)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -827,7 +848,7 @@ Cross-Site Request Forgery attacks.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">CSRF Hash</p>
+        <p class="phpdocumentor-summary">CSRF Hash (without randomization)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1082,6 +1103,43 @@ Cross-Site Request Forgery attacks.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_hashInCookie">
+        $hashInCookie
+        <a href="classes/CodeIgniter-Security-Security.html#property_hashInCookie" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">163</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">CSRF Hash in Request Cookie</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$hashInCookie</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"><p>The cookie value is always CSRF hash (without randomization) even if
+$tokenRandomize is true.</p>
+</section>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_rawCookieName">
         $rawCookieName
         <a href="classes/CodeIgniter-Security-Security.html#property_rawCookieName" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1197,7 +1255,7 @@ Cross-Site Request Forgery attacks.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -1244,7 +1302,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 
     </aside>
 
@@ -1318,7 +1376,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">424</span>
 
     </aside>
 
@@ -1351,11 +1409,11 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the CSRF Hash.</p>
+        <p class="phpdocumentor-summary">Returns the CSRF Token.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1406,7 +1464,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1461,11 +1519,11 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">359</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Returns the CSRF Hash.</p>
+        <p class="phpdocumentor-summary">Returns the CSRF Token.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1494,7 +1552,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">396</span>
+    <span class="phpdocumentor-element-found-in__line">416</span>
 
     </aside>
 
@@ -1527,7 +1585,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 
     </aside>
 
@@ -1560,7 +1618,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">416</span>
+    <span class="phpdocumentor-element-found-in__line">436</span>
 
     </aside>
 
@@ -1613,7 +1671,7 @@ initial state.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">463</span>
 
     </aside>
 
@@ -1674,7 +1732,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 
     </aside>
 
@@ -1707,7 +1765,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
@@ -1765,7 +1823,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">392</span>
 
     </aside>
 
@@ -1795,6 +1853,15 @@ parameter, $relative_path to TRUE.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">params</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>string $token CSRF token</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -1809,7 +1876,9 @@ parameter, $relative_path to TRUE.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>CSRF hash</p>
+</section>
+
     
 </article>
                     <article
@@ -1860,11 +1929,11 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">498</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Generates the CSRF Hash.</p>
+        <p class="phpdocumentor-summary">Generates (Regenerate) the CSRF Hash.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1921,7 +1990,9 @@ parameter, $relative_path to TRUE.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>CSRF token</p>
+</section>
+
     
 </article>
                     <article
@@ -1937,7 +2008,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">556</span>
+    <span class="phpdocumentor-element-found-in__line">581</span>
 
     </aside>
 
@@ -1996,7 +2067,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -2040,7 +2111,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -2073,7 +2144,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">337</span>
 
     </aside>
 
@@ -2117,7 +2188,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 
     </aside>
 
@@ -2150,7 +2221,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">527</span>
+    <span class="phpdocumentor-element-found-in__line">547</span>
 
     </aside>
 
@@ -2176,6 +2247,83 @@ parameter, $relative_path to TRUE.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_removeTokenInRequest">
+        removeTokenInRequest()
+        <a href="classes/CodeIgniter-Security-Security.html#method_removeTokenInRequest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">322</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Remove token in POST or JSON request data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">removeTokenInRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-RequestInterface.html"><abbr title="\CodeIgniter\HTTP\RequestInterface">RequestInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-RequestInterface.html"><abbr title="\CodeIgniter\HTTP\RequestInterface">RequestInterface</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_restoreHash">
+        restoreHash()
+        <a href="classes/CodeIgniter-Security-Security.html#method_restoreHash" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">518</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Restore hash from Session or Cookie</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">restoreHash</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_saveHashInCookie">
         saveHashInCookie()
         <a href="classes/CodeIgniter-Security-Security.html#method_saveHashInCookie" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2183,7 +2331,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">534</span>
+    <span class="phpdocumentor-element-found-in__line">559</span>
 
     </aside>
 
@@ -2216,7 +2364,7 @@ parameter, $relative_path to TRUE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Security/Security.php"><a href="files/system-security-security.html"><abbr title="system/Security/Security.php">Security.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">581</span>
+    <span class="phpdocumentor-element-found-in__line">606</span>
 
     </aside>
 
