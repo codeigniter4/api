@@ -2056,11 +2056,6 @@ Search.appendIndex(
             "summary": "The\u0020current\u0020version\u0020of\u0020CodeIgniter\u0020Framework",
             "url": "classes/CodeIgniter-CodeIgniter.html#constant_CI_VERSION"
         },                {
-            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AMIN_PHP_VERSION",
-            "name": "MIN_PHP_VERSION",
-            "summary": "",
-            "url": "classes/CodeIgniter-CodeIgniter.html#constant_MIN_PHP_VERSION"
-        },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003A\u0024startTime",
             "name": "startTime",
             "summary": "App\u0020startup\u0020time.",
