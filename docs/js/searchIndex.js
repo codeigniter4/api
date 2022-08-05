@@ -288,7 +288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoInsert\u0028\u0029",
             "name": "doInsert",
-            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020database\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020database\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls",
             "url": "classes/CodeIgniter-BaseModel.html#method_doInsert"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoInsertBatch\u0028\u0029",
