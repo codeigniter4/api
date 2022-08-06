@@ -19308,7 +19308,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgenerateHash\u0028\u0029",
             "name": "generateHash",
-            "summary": "Generates\u0020\u0028Regenerate\u0029\u0020the\u0020CSRF\u0020Hash.",
+            "summary": "Generates\u0020\u0028Regenerates\u0029\u0020the\u0020CSRF\u0020Hash.",
             "url": "classes/CodeIgniter-Security-Security.html#method_generateHash"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AisHashInCookie\u0028\u0029",
