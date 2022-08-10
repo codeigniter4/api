@@ -10976,6 +10976,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Email-Email.html#method_printDebugger"
         },                {
+            "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003AprintDebuggerRaw\u0028\u0029",
+            "name": "printDebuggerRaw",
+            "summary": "Returns\u0020raw\u0020debug\u0020messages",
+            "url": "classes/CodeIgniter-Email-Email.html#method_printDebuggerRaw"
+        },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003AsetErrorMessage\u0028\u0029",
             "name": "setErrorMessage",
             "summary": "",
@@ -11175,6 +11180,11 @@ Search.appendIndex(
             "name": "debugMessage",
             "summary": "Debug\u0020messages",
             "url": "classes/CodeIgniter-Email-Email.html#property_debugMessage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024debugMessageRaw",
+            "name": "debugMessageRaw",
+            "summary": "Raw\u0020debug\u0020messages",
+            "url": "classes/CodeIgniter-Email-Email.html#property_debugMessageRaw"
         },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024recipients",
             "name": "recipients",
