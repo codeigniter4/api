@@ -13286,6 +13286,31 @@ Search.appendIndex(
             "summary": "Determines\u0020if\u0020this\u0020request\u0020was\u0020made\u0020from\u0020the\u0020command\u0020line\u0020\u0028CLI\u0029.",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_isCLI"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetGet\u0028\u0029",
+            "name": "getGet",
+            "summary": "Fetch\u0020an\u0020item\u0020from\u0020GET\u0020data.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getGet"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetPost\u0028\u0029",
+            "name": "getPost",
+            "summary": "Fetch\u0020an\u0020item\u0020from\u0020POST.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getPost"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetPostGet\u0028\u0029",
+            "name": "getPostGet",
+            "summary": "Fetch\u0020an\u0020item\u0020from\u0020POST\u0020data\u0020with\u0020fallback\u0020to\u0020GET.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getPostGet"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetGetPost\u0028\u0029",
+            "name": "getGetPost",
+            "summary": "Fetch\u0020an\u0020item\u0020from\u0020GET\u0020data\u0020with\u0020fallback\u0020to\u0020POST.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getGetPost"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AreturnNullOrEmptyArray\u0028\u0029",
+            "name": "returnNullOrEmptyArray",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_returnNullOrEmptyArray"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003A\u0024segments",
             "name": "segments",
             "summary": "Stores\u0020the\u0020segments\u0020of\u0020our\u0020cli\u0020\u0022URI\u0022\u0020command.",
