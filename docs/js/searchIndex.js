@@ -17171,11 +17171,6 @@ Search.appendIndex(
             "summary": "Checks\u0020whether\u0020the\u0020Handler\u0020will\u0020handle\u0020logging\u0020items\u0020of\u0020this\nlog\u0020Level.",
             "url": "classes/CodeIgniter-Log-Handlers-BaseHandler.html#method_canHandle"
         },                {
-            "fqsen": "\\CodeIgniter\\Log\\Handlers\\BaseHandler\u003A\u003Ahandle\u0028\u0029",
-            "name": "handle",
-            "summary": "Handles\u0020logging\u0020the\u0020message.",
-            "url": "classes/CodeIgniter-Log-Handlers-BaseHandler.html#method_handle"
-        },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\BaseHandler\u003A\u003AsetDateFormat\u0028\u0029",
             "name": "setDateFormat",
             "summary": "Stores\u0020the\u0020date\u0020format\u0020to\u0020use\u0020while\u0020logging\u0020messages.",
