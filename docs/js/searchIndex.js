@@ -13311,6 +13311,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_returnNullOrEmptyArray"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetLocale\u0028\u0029",
+            "name": "getLocale",
+            "summary": "Gets\u0020the\u0020current\u0020locale,\u0020with\u0020a\u0020fallback\u0020to\u0020the\u0020default\nlocale\u0020if\u0020none\u0020is\u0020set.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getLocale"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003A\u0024segments",
             "name": "segments",
             "summary": "Stores\u0020the\u0020segments\u0020of\u0020our\u0020cli\u0020\u0022URI\u0022\u0020command.",
