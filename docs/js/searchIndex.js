@@ -22971,6 +22971,11 @@ Search.appendIndex(
             "summary": "Runs\u0020all\u0020of\u0020\u0024rules\u0020against\u0020\u0024field,\u0020until\u0020one\u0020fails,\u0020or\nall\u0020of\u0020them\u0020have\u0020been\u0020processed.\u0020If\u0020one\u0020fails,\u0020it\u0020adds\nthe\u0020error\u0020to\u0020\u0024this\u002D\u003Eerrors\u0020and\u0020moves\u0020on\u0020to\u0020the\u0020next,\nso\u0020that\u0020we\u0020can\u0020collect\u0020all\u0020of\u0020the\u0020first\u0020errors.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_processRules"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AisStringList\u0028\u0029",
+            "name": "isStringList",
+            "summary": "Is\u0020the\u0020array\u0020a\u0020string\u0020list\u0020\u0060list\u003Cstring\u003E\u0060\u003F",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_isStringList"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AwithRequest\u0028\u0029",
             "name": "withRequest",
             "summary": "Takes\u0020a\u0020Request\u0020object\u0020and\u0020grabs\u0020the\u0020input\u0020data\u0020to\u0020use\u0020from\u0020its\narray\u0020values.",
