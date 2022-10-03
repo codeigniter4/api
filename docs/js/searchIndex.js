@@ -518,7 +518,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024cleanValidationRules",
             "name": "cleanValidationRules",
-            "summary": "Whether\u0020rules\u0020should\u0020be\u0020removed\u0020that\u0020do\u0020not\u0020exist\nin\u0020the\u0020passed\u0020in\u0020data.\u0020Used\u0020between\u0020inserts\/updates.",
+            "summary": "Whether\u0020rules\u0020should\u0020be\u0020removed\u0020that\u0020do\u0020not\u0020exist\nin\u0020the\u0020passed\u0020data.\u0020Used\u0020in\u0020updates.",
             "url": "classes/CodeIgniter-BaseModel.html#property_cleanValidationRules"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024allowCallbacks",
