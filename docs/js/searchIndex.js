@@ -19956,6 +19956,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003AsetSavePath\u0028\u0029",
+            "name": "setSavePath",
+            "summary": "",
+            "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#method_setSavePath"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003Aopen\u0028\u0029",
             "name": "open",
             "summary": "Re\u002Dinitialize\u0020existing\u0020session,\u0020or\u0020creates\u0020a\u0020new\u0020one.",
@@ -19995,6 +20000,11 @@ Search.appendIndex(
             "name": "releaseLock",
             "summary": "Releases\u0020a\u0020previously\u0020acquired\u0020lock",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#method_releaseLock"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003ADEFAULT_PORT",
+            "name": "DEFAULT_PORT",
+            "summary": "",
+            "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#constant_DEFAULT_PORT"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024redis",
             "name": "redis",
