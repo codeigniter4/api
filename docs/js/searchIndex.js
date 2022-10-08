@@ -20266,11 +20266,6 @@ Search.appendIndex(
             "summary": "sid\u0020regex\u0020expression",
             "url": "classes/CodeIgniter-Session-Session.html#property_sidRegexp"
         },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024logger",
-            "name": "logger",
-            "summary": "Logger\u0020instance\u0020to\u0020record\u0020error\u0020messages\u0020and\u0020warnings.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_logger"
-        },                {
             "fqsen": "\\CodeIgniter\\Session\\SessionInterface",
             "name": "SessionInterface",
             "summary": "Expected\u0020behavior\u0020of\u0020a\u0020session\u0020container\u0020used\u0020with\u0020CodeIgniter.",
