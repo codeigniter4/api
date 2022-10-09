@@ -13306,6 +13306,11 @@ Search.appendIndex(
             "summary": "Fetch\u0020an\u0020item\u0020from\u0020GET\u0020data\u0020with\u0020fallback\u0020to\u0020POST.",
             "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getGetPost"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AgetCookie\u0028\u0029",
+            "name": "getCookie",
+            "summary": "This\u0020is\u0020a\u0020place\u0020holder\u0020for\u0020calls\u0020from\u0020cookie_helper\u0020get_cookie\u0028\u0029.",
+            "url": "classes/CodeIgniter-HTTP-CLIRequest.html#method_getCookie"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CLIRequest\u003A\u003AreturnNullOrEmptyArray\u0028\u0029",
             "name": "returnNullOrEmptyArray",
             "summary": "",
