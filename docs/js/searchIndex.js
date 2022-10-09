@@ -12303,7 +12303,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AsetResponse\u0028\u0029",
             "name": "setResponse",
-            "summary": "Set\u0020the\u0020response\u0020explicity.",
+            "summary": "Set\u0020the\u0020response\u0020explicitly.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_setResponse"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003Arun\u0028\u0029",
