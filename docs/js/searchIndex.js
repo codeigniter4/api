@@ -5906,11 +5906,6 @@ Search.appendIndex(
             "summary": "Initializes\u0020the\u0020database\u0020connection\/settings.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_initialize"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Aconnect\u0028\u0029",
-            "name": "connect",
-            "summary": "Connect\u0020to\u0020the\u0020database.",
-            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_connect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Aclose\u0028\u0029",
             "name": "close",
             "summary": "Close\u0020the\u0020database\u0020connection.",
@@ -5926,20 +5921,10 @@ Search.appendIndex(
             "summary": "Create\u0020a\u0020persistent\u0020database\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_persistentConnect"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_reconnect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetConnection\u0028\u0029",
             "name": "getConnection",
             "summary": "Returns\u0020the\u0020actual\u0020connection\u0020object.\u0020If\u0020both\u0020a\u0020\u0027read\u0027\u0020and\u0020\u0027write\u0027\nconnection\u0020has\u0020been\u0020specified,\u0020you\u0020can\u0020pass\u0020either\u0020term\u0020in\u0020to\nget\u0020that\u0020connection.\u0020If\u0020you\u0020pass\u0020either\u0020alias\u0020in\u0020and\u0020only\u0020a\u0020single\nconnection\u0020is\u0020present,\u0020it\u0020must\u0020return\u0020the\u0020sole\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getConnection"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AsetDatabase\u0028\u0029",
-            "name": "setDatabase",
-            "summary": "Select\u0020a\u0020specific\u0020database\u0020table\u0020to\u0020use.",
-            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_setDatabase"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetDatabase\u0028\u0029",
             "name": "getDatabase",
@@ -5960,11 +5945,6 @@ Search.appendIndex(
             "name": "getPlatform",
             "summary": "The\u0020name\u0020of\u0020the\u0020platform\u0020in\u0020use\u0020\u0028MySQLi,\u0020Postgre,\u0020SQLite3,\u0020OCI8,\u0020etc\u0029",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getPlatform"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetVersion\u0028\u0029",
-            "name": "getVersion",
-            "summary": "Returns\u0020a\u0020string\u0020containing\u0020the\u0020version\u0020of\u0020the\u0020database\u0020being\u0020used.",
-            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getVersion"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AsetAliasedTables\u0028\u0029",
             "name": "setAliasedTables",
