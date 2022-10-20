@@ -6231,6 +6231,16 @@ Search.appendIndex(
             "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method__foreignKeyData"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
+            "name": "_disableForeignKeyChecks",
+            "summary": "Platform\u002Dspecific\u0020SQL\u0020statement\u0020to\u0020disable\u0020foreign\u0020key\u0020checks.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method__disableForeignKeyChecks"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_enableForeignKeyChecks\u0028\u0029",
+            "name": "_enableForeignKeyChecks",
+            "summary": "Platform\u002Dspecific\u0020SQL\u0020statement\u0020to\u0020enable\u0020foreign\u0020key\u0020checks.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method__enableForeignKeyChecks"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A__get\u0028\u0029",
             "name": "__get",
             "summary": "Accessor\u0020for\u0020properties\u0020if\u0020they\u0020exist.",
