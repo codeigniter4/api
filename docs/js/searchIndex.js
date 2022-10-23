@@ -9968,7 +9968,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AerrorHandler\u0028\u0029",
             "name": "errorHandler",
-            "summary": "Even\u0020in\u0020PHP7,\u0020some\u0020errors\u0020make\u0020it\u0020through\u0020to\u0020the\u0020errorHandler,\u0020so\nconvert\u0020these\u0020to\u0020Exceptions\u0020and\u0020let\u0020the\u0020exception\u0020handler\u0020log\u0020it\u0020and\ndisplay\u0020it.",
+            "summary": "The\u0020callback\u0020to\u0020be\u0020registered\u0020to\u0020\u0060set_error_handler\u0028\u0029\u0060.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_errorHandler"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AshutdownHandler\u0028\u0029",
