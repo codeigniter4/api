@@ -9858,12 +9858,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.\u0020Upon\u0020success,\u0020will\u0020return\u0020a\u0020Results\u0020object.",
+            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
+            "summary": "Returns\u0020the\u0020statement\u0020resource\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020when\u0020preparing\u0020failed.",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003Aparameterize\u0028\u0029",
@@ -9875,11 +9875,6 @@ Search.appendIndex(
             "name": "parameters",
             "summary": "Parameters\u0020array\u0020used\u0020to\u0020store\u0020the\u0020dynamic\u0020variables.",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_parameters"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A\u0024result",
-            "name": "result",
-            "summary": "The\u0020result\u0020boolean\u0020from\u0020a\u0020sqlsrv_execute.",
-            "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_result"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Result",
             "name": "Result",
