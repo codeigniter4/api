@@ -2121,6 +2121,11 @@ Search.appendIndex(
             "summary": "Context\n\u0020web\u003A\u0020\u0020\u0020\u0020\u0020Invoked\u0020by\u0020HTTP\u0020request\n\u0020php\u002Dcli\u003A\u0020Invoked\u0020by\u0020CLI\u0020via\u0020\u0060php\u0020public\/index.php\u0060\n\u0020spark\u003A\u0020\u0020\u0020Invoked\u0020by\u0020CLI\u0020via\u0020the\u0020\u0060spark\u0060\u0020command",
             "url": "classes/CodeIgniter-CodeIgniter.html#property_context"
         },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003A\u0024returnResponse",
+            "name": "returnResponse",
+            "summary": "Whether\u0020to\u0020return\u0020Response\u0020object\u0020or\u0020send\u0020response.",
+            "url": "classes/CodeIgniter-CodeIgniter.html#property_returnResponse"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Cache\\ClearCache",
             "name": "ClearCache",
             "summary": "Clears\u0020current\u0020cache.",
