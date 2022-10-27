@@ -9976,6 +9976,11 @@ Search.appendIndex(
             "summary": "The\u0020callback\u0020to\u0020be\u0020registered\u0020to\u0020\u0060set_error_handler\u0028\u0029\u0060.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_errorHandler"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AisFakerDeprecationError\u0028\u0029",
+            "name": "isFakerDeprecationError",
+            "summary": "Workaround\u0020for\u0020Faker\u0020deprecation\u0020errors\u0020in\u0020PHP\u00208.2.",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_isFakerDeprecationError"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AshutdownHandler\u0028\u0029",
             "name": "shutdownHandler",
             "summary": "Checks\u0020to\u0020see\u0020if\u0020any\u0020errors\u0020have\u0020happened\u0020during\u0020shutdown\u0020that\nneed\u0020to\u0020be\u0020caught\u0020and\u0020handle\u0020them.",
