@@ -20428,12 +20428,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AassertHeaderEmitted\u0028\u0029",
             "name": "assertHeaderEmitted",
-            "summary": "Hooks\u0020into\u0020xdebug\u0027s\u0020headers\u0020capture,\u0020looking\u0020for\u0020a\u0020specific\u0020header\nemitted",
+            "summary": "Hooks\u0020into\u0020xdebug\u0027s\u0020headers\u0020capture,\u0020looking\u0020for\u0020presence\u0020of\na\u0020specific\u0020header\u0020emitted.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_assertHeaderEmitted"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AassertHeaderNotEmitted\u0028\u0029",
             "name": "assertHeaderNotEmitted",
-            "summary": "Hooks\u0020into\u0020xdebug\u0027s\u0020headers\u0020capture,\u0020looking\u0020for\u0020a\u0020specific\u0020header\nemitted",
+            "summary": "Hooks\u0020into\u0020xdebug\u0027s\u0020headers\u0020capture,\u0020looking\u0020for\u0020absence\u0020of\na\u0020specific\u0020header\u0020emitted.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_assertHeaderNotEmitted"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AassertCloseEnough\u0028\u0029",
