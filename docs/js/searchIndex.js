@@ -17458,12 +17458,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFind\u0028\u0029",
             "name": "doFind",
-            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.\u0020This\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
             "url": "classes/CodeIgniter-Model.html#method_doFind"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFindColumn\u0028\u0029",
             "name": "doFindColumn",
-            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable.",
             "url": "classes/CodeIgniter-Model.html#method_doFindColumn"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFindAll\u0028\u0029",
@@ -17493,17 +17493,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoUpdateBatch\u0028\u0029",
             "name": "doUpdateBatch",
-            "summary": "Compiles\u0020an\u0020update\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Compiles\u0020an\u0020update\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
             "url": "classes/CodeIgniter-Model.html#method_doUpdateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoDelete\u0028\u0029",
             "name": "doDelete",
-            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020\u0024this\u002D\u003Etable\u0020where\u0020\u0024id\u0020matches\nthe\u0020table\u0027s\u0020primaryKey\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020\u0024this\u002D\u003Etable\u0020where\u0020\u0024id\u0020matches\nthe\u0020table\u0027s\u0020primaryKey\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
             "url": "classes/CodeIgniter-Model.html#method_doDelete"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoPurgeDeleted\u0028\u0029",
             "name": "doPurgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
             "url": "classes/CodeIgniter-Model.html#method_doPurgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoOnlyDeleted\u0028\u0029",
@@ -17513,7 +17513,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoReplace\u0028\u0029",
             "name": "doReplace",
-            "summary": "Compiles\u0020a\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Compiles\u0020a\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
             "url": "classes/CodeIgniter-Model.html#method_doReplace"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoErrors\u0028\u0029",
