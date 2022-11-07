@@ -268,12 +268,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoFind\u0028\u0029",
             "name": "doFind",
-            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doFind"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoFindColumn\u0028\u0029",
             "name": "doFindColumn",
-            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doFindColumn"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoFindAll\u0028\u0029",
@@ -288,7 +288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoInsert\u0028\u0029",
             "name": "doInsert",
-            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020database\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020database.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doInsert"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoInsertBatch\u0028\u0029",
@@ -303,17 +303,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoUpdateBatch\u0028\u0029",
             "name": "doUpdateBatch",
-            "summary": "Compiles\u0020an\u0020update\u0020and\u0020runs\u0020the\u0020query\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Compiles\u0020an\u0020update\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doUpdateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoDelete\u0028\u0029",
             "name": "doDelete",
-            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doDelete"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoPurgeDeleted\u0028\u0029",
             "name": "doPurgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doPurgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoOnlyDeleted\u0028\u0029",
@@ -323,7 +323,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoReplace\u0028\u0029",
             "name": "doReplace",
-            "summary": "Compiles\u0020a\u0020replace\u0020and\u0020runs\u0020the\u0020query\nThis\u0020methods\u0020works\u0020only\u0020with\u0020dbCalls",
+            "summary": "Compiles\u0020a\u0020replace\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doReplace"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoErrors\u0028\u0029",
@@ -333,12 +333,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AidValue\u0028\u0029",
             "name": "idValue",
-            "summary": "Returns\u0020the\u0020id\u0020value\u0020for\u0020the\u0020data\u0020array\u0020or\u0020object",
+            "summary": "Returns\u0020the\u0020id\u0020value\u0020for\u0020the\u0020data\u0020array\u0020or\u0020object.",
             "url": "classes/CodeIgniter-BaseModel.html#method_idValue"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AgetIdValue\u0028\u0029",
             "name": "getIdValue",
-            "summary": "Public\u0020getter\u0020to\u0020return\u0020the\u0020id\u0020value\u0020using\u0020the\u0020idValue\u0028\u0029\u0020method\nFor\u0020example\u0020with\u0020SQL\u0020this\u0020will\u0020return\u0020\u0024data\u002D\u003E\u0024this\u002D\u003EprimaryKey",
+            "summary": "Public\u0020getter\u0020to\u0020return\u0020the\u0020id\u0020value\u0020using\u0020the\u0020idValue\u0028\u0029\u0020method.",
             "url": "classes/CodeIgniter-BaseModel.html#method_getIdValue"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AcountAllResults\u0028\u0029",
@@ -353,12 +353,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Afind\u0028\u0029",
             "name": "find",
-            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database",
+            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database.",
             "url": "classes/CodeIgniter-BaseModel.html#method_find"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AfindColumn\u0028\u0029",
             "name": "findColumn",
-            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database",
+            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database.",
             "url": "classes/CodeIgniter-BaseModel.html#method_findColumn"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AfindAll\u0028\u0029",
@@ -378,7 +378,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AshouldUpdate\u0028\u0029",
             "name": "shouldUpdate",
-            "summary": "This\u0020method\u0020is\u0020called\u0020on\u0020save\u0020to\u0020determine\u0020if\u0020entry\u0020have\u0020to\u0020be\u0020updated\nIf\u0020this\u0020method\u0020return\u0020false\u0020insert\u0020operation\u0020will\u0020be\u0020executed",
+            "summary": "This\u0020method\u0020is\u0020called\u0020on\u0020save\u0020to\u0020determine\u0020if\u0020entry\u0020have\u0020to\u0020be\u0020updated.",
             "url": "classes/CodeIgniter-BaseModel.html#method_shouldUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AgetInsertID\u0028\u0029",
@@ -403,17 +403,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AupdateBatch\u0028\u0029",
             "name": "updateBatch",
-            "summary": "Compiles\u0020an\u0020update\u0020and\u0020runs\u0020the\u0020query",
+            "summary": "Compiles\u0020an\u0020update\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-BaseModel.html#method_updateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches",
+            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches.",
             "url": "classes/CodeIgniter-BaseModel.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003ApurgeDeleted\u0028\u0029",
             "name": "purgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#method_purgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AwithDeleted\u0028\u0029",
@@ -428,7 +428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Areplace\u0028\u0029",
             "name": "replace",
-            "summary": "Compiles\u0020a\u0020replace\u0020and\u0020runs\u0020the\u0020query",
+            "summary": "Compiles\u0020a\u0020replace\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-BaseModel.html#method_replace"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Aerrors\u0028\u0029",
@@ -458,7 +458,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetDate\u0028\u0029",
             "name": "setDate",
-            "summary": "Sets\u0020the\u0020date\u0020or\u0020current\u0020date\u0020if\u0020null\u0020value\u0020is\u0020passed",
+            "summary": "Sets\u0020the\u0020date\u0020or\u0020current\u0020date\u0020if\u0020null\u0020value\u0020is\u0020passed.",
             "url": "classes/CodeIgniter-BaseModel.html#method_setDate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AintToDate\u0028\u0029",
@@ -468,7 +468,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtimeToDate\u0028\u0029",
             "name": "timeToDate",
-            "summary": "Converts\u0020Time\u0020value\u0020to\u0020string\u0020using\u0020\u0024this\u002D\u003EdateFormat",
+            "summary": "Converts\u0020Time\u0020value\u0020to\u0020string\u0020using\u0020\u0024this\u002D\u003EdateFormat.",
             "url": "classes/CodeIgniter-BaseModel.html#method_timeToDate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024skipValidation",
@@ -513,7 +513,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AgetValidationMessages\u0028\u0029",
             "name": "getValidationMessages",
-            "summary": "Returns\u0020the\u0020model\u0027s\u0020define\u0020validation\u0020messages\u0020so\u0020they\ncan\u0020be\u0020used\u0020elsewhere,\u0020if\u0020needed.",
+            "summary": "Returns\u0020the\u0020model\u0027s\u0020validation\u0020messages,\u0020so\u0020they\ncan\u0020be\u0020used\u0020elsewhere,\u0020if\u0020needed.",
             "url": "classes/CodeIgniter-BaseModel.html#method_getValidationMessages"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024cleanValidationRules",
@@ -543,7 +543,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AobjectToArray\u0028\u0029",
             "name": "objectToArray",
-            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
+            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020its\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
             "url": "classes/CodeIgniter-BaseModel.html#method_objectToArray"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AobjectToRawArray\u0028\u0029",
@@ -553,7 +553,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtransformDataToArray\u0028\u0029",
             "name": "transformDataToArray",
-            "summary": "Transform\u0020data\u0020to\u0020array",
+            "summary": "Transform\u0020data\u0020to\u0020array.",
             "url": "classes/CodeIgniter-BaseModel.html#method_transformDataToArray"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A__get\u0028\u0029",
