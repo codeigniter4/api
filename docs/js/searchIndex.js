@@ -5593,7 +5593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AvalidateUpdate\u0028\u0029",
             "name": "validateUpdate",
-            "summary": "This\u0020method\u0020is\u0020used\u0020by\u0020both\u0020update\u0028\u0029\u0020and\u0020getCompiledUpdate\u0028\u0029\u0020to\nvalidate\u0020that\u0020data\u0020is\u0020actually\u0020being\u0020set\u0020and\u0020that\u0020a\u0020table\u0020has\u0020been\nchosen\u0020to\u0020be\u0020update.",
+            "summary": "This\u0020method\u0020is\u0020used\u0020by\u0020both\u0020update\u0028\u0029\u0020and\u0020getCompiledUpdate\u0028\u0029\u0020to\nvalidate\u0020that\u0020data\u0020is\u0020actually\u0020being\u0020set\u0020and\u0020that\u0020a\u0020table\u0020has\u0020been\nchosen\u0020to\u0020be\u0020updated.",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_validateUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AupdateBatch\u0028\u0029",
