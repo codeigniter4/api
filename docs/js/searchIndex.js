@@ -14281,6 +14281,11 @@ Search.appendIndex(
             "summary": "Constructor",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AgetPostMaxSize\u0028\u0029",
+            "name": "getPostMaxSize",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_getPostMaxSize"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AdetectLocale\u0028\u0029",
             "name": "detectLocale",
             "summary": "Handles\u0020setting\u0020up\u0020the\u0020locale,\u0020perhaps\u0020auto\u002Ddetecting\u0020through\ncontent\u0020negotiation.",
