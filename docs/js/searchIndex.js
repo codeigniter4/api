@@ -14856,6 +14856,11 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020user\u0027s\u0020IP\u0020address.",
             "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_getIPAddress"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003AgetClientIP\u0028\u0029",
+            "name": "getClientIP",
+            "summary": "Gets\u0020the\u0020client\u0020IP\u0020address\u0020from\u0020the\u0020HTTP\u0020header.",
+            "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003AgetServer\u0028\u0029",
             "name": "getServer",
             "summary": "Fetch\u0020an\u0020item\u0020from\u0020the\u0020\u0024_SERVER\u0020array.",
@@ -19810,6 +19815,11 @@ Search.appendIndex(
             "name": "rowExists",
             "summary": "Row\u0020exists\u0020flag",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_rowExists"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024idPrefix",
+            "name": "idPrefix",
+            "summary": "ID\u0020prefix\u0020for\u0020multiple\u0020session\u0020cookies",
+            "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_idPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler",
             "name": "FileHandler",

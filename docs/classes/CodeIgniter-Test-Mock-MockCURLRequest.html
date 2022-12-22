@@ -372,7 +372,7 @@ and their normal-case key as it is in $headers.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-HTTP-Request.html#property_proxyIPs">$proxyIPs</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 <dd>Proxy IPs</dd>
 
@@ -801,6 +801,13 @@ and grabbing the output.</dd>
 <dd>Parses the header retrieved from the cURL response into
 our Response object.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP">getClientIP()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>Gets the client IP address from the HTTP header.</dd>
+
         </dl>
 
 
@@ -1029,7 +1036,7 @@ sending the request.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -1132,7 +1139,7 @@ and their normal-case key as it is in $headers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -1288,7 +1295,7 @@ and their normal-case key as it is in $headers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+        <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$proxyIPs</span>
     </code>
 
@@ -1742,7 +1749,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -1969,7 +1976,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
@@ -2205,7 +2212,7 @@ and supply your own delimiter when concatenating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
@@ -2222,7 +2229,9 @@ and supply your own delimiter when concatenating.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>IP address</p>
+            <section class="phpdocumentor-description"><p>IP address if it can be detected, or empty string.
+If the IP address is not a valid IP address,
+then will return '0.0.0.0'.</p>
 </section>
 
     
@@ -2340,7 +2349,7 @@ and supply your own delimiter when concatenating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
@@ -3292,7 +3301,7 @@ URL, it will be merged with $this-&gt;baseURI to form a complete URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">222</span>
 
     </aside>
 
@@ -3880,7 +3889,7 @@ passed in.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">310</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 
     </aside>
 
@@ -4142,6 +4151,50 @@ our Response object.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getClientIP">
+        getClientIP()
+        <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">162</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Gets the client IP address from the HTTP header.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getClientIP</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$header</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$header</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string|null</span>
             &mdash;
         
     
