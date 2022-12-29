@@ -7318,7 +7318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003AgetMigrationName\u0028\u0029",
             "name": "getMigrationName",
-            "summary": "Extracts\u0020the\u0020migration\u0020class\u0020name\u0020from\u0020a\u0020filename",
+            "summary": "Extracts\u0020the\u0020migration\u0020name\u0020from\u0020a\u0020filename",
             "url": "classes/CodeIgniter-Database-MigrationRunner.html#method_getMigrationName"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003AgetObjectUid\u0028\u0029",
