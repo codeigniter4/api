@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -251,7 +255,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -400,9 +404,10 @@ duplicate keys.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBKeys">$QBKeys</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string|int, string&gt;            </span>
 </dt>
-<dd>QB keys</dd>
+<dd>QB keys
+list of column names.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBLimit">$QBLimit</a>
@@ -419,6 +424,15 @@ duplicate keys.</dd>
 <dd>QB OFFSET data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOptions">$QBOptions</a>
+    <span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd>QB Options data
+Holds additional options and data used to render SQL
+and is reset by resetWrite()</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSelect">$QBSelect</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
@@ -428,7 +442,7 @@ duplicate keys.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSet">$QBSet</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string|int, array&lt;string|int, mixed&gt;&gt;|array&lt;string|int, string&gt;            </span>
 </dt>
 <dd>QB data sets</dd>
 
@@ -541,6 +555,13 @@ returned by an Query Builder query.</dd>
 <dd>Compiles a delete string and runs the query</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_deleteBatch">deleteBatch()</a>
+    <span>
+                                &nbsp;: false|int|array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Sets data and calls batchExecute to run queries</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_distinct">distinct()</a>
     <span>
                                 &nbsp;: $this    </span>
@@ -618,6 +639,13 @@ named parameters for binding in the Query object later.</dd>
                                 &nbsp;: bool|string    </span>
 </dt>
 <dd>Compiles an update query and returns the sql</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getCompiledUpsert">getCompiledUpsert()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Compiles an upsert query and returns the sql</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getSetData">getSetData()</a>
@@ -790,6 +818,13 @@ joined with &#039;AND&#039; if appropriate.</dd>
 <dd>Sets the OFFSET value</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_onConstraint">onConstraint()</a>
+    <span>
+                                &nbsp;: $this    </span>
+</dt>
+<dd>Sets constraints for batch upsert, update</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method_orderBy">orderBy()</a>
     <span>
                                 &nbsp;: <a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>    </span>
@@ -906,7 +941,7 @@ joined with &#039;OR&#039; if appropriate.</dd>
 <dd>Compiles an replace into string and runs the query.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetQuery">resetQuery()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetQueryAsData">resetQueryAsData()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
@@ -969,6 +1004,13 @@ joined with &#039;OR&#039; if appropriate.</dd>
 <dd>Allows key/value pairs to be set for insert(), update() or replace().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setData">setData()</a>
+    <span>
+                                &nbsp;: $this|null    </span>
+</dt>
+<dd>Allows a row or multiple rows to be set for batch inserts/upserts/updates</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setInsertBatch">setInsertBatch()</a>
     <span>
                                 &nbsp;: $this|null    </span>
@@ -976,9 +1018,16 @@ joined with &#039;OR&#039; if appropriate.</dd>
 <dd>Allows key/value pairs to be set for batch inserts</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setQueryAsData">setQueryAsData()</a>
+    <span>
+                                &nbsp;: <a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>    </span>
+</dt>
+<dd>Sets data source as a query for insertBatch()/updateBatch()/upsertBatch()/deleteBatch()</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setUpdateBatch">setUpdateBatch()</a>
     <span>
-                                &nbsp;: $this|null    </span>
+                                &nbsp;: $this    </span>
 </dt>
 <dd>Allows key/value pairs to be set for batch updating</dd>
 
@@ -1024,7 +1073,42 @@ This function maps to &quot;DELETE FROM table&quot;</dd>
     <span>
                                 &nbsp;: false|int|array&lt;string|int, string&gt;    </span>
 </dt>
-<dd>Compiles an update string and runs the query</dd>
+<dd>Sets data and calls batchExecute to run queries</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_updateFields">updateFields()</a>
+    <span>
+                                &nbsp;: $this    </span>
+</dt>
+<dd>Sets update fields for upsert, update</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_upsert">upsert()</a>
+    <span>
+                                &nbsp;: false|int|array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Converts call to batchUpsert</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_upsertBatch">upsertBatch()</a>
+    <span>
+                                &nbsp;: false|int|array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Compiles batch upsert strings and runs the queries</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Traits-ConditionalTrait.html#method_when">when()</a>
+    <span>
+                                &nbsp;: $this    </span>
+</dt>
+<dd>Only runs the query when $condition evaluates to true</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Traits-ConditionalTrait.html#method_whenNot">whenNot()</a>
+    <span>
+                                &nbsp;: $this    </span>
+</dt>
+<dd>Only runs the query when $condition evaluates to false</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_where">where()</a>
@@ -1055,6 +1139,13 @@ joined with &#039;AND&#039; if appropriate.</dd>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific delete string from the supplied data</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__deleteBatch">_deleteBatch()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Generates a platform-specific batch update string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__fromTables">_fromTables()</a>
@@ -1121,11 +1212,18 @@ about operator precedence.</dd>
 <dd>Generates a platform-specific update string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__updateBatch">_updateBatch()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch">_updateBatch()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific batch update string from the supplied data</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__upsertBatch">_upsertBatch()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Generates a platform-specific upsertBatch string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__whereIn">_whereIn()</a>
@@ -1140,6 +1238,13 @@ about operator precedence.</dd>
                                 &nbsp;: $this    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchExecute">batchExecute()</a>
+    <span>
+                                &nbsp;: false|int|array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Compiles batch insert/update/upsert strings and runs the queries</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchObjectToArray">batchObjectToArray()</a>
@@ -1214,9 +1319,23 @@ the Database Driver for the specific statement.</dd>
 <dd>Determines the alias name based on the table</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_fieldsFromQuery">fieldsFromQuery()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Gets column names from a select query</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_formatValues">formatValues()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Converts value array of array to array of strings</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperator">getOperator()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|false|string    </span>
 </dt>
 <dd>Returns the SQL string operator</dd>
 
@@ -1343,6 +1462,20 @@ chosen to be updated.</dd>
 </dt>
 <dd></dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperatorFromWhereKey">getOperatorFromWhereKey()</a>
+    <span>
+                                &nbsp;: array&lt;int, string&gt;|false    </span>
+</dt>
+<dd>Returns the SQL string operator from where key</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setAlias">setAlias()</a>
+    <span>
+                                &nbsp;: <a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>    </span>
+</dt>
+<dd>Set table alias for dataset pseudo table.</dd>
+
         </dl>
 
 
@@ -1371,7 +1504,7 @@ chosen to be updated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
@@ -1404,7 +1537,7 @@ chosen to be updated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -1437,7 +1570,7 @@ chosen to be updated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -1470,7 +1603,7 @@ chosen to be updated.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 
@@ -1505,7 +1638,7 @@ in the Query object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 
     </aside>
 
@@ -1539,7 +1672,7 @@ in the Query object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -1573,7 +1706,7 @@ allow limiting of delete clauses.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">226</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 
     </aside>
 
@@ -1607,7 +1740,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">193</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -1664,7 +1797,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 
     </aside>
 
@@ -1697,7 +1830,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 
     </aside>
 
@@ -1730,7 +1863,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">272</span>
 
     </aside>
 
@@ -1763,7 +1896,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
@@ -1796,7 +1929,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
@@ -1829,7 +1962,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -1862,7 +1995,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -1895,7 +2028,7 @@ allow limit update queries with WHERE.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 
     </aside>
 
@@ -1930,7 +2063,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -1963,21 +2096,37 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">QB keys</p>
+        <p class="phpdocumentor-summary">QB keys
+list of column names.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$QBKeys</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string></p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -1996,7 +2145,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
@@ -2029,7 +2178,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -2053,6 +2202,64 @@ duplicate keys.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_QBOptions">
+        $QBOptions
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOptions" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">178</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">QB Options data
+Holds additional options and data used to render SQL
+and is reset by resetWrite()</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$QBOptions</span>
+    </code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array{
+updateFieldsAdditional?: array,
+tableIdentity?: string,
+updateFields?: array,
+constraints?: array,
+setQueryAsData?: string,
+sql?: string,
+alias?: string
+}</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_QBSelect">
         $QBSelect
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSelect" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2062,7 +2269,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 
     </aside>
 
@@ -2095,7 +2302,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 
     </aside>
 
@@ -2103,13 +2310,28 @@ duplicate keys.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;|array&lt;string|int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$QBSet</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>array&lt;string, string&gt;|list&lt;list&lt;string|int&gt;&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -2128,7 +2350,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
@@ -2161,7 +2383,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -2194,7 +2416,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
@@ -2227,7 +2449,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 
     </aside>
 
@@ -2260,7 +2482,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">29</span>
 
     </aside>
 
@@ -2293,7 +2515,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
@@ -2326,7 +2548,7 @@ duplicate keys.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -2360,7 +2582,7 @@ support the ignore option.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">197</span>
 
     </aside>
 
@@ -2398,7 +2620,7 @@ the value is empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">265</span>
 
     </aside>
 
@@ -2435,7 +2657,7 @@ the value is empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 
     </aside>
 
@@ -2511,7 +2733,7 @@ the value is empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1603</span>
+    <span class="phpdocumentor-element-found-in__line">1619</span>
 
     </aside>
 
@@ -2556,7 +2778,7 @@ the particular table</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1635</span>
+    <span class="phpdocumentor-element-found-in__line">1651</span>
 
     </aside>
 
@@ -2601,7 +2823,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 
     </aside>
 
@@ -2634,7 +2856,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 
     </aside>
 
@@ -2700,7 +2922,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -2766,6 +2988,68 @@ returned by an Query Builder query.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_deleteBatch">
+        deleteBatch()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_deleteBatch" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2787</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets data and calls batchExecute to run queries</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>a dataset</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$constraints</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$batchSize</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">100</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Number of rows affected or FALSE on failure, SQL array when testMode</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_distinct">
         distinct()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_distinct" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2773,7 +3057,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">531</span>
+    <span class="phpdocumentor-element-found-in__line">555</span>
 
     </aside>
 
@@ -2817,7 +3101,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2289</span>
+    <span class="phpdocumentor-element-found-in__line">2672</span>
 
     </aside>
 
@@ -2852,7 +3136,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">569</span>
 
     </aside>
 
@@ -2903,7 +3187,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">576</span>
+    <span class="phpdocumentor-element-found-in__line">600</span>
 
     </aside>
 
@@ -2956,7 +3240,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1577</span>
+    <span class="phpdocumentor-element-found-in__line">1593</span>
 
     </aside>
 
@@ -3017,7 +3301,7 @@ and runs the query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">343</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -3051,7 +3335,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2340</span>
+    <span class="phpdocumentor-element-found-in__line">2725</span>
 
     </aside>
 
@@ -3095,7 +3379,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1859</span>
+    <span class="phpdocumentor-element-found-in__line">2237</span>
 
     </aside>
 
@@ -3153,7 +3437,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1694</span>
+    <span class="phpdocumentor-element-found-in__line">1710</span>
 
     </aside>
 
@@ -3186,7 +3470,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1544</span>
+    <span class="phpdocumentor-element-found-in__line">1560</span>
 
     </aside>
 
@@ -3230,7 +3514,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2029</span>
+    <span class="phpdocumentor-element-found-in__line">2411</span>
 
     </aside>
 
@@ -3267,6 +3551,53 @@ named parameters for binding in the Query object later.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getCompiledUpsert">
+        getCompiledUpsert()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getCompiledUpsert" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1870</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Compiles an upsert query and returns the sql</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getCompiledUpsert</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getSetData">
         getSetData()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getSetData" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3274,7 +3605,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1530</span>
+    <span class="phpdocumentor-element-found-in__line">1546</span>
 
     </aside>
 
@@ -3318,7 +3649,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">358</span>
 
     </aside>
 
@@ -3351,7 +3682,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1706</span>
+    <span class="phpdocumentor-element-found-in__line">1722</span>
 
     </aside>
 
@@ -3418,7 +3749,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1351</span>
+    <span class="phpdocumentor-element-found-in__line">1367</span>
 
     </aside>
 
@@ -3468,7 +3799,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1235</span>
+    <span class="phpdocumentor-element-found-in__line">1251</span>
 
     </aside>
 
@@ -3501,7 +3832,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1195</span>
+    <span class="phpdocumentor-element-found-in__line">1211</span>
 
     </aside>
 
@@ -3534,7 +3865,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1385</span>
+    <span class="phpdocumentor-element-found-in__line">1401</span>
 
     </aside>
 
@@ -3592,7 +3923,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1285</span>
+    <span class="phpdocumentor-element-found-in__line">1301</span>
 
     </aside>
 
@@ -3625,7 +3956,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1245</span>
+    <span class="phpdocumentor-element-found-in__line">1261</span>
 
     </aside>
 
@@ -3658,7 +3989,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">839</span>
+    <span class="phpdocumentor-element-found-in__line">863</span>
 
     </aside>
 
@@ -3720,7 +4051,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1006</span>
+    <span class="phpdocumentor-element-found-in__line">1022</span>
 
     </aside>
 
@@ -3797,7 +4128,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">865</span>
+    <span class="phpdocumentor-element-found-in__line">889</span>
 
     </aside>
 
@@ -3859,7 +4190,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">356</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -3906,7 +4237,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -3972,7 +4303,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1892</span>
+    <span class="phpdocumentor-element-found-in__line">2270</span>
 
     </aside>
 
@@ -4037,7 +4368,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1737</span>
+    <span class="phpdocumentor-element-found-in__line">2155</span>
 
     </aside>
 
@@ -4045,17 +4376,18 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$set</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>a dataset</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -4077,20 +4409,6 @@ update or delete query.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
@@ -4113,7 +4431,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 
     </aside>
 
@@ -4180,7 +4498,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">954</span>
+    <span class="phpdocumentor-element-found-in__line">970</span>
 
     </aside>
 
@@ -4257,7 +4575,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1460</span>
+    <span class="phpdocumentor-element-found-in__line">1476</span>
 
     </aside>
 
@@ -4308,7 +4626,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1215</span>
+    <span class="phpdocumentor-element-found-in__line">1231</span>
 
     </aside>
 
@@ -4341,7 +4659,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1265</span>
+    <span class="phpdocumentor-element-found-in__line">1281</span>
 
     </aside>
 
@@ -4374,7 +4692,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1019</span>
+    <span class="phpdocumentor-element-found-in__line">1035</span>
 
     </aside>
 
@@ -4451,7 +4769,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">967</span>
+    <span class="phpdocumentor-element-found-in__line">983</span>
 
     </aside>
 
@@ -4528,7 +4846,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1478</span>
+    <span class="phpdocumentor-element-found-in__line">1494</span>
 
     </aside>
 
@@ -4565,6 +4883,51 @@ update or delete query.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_onConstraint">
+        onConstraint()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_onConstraint" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2057</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets constraints for batch upsert, update</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">onConstraint</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>a string of columns, key value pairs, or RawSql</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_orderBy">
         orderBy()
         <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method_orderBy" class="headerlink"><i class="fas fa-link"></i></a>
@@ -4572,7 +4935,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -4633,7 +4996,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1205</span>
+    <span class="phpdocumentor-element-found-in__line">1221</span>
 
     </aside>
 
@@ -4666,7 +5029,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1398</span>
+    <span class="phpdocumentor-element-found-in__line">1414</span>
 
     </aside>
 
@@ -4724,7 +5087,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1255</span>
+    <span class="phpdocumentor-element-found-in__line">1271</span>
 
     </aside>
 
@@ -4757,7 +5120,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">852</span>
+    <span class="phpdocumentor-element-found-in__line">876</span>
 
     </aside>
 
@@ -4819,7 +5182,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1032</span>
+    <span class="phpdocumentor-element-found-in__line">1048</span>
 
     </aside>
 
@@ -4896,7 +5259,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">878</span>
+    <span class="phpdocumentor-element-found-in__line">902</span>
 
     </aside>
 
@@ -4958,7 +5321,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">980</span>
+    <span class="phpdocumentor-element-found-in__line">996</span>
 
     </aside>
 
@@ -5035,7 +5398,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1225</span>
+    <span class="phpdocumentor-element-found-in__line">1241</span>
 
     </aside>
 
@@ -5068,7 +5431,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1275</span>
+    <span class="phpdocumentor-element-found-in__line">1291</span>
 
     </aside>
 
@@ -5101,7 +5464,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1045</span>
+    <span class="phpdocumentor-element-found-in__line">1061</span>
 
     </aside>
 
@@ -5178,7 +5541,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">993</span>
+    <span class="phpdocumentor-element-found-in__line">1009</span>
 
     </aside>
 
@@ -5255,7 +5618,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">689</span>
+    <span class="phpdocumentor-element-found-in__line">713</span>
 
     </aside>
 
@@ -5315,7 +5678,7 @@ Separates multiple calls with 'OR'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">800</span>
+    <span class="phpdocumentor-element-found-in__line">824</span>
 
     </aside>
 
@@ -5377,7 +5740,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">826</span>
+    <span class="phpdocumentor-element-found-in__line">850</span>
 
     </aside>
 
@@ -5439,7 +5802,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -5495,14 +5858,14 @@ combo, assuming that it's either the primary key or a unique key.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_resetQuery">
-        resetQuery()
-        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetQuery" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_resetQueryAsData">
+        resetQueryAsData()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetQueryAsData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2772</span>
+    <span class="phpdocumentor-element-found-in__line">3277</span>
 
     </aside>
 
@@ -5510,7 +5873,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">resetQuery</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">resetQueryAsData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     
     
@@ -5535,7 +5898,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">370</span>
+    <span class="phpdocumentor-element-found-in__line">394</span>
 
     </aside>
 
@@ -5586,7 +5949,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">436</span>
+    <span class="phpdocumentor-element-found-in__line">460</span>
 
     </aside>
 
@@ -5638,7 +6001,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">480</span>
 
     </aside>
 
@@ -5690,7 +6053,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">416</span>
+    <span class="phpdocumentor-element-found-in__line">440</span>
 
     </aside>
 
@@ -5742,7 +6105,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">426</span>
+    <span class="phpdocumentor-element-found-in__line">450</span>
 
     </aside>
 
@@ -5794,7 +6157,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">488</span>
 
     </aside>
 
@@ -5846,7 +6209,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">446</span>
+    <span class="phpdocumentor-element-found-in__line">470</span>
 
     </aside>
 
@@ -5898,7 +6261,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1504</span>
+    <span class="phpdocumentor-element-found-in__line">1520</span>
 
     </aside>
 
@@ -5954,6 +6317,66 @@ combo, assuming that it's either the primary key or a unique key.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setData">
+        setData()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1806</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Allows a row or multiple rows to be set for batch inserts/upserts/updates</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this|null</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$escape</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>alias for sql table</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">$this|null</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
     <h4 class="phpdocumentor-element__name" id="method_setInsertBatch">
         setInsertBatch()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setInsertBatch" class="headerlink"><i class="fas fa-link"></i></a>
@@ -5961,13 +6384,13 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1810</span>
+    <span class="phpdocumentor-element-found-in__line">2221</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Allows key/value pairs to be set for batch inserts</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setInsertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this|null</span></code>
 
@@ -6000,6 +6423,19 @@ combo, assuming that it's either the primary key or a unique key.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this|null</span>
@@ -6013,6 +6449,66 @@ combo, assuming that it's either the primary key or a unique key.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setQueryAsData">
+        setQueryAsData()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setQueryAsData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2092</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets data source as a query for insertBatch()/updateBatch()/upsertBatch()/deleteBatch()</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setQueryAsData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$columns</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$columns</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>an array or comma delimited string of columns</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
     <h4 class="phpdocumentor-element__name" id="method_setUpdateBatch">
         setUpdateBatch()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setUpdateBatch" class="headerlink"><i class="fas fa-link"></i></a>
@@ -6020,15 +6516,15 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2249</span>
+    <span class="phpdocumentor-element-found-in__line">2656</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Allows key/value pairs to be set for batch updating</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setUpdateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this|null</span></code>
+                    <span class="phpdocumentor-signature__name">setUpdateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -6072,10 +6568,17 @@ combo, assuming that it's either the primary key or a unique key.</p>
                                                             
                                              
                                     </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">$this|null</span>
+    <span class="phpdocumentor-signature__response_type">$this</span>
             &mdash;
         
     
@@ -6093,7 +6596,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">324</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -6137,7 +6640,7 @@ combo, assuming that it's either the primary key or a unique key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2311</span>
+    <span class="phpdocumentor-element-found-in__line">2694</span>
 
     </aside>
 
@@ -6174,7 +6677,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1155</span>
+    <span class="phpdocumentor-element-found-in__line">1171</span>
 
     </aside>
 
@@ -6217,7 +6720,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1167</span>
+    <span class="phpdocumentor-element-found-in__line">1183</span>
 
     </aside>
 
@@ -6260,7 +6763,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2052</span>
+    <span class="phpdocumentor-element-found-in__line">2434</span>
 
     </aside>
 
@@ -6332,30 +6835,221 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2138</span>
+    <span class="phpdocumentor-element-found-in__line">2523</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Compiles an update string and runs the query</p>
+        <p class="phpdocumentor-summary">Sets data and calls batchExecute to run queries</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>a dataset</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$constraints</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$batchSize</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">100</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Number of rows affected or FALSE on failure, SQL array when testMode</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_updateFields">
+        updateFields()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_updateFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2015</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets update fields for upsert, update</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">updateFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$addToDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignore</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$addToDefault</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>adds update fields to the default ones</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$ignore</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>ignores items in set</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_upsert">
+        upsert()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_upsert" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1890</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Converts call to batchUpsert</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">upsert</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$escape</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
 
             </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Number of affected rows or FALSE on failure, SQL array when testMode</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_upsertBatch">
+        upsertBatch()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_upsertBatch" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1926</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Compiles batch upsert strings and runs the queries</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">upsertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$index</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
+                <span class="phpdocumentor-signature__argument__name">$set</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>a dataset</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$escape</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -6390,9 +7084,211 @@ This function maps to &quot;DELETE FROM table&quot;</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>Number of rows affected or FALSE on failure, SQL array when testMode</p>
+            <section class="phpdocumentor-description"><p>Number of affected rows or FALSE on failure, SQL array when testMode</p>
 </section>
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_when">
+        when()
+        <a href="classes/CodeIgniter-Traits-ConditionalTrait.html#method_when" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Traits/ConditionalTrait.php"><a href="files/system-traits-conditionaltrait.html"><abbr title="system/Traits/ConditionalTrait.php">ConditionalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">28</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Only runs the query when $condition evaluates to true</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">when</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|bool|float|int|object|resource|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$condition</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultCallback</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$condition</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|bool|float|int|object|resource|string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$callback</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$defaultCallback</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TWhen of mixed</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TWhen                         $condition</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>callable(self, TWhen): mixed  $callback</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>(callable(self): mixed)|null  $defaultCallback</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_whenNot">
+        whenNot()
+        <a href="classes/CodeIgniter-Traits-ConditionalTrait.html#method_whenNot" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Traits/ConditionalTrait.php"><a href="files/system-traits-conditionaltrait.html"><abbr title="system/Traits/ConditionalTrait.php">ConditionalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">51</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Only runs the query when $condition evaluates to false</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">whenNot</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|bool|float|int|object|resource|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$condition</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">callable&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">callable|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$defaultCallback</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$condition</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|bool|float|int|object|resource|string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$callback</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$defaultCallback</span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TWhenNot of mixed</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TWhenNot                        $condition</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>callable(self, TWhenNot): mixed $callback</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>(callable(self): mixed)|null    $defaultCallback</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
     
 </article>
                     <article
@@ -6408,7 +7304,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">672</span>
+    <span class="phpdocumentor-element-found-in__line">696</span>
 
     </aside>
 
@@ -6468,7 +7364,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">787</span>
+    <span class="phpdocumentor-element-found-in__line">811</span>
 
     </aside>
 
@@ -6530,7 +7426,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">813</span>
+    <span class="phpdocumentor-element-found-in__line">837</span>
 
     </aside>
 
@@ -6592,7 +7488,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 
     </aside>
 
@@ -6610,7 +7506,71 @@ joined with &#039;AND&#039; if appropriate.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method__deleteBatch">
+        _deleteBatch()
+        <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__deleteBatch" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">415</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Generates a platform-specific batch update string from the supplied data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">_deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keys</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>QBKeys</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$values</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>QBSet</p>
+</section>
 
             </dd>
             </dl>
@@ -6636,7 +7596,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2019</span>
+    <span class="phpdocumentor-element-found-in__line">2401</span>
 
     </aside>
 
@@ -6672,7 +7632,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">191</span>
 
     </aside>
 
@@ -6690,7 +7650,8 @@ about operator precedence.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -6732,7 +7693,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
@@ -6750,7 +7711,8 @@ about operator precedence.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -6758,7 +7720,8 @@ about operator precedence.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>QBKeys</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -6766,7 +7729,8 @@ about operator precedence.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>QBSet</p>
+</section>
 
             </dd>
             </dl>
@@ -6792,7 +7756,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1064</span>
+    <span class="phpdocumentor-element-found-in__line">1080</span>
 
     </aside>
 
@@ -6968,7 +7932,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 
     </aside>
 
@@ -7061,7 +8025,7 @@ searches according to the current locale.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 
     </aside>
 
@@ -7113,7 +8077,7 @@ searches according to the current locale.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2008</span>
+    <span class="phpdocumentor-element-found-in__line">2390</span>
 
     </aside>
 
@@ -7131,7 +8095,8 @@ searches according to the current locale.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -7173,7 +8138,7 @@ searches according to the current locale.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">294</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -7194,7 +8159,8 @@ then this method maps to 'DELETE FROM table'</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
 
             </dd>
             </dl>
@@ -7220,7 +8186,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 
     </aside>
 
@@ -7238,7 +8204,8 @@ then this method maps to 'DELETE FROM table'</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -7281,12 +8248,12 @@ then this method maps to 'DELETE FROM table'</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__updateBatch">
         _updateBatch()
-        <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">2561</span>
 
     </aside>
 
@@ -7294,7 +8261,7 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -7304,7 +8271,113 @@ then this method maps to 'DELETE FROM table'</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keys</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>QBKeys</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$values</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, array&lt;string|int, mixed&gt;&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>QBSet</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>batchExecute</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string> $keys QBKeys</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list&lt;list&lt;string|int&gt;&gt; $values QBSet</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method__upsertBatch">
+        _upsertBatch()
+        <a href="classes/CodeIgniter-Database-Postgre-Builder.html#method__upsertBatch" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">320</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Generates a platform-specific upsertBatch string from the supplied data</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">_upsertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$table</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Protected table name</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$keys</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>QBKeys</p>
+</section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
@@ -7312,20 +8385,27 @@ then this method maps to 'DELETE FROM table'</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$index</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>QBSet</p>
+</section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
@@ -7346,7 +8426,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">895</span>
+    <span class="phpdocumentor-element-found-in__line">919</span>
 
     </aside>
 
@@ -7480,7 +8560,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1180</span>
+    <span class="phpdocumentor-element-found-in__line">1196</span>
 
     </aside>
 
@@ -7547,6 +8627,74 @@ then this method maps to 'DELETE FROM table'</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_batchExecute">
+        batchExecute()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchExecute" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1753</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Compiles batch insert/update/upsert strings and runs the queries</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">batchExecute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$renderMethod</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$renderMethod</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$batchSize</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">100</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Number of rows inserted or FALSE on failure, SQL array when testMode</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_batchObjectToArray">
         batchObjectToArray()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchObjectToArray" class="headerlink"><i class="fas fa-link"></i></a>
@@ -7554,7 +8702,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2724</span>
+    <span class="phpdocumentor-element-found-in__line">3229</span>
 
     </aside>
 
@@ -7562,14 +8710,14 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">batchObjectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">batchObjectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$object</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -7597,7 +8745,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2942</span>
+    <span class="phpdocumentor-element-found-in__line">3475</span>
 
     </aside>
 
@@ -7657,7 +8805,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2924</span>
+    <span class="phpdocumentor-element-found-in__line">3457</span>
 
     </aside>
 
@@ -7703,7 +8851,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1559</span>
+    <span class="phpdocumentor-element-found-in__line">1575</span>
 
     </aside>
 
@@ -7748,7 +8896,7 @@ inserted and prefixes swapped out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2634</span>
+    <span class="phpdocumentor-element-found-in__line">3139</span>
 
     </aside>
 
@@ -7785,7 +8933,7 @@ only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Builder.php"><a href="files/system-database-postgre-builder.html"><abbr title="system/Database/Postgre/Builder.php">Builder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -7830,7 +8978,7 @@ the Database Driver for the specific statement.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2661</span>
+    <span class="phpdocumentor-element-found-in__line">3166</span>
 
     </aside>
 
@@ -7867,7 +9015,7 @@ only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2486</span>
+    <span class="phpdocumentor-element-found-in__line">2991</span>
 
     </aside>
 
@@ -7913,7 +9061,7 @@ Should not be called directly.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2556</span>
+    <span class="phpdocumentor-element-found-in__line">3061</span>
 
     </aside>
 
@@ -7964,7 +9112,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">539</span>
 
     </aside>
 
@@ -8001,6 +9149,94 @@ join() and prefixTable is added only if needed.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_fieldsFromQuery">
+        fieldsFromQuery()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_fieldsFromQuery" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2135</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Gets column names from a select query</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">fieldsFromQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$sql</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_formatValues">
+        formatValues()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_formatValues" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2143</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Converts value array of array to array of strings</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">formatValues</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$values</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getOperator">
         getOperator()
         <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperator" class="headerlink"><i class="fas fa-link"></i></a>
@@ -8008,7 +9244,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2855</span>
+    <span class="phpdocumentor-element-found-in__line">3361</span>
 
     </aside>
 
@@ -8016,7 +9252,7 @@ join() and prefixTable is added only if needed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">getOperator</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$list</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">getOperator</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$list</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|false|string</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -8042,7 +9278,7 @@ join() and prefixTable is added only if needed.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|false|string</span>
             &mdash;
         
     
@@ -8060,7 +9296,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1316</span>
+    <span class="phpdocumentor-element-found-in__line">1332</span>
 
     </aside>
 
@@ -8104,7 +9340,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1336</span>
+    <span class="phpdocumentor-element-found-in__line">1352</span>
 
     </aside>
 
@@ -8198,7 +9434,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1295</span>
+    <span class="phpdocumentor-element-found-in__line">1311</span>
 
     </aside>
 
@@ -8258,7 +9494,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2842</span>
+    <span class="phpdocumentor-element-found-in__line">3348</span>
 
     </aside>
 
@@ -8302,7 +9538,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2748</span>
+    <span class="phpdocumentor-element-found-in__line">3253</span>
 
     </aside>
 
@@ -8346,7 +9582,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2932</span>
+    <span class="phpdocumentor-element-found-in__line">3465</span>
 
     </aside>
 
@@ -8388,7 +9624,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 
     </aside>
 
@@ -8506,7 +9742,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2700</span>
+    <span class="phpdocumentor-element-found-in__line">3205</span>
 
     </aside>
 
@@ -8514,14 +9750,14 @@ join() and prefixTable is added only if needed.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$object</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -8549,7 +9785,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2785</span>
+    <span class="phpdocumentor-element-found-in__line">3290</span>
 
     </aside>
 
@@ -8594,7 +9830,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2795</span>
+    <span class="phpdocumentor-element-found-in__line">3300</span>
 
     </aside>
 
@@ -8627,7 +9863,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2826</span>
+    <span class="phpdocumentor-element-found-in__line">3331</span>
 
     </aside>
 
@@ -8662,7 +9898,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2892</span>
+    <span class="phpdocumentor-element-found-in__line">3425</span>
 
     </aside>
 
@@ -8725,7 +9961,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2449</span>
+    <span class="phpdocumentor-element-found-in__line">2954</span>
 
     </aside>
 
@@ -8770,7 +10006,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2682</span>
+    <span class="phpdocumentor-element-found-in__line">3187</span>
 
     </aside>
 
@@ -8814,7 +10050,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1954</span>
+    <span class="phpdocumentor-element-found-in__line">2332</span>
 
     </aside>
 
@@ -8863,7 +10099,7 @@ has been chosen to be inserted into.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2118</span>
+    <span class="phpdocumentor-element-found-in__line">2502</span>
 
     </aside>
 
@@ -8912,7 +10148,7 @@ chosen to be updated.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">705</span>
+    <span class="phpdocumentor-element-found-in__line">729</span>
 
     </aside>
 
@@ -9010,6 +10246,109 @@ chosen to be updated.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getOperatorFromWhereKey">
+        getOperatorFromWhereKey()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperatorFromWhereKey" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">3396</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the SQL string operator from where key</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getOperatorFromWhereKey</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$whereKey</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;|false</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$whereKey</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string>|false</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;|false</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setAlias">
+        setAlias()
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setAlias" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1996</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set table alias for dataset pseudo table.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">setAlias</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span>
             &mdash;
         
     

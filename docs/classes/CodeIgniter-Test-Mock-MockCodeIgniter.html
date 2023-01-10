@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -277,7 +281,7 @@ request, route it to a controller, and send back the response.</p>
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/CodeIgniter-CodeIgniter.html#constant_CI_VERSION">CI_VERSION</a>
     <span>
-        &nbsp;= &#039;4.2.11&#039;                            </span>
+        &nbsp;= &#039;4.2.12&#039;                            </span>
 </dt>
 <dd>The current version of CodeIgniter Framework</dd>
 
@@ -309,8 +313,7 @@ request, route it to a controller, and send back the response.</p>
 </dt>
 <dd>Context
  web:     Invoked by HTTP request
- php-cli: Invoked by CLI via `php public/index.php`
- spark:   Invoked by CLI via the `spark` command</dd>
+ php-cli: Invoked by CLI via `php public/index.php`</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-CodeIgniter.html#property_controller">$controller</a>
@@ -318,6 +321,13 @@ request, route it to a controller, and send back the response.</p>
                         &nbsp;: <abbr title="\Closure">Closure</abbr>|string            </span>
 </dt>
 <dd>Controller to use.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-CodeIgniter.html#property_enableFilters">$enableFilters</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Whether to enable Control Filters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-CodeIgniter.html#property_method">$method</a>
@@ -411,6 +421,13 @@ to keep from setting headers/cookies/etc</dd>
 </dt>
 <dd>Caches the full response from the current request. Used for
 full-page caching for very high performance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-CodeIgniter.html#method_disableFilters">disableFilters()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Disables Controller Filters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-CodeIgniter.html#method_displayCache">displayCache()</a>
@@ -532,7 +549,7 @@ things like logging and error reporting.</dd>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Determines the path to use for us to try to route to, based
-on user input (setPath), or the CLI/IncomingRequest path.</dd>
+on the CLI/IncomingRequest path.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-CodeIgniter.html#method_display404errors">display404errors()</a>
@@ -644,18 +661,25 @@ match a route against the current URI. If the route is a
 &quot;redirect route&quot;, will also handle the redirect.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-CodeIgniter.html#method_autoloadKint">autoloadKint()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-CodeIgniter.html#method_configureKint">configureKint()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-CodeIgniter.html#method_isPhpCli">isPhpCli()</a>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
 <dd>Invoked via php-cli command?</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/CodeIgniter-CodeIgniter.html#method_isSparked">isSparked()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>Invoked via spark command?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-CodeIgniter.html#method_isWeb">isWeb()</a>
@@ -693,7 +717,7 @@ match a route against the current URI. If the route is a
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">CI_VERSION</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;4.2.11&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;4.2.12&#039;</span>
 </code>
 
 
@@ -832,8 +856,7 @@ match a route against the current URI. If the route is a
 
         <p class="phpdocumentor-summary">Context
  web:     Invoked by HTTP request
- php-cli: Invoked by CLI via `php public/index.php`
- spark:   Invoked by CLI via the `spark` command</p>
+ php-cli: Invoked by CLI via `php public/index.php`</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -877,6 +900,40 @@ match a route against the current URI. If the route is a
 
     
     
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_enableFilters">
+        $enableFilters
+        <a href="classes/CodeIgniter-CodeIgniter.html#property_enableFilters" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">160</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether to enable Control Filters.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$enableFilters</span>
+     = <span class="phpdocumentor-signature__default-value">true</span></code>
+
+    
+        <section class="phpdocumentor-description"></section>
+
     
 
 </article>
@@ -951,7 +1008,7 @@ match a route against the current URI. If the route is a
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                        -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_path">
         $path
@@ -962,13 +1019,13 @@ match a route against the current URI. If the route is a
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Request path to use.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$path</span>
@@ -977,6 +1034,21 @@ match a route against the current URI. If the route is a
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>No longer used.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -1061,7 +1133,7 @@ match a route against the current URI. If the route is a
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 
     </aside>
 
@@ -1183,7 +1255,7 @@ match a route against the current URI. If the route is a
             phpdocumentor-element
             -property
             -protected
-                                                        "
+                        -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_useSafeOutput">
         $useSafeOutput
@@ -1194,14 +1266,14 @@ match a route against the current URI. If the route is a
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Should the Response instance &quot;pretend&quot;
 to keep from setting headers/cookies/etc</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$useSafeOutput</span>
@@ -1210,6 +1282,21 @@ to keep from setting headers/cookies/etc</p>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>No longer used.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -1232,7 +1319,7 @@ to keep from setting headers/cookies/etc</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 
     </aside>
 
@@ -1276,7 +1363,7 @@ to keep from setting headers/cookies/etc</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">713</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -1320,7 +1407,7 @@ to keep from setting headers/cookies/etc</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">724</span>
+    <span class="phpdocumentor-element-found-in__line">739</span>
 
     </aside>
 
@@ -1358,6 +1445,39 @@ full-page caching for very high performance.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_disableFilters">
+        disableFilters()
+        <a href="classes/CodeIgniter-CodeIgniter.html#method_disableFilters" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">430</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Disables Controller Filters.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">disableFilters</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_displayCache">
         displayCache()
         <a href="classes/CodeIgniter-CodeIgniter.html#method_displayCache" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1365,7 +1485,7 @@ full-page caching for very high performance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">679</span>
+    <span class="phpdocumentor-element-found-in__line">694</span>
 
     </aside>
 
@@ -1423,7 +1543,7 @@ full-page caching for very high performance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">767</span>
+    <span class="phpdocumentor-element-found-in__line">782</span>
 
     </aside>
 
@@ -1467,7 +1587,7 @@ full-page caching for very high performance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">738</span>
+    <span class="phpdocumentor-element-found-in__line">753</span>
 
     </aside>
 
@@ -1500,7 +1620,7 @@ full-page caching for very high performance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 
     </aside>
 
@@ -1533,7 +1653,7 @@ full-page caching for very high performance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">316</span>
 
     </aside>
 
@@ -1604,7 +1724,7 @@ makes all of the pieces work together.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1133</span>
+    <span class="phpdocumentor-element-found-in__line">1147</span>
 
     </aside>
 
@@ -1638,7 +1758,7 @@ makes all of the pieces work together.</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>'php-cli'|'spark'|'web' $context</p>
+                                                 <section class="phpdocumentor-description"><p>'php-cli'|'web' $context</p>
 </section>
 
                                     </dd>
@@ -1654,7 +1774,7 @@ makes all of the pieces work together.</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+            -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_setPath">
         setPath()
@@ -1663,18 +1783,18 @@ makes all of the pieces work together.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">843</span>
+    <span class="phpdocumentor-element-found-in__line">860</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Allows the request path to be set from outside the class,
 instead of relying on CLIRequest or IncomingRequest for the path.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">setPath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
-        <section class="phpdocumentor-description"><p>This is primarily used by the Console.</p>
+        <section class="phpdocumentor-description"><p>This is not used now.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1690,6 +1810,21 @@ instead of relying on CLIRequest or IncomingRequest for the path.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>No longer used.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
@@ -1710,7 +1845,7 @@ instead of relying on CLIRequest or IncomingRequest for the path.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">612</span>
+    <span class="phpdocumentor-element-found-in__line">627</span>
 
     </aside>
 
@@ -1756,7 +1891,7 @@ instead of relying on CLIRequest or IncomingRequest for the path.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1082</span>
+    <span class="phpdocumentor-element-found-in__line">1096</span>
 
     </aside>
 
@@ -1790,7 +1925,7 @@ variable called _method is found.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1047</span>
+    <span class="phpdocumentor-element-found-in__line">1055</span>
 
     </aside>
 
@@ -1828,7 +1963,7 @@ response to the client, and will make it available next request.</p>
         class="phpdocumentor-element
             -method
             -public
-                                                        "
+            -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_useSafeOutput">
         useSafeOutput()
@@ -1837,7 +1972,7 @@ response to the client, and will make it available next request.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">383</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 
     </aside>
 
@@ -1845,7 +1980,7 @@ response to the client, and will make it available next request.</p>
 cookies and headers are not actually sent, allowing PHP 7.2+ to
 not complain when ini_set() function is used.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">useSafeOutput</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$safe</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
@@ -1863,6 +1998,21 @@ not complain when ini_set() function is used.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>No longer used.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">$this</span>
@@ -1883,7 +2033,7 @@ not complain when ini_set() function is used.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">575</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 
     </aside>
 
@@ -1966,7 +2116,7 @@ without actually stopping script execution.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">885</span>
+    <span class="phpdocumentor-element-found-in__line">902</span>
 
     </aside>
 
@@ -1999,7 +2149,7 @@ without actually stopping script execution.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">561</span>
+    <span class="phpdocumentor-element-found-in__line">576</span>
 
     </aside>
 
@@ -2052,12 +2202,12 @@ production</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">826</span>
+    <span class="phpdocumentor-element-found-in__line">841</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Determines the path to use for us to try to route to, based
-on user input (setPath), or the CLI/IncomingRequest path.</p>
+on the CLI/IncomingRequest path.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -2086,7 +2236,7 @@ on user input (setPath), or the CLI/IncomingRequest path.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">939</span>
+    <span class="phpdocumentor-element-found-in__line">947</span>
 
     </aside>
 
@@ -2131,7 +2281,7 @@ call the 404Override controller/method that was set in routing config.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">663</span>
+    <span class="phpdocumentor-element-found-in__line">678</span>
 
     </aside>
 
@@ -2181,7 +2331,7 @@ should be enforced for this URL.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">999</span>
+    <span class="phpdocumentor-element-found-in__line">1007</span>
 
     </aside>
 
@@ -2249,7 +2399,7 @@ time tag in the output and displays the debug toolbar, if required.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">749</span>
+    <span class="phpdocumentor-element-found-in__line">764</span>
 
     </aside>
 
@@ -2293,7 +2443,7 @@ time tag in the output and displays the debug toolbar, if required.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">622</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 
     </aside>
 
@@ -2326,7 +2476,7 @@ time tag in the output and displays the debug toolbar, if required.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">641</span>
+    <span class="phpdocumentor-element-found-in__line">656</span>
 
     </aside>
 
@@ -2360,7 +2510,7 @@ the HTTP protocol version and a default successful response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">445</span>
 
     </aside>
 
@@ -2451,7 +2601,7 @@ the HTTP protocol version and a default successful response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -2484,7 +2634,7 @@ the HTTP protocol version and a default successful response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">209</span>
 
     </aside>
 
@@ -2538,7 +2688,7 @@ the HTTP protocol version and a default successful response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">910</span>
+    <span class="phpdocumentor-element-found-in__line">927</span>
 
     </aside>
 
@@ -2552,8 +2702,6 @@ the HTTP protocol version and a default successful response.</p>
 <ol>
 <li>Web: URI segments become parameters, sent to Controllers via Routes,
 output controlled by Headers to browser</li>
-<li>Spark: accessed by CLI via the spark command, arguments are Command arguments,
-sent to Commands by CommandRunner, output controlled by CLI class</li>
 <li>PHP CLI: accessed by CLI via php public/index.php, arguments become URI segments,
 sent to Controllers via Routes, output varies</li>
 </ol>
@@ -2591,7 +2739,7 @@ sent to Controllers via Routes, output varies</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1107</span>
+    <span class="phpdocumentor-element-found-in__line">1121</span>
 
     </aside>
 
@@ -2626,7 +2774,7 @@ sent to Controllers via Routes, output varies</li>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">595</span>
+    <span class="phpdocumentor-element-found-in__line">610</span>
 
     </aside>
 
@@ -2662,7 +2810,7 @@ debug toolbar, and potentially on the displayed page.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">857</span>
+    <span class="phpdocumentor-element-found-in__line">874</span>
 
     </aside>
 
@@ -2697,7 +2845,7 @@ show the appropriate Page Not Found error.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">784</span>
+    <span class="phpdocumentor-element-found-in__line">799</span>
 
     </aside>
 
@@ -2754,6 +2902,72 @@ of the config file.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_autoloadKint">
+        autoloadKint()
+        <a href="classes/CodeIgniter-CodeIgniter.html#method_autoloadKint" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">247</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">autoloadKint</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_configureKint">
+        configureKint()
+        <a href="classes/CodeIgniter-CodeIgniter.html#method_configureKint" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">269</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">configureKint</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isPhpCli">
         isPhpCli()
         <a href="classes/CodeIgniter-CodeIgniter.html#method_isPhpCli" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2761,7 +2975,7 @@ of the config file.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 
     </aside>
 
@@ -2787,39 +3001,6 @@ of the config file.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isSparked">
-        isSparked()
-        <a href="classes/CodeIgniter-CodeIgniter.html#method_isSparked" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">393</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Invoked via spark command?</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">isSparked</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -private
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_isWeb">
         isWeb()
         <a href="classes/CodeIgniter-CodeIgniter.html#method_isWeb" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2827,7 +3008,7 @@ of the config file.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CodeIgniter.php"><a href="files/system-codeigniter.html"><abbr title="system/CodeIgniter.php">CodeIgniter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">409</span>
+    <span class="phpdocumentor-element-found-in__line">422</span>
 
     </aside>
 

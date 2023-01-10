@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -251,7 +255,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -259,6 +263,21 @@
 
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">extends</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>BasePreparedQuery&lt;resource, resource, resource&gt;</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 
 
@@ -272,9 +291,9 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#property_db">$db</a>
+    <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_db">$db</a>
     <span>
-                        &nbsp;: <a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>            </span>
+                        &nbsp;: <a href="classes/CodeIgniter-Database-SQLSRV-Connection.html"><abbr title="\CodeIgniter\Database\SQLSRV\Connection">Connection</abbr></a>            </span>
 </dt>
 <dd>A reference to the db connection to use.</dd>
 
@@ -310,12 +329,12 @@ that is cloned during execute.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#property_statement">$statement</a>
     <span>
-                        &nbsp;: object|resource            </span>
+                        &nbsp;: object|resource|null            </span>
 </dt>
 <dd>The prepared statement itself.</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#method___construct">__construct()</a>
+    <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -332,14 +351,14 @@ prepared query.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__getResult">_getResult()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: resource|null    </span>
 </dt>
 <dd>Returns the statement resource for the prepared query or false when preparing failed.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__prepare">_prepare()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: $this    </span>
 </dt>
 <dd>Prepares the query against the database, and saves the connection
 info necessary to execute the query later.</dd>
@@ -347,14 +366,14 @@ info necessary to execute the query later.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#method_close">close()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>Explicitly closes the statement.</dd>
+<dd>Explicitly closes the prepared statement.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#method_execute">execute()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>    </span>
+                                &nbsp;: bool|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>    </span>
 </dt>
 <dd>Takes a new set of data and runs it against the currently
 prepared query. Upon success, will return a Results object.</dd>
@@ -390,17 +409,24 @@ prepared query. Upon success, will return a Results object.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#method_prepare">prepare()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: $this    </span>
 </dt>
 <dd>Prepares the query against the database, and saves the connection
 info necessary to execute the query later.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__close">_close()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Deallocate prepared statements.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method_parameterize">parameterize()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Handle parameters</dd>
+<dd>Handle parameters.</dd>
 
         </dl>
 
@@ -423,14 +449,14 @@ info necessary to execute the query later.</dd>
 >
     <h4 class="phpdocumentor-element__name" id="property_db">
         $db
-        <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
@@ -438,7 +464,7 @@ info necessary to execute the query later.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Database-SQLSRV-Connection.html"><abbr title="\CodeIgniter\Database\SQLSRV\Connection">Connection</abbr></a></span>
     <span class="phpdocumentor-signature__name">$db</span>
     </code>
 
@@ -463,7 +489,7 @@ info necessary to execute the query later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -496,7 +522,7 @@ info necessary to execute the query later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -529,7 +555,7 @@ info necessary to execute the query later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -562,7 +588,7 @@ info necessary to execute the query later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -596,7 +622,7 @@ that is cloned during execute.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -604,13 +630,28 @@ that is cloned during execute.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">object|resource</span>
+        <span class="phpdocumentor-signature__type">object|resource|null</span>
     <span class="phpdocumentor-signature__name">$statement</span>
     </code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>TStatement|null</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
             </section>
@@ -628,19 +669,19 @@ that is cloned during execute.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/CodeIgniter-Database-BasePreparedQuery.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-SQLSRV-Connection.html"><abbr title="\CodeIgniter\Database\SQLSRV\Connection">Connection</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -648,7 +689,7 @@ that is cloned during execute.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$db</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-SQLSRV-Connection.html"><abbr title="\CodeIgniter\Database\SQLSRV\Connection">Connection</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>
@@ -677,7 +718,7 @@ that is cloned during execute.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -722,7 +763,7 @@ prepared query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
@@ -730,14 +771,14 @@ prepared query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">_getResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">_getResult</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">resource|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">resource|null</span>
             &mdash;
         
     
@@ -755,7 +796,7 @@ prepared query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -764,7 +805,7 @@ info necessary to execute the query later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">_prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">_prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
         <section class="phpdocumentor-description"><p>NOTE: This version is based on SQL code. Child classes should
 override this method.</p>
@@ -801,14 +842,14 @@ override this method.</p>
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\Exception">Exception</abbr></span>
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
                                                             
                                              
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">$this</span>
             &mdash;
         
     
@@ -826,22 +867,36 @@ override this method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Explicitly closes the statement.</p>
+        <p class="phpdocumentor-summary">Explicitly closes the prepared statement.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">close</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">close</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><abbr title="\BadMethodCallException">BadMethodCallException</abbr></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -859,7 +914,7 @@ override this method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -868,7 +923,7 @@ prepared query. Upon success, will return a Results object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">execute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">execute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -884,9 +939,32 @@ prepared query. Upon success, will return a Results object.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>bool|ResultInterface&lt;TConnection, TResult&gt;</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">bool|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span>
             &mdash;
         
     
@@ -904,7 +982,7 @@ prepared query. Upon success, will return a Results object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 
@@ -937,7 +1015,7 @@ prepared query. Upon success, will return a Results object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -970,7 +1048,7 @@ prepared query. Upon success, will return a Results object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">157</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 
     </aside>
 
@@ -1003,7 +1081,7 @@ prepared query. Upon success, will return a Results object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -1036,7 +1114,7 @@ prepared query. Upon success, will return a Results object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BasePreparedQuery.php"><a href="files/system-database-basepreparedquery.html"><abbr title="system/Database/BasePreparedQuery.php">BasePreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1045,7 +1123,7 @@ info necessary to execute the query later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$queryClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Query::class</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">prepare</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$queryClass</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Query::class</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
         <section class="phpdocumentor-description"><p>NOTE: This version is based on SQL code. Child classes should
 override this method.</p>
@@ -1082,7 +1160,40 @@ override this method.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">$this</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method__close">
+        _close()
+        <a href="classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__close" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Deallocate prepared statements.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">_close</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
@@ -1100,11 +1211,11 @@ override this method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/SQLSRV/PreparedQuery.php"><a href="files/system-database-sqlsrv-preparedquery.html"><abbr title="system/Database/SQLSRV/PreparedQuery.php">PreparedQuery.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Handle parameters</p>
+        <p class="phpdocumentor-summary">Handle parameters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>

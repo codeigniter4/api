@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -413,11 +417,25 @@ used as the input type, for making &#039;email&#039;, &#039;phone&#039;, etc inp
 <dd>Set Radio</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
-    <a href="namespaces/default.html#function_parse_form_attributes">parse_form_attributes()</a>
+    <a href="namespaces/default.html#function_validation_errors">validation_errors()</a>
+    <span>
+                                &nbsp;: array&lt;string, string&gt;    </span>
+</dt>
+<dd>Returns the validation errors.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_validation_list_errors">validation_list_errors()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Parse the form attributes</dd>
+<dd>Returns the rendered HTML of the validation errors.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_validation_show_error">validation_show_error()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Returns a single error for the specified field in formatted HTML.</dd>
 
     </dl>
 
@@ -1738,44 +1756,119 @@ re-populate an input field or textarea</p>
     
 </article>
                     <article class="phpdocumentor-element -function - ">
-    <h4 class="phpdocumentor-element__name" id="function_parse_form_attributes">
-        parse_form_attributes()
-        <a href="namespaces/default.html#function_parse_form_attributes" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="function_validation_errors">
+        validation_errors()
+        <a href="namespaces/default.html#function_validation_errors" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/form_helper.php"><a href="files/system-helpers-form-helper.html"><abbr title="system/Helpers/form_helper.php">form_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">691</span>
+    <span class="phpdocumentor-element-found-in__line">697</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Parse the form attributes</p>
+        <p class="phpdocumentor-summary">Returns the validation errors.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                    <span class="phpdocumentor-signature__name">parse_form_attributes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attributes</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$default</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">validation_errors</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;</span></code>
 
-        <section class="phpdocumentor-description"><p>Helper function used by some of the form helpers</p>
+        <section class="phpdocumentor-description"><p>First, checks the validation errors that are stored in the session.
+To store the errors in the session, you need to use <code class="prettyprint">withInput()</code> with <code class="prettyprint">redirect()</code>.</p>
+<p>The returned array should be in the following format:
+[
+'field1' =&gt; 'error message',
+'field2' =&gt; 'error message',
+]</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_validation_list_errors">
+        validation_list_errors()
+        <a href="namespaces/default.html#function_validation_list_errors" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/form_helper.php"><a href="files/system-helpers-form-helper.html"><abbr title="system/Helpers/form_helper.php">form_helper.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">719</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns the rendered HTML of the validation errors.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">validation_list_errors</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;list&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>See Validation::listErrors()</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$attributes</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string</span>
+                <span class="phpdocumentor-signature__argument__name">$template</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;list&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_validation_show_error">
+        validation_show_error()
+        <a href="namespaces/default.html#function_validation_show_error" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/form_helper.php"><a href="files/system-helpers-form-helper.html"><abbr title="system/Helpers/form_helper.php">form_helper.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">739</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns a single error for the specified field in formatted HTML.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                    <span class="phpdocumentor-signature__name">validation_show_error</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$template</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;single&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"><p>See Validation::showError()</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$field</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>List of attributes</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$default</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
+                <span class="phpdocumentor-signature__argument__name">$template</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;single&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Default values</p>
-</section>
+                    <section class="phpdocumentor-description"></section>
 
             </dd>
             </dl>

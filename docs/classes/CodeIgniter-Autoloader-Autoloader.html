@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -247,7 +251,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -306,9 +310,16 @@ The Config array consists of 2 primary keys, both of which are associative array
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Autoloader-Autoloader.html#property_files">$files</a>
     <span>
-                        &nbsp;: array&lt;int, string&gt;            </span>
+                        &nbsp;: array&lt;string|int, string&gt;            </span>
 </dt>
 <dd>Stores files as a list.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Autoloader-Autoloader.html#property_helpers">$helpers</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;            </span>
+</dt>
+<dd>Stores helper list.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Autoloader-Autoloader.html#property_prefixes">$prefixes</a>
@@ -354,6 +365,13 @@ the valid parts that we&#039;ll need.</dd>
 <dd>Load a class using available class mapping.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_loadHelpers">loadHelpers()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Loads helpers</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_register">register()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -372,7 +390,14 @@ the valid parts that we&#039;ll need.</dd>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Sanitizes a filename, replacing spaces with dashes.</dd>
+<dd>Check file path.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_unregister">unregister()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Unregister autoloader.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_discoverComposerNamespaces">discoverComposerNamespaces()</a>
@@ -444,7 +469,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -477,7 +502,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -485,13 +510,78 @@ the valid parts that we&#039;ll need.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$files</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string></p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_helpers">
+        $helpers
+        <a href="classes/CodeIgniter-Autoloader-Autoloader.html#property_helpers" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">88</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Stores helper list.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$helpers</span>
+     = <span class="phpdocumentor-signature__default-value">[&#039;url&#039;]</span></code>
+
+        <section class="phpdocumentor-description"><p>Always load the URL helper, it should be used in most apps.</p>
+</section>
+
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string></p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -510,7 +600,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -547,7 +637,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 
     </aside>
 
@@ -613,7 +703,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">215</span>
 
     </aside>
 
@@ -659,7 +749,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">83</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 
     </aside>
 
@@ -712,7 +802,7 @@ the valid parts that we&#039;ll need.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">233</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
     </aside>
 
@@ -760,7 +850,7 @@ on failure.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">243</span>
 
     </aside>
 
@@ -797,6 +887,39 @@ on failure.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_loadHelpers">
+        loadHelpers()
+        <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_loadHelpers" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">470</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Loads helpers</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">loadHelpers</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_register">
         register()
         <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_register" class="headerlink"><i class="fas fa-link"></i></a>
@@ -804,7 +927,7 @@ on failure.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
@@ -837,7 +960,7 @@ on failure.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -881,17 +1004,17 @@ on failure.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sanitizes a filename, replacing spaces with dashes.</p>
+        <p class="phpdocumentor-summary">Check file path.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">sanitizeFilename</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"><p>Removes special characters that are illegal in filenames on certain
+        <section class="phpdocumentor-description"><p>Checks special characters that are illegal in filenames on certain
 operating systems and special characters requiring special escaping
 to manipulate at the command line. Replaces spaces and consecutive
 dashes with a single dash. Trim period, dash and underscore from beginning
@@ -923,6 +1046,41 @@ and end of filename.</p>
                     <article
         class="phpdocumentor-element
             -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unregister">
+        unregister()
+        <a href="classes/CodeIgniter-Autoloader-Autoloader.html#method_unregister" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">171</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Unregister autoloader.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">unregister</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+        <section class="phpdocumentor-description"><p>This method is for testing.</p>
+</section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">void</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -protected
             -deprecated                                            "
 >
@@ -933,7 +1091,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">345</span>
+    <span class="phpdocumentor-element-found-in__line">436</span>
 
     </aside>
 
@@ -981,7 +1139,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">278</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 
     </aside>
 
@@ -1027,7 +1185,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 
     </aside>
 
@@ -1074,7 +1232,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">424</span>
 
     </aside>
 
@@ -1118,7 +1276,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
@@ -1162,14 +1320,14 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">loadComposerNamespaces</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Composer\Autoload\ClassLoader">ClassLoader</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$composer</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">loadComposerNamespaces</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Composer\Autoload\ClassLoader">ClassLoader</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$composer</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$composerPackages</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -1178,6 +1336,14 @@ and end of filename.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$composer</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Composer\Autoload\ClassLoader">ClassLoader</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$composerPackages</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"></section>

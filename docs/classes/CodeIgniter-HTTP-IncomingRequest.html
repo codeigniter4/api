@@ -188,6 +188,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-traits.html" class="">Traits</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-typography.html" class="">Typography</a>
                 
             </li>
@@ -371,7 +375,7 @@ and their normal-case key as it is in $headers.</dd>
 <dd>The current locale of the application.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-HTTP-Request.html#property_method">$method</a>
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#property_method">$method</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
@@ -597,7 +601,7 @@ the JSON into an array.</dd>
 locale if none is set.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-HTTP-Request.html#method_getMethod">getMethod()</a>
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getMethod">getMethod()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -650,6 +654,13 @@ running detection as necessary.</dd>
 the String into an array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_getRawInputVar">getRawInputVar()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Gets a specific variable from raw input stream (send method in PUT, PATCH, DELETE).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getServer">getServer()</a>
     <span>
                                 &nbsp;: mixed    </span>
@@ -657,9 +668,9 @@ the String into an array.</dd>
 <dd>Fetch an item from the $_SERVER array.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-HTTP-Request.html#method_getUri">getUri()</a>
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getUri">getUri()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>|null    </span>
 </dt>
 <dd>Retrieves the URI instance.</dd>
 
@@ -700,6 +711,13 @@ name exist, then will return an array of header objects.</dd>
                                 &nbsp;: array&lt;string, <a href="classes/CodeIgniter-HTTP-Header.html"><abbr title="\CodeIgniter\HTTP\Header">Header</abbr></a>&gt;    </span>
 </dt>
 <dd>Returns an array containing all Headers.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_is">is()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks this request type.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_isAJAX">isAJAX()</a>
@@ -789,7 +807,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</dd>
 <dd>Sets the locale string for this request.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-HTTP-Request.html#method_setMethod">setMethod()</a>
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_setMethod">setMethod()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
@@ -810,11 +828,18 @@ multiple values (i.e. are an array or implement ArrayAccess)</dd>
 <dd>Sets the HTTP protocol version.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-HTTP-Request.html#method_withMethod">withMethod()</a>
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_withMethod">withMethod()</a>
     <span>
                                 &nbsp;: static    </span>
 </dt>
 <dd>Returns an instance with the specified method.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_withUri">withUri()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Returns an instance with the provided URI.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_detectURI">detectURI()</a>
@@ -864,6 +889,13 @@ so we can retrieve them later.</dd>
 <dd>Remove relative directory (../) and multi slashes (///)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_determineHost">determineHost()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP">getClientIP()</a>
     <span>
                                 &nbsp;: string|null    </span>
@@ -871,9 +903,23 @@ so we can retrieve them later.</dd>
 <dd>Gets the client IP address from the HTTP header.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getHostFromUri">getHostFromUri()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_getPostMaxSize">getPostMaxSize()</a>
     <span>
                                 &nbsp;: int    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_isHostHeaderMissingOrEmpty">isHostHeaderMissingOrEmpty()</a>
+    <span>
+                                &nbsp;: bool    </span>
 </dt>
 <dd></dd>
 
@@ -894,7 +940,7 @@ so we can retrieve them later.</dd>
             phpdocumentor-element
             -property
             -public
-                                                        "
+                        -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_config">
         $config
@@ -905,13 +951,13 @@ so we can retrieve them later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Configuration settings.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type"><abbr title="\Config\App">App</abbr></span>
     <span class="phpdocumentor-signature__name">$config</span>
@@ -920,6 +966,21 @@ so we can retrieve them later.</dd>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Will be protected.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 </article>
                     <article
@@ -927,7 +988,7 @@ so we can retrieve them later.</dd>
             phpdocumentor-element
             -property
             -public
-                                                        "
+                        -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_uri">
         $uri
@@ -944,7 +1005,7 @@ so we can retrieve them later.</dd>
 
         <p class="phpdocumentor-summary">The URI for this request.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span>
     <span class="phpdocumentor-signature__name">$uri</span>
@@ -964,11 +1025,11 @@ appear different than actual URL. If you need that use getPath().</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">TODO</span>
+                    <span class="phpdocumentor-tag__name">deprecated</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>should be protected. Use getUri() instead.</p>
+                                                 <section class="phpdocumentor-description"><p>Will be protected. Use getUri() instead.</p>
 </section>
 
                                     </dd>
@@ -991,7 +1052,7 @@ appear different than actual URL. If you need that use getPath().</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -1321,14 +1382,14 @@ and their normal-case key as it is in $headers.</p>
 >
     <h4 class="phpdocumentor-element__name" id="property_method">
         $method
-        <a href="classes/CodeIgniter-HTTP-Request.html#property_method" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#property_method" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -1394,7 +1455,7 @@ and their normal-case key as it is in $headers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">136</span>
 
     </aside>
 
@@ -1497,7 +1558,7 @@ when working with the share request instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -1545,7 +1606,7 @@ when working with the share request instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -1621,7 +1682,7 @@ when working with the share request instance.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validProtocolVersions</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;1.0&#039;, &#039;1.1&#039;, &#039;2.0&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;1.0&#039;, &#039;1.1&#039;, &#039;2.0&#039;, &#039;3.0&#039;]</span></code>
 
     
     
@@ -1656,7 +1717,7 @@ when working with the share request instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$body</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;php://input&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-UserAgent.html"><abbr title="\CodeIgniter\HTTP\UserAgent">UserAgent</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userAgent</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$body</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;php://input&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-UserAgent.html"><abbr title="\CodeIgniter\HTTP\UserAgent">UserAgent</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$userAgent</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1670,10 +1731,11 @@ when working with the share request instance.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$uri</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$body</span>
@@ -1684,10 +1746,11 @@ when working with the share request instance.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$userAgent</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-UserAgent.html"><abbr title="\CodeIgniter\HTTP\UserAgent">UserAgent</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-UserAgent.html"><abbr title="\CodeIgniter\HTTP\UserAgent">UserAgent</abbr></a>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -1852,7 +1915,7 @@ content negotiation.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 
     </aside>
 
@@ -1973,7 +2036,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -2006,7 +2069,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">686</span>
+    <span class="phpdocumentor-element-found-in__line">832</span>
 
     </aside>
 
@@ -2067,7 +2130,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">499</span>
+    <span class="phpdocumentor-element-found-in__line">557</span>
 
     </aside>
 
@@ -2161,7 +2224,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">782</span>
+    <span class="phpdocumentor-element-found-in__line">928</span>
 
     </aside>
 
@@ -2206,7 +2269,7 @@ to upload it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">767</span>
+    <span class="phpdocumentor-element-found-in__line">913</span>
 
     </aside>
 
@@ -2251,7 +2314,7 @@ of uploaded files and if is have been uploaded with multiple option.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">752</span>
+    <span class="phpdocumentor-element-found-in__line">898</span>
 
     </aside>
 
@@ -2285,7 +2348,7 @@ request. Each file is represented by an UploadedFile instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">618</span>
+    <span class="phpdocumentor-element-found-in__line">760</span>
 
     </aside>
 
@@ -2346,7 +2409,7 @@ request. Each file is represented by an UploadedFile instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">666</span>
+    <span class="phpdocumentor-element-found-in__line">810</span>
 
     </aside>
 
@@ -2407,7 +2470,7 @@ request. Each file is represented by an UploadedFile instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -2447,6 +2510,15 @@ name exist, then will return an array of header objects.</p>
 
                                     </dd>
                                                 <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">TODO</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Incompatible return value with PSR-7</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -2474,7 +2546,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 
     </aside>
 
@@ -2525,7 +2597,7 @@ and supply your own delimiter when concatenating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -2549,6 +2621,15 @@ and supply your own delimiter when concatenating.</p>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
                                                  <section class="phpdocumentor-description"><p>Use Message::headers() to make room for PSR-7</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">TODO</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>Incompatible return value with PSR-7</p>
 </section>
 
                                     </dd>
@@ -2619,7 +2700,7 @@ then will return '0.0.0.0'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">553</span>
+    <span class="phpdocumentor-element-found-in__line">600</span>
 
     </aside>
 
@@ -2700,7 +2781,7 @@ to associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">615</span>
 
     </aside>
 
@@ -2708,15 +2789,15 @@ to associative arrays.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getJsonVar</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$assoc</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|<abbr title="\stdClass">stdClass</abbr>|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">getJsonVar</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$assoc</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|<abbr title="\stdClass">stdClass</abbr>|string|null</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$index</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The variable that you want which can use dot syntax for getting specific values.</p>
 </section>
@@ -2772,7 +2853,7 @@ to associative arrays.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">491</span>
+    <span class="phpdocumentor-element-found-in__line">549</span>
 
     </aside>
 
@@ -2801,12 +2882,12 @@ locale if none is set.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getMethod">
         getMethod()
-        <a href="classes/CodeIgniter-HTTP-Request.html#method_getMethod" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getMethod" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -2845,13 +2926,6 @@ locale if none is set.</p>
 </section>
 
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -2873,7 +2947,7 @@ locale if none is set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">708</span>
+    <span class="phpdocumentor-element-found-in__line">854</span>
 
     </aside>
 
@@ -2919,7 +2993,7 @@ POST data, then the old GET data and finally check for dot arrays</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">459</span>
+    <span class="phpdocumentor-element-found-in__line">517</span>
 
     </aside>
 
@@ -2953,7 +3027,7 @@ running detection as necessary.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">632</span>
+    <span class="phpdocumentor-element-found-in__line">774</span>
 
     </aside>
 
@@ -3014,7 +3088,7 @@ running detection as necessary.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">646</span>
+    <span class="phpdocumentor-element-found-in__line">788</span>
 
     </aside>
 
@@ -3075,7 +3149,7 @@ running detection as necessary.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
@@ -3092,7 +3166,9 @@ running detection as necessary.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>HTTP protocol version.</p>
+</section>
+
     
 </article>
                     <article
@@ -3108,7 +3184,7 @@ running detection as necessary.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">602</span>
+    <span class="phpdocumentor-element-found-in__line">690</span>
 
     </aside>
 
@@ -3125,6 +3201,69 @@ the String into an array.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRawInputVar">
+        getRawInputVar()
+        <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_getRawInputVar" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">706</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Gets a specific variable from raw input stream (send method in PUT, PATCH, DELETE).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getRawInputVar</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filter</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$index</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The variable that you want which can use dot syntax for getting specific values.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$filter</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Filter Constant</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$flags</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Option</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
         
     
@@ -3198,12 +3337,12 @@ the String into an array.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getUri">
         getUri()
-        <a href="classes/CodeIgniter-HTTP-Request.html#method_getUri" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getUri" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -3211,14 +3350,14 @@ the String into an array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getUri</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">getUri</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>|null</span></code>
 
     
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>|null</span>
             &mdash;
         
     
@@ -3236,7 +3375,7 @@ the String into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">696</span>
+    <span class="phpdocumentor-element-found-in__line">842</span>
 
     </aside>
 
@@ -3269,7 +3408,7 @@ the String into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">573</span>
 
     </aside>
 
@@ -3330,7 +3469,7 @@ other get* methods in most cases.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Message.php"><a href="files/system-http-message.html"><abbr title="system/HTTP/Message.php">Message.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 
     </aside>
 
@@ -3348,7 +3487,8 @@ other get* methods in most cases.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                    <section class="phpdocumentor-description"><p>Case-insensitive header field name.</p>
+</section>
 
             </dd>
             </dl>
@@ -3358,7 +3498,11 @@ other get* methods in most cases.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
-        
+            <section class="phpdocumentor-description"><p>Returns true if any header names match the given header
+name using a case-insensitive string comparison. Returns false if
+no matching header name is found in the message.</p>
+</section>
+
     
 </article>
                     <article
@@ -3446,6 +3590,66 @@ name exist, then will return an array of header objects.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_is">
+        is()
+        <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_is" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">384</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks this request type.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">is</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$type</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>HTTP verb or 'json' or 'ajax'</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>string|'get'|'post'|'put'|'delete'|'head'|'patch'|'options'|'json'|'ajax' $type</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isAJAX">
         isAJAX()
         <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_isAJAX" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3453,7 +3657,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">416</span>
 
     </aside>
 
@@ -3486,7 +3690,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">380</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 
     </aside>
 
@@ -3519,7 +3723,7 @@ name exist, then will return an array of header objects.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">426</span>
 
     </aside>
 
@@ -3553,7 +3757,7 @@ a few different methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 
     </aside>
 
@@ -3629,7 +3833,7 @@ a few different methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">354</span>
+    <span class="phpdocumentor-element-found-in__line">355</span>
 
     </aside>
 
@@ -3965,7 +4169,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">473</span>
+    <span class="phpdocumentor-element-found-in__line">531</span>
 
     </aside>
 
@@ -4004,12 +4208,12 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_setMethod">
         setMethod()
-        <a href="classes/CodeIgniter-HTTP-Request.html#method_setMethod" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_setMethod" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -4047,13 +4251,6 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 </section>
 
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -4075,7 +4272,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">451</span>
 
     </aside>
 
@@ -4083,7 +4280,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setPath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">setPath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
         <section class="phpdocumentor-description"><p>Note: Since current_url() accesses the shared request
 instance, this can be used to change the &quot;current URL&quot;
@@ -4103,7 +4300,7 @@ for testing.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$config</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Optional alternate config to use</p>
@@ -4188,12 +4385,12 @@ for testing.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_withMethod">
         withMethod()
-        <a href="classes/CodeIgniter-HTTP-Request.html#method_withMethod" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_withMethod" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Request.php"><a href="files/system-http-request.html"><abbr title="system/HTTP/Request.php">Request.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 
     </aside>
 
@@ -4226,8 +4423,62 @@ for testing.</p>
                     <article
         class="phpdocumentor-element
             -method
-            -protected
+            -public
                                                         "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withUri">
+        withUri()
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_withUri" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">125</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns an instance with the provided URI.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">withUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$preserveHost</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>New request URI to use.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$preserveHost</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Preserve the original state of the Host header.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">static</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+            -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_detectURI">
         detectURI()
@@ -4236,7 +4487,7 @@ for testing.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -4244,7 +4495,7 @@ for testing.</p>
 either provided by the user in the baseURL Config setting, or
 determined from the environment as needed.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">protected</span>
                     <span class="phpdocumentor-signature__name">detectURI</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$protocol</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseURL</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
@@ -4270,6 +4521,21 @@ determined from the environment as needed.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>$protocol and $baseURL are deprecated. No longer used.</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">mixed</span>
@@ -4335,7 +4601,7 @@ normal-case version of the header.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">326</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 
     </aside>
 
@@ -4370,7 +4636,7 @@ normal-case version of the header.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 
     </aside>
 
@@ -4451,7 +4717,7 @@ so we can retrieve them later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">798</span>
+    <span class="phpdocumentor-element-found-in__line">944</span>
 
     </aside>
 
@@ -4492,6 +4758,58 @@ so we can retrieve them later.</p>
 
                                     </dd>
                         </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_determineHost">
+        determineHost()
+        <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_determineHost" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/IncomingRequest.php"><a href="files/system-http-incomingrequest.html"><abbr title="system/HTTP/IncomingRequest.php">IncomingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">492</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">determineHost</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$config</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$baseURL</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$config</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Config\App">App</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$baseURL</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">string</span>
@@ -4549,6 +4867,50 @@ so we can retrieve them later.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getHostFromUri">
+        getHostFromUri()
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_getHostFromUri" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getHostFromUri</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-HTTP-URI.html"><abbr title="\CodeIgniter\HTTP\URI">URI</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getPostMaxSize">
         getPostMaxSize()
         <a href="classes/CodeIgniter-HTTP-IncomingRequest.html#method_getPostMaxSize" class="headerlink"><i class="fas fa-link"></i></a>
@@ -4572,6 +4934,39 @@ so we can retrieve them later.</p>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isHostHeaderMissingOrEmpty">
+        isHostHeaderMissingOrEmpty()
+        <a href="classes/CodeIgniter-HTTP-OutgoingRequest.html#method_isHostHeaderMissingOrEmpty" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/OutgoingRequest.php"><a href="files/system-http-outgoingrequest.html"><abbr title="system/HTTP/OutgoingRequest.php">OutgoingRequest.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">153</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">isHostHeaderMissingOrEmpty</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
             &mdash;
         
     
