@@ -5921,10 +5921,10 @@ Search.appendIndex(
             "summary": "Determines\u0020if\u0020a\u0020string\u0020represents\u0020a\u0020literal\u0020value\u0020or\u0020a\u0020field\u0020name",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_isLiteral"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AresetQueryAsData\u0028\u0029",
-            "name": "resetQueryAsData",
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AresetQuery\u0028\u0029",
+            "name": "resetQuery",
             "summary": "Publicly\u002Dvisible\u0020method\u0020to\u0020reset\u0020the\u0020QB\u0020values.",
-            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_resetQueryAsData"
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_resetQuery"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AresetRun\u0028\u0029",
             "name": "resetRun",
