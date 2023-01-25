@@ -4023,7 +4023,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\route_to\u0028\u0029",
             "name": "route_to",
-            "summary": "Given\u0020a\u0020controller\/method\u0020string\u0020and\u0020any\u0020params,\nwill\u0020attempt\u0020to\u0020build\u0020the\u0020relative\u0020URL\u0020to\u0020the\nmatching\u0020route.",
+            "summary": "Given\u0020a\u0020route\u0020name\u0020or\u0020controller\/method\u0020string\u0020and\u0020any\u0020params,\nwill\u0020attempt\u0020to\u0020build\u0020the\u0020relative\u0020URL\u0020to\u0020the\nmatching\u0020route.",
             "url": "namespaces/default.html#function_route_to"
         },                {
             "fqsen": "\\session\u0028\u0029",
@@ -13683,7 +13683,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\url_to\u0028\u0029",
             "name": "url_to",
-            "summary": "Get\u0020the\u0020full,\u0020absolute\u0020URL\u0020to\u0020a\u0020controller\u0020method\n\u0028with\u0020additional\u0020arguments\u0029",
+            "summary": "Get\u0020the\u0020full,\u0020absolute\u0020URL\u0020to\u0020a\u0020route\u0020name\u0020or\u0020controller\u0020method\n\u0028with\u0020additional\u0020arguments\u0029",
             "url": "namespaces/default.html#function_url_to"
         },                {
             "fqsen": "\\url_is\u0028\u0029",
@@ -14873,7 +14873,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AgetPath\u0028\u0029",
             "name": "getPath",
-            "summary": "Returns\u0020the\u0020path\u0020relative\u0020to\u0020SCRIPT_NAME,\nrunning\u0020detection\u0020as\u0020necessary.",
+            "summary": "Returns\u0020the\u0020URI\u0020path\u0020relative\u0020to\u0020baseURL,\nrunning\u0020detection\u0020as\u0020necessary.",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_getPath"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AsetLocale\u0028\u0029",
@@ -14983,7 +14983,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003A\u0024path",
             "name": "path",
-            "summary": "The\u0020detected\u0020path\u0020\u0028relative\u0020to\u0020SCRIPT_NAME\u0029.",
+            "summary": "The\u0020detected\u0020URI\u0020path\u0020\u0028relative\u0020to\u0020the\u0020baseURL\u0029.",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#property_path"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003A\u0024files",
