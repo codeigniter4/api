@@ -19538,7 +19538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AdetermineCurrentSubdomain\u0028\u0029",
             "name": "determineCurrentSubdomain",
-            "summary": "Examines\u0020the\u0020HTTP_HOST\u0020to\u0020get\u0020a\u0020best\u0020match\u0020for\u0020the\u0020subdomain.\u0020It\nwon\u0027t\u0020be\u0020perfect,\u0020but\u0020should\u0020work\u0020for\u0020our\u0020needs.",
+            "summary": "Examines\u0020the\u0020HTTP_HOST\u0020to\u0020get\u0020the\u0020best\u0020match\u0020for\u0020the\u0020subdomain.\u0020It\nwon\u0027t\u0020be\u0020perfect,\u0020but\u0020should\u0020work\u0020for\u0020our\u0020needs.",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_determineCurrentSubdomain"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AresetRoutes\u0028\u0029",
@@ -19753,7 +19753,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AreverseRoute\u0028\u0029",
             "name": "reverseRoute",
-            "summary": "Attempts\u0020to\u0020look\u0020up\u0020a\u0020route\u0020based\u0020on\u0020it\u0027s\u0020destination.",
+            "summary": "Attempts\u0020to\u0020look\u0020up\u0020a\u0020route\u0020based\u0020on\u0020its\u0020destination.",
             "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_reverseRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AisRedirect\u0028\u0029",
@@ -19833,7 +19833,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AsetIndexPage\u0028\u0029",
             "name": "setIndexPage",
-            "summary": "Sets\u0020the\u0020value\u0020that\u0020should\u0020be\u0020used\u0020to\u0020match\u0020the\u0020index.php\u0020file.\u0020Defaults\nto\u0020index.php\u0020but\u0020this\u0020allows\u0020you\u0020to\u0020modify\u0020it\u0020in\u0020case\u0020your\u0020are\u0020using\nsomething\u0020like\u0020mod_rewrite\u0020to\u0020remove\u0020the\u0020page.\u0020This\u0020allows\u0020you\u0020to\u0020set\nit\u0020a\u0020blank.",
+            "summary": "Sets\u0020the\u0020value\u0020that\u0020should\u0020be\u0020used\u0020to\u0020match\u0020the\u0020index.php\u0020file.\u0020Defaults\nto\u0020index.php\u0020but\u0020this\u0020allows\u0020you\u0020to\u0020modify\u0020it\u0020in\u0020case\u0020you\u0020are\u0020using\nsomething\u0020like\u0020mod_rewrite\u0020to\u0020remove\u0020the\u0020page.\u0020This\u0020allows\u0020you\u0020to\u0020set\nit\u0020a\u0020blank.",
             "url": "classes/CodeIgniter-Router-Router.html#method_setIndexPage"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AsetTranslateURIDashes\u0028\u0029",
@@ -19853,12 +19853,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AcheckRoutes\u0028\u0029",
             "name": "checkRoutes",
-            "summary": "Checks\u0020Defined\u0020Routs.",
+            "summary": "Checks\u0020Defined\u0020Routes.",
             "url": "classes/CodeIgniter-Router-Router.html#method_checkRoutes"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AautoRoute\u0028\u0029",
             "name": "autoRoute",
-            "summary": "Checks\u0020Auto\u0020Routs.",
+            "summary": "Checks\u0020Auto\u0020Routes.",
             "url": "classes/CodeIgniter-Router-Router.html#method_autoRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AvalidateRequest\u0028\u0029",
