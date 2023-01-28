@@ -20786,6 +20786,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#constant_DEFAULT_PORT"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003ADEFAULT_PROTOCOL",
+            "name": "DEFAULT_PROTOCOL",
+            "summary": "",
+            "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#constant_DEFAULT_PROTOCOL"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024redis",
             "name": "redis",
             "summary": "phpRedis\u0020instance",
