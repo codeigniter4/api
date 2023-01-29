@@ -10728,13 +10728,8 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Events",
             "name": "Events",
-            "summary": "Views\u0020collector",
+            "summary": "Events\u0020collector",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Events.html"
-        },                {
-            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Events\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Events.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Events\u003A\u003AformatTimelineData\u0028\u0029",
             "name": "formatTimelineData",
@@ -10775,11 +10770,6 @@ Search.appendIndex(
             "name": "title",
             "summary": "The\u0020\u0027title\u0027\u0020of\u0020this\u0020Collector.",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Events.html#property_title"
-        },                {
-            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Events\u003A\u003A\u0024viewer",
-            "name": "viewer",
-            "summary": "Instance\u0020of\u0020the\u0020Renderer\u0020service",
-            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Events.html#property_viewer"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Files",
             "name": "Files",
@@ -10986,10 +10976,10 @@ Search.appendIndex(
             "summary": "Views\u0020collector",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Views.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Views\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Views.html#method___construct"
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Views\u003A\u003AinitViewer\u0028\u0029",
+            "name": "initViewer",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Views.html#method_initViewer"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Views\u003A\u003AformatTimelineData\u0028\u0029",
             "name": "formatTimelineData",
@@ -11038,7 +11028,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Views\u003A\u003A\u0024viewer",
             "name": "viewer",
-            "summary": "Instance\u0020of\u0020the\u0020Renderer\u0020service",
+            "summary": "Instance\u0020of\u0020the\u0020shared\u0020Renderer\u0020service",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Views.html#property_viewer"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Views\u003A\u003A\u0024views",
