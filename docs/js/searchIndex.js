@@ -19551,6 +19551,11 @@ Search.appendIndex(
             "summary": "Get\u0020all\u0020controllers\u0020in\u0020Route\u0020Handlers",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getRegisteredControllers"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AgetControllerName\u0028\u0029",
+            "name": "getControllerName",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getControllerName"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024useSupportedLocalesOnly",
             "name": "useSupportedLocalesOnly",
             "summary": "Flag\u0020to\u0020limit\u0020or\u0020not\u0020the\u0020routes\u0020with\u0020\u007Blocale\u007D\u0020placeholder\u0020to\u0020App\u003A\u003A\u0024supportedLocales",
