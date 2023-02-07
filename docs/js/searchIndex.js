@@ -10481,6 +10481,11 @@ Search.appendIndex(
             "summary": "The\u0020outgoing\u0020response.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#property_response"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A\u0024exceptionCaughtByExceptionHandler",
+            "name": "exceptionCaughtByExceptionHandler",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#property_exceptionCaughtByExceptionHandler"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Iterator",
             "name": "Iterator",
             "summary": "Iterator\u0020for\u0020debugging.",
