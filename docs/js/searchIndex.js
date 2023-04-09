@@ -14261,6 +14261,11 @@ Search.appendIndex(
             "summary": "The\u0020response\u0020object\u0020associated\u0020with\u0020this\u0020request",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_response"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024responseOrig",
+            "name": "responseOrig",
+            "summary": "The\u0020original\u0020response\u0020object\u0020associated\u0020with\u0020this\u0020request",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_responseOrig"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024baseURI",
             "name": "baseURI",
             "summary": "The\u0020URI\u0020associated\u0020with\u0020this\u0020request",
