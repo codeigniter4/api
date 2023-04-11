@@ -3666,10 +3666,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByClass"
         },                {
-            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetRouteWithoutController\u0028\u0029",
-            "name": "getRouteWithoutController",
-            "summary": "Gets\u0020a\u0020route\u0020without\u0020default\u0020controller.",
-            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getRouteWithoutController"
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetRouteForDefaultController\u0028\u0029",
+            "name": "getRouteForDefaultController",
+            "summary": "Gets\u0020a\u0020route\u0020for\u0020the\u0020default\u0020controller.",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getRouteForDefaultController"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003A\u0024namespace",
             "name": "namespace",
