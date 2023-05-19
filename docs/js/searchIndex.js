@@ -20843,7 +20843,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Astop\u0028\u0029",
             "name": "stop",
-            "summary": "Does\u0020a\u0020full\u0020stop\u0020of\u0020the\u0020session\u003A",
+            "summary": "Destroys\u0020the\u0020current\u0020session.",
             "url": "classes/CodeIgniter-Session-Session.html#method_stop"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Aconfigure\u0028\u0029",
