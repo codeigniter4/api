@@ -24001,6 +24001,11 @@ Search.appendIndex(
             "summary": "Replace\u0020any\u0020placeholders\u0020within\u0020the\u0020rules\u0020with\u0020the\u0020values\u0020that\nmatch\u0020the\u0020\u0027key\u0027\u0020of\u0020any\u0020properties\u0020being\u0020set.\u0020For\u0020example,\u0020if\nwe\u0020had\u0020the\u0020following\u0020\u0024data\u0020array\u003A",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_fillPlaceholders"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AretrievePlaceholders\u0028\u0029",
+            "name": "retrievePlaceholders",
+            "summary": "Retrieves\u0020valid\u0020placeholder\u0020fields.",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_retrievePlaceholders"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AhasError\u0028\u0029",
             "name": "hasError",
             "summary": "Checks\u0020to\u0020see\u0020if\u0020an\u0020error\u0020exists\u0020for\u0020the\u0020given\u0020field.",
@@ -24048,7 +24053,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003A\u0024rules",
             "name": "rules",
-            "summary": "Stores\u0020the\u0020actual\u0020rules\u0020that\u0020should\nbe\u0020ran\u0020against\u0020\u0024data.",
+            "summary": "Stores\u0020the\u0020actual\u0020rules\u0020that\u0020should\u0020be\u0020run\u0020against\u0020\u0024data.",
             "url": "classes/CodeIgniter-Validation-Validation.html#property_rules"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003A\u0024data",
