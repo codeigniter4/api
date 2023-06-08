@@ -23923,7 +23923,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003Acheck\u0028\u0029",
             "name": "check",
-            "summary": "Runs\u0020the\u0020validation\u0020process,\u0020returning\u0020true\u0020or\u0020false\ndetermining\u0020whether\u0020validation\u0020was\u0020successful\u0020or\u0020not.",
+            "summary": "Runs\u0020the\u0020validation\u0020process,\u0020returning\u0020true\u0020or\u0020false\u0020determining\u0020whether\nvalidation\u0020was\u0020successful\u0020or\u0020not.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_check"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AprocessRules\u0028\u0029",
