@@ -8631,6 +8631,11 @@ Search.appendIndex(
             "summary": "Connect\u0020to\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_connect"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003AconvertDSN\u0028\u0029",
+            "name": "convertDSN",
+            "summary": "Converts\u0020the\u0020DSN\u0020with\u0020semicolon\u0020syntax.",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_convertDSN"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003Areconnect\u0028\u0029",
             "name": "reconnect",
             "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
