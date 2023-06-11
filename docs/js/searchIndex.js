@@ -6968,7 +6968,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003Aconnect\u0028\u0029",
             "name": "connect",
-            "summary": "Creates\u0020the\u0020default",
+            "summary": "Returns\u0020the\u0020database\u0020connection",
             "url": "classes/CodeIgniter-Database-Config.html#method_connect"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003AgetConnections\u0028\u0029",
@@ -7103,7 +7103,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003Aload\u0028\u0029",
             "name": "load",
-            "summary": "Parses\u0020the\u0020connection\u0020binds\u0020and\u0020returns\u0020an\u0020instance\u0020of\u0020the\u0020driver\nready\u0020to\u0020go.",
+            "summary": "Parses\u0020the\u0020connection\u0020binds\u0020and\u0020creates\u0020a\u0020Database\u0020Connection\u0020instance.",
             "url": "classes/CodeIgniter-Database-Database.html#method_load"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003AloadForge\u0028\u0029",
@@ -7118,12 +7118,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003AparseDSN\u0028\u0029",
             "name": "parseDSN",
-            "summary": "Parse\u0020universal\u0020DSN\u0020string",
+            "summary": "Parses\u0020universal\u0020DSN\u0020string",
             "url": "classes/CodeIgniter-Database-Database.html#method_parseDSN"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003AinitDriver\u0028\u0029",
             "name": "initDriver",
-            "summary": "Initialize\u0020database\u0020driver.",
+            "summary": "Creates\u0020a\u0020database\u0020object.",
             "url": "classes/CodeIgniter-Database-Database.html#method_initDriver"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003A\u0024connections",
