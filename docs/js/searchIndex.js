@@ -23643,7 +23643,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003Arequired_without\u0028\u0029",
             "name": "required_without",
-            "summary": "The\u0020field\u0020is\u0020required\u0020when\u0020all\u0020of\u0020the\u0020other\u0020fields\u0020are\u0020present\nin\u0020the\u0020data\u0020but\u0020not\u0020required.",
+            "summary": "The\u0020field\u0020is\u0020required\u0020when\u0020all\u0020the\u0020other\u0020fields\u0020are\u0020present\nin\u0020the\u0020data\u0020but\u0020not\u0020required.",
             "url": "classes/CodeIgniter-Validation-Rules.html#method_required_without"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\CreditCardRules",
@@ -23898,7 +23898,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\Rules\u003A\u003Arequired_without\u0028\u0029",
             "name": "required_without",
-            "summary": "The\u0020field\u0020is\u0020required\u0020when\u0020all\u0020of\u0020the\u0020other\u0020fields\u0020are\u0020present\nin\u0020the\u0020data\u0020but\u0020not\u0020required.",
+            "summary": "The\u0020field\u0020is\u0020required\u0020when\u0020all\u0020the\u0020other\u0020fields\u0020are\u0020present\nin\u0020the\u0020data\u0020but\u0020not\u0020required.",
             "url": "classes/CodeIgniter-Validation-StrictRules-Rules.html#method_required_without"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\Rules\u003A\u003A\u0024nonStrictRules",
@@ -23930,6 +23930,16 @@ Search.appendIndex(
             "name": "processRules",
             "summary": "Runs\u0020all\u0020of\u0020\u0024rules\u0020against\u0020\u0024field,\u0020until\u0020one\u0020fails,\u0020or\nall\u0020of\u0020them\u0020have\u0020been\u0020processed.\u0020If\u0020one\u0020fails,\u0020it\u0020adds\nthe\u0020error\u0020to\u0020\u0024this\u002D\u003Eerrors\u0020and\u0020moves\u0020on\u0020to\u0020the\u0020next,\nso\u0020that\u0020we\u0020can\u0020collect\u0020all\u0020of\u0020the\u0020first\u0020errors.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_processRules"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AprocessIfExist\u0028\u0029",
+            "name": "processIfExist",
+            "summary": "",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_processIfExist"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AprocessPermitEmpty\u0028\u0029",
+            "name": "processPermitEmpty",
+            "summary": "",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_processPermitEmpty"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AisClosure\u0028\u0029",
             "name": "isClosure",
