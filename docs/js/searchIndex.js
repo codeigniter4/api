@@ -19196,11 +19196,6 @@ Search.appendIndex(
             "summary": "An\u0020array\u0020of\u0020params\u0020to\u0020the\u0020controller\u0020method.",
             "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_params"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024httpVerb",
-            "name": "httpVerb",
-            "summary": "HTTP\u0020verb\u0020for\u0020the\u0020request.",
-            "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_httpVerb"
-        },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024namespace",
             "name": "namespace",
             "summary": "The\u0020namespace\u0020for\u0020controllers.",
@@ -19213,7 +19208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024defaultMethod",
             "name": "defaultMethod",
-            "summary": "The\u0020name\u0020of\u0020the\u0020default\u0020method",
+            "summary": "The\u0020name\u0020of\u0020the\u0020default\u0020method\u0020without\u0020HTTP\u0020verb\u0020prefix.",
             "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultMethod"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterInterface",
