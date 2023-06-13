@@ -4316,11 +4316,6 @@ Search.appendIndex(
             "summary": "Factories\u0020for\u0020creating\u0020instances.",
             "url": "classes/CodeIgniter-Config-Factories.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Config\\Factories\u003A\u003Amodels\u0028\u0029",
-            "name": "models",
-            "summary": "This\u0020method\u0020is\u0020only\u0020to\u0020prevent\u0020PHPStan\u0020error.",
-            "url": "classes/CodeIgniter-Config-Factories.html#method_models"
-        },                {
             "fqsen": "\\CodeIgniter\\Config\\Factories\u003A\u003A__callStatic\u0028\u0029",
             "name": "__callStatic",
             "summary": "Loads\u0020instances\u0020based\u0020on\u0020the\u0020method\u0020component\u0020name.\u0020Either\ncreates\u0020a\u0020new\u0020instance\u0020or\u0020returns\u0020an\u0020existing\u0020shared\u0020instance.",
