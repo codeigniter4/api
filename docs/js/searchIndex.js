@@ -11796,11 +11796,6 @@ Search.appendIndex(
             "summary": "__isset\u0028\u0029\u0020magic,\u0020providing\u0020checking\u0020for\u0020some\u0020of\u0020our\u0020properties",
             "url": "classes/CodeIgniter-Encryption-Handlers-BaseHandler.html#method___isset"
         },                {
-            "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\BaseHandler\u003A\u003A\u0024logger",
-            "name": "logger",
-            "summary": "Logger\u0020instance\u0020to\u0020record\u0020error\u0020messages\u0020and\u0020warnings.",
-            "url": "classes/CodeIgniter-Encryption-Handlers-BaseHandler.html#property_logger"
-        },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\OpenSSLHandler",
             "name": "OpenSSLHandler",
             "summary": "Encryption\u0020handling\u0020for\u0020OpenSSL\u0020library",
