@@ -8163,7 +8163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AisValidDSN\u0028\u0029",
             "name": "isValidDSN",
-            "summary": "confirm\u0020DNS\u0020format.",
+            "summary": "confirm\u0020DSN\u0020format.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method_isValidDSN"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003Aconnect\u0028\u0029",
@@ -23948,7 +23948,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AsetRule\u0028\u0029",
             "name": "setRule",
-            "summary": "Sets\u0020an\u0020individual\u0020rule\u0020and\u0020custom\u0020error\u0020messages\u0020for\u0020a\u0020single\u0020field.",
+            "summary": "Sets\u0020\u0028or\u0020adds\u0029\u0020an\u0020individual\u0020rule\u0020and\u0020custom\u0020error\u0020messages\u0020for\u0020a\u0020single\nfield.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_setRule"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AsetRules\u0028\u0029",
