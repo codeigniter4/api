@@ -493,7 +493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetValidationMessages\u0028\u0029",
             "name": "setValidationMessages",
-            "summary": "Allows\u0020to\u0020set\u0020validation\u0020messages.",
+            "summary": "Allows\u0020to\u0020set\u0020\u0028and\u0020reset\u0029\u0020validation\u0020messages.",
             "url": "classes/CodeIgniter-BaseModel.html#method_setValidationMessages"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetValidationMessage\u0028\u0029",
@@ -503,7 +503,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetValidationRules\u0028\u0029",
             "name": "setValidationRules",
-            "summary": "Allows\u0020to\u0020set\u0020validation\u0020rules.",
+            "summary": "Allows\u0020to\u0020set\u0020\u0028and\u0020reset\u0029\u0020validation\u0020rules.",
             "url": "classes/CodeIgniter-BaseModel.html#method_setValidationRules"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetValidationRule\u0028\u0029",
