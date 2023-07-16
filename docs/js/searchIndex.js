@@ -19081,10 +19081,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Router-AutoRouter.html#method_methodName"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024protectedControllers",
-            "name": "protectedControllers",
-            "summary": "List\u0020of\u0020controllers\u0020registered\u0020for\u0020the\u0020CLI\u0020verb\u0020that\u0020should\u0020not\u0020be\u0020accessed\u0020in\u0020the\u0020web.",
-            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_protectedControllers"
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024cliRoutes",
+            "name": "cliRoutes",
+            "summary": "List\u0020of\u0020CLI\u0020routes\u0020that\u0020do\u0020not\u0020contain\u0020\u0027\u002A\u0027\u0020routes.",
+            "url": "classes/CodeIgniter-Router-AutoRouter.html#property_cliRoutes"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003A\u0024controller",
             "name": "controller",
