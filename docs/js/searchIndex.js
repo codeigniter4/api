@@ -993,7 +993,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Ainitialize\u0028\u0029",
@@ -1098,7 +1098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003A__destruct\u0028\u0029",
@@ -1178,7 +1178,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Ainitialize\u0028\u0029",
@@ -1253,7 +1253,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A__destruct\u0028\u0029",
@@ -1333,7 +1333,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Ainitialize\u0028\u0029",
