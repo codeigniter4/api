@@ -10421,6 +10421,11 @@ Search.appendIndex(
             "summary": "Mask\u0020sensitive\u0020data\u0020in\u0020the\u0020trace.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_maskSensitiveData"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AmaskData\u0028\u0029",
+            "name": "maskData",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_maskData"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AdetermineCodes\u0028\u0029",
             "name": "determineCodes",
             "summary": "Determines\u0020the\u0020HTTP\u0020status\u0020code\u0020and\u0020the\u0020exit\u0020status\u0020code\u0020for\u0020this\u0020request.",
