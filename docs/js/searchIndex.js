@@ -4408,7 +4408,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\ForeignCharacters\u003A\u003A\u0024characterList",
             "name": "characterList",
-            "summary": "Without\u0020further\u0020ado,\u0020the\u0020list\u0020of\u0020foreign\u0020characters.",
+            "summary": "The\u0020list\u0020of\u0020foreign\u0020characters.",
             "url": "classes/CodeIgniter-Config-ForeignCharacters.html#property_characterList"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Publisher",
