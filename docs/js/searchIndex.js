@@ -13453,17 +13453,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\dd\u0028\u0029",
             "name": "dd",
-            "summary": "",
+            "summary": "dd\u0020function",
             "url": "namespaces/default.html#function_dd"
         },                {
             "fqsen": "\\d\u0028\u0029",
             "name": "d",
-            "summary": "",
+            "summary": "d\u0020function",
             "url": "namespaces/default.html#function_d"
         },                {
             "fqsen": "\\trace\u0028\u0029",
             "name": "trace",
-            "summary": "",
+            "summary": "trace\u0020function",
             "url": "namespaces/default.html#function_trace"
         },                {
             "fqsen": "\\number_to_size\u0028\u0029",
