@@ -24818,12 +24818,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024data",
             "name": "data",
-            "summary": "Data\u0020that\u0020is\u0020made\u0020available\u0020to\u0020the\u0020Views.",
+            "summary": "Saved\u0020Data.",
             "url": "classes/CodeIgniter-View-View.html#property_data"
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024tempData",
             "name": "tempData",
-            "summary": "Merge\u0020savedData\u0020and\u0020userData",
+            "summary": "Data\u0020for\u0020the\u0020variables\u0020that\u0020are\u0020available\u0020in\u0020the\u0020Views.",
             "url": "classes/CodeIgniter-View-View.html#property_tempData"
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024viewPath",
@@ -24833,7 +24833,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024renderVars",
             "name": "renderVars",
-            "summary": "The\u0020render\u0020variables",
+            "summary": "Data\u0020for\u0020rendering\u0020including\u0020Caching\u0020and\u0020Debug\u0020Toolbar\u0020data.",
             "url": "classes/CodeIgniter-View-View.html#property_renderVars"
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024loader",
