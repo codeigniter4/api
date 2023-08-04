@@ -468,8 +468,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoProtectFields\u0028\u0029",
             "name": "doProtectFields",
-            "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020updated\nare\u0020in\u0020the\u0020data\u0020array.",
+            "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020updated\u0020are\nin\u0020the\u0020data\u0020array.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doProtectFields"
+        },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoProtectFieldsForInsert\u0028\u0029",
+            "name": "doProtectFieldsForInsert",
+            "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020inserted\u0020are\u0020in\nthe\u0020data\u0020array.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_doProtectFieldsForInsert"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetDate\u0028\u0029",
             "name": "setDate",
@@ -18240,6 +18245,11 @@ Search.appendIndex(
             "name": "insert",
             "summary": "Inserts\u0020data\u0020into\u0020the\u0020database.\u0020If\u0020an\u0020object\u0020is\u0020provided,\nit\u0020will\u0020attempt\u0020to\u0020convert\u0020it\u0020to\u0020an\u0020array.",
             "url": "classes/CodeIgniter-Model.html#method_insert"
+        },                {
+            "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoProtectFieldsForInsert\u0028\u0029",
+            "name": "doProtectFieldsForInsert",
+            "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020inserted\u0020are\u0020in\nthe\u0020data\u0020array.",
+            "url": "classes/CodeIgniter-Model.html#method_doProtectFieldsForInsert"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
