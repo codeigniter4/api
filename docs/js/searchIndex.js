@@ -18348,12 +18348,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\Exceptions\\PagerException\u003A\u003AforInvalidTemplate\u0028\u0029",
             "name": "forInvalidTemplate",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020template\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Pager-Exceptions-PagerException.html#method_forInvalidTemplate"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\Exceptions\\PagerException\u003A\u003AforInvalidPaginationGroup\u0028\u0029",
             "name": "forInvalidPaginationGroup",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020group\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Pager-Exceptions-PagerException.html#method_forInvalidPaginationGroup"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\Pager",
