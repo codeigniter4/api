@@ -17213,52 +17213,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforMissingImage\u0028\u0029",
             "name": "forMissingImage",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020image\u0020is\u0020not\u0020found.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forMissingImage"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforFileNotSupported\u0028\u0029",
             "name": "forFileNotSupported",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020file\u0020specific\u0020is\u0020not\u0020following\u0020the\u0020role.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forFileNotSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforMissingAngle\u0028\u0029",
             "name": "forMissingAngle",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020angle\u0020is\u0020undefined.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forMissingAngle"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforInvalidDirection\u0028\u0029",
             "name": "forInvalidDirection",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020direction\u0020property\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forInvalidDirection"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforInvalidPath\u0028\u0029",
             "name": "forInvalidPath",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020path\u0020property\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forInvalidPath"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforEXIFUnsupported\u0028\u0029",
             "name": "forEXIFUnsupported",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020EXIF\u0020function\u0020is\u0020not\u0020supported.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forEXIFUnsupported"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforInvalidImageCreate\u0028\u0029",
             "name": "forInvalidImageCreate",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020image\u0020specific\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forInvalidImageCreate"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforSaveFailed\u0028\u0029",
             "name": "forSaveFailed",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020image\u0020save\u0020failed.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forSaveFailed"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforInvalidImageLibraryPath\u0028\u0029",
             "name": "forInvalidImageLibraryPath",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020image\u0020library\u0020path\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forInvalidImageLibraryPath"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Exceptions\\ImageException\u003A\u003AforImageProcessFailed\u0028\u0029",
             "name": "forImageProcessFailed",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020image\u0020process\u0020failed.",
             "url": "classes/CodeIgniter-Images-Exceptions-ImageException.html#method_forImageProcessFailed"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\BaseHandler",
