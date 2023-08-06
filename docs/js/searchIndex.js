@@ -18311,11 +18311,6 @@ Search.appendIndex(
             "summary": "Escape\u0020array\u0020that\u0020maps\u0020usage\u0020of\u0020escape\nflag\u0020for\u0020every\u0020parameter.",
             "url": "classes/CodeIgniter-Model.html#property_escape"
         },                {
-            "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024tempPrimaryKeyValue",
-            "name": "tempPrimaryKeyValue",
-            "summary": "Primary\u0020Key\u0020value\u0020when\u0020inserting\u0020and\u0020useAutoIncrement\u0020is\u0020false.",
-            "url": "classes/CodeIgniter-Model.html#property_tempPrimaryKeyValue"
-        },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024builderMethodsNotAvailable",
             "name": "builderMethodsNotAvailable",
             "summary": "Builder\u0020method\u0020names\u0020that\u0020should\u0020not\u0020be\u0020used\u0020in\u0020the\u0020Model.",
