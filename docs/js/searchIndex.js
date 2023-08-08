@@ -12158,7 +12158,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024dates",
             "name": "dates",
-            "summary": "",
+            "summary": "The\u0020date\u0020fields.",
             "url": "classes/CodeIgniter-Entity-Entity.html#property_dates"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024casts",
