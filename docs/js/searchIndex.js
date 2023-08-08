@@ -13703,22 +13703,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException\u003A\u003AforNoTemplate\u0028\u0029",
             "name": "forNoTemplate",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020template\u0020value\u0020of\u0020config\u0020is\u0020empty.",
             "url": "classes/CodeIgniter-Honeypot-Exceptions-HoneypotException.html#method_forNoTemplate"
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException\u003A\u003AforNoNameField\u0028\u0029",
             "name": "forNoNameField",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020name\u0020value\u0020of\u0020config\u0020is\u0020empty.",
             "url": "classes/CodeIgniter-Honeypot-Exceptions-HoneypotException.html#method_forNoNameField"
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException\u003A\u003AforNoHiddenValue\u0028\u0029",
             "name": "forNoHiddenValue",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020the\u0020hidden\u0020value\u0020of\u0020config\u0020is\u0020false.",
             "url": "classes/CodeIgniter-Honeypot-Exceptions-HoneypotException.html#method_forNoHiddenValue"
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException\u003A\u003AisBot\u0028\u0029",
             "name": "isBot",
-            "summary": "",
+            "summary": "Thrown\u0020when\u0020there\u0020are\u0020no\u0020data\u0020in\u0020the\u0020request\u0020of\u0020honeypot\u0020field.",
             "url": "classes/CodeIgniter-Honeypot-Exceptions-HoneypotException.html#method_isBot"
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Honeypot",
