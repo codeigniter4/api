@@ -20003,17 +20003,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforDisallowedAction\u0028\u0029",
             "name": "forDisallowedAction",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020some\u0020specific\u0020action\u0020is\u0020not\u0020allowed.",
             "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forDisallowedAction"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidUTF8Chars\u0028\u0029",
             "name": "forInvalidUTF8Chars",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020source\u0020string\u0020contains\u0020invalid\u0020UTF\u002D8\u0020characters.",
             "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forInvalidUTF8Chars"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidControlChars\u0028\u0029",
             "name": "forInvalidControlChars",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020source\u0020string\u0020contains\u0020invalid\u0020control\u0020characters.",
             "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forInvalidControlChars"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidSameSite\u0028\u0029",
@@ -23363,27 +23363,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Exceptions\\ValidationException\u003A\u003AforRuleNotFound\u0028\u0029",
             "name": "forRuleNotFound",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020validation\u0020rule\u0020is\u0020not\u0020found.",
             "url": "classes/CodeIgniter-Validation-Exceptions-ValidationException.html#method_forRuleNotFound"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Exceptions\\ValidationException\u003A\u003AforGroupNotFound\u0028\u0029",
             "name": "forGroupNotFound",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020group\u0020value\u0020of\u0020config\u0020is\u0020not\u0020set.",
             "url": "classes/CodeIgniter-Validation-Exceptions-ValidationException.html#method_forGroupNotFound"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Exceptions\\ValidationException\u003A\u003AforGroupNotArray\u0028\u0029",
             "name": "forGroupNotArray",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020group\u0020value\u0020of\u0020config\u0020is\u0020not\u0020array\u0020type.",
             "url": "classes/CodeIgniter-Validation-Exceptions-ValidationException.html#method_forGroupNotArray"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Exceptions\\ValidationException\u003A\u003AforInvalidTemplate\u0028\u0029",
             "name": "forInvalidTemplate",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020the\u0020template\u0020of\u0020config\u0020is\u0020invalid.",
             "url": "classes/CodeIgniter-Validation-Exceptions-ValidationException.html#method_forInvalidTemplate"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Exceptions\\ValidationException\u003A\u003AforNoRuleSets\u0028\u0029",
             "name": "forNoRuleSets",
-            "summary": "",
+            "summary": "Throws\u0020when\u0020there\u0020is\u0020no\u0020any\u0020rule\u0020set.",
             "url": "classes/CodeIgniter-Validation-Exceptions-ValidationException.html#method_forNoRuleSets"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\FileRules",
