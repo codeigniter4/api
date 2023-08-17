@@ -18258,7 +18258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AobjectToRawArray\u0028\u0029",
             "name": "objectToRawArray",
-            "summary": "Takes\u0020a\u0020class\u0020an\u0020returns\u0020an\u0020array\u0020of\u0020it\u0027s\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020with\u0020raw\u0020values.",
+            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020its\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020with\u0020raw\u0020values.",
             "url": "classes/CodeIgniter-Model.html#method_objectToRawArray"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A__get\u0028\u0029",
