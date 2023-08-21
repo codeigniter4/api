@@ -12861,6 +12861,16 @@ Search.appendIndex(
             "summary": "Check\u0020paths\u0020for\u0020match\u0020for\u0020URI",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_pathApplies"
         },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AcheckExcept\u0028\u0029",
+            "name": "checkExcept",
+            "summary": "Check\u0020except\u0020paths",
+            "url": "classes/CodeIgniter-Filters-Filters.html#method_checkExcept"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AcheckPseudoRegex\u0028\u0029",
+            "name": "checkPseudoRegex",
+            "summary": "Check\u0020the\u0020URI\u0020path\u0020as\u0020pseudo\u002Dregex",
+            "url": "classes/CodeIgniter-Filters-Filters.html#method_checkPseudoRegex"
+        },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024config",
             "name": "config",
             "summary": "The\u0020original\u0020config\u0020file",
