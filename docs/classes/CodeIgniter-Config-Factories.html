@@ -133,6 +133,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-hotreloader.html" class="">HotReloader</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-http.html" class="">HTTP</a>
                 
             </li>
@@ -258,7 +262,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -295,12 +299,11 @@ instantiation checks.</p>
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Config-Factories.html#property_basenames">$basenames</a>
+    <a href="classes/CodeIgniter-Config-Factories.html#property_aliases">$aliases</a>
     <span>
                         &nbsp;: array&lt;string, array&lt;string, string&gt;&gt;            </span>
 </dt>
-<dd>Mapping of class basenames (no namespace) to
-their instances.</dd>
+<dd>Mapping of class aliases to their true Fully Qualified Class Name (FQCN).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Config-Factories.html#property_instances">$instances</a>
@@ -349,25 +352,11 @@ creates a new instance or returns an existing shared instance.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Config-Factories.html#method_getBasename">getBasename()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Gets a basename from a class name, namespaced or not.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Config-Factories.html#method_getOptions">getOptions()</a>
-    <span>
-                                &nbsp;: array&lt;string, bool|string|null&gt;    </span>
-</dt>
-<dd>Returns the component-specific configuration</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Config-Factories.html#method_injectMock">injectMock()</a>
+    <a href="classes/CodeIgniter-Config-Factories.html#method_define">define()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Helper method for injecting mock instances</dd>
+<dd>Define the class to load. You can *override* the concrete class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Config-Factories.html#method_models">models()</a>
@@ -410,6 +399,27 @@ creates a new instance or returns an existing shared instance.</dd>
 </dt>
 <dd>Verifies that a class &amp; config satisfy the &quot;preferApp&quot; option</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Config-Factories.html#method_getDefinedInstance">getDefinedInstance()</a>
+    <span>
+                                &nbsp;: object|null    </span>
+</dt>
+<dd>Gets the defined instance. If not exists, creates new one.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Config-Factories.html#method_isConfig">isConfig()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Is the component Config?</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Config-Factories.html#method_isNamespaced">isNamespaced()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Is the class alias namespaced or not?</dd>
+
     </dl>
 
 
@@ -431,9 +441,9 @@ creates a new instance or returns an existing shared instance.</dd>
             -protected
             -static                                            "
 >
-    <h4 class="phpdocumentor-element__name" id="property_basenames">
-        $basenames
-        <a href="classes/CodeIgniter-Config-Factories.html#property_basenames" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_aliases">
+        $aliases
+        <a href="classes/CodeIgniter-Config-Factories.html#property_aliases" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -441,25 +451,30 @@ creates a new instance or returns an existing shared instance.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Mapping of class basenames (no namespace) to
-their instances.</p>
+        <p class="phpdocumentor-summary">Mapping of class aliases to their true Fully Qualified Class Name (FQCN).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string, array&lt;string, string&gt;&gt;</span>
-    <span class="phpdocumentor-signature__name">$basenames</span>
+    <span class="phpdocumentor-signature__name">$aliases</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Class aliases can be:
+- FQCN. E.g., 'App\Lib\SomeLib'
+- short classname. E.g., 'SomeLib'
+- short classname with sub-directories. E.g., 'Sub/SomeLib'</p>
+<p>[component =&gt; [alias =&gt; FQCN]]</p>
+</section>
+
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CodeIgniter-Config-Factories.html#property_basenames#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Config-Factories.html#property_aliases#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -492,7 +507,7 @@ their instances.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -507,6 +522,7 @@ has been requested as &quot;shared&quot;.</p>
 
         <section class="phpdocumentor-description"><p>A multi-dimensional array with components as
 keys to the array of name-indexed instances.</p>
+<p>[component =&gt; [FQCN =&gt; instance]]</p>
 </section>
 
     
@@ -546,7 +562,7 @@ keys to the array of name-indexed instances.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -581,7 +597,7 @@ from CodeIgniter\Config\Factory.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">46</span>
 
     </aside>
 
@@ -621,7 +637,7 @@ component to prevent logic loops.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -712,117 +728,23 @@ creates a new instance or returns an existing shared instance.</p>
             -public
                                     -static                    "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getBasename">
-        getBasename()
-        <a href="classes/CodeIgniter-Config-Factories.html#method_getBasename" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_define">
+        define()
+        <a href="classes/CodeIgniter-Config-Factories.html#method_define" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets a basename from a class name, namespaced or not.</p>
+        <p class="phpdocumentor-summary">Define the class to load. You can *override* the concrete class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getBasename</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_getOptions">
-        getOptions()
-        <a href="classes/CodeIgniter-Config-Factories.html#method_getOptions" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">220</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Returns the component-specific configuration</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getOptions</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$component</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, bool|string|null&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$component</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Lowercase, plural component name</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string, bool|string|null&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_injectMock">
-        injectMock()
-        <a href="classes/CodeIgniter-Config-Factories.html#method_injectMock" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">298</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Helper method for injecting mock instances</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">injectMock</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$component</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$instance</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">define</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$component</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$classname</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -839,24 +761,42 @@ creates a new instance or returns an existing shared instance.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The name of the instance</p>
+                    <section class="phpdocumentor-description"><p>Class alias. See the $aliases property.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$instance</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                <span class="phpdocumentor-signature__argument__name">$classname</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>FQCN to be loaded</p>
+</section>
+
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Config-Factories.html#method_define#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>class-string $classname FQCN to be loaded</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
     
 </article>
@@ -881,7 +821,7 @@ creates a new instance or returns an existing shared instance.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">models</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options = []</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-ConnectionInterface.html"><abbr title="\CodeIgniter\Database\ConnectionInterface">ConnectionInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$$conn = null</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Model.html"><abbr title="\CodeIgniter\Model">Model</abbr></a>|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">models</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options = []</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-ConnectionInterface.html"><abbr title="\CodeIgniter\Database\ConnectionInterface">ConnectionInterface</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$$conn = null</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Model.html"><abbr title="\CodeIgniter\Model">Model</abbr></a>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -889,7 +829,7 @@ creates a new instance or returns an existing shared instance.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -933,7 +873,7 @@ creates a new instance or returns an existing shared instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
@@ -977,7 +917,7 @@ creates a new instance or returns an existing shared instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">245</span>
+    <span class="phpdocumentor-element-found-in__line">362</span>
 
     </aside>
 
@@ -1006,7 +946,9 @@ creates a new instance or returns an existing shared instance.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>option values</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1036,7 +978,7 @@ creates a new instance or returns an existing shared instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -1044,7 +986,7 @@ creates a new instance or returns an existing shared instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">locateClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">locateClass</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1061,11 +1003,11 @@ creates a new instance or returns an existing shared instance.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Class name, namespace optional</p>
+                    <section class="phpdocumentor-description"><p>Class alias. See the $aliases property.</p>
 </section>
 
             </dd>
@@ -1093,7 +1035,7 @@ creates a new instance or returns an existing shared instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">203</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 
     </aside>
 
@@ -1101,7 +1043,7 @@ creates a new instance or returns an existing shared instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">verifyInstanceOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">verifyInstanceOf</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1118,11 +1060,11 @@ creates a new instance or returns an existing shared instance.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Class name, namespace optional</p>
+                    <section class="phpdocumentor-description"><p>Class alias. See the $aliases property.</p>
 </section>
 
             </dd>
@@ -1150,7 +1092,7 @@ creates a new instance or returns an existing shared instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">293</span>
 
     </aside>
 
@@ -1158,7 +1100,7 @@ creates a new instance or returns an existing shared instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">verifyPreferApp</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">verifyPreferApp</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1175,11 +1117,167 @@ creates a new instance or returns an existing shared instance.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Class name, namespace optional</p>
+                    <section class="phpdocumentor-description"><p>Class alias. See the $aliases property.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDefinedInstance">
+        getDefinedInstance()
+        <a href="classes/CodeIgniter-Config-Factories.html#method_getDefinedInstance" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">180</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Gets the defined instance. If not exists, creates new one.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getDefinedInstance</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arguments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$options</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$arguments</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">object|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isConfig">
+        isConfig()
+        <a href="classes/CodeIgniter-Config-Factories.html#method_isConfig" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">206</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Is the component Config?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">isConfig</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$component</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$component</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Lowercase, plural component name</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isNamespaced">
+        isNamespaced()
+        <a href="classes/CodeIgniter-Config-Factories.html#method_isNamespaced" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Factories.php"><a href="files/system-config-factories.html"><abbr title="system/Config/Factories.php">Factories.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">282</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Is the class alias namespaced or not?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">isNamespaced</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Class alias. See the $aliases property.</p>
 </section>
 
             </dd>
@@ -1306,7 +1404,7 @@ creates a new instance or returns an existing shared instance.</p>
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/CodeIgniter-Config-Factories.html#property_basenames">$basenames<a href="classes/CodeIgniter-Config-Factories.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Config-Factories.html#property_aliases">$aliases<a href="classes/CodeIgniter-Config-Factories.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Factories.html#property_instances">$instances<a href="classes/CodeIgniter-Config-Factories.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Factories.html#property_options">$options<a href="classes/CodeIgniter-Config-Factories.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Factories.html#property_configOptions">$configOptions<a href="classes/CodeIgniter-Config-Factories.html"></li>
@@ -1318,15 +1416,16 @@ creates a new instance or returns an existing shared instance.</p>
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method___callStatic">__callStatic()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_config">config()</a></li>
-                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_getBasename">getBasename()</a></li>
-                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_getOptions">getOptions()</a></li>
-                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_injectMock">injectMock()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_define">define()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_models">models()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_reset">reset()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_setOptions">setOptions()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_locateClass">locateClass()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_verifyInstanceOf">verifyInstanceOf()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-Factories.html#method_verifyPreferApp">verifyPreferApp()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_getDefinedInstance">getDefinedInstance()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_isConfig">isConfig()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-Factories.html#method_isNamespaced">isNamespaced()</a></li>
                                     </ul>
             </li>
                     </ul>

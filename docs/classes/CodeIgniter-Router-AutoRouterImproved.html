@@ -133,6 +133,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-hotreloader.html" class="">HotReloader</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-http.html" class="">HTTP</a>
                 
             </li>
@@ -263,7 +267,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -309,6 +313,13 @@
 <dd>The name of the controller class.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_controllerPos">$controllerPos</a>
+    <span>
+                        &nbsp;: int|null            </span>
+</dt>
+<dd>The position of the Controller in the URI segments.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultController">$defaultController</a>
     <span>
                         &nbsp;: string            </span>
@@ -337,11 +348,25 @@
 <dd>The name of the method to use.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_methodPos">$methodPos</a>
+    <span>
+                        &nbsp;: int|null            </span>
+</dt>
+<dd>The position of the Method in the URI segments.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_namespace">$namespace</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd>The namespace for controllers.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_paramPos">$paramPos</a>
+    <span>
+                        &nbsp;: int|null            </span>
+</dt>
+<dd>The position of the first Parameter in the URI segments.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_params">$params</a>
@@ -358,11 +383,11 @@
 <dd>List of controllers in Defined Routes that should not be accessed via this Auto-Routing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_subNamespace">$subNamespace</a>
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_segments">$segments</a>
     <span>
-                        &nbsp;: string|null            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
-<dd>Sub-namespace that contains the requested controller class.</dd>
+<dd>The URI segments.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_translateURIDashes">$translateURIDashes</a>
@@ -406,6 +431,18 @@ to underscores when determining method names.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkUnderscore">checkUnderscore()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_createSegments">createSegments()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_isValidSegment">isValidSegment()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -419,18 +456,25 @@ to underscores when determining method names.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_scanControllers">scanControllers()</a>
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchFirstController">searchFirstController()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: bool    </span>
 </dt>
-<dd>Scans the controller directory, attempting to locate a controller matching the supplied uri $segments</dd>
+<dd>Search for the first controller corresponding to the URI segment.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
-    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setSubNamespace">setSubNamespace()</a>
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchLastDefaultController">searchLastDefaultController()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Search for the last default controller corresponding to the URI segments.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setDirectory">setDirectory()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Sets the sub-namespace that the controller is in.</dd>
+<dd>Get the directory path from the controller and set it to the property.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_translateURIDashes">translateURIDashes()</a>
@@ -469,7 +513,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -493,6 +537,42 @@ to underscores when determining method names.</dd>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_controllerPos">
+        $controllerPos
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_controllerPos" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">86</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The position of the Controller in the URI segments.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int|null</span>
+    <span class="phpdocumentor-signature__name">$controllerPos</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"><p>Null for the default controller.</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_defaultController">
         $defaultController
         <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultController" class="headerlink"><i class="fas fa-link"></i></a>
@@ -503,7 +583,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -537,7 +617,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
@@ -571,7 +651,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
@@ -605,7 +685,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -629,6 +709,42 @@ to underscores when determining method names.</dd>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_methodPos">
+        $methodPos
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_methodPos" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">92</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The position of the Method in the URI segments.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int|null</span>
+    <span class="phpdocumentor-signature__name">$methodPos</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"><p>Null for the default method.</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_namespace">
         $namespace
         <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_namespace" class="headerlink"><i class="fas fa-link"></i></a>
@@ -639,7 +755,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -663,6 +779,42 @@ to underscores when determining method names.</dd>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_paramPos">
+        $paramPos
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_paramPos" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">98</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The position of the first Parameter in the URI segments.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">int|null</span>
+    <span class="phpdocumentor-signature__name">$paramPos</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+        <section class="phpdocumentor-description"><p>Null for the no parameters.</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_params">
         $params
         <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_params" class="headerlink"><i class="fas fa-link"></i></a>
@@ -673,7 +825,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -688,6 +840,22 @@ to underscores when determining method names.</dd>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_params#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string></p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
 </article>
                     <article
@@ -707,7 +875,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -731,9 +899,9 @@ to underscores when determining method names.</dd>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_subNamespace">
-        $subNamespace
-        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_subNamespace" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_segments">
+        $segments
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_segments" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -741,21 +909,37 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sub-namespace that contains the requested controller class.</p>
+        <p class="phpdocumentor-summary">The URI segments.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$subNamespace</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$segments</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_segments#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-var</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list<string></p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
 </article>
                     <article
@@ -775,7 +959,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -815,7 +999,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
@@ -909,7 +1093,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 
     </aside>
 
@@ -966,7 +1150,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 
     </aside>
 
@@ -1007,7 +1191,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">436</span>
 
     </aside>
 
@@ -1030,6 +1214,92 @@ to underscores when determining method names.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_checkUnderscore">
+        checkUnderscore()
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkUnderscore" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">451</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">checkUnderscore</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_createSegments">
+        createSegments()
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_createSegments" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">124</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">createSegments</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$uri</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_isValidSegment">
         isValidSegment()
         <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_isValidSegment" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1038,7 +1308,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">478</span>
 
     </aside>
 
@@ -1086,7 +1356,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">190</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 
     </aside>
 
@@ -1109,47 +1379,38 @@ to underscores when determining method names.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_scanControllers">
-        scanControllers()
-        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_scanControllers" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_searchFirstController">
+        searchFirstController()
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchFirstController" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Scans the controller directory, attempting to locate a controller matching the supplied uri $segments</p>
+        <p class="phpdocumentor-summary">Search for the first controller corresponding to the URI segment.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">scanControllers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">searchFirstController</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$segments</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>URI segments</p>
+        <section class="phpdocumentor-description"><p>If there is a controller corresponding to the first segment, the search
+ends there. The remaining segments are parameters to the controller.</p>
 </section>
 
-            </dd>
-            </dl>
-
+    
     
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">bool</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>returns an array of remaining uri segments that don't map onto a directory</p>
+                <section class="phpdocumentor-description"><p>true if a controller class is found.</p>
 </section>
 
             </section>
@@ -1161,54 +1422,68 @@ to underscores when determining method names.</p>
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setSubNamespace">
-        setSubNamespace()
-        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setSubNamespace" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_searchLastDefaultController">
+        searchLastDefaultController()
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchLastDefaultController" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sets the sub-namespace that the controller is in.</p>
+        <p class="phpdocumentor-summary">Search for the last default controller corresponding to the URI segments.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">setSubNamespace</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$namespace</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$append</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$validate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">searchLastDefaultController</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$namespace</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$append</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$validate</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>if true, checks to make sure $dir consists of only PSR4 compliant segments</p>
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>true if a controller class is found.</p>
 </section>
 
-            </dd>
-            </dl>
+            </section>
 
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setDirectory">
+        setDirectory()
+        <a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setDirectory" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">373</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get the directory path from the controller and set it to the property.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">setDirectory</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
     
 
     
@@ -1227,14 +1502,14 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">317</span>
+    <span class="phpdocumentor-element-found-in__line">483</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">translateURIDashes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$classname</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">translateURIDashes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segment</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1242,7 +1517,7 @@ to underscores when determining method names.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$classname</span>
+                <span class="phpdocumentor-signature__argument__name">$segment</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1372,14 +1647,17 @@ to underscores when determining method names.</p>
                 <li>
                     <ul class="phpdocumentor-list -clean">
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_controller">$controller<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_controllerPos">$controllerPos<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultController">$defaultController<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultMethod">$defaultMethod<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_directory">$directory<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_method">$method<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_methodPos">$methodPos<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_namespace">$namespace<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_paramPos">$paramPos<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_params">$params<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_protectedControllers">$protectedControllers<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_subNamespace">$subNamespace<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_segments">$segments<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                                     <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_translateURIDashes">$translateURIDashes<a href="classes/CodeIgniter-Router-AutoRouterImproved.html"></li>
                                             </ul>
                 </li>
@@ -1391,10 +1669,13 @@ to underscores when determining method names.</p>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_getRoute">getRoute()</a></li>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkParameters">checkParameters()</a></li>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkRemap">checkRemap()</a></li>
+                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkUnderscore">checkUnderscore()</a></li>
+                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_createSegments">createSegments()</a></li>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_isValidSegment">isValidSegment()</a></li>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_protectDefinedRoutes">protectDefinedRoutes()</a></li>
-                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_scanControllers">scanControllers()</a></li>
-                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setSubNamespace">setSubNamespace()</a></li>
+                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchFirstController">searchFirstController()</a></li>
+                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_searchLastDefaultController">searchLastDefaultController()</a></li>
+                                            <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_setDirectory">setDirectory()</a></li>
                                             <li><a href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_translateURIDashes">translateURIDashes()</a></li>
                                     </ul>
             </li>
