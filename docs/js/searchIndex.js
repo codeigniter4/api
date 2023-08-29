@@ -4466,6 +4466,16 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020defined\u0020instance.\u0020If\u0020not\u0020exists,\u0020creates\u0020new\u0020one.",
             "url": "classes/CodeIgniter-Config-Factories.html#method_getDefinedInstance"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\Factories\u003A\u003AcreateInstance\u0028\u0029",
+            "name": "createInstance",
+            "summary": "Creates\u0020the\u0020shared\u0020instance.",
+            "url": "classes/CodeIgniter-Config-Factories.html#method_createInstance"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\Factories\u003A\u003AsetAlias\u0028\u0029",
+            "name": "setAlias",
+            "summary": "Sets\u0020alias",
+            "url": "classes/CodeIgniter-Config-Factories.html#method_setAlias"
+        },                {
             "fqsen": "\\CodeIgniter\\Config\\Factories\u003A\u003AisConfig\u0028\u0029",
             "name": "isConfig",
             "summary": "Is\u0020the\u0020component\u0020Config\u003F",
