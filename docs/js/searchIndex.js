@@ -15278,7 +15278,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AgetDefaultLocale\u0028\u0029",
             "name": "getDefaultLocale",
-            "summary": "Returns\u0020the\u0020default\u0020locale\u0020as\u0020set\u0020in\u0020Config\\App.php",
+            "summary": "Returns\u0020the\u0020default\u0020locale\u0020as\u0020set\u0020in\u0020app\/Config\/App.php",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_getDefaultLocale"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AgetVar\u0028\u0029",
