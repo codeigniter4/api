@@ -1633,7 +1633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003Awrite\u0028\u0029",
             "name": "write",
-            "summary": "Outputs\u0020a\u0020string\u0020to\u0020the\u0020cli\u0020on\u0020it\u0027s\u0020own\u0020line.",
+            "summary": "Outputs\u0020a\u0020string\u0020to\u0020the\u0020cli\u0020on\u0020its\u0020own\u0020line.",
             "url": "classes/CodeIgniter-CLI-CLI.html#method_write"
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003Aerror\u0028\u0029",
