@@ -101,6 +101,11 @@ Search.appendIndex(
             "summary": "Current\u0020Formatter\u0020instance.\u0020This\u0020is\u0020usually\u0020set\u0020by\u0020ResponseTrait\u003A\u003Aformat",
             "url": "classes/CodeIgniter-API-ResponseTrait.html#property_formatter"
         },                {
+            "fqsen": "\\VENDORPATH",
+            "name": "VENDORPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_VENDORPATH"
+        },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader",
             "name": "Autoloader",
             "summary": "An\u0020autoloader\u0020that\u0020uses\u0020both\u0020PSR4\u0020autoloading,\u0020and\u0020traditional\u0020classmaps.",
@@ -111,10 +116,10 @@ Search.appendIndex(
             "summary": "Reads\u0020in\u0020the\u0020configuration\u0020array\u0020\u0028described\u0020above\u0029\u0020and\u0020stores\nthe\u0020valid\u0020parts\u0020that\u0020we\u0027ll\u0020need.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_initialize"
         },                {
-            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AloadComposerInfo\u0028\u0029",
-            "name": "loadComposerInfo",
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AloadComposerAutoloader\u0028\u0029",
+            "name": "loadComposerAutoloader",
             "summary": "",
-            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_loadComposerInfo"
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_loadComposerAutoloader"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003Aregister\u0028\u0029",
             "name": "register",
@@ -770,11 +775,6 @@ Search.appendIndex(
             "name": "TESTPATH",
             "summary": "",
             "url": "namespaces/default.html#constant_TESTPATH"
-        },                {
-            "fqsen": "\\VENDORPATH",
-            "name": "VENDORPATH",
-            "summary": "",
-            "url": "namespaces/default.html#constant_VENDORPATH"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheFactory",
             "name": "CacheFactory",
