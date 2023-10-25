@@ -4088,7 +4088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\helper\u0028\u0029",
             "name": "helper",
-            "summary": "Loads\u0020a\u0020helper\u0020file\u0020into\u0020memory.\u0020Supports\u0020namespaced\u0020helpers,\nboth\u0020in\u0020and\u0020out\u0020of\u0020the\u0020\u0027helpers\u0027\u0020directory\u0020of\u0020a\u0020namespaced\u0020directory.",
+            "summary": "Loads\u0020a\u0020helper\u0020file\u0020into\u0020memory.\u0020Supports\u0020namespaced\u0020helpers,\nboth\u0020in\u0020and\u0020out\u0020of\u0020the\u0020\u0027Helpers\u0027\u0020directory\u0020of\u0020a\u0020namespaced\u0020directory.",
             "url": "namespaces/default.html#function_helper"
         },                {
             "fqsen": "\\is_cli\u0028\u0029",
