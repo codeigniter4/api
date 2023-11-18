@@ -13986,6 +13986,11 @@ Search.appendIndex(
             "summary": "For\u0020IncomingRequest",
             "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forInvalidNegotiationType"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException\u003A\u003AforInvalidJSON\u0028\u0029",
+            "name": "forInvalidJSON",
+            "summary": "Thrown\u0020in\u0020IncomingRequest\u0020when\u0020the\u0020json_decode\u0028\u0029\u0020produces\n\u0020an\u0020error\u0020code\u0020other\u0020than\u0020JSON_ERROR_NONE.",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forInvalidJSON"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException\u003A\u003AforInvalidHTTPProtocol\u0028\u0029",
             "name": "forInvalidHTTPProtocol",
             "summary": "For\u0020Message",
