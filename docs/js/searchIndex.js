@@ -4616,6 +4616,11 @@ Search.appendIndex(
             "summary": "If\u0020TRUE,\u0020will\u0020enable\u0020the\u0020use\u0020of\u0020the\u0020\u0027prioritize\u0027\u0020option\nwhen\u0020defining\u0020routes.",
             "url": "classes/CodeIgniter-Config-Routing.html#property_prioritize"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\Routing\u003A\u003A\u0024moduleRoutes",
+            "name": "moduleRoutes",
+            "summary": "Map\u0020of\u0020URI\u0020segments\u0020and\u0020namespaces.\u0020For\u0020Auto\u0020Routing\u0020\u0028Improved\u0029.",
+            "url": "classes/CodeIgniter-Config-Routing.html#property_moduleRoutes"
+        },                {
             "fqsen": "\\CodeIgniter\\Config\\Services",
             "name": "Services",
             "summary": "Services\u0020Configuration\u0020file.",
