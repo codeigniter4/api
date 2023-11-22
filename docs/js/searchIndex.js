@@ -6923,7 +6923,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "The\u0020migration\u0020can\u0020manage\u0020multiple\u0020databases.\u0020So\u0020it\u0020should\u0020always\u0020use\u0020the\ndefault\u0020DB\u0020group\u0020so\u0020that\u0020it\u0020creates\u0020the\u0020\u0060migrations\u0060\u0020table\u0020in\u0020the\u0020default\nDB\u0020group.\u0020Therefore,\u0020passing\u0020\u0024db\u0020is\u0020for\u0020testing\u0020purposes\u0020only.",
             "url": "classes/CodeIgniter-Database-MigrationRunner.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003Alatest\u0028\u0029",
