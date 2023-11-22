@@ -15088,7 +15088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003ApopulateGlobals\u0028\u0029",
             "name": "populateGlobals",
-            "summary": "Saves\u0020a\u0020copy\u0020of\u0020the\u0020current\u0020state\u0020of\u0020one\u0020of\u0020several\u0020PHP\u0020globals\nso\u0020we\u0020can\u0020retrieve\u0020them\u0020later.",
+            "summary": "Saves\u0020a\u0020copy\u0020of\u0020the\u0020current\u0020state\u0020of\u0020one\u0020of\u0020several\u0020PHP\u0020globals,\nso\u0020we\u0020can\u0020retrieve\u0020them\u0020later.",
             "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_populateGlobals"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003A\u0024ipAddress",
@@ -15098,7 +15098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003A\u0024globals",
             "name": "globals",
-            "summary": "Stores\u0020values\u0020we\u0027ve\u0020retrieved\u0020from\nPHP\u0020globals.",
+            "summary": "Stores\u0020values\u0020we\u0027ve\u0020retrieved\u0020from\u0020PHP\u0020globals.",
             "url": "classes/CodeIgniter-HTTP-RequestTrait.html#property_globals"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponsableInterface",
