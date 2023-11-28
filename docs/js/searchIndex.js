@@ -18433,7 +18433,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetFirstPageNumber\u0028\u0029",
             "name": "getFirstPageNumber",
-            "summary": "Returns\u0020the\u0020page\u0020number\u0020of\u0020the\u0020first\u0020page.",
+            "summary": "Returns\u0020the\u0020page\u0020number\u0020of\u0020the\u0020first\u0020page\u0020in\u0020the\u0020set\u0020of\u0020links\u0020to\u0020be\u0020displayed.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getFirstPageNumber"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetCurrentPageNumber\u0028\u0029",
@@ -18443,7 +18443,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetLastPageNumber\u0028\u0029",
             "name": "getLastPageNumber",
-            "summary": "Returns\u0020the\u0020page\u0020number\u0020of\u0020the\u0020last\u0020page.",
+            "summary": "Returns\u0020the\u0020page\u0020number\u0020of\u0020the\u0020last\u0020page\u0020in\u0020the\u0020set\u0020of\u0020links\u0020to\u0020be\u0020displayed.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getLastPageNumber"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetPageCount\u0028\u0029",
@@ -18463,12 +18463,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024first",
             "name": "first",
-            "summary": "First\u0020page\u0020number.",
+            "summary": "First\u0020page\u0020number\u0020in\u0020the\u0020set\u0020of\u0020links\u0020to\u0020be\u0020displayed.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_first"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024last",
             "name": "last",
-            "summary": "Last\u0020page\u0020number.",
+            "summary": "Last\u0020page\u0020number\u0020in\u0020the\u0020set\u0020of\u0020links\u0020to\u0020be\u0020displayed.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_last"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024current",
