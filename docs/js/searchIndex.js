@@ -401,6 +401,16 @@ Search.appendIndex(
             "summary": "Inserts\u0020data\u0020into\u0020the\u0020database.\u0020If\u0020an\u0020object\u0020is\u0020provided,\nit\u0020will\u0020attempt\u0020to\u0020convert\u0020it\u0020to\u0020an\u0020array.",
             "url": "classes/CodeIgniter-BaseModel.html#method_insert"
         },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetCreatedField\u0028\u0029",
+            "name": "setCreatedField",
+            "summary": "Set\u0020datetime\u0020to\u0020created\u0020field.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_setCreatedField"
+        },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetUpdatedField\u0028\u0029",
+            "name": "setUpdatedField",
+            "summary": "Set\u0020datetime\u0020to\u0020updated\u0020field.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_setUpdatedField"
+        },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AinsertBatch\u0028\u0029",
             "name": "insertBatch",
             "summary": "Compiles\u0020batch\u0020insert\u0020runs\u0020the\u0020queries,\u0020validating\u0020each\u0020row\u0020prior.",
@@ -518,7 +528,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Avalidate\u0028\u0029",
             "name": "validate",
-            "summary": "Validate\u0020the\u0020data\u0020against\u0020the\u0020validation\u0020rules\u0020\u0028or\u0020the\u0020validation\u0020group\u0029\nspecified\u0020in\u0020the\u0020class\u0020property,\u0020\u0024validationRules.",
+            "summary": "Validate\u0020the\u0020row\u0020data\u0020against\u0020the\u0020validation\u0020rules\u0020\u0028or\u0020the\u0020validation\u0020group\u0029\nspecified\u0020in\u0020the\u0020class\u0020property,\u0020\u0024validationRules.",
             "url": "classes/CodeIgniter-BaseModel.html#method_validate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AgetValidationRules\u0028\u0029",
@@ -560,6 +570,11 @@ Search.appendIndex(
             "name": "objectToArray",
             "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020its\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020suitable\u0020for\u0020use\u0020in\u0020creates\u0020and\u0020updates.",
             "url": "classes/CodeIgniter-BaseModel.html#method_objectToArray"
+        },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtimeToString\u0028\u0029",
+            "name": "timeToString",
+            "summary": "Convert\u0020any\u0020Time\u0020instances\u0020to\u0020appropriate\u0020\u0024dateFormat.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_timeToString"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AobjectToRawArray\u0028\u0029",
             "name": "objectToRawArray",
@@ -14065,6 +14080,11 @@ Search.appendIndex(
             "name": "forInvalidSameSiteSetting",
             "summary": "For\u0020Invalid\u0020SameSite\u0020attribute\u0020setting",
             "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forInvalidSameSiteSetting"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException\u003A\u003AforUnsupportedJSONFormat\u0028\u0029",
+            "name": "forUnsupportedJSONFormat",
+            "summary": "Thrown\u0020when\u0020the\u0020JSON\u0020format\u0020is\u0020not\u0020supported.",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forUnsupportedJSONFormat"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\RedirectException",
             "name": "RedirectException",

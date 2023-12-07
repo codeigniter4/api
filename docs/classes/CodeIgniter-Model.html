@@ -870,7 +870,7 @@ can be used elsewhere, if needed.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Model.html#method_insert">insert()</a>
     <span>
-                                &nbsp;: false|int|object|string    </span>
+                                &nbsp;: bool|int|string    </span>
 </dt>
 <dd>Inserts data into the database. If an object is provided,
 it will attempt to convert it to an array.</dd>
@@ -1183,7 +1183,7 @@ it will attempt to convert it into an array.</dd>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Validate the data against the validation rules (or the validation group)
+<dd>Validate the row data against the validation rules (or the validation group)
 specified in the class property, $validationRules.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
@@ -1386,7 +1386,7 @@ used by inheriting classes.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-BaseModel.html#method_objectToArray">objectToArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>Takes a class and returns an array of its public and protected
 properties as an array suitable for use in creates and updates.</dd>
@@ -1394,10 +1394,17 @@ properties as an array suitable for use in creates and updates.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Model.html#method_objectToRawArray">objectToRawArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>Takes a class and returns an array of its public and protected
 properties as an array with raw values.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_setCreatedField">setCreatedField()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Set datetime to created field.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-BaseModel.html#method_setDate">setDate()</a>
@@ -1405,6 +1412,13 @@ properties as an array with raw values.</dd>
                                 &nbsp;: int|string    </span>
 </dt>
 <dd>Sets the date or current date if null value is passed.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_setUpdatedField">setUpdatedField()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Set datetime to updated field.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Model.html#method_shouldUpdate">shouldUpdate()</a>
@@ -1420,6 +1434,13 @@ If this method return false insert operation will be executed</dd>
                                 &nbsp;: int|string    </span>
 </dt>
 <dd>Converts Time value to string using $this-&gt;dateFormat.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_timeToString">timeToString()</a>
+    <span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
+</dt>
+<dd>Convert any Time instances to appropriate $dateFormat.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-BaseModel.html#method_transformDataToArray">transformDataToArray()</a>
@@ -2970,7 +2991,7 @@ library.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">868</span>
+    <span class="phpdocumentor-element-found-in__line">860</span>
 
     </aside>
 
@@ -3076,7 +3097,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">839</span>
+    <span class="phpdocumentor-element-found-in__line">831</span>
 
     </aside>
 
@@ -3124,7 +3145,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">853</span>
+    <span class="phpdocumentor-element-found-in__line">845</span>
 
     </aside>
 
@@ -3172,7 +3193,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1577</span>
+    <span class="phpdocumentor-element-found-in__line">1603</span>
 
     </aside>
 
@@ -3221,7 +3242,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1870</span>
+    <span class="phpdocumentor-element-found-in__line">1908</span>
 
     </aside>
 
@@ -3267,7 +3288,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1629</span>
+    <span class="phpdocumentor-element-found-in__line">1655</span>
 
     </aside>
 
@@ -3303,7 +3324,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1646</span>
+    <span class="phpdocumentor-element-found-in__line">1672</span>
 
     </aside>
 
@@ -3355,7 +3376,7 @@ or at least allows them to be created.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">614</span>
+    <span class="phpdocumentor-element-found-in__line">634</span>
 
     </aside>
 
@@ -3416,7 +3437,7 @@ or at least allows them to be created.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">557</span>
+    <span class="phpdocumentor-element-found-in__line">577</span>
 
     </aside>
 
@@ -3488,7 +3509,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">913</span>
+    <span class="phpdocumentor-element-found-in__line">905</span>
 
     </aside>
 
@@ -3586,7 +3607,7 @@ properties as an array suitable for use in creates and updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1471</span>
+    <span class="phpdocumentor-element-found-in__line">1495</span>
 
     </aside>
 
@@ -3635,7 +3656,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">591</span>
+    <span class="phpdocumentor-element-found-in__line">611</span>
 
     </aside>
 
@@ -3692,7 +3713,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1069</span>
+    <span class="phpdocumentor-element-found-in__line">1092</span>
 
     </aside>
 
@@ -3764,7 +3785,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1182</span>
+    <span class="phpdocumentor-element-found-in__line">1204</span>
 
     </aside>
 
@@ -3817,7 +3838,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">554</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 
     </aside>
 
@@ -3885,7 +3906,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">617</span>
+    <span class="phpdocumentor-element-found-in__line">621</span>
 
     </aside>
 
@@ -3942,7 +3963,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">598</span>
+    <span class="phpdocumentor-element-found-in__line">602</span>
 
     </aside>
 
@@ -4009,7 +4030,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">657</span>
+    <span class="phpdocumentor-element-found-in__line">661</span>
 
     </aside>
 
@@ -4045,7 +4066,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">534</span>
+    <span class="phpdocumentor-element-found-in__line">539</span>
 
     </aside>
 
@@ -4053,7 +4074,7 @@ grab the last error from the Database connection.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getIdValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|int|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">getIdValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|int|string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4061,17 +4082,33 @@ grab the last error from the Database connection.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Model.html#method_getIdValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|object $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -4093,7 +4130,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">734</span>
+    <span class="phpdocumentor-element-found-in__line">740</span>
 
     </aside>
 
@@ -4129,7 +4166,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1541</span>
+    <span class="phpdocumentor-element-found-in__line">1566</span>
 
     </aside>
 
@@ -4166,7 +4203,7 @@ can be used elsewhere, if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1516</span>
+    <span class="phpdocumentor-element-found-in__line">1541</span>
 
     </aside>
 
@@ -4657,7 +4694,7 @@ can be used elsewhere, if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">708</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -4666,7 +4703,7 @@ it will attempt to convert it to an array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">insert</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnID</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|object|string</span></code>
+                    <span class="phpdocumentor-signature__name">insert</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnID</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|int|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4674,7 +4711,7 @@ it will attempt to convert it to an array.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -4703,7 +4740,7 @@ it will attempt to convert it to an array.</p>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>row_array|object|null $data</p>
+                                                 <section class="phpdocumentor-description"><p>row_array|object|null $row</p>
 </section>
 
                                     </dd>
@@ -4728,7 +4765,7 @@ it will attempt to convert it to an array.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">false|int|object|string</span>
+        <span class="phpdocumentor-signature__response_type">bool|int|string</span>
             </section>
 
 </article>
@@ -4746,7 +4783,7 @@ it will attempt to convert it to an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">836</span>
+    <span class="phpdocumentor-element-found-in__line">867</span>
 
     </aside>
 
@@ -4754,7 +4791,7 @@ it will attempt to convert it to an array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$testing</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|int</span></code>
+                    <span class="phpdocumentor-signature__name">insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;string|int, mixed&gt;|object&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$testing</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4763,7 +4800,7 @@ it will attempt to convert it to an array.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$set</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;string|int, mixed&gt;|object&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>an associative array of insert values</p>
@@ -4807,6 +4844,15 @@ it will attempt to convert it to an array.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list&lt;row_array|object&gt;|null $set</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -5292,7 +5338,7 @@ it will attempt to convert it to an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1140</span>
+    <span class="phpdocumentor-element-found-in__line">1163</span>
 
     </aside>
 
@@ -6174,7 +6220,7 @@ have been deleted.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1204</span>
+    <span class="phpdocumentor-element-found-in__line">1226</span>
 
     </aside>
 
@@ -6252,7 +6298,7 @@ to display.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1244</span>
+    <span class="phpdocumentor-element-found-in__line">1266</span>
 
     </aside>
 
@@ -6301,7 +6347,7 @@ updates or inserts against $this-&gt;availableFields.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1110</span>
+    <span class="phpdocumentor-element-found-in__line">1133</span>
 
     </aside>
 
@@ -6342,7 +6388,7 @@ through soft deletes (deleted = 1).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1156</span>
+    <span class="phpdocumentor-element-found-in__line">1180</span>
 
     </aside>
 
@@ -6350,7 +6396,7 @@ through soft deletes (deleted = 1).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseResult.html"><abbr title="\CodeIgniter\Database\BaseResult">BaseResult</abbr></a>|false|<a href="classes/CodeIgniter-Database-Query.html"><abbr title="\CodeIgniter\Database\Query">Query</abbr></a>|string</span></code>
+                    <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseResult.html"><abbr title="\CodeIgniter\Database\BaseResult">BaseResult</abbr></a>|false|<a href="classes/CodeIgniter-Database-Query.html"><abbr title="\CodeIgniter\Database\Query">Query</abbr></a>|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6358,11 +6404,11 @@ through soft deletes (deleted = 1).</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
@@ -6378,6 +6424,22 @@ through soft deletes (deleted = 1).</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-BaseModel.html#method_replace#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|null $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -6399,7 +6461,7 @@ through soft deletes (deleted = 1).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">699</span>
+    <span class="phpdocumentor-element-found-in__line">704</span>
 
     </aside>
 
@@ -6411,7 +6473,7 @@ variables, even if through a magic method.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">save</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6419,11 +6481,11 @@ variables, even if through a magic method.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
@@ -6437,6 +6499,15 @@ variables, even if through a magic method.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|object $row</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -6778,7 +6849,7 @@ variables, even if through a magic method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">661</span>
+    <span class="phpdocumentor-element-found-in__line">681</span>
 
     </aside>
 
@@ -6846,7 +6917,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1229</span>
+    <span class="phpdocumentor-element-found-in__line">1251</span>
 
     </aside>
 
@@ -6942,7 +7013,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1414</span>
+    <span class="phpdocumentor-element-found-in__line">1438</span>
 
     </aside>
 
@@ -7001,7 +7072,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1398</span>
+    <span class="phpdocumentor-element-found-in__line">1422</span>
 
     </aside>
 
@@ -7051,7 +7122,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1445</span>
+    <span class="phpdocumentor-element-found-in__line">1469</span>
 
     </aside>
 
@@ -7110,7 +7181,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1429</span>
+    <span class="phpdocumentor-element-found-in__line">1453</span>
 
     </aside>
 
@@ -7160,7 +7231,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1383</span>
+    <span class="phpdocumentor-element-found-in__line">1407</span>
 
     </aside>
 
@@ -7208,7 +7279,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">769</span>
+    <span class="phpdocumentor-element-found-in__line">791</span>
 
     </aside>
 
@@ -7217,7 +7288,7 @@ it will attempt to convert it into an array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7232,7 +7303,7 @@ it will attempt to convert it into an array.</p>
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -7248,6 +7319,15 @@ it will attempt to convert it into an array.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|object|null $row</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -7277,7 +7357,7 @@ it will attempt to convert it into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">986</span>
+    <span class="phpdocumentor-element-found-in__line">1011</span>
 
     </aside>
 
@@ -7285,7 +7365,7 @@ it will attempt to convert it into an array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;string|int, mixed&gt;|object&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;string|int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7294,10 +7374,10 @@ it will attempt to convert it into an array.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$set</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;string|int, mixed&gt;|object&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An associative array of update values</p>
+                    <section class="phpdocumentor-description"><p>an associative array of insert values</p>
 </section>
 
             </dd>
@@ -7338,6 +7418,15 @@ it will attempt to convert it into an array.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list&lt;row_array|object&gt;|null $set</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -7379,16 +7468,16 @@ it will attempt to convert it into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1484</span>
+    <span class="phpdocumentor-element-found-in__line">1509</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Validate the data against the validation rules (or the validation group)
+        <p class="phpdocumentor-summary">Validate the row data against the validation rules (or the validation group)
 specified in the class property, $validationRules.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">validate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">validate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7396,17 +7485,33 @@ specified in the class property, $validationRules.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-BaseModel.html#method_validate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|object $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -7723,7 +7828,7 @@ specified in the class property, $validationRules.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1127</span>
+    <span class="phpdocumentor-element-found-in__line">1150</span>
 
     </aside>
 
@@ -7772,7 +7877,7 @@ the soft deletes settings. Can be used for all find* methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1554</span>
+    <span class="phpdocumentor-element-found-in__line">1580</span>
 
     </aside>
 
@@ -7782,7 +7887,7 @@ a partial row.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">cleanValidationRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">cleanValidationRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7799,17 +7904,33 @@ a partial row.</p>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data (@TODO Remove null in param type)</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-BaseModel.html#method_cleanValidationRules#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                        </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -7831,7 +7952,7 @@ a partial row.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">423</span>
+    <span class="phpdocumentor-element-found-in__line">426</span>
 
     </aside>
 
@@ -7909,7 +8030,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">501</span>
+    <span class="phpdocumentor-element-found-in__line">505</span>
 
     </aside>
 
@@ -8029,7 +8150,7 @@ matching $id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -8105,7 +8226,7 @@ all results, while optionally limiting them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -8134,6 +8255,22 @@ all results, while optionally limiting them.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Model.html#method_doFindColumn#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-return</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>list&lt;row_array&gt;|null</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8159,7 +8296,7 @@ all results, while optionally limiting them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">253</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
@@ -8214,7 +8351,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 
     </aside>
 
@@ -8222,7 +8359,7 @@ Query Builder calls into account when determining the result set.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doInsert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">doInsert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8232,17 +8369,33 @@ Query Builder calls into account when determining the result set.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Model.html#method_doInsert#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8264,7 +8417,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -8345,7 +8498,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">474</span>
+    <span class="phpdocumentor-element-found-in__line">477</span>
 
     </aside>
 
@@ -8380,7 +8533,7 @@ have been deleted.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1262</span>
+    <span class="phpdocumentor-element-found-in__line">1285</span>
 
     </aside>
 
@@ -8389,22 +8542,19 @@ in the data array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doProtectFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">doProtectFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
-        <section class="phpdocumentor-description"><p>Used by update() and updateBatch() to protect against mass assignment
-vulnerabilities.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
@@ -8418,6 +8568,33 @@ vulnerabilities.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>update() to protect against mass assignment vulnerabilities.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>updateBatch() to protect against mass assignment vulnerabilities.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -8447,7 +8624,7 @@ vulnerabilities.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">736</span>
+    <span class="phpdocumentor-element-found-in__line">757</span>
 
     </aside>
 
@@ -8456,22 +8633,19 @@ the data array.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doProtectFieldsForInsert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">doProtectFieldsForInsert</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
-        <section class="phpdocumentor-description"><p>Used by insert() and insertBatch() to protect against mass assignment
-vulnerabilities.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
@@ -8485,6 +8659,33 @@ vulnerabilities.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>insert() to protect against mass assignment vulnerabilities.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>insertBatch() to protect against mass assignment vulnerabilities.</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -8514,7 +8715,7 @@ vulnerabilities.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">460</span>
+    <span class="phpdocumentor-element-found-in__line">463</span>
 
     </aside>
 
@@ -8556,7 +8757,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">488</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 
     </aside>
 
@@ -8565,7 +8766,7 @@ This method works only with dbCalls.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doReplace</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseResult.html"><abbr title="\CodeIgniter\Database\BaseResult">BaseResult</abbr></a>|false|<a href="classes/CodeIgniter-Database-Query.html"><abbr title="\CodeIgniter\Database\Query">Query</abbr></a>|string</span></code>
+                    <span class="phpdocumentor-signature__name">doReplace</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnSQL</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseResult.html"><abbr title="\CodeIgniter\Database\BaseResult">BaseResult</abbr></a>|false|<a href="classes/CodeIgniter-Database-Query.html"><abbr title="\CodeIgniter\Database\Query">Query</abbr></a>|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8573,7 +8774,7 @@ This method works only with dbCalls.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -8593,6 +8794,22 @@ This method works only with dbCalls.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Model.html#method_doReplace#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|null $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8614,7 +8831,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 
     </aside>
 
@@ -8622,7 +8839,7 @@ This method works only with dbCalls.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doUpdate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">doUpdate</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$id</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8639,15 +8856,33 @@ This method works only with dbCalls.</p>
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Row data</p>
+</section>
+
             </dd>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Model.html#method_doUpdate#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|null $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8669,7 +8904,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">406</span>
+    <span class="phpdocumentor-element-found-in__line">409</span>
 
     </aside>
 
@@ -8764,7 +8999,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1836</span>
+    <span class="phpdocumentor-element-found-in__line">1874</span>
 
     </aside>
 
@@ -8852,7 +9087,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">522</span>
+    <span class="phpdocumentor-element-found-in__line">526</span>
 
     </aside>
 
@@ -8950,7 +9185,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1330</span>
+    <span class="phpdocumentor-element-found-in__line">1354</span>
 
     </aside>
 
@@ -9023,7 +9258,7 @@ used by inheriting classes.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1667</span>
+    <span class="phpdocumentor-element-found-in__line">1693</span>
 
     </aside>
 
@@ -9032,7 +9267,7 @@ properties as an array suitable for use in creates and updates.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9043,11 +9278,11 @@ to string on all Time instances</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object|string</span>
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Object</p>
 </section>
 
             </dd>
@@ -9090,11 +9325,7 @@ to string on all Time instances</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Array</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
             </section>
 
 </article>
@@ -9112,7 +9343,7 @@ to string on all Time instances</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">797</span>
+    <span class="phpdocumentor-element-found-in__line">819</span>
 
     </aside>
 
@@ -9121,7 +9352,7 @@ properties as an array with raw values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">objectToRawArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+                    <span class="phpdocumentor-signature__name">objectToRawArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9129,11 +9360,13 @@ properties as an array with raw values.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object|string</span>
+                <span class="phpdocumentor-signature__argument__name">$object</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Object</p>
+</section>
+
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$onlyChanged</span>
@@ -9174,11 +9407,78 @@ properties as an array with raw values.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Array</p>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setCreatedField">
+        setCreatedField()
+        <a href="classes/CodeIgniter-BaseModel.html#method_setCreatedField" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">830</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set datetime to created field.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">setCreatedField</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$date</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$row</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$date</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>timestamp or datetime string</p>
 </section>
 
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-BaseModel.html#method_setCreatedField#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
             </section>
 
 </article>
@@ -9196,7 +9496,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1306</span>
+    <span class="phpdocumentor-element-found-in__line">1330</span>
 
     </aside>
 
@@ -9251,6 +9551,77 @@ properties as an array with raw values.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setUpdatedField">
+        setUpdatedField()
+        <a href="classes/CodeIgniter-BaseModel.html#method_setUpdatedField" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">845</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set datetime to updated field.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">setUpdatedField</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$date</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$row</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$date</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>timestamp or datetime string</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-BaseModel.html#method_setUpdatedField#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array $row</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_shouldUpdate">
         shouldUpdate()
         <a href="classes/CodeIgniter-Model.html#method_shouldUpdate" class="headerlink"><i class="fas fa-link"></i></a>
@@ -9259,7 +9630,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">680</span>
+    <span class="phpdocumentor-element-found-in__line">700</span>
 
     </aside>
 
@@ -9268,7 +9639,7 @@ If this method return false insert operation will be executed</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">shouldUpdate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">shouldUpdate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9276,7 +9647,7 @@ If this method return false insert operation will be executed</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -9308,7 +9679,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1359</span>
+    <span class="phpdocumentor-element-found-in__line">1383</span>
 
     </aside>
 
@@ -9355,6 +9726,52 @@ If this method return false insert operation will be executed</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_timeToString">
+        timeToString()
+        <a href="classes/CodeIgniter-BaseModel.html#method_timeToString" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1708</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Convert any Time instances to appropriate $dateFormat.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">timeToString</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$properties</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$properties</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_transformDataToArray">
         transformDataToArray()
         <a href="classes/CodeIgniter-BaseModel.html#method_transformDataToArray" class="headerlink"><i class="fas fa-link"></i></a>
@@ -9363,7 +9780,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1731</span>
+    <span class="phpdocumentor-element-found-in__line">1769</span>
 
     </aside>
 
@@ -9371,7 +9788,7 @@ If this method return false insert operation will be executed</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">transformDataToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">transformDataToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9379,11 +9796,11 @@ If this method return false insert operation will be executed</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
+                <span class="phpdocumentor-signature__argument__name">$row</span>
                 : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
+                    <section class="phpdocumentor-description"><p>Row data</p>
 </section>
 
             </dd>
@@ -9406,6 +9823,15 @@ If this method return false insert operation will be executed</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>row_array|object|null $row</p>
+</section>
+
+                                    </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -9451,7 +9877,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1606</span>
+    <span class="phpdocumentor-element-found-in__line">1632</span>
 
     </aside>
 
@@ -9533,7 +9959,7 @@ or update, an array of results, etc.)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">893</span>
+    <span class="phpdocumentor-element-found-in__line">885</span>
 
     </aside>
 
@@ -9831,9 +10257,12 @@ or update, an array of results, etc.)</p>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_intToDate">intToDate()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_objectToArray">objectToArray()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_objectToRawArray">objectToRawArray()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_setCreatedField">setCreatedField()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_setDate">setDate()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_setUpdatedField">setUpdatedField()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_shouldUpdate">shouldUpdate()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_timeToDate">timeToDate()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_timeToString">timeToString()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_transformDataToArray">transformDataToArray()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_trigger">trigger()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_checkBuilderMethod">checkBuilderMethod()</a></li>
