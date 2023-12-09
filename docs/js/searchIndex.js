@@ -10983,7 +10983,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024SMTPHost",
             "name": "SMTPHost",
-            "summary": "STMP\u0020Server\u0020host",
+            "summary": "STMP\u0020Server\u0020Hostname",
             "url": "classes/CodeIgniter-Email-Email.html#property_SMTPHost"
         },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024SMTPUser",
