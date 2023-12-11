@@ -3806,6 +3806,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByClass"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetUriByMethod\u0028\u0029",
+            "name": "getUriByMethod",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#method_getUriByMethod"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003AgetRouteForDefaultController\u0028\u0029",
             "name": "getRouteForDefaultController",
             "summary": "Gets\u0020a\u0020route\u0020for\u0020the\u0020default\u0020controller.",
@@ -3820,6 +3825,11 @@ Search.appendIndex(
             "name": "httpMethods",
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_httpMethods"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\ControllerMethodReader\u003A\u003A\u0024translateURIDashes",
+            "name": "translateURIDashes",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-ControllerMethodReader.html#property_translateURIDashes"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\ControllerFinder",
             "name": "ControllerFinder",
