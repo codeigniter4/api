@@ -6908,7 +6908,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Migration\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Migration.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Migration\u003A\u003AgetDBGroup\u0028\u0029",
