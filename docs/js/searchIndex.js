@@ -22066,6 +22066,26 @@ Search.appendIndex(
             "summary": "The\u0020default\u0020App\u0020and\u0020discovered\nroutes\u0020to\u0020check\u0020for\u0020filters.",
             "url": "classes/CodeIgniter-Test-FilterTestTrait.html#property_collection"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\IniTestTrait",
+            "name": "IniTestTrait",
+            "summary": "",
+            "url": "classes/CodeIgniter-Test-IniTestTrait.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\IniTestTrait\u003A\u003AbackupIniValues\u0028\u0029",
+            "name": "backupIniValues",
+            "summary": "",
+            "url": "classes/CodeIgniter-Test-IniTestTrait.html#method_backupIniValues"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\IniTestTrait\u003A\u003ArestoreIniValues\u0028\u0029",
+            "name": "restoreIniValues",
+            "summary": "",
+            "url": "classes/CodeIgniter-Test-IniTestTrait.html#method_restoreIniValues"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\IniTestTrait\u003A\u003A\u0024iniSettings",
+            "name": "iniSettings",
+            "summary": "",
+            "url": "classes/CodeIgniter-Test-IniTestTrait.html#property_iniSettings"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\Interfaces\\FabricatorModel",
             "name": "FabricatorModel",
             "summary": "FabricatorModel",
