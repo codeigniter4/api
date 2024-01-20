@@ -6668,7 +6668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003AdropKeyAsConstraint\u0028\u0029",
             "name": "dropKeyAsConstraint",
-            "summary": "Checks\u0020if\u0020if\u0020key\u0020needs\u0020to\u0020be\u0020dropped\u0020as\u0020a\u0020constraint.",
+            "summary": "Checks\u0020if\u0020key\u0020needs\u0020to\u0020be\u0020dropped\u0020as\u0020a\u0020constraint.",
             "url": "classes/CodeIgniter-Database-Forge.html#method_dropKeyAsConstraint"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A_dropKeyAsConstraint\u0028\u0029",
@@ -6738,12 +6738,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A_processFields\u0028\u0029",
             "name": "_processFields",
-            "summary": "Process\u0020fields",
+            "summary": "Returns\u0020\u0024processedFields\u0020array\u0020from\u0020\u0024this\u002D\u003Efields\u0020data.",
             "url": "classes/CodeIgniter-Database-Forge.html#method__processFields"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A_processColumn\u0028\u0029",
             "name": "_processColumn",
-            "summary": "Process\u0020column",
+            "summary": "Converts\u0020\u0024processedField\u0020array\u0020to\u0020field\u0020definition\u0020string.",
             "url": "classes/CodeIgniter-Database-Forge.html#method__processColumn"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A_attributeType\u0028\u0029",
@@ -9188,7 +9188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003AmodifyColumn\u0028\u0029",
             "name": "modifyColumn",
-            "summary": "Modifies\u0020a\u0020field,\u0020including\u0020changing\u0020data\u0020type,\nrenaming,\u0020etc.",
+            "summary": "Modifies\u0020a\u0020field,\u0020including\u0020changing\u0020data\u0020type,\u0020renaming,\u0020etc.",
             "url": "classes/CodeIgniter-Database-SQLite3-Table.html#method_modifyColumn"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003AdropPrimaryKey\u0028\u0029",
