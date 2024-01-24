@@ -8021,6 +8021,21 @@ Search.appendIndex(
             "summary": "Generates\u0020the\u0020JOIN\u0020portion\u0020of\u0020the\u0020query",
             "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_join"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003A_updateBatch\u0028\u0029",
+            "name": "_updateBatch",
+            "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020batch\u0020update\u0020string\u0020from\u0020the\u0020supplied\u0020data",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method__updateBatch"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003Acast\u0028\u0029",
+            "name": "cast",
+            "summary": "Returns\u0020cast\u0020expression.",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_cast"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003AgetFieldType\u0028\u0029",
+            "name": "getFieldType",
+            "summary": "Returns\u0020the\u0020filed\u0020type\u0020from\u0020database\u0020meta\u0020data.",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_getFieldType"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003A_upsertBatch\u0028\u0029",
             "name": "_upsertBatch",
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020upsertBatch\u0020string\u0020from\u0020the\u0020supplied\u0020data",
