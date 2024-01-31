@@ -4628,7 +4628,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Routing\u003A\u003A\u0024override404",
             "name": "override404",
-            "summary": "Sets\u0020the\u0020class\/method\u0020that\u0020should\u0020be\u0020called\u0020if\u0020routing\u0020doesn\u0027t\nfind\u0020a\u0020match.\u0020It\u0020can\u0020be\u0020either\u0020a\u0020closure\u0020or\u0020the\u0020controller\/method\nname\u0020exactly\u0020like\u0020a\u0020route\u0020is\u0020defined\u003A\u0020Users\u003A\u003Aindex",
+            "summary": "Sets\u0020the\u0020class\/method\u0020that\u0020should\u0020be\u0020called\u0020if\u0020routing\u0020doesn\u0027t\nfind\u0020a\u0020match.\u0020It\u0020can\u0020be\u0020the\u0020controller\/method\u0020name\u0020like\u003A\u0020Users\u003A\u003Aindex",
             "url": "classes/CodeIgniter-Config-Routing.html#property_override404"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Routing\u003A\u003A\u0024autoRoute",
