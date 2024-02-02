@@ -9241,6 +9241,16 @@ Search.appendIndex(
             "summary": "Converts\u0020fields\u0020retrieved\u0020from\u0020the\u0020database\u0020to\nthe\u0020format\u0020needed\u0020for\u0020creating\u0020fields\u0020with\u0020Forge.",
             "url": "classes/CodeIgniter-Database-SQLite3-Table.html#method_formatFields"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003AisIntegerType\u0028\u0029",
+            "name": "isIntegerType",
+            "summary": "Is\u0020INTEGER\u0020type\u003F",
+            "url": "classes/CodeIgniter-Database-SQLite3-Table.html#method_isIntegerType"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003AisNumericType\u0028\u0029",
+            "name": "isNumericType",
+            "summary": "Is\u0020NUMERIC\u0020type\u003F",
+            "url": "classes/CodeIgniter-Database-SQLite3-Table.html#method_isNumericType"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003AformatKeys\u0028\u0029",
             "name": "formatKeys",
             "summary": "Converts\u0020keys\u0020retrieved\u0020from\u0020the\u0020database\u0020to\nthe\u0020format\u0020needed\u0020to\u0020create\u0020later.",
