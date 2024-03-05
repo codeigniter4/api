@@ -15176,11 +15176,6 @@ Search.appendIndex(
             "summary": "Constructor",
             "url": "classes/CodeIgniter-HTTP-Response.html#method___construct"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\Response\u003A\u003Apretend\u0028\u0029",
-            "name": "pretend",
-            "summary": "Turns\u0020\u0022pretend\u0022\u0020mode\u0020on\u0020or\u0020off\u0020to\u0020aid\u0020in\u0020testing.",
-            "url": "classes/CodeIgniter-HTTP-Response.html#method_pretend"
-        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Response\u003A\u003AgetStatusCode\u0028\u0029",
             "name": "getStatusCode",
             "summary": "Gets\u0020the\u0020response\u0020status\u0020code.",
