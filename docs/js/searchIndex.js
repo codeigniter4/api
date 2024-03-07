@@ -8186,11 +8186,6 @@ Search.appendIndex(
             "summary": "Rollback\u0020Transaction",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__transRollback"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003AisWriteType\u0028\u0029",
-            "name": "isWriteType",
-            "summary": "Determines\u0020if\u0020a\u0020query\u0020is\u0020a\u0020\u0022write\u0022\u0020type.",
-            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_isWriteType"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A\u0024DBDriver",
             "name": "DBDriver",
             "summary": "Database\u0020driver",
