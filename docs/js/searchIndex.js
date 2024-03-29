@@ -14006,6 +14006,16 @@ Search.appendIndex(
             "summary": "The\u0020current\u0020status\u0020code\u0020for\u0020this\u0020response.",
             "url": "classes/CodeIgniter-HTTP-DownloadResponse.html#property_statusCode"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\BadRequestException",
+            "name": "BadRequestException",
+            "summary": "400\u0020Bad\u0020Request",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-BadRequestException.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\BadRequestException\u003A\u003A\u0024code",
+            "name": "code",
+            "summary": "HTTP\u0020status\u0020code\u0020for\u0020Bad\u0020Request",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-BadRequestException.html#property_code"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException",
             "name": "HTTPException",
             "summary": "Things\u0020that\u0020can\u0020go\u0020wrong\u0020with\u0020HTTP",
@@ -19791,6 +19801,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Router-Router.html#method_setMatchedRoute"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AcheckDisallowedChars\u0028\u0029",
+            "name": "checkDisallowedChars",
+            "summary": "Checks\u0020disallowed\u0020characters",
+            "url": "classes/CodeIgniter-Router-Router.html#method_checkDisallowedChars"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024collection",
             "name": "collection",
             "summary": "A\u0020RouteCollection\u0020instance.",
@@ -19845,6 +19860,11 @@ Search.appendIndex(
             "name": "autoRouter",
             "summary": "",
             "url": "classes/CodeIgniter-Router-Router.html#property_autoRouter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024permittedURIChars",
+            "name": "permittedURIChars",
+            "summary": "Permitted\u0020URI\u0020chars",
+            "url": "classes/CodeIgniter-Router-Router.html#property_permittedURIChars"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouterInterface",
             "name": "RouterInterface",
