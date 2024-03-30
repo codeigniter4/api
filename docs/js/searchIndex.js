@@ -688,7 +688,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024validationRules",
             "name": "validationRules",
-            "summary": "Rules\u0020used\u0020to\u0020validate\u0020data\u0020in\u0020insert,\u0020update,\u0020and\u0020save\u0020methods.",
+            "summary": "Rules\u0020used\u0020to\u0020validate\u0020data\u0020in\u0020insert\u0028\u0029,\u0020update\u0028\u0029,\u0020and\u0020save\u0028\u0029\u0020methods.",
             "url": "classes/CodeIgniter-BaseModel.html#property_validationRules"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024validationMessages",
