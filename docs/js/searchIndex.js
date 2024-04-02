@@ -9888,7 +9888,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003AdetermineView\u0028\u0029",
             "name": "determineView",
-            "summary": "Determines\u0020the\u0020view\u0020to\u0020display\u0020based\u0020on\u0020the\u0020exception\u0020thrown,\nwhether\u0020an\u0020HTTP\u0020or\u0020CLI\u0020request,\u0020etc.",
+            "summary": "Determines\u0020the\u0020view\u0020to\u0020display\u0020based\u0020on\u0020the\u0020exception\u0020thrown,\u0020HTTP\u0020status\ncode,\u0020whether\u0020an\u0020HTTP\u0020or\u0020CLI\u0020request,\u0020etc.",
             "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_determineView"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003A\u0024request",
