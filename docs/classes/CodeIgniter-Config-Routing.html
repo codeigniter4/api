@@ -93,6 +93,14 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-datacaster.html" class="">DataCaster</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-dataconverter.html" class="">DataConverter</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-debug.html" class="">Debug</a>
                 
             </li>
@@ -126,6 +134,10 @@
             </li>
                     <li>
                 <a href="namespaces/codeigniter-format.html" class="">Format</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-helpers.html" class="">Helpers</a>
                 
             </li>
                     <li>
@@ -265,7 +277,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -311,31 +323,35 @@ defined routes.</dd>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>The default controller to use when no other controller has been
-specified.</dd>
+<dd>For Auto Routing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-Routing.html#property_defaultMethod">$defaultMethod</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>The default method to call on the controller when no other
-method has been set in the route.</dd>
+<dd>For Defined Routes and Auto Routing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-Routing.html#property_defaultNamespace">$defaultNamespace</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>The default namespace to use for Controllers when no other
-namespace has been specified.</dd>
+<dd>For Defined Routes and Auto Routing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-Routing.html#property_moduleRoutes">$moduleRoutes</a>
     <span>
                         &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>Map of URI segments and namespaces. For Auto Routing (Improved).</dd>
+<dd>For Auto Routing (Improved).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/CodeIgniter-Config-Routing.html#property_multipleSegmentsOneParam">$multipleSegmentsOneParam</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>For Defined Routes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-BaseConfig.html#property_override">$override</a>
@@ -357,8 +373,7 @@ find a match. It can be the controller/method name like: Users::index</dd>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>If TRUE, will enable the use of the &#039;prioritize&#039; option
-when defining routes.</dd>
+<dd>For Defined Routes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-BaseConfig.html#property_registrars">$registrars</a>
@@ -373,14 +388,21 @@ for rapidly setting config class properties.</dd>
     <span>
                         &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
-<dd>An array of files that contain route definitions.</dd>
+<dd>For Defined Routes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a href="classes/CodeIgniter-Config-Routing.html#property_translateURIDashes">$translateURIDashes</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Whether to translate dashes in URIs to underscores.</dd>
+<dd>For Auto Routing.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/CodeIgniter-Config-Routing.html#property_translateUriToCamelCase">$translateUriToCamelCase</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>For Auto Routing (Improved).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Config-BaseConfig.html#property_didDiscovery">$didDiscovery</a>
@@ -471,7 +493,7 @@ options into a config file.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
@@ -510,12 +532,11 @@ defined routes.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The default controller to use when no other controller has been
-specified.</p>
+        <p class="phpdocumentor-summary">For Auto Routing.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -523,7 +544,9 @@ specified.</p>
     <span class="phpdocumentor-signature__name">$defaultController</span>
      = <span class="phpdocumentor-signature__default-value">&#039;Home&#039;</span></code>
 
-        <section class="phpdocumentor-description"><p>Default: 'Home'</p>
+        <section class="phpdocumentor-description"><p>The default controller to use when no other controller has been
+specified.</p>
+<p>Default: 'Home'</p>
 </section>
 
     
@@ -547,12 +570,11 @@ specified.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The default method to call on the controller when no other
-method has been set in the route.</p>
+        <p class="phpdocumentor-summary">For Defined Routes and Auto Routing.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -560,7 +582,9 @@ method has been set in the route.</p>
     <span class="phpdocumentor-signature__name">$defaultMethod</span>
      = <span class="phpdocumentor-signature__default-value">&#039;index&#039;</span></code>
 
-        <section class="phpdocumentor-description"><p>Default: 'index'</p>
+        <section class="phpdocumentor-description"><p>The default method to call on the controller when no other
+method has been set in the route.</p>
+<p>Default: 'index'</p>
 </section>
 
     
@@ -584,12 +608,11 @@ method has been set in the route.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The default namespace to use for Controllers when no other
-namespace has been specified.</p>
+        <p class="phpdocumentor-summary">For Defined Routes and Auto Routing.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -597,7 +620,9 @@ namespace has been specified.</p>
     <span class="phpdocumentor-signature__name">$defaultNamespace</span>
      = <span class="phpdocumentor-signature__default-value">&#039;App\\Controllers&#039;</span></code>
 
-        <section class="phpdocumentor-description"><p>Default: 'App\Controllers'</p>
+        <section class="phpdocumentor-description"><p>The default namespace to use for Controllers when no other
+namespace has been specified.</p>
+<p>Default: 'App\Controllers'</p>
 </section>
 
     
@@ -621,11 +646,11 @@ namespace has been specified.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Map of URI segments and namespaces. For Auto Routing (Improved).</p>
+        <p class="phpdocumentor-summary">For Auto Routing (Improved).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -633,11 +658,49 @@ namespace has been specified.</p>
     <span class="phpdocumentor-signature__name">$moduleRoutes</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-        <section class="phpdocumentor-description"><p>The key is the first URI segment. The value is the controller namespace.
+        <section class="phpdocumentor-description"><p>Map of URI segments and namespaces.</p>
+<p>The key is the first URI segment. The value is the controller namespace.
 E.g.,
 [
 'blog' =&gt; 'Acme\Blog\Controllers',
 ]</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_multipleSegmentsOneParam">
+        $multipleSegmentsOneParam
+        <a href="classes/CodeIgniter-Config-Routing.html#property_multipleSegmentsOneParam" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">114</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">For Defined Routes.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$multipleSegmentsOneParam</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
+
+        <section class="phpdocumentor-description"><p>If TRUE, matched multiple URI segments will be passed as one parameter.</p>
+<p>Default: false</p>
 </section>
 
     
@@ -661,7 +724,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -695,7 +758,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -739,12 +802,11 @@ public $override404 = 'App\Errors::show404';</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">If TRUE, will enable the use of the &#039;prioritize&#039; option
-when defining routes.</p>
+        <p class="phpdocumentor-summary">For Defined Routes.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -752,7 +814,9 @@ when defining routes.</p>
     <span class="phpdocumentor-signature__name">$prioritize</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-        <section class="phpdocumentor-description"><p>Default: false</p>
+        <section class="phpdocumentor-description"><p>If TRUE, will enable the use of the 'prioritize' option
+when defining routes.</p>
+<p>Default: false</p>
 </section>
 
     
@@ -776,7 +840,7 @@ when defining routes.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -811,11 +875,11 @@ for rapidly setting config class properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">An array of files that contain route definitions.</p>
+        <p class="phpdocumentor-summary">For Defined Routes.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -823,7 +887,8 @@ for rapidly setting config class properties.</p>
     <span class="phpdocumentor-signature__name">$routeFiles</span>
      = <span class="phpdocumentor-signature__default-value">[APPPATH . &#039;Config/Routes.php&#039;]</span></code>
 
-        <section class="phpdocumentor-description"><p>Route files are read in order, with the first match
+        <section class="phpdocumentor-description"><p>An array of files that contain route definitions.
+Route files are read in order, with the first match
 found taking precedence.</p>
 <p>Default: APPPATH . 'Config/Routes.php'</p>
 </section>
@@ -849,11 +914,11 @@ found taking precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Whether to translate dashes in URIs to underscores.</p>
+        <p class="phpdocumentor-summary">For Auto Routing.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -861,7 +926,47 @@ found taking precedence.</p>
     <span class="phpdocumentor-signature__name">$translateURIDashes</span>
      = <span class="phpdocumentor-signature__default-value">false</span></code>
 
-        <section class="phpdocumentor-description"><p>Primarily useful when using the auto-routing.</p>
+        <section class="phpdocumentor-description"><p>Whether to translate dashes in URIs for controller/method to underscores.
+Primarily useful when using the auto-routing.</p>
+<p>Default: false</p>
+</section>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_translateUriToCamelCase">
+        $translateUriToCamelCase
+        <a href="classes/CodeIgniter-Config-Routing.html#property_translateUriToCamelCase" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/Routing.php"><a href="files/system-config-routing.html"><abbr title="system/Config/Routing.php">Routing.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">For Auto Routing (Improved).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$translateUriToCamelCase</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
+
+        <section class="phpdocumentor-description"><p>Whether to translate dashes in URIs for controller/method to CamelCase.
+E.g., blog-controller -&gt; BlogController</p>
+<p>If you enable this, $translateURIDashes is ignored.</p>
 <p>Default: false</p>
 </section>
 
@@ -886,7 +991,7 @@ found taking precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -920,7 +1025,7 @@ found taking precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -959,7 +1064,7 @@ found taking precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">104</span>
+    <span class="phpdocumentor-element-found-in__line">103</span>
 
     </aside>
 
@@ -994,7 +1099,7 @@ that match the properties of the child class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
@@ -1035,7 +1140,7 @@ that match the properties of the child class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">178</span>
 
     </aside>
 
@@ -1095,7 +1200,7 @@ that match the properties of the child class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 
     </aside>
 
@@ -1158,7 +1263,7 @@ that match the properties of the child class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseConfig.php"><a href="files/system-config-baseconfig.html"><abbr title="system/Config/BaseConfig.php">BaseConfig.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">226</span>
 
     </aside>
 
@@ -1310,12 +1415,14 @@ options into a config file.</p>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_defaultMethod">$defaultMethod<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_defaultNamespace">$defaultNamespace<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_moduleRoutes">$moduleRoutes<a href="classes/CodeIgniter-Config-Routing.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Config-Routing.html#property_multipleSegmentsOneParam">$multipleSegmentsOneParam<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseConfig.html#property_override">$override<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_override404">$override404<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_prioritize">$prioritize<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseConfig.html#property_registrars">$registrars<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_routeFiles">$routeFiles<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-Routing.html#property_translateURIDashes">$translateURIDashes<a href="classes/CodeIgniter-Config-Routing.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Config-Routing.html#property_translateUriToCamelCase">$translateUriToCamelCase<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseConfig.html#property_didDiscovery">$didDiscovery<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseConfig.html#property_moduleConfig">$moduleConfig<a href="classes/CodeIgniter-Config-Routing.html"></li>
                                             </ul>

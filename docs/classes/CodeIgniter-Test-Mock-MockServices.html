@@ -93,6 +93,14 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-datacaster.html" class="">DataCaster</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-dataconverter.html" class="">DataConverter</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-debug.html" class="">Debug</a>
                 
             </li>
@@ -126,6 +134,10 @@
             </li>
                     <li>
                 <a href="namespaces/codeigniter-format.html" class="">Format</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-helpers.html" class="">Helpers</a>
                 
             </li>
                     <li>
@@ -266,7 +278,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockServices.php"><a href="files/system-test-mock-mockservices.html"><abbr title="system/Test/Mock/MockServices.php">MockServices.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
@@ -329,9 +341,16 @@ instead call out to \Config\Services (imported as AppServices).</p>
 <dd>Have we already discovered other Services?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-Config-BaseService.html#property_factories">$factories</a>
+    <span>
+                        &nbsp;: array&lt;string, callable(mixed ...$params): object&gt;            </span>
+</dt>
+<dd>Factory method list.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Config-BaseService.html#property_instances">$instances</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, object&gt;            </span>
 </dt>
 <dd>Cache for instance of any services that
 have been requested as a &quot;shared&quot; instance.</dd>
@@ -339,7 +358,7 @@ have been requested as a &quot;shared&quot; instance.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Config-BaseService.html#property_mocks">$mocks</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, object&gt;            </span>
 </dt>
 <dd>Mock objects for testing which are returned if exist.</dd>
 
@@ -460,6 +479,13 @@ spl_autoload_register method, and helper methods.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Config-BaseService.html#method_get">get()</a>
+    <span>
+                                &nbsp;: object|null    </span>
+</dt>
+<dd>Simple method to get an entry fast.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Config-BaseService.html#method_honeypot">honeypot()</a>
     <span>
                                 &nbsp;: <a href="classes/CodeIgniter-Honeypot-Honeypot.html"><abbr title="\CodeIgniter\Honeypot\Honeypot">Honeypot</abbr></a>    </span>
@@ -499,7 +525,7 @@ spl_autoload_register method, and helper methods.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Test-Mock-MockServices.html#method_locator">locator()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Autoloader-FileLocator.html"><abbr title="\CodeIgniter\Autoloader\FileLocator">FileLocator</abbr></a>    </span>
+                                &nbsp;: <a href="classes/CodeIgniter-Autoloader-FileLocatorInterface.html"><abbr title="\CodeIgniter\Autoloader\FileLocatorInterface">FileLocatorInterface</abbr></a>    </span>
 </dt>
 <dd>The file locator provides utility methods for looking for non-classes
 within namespaced folders, as well as convenience methods for
@@ -522,6 +548,13 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</dd>
     <span>
                                 &nbsp;: <a href="classes/CodeIgniter-HTTP-Negotiate.html"><abbr title="\CodeIgniter\HTTP\Negotiate">Negotiate</abbr></a>    </span>
 </dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Config-BaseService.html#method_override">override()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Overrides an existing entry.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Config-BaseService.html#method_pager">pager()</a>
@@ -612,6 +645,13 @@ class. Return null if not found.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/CodeIgniter-Config-BaseService.html#method_set">set()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Sets an entry.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-Config-BaseService.html#method_siteurifactory">siteurifactory()</a>
     <span>
                                 &nbsp;: <a href="classes/CodeIgniter-HTTP-SiteURIFactory.html"><abbr title="\CodeIgniter\HTTP\SiteURIFactory">SiteURIFactory</abbr></a>    </span>
@@ -672,16 +712,6 @@ class. Return null if not found.</dd>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Config-BaseService.html#method_discoverServices">discoverServices()</a>
-    <span>
-                                &nbsp;: object|null    </span>
-</dt>
-<dd>Will scan all psr4 namespaces registered with system to look
-for new Config\Services files. Caches a copy of each one, then
-looks for the service method in each, returning an instance of
-the service, if available.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Config-BaseService.html#method_getSharedInstance">getSharedInstance()</a>
     <span>
                                 &nbsp;: object    </span>
@@ -719,7 +749,7 @@ the service, if available.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockServices.php"><a href="files/system-test-mock-mockservices.html"><abbr title="system/Test/Mock/MockServices.php">MockServices.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -752,7 +782,7 @@ the service, if available.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockServices.php"><a href="files/system-test-mock-mockservices.html"><abbr title="system/Test/Mock/MockServices.php">MockServices.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
     </aside>
 
@@ -785,7 +815,7 @@ the service, if available.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 
     </aside>
 
@@ -809,6 +839,42 @@ the service, if available.</dd>
             -protected
             -static                                            "
 >
+    <h4 class="phpdocumentor-element__name" id="property_factories">
+        $factories
+        <a href="classes/CodeIgniter-Config-BaseService.html#property_factories" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">160</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Factory method list.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string, callable(mixed ...$params): object&gt;</span>
+    <span class="phpdocumentor-signature__name">$factories</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+        <section class="phpdocumentor-description"><p>[key =&gt; callable]</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+            -static                                            "
+>
     <h4 class="phpdocumentor-element__name" id="property_instances">
         $instances
         <a href="classes/CodeIgniter-Config-BaseService.html#property_instances" class="headerlink"><i class="fas fa-link"></i></a>
@@ -819,7 +885,7 @@ the service, if available.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">147</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 
     </aside>
 
@@ -828,14 +894,16 @@ have been requested as a &quot;shared&quot; instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string, object&gt;</span>
     <span class="phpdocumentor-signature__name">$instances</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
         <section class="phpdocumentor-description"><p>Keys should be lowercase service names.</p>
 </section>
 
-    
+        <section class="phpdocumentor-description"><p>[key =&gt; instance]</p>
+</section>
+
     
 
 </article>
@@ -856,7 +924,7 @@ have been requested as a &quot;shared&quot; instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
@@ -864,12 +932,14 @@ have been requested as a &quot;shared&quot; instance.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string, object&gt;</span>
     <span class="phpdocumentor-signature__name">$mocks</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-    
+        <section class="phpdocumentor-description"><p>[key =&gt; instance]</p>
+</section>
+
     
 
 </article>
@@ -878,7 +948,7 @@ have been requested as a &quot;shared&quot; instance.</p>
             phpdocumentor-element
             -property
             -protected
-            -static                                            "
+            -static            -deprecated                                "
 >
     <h4 class="phpdocumentor-element__name" id="property_services">
         $services
@@ -890,13 +960,13 @@ have been requested as a &quot;shared&quot; instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">183</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">A cache of other service classes we&#039;ve found.</p>
 
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">protected</span>
     <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$services</span>
@@ -905,6 +975,23 @@ have been requested as a &quot;shared&quot; instance.</p>
     
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Config-BaseService.html#property_services#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">deprecated</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                            <span class="phpdocumentor-tag-link">4.5.0</span>
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>No longer used.</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
 </article>
                     <article
@@ -924,7 +1011,7 @@ have been requested as a &quot;shared&quot; instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">190</span>
 
     </aside>
 
@@ -963,7 +1050,7 @@ have been requested as a &quot;shared&quot; instance.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
@@ -1017,7 +1104,7 @@ names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockServices.php"><a href="files/system-test-mock-mockservices.html"><abbr title="system/Test/Mock/MockServices.php">MockServices.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
@@ -1048,7 +1135,7 @@ names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">262</span>
 
     </aside>
 
@@ -1714,6 +1801,58 @@ spl_autoload_register method, and helper methods.</p>
             -public
                                     -static                    "
 >
+    <h4 class="phpdocumentor-element__name" id="method_get">
+        get()
+        <a href="classes/CodeIgniter-Config-BaseService.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Simple method to get an entry fast.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Identifier of the entry to look for.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">object|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Entry.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
     <h4 class="phpdocumentor-element__name" id="method_honeypot">
         honeypot()
         <a href="classes/CodeIgniter-Config-BaseService.html#method_honeypot" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1885,7 +2024,7 @@ spl_autoload_register method, and helper methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">313</span>
+    <span class="phpdocumentor-element-found-in__line">379</span>
 
     </aside>
 
@@ -2031,7 +2170,7 @@ spl_autoload_register method, and helper methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockServices.php"><a href="files/system-test-mock-mockservices.html"><abbr title="system/Test/Mock/MockServices.php">MockServices.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -2041,7 +2180,7 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">locator</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$getShared</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Autoloader-FileLocator.html"><abbr title="\CodeIgniter\Autoloader\FileLocator">FileLocator</abbr></a></span></code>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">locator</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$getShared</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Autoloader-FileLocatorInterface.html"><abbr title="\CodeIgniter\Autoloader\FileLocatorInterface">FileLocatorInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2061,7 +2200,7 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Autoloader-FileLocator.html"><abbr title="\CodeIgniter\Autoloader\FileLocator">FileLocator</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Autoloader-FileLocatorInterface.html"><abbr title="\CodeIgniter\Autoloader\FileLocatorInterface">FileLocatorInterface</abbr></a></span>
             </section>
 
 </article>
@@ -2220,6 +2359,57 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-HTTP-Negotiate.html"><abbr title="\CodeIgniter\HTTP\Negotiate">Negotiate</abbr></a></span>
             </section>
 
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_override">
+        override()
+        <a href="classes/CodeIgniter-Config-BaseService.html#method_override" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Overrides an existing entry.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">override</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Identifier of the entry.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -2516,7 +2706,7 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">350</span>
 
     </aside>
 
@@ -2558,7 +2748,7 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 
     </aside>
 
@@ -2867,7 +3057,7 @@ loading &#039;helpers&#039;, and &#039;libraries&#039;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">265</span>
+    <span class="phpdocumentor-element-found-in__line">327</span>
 
     </aside>
 
@@ -2951,6 +3141,57 @@ class. Return null if not found.</p>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Session-Session.html"><abbr title="\CodeIgniter\Session\Session">Session</abbr></a></span>
             </section>
 
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_set">
+        set()
+        <a href="classes/CodeIgniter-Config-BaseService.html#method_set" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">209</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Sets an entry.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Identifier of the entry.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
 </article>
                     <article
         class="phpdocumentor-element
@@ -3420,7 +3661,7 @@ class. Return null if not found.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">370</span>
+    <span class="phpdocumentor-element-found-in__line">385</span>
 
     </aside>
 
@@ -3441,83 +3682,6 @@ class. Return null if not found.</p>
         class="phpdocumentor-element
             -method
             -protected
-            -deprecated                        -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_discoverServices">
-        discoverServices()
-        <a href="classes/CodeIgniter-Config-BaseService.html#method_discoverServices" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">330</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Will scan all psr4 namespaces registered with system to look
-for new Config\Services files. Caches a copy of each one, then
-looks for the service method in each, returning an instance of
-the service, if available.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">discoverServices</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$arguments</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object|null</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$arguments</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CodeIgniter-Config-BaseService.html#method_discoverServices#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">deprecated</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                                            </dl>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">object|null</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_getSharedInstance">
@@ -3528,7 +3692,7 @@ the service, if available.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Config/BaseService.php"><a href="files/system-config-baseservice.html"><abbr title="system/Config/BaseService.php">BaseService.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">186</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 
     </aside>
 
@@ -3685,6 +3849,7 @@ the service, if available.</p>
                                                     <li><a href="classes/CodeIgniter-Test-Mock-MockServices.html#property_classmap">$classmap<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
                                                     <li><a href="classes/CodeIgniter-Test-Mock-MockServices.html#property_psr4">$psr4<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseService.html#property_discovered">$discovered<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Config-BaseService.html#property_factories">$factories<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseService.html#property_instances">$instances<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseService.html#property_mocks">$mocks<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
                                                     <li><a href="classes/CodeIgniter-Config-BaseService.html#property_services">$services<a href="classes/CodeIgniter-Test-Mock-MockServices.html"></li>
@@ -3710,6 +3875,7 @@ the service, if available.</p>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_exceptions">exceptions()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_filters">filters()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_format">format()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-BaseService.html#method_get">get()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_honeypot">honeypot()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_image">image()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_incomingrequest">incomingrequest()</a></li>
@@ -3720,6 +3886,7 @@ the service, if available.</p>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_logger">logger()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_migrations">migrations()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_negotiator">negotiator()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-BaseService.html#method_override">override()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_pager">pager()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_parser">parser()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_redirectresponse">redirectresponse()</a></li>
@@ -3734,6 +3901,7 @@ the service, if available.</p>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_security">security()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_serviceExists">serviceExists()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_session">session()</a></li>
+                                            <li><a href="classes/CodeIgniter-Config-BaseService.html#method_set">set()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_siteurifactory">siteurifactory()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_superglobals">superglobals()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_throttler">throttler()</a></li>
@@ -3744,7 +3912,6 @@ the service, if available.</p>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_validation">validation()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_viewcell">viewcell()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_buildServicesCache">buildServicesCache()</a></li>
-                                            <li><a href="classes/CodeIgniter-Config-BaseService.html#method_discoverServices">discoverServices()</a></li>
                                             <li><a href="classes/CodeIgniter-Config-BaseService.html#method_getSharedInstance">getSharedInstance()</a></li>
                                     </ul>
             </li>

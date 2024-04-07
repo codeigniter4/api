@@ -93,6 +93,14 @@
                 
             </li>
                     <li>
+                <a href="namespaces/codeigniter-datacaster.html" class="">DataCaster</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-dataconverter.html" class="">DataConverter</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/codeigniter-debug.html" class="">Debug</a>
                 
             </li>
@@ -126,6 +134,10 @@
             </li>
                     <li>
                 <a href="namespaces/codeigniter-format.html" class="">Format</a>
+                
+            </li>
+                    <li>
+                <a href="namespaces/codeigniter-helpers.html" class="">Helpers</a>
                 
             </li>
                     <li>
@@ -448,12 +460,32 @@ to be set by the user in inserts/updates.</dd>
 <dd>Query Builder object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#property_castHandlers">$castHandlers</a>
+    <span>
+                        &nbsp;: array&lt;string, class-string&gt;            </span>
+</dt>
+<dd>Custom convert handlers.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#property_casts">$casts</a>
+    <span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
+</dt>
+<dd>Array of column names and the type of value to cast.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-BaseModel.html#property_cleanValidationRules">$cleanValidationRules</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
 <dd>Whether rules should be removed that do not exist
 in the passed data. Used in updates.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#property_converter">$converter</a>
+    <span>
+                        &nbsp;: <a href="classes/CodeIgniter-DataConverter-DataConverter.html"><abbr title="\CodeIgniter\DataConverter\DataConverter">DataConverter</abbr></a>|null            </span>
+</dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-BaseModel.html#property_createdField">$createdField</a>
@@ -519,8 +551,9 @@ flag for every parameter.</dd>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Whether we should limit fields in inserts
-and updates to those available in $allowedFields or not.</dd>
+<dd>If this model should use &quot;softDeletes&quot; and
+simply set a date when rows are deleted, or
+do hard deletes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-BaseModel.html#property_returnType">$returnType</a>
@@ -564,9 +597,9 @@ and ensure it gets validated first.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-BaseModel.html#property_tempReturnType">$tempReturnType</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: "array"|"object"|class-string            </span>
 </dt>
-<dd>Used by asArray and asObject to provide
+<dd>Used by asArray() and asObject() to provide
 temporary overrides of model default.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
@@ -583,6 +616,13 @@ model&#039;s softDelete setting.</dd>
                         &nbsp;: string            </span>
 </dt>
 <dd>The column used for update timestamps</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#property_updateOnlyChanged">$updateOnlyChanged</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Whether to update Entity&#039;s only changed data.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Model.html#property_useAutoIncrement">$useAutoIncrement</a>
@@ -611,7 +651,7 @@ values during insert and update routines.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-BaseModel.html#property_validation">$validation</a>
     <span>
-                        &nbsp;: <a href="classes/CodeIgniter-Validation-ValidationInterface.html"><abbr title="\CodeIgniter\Validation\ValidationInterface">ValidationInterface</abbr></a>            </span>
+                        &nbsp;: <a href="classes/CodeIgniter-Validation-ValidationInterface.html"><abbr title="\CodeIgniter\Validation\ValidationInterface">ValidationInterface</abbr></a>|null            </span>
 </dt>
 <dd>Our validator instance.</dd>
 
@@ -715,14 +755,6 @@ the setting. Resets after the next method that uses triggers.</dd>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Loops over records in batches, allowing you to operate on them.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Model.html#method_classToArray">classToArray()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
-</dt>
-<dd>Takes a class an returns an array of it&#039;s public and protected
-properties as an array suitable for use in creates and updates.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/CodeIgniter-BaseModel.html#method_cleanRules">cleanRules()</a>
@@ -1234,6 +1266,20 @@ currently so that rules don&#039;t block updating when only updating
 a partial row.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_convertToReturnType">convertToReturnType()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|object    </span>
+</dt>
+<dd>Converts database data array to return type value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_createDataConverter">createDataConverter()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Creates DataConverter instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-Model.html#method_doDelete">doDelete()</a>
     <span>
                                 &nbsp;: bool|string    </span>
@@ -1351,20 +1397,10 @@ This method works only with dbCalls.</dd>
 This method works only with dbCalls.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-BaseModel.html#method_fillPlaceholders">fillPlaceholders()</a>
+    <a href="classes/CodeIgniter-BaseModel.html#method_ensureValidation">ensureValidation()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>Replace any placeholders within the rules with the values that
-match the &#039;key&#039; of any properties being set. For example, if
-we had the following $data array:</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Model.html#method_idValue">idValue()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|int|string|null    </span>
-</dt>
-<dd>Returns the id value for the data array or object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a href="classes/CodeIgniter-BaseModel.html#method_initialize">initialize()</a>
@@ -1459,6 +1495,13 @@ data manipulation within the model. Specifically intended for
 usage by child models this can be used to format data,
 save/load related classes, etc.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/CodeIgniter-BaseModel.html#method_useCasts">useCasts()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Are casts used?</dd>
+
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a href="classes/CodeIgniter-Model.html#method_checkBuilderMethod">checkBuilderMethod()</a>
     <span>
@@ -1531,7 +1574,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -1567,7 +1610,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">328</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 
     </aside>
 
@@ -1601,7 +1644,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">346</span>
 
     </aside>
 
@@ -1635,7 +1678,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 
     </aside>
 
@@ -1669,7 +1712,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">286</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 
     </aside>
 
@@ -1703,7 +1746,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 
     </aside>
 
@@ -1737,7 +1780,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">300</span>
+    <span class="phpdocumentor-element-found-in__line">332</span>
 
     </aside>
 
@@ -1771,7 +1814,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">268</span>
 
     </aside>
 
@@ -1805,7 +1848,7 @@ save/load related classes, etc.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -1840,7 +1883,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -1874,7 +1917,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">321</span>
+    <span class="phpdocumentor-element-found-in__line">353</span>
 
     </aside>
 
@@ -1908,7 +1951,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">339</span>
 
     </aside>
 
@@ -1942,7 +1985,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">283</span>
 
     </aside>
 
@@ -1976,7 +2019,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">279</span>
+    <span class="phpdocumentor-element-found-in__line">311</span>
 
     </aside>
 
@@ -2010,7 +2053,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">265</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
@@ -2044,7 +2087,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">293</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 
     </aside>
 
@@ -2102,6 +2145,78 @@ to be set by the user in inserts/updates.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_castHandlers">
+        $castHandlers
+        <a href="classes/CodeIgniter-BaseModel.html#property_castHandlers" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">120</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Custom convert handlers.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string, class-string&gt;</span>
+    <span class="phpdocumentor-signature__name">$castHandlers</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+        <section class="phpdocumentor-description"><p>[type =&gt; classname]</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_casts">
+        $casts
+        <a href="classes/CodeIgniter-BaseModel.html#property_casts" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">113</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Array of column names and the type of value to cast.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$casts</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+        <section class="phpdocumentor-description"><p>[column =&gt; type]</p>
+</section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_cleanValidationRules">
         $cleanValidationRules
         <a href="classes/CodeIgniter-BaseModel.html#property_cleanValidationRules" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2112,7 +2227,7 @@ to be set by the user in inserts/updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">209</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 
     </aside>
 
@@ -2137,6 +2252,39 @@ in the passed data. Used in updates.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_converter">
+        $converter
+        <a href="classes/CodeIgniter-BaseModel.html#property_converter" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">122</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-DataConverter-DataConverter.html"><abbr title="\CodeIgniter\DataConverter\DataConverter">DataConverter</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$converter</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_createdField">
         $createdField
         <a href="classes/CodeIgniter-BaseModel.html#property_createdField" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2147,7 +2295,7 @@ in the passed data. Used in updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
@@ -2181,7 +2329,7 @@ in the passed data. Used in updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">121</span>
+    <span class="phpdocumentor-element-found-in__line">157</span>
 
     </aside>
 
@@ -2218,7 +2366,7 @@ are expected to.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
@@ -2252,7 +2400,7 @@ are expected to.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 
     </aside>
 
@@ -2287,7 +2435,7 @@ should be instantiated.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 
     </aside>
 
@@ -2356,7 +2504,7 @@ flag for every parameter.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -2424,12 +2572,13 @@ flag for every parameter.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Whether we should limit fields in inserts
-and updates to those available in $allowedFields or not.</p>
+        <p class="phpdocumentor-summary">If this model should use &quot;softDeletes&quot; and
+simply set a date when rows are deleted, or
+do hard deletes.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -2459,7 +2608,7 @@ and updates to those available in $allowedFields or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -2495,7 +2644,7 @@ and updates to those available in $allowedFields or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">201</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -2564,7 +2713,7 @@ to skip data validation for any future calls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 
     </aside>
 
@@ -2635,16 +2784,16 @@ and ensure it gets validated first.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used by asArray and asObject to provide
+        <p class="phpdocumentor-summary">Used by asArray() and asObject() to provide
 temporary overrides of model default.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
+        <span class="phpdocumentor-signature__type">"array"|"object"|class-string</span>
     <span class="phpdocumentor-signature__name">$tempReturnType</span>
     </code>
 
@@ -2670,7 +2819,7 @@ temporary overrides of model default.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -2705,7 +2854,7 @@ model&#039;s softDelete setting.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 
     </aside>
 
@@ -2716,6 +2865,40 @@ model&#039;s softDelete setting.</p>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$updatedField</span>
      = <span class="phpdocumentor-signature__default-value">&#039;updated_at&#039;</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_updateOnlyChanged">
+        $updateOnlyChanged
+        <a href="classes/CodeIgniter-BaseModel.html#property_updateOnlyChanged" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">205</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether to update Entity&#039;s only changed data.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$updateOnlyChanged</span>
+     = <span class="phpdocumentor-signature__default-value">true</span></code>
 
     
     
@@ -2773,7 +2956,7 @@ model&#039;s softDelete setting.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -2809,7 +2992,7 @@ do hard deletes.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 
@@ -2844,7 +3027,7 @@ values during insert and update routines.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 
@@ -2852,7 +3035,7 @@ values during insert and update routines.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Validation-ValidationInterface.html"><abbr title="\CodeIgniter\Validation\ValidationInterface">ValidationInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Validation-ValidationInterface.html"><abbr title="\CodeIgniter\Validation\ValidationInterface">ValidationInterface</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$validation</span>
     </code>
 
@@ -2878,7 +3061,7 @@ values during insert and update routines.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">193</span>
+    <span class="phpdocumentor-element-found-in__line">225</span>
 
     </aside>
 
@@ -2913,7 +3096,7 @@ used during data validation.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">217</span>
 
     </aside>
 
@@ -3006,7 +3189,7 @@ library.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">867</span>
+    <span class="phpdocumentor-element-found-in__line">908</span>
 
     </aside>
 
@@ -3112,7 +3295,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">838</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 
     </aside>
 
@@ -3160,7 +3343,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">852</span>
+    <span class="phpdocumentor-element-found-in__line">893</span>
 
     </aside>
 
@@ -3208,7 +3391,7 @@ and the database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1608</span>
+    <span class="phpdocumentor-element-found-in__line">1654</span>
 
     </aside>
 
@@ -3257,7 +3440,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1913</span>
+    <span class="phpdocumentor-element-found-in__line">1926</span>
 
     </aside>
 
@@ -3303,7 +3486,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1660</span>
+    <span class="phpdocumentor-element-found-in__line">1706</span>
 
     </aside>
 
@@ -3339,7 +3522,7 @@ the setting. Resets after the next method that uses triggers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1677</span>
+    <span class="phpdocumentor-element-found-in__line">1723</span>
 
     </aside>
 
@@ -3347,7 +3530,7 @@ the setting. Resets after the next method that uses triggers.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">asObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;object&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">asObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">"object"|class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;object&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3360,7 +3543,7 @@ or at least allows them to be created.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$class</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">"object"|class-string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&#039;object&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Class Name</p>
@@ -3391,7 +3574,7 @@ or at least allows them to be created.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">637</span>
+    <span class="phpdocumentor-element-found-in__line">678</span>
 
     </aside>
 
@@ -3452,7 +3635,7 @@ or at least allows them to be created.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">578</span>
+    <span class="phpdocumentor-element-found-in__line">619</span>
 
     </aside>
 
@@ -3514,104 +3697,6 @@ This method works only with dbCalls.</p>
         class="phpdocumentor-element
             -method
             -public
-            -deprecated                        -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_classToArray">
-        classToArray()
-        <a href="classes/CodeIgniter-Model.html#method_classToArray" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">912</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Takes a class an returns an array of it&#039;s public and protected
-properties as an array suitable for use in creates and updates.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">classToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$primaryKey</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dateFormat</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;datetime&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">object|string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$primaryKey</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$dateFormat</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;datetime&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$onlyChanged</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">true</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CodeIgniter-Model.html#method_classToArray#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\ReflectionException">ReflectionException</abbr></span>
-                                                            
-                                             
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">deprecated</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">4.1.0</span>
-                                                                                
-                                             
-                                    </dd>
-                                            </dl>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_cleanRules">
@@ -3622,7 +3707,7 @@ properties as an array suitable for use in creates and updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1500</span>
+    <span class="phpdocumentor-element-found-in__line">1527</span>
 
     </aside>
 
@@ -3671,7 +3756,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">612</span>
+    <span class="phpdocumentor-element-found-in__line">653</span>
 
     </aside>
 
@@ -3728,7 +3813,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1097</span>
+    <span class="phpdocumentor-element-found-in__line">1132</span>
 
     </aside>
 
@@ -3800,7 +3885,7 @@ Most handy when doing updates.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1209</span>
+    <span class="phpdocumentor-element-found-in__line">1244</span>
 
     </aside>
 
@@ -3853,7 +3938,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">561</span>
+    <span class="phpdocumentor-element-found-in__line">591</span>
 
     </aside>
 
@@ -3921,7 +4006,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">624</span>
+    <span class="phpdocumentor-element-found-in__line">654</span>
 
     </aside>
 
@@ -3929,7 +4014,7 @@ grab the last error from the Database connection.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">findAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">findAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3939,7 +4024,7 @@ grab the last error from the Database connection.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$limit</span>
                 : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Limit</p>
 </section>
@@ -3978,7 +4063,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">605</span>
+    <span class="phpdocumentor-element-found-in__line">635</span>
 
     </aside>
 
@@ -4045,7 +4130,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">664</span>
+    <span class="phpdocumentor-element-found-in__line">699</span>
 
     </aside>
 
@@ -4081,7 +4166,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">540</span>
+    <span class="phpdocumentor-element-found-in__line">581</span>
 
     </aside>
 
@@ -4145,7 +4230,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">745</span>
+    <span class="phpdocumentor-element-found-in__line">780</span>
 
     </aside>
 
@@ -4181,7 +4266,7 @@ grab the last error from the Database connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1571</span>
+    <span class="phpdocumentor-element-found-in__line">1617</span>
 
     </aside>
 
@@ -4218,7 +4303,7 @@ can be used elsewhere, if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1546</span>
+    <span class="phpdocumentor-element-found-in__line">1583</span>
 
     </aside>
 
@@ -4709,7 +4794,7 @@ can be used elsewhere, if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">735</span>
+    <span class="phpdocumentor-element-found-in__line">776</span>
 
     </aside>
 
@@ -4798,7 +4883,7 @@ it will attempt to convert it to an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">872</span>
+    <span class="phpdocumentor-element-found-in__line">907</span>
 
     </aside>
 
@@ -5353,7 +5438,7 @@ it will attempt to convert it to an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1168</span>
+    <span class="phpdocumentor-element-found-in__line">1203</span>
 
     </aside>
 
@@ -6235,7 +6320,7 @@ have been deleted.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1231</span>
+    <span class="phpdocumentor-element-found-in__line">1270</span>
 
     </aside>
 
@@ -6313,7 +6398,7 @@ to display.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1271</span>
+    <span class="phpdocumentor-element-found-in__line">1310</span>
 
     </aside>
 
@@ -6362,7 +6447,7 @@ updates or inserts against $this-&gt;availableFields.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1138</span>
+    <span class="phpdocumentor-element-found-in__line">1173</span>
 
     </aside>
 
@@ -6403,7 +6488,7 @@ through soft deletes (deleted = 1).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1185</span>
+    <span class="phpdocumentor-element-found-in__line">1220</span>
 
     </aside>
 
@@ -6476,7 +6561,7 @@ through soft deletes (deleted = 1).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">707</span>
+    <span class="phpdocumentor-element-found-in__line">742</span>
 
     </aside>
 
@@ -6864,7 +6949,7 @@ variables, even if through a magic method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">684</span>
+    <span class="phpdocumentor-element-found-in__line">725</span>
 
     </aside>
 
@@ -6932,7 +7017,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1256</span>
+    <span class="phpdocumentor-element-found-in__line">1295</span>
 
     </aside>
 
@@ -7028,7 +7113,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1443</span>
+    <span class="phpdocumentor-element-found-in__line">1468</span>
 
     </aside>
 
@@ -7087,7 +7172,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1427</span>
+    <span class="phpdocumentor-element-found-in__line">1452</span>
 
     </aside>
 
@@ -7137,7 +7222,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1474</span>
+    <span class="phpdocumentor-element-found-in__line">1499</span>
 
     </aside>
 
@@ -7196,7 +7281,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1458</span>
+    <span class="phpdocumentor-element-found-in__line">1483</span>
 
     </aside>
 
@@ -7246,7 +7331,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1412</span>
+    <span class="phpdocumentor-element-found-in__line">1437</span>
 
     </aside>
 
@@ -7294,7 +7379,7 @@ builder methods and still get validated data, like replace.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">798</span>
+    <span class="phpdocumentor-element-found-in__line">839</span>
 
     </aside>
 
@@ -7372,7 +7457,7 @@ it will attempt to convert it into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1016</span>
+    <span class="phpdocumentor-element-found-in__line">1051</span>
 
     </aside>
 
@@ -7483,7 +7568,7 @@ it will attempt to convert it into an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1514</span>
+    <span class="phpdocumentor-element-found-in__line">1541</span>
 
     </aside>
 
@@ -7843,7 +7928,7 @@ specified in the class property, $validationRules.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1155</span>
+    <span class="phpdocumentor-element-found-in__line">1190</span>
 
     </aside>
 
@@ -7892,7 +7977,7 @@ the soft deletes settings. Can be used for all find* methods.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1585</span>
+    <span class="phpdocumentor-element-found-in__line">1631</span>
 
     </aside>
 
@@ -7959,6 +8044,93 @@ a partial row.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_convertToReturnType">
+        convertToReturnType()
+        <a href="classes/CodeIgniter-BaseModel.html#method_convertToReturnType" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1939</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Converts database data array to return type value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">convertToReturnType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$row</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">"array"|"object"|class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|object</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$row</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Raw data from database</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$returnType</span>
+                : <span class="phpdocumentor-signature__argument__return-type">"array"|"object"|class-string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|object</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_createDataConverter">
+        createDataConverter()
+        <a href="classes/CodeIgniter-BaseModel.html#method_createDataConverter" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">377</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Creates DataConverter instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">createDataConverter</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_doDelete">
         doDelete()
         <a href="classes/CodeIgniter-Model.html#method_doDelete" class="headerlink"><i class="fas fa-link"></i></a>
@@ -7967,7 +8139,7 @@ a partial row.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">482</span>
 
     </aside>
 
@@ -8045,7 +8217,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">506</span>
+    <span class="phpdocumentor-element-found-in__line">561</span>
 
     </aside>
 
@@ -8165,7 +8337,7 @@ matching $id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">254</span>
 
     </aside>
 
@@ -8174,7 +8346,7 @@ all results, while optionally limiting them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">doFindAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">doFindAll</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8185,8 +8357,8 @@ all results, while optionally limiting them.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$limit</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">0</span>            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Limit</p>
 </section>
@@ -8241,7 +8413,7 @@ all results, while optionally limiting them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -8311,7 +8483,7 @@ all results, while optionally limiting them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">255</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 
     </aside>
 
@@ -8366,7 +8538,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">338</span>
 
     </aside>
 
@@ -8432,7 +8604,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">349</span>
+    <span class="phpdocumentor-element-found-in__line">404</span>
 
     </aside>
 
@@ -8513,7 +8685,7 @@ Query Builder calls into account when determining the result set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">533</span>
 
     </aside>
 
@@ -8548,7 +8720,7 @@ have been deleted.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1290</span>
+    <span class="phpdocumentor-element-found-in__line">1329</span>
 
     </aside>
 
@@ -8639,7 +8811,7 @@ in the data array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">764</span>
+    <span class="phpdocumentor-element-found-in__line">805</span>
 
     </aside>
 
@@ -8730,7 +8902,7 @@ the data array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">464</span>
+    <span class="phpdocumentor-element-found-in__line">519</span>
 
     </aside>
 
@@ -8772,7 +8944,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">493</span>
+    <span class="phpdocumentor-element-found-in__line">548</span>
 
     </aside>
 
@@ -8846,7 +9018,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">427</span>
 
     </aside>
 
@@ -8919,7 +9091,7 @@ This method works only with dbCalls.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">465</span>
 
     </aside>
 
@@ -9004,153 +9176,32 @@ This method works only with dbCalls.</p>
         class="phpdocumentor-element
             -method
             -protected
-            -deprecated                                            "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_fillPlaceholders">
-        fillPlaceholders()
-        <a href="classes/CodeIgniter-BaseModel.html#method_fillPlaceholders" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_ensureValidation">
+        ensureValidation()
+        <a href="classes/CodeIgniter-BaseModel.html#method_ensureValidation" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1879</span>
+    <span class="phpdocumentor-element-found-in__line">1606</span>
 
     </aside>
-
-        <p class="phpdocumentor-summary">Replace any placeholders within the rules with the values that
-match the &#039;key&#039; of any properties being set. For example, if
-we had the following $data array:</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">fillPlaceholders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-        <section class="phpdocumentor-description"><p>[ 'id' =&gt; 13 ]</p>
-<p>and the following rule:</p>
-<p>'required|is_unique[users,email,id,{id}]'</p>
-<p>The value of {id} would be replaced with the actual id in the form data:</p>
-<p>'required|is_unique[users,email,id,13]'</p>
-</section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$rules</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Validation rules</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
-</section>
-
-            </dd>
-            </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CodeIgniter-BaseModel.html#method_fillPlaceholders#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">codeCoverageIgnore</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                             
-                                    </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">deprecated</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>use fillPlaceholders($rules, $data) from Validation instead</p>
-</section>
-
-                                    </dd>
-                                            </dl>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-            -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="method_idValue">
-        idValue()
-        <a href="classes/CodeIgniter-Model.html#method_idValue" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">527</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Returns the id value for the data array or object</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
+    <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">idValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|int|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">ensureValidation</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$data</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|object</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Data</p>
-</section>
-
-            </dd>
-            </dl>
+    
+    
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CodeIgniter-Model.html#method_idValue#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">deprecated</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>Use getIdValue() instead. Will be removed in version 5.0.</p>
-</section>
-
-                                    </dd>
-                                            </dl>
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|int|string|null</span>
-            </section>
-
 </article>
                     <article
         class="phpdocumentor-element
@@ -9166,7 +9217,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">356</span>
+    <span class="phpdocumentor-element-found-in__line">402</span>
 
     </aside>
 
@@ -9200,7 +9251,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1359</span>
+    <span class="phpdocumentor-element-found-in__line">1398</span>
 
     </aside>
 
@@ -9273,7 +9324,7 @@ used by inheriting classes.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1698</span>
+    <span class="phpdocumentor-element-found-in__line">1744</span>
 
     </aside>
 
@@ -9358,7 +9409,7 @@ to string on all Time instances</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">826</span>
+    <span class="phpdocumentor-element-found-in__line">867</span>
 
     </aside>
 
@@ -9423,6 +9474,10 @@ properties as an array with raw values.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Array with raw values.</p>
+</section>
+
             </section>
 
 </article>
@@ -9440,7 +9495,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">835</span>
+    <span class="phpdocumentor-element-found-in__line">870</span>
 
     </aside>
 
@@ -9511,7 +9566,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1335</span>
+    <span class="phpdocumentor-element-found-in__line">1374</span>
 
     </aside>
 
@@ -9574,7 +9629,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">850</span>
+    <span class="phpdocumentor-element-found-in__line">885</span>
 
     </aside>
 
@@ -9645,7 +9700,7 @@ properties as an array with raw values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">707</span>
+    <span class="phpdocumentor-element-found-in__line">748</span>
 
     </aside>
 
@@ -9694,7 +9749,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1388</span>
+    <span class="phpdocumentor-element-found-in__line">1420</span>
 
     </aside>
 
@@ -9749,7 +9804,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1713</span>
+    <span class="phpdocumentor-element-found-in__line">1759</span>
 
     </aside>
 
@@ -9795,7 +9850,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1774</span>
+    <span class="phpdocumentor-element-found-in__line">1823</span>
 
     </aside>
 
@@ -9870,6 +9925,24 @@ If this method return false insert operation will be executed</p>
                                                             
                                              
                                     </dd>
+                                                <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>insert()</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>update()</p>
+</section>
+
+                                    </dd>
                                             </dl>
 
             <section>
@@ -9892,7 +9965,7 @@ If this method return false insert operation will be executed</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1637</span>
+    <span class="phpdocumentor-element-found-in__line">1683</span>
 
     </aside>
 
@@ -9963,6 +10036,42 @@ or update, an array of results, etc.)</p>
                     <article
         class="phpdocumentor-element
             -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_useCasts">
+        useCasts()
+        <a href="classes/CodeIgniter-BaseModel.html#method_useCasts" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/BaseModel.php"><a href="files/system-basemodel.html"><abbr title="system/BaseModel.php">BaseModel.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">391</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Are casts used?</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">useCasts</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
             -private
                                                         "
 >
@@ -9974,7 +10083,7 @@ or update, an array of results, etc.)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Model.php"><a href="files/system-model.html"><abbr title="system/Model.php">Model.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">892</span>
+    <span class="phpdocumentor-element-found-in__line">933</span>
 
     </aside>
 
@@ -10133,7 +10242,10 @@ or update, an array of results, etc.)</p>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_beforeUpdate">$beforeUpdate<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_beforeUpdateBatch">$beforeUpdateBatch<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-Model.html#property_builder">$builder<a href="classes/CodeIgniter-Model.html"></li>
+                                                    <li><a href="classes/CodeIgniter-BaseModel.html#property_castHandlers">$castHandlers<a href="classes/CodeIgniter-Model.html"></li>
+                                                    <li><a href="classes/CodeIgniter-BaseModel.html#property_casts">$casts<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_cleanValidationRules">$cleanValidationRules<a href="classes/CodeIgniter-Model.html"></li>
+                                                    <li><a href="classes/CodeIgniter-BaseModel.html#property_converter">$converter<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_createdField">$createdField<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_dateFormat">$dateFormat<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_db">$db<a href="classes/CodeIgniter-Model.html"></li>
@@ -10151,6 +10263,7 @@ or update, an array of results, etc.)</p>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_tempReturnType">$tempReturnType<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_tempUseSoftDeletes">$tempUseSoftDeletes<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_updatedField">$updatedField<a href="classes/CodeIgniter-Model.html"></li>
+                                                    <li><a href="classes/CodeIgniter-BaseModel.html#property_updateOnlyChanged">$updateOnlyChanged<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-Model.html#property_useAutoIncrement">$useAutoIncrement<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_useSoftDeletes">$useSoftDeletes<a href="classes/CodeIgniter-Model.html"></li>
                                                     <li><a href="classes/CodeIgniter-BaseModel.html#property_useTimestamps">$useTimestamps<a href="classes/CodeIgniter-Model.html"></li>
@@ -10174,7 +10287,6 @@ or update, an array of results, etc.)</p>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_asObject">asObject()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_builder">builder()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_chunk">chunk()</a></li>
-                                            <li><a href="classes/CodeIgniter-Model.html#method_classToArray">classToArray()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_cleanRules">cleanRules()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_countAllResults">countAllResults()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_delete">delete()</a></li>
@@ -10251,6 +10363,8 @@ or update, an array of results, etc.)</p>
                                             <li><a href="classes/CodeIgniter-Model.html#method_whereNotIn">whereNotIn()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_withDeleted">withDeleted()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_cleanValidationRules">cleanValidationRules()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_convertToReturnType">convertToReturnType()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_createDataConverter">createDataConverter()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doDelete">doDelete()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doErrors">doErrors()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doFind">doFind()</a></li>
@@ -10266,8 +10380,7 @@ or update, an array of results, etc.)</p>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doReplace">doReplace()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doUpdate">doUpdate()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_doUpdateBatch">doUpdateBatch()</a></li>
-                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_fillPlaceholders">fillPlaceholders()</a></li>
-                                            <li><a href="classes/CodeIgniter-Model.html#method_idValue">idValue()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_ensureValidation">ensureValidation()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_initialize">initialize()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_intToDate">intToDate()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_objectToArray">objectToArray()</a></li>
@@ -10280,6 +10393,7 @@ or update, an array of results, etc.)</p>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_timeToString">timeToString()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_transformDataToArray">transformDataToArray()</a></li>
                                             <li><a href="classes/CodeIgniter-BaseModel.html#method_trigger">trigger()</a></li>
+                                            <li><a href="classes/CodeIgniter-BaseModel.html#method_useCasts">useCasts()</a></li>
                                             <li><a href="classes/CodeIgniter-Model.html#method_checkBuilderMethod">checkBuilderMethod()</a></li>
                                     </ul>
             </li>
