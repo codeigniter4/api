@@ -25551,10 +25551,10 @@ Search.appendIndex(
             "summary": "Wrap\u0020helper\u0020function\u0020to\u0020use\u0020as\u0020view\u0020plugin.",
             "url": "classes/CodeIgniter-View-Plugins.html#method_lang"
         },                {
-            "fqsen": "\\CodeIgniter\\View\\Plugins\u003A\u003AValidationErrors\u0028\u0029",
-            "name": "ValidationErrors",
+            "fqsen": "\\CodeIgniter\\View\\Plugins\u003A\u003AvalidationErrors\u0028\u0029",
+            "name": "validationErrors",
             "summary": "Wrap\u0020helper\u0020function\u0020to\u0020use\u0020as\u0020view\u0020plugin.",
-            "url": "classes/CodeIgniter-View-Plugins.html#method_ValidationErrors"
+            "url": "classes/CodeIgniter-View-Plugins.html#method_validationErrors"
         },                {
             "fqsen": "\\CodeIgniter\\View\\Plugins\u003A\u003Aroute\u0028\u0029",
             "name": "route",
