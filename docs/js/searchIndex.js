@@ -271,6 +271,11 @@ Search.appendIndex(
             "summary": "The\u0020Autoloader\u0020to\u0020use.",
             "url": "classes/CodeIgniter-Autoloader-FileLocator.html#property_autoloader"
         },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator\u003A\u003A\u0024invalidClassnames",
+            "name": "invalidClassnames",
+            "summary": "List\u0020of\u0020classnames\u0020that\u0020did\u0020not\u0020exist.",
+            "url": "classes/CodeIgniter-Autoloader-FileLocator.html#property_invalidClassnames"
+        },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocatorCached",
             "name": "FileLocatorCached",
             "summary": "FileLocator\u0020with\u0020Cache",
