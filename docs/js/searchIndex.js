@@ -981,6 +981,11 @@ Search.appendIndex(
             "summary": "Used\u0020by\u0020\u0060system\/Test\/bootstrap.php\u0060",
             "url": "classes/CodeIgniter-Boot.html#method_bootTest"
         },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003Apreload\u0028\u0029",
+            "name": "preload",
+            "summary": "Used\u0020by\u0020\u0060preload.php\u0060",
+            "url": "classes/CodeIgniter-Boot.html#method_preload"
+        },                {
             "fqsen": "\\CodeIgniter\\Boot\u003A\u003AloadDotEnv\u0028\u0029",
             "name": "loadDotEnv",
             "summary": "Load\u0020environment\u0020settings\u0020from\u0020.env\u0020files\u0020into\u0020\u0024_SERVER\u0020and\u0020\u0024_ENV",
