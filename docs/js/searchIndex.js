@@ -20981,6 +20981,11 @@ Search.appendIndex(
             "summary": "Throws\u0020when\u0020some\u0020specific\u0020action\u0020is\u0020not\u0020allowed.",
             "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forDisallowedAction"
         },                {
+            "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInsecureCookie\u0028\u0029",
+            "name": "forInsecureCookie",
+            "summary": "Throws\u0020if\u0020a\u0020secure\u0020cookie\u0020is\u0020dispatched\u0020when\u0020the\u0020current\u0020connection\u0020is\u0020not\nsecure.",
+            "url": "classes/CodeIgniter-Security-Exceptions-SecurityException.html#method_forInsecureCookie"
+        },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException\u003A\u003AforInvalidUTF8Chars\u0028\u0029",
             "name": "forInvalidUTF8Chars",
             "summary": "Throws\u0020when\u0020the\u0020source\u0020string\u0020contains\u0020invalid\u0020UTF\u002D8\u0020characters.",
