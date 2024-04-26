@@ -249,16 +249,12 @@
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter.html">CodeIgniter</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-database.html">Database</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/codeigniter-database-oci8.html">OCI8</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Builder
+    BaseBuilder
 
-        <span class="phpdocumentor-element__extends">
-        extends <a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>
-    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -268,6 +264,9 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            Uses
+                            <a href="classes/CodeIgniter-Traits-ConditionalTrait.html"><abbr title="\CodeIgniter\Traits\ConditionalTrait">ConditionalTrait</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -276,14 +275,18 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Builder for OCI8</p>
+            <p class="phpdocumentor-summary">Class BaseBuilder</p>
 
+    <section class="phpdocumentor-description"><p>Provides the core Query Builder methods.
+Database-specific Builders might need to override
+certain methods to make them work.</p>
+</section>
 
 
 
@@ -291,7 +294,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -305,7 +308,7 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
@@ -364,25 +367,18 @@ allow limiting of delete clauses.</dd>
 allow limit update queries with WHERE.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_countString">$countString</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_countString">$countString</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 <dd>COUNT string</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_db">$db</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_db">$db</a>
     <span>
-                        &nbsp;: <a href="classes/CodeIgniter-Database-OCI8-Connection.html"><abbr title="\CodeIgniter\Database\OCI8\Connection">Connection</abbr></a>            </span>
+                        &nbsp;: <a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>            </span>
 </dt>
 <dd>A reference to the database connection.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_escapeChar">$escapeChar</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>Identifier escape character</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_isLiteralStr">$isLiteralStr</a>
@@ -397,13 +393,6 @@ allow limit update queries with WHERE.</dd>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd>Tables relation types</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_limitUsed">$limitUsed</a>
-    <span>
-                        &nbsp;: bool            </span>
-</dt>
-<dd>Limit used flag</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_pregOperators">$pregOperators</a>
@@ -523,7 +512,7 @@ and is reset by resetWrite()</dd>
 <dd>QB WHERE group started flag</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_randomKeyword">$randomKeyword</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_randomKeyword">$randomKeyword</a>
     <span>
                         &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
@@ -562,7 +551,7 @@ support the ignore option.</dd>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
@@ -604,9 +593,9 @@ returned by an Query Builder query.</dd>
 <dd>Decrements a numeric column by the specified value.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_delete">delete()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_delete">delete()</a>
     <span>
-                                &nbsp;: mixed    </span>
+                                &nbsp;: bool|string    </span>
 </dt>
 <dd>Compiles a delete string and runs the query</dd>
 
@@ -1186,14 +1175,14 @@ joined with &#039;AND&#039; if appropriate.</dd>
 joined with &#039;AND&#039; if appropriate.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__delete">_delete()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__delete">_delete()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific delete string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__deleteBatch">_deleteBatch()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch">_deleteBatch()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -1215,7 +1204,7 @@ about operator precedence.</dd>
 <dd>Generates a platform-specific insert string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__insertBatch">_insertBatch()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch">_insertBatch()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -1235,42 +1224,42 @@ about operator precedence.</dd>
 <dd>Platform independent LIKE statement builder.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__limit">_limit()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__limit">_limit()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific LIMIT clause.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__replace">_replace()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__replace">_replace()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific replace string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__truncate">_truncate()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__truncate">_truncate()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific truncate string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__update">_update()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__update">_update()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific update string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__updateBatch">_updateBatch()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch">_updateBatch()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Generates a platform-specific batch update string from the supplied data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__upsertBatch">_upsertBatch()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__upsertBatch">_upsertBatch()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
@@ -1367,7 +1356,7 @@ the Database Driver for the specific statement.</dd>
 <dd>Determines the alias name based on the table</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_fieldsFromQuery">fieldsFromQuery()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_fieldsFromQuery">fieldsFromQuery()</a>
     <span>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
@@ -1449,7 +1438,7 @@ the Database Driver for the specific statement.</dd>
 <dd>Resets the query builder values.  Called by the get() function</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_resetSelect">resetSelect()</a>
+    <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetSelect">resetSelect()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
@@ -1531,7 +1520,7 @@ chosen to be updated.</dd>
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/CodeIgniter-Database-OCI8-Builder.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Database-BaseBuilder.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -1786,15 +1775,15 @@ allow limit update queries with WHERE.</p>
 >
     <h4 class="phpdocumentor-element__name" id="property_countString">
         $countString
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_countString" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_countString" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">220</span>
 
     </aside>
 
@@ -1804,14 +1793,14 @@ allow limit update queries with WHERE.</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$countString</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;SELECT COUNT(1) &#039;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&#039;SELECT COUNT(*) AS &#039;</span></code>
 
     
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_countString#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_countString#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -1845,15 +1834,15 @@ allow limit update queries with WHERE.</p>
 >
     <h4 class="phpdocumentor-element__name" id="property_db">
         $db
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_db" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -1861,43 +1850,9 @@ allow limit update queries with WHERE.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Database-OCI8-Connection.html"><abbr title="\CodeIgniter\Database\OCI8\Connection">Connection</abbr></a></span>
+        <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a></span>
     <span class="phpdocumentor-signature__name">$db</span>
     </code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_escapeChar">
-        $escapeChar
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_escapeChar" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">30</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Identifier escape character</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$escapeChar</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;&quot;&#039;</span></code>
 
     
     
@@ -1968,43 +1923,6 @@ allow limit update queries with WHERE.</p>
      = <span class="phpdocumentor-signature__default-value">[&#039;LEFT&#039;, &#039;RIGHT&#039;, &#039;OUTER&#039;, &#039;INNER&#039;, &#039;LEFT OUTER&#039;, &#039;RIGHT OUTER&#039;]</span></code>
 
     
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_limitUsed">
-        $limitUsed
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_limitUsed" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">59</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Limit used flag</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$limitUsed</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-        <section class="phpdocumentor-description"><p>If we use LIMIT, we'll add a field that will
-throw off num_fields later.</p>
-</section>
-
     
     
 
@@ -2569,15 +2487,15 @@ and is reset by resetWrite()</p>
 >
     <h4 class="phpdocumentor-element__name" id="property_randomKeyword">
         $randomKeyword
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_randomKeyword" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#property_randomKeyword" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
@@ -2587,7 +2505,7 @@ and is reset by resetWrite()</p>
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$randomKeyword</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;&quot;DBMS_RANDOM&quot;.&quot;RANDOM&quot;&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;RAND()&#039;, &#039;RAND(%d)&#039;]</span></code>
 
     
     
@@ -2741,7 +2659,7 @@ the value is empty string.</p>
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/CodeIgniter-Database-OCI8-Builder.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/CodeIgniter-Database-BaseBuilder.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -3009,13 +2927,13 @@ returned by an Query Builder query.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_delete">
         delete()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_delete" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">169</span>
+    <span class="phpdocumentor-element-found-in__line">2789</span>
 
     </aside>
 
@@ -3023,7 +2941,7 @@ returned by an Query Builder query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resetData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">delete</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resetData</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3032,7 +2950,7 @@ returned by an Query Builder query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$where</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3056,7 +2974,7 @@ returned by an Query Builder query.</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_delete#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_delete#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -3070,7 +2988,15 @@ returned by an Query Builder query.</p>
                                     </dd>
                                             </dl>
 
-    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool|string</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Returns a SQL string if in test mode.</p>
+</section>
+
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -7711,13 +7637,13 @@ joined with &#039;AND&#039; if appropriate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__delete">
         _delete()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__delete" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__delete" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">2992</span>
 
     </aside>
 
@@ -7759,13 +7685,13 @@ joined with &#039;AND&#039; if appropriate.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__deleteBatch">
         _deleteBatch()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__deleteBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">2875</span>
 
     </aside>
 
@@ -7773,7 +7699,7 @@ joined with &#039;AND&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, int|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7791,7 +7717,7 @@ joined with &#039;AND&#039; if appropriate.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$keys</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBKeys</p>
@@ -7800,7 +7726,7 @@ joined with &#039;AND&#039; if appropriate.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, int|string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -7810,6 +7736,22 @@ joined with &#039;AND&#039; if appropriate.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>batchExecute()</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -7930,13 +7872,13 @@ about operator precedence.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__insertBatch">
         _insertBatch()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__insertBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">71</span>
+    <span class="phpdocumentor-element-found-in__line">2222</span>
 
     </aside>
 
@@ -7944,7 +7886,7 @@ about operator precedence.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_insertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7962,7 +7904,7 @@ about operator precedence.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$keys</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBKeys</p>
@@ -7971,7 +7913,7 @@ about operator precedence.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -7981,6 +7923,22 @@ about operator precedence.</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>batchExecute()</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8243,13 +8201,13 @@ about operator precedence.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__limit">
         _limit()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__limit" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__limit" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">1529</span>
 
     </aside>
 
@@ -8296,13 +8254,13 @@ about operator precedence.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__replace">
         _replace()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__replace" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__replace" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">2425</span>
 
     </aside>
 
@@ -8310,7 +8268,7 @@ about operator precedence.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, int|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8328,7 +8286,7 @@ about operator precedence.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$keys</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Keys of QBSet</p>
@@ -8337,7 +8295,7 @@ about operator precedence.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, int|string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Values of QBSet</p>
@@ -8362,13 +8320,13 @@ about operator precedence.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__truncate">
         _truncate()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__truncate" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__truncate" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">2764</span>
 
     </aside>
 
@@ -8413,13 +8371,13 @@ then this method maps to 'DELETE FROM table'</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__update">
         _update()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__update" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__update" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">2522</span>
 
     </aside>
 
@@ -8427,7 +8385,7 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8445,7 +8403,7 @@ then this method maps to 'DELETE FROM table'</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -8470,13 +8428,13 @@ then this method maps to 'DELETE FROM table'</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__updateBatch">
         _updateBatch()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">244</span>
+    <span class="phpdocumentor-element-found-in__line">2608</span>
 
     </aside>
 
@@ -8484,7 +8442,7 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8502,7 +8460,7 @@ then this method maps to 'DELETE FROM table'</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$keys</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBKeys</p>
@@ -8511,7 +8469,7 @@ then this method maps to 'DELETE FROM table'</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -8521,6 +8479,22 @@ then this method maps to 'DELETE FROM table'</p>
             </dl>
 
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">used-by</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>batchExecute()</p>
+</section>
+
+                                    </dd>
+                                            </dl>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -8536,13 +8510,13 @@ then this method maps to 'DELETE FROM table'</p>
 >
     <h4 class="phpdocumentor-element__name" id="method__upsertBatch">
         _upsertBatch()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__upsertBatch" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__upsertBatch" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">336</span>
+    <span class="phpdocumentor-element-found-in__line">1995</span>
 
     </aside>
 
@@ -8550,7 +8524,7 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_upsertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_upsertBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8568,7 +8542,7 @@ then this method maps to 'DELETE FROM table'</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$keys</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBKeys</p>
@@ -8577,7 +8551,7 @@ then this method maps to 'DELETE FROM table'</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$values</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, array&lt;int, int|string&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -8589,17 +8563,18 @@ then this method maps to 'DELETE FROM table'</p>
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__upsertBatch#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method__upsertBatch#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
+                    <span class="phpdocumentor-tag__name">used-by</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Database-Exceptions-DatabaseException.html"><abbr title="\CodeIgniter\Database\Exceptions\DatabaseException">DatabaseException</abbr></a></span>
-                                                            
-                                             
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>batchExecute()</p>
+</section>
+
                                     </dd>
                                             </dl>
 
@@ -9383,13 +9358,13 @@ join() and prefixTable is added only if needed.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_fieldsFromQuery">
         fieldsFromQuery()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_fieldsFromQuery" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_fieldsFromQuery" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">522</span>
+    <span class="phpdocumentor-element-found-in__line">2168</span>
 
     </aside>
 
@@ -10077,13 +10052,13 @@ join() and prefixTable is added only if needed.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_resetSelect">
         resetSelect()
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_resetSelect" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetSelect" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Builder.php"><a href="files/system-database-oci8-builder.html"><abbr title="system/Database/OCI8/Builder.php">Builder.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">3363</span>
 
     </aside>
 
@@ -10612,7 +10587,7 @@ chosen to be updated.</p>
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/system/Database/OCI8/Builder.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/system/Database/BaseBuilder.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -10711,48 +10686,46 @@ chosen to be updated.</p>
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBGroupBy">$QBGroupBy<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBNoEscape">$QBNoEscape<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOrderBy">$QBOrderBy<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_binds">$binds<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_bindsKeyCount">$bindsKeyCount<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_canLimitDeletes">$canLimitDeletes<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_canLimitWhereUpdates">$canLimitWhereUpdates<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_countString">$countString<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_db">$db<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_escapeChar">$escapeChar<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_isLiteralStr">$isLiteralStr<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_joinTypes">$joinTypes<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_limitUsed">$limitUsed<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_pregOperators">$pregOperators<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBDistinct">$QBDistinct<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBFrom">$QBFrom<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBHaving">$QBHaving<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBIgnore">$QBIgnore<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBJoin">$QBJoin<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBKeys">$QBKeys<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBLimit">$QBLimit<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOffset">$QBOffset<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOptions">$QBOptions<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSelect">$QBSelect<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSet">$QBSet<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBUnion">$QBUnion<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhere">$QBWhere<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhereGroupCount">$QBWhereGroupCount<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhereGroupStarted">$QBWhereGroupStarted<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#property_randomKeyword">$randomKeyword<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_resetDeleteData">$resetDeleteData<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_supportedIgnoreStatements">$supportedIgnoreStatements<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_tableName">$tableName<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
-                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_testMode">$testMode<a href="classes/CodeIgniter-Database-OCI8-Builder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBGroupBy">$QBGroupBy<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBNoEscape">$QBNoEscape<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOrderBy">$QBOrderBy<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_binds">$binds<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_bindsKeyCount">$bindsKeyCount<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_canLimitDeletes">$canLimitDeletes<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_canLimitWhereUpdates">$canLimitWhereUpdates<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_countString">$countString<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_db">$db<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_isLiteralStr">$isLiteralStr<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_joinTypes">$joinTypes<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_pregOperators">$pregOperators<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBDistinct">$QBDistinct<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBFrom">$QBFrom<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBHaving">$QBHaving<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBIgnore">$QBIgnore<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBJoin">$QBJoin<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBKeys">$QBKeys<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBLimit">$QBLimit<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOffset">$QBOffset<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOptions">$QBOptions<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSelect">$QBSelect<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBSet">$QBSet<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBUnion">$QBUnion<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhere">$QBWhere<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhereGroupCount">$QBWhereGroupCount<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhereGroupStarted">$QBWhereGroupStarted<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_randomKeyword">$randomKeyword<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_resetDeleteData">$resetDeleteData<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_supportedIgnoreStatements">$supportedIgnoreStatements<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_tableName">$tableName<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
+                                                    <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#property_testMode">$testMode<a href="classes/CodeIgniter-Database-BaseBuilder.html"></li>
                                             </ul>
                 </li>
             
@@ -10764,7 +10737,7 @@ chosen to be updated.</p>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_countAllResults">countAllResults()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_db">db()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_decrement">decrement()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_delete">delete()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_delete">delete()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_deleteBatch">deleteBatch()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_distinct">distinct()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_emptyTable">emptyTable()</a></li>
@@ -10846,19 +10819,19 @@ chosen to be updated.</p>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_where">where()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_whereIn">whereIn()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_whereNotIn">whereNotIn()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__delete">_delete()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__deleteBatch">_deleteBatch()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__delete">_delete()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch">_deleteBatch()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__fromTables">_fromTables()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insert">_insert()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__insertBatch">_insertBatch()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__insertBatch">_insertBatch()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__like">_like()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__like_statement">_like_statement()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__limit">_limit()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__replace">_replace()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__truncate">_truncate()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__update">_update()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__updateBatch">_updateBatch()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method__upsertBatch">_upsertBatch()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__limit">_limit()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__replace">_replace()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__truncate">_truncate()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__update">_update()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__updateBatch">_updateBatch()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__upsertBatch">_upsertBatch()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method__whereIn">_whereIn()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_addUnionStatement">addUnionStatement()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchExecute">batchExecute()</a></li>
@@ -10872,7 +10845,7 @@ chosen to be updated.</p>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_compileSelect">compileSelect()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_compileWhereHaving">compileWhereHaving()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_createAliasFromTable">createAliasFromTable()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_fieldsFromQuery">fieldsFromQuery()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_fieldsFromQuery">fieldsFromQuery()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_formatValues">formatValues()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperator">getOperator()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_groupEndPrepare">groupEndPrepare()</a></li>
@@ -10884,7 +10857,7 @@ chosen to be updated.</p>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_maxMinAvgSum">maxMinAvgSum()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_objectToArray">objectToArray()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetRun">resetRun()</a></li>
-                                            <li><a href="classes/CodeIgniter-Database-OCI8-Builder.html#method_resetSelect">resetSelect()</a></li>
+                                            <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetSelect">resetSelect()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_resetWrite">resetWrite()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_setBind">setBind()</a></li>
                                             <li><a href="classes/CodeIgniter-Database-BaseBuilder.html#method_trackAliases">trackAliases()</a></li>
@@ -10913,7 +10886,7 @@ chosen to be updated.</p>
     </section>
 </section>
         </div>
-        <a href="classes/CodeIgniter-Database-OCI8-Builder.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/CodeIgniter-Database-BaseBuilder.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
