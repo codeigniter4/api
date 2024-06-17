@@ -1273,12 +1273,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Aremember\u0028\u0029",
@@ -1288,12 +1288,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1303,32 +1303,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler",
@@ -1343,22 +1343,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1368,32 +1368,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AgetItem\u0028\u0029",
@@ -1453,22 +1453,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1478,32 +1478,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003A\u0024memcached",
@@ -1528,22 +1528,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1553,32 +1553,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003A\u0024config",
@@ -1608,22 +1608,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1633,32 +1633,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A\u0024config",
@@ -1683,22 +1683,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_initialize"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_delete"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003AdeleteMatching\u0028\u0029",
@@ -1708,32 +1708,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_increment"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Adecrement\u0028\u0029",
             "name": "decrement",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_decrement"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003Aclean\u0028\u0029",
             "name": "clean",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003AgetCacheInfo\u0028\u0029",
             "name": "getCacheInfo",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_getCacheInfo"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003AgetMetaData\u0028\u0029",
             "name": "getMetaData",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_getMetaData"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\WincacheHandler\u003A\u003AisSupported\u0028\u0029",
             "name": "isSupported",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-WincacheHandler.html#method_isSupported"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\ResponseCache",
@@ -5633,82 +5633,82 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020a\u0020unique\u0020identifier\u0020for\u0020the\u0020cookie\u0020consisting\nof\u0020its\u0020prefixed\u0020name,\u0020path,\u0020and\u0020domain.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getId"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetPrefix\u0028\u0029",
             "name": "getPrefix",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020cookie\u0020prefix.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetName\u0028\u0029",
             "name": "getName",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020cookie\u0020name.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getName"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetPrefixedName\u0028\u0029",
             "name": "getPrefixedName",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020cookie\u0020name\u0020prepended\u0020with\u0020the\u0020prefix,\u0020if\u0020any.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getPrefixedName"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetValue\u0028\u0029",
             "name": "getValue",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020cookie\u0020value.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getValue"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetExpiresTimestamp\u0028\u0029",
             "name": "getExpiresTimestamp",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020time\u0020in\u0020Unix\u0020timestamp\u0020the\u0020cookie\u0020expires.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getExpiresTimestamp"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetExpiresString\u0028\u0029",
             "name": "getExpiresString",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020formatted\u0020expires\u0020time.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getExpiresString"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AisExpired\u0028\u0029",
             "name": "isExpired",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Checks\u0020if\u0020the\u0020cookie\u0020is\u0020expired.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_isExpired"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetMaxAge\u0028\u0029",
             "name": "getMaxAge",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022Max\u002DAge\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getMaxAge"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetPath\u0028\u0029",
             "name": "getPath",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022Path\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getPath"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetDomain\u0028\u0029",
             "name": "getDomain",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022Domain\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getDomain"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AisSecure\u0028\u0029",
             "name": "isSecure",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022Secure\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_isSecure"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AisHTTPOnly\u0028\u0029",
             "name": "isHTTPOnly",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022HttpOnly\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_isHTTPOnly"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetSameSite\u0028\u0029",
             "name": "getSameSite",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020\u0022SameSite\u0022\u0020cookie\u0020attribute.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getSameSite"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AisRaw\u0028\u0029",
             "name": "isRaw",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Checks\u0020if\u0020the\u0020cookie\u0020should\u0020be\u0020sent\u0020with\u0020no\u0020URL\u0020encoding.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_isRaw"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AgetOptions\u0028\u0029",
             "name": "getOptions",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Gets\u0020the\u0020options\u0020that\u0020are\u0020passable\u0020to\u0020the\u0020\u0060setcookie\u0060\u0020variant\navailable\u0020on\u0020PHP\u00207.3\u002B",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_getOptions"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AwithPrefix\u0028\u0029",
@@ -5793,17 +5793,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AtoHeaderString\u0028\u0029",
             "name": "toHeaderString",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020the\u0020Cookie\u0020as\u0020a\u0020header\u0020value.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_toHeaderString"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003A__toString\u0028\u0029",
             "name": "__toString",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020the\u0020string\u0020representation\u0020of\u0020the\u0020Cookie\u0020object.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method___toString"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Returns\u0020the\u0020array\u0020representation\u0020of\u0020the\u0020Cookie\u0020object.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_toArray"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AconvertExpiresTimestamp\u0028\u0029",
@@ -13008,12 +13008,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\OpenSSLHandler\u003A\u003Aencrypt\u0028\u0029",
             "name": "encrypt",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Encrypt\u0020\u002D\u0020convert\u0020plaintext\u0020into\u0020ciphertext",
             "url": "classes/CodeIgniter-Encryption-Handlers-OpenSSLHandler.html#method_encrypt"
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\OpenSSLHandler\u003A\u003Adecrypt\u0028\u0029",
             "name": "decrypt",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Decrypt\u0020\u002D\u0020convert\u0020ciphertext\u0020into\u0020plaintext",
             "url": "classes/CodeIgniter-Encryption-Handlers-OpenSSLHandler.html#method_decrypt"
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\OpenSSLHandler\u003A\u003A\u0024digest",
@@ -13058,12 +13058,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\SodiumHandler\u003A\u003Aencrypt\u0028\u0029",
             "name": "encrypt",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Encrypt\u0020\u002D\u0020convert\u0020plaintext\u0020into\u0020ciphertext",
             "url": "classes/CodeIgniter-Encryption-Handlers-SodiumHandler.html#method_encrypt"
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\SodiumHandler\u003A\u003Adecrypt\u0028\u0029",
             "name": "decrypt",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Decrypt\u0020\u002D\u0020convert\u0020ciphertext\u0020into\u0020plaintext",
             "url": "classes/CodeIgniter-Encryption-Handlers-SodiumHandler.html#method_decrypt"
         },                {
             "fqsen": "\\CodeIgniter\\Encryption\\Handlers\\SodiumHandler\u003A\u003AparseParams\u0028\u0029",
@@ -15808,7 +15808,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003Asend\u0028\u0029",
             "name": "send",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "Sends\u0020the\u0020output\u0020to\u0020the\u0020browser.",
             "url": "classes/CodeIgniter-HTTP-DownloadResponse.html#method_send"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003AbuildHeaders\u0028\u0029",
@@ -19833,7 +19833,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFind\u0028\u0029",
             "name": "doFind",
-            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
+            "summary": "Fetches\u0020the\u0020row\u0028s\u0029\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
             "url": "classes/CodeIgniter-Model.html#method_doFind"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFindColumn\u0028\u0029",

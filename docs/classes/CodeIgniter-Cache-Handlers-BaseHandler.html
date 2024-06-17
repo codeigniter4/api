@@ -54,7 +54,7 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -three phpdocumentor-sidebar">
-                    <section class="phpdocumentor-sidebar__category">
+                    <section class="phpdocumentor-sidebar__category -namespaces">
             <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="namespaces/codeigniter.html" class="">CodeIgniter</a>
@@ -223,7 +223,7 @@
             </ul>
 
                         </section>
-                <section class="phpdocumentor-sidebar__category">
+                <section class="phpdocumentor-sidebar__category -packages">
             <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
                                     <h4 class="phpdocumentor-sidebar__root-namespace">
     <a href="packages/Application.html" class="">Application</a>
@@ -231,14 +231,14 @@
 
                         </section>
             
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -reports">
         <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
                 <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
     </section>
 
-    <section class="phpdocumentor-sidebar__category">
+    <section class="phpdocumentor-sidebar__category -indices">
         <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
         <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
     </section>
@@ -306,6 +306,8 @@
 
 
 
+
+
 <h3 id="toc">
     Table of Contents
     <a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
@@ -341,7 +343,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#constant_RESERVED_CHARACTERS">RESERVED_CHARACTERS</a>
     <span>
-        &nbsp;= &#039;{}()/\\@:&#039;                            </span>
+        &nbsp;= &#039;{}()/\@:&#039;                            </span>
 </dt>
 <dd>Reserved characters that cannot be used in a key or tag. May be overridden by the config.</dd>
 
@@ -394,7 +396,6 @@
 
 
 
-
         
     <section class="phpdocumentor-constants">
         <h3 class="phpdocumentor-elements__header" id="constants">
@@ -430,6 +431,8 @@
     
     
 
+    
+
 </article>
                     <article class="phpdocumentor-element -constant -public -deprecated">
     <h4 class="phpdocumentor-element__name" id="constant_RESERVED_CHARACTERS">
@@ -451,7 +454,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">RESERVED_CHARACTERS</span>
-    = <span class="phpdocumentor-signature__default-value">&#039;{}()/\\@:&#039;</span>
+    = <span class="phpdocumentor-signature__default-value">&#039;{}()/\@:&#039;</span>
 </code>
 
 
@@ -475,7 +478,9 @@
 </section>
 
                                     </dd>
-                                            </dl>
+                                                                </dl>
+
+    
 
 </article>
             </section>
@@ -520,6 +525,8 @@
 </section>
 
     
+    
+
     
 
 </article>
@@ -588,6 +595,8 @@
                                     </dd>
                                             </dl>
 
+    
+
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int|never</span>
@@ -616,7 +625,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">remember</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">remember</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">callable(): mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -643,12 +652,16 @@
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$callback</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type">callable(): mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Callback return value</p>
+</section>
+
             </dd>
             </dl>
+
+    
 
     
 
@@ -728,6 +741,8 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
 
                                     </dd>
                                             </dl>
+
+    
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
