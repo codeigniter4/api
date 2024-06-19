@@ -2938,22 +2938,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Database\\ShowTableInfo\u003A\u003AshowDataOfTable\u0028\u0029",
             "name": "showDataOfTable",
-            "summary": "",
+            "summary": "Show\u0020Data\u0020of\u0020Table",
             "url": "classes/CodeIgniter-Commands-Database-ShowTableInfo.html#method_showDataOfTable"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Database\\ShowTableInfo\u003A\u003AshowAllTables\u0028\u0029",
             "name": "showAllTables",
-            "summary": "",
+            "summary": "Show\u0020All\u0020Tables",
             "url": "classes/CodeIgniter-Commands-Database-ShowTableInfo.html#method_showAllTables"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Database\\ShowTableInfo\u003A\u003AmakeTbodyForShowAllTables\u0028\u0029",
             "name": "makeTbodyForShowAllTables",
-            "summary": "",
+            "summary": "Make\u0020body\u0020for\u0020table",
             "url": "classes/CodeIgniter-Commands-Database-ShowTableInfo.html#method_makeTbodyForShowAllTables"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Database\\ShowTableInfo\u003A\u003AmakeTableRows\u0028\u0029",
             "name": "makeTableRows",
-            "summary": "",
+            "summary": "Make\u0020table\u0020rows",
             "url": "classes/CodeIgniter-Commands-Database-ShowTableInfo.html#method_makeTableRows"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Database\\ShowTableInfo\u003A\u003AshowFieldMetaData\u0028\u0029",
@@ -4288,7 +4288,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003AaddFilters\u0028\u0029",
             "name": "addFilters",
-            "summary": "",
+            "summary": "Adding\u0020Filters",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-AutoRouterImproved-AutoRouteCollector.html#method_addFilters"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\AutoRouterImproved\\AutoRouteCollector\u003A\u003AgenerateSampleUri\u0028\u0029",
