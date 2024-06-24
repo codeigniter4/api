@@ -20876,10 +20876,10 @@ Search.appendIndex(
             "summary": "Returns\u0020true\u0020if\u0020the\u0020supplied\u0020\u0024segment\u0020string\u0020represents\u0020a\u0020valid\u0020PSR\u002D4\u0020compliant\u0020namespace\/directory\u0020segment",
             "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#method_isValidSegment"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024translateURIDashes",
-            "name": "translateURIDashes",
-            "summary": "Whether\u0020dashes\u0020in\u0020URI\u0027s\u0020should\u0020be\u0020converted\nto\u0020underscores\u0020when\u0020determining\u0020method\u0020names.",
-            "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_translateURIDashes"
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003AtranslateURI\u0028\u0029",
+            "name": "translateURI",
+            "summary": "Translates\u0020URI\u0020segment\u0020to\u0020CamelCase\u0020or\u0020replaces\u0020\u0060\u002D\u0060\u0020with\u0020\u0060_\u0060.",
+            "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#method_translateURI"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024directory",
             "name": "directory",
@@ -20955,6 +20955,11 @@ Search.appendIndex(
             "name": "defaultMethod",
             "summary": "The\u0020name\u0020of\u0020the\u0020default\u0020method\u0020without\u0020HTTP\u0020verb\u0020prefix.",
             "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_defaultMethod"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003A\u0024translateURIDashes",
+            "name": "translateURIDashes",
+            "summary": "Whether\u0020dashes\u0020in\u0020URI\u0027s\u0020should\u0020be\u0020converted\nto\u0020underscores\u0020when\u0020determining\u0020method\u0020names.",
+            "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#property_translateURIDashes"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterInterface",
             "name": "AutoRouterInterface",
