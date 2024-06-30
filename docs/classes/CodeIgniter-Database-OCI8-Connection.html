@@ -1511,7 +1511,7 @@ query string and returns the database-specific result id.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 
     </aside>
 
@@ -2160,7 +2160,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -3142,7 +3142,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -3851,7 +3851,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -3891,7 +3891,7 @@ re-setting the statement ID.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 
     </aside>
 
@@ -4264,10 +4264,23 @@ re-setting the statement ID.</p>
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">$validDSNs</span>
      = <span class="phpdocumentor-signature__default-value">[
-    &#039;tns&#039; =&gt; &#039;/^\(DESCRIPTION=(\(.+\)){2,}\)$/&#039;,
     // TNS
-    // Easy Connect string (Oracle 10g+)
-    &#039;ec&#039; =&gt; &#039;/^(\/\/)?[a-z0-9.:_-]+(:[1-9][0-9]{0,4})?(\/[a-z0-9$_]+)?(:[^\/])?(\/[a-z0-9$_]+)?$/i&#039;,
+    &#039;tns&#039; =&gt; &#039;/^\(DESCRIPTION=(\(.+\)){2,}\)$/&#039;,
+    // Easy Connect string (Oracle 10g+).
+    // https://docs.oracle.com/en/database/oracle/oracle-database/23/netag/configuring-naming-methods.html#GUID-36F3A17D-843C-490A-8A23-FB0FE005F8E8
+    // [//]host[:port][/[service_name][:server_type][/instance_name]]
+    &#039;ec&#039; =&gt; &#039;/^
+            (\/\/)?
+            (\[)?[a-z0-9.:_-]+(\])? # Host or IP address
+            (:[1-9][0-9]{0,4})?     # Port
+            (
+                (\/)
+                ([a-z0-9.$_]+)?     # Service name
+                (:[a-z]+)?          # Server type
+                (\/[a-z0-9$_]+)?    # Instance name
+            )?
+        $/ix&#039;,
+    // Instance name (defined in tnsnames.ora)
     &#039;in&#039; =&gt; &#039;/^[a-z0-9$_]+$/i&#039;,
 ]</span></code>
 
@@ -4492,7 +4505,7 @@ re-setting the statement ID.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">245</span>
+    <span class="phpdocumentor-element-found-in__line">259</span>
 
     </aside>
 
@@ -4638,7 +4651,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -4765,7 +4778,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">555</span>
+    <span class="phpdocumentor-element-found-in__line">569</span>
 
     </aside>
 
@@ -5323,7 +5336,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">497</span>
 
     </aside>
 
@@ -5362,7 +5375,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">714</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -5729,7 +5742,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -5818,7 +5831,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">578</span>
+    <span class="phpdocumentor-element-found-in__line">592</span>
 
     </aside>
 
@@ -6009,7 +6022,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 
     </aside>
 
@@ -6505,7 +6518,7 @@ queries if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">144</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -6631,7 +6644,7 @@ so queries are built correctly.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">167</span>
+    <span class="phpdocumentor-element-found-in__line">181</span>
 
     </aside>
 
@@ -6839,7 +6852,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">516</span>
 
     </aside>
 
@@ -7424,7 +7437,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
@@ -7459,7 +7472,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">449</span>
 
     </aside>
 
@@ -7498,7 +7511,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">459</span>
+    <span class="phpdocumentor-element-found-in__line">473</span>
 
     </aside>
 
@@ -7588,7 +7601,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">294</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
@@ -7652,7 +7665,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">387</span>
+    <span class="phpdocumentor-element-found-in__line">401</span>
 
     </aside>
 
@@ -7716,7 +7729,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">338</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 
     </aside>
 
@@ -7780,7 +7793,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 
     </aside>
 
@@ -7829,7 +7842,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">255</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 
     </aside>
 
@@ -7887,7 +7900,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">684</span>
+    <span class="phpdocumentor-element-found-in__line">698</span>
 
     </aside>
 
@@ -7926,7 +7939,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">694</span>
+    <span class="phpdocumentor-element-found-in__line">708</span>
 
     </aside>
 
@@ -7965,7 +7978,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">704</span>
+    <span class="phpdocumentor-element-found-in__line">718</span>
 
     </aside>
 
@@ -8004,7 +8017,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">531</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 
     </aside>
 
@@ -8049,7 +8062,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">623</span>
+    <span class="phpdocumentor-element-found-in__line">637</span>
 
     </aside>
 
@@ -8084,7 +8097,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
@@ -8198,7 +8211,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">726</span>
+    <span class="phpdocumentor-element-found-in__line">740</span>
 
     </aside>
 
@@ -8237,7 +8250,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/OCI8/Connection.php"><a href="files/system-database-oci8-connection.html"><abbr title="system/Database/OCI8/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 
     </aside>
 
