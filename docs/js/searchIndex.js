@@ -6883,7 +6883,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024QBNoEscape",
             "name": "QBNoEscape",
-            "summary": "QB\u0020NO\u0020ESCAPE\u0020data",
+            "summary": "Whether\u0020to\u0020protect\u0020identifiers\u0020in\u0020SELECT",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#property_QBNoEscape"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003A\u0024QBSet",
