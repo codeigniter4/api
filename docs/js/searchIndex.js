@@ -15453,7 +15453,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportURI",
             "name": "reportURI",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "A\u0020set\u0020of\u0020endpoints\u0020to\u0020which\u0020csp\u0020violation\u0020reports\u0020will\u0020be\u0020sent\u0020when\nparticular\u0020behaviors\u0020are\u0020prevented.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportURI"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024validSources",
@@ -15493,7 +15493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024tempHeaders",
             "name": "tempHeaders",
-            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020since\u0020we\u0020have\nto\u0020build\u0020ourself\u0020before\u0020passing\u0020to\u0020Response.",
+            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020since\u0020we\u0020have\nto\u0020build\u0020ourselves\u0020before\u0020passing\u0020to\u0020Response.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_tempHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportOnlyHeaders",
