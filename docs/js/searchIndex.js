@@ -13928,7 +13928,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\CSRF\u003A\u003Abefore\u0028\u0029",
             "name": "before",
-            "summary": "Do\u0020whatever\u0020processing\u0020this\u0020filter\u0020needs\u0020to\u0020do.",
+            "summary": "CSRF\u0020verification.",
             "url": "classes/CodeIgniter-Filters-CSRF.html#method_before"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\CSRF\u003A\u003Aafter\u0028\u0029",
@@ -21853,7 +21853,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003Averify\u0028\u0029",
             "name": "verify",
-            "summary": "CSRF\u0020Verify",
+            "summary": "CSRF\u0020verification.",
             "url": "classes/CodeIgniter-Security-Security.html#method_verify"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AremoveTokenInRequest\u0028\u0029",
