@@ -21563,7 +21563,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003Ahandle\u0028\u0029",
             "name": "handle",
-            "summary": "Finds\u0020the\u0020controller\u0020method\u0020corresponding\u0020to\u0020the\u0020URI.",
+            "summary": "Finds\u0020the\u0020controller\u0020corresponding\u0020to\u0020the\u0020URI.",
             "url": "classes/CodeIgniter-Router-Router.html#method_handle"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AgetFilters\u0028\u0029",
@@ -21573,12 +21573,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AcontrollerName\u0028\u0029",
             "name": "controllerName",
-            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020matched\u0020controller.",
+            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020matched\u0020controller\u0020or\u0020closure.",
             "url": "classes/CodeIgniter-Router-Router.html#method_controllerName"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AmethodName\u0028\u0029",
             "name": "methodName",
-            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020method\u0020to\u0020run\u0020in\u0020the\nchosen\u0020container.",
+            "summary": "Returns\u0020the\u0020name\u0020of\u0020the\u0020method\u0020to\u0020run\u0020in\u0020the\nchosen\u0020controller.",
             "url": "classes/CodeIgniter-Router-Router.html#method_methodName"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003Aget404Override\u0028\u0029",
