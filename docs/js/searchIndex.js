@@ -7976,6 +7976,11 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020database\u0020object.",
             "url": "classes/CodeIgniter-Database-Database.html#method_initDriver"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003AcheckDbExtension\u0028\u0029",
+            "name": "checkDbExtension",
+            "summary": "Check\u0020the\u0020PHP\u0020database\u0020extension\u0020is\u0020loaded.",
+            "url": "classes/CodeIgniter-Database-Database.html#method_checkDbExtension"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003A\u0024connections",
             "name": "connections",
             "summary": "Maintains\u0020an\u0020array\u0020of\u0020the\u0020instances\u0020of\u0020all\u0020connections\u0020that\u0020have\nbeen\u0020created.",
