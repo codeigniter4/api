@@ -15806,11 +15806,6 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020appropriate\u0020headers\u0020to\u0020ensure\u0020this\u0020response\nis\u0020not\u0020cached\u0020by\u0020the\u0020browsers.",
             "url": "classes/CodeIgniter-HTTP-DownloadResponse.html#method_noCache"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003AsetCache\u0028\u0029",
-            "name": "setCache",
-            "summary": "Disables\u0020cache\u0020configuration.",
-            "url": "classes/CodeIgniter-HTTP-DownloadResponse.html#method_setCache"
-        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003Asend\u0028\u0029",
             "name": "send",
             "summary": "Sends\u0020the\u0020output\u0020to\u0020the\u0020browser.",
