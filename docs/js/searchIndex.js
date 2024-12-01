@@ -15258,7 +15258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddBaseURI\u0028\u0029",
             "name": "addBaseURI",
-            "summary": "Adds\u0020a\u0020new\u0020base_uri\u0020value.\u0020Can\u0020be\u0020either\u0020a\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020baseURI\u0020value.\u0020Can\u0020be\u0020either\u0020a\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addBaseURI"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddChildSrc\u0028\u0029",
