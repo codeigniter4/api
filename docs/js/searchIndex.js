@@ -8243,7 +8243,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A\u0024fields",
             "name": "fields",
-            "summary": "List\u0020of\u0020fields.",
+            "summary": "List\u0020of\u0020fields\u0020in\u0020the\u0020form\u0020\u0060\u005Bname\u0020\u003D\u003E\u0020attributes\u005D\u0060",
             "url": "classes/CodeIgniter-Database-Forge.html#property_fields"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Forge\u003A\u003A\u0024keys",
