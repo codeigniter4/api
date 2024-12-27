@@ -7561,6 +7561,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020error\u0020message\u0020created\u0020while\u0020executing\u0020this\u0020statement.",
             "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method_getErrorMessage"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003AisBinary\u0028\u0029",
+            "name": "isBinary",
+            "summary": "Whether\u0020the\u0020input\u0020contain\u0020binary\u0020data.",
+            "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method_isBinary"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003A\u0024statement",
             "name": "statement",
             "summary": "The\u0020prepared\u0020statement\u0020itself.",
@@ -27045,11 +27050,6 @@ Search.appendIndex(
             "name": "Honeypot",
             "summary": "",
             "url": "namespaces/codeigniter-honeypot.html"
-        },                {
-            "fqsen": "\\CodeIgniter\\HotReloader",
-            "name": "HotReloader",
-            "summary": "",
-            "url": "namespaces/codeigniter-hotreloader.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP",
             "name": "HTTP",
