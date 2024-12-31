@@ -10466,6 +10466,11 @@ Search.appendIndex(
             "summary": "Drop\u0020database",
             "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#method_dropDatabase"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003AdropColumn\u0028\u0029",
+            "name": "dropColumn",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#method_dropColumn"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003A_alterTable\u0028\u0029",
             "name": "_alterTable",
             "summary": "",
