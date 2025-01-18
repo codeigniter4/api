@@ -16301,6 +16301,16 @@ Search.appendIndex(
             "summary": "Returns\u0020a\u0020representation\u0020of\u0020the\u0020entire\u0020header\u0020string,\u0020including\nthe\u0020header\u0020name\u0020and\u0020all\u0020values\u0020converted\u0020to\u0020the\u0020proper\u0020format.",
             "url": "classes/CodeIgniter-HTTP-Header.html#method___toString"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Header\u003A\u003AvalidateName\u0028\u0029",
+            "name": "validateName",
+            "summary": "Validate\u0020header\u0020name.",
+            "url": "classes/CodeIgniter-HTTP-Header.html#method_validateName"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Header\u003A\u003AvalidateValue\u0028\u0029",
+            "name": "validateValue",
+            "summary": "Validate\u0020header\u0020value.",
+            "url": "classes/CodeIgniter-HTTP-Header.html#method_validateValue"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Header\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020name\u0020of\u0020the\u0020header.",
