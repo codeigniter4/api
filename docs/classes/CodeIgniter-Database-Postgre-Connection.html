@@ -274,7 +274,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -577,7 +577,7 @@ for performance reasons.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseConnection.html#property_aliasedTables">$aliasedTables</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
 <dd>Array of table aliases.</dd>
 
@@ -1125,6 +1125,13 @@ a length of time exceeding the server&#039;s idle timeout.</dd>
 <dd>Empties our data cache. Especially helpful during testing.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-Database-BaseConnection.html#method_resetTransStatus">resetTransStatus()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Reset transaction status - to restart transactions after strict mode failure</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseConnection.html#method_setAliasedTables">setAliasedTables()</a>
     <span>
                                 &nbsp;: $this    </span>
@@ -1365,6 +1372,13 @@ query string and returns the database-specific result id.</dd>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Converts the DSN with semicolon syntax.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Database-BaseConnection.html#method_escapeTableName">escapeTableName()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Returns escaped table name with alias.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Database-BaseConnection.html#method_protectDotItem">protectDotItem()</a>
@@ -1817,7 +1831,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -1998,7 +2012,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -2523,7 +2537,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -2895,7 +2909,7 @@ for performance reasons.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$aliasedTables</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2999,7 +3013,7 @@ for performance reasons.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 
     </aside>
 
@@ -3482,7 +3496,7 @@ on this connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -3780,7 +3794,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">56</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
@@ -3816,7 +3830,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
@@ -4227,7 +4241,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1840</span>
+    <span class="phpdocumentor-element-found-in__line">1884</span>
 
     </aside>
 
@@ -4276,7 +4290,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1852</span>
+    <span class="phpdocumentor-element-found-in__line">1896</span>
 
     </aside>
 
@@ -4333,7 +4347,7 @@ run against the database.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addTableAlias</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addTableAlias</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4342,7 +4356,7 @@ run against the database.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$table</span>
+                <span class="phpdocumentor-signature__argument__name">$alias</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -4374,7 +4388,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
@@ -4413,7 +4427,7 @@ run against the database.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1429</span>
+    <span class="phpdocumentor-element-found-in__line">1467</span>
 
     </aside>
 
@@ -4520,7 +4534,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -4569,7 +4583,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1677</span>
+    <span class="phpdocumentor-element-found-in__line">1719</span>
 
     </aside>
 
@@ -4608,7 +4622,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1694</span>
+    <span class="phpdocumentor-element-found-in__line">1736</span>
 
     </aside>
 
@@ -4647,7 +4661,7 @@ in CodeIgniter, in a platform independent manner.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">474</span>
 
     </aside>
 
@@ -4689,7 +4703,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">247</span>
+    <span class="phpdocumentor-element-found-in__line">248</span>
 
     </aside>
 
@@ -4756,7 +4770,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1217</span>
+    <span class="phpdocumentor-element-found-in__line">1236</span>
 
     </aside>
 
@@ -4764,7 +4778,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">escapeIdentifier</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">non-empty-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">escapeIdentifier</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">non-empty-string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4776,7 +4790,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$item</span>
-                : <span class="phpdocumentor-signature__argument__return-type">non-empty-string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">non-empty-string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -4807,7 +4821,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1238</span>
+    <span class="phpdocumentor-element-found-in__line">1276</span>
 
     </aside>
 
@@ -4874,7 +4888,7 @@ intval(code) === 0 means &quot;no error&quot;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1406</span>
+    <span class="phpdocumentor-element-found-in__line">1444</span>
 
     </aside>
 
@@ -4926,7 +4940,7 @@ specific escaping for LIKE conditions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1356</span>
+    <span class="phpdocumentor-element-found-in__line">1394</span>
 
     </aside>
 
@@ -4986,7 +5000,7 @@ specific escaping for LIKE conditions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1590</span>
+    <span class="phpdocumentor-element-found-in__line">1632</span>
 
     </aside>
 
@@ -5042,7 +5056,7 @@ specific escaping for LIKE conditions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1024</span>
+    <span class="phpdocumentor-element-found-in__line">1038</span>
 
     </aside>
 
@@ -5162,7 +5176,7 @@ connection is present, it must return the sole connection.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1013</span>
+    <span class="phpdocumentor-element-found-in__line">1027</span>
 
     </aside>
 
@@ -5243,7 +5257,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1600</span>
+    <span class="phpdocumentor-element-found-in__line">1642</span>
 
     </aside>
 
@@ -5292,7 +5306,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1545</span>
+    <span class="phpdocumentor-element-found-in__line">1585</span>
 
     </aside>
 
@@ -5300,7 +5314,7 @@ seconds with microseconds.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getFieldNames</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|array&lt;int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getFieldNames</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5309,8 +5323,8 @@ seconds with microseconds.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5356,7 +5370,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1620</span>
+    <span class="phpdocumentor-element-found-in__line">1662</span>
 
     </aside>
 
@@ -5405,7 +5419,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1610</span>
+    <span class="phpdocumentor-element-found-in__line">1652</span>
 
     </aside>
 
@@ -5454,7 +5468,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">994</span>
+    <span class="phpdocumentor-element-found-in__line">1008</span>
 
     </aside>
 
@@ -5571,7 +5585,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">179</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
@@ -5660,7 +5674,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">485</span>
 
     </aside>
 
@@ -5699,7 +5713,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1738</span>
+    <span class="phpdocumentor-element-found-in__line">1780</span>
 
     </aside>
 
@@ -5748,7 +5762,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1467</span>
+    <span class="phpdocumentor-element-found-in__line">1505</span>
 
     </aside>
 
@@ -5812,7 +5826,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">938</span>
+    <span class="phpdocumentor-element-found-in__line">952</span>
 
     </aside>
 
@@ -5906,7 +5920,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1298</span>
+    <span class="phpdocumentor-element-found-in__line">1336</span>
 
     </aside>
 
@@ -5970,7 +5984,7 @@ seconds with microseconds.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">966</span>
+    <span class="phpdocumentor-element-found-in__line">980</span>
 
     </aside>
 
@@ -6037,7 +6051,7 @@ return $db-&gt;table('users')
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1714</span>
+    <span class="phpdocumentor-element-found-in__line">1756</span>
 
     </aside>
 
@@ -6089,7 +6103,7 @@ actually executed, but they are still generated, timed, etc.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1057</span>
+    <span class="phpdocumentor-element-found-in__line">1071</span>
 
     </aside>
 
@@ -6097,7 +6111,7 @@ actually executed, but they are still generated, timed, etc.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">protectIdentifiers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefixSingle</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$protectIdentifiers</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldExists</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span></code>
+                    <span class="phpdocumentor-signature__name">protectIdentifiers</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefixSingle</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$protectIdentifiers</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fieldExists</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6120,7 +6134,7 @@ the correct identifiers.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$item</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|int|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -6194,7 +6208,7 @@ the correct identifiers.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">611</span>
+    <span class="phpdocumentor-element-found-in__line">615</span>
 
     </aside>
 
@@ -6298,7 +6312,7 @@ queries if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
@@ -6334,7 +6348,7 @@ a length of time exceeding the server&#039;s idle timeout.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1726</span>
+    <span class="phpdocumentor-element-found-in__line">1768</span>
 
     </aside>
 
@@ -6356,6 +6370,45 @@ a length of time exceeding the server&#039;s idle timeout.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">$this</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetTransStatus">
+        resetTransStatus()
+        <a href="classes/CodeIgniter-Database-BaseConnection.html#method_resetTransStatus" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">907</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reset transaction status - to restart transactions after strict mode failure</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">resetTransStatus</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
             </section>
 
 </article>
@@ -6424,7 +6477,7 @@ so queries are built correctly.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -6526,7 +6579,7 @@ so queries are built correctly.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1002</span>
+    <span class="phpdocumentor-element-found-in__line">1016</span>
 
     </aside>
 
@@ -6565,7 +6618,7 @@ so queries are built correctly.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">728</span>
+    <span class="phpdocumentor-element-found-in__line">732</span>
 
     </aside>
 
@@ -6632,7 +6685,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">924</span>
+    <span class="phpdocumentor-element-found-in__line">938</span>
 
     </aside>
 
@@ -6640,7 +6693,7 @@ query string and returns the database-specific result id.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">table</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">table</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6650,7 +6703,7 @@ query string and returns the database-specific result id.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$tableName</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -6696,7 +6749,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1504</span>
+    <span class="phpdocumentor-element-found-in__line">1542</span>
 
     </aside>
 
@@ -6754,7 +6807,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">831</span>
+    <span class="phpdocumentor-element-found-in__line">835</span>
 
     </aside>
 
@@ -6803,7 +6856,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">865</span>
+    <span class="phpdocumentor-element-found-in__line">869</span>
 
     </aside>
 
@@ -6842,7 +6895,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">797</span>
+    <span class="phpdocumentor-element-found-in__line">801</span>
 
     </aside>
 
@@ -6881,7 +6934,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">787</span>
+    <span class="phpdocumentor-element-found-in__line">791</span>
 
     </aside>
 
@@ -6930,7 +6983,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">744</span>
+    <span class="phpdocumentor-element-found-in__line">748</span>
 
     </aside>
 
@@ -6967,7 +7020,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">884</span>
+    <span class="phpdocumentor-element-found-in__line">888</span>
 
     </aside>
 
@@ -7006,7 +7059,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">773</span>
+    <span class="phpdocumentor-element-found-in__line">777</span>
 
     </aside>
 
@@ -7055,7 +7108,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">823</span>
+    <span class="phpdocumentor-element-found-in__line">827</span>
 
     </aside>
 
@@ -7094,7 +7147,7 @@ query string and returns the database-specific result id.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">763</span>
+    <span class="phpdocumentor-element-found-in__line">767</span>
 
     </aside>
 
@@ -7151,7 +7204,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
@@ -7186,7 +7239,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">444</span>
+    <span class="phpdocumentor-element-found-in__line">452</span>
 
     </aside>
 
@@ -7225,7 +7278,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">462</span>
 
     </aside>
 
@@ -7264,7 +7317,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 
     </aside>
 
@@ -7313,7 +7366,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 
     </aside>
 
@@ -7377,7 +7430,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">407</span>
 
     </aside>
 
@@ -7441,7 +7494,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">368</span>
 
     </aside>
 
@@ -7505,7 +7558,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">312</span>
 
     </aside>
 
@@ -7513,7 +7566,7 @@ meaning a failure of one group will not affect any others</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_listColumns</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
+                    <span class="phpdocumentor-signature__name">_listColumns</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7523,7 +7576,7 @@ meaning a failure of one group will not affect any others</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$table</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                  = <span class="phpdocumentor-signature__argument__default-value">&#039;&#039;</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -7554,7 +7607,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">289</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 
     </aside>
 
@@ -7612,7 +7665,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">582</span>
 
     </aside>
 
@@ -7651,7 +7704,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">582</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 
     </aside>
 
@@ -7690,7 +7743,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">590</span>
+    <span class="phpdocumentor-element-found-in__line">598</span>
 
     </aside>
 
@@ -7729,7 +7782,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">513</span>
+    <span class="phpdocumentor-element-found-in__line">521</span>
 
     </aside>
 
@@ -7764,7 +7817,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">202</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 
     </aside>
 
@@ -7813,7 +7866,7 @@ meaning a failure of one group will not affect any others</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1644</span>
+    <span class="phpdocumentor-element-found-in__line">1686</span>
 
     </aside>
 
@@ -7878,7 +7931,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">220</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -7917,7 +7970,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">574</span>
 
     </aside>
 
@@ -7966,7 +8019,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/Postgre/Connection.php"><a href="files/system-database-postgre-connection.html"><abbr title="system/Database/Postgre/Connection.php">Connection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -7993,6 +8046,55 @@ stdClass[
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_escapeTableName">
+        escapeTableName()
+        <a href="classes/CodeIgniter-Database-BaseConnection.html#method_escapeTableName" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1258</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns escaped table name with alias.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">escapeTableName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$tableName</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_protectDotItem">
         protectDotItem()
         <a href="classes/CodeIgniter-Database-BaseConnection.html#method_protectDotItem" class="headerlink"><i class="fas fa-link"></i></a>
@@ -8001,7 +8103,7 @@ stdClass[
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseConnection.php"><a href="files/system-database-baseconnection.html"><abbr title="system/Database/BaseConnection.php">BaseConnection.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1141</span>
+    <span class="phpdocumentor-element-found-in__line">1160</span>
 
     </aside>
 
@@ -8291,6 +8393,7 @@ stdClass[
                                             <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_query">query()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-Postgre-Connection.html#method_reconnect">reconnect()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_resetDataCache">resetDataCache()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_resetTransStatus">resetTransStatus()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_setAliasedTables">setAliasedTables()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-Postgre-Connection.html#method_setDatabase">setDatabase()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_setPrefix">setPrefix()</a></li>
@@ -8325,6 +8428,7 @@ stdClass[
                                             <li class=""><a href="classes/CodeIgniter-Database-Postgre-Connection.html#method_getDriverFunctionPrefix">getDriverFunctionPrefix()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-Postgre-Connection.html#method_setClientEncoding">setClientEncoding()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-Postgre-Connection.html#method_convertDSN">convertDSN()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_escapeTableName">escapeTableName()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Database-BaseConnection.html#method_protectDotItem">protectDotItem()</a></li>
                                     </ul>
             </li>

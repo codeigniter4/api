@@ -51,11 +51,6 @@ Search.appendIndex(
             "summary": "Used\u0020when\u0020a\u0020specified\u0020resource\u0020cannot\u0020be\u0020found.",
             "url": "classes/CodeIgniter-API-ResponseTrait.html#method_failNotFound"
         },                {
-            "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003AfailValidationError\u0028\u0029",
-            "name": "failValidationError",
-            "summary": "Used\u0020when\u0020the\u0020data\u0020provided\u0020by\u0020the\u0020client\u0020cannot\u0020be\u0020validated.",
-            "url": "classes/CodeIgniter-API-ResponseTrait.html#method_failValidationError"
-        },                {
             "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003AfailValidationErrors\u0028\u0029",
             "name": "failValidationErrors",
             "summary": "Used\u0020when\u0020the\u0020data\u0020provided\u0020by\u0020the\u0020client\u0020cannot\u0020be\u0020validated\u0020on\u0020one\u0020or\u0020more\u0020fields.",
@@ -3911,6 +3906,61 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Translation-LocalizationFinder.html#property_languagePath"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync",
+            "name": "LocalizationSync",
+            "summary": "BaseCommand\u0020is\u0020the\u0020base\u0020class\u0020used\u0020in\u0020creating\u0020CLI\u0020commands.",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Actually\u0020execute\u0020a\u0020command.",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#method_run"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003Aprocess\u0028\u0029",
+            "name": "process",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#method_process"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003AmergeLanguageKeys\u0028\u0029",
+            "name": "mergeLanguageKeys",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#method_mergeLanguageKeys"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024group",
+            "name": "group",
+            "summary": "The\u0020group\u0020the\u0020command\u0020is\u0020lumped\u0020under\nwhen\u0020listing\u0020commands.",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_group"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "The\u0020Command\u0027s\u0020name",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_name"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "the\u0020Command\u0027s\u0020short\u0020description",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_description"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024usage",
+            "name": "usage",
+            "summary": "the\u0020Command\u0027s\u0020usage\u0020description",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_usage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024arguments",
+            "name": "arguments",
+            "summary": "the\u0020Command\u0027s\u0020Arguments\u0020description",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_arguments"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "the\u0020Command\u0027s\u0020options\u0020description",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_options"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationSync\u003A\u003A\u0024languagePath",
+            "name": "languagePath",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationSync.html#property_languagePath"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\ConfigCheck",
             "name": "ConfigCheck",
             "summary": "Check\u0020the\u0020Config\u0020values.",
@@ -4021,10 +4071,25 @@ Search.appendIndex(
             "summary": "Actually\u0020execute\u0020a\u0020command.",
             "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_run"
         },                {
-            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003AaddRequiredFilters\u0028\u0029",
-            "name": "addRequiredFilters",
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003AcheckParams\u0028\u0029",
+            "name": "checkParams",
             "summary": "",
-            "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_addRequiredFilters"
+            "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_checkParams"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003AshowTable\u0028\u0029",
+            "name": "showTable",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_showTable"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003AcolorItems\u0028\u0029",
+            "name": "colorItems",
+            "summary": "Color\u0020all\u0020elements\u0020of\u0020the\u0020array.",
+            "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_colorItems"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003AshowFilterClasses\u0028\u0029",
+            "name": "showFilterClasses",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-FilterCheck.html#method_showFilterClasses"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\FilterCheck\u003A\u003A\u0024group",
             "name": "group",
@@ -4461,10 +4526,20 @@ Search.appendIndex(
             "summary": "Returns\u0020filters\u0020for\u0020the\u0020URI",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_get"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AgetClasses\u0028\u0029",
+            "name": "getClasses",
+            "summary": "Returns\u0020filter\u0020classes\u0020for\u0020the\u0020URI",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_getClasses"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AgetRequiredFilters\u0028\u0029",
             "name": "getRequiredFilters",
             "summary": "Returns\u0020Required\u0020Filters",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_getRequiredFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AgetRequiredFilterClasses\u0028\u0029",
+            "name": "getRequiredFilterClasses",
+            "summary": "Returns\u0020Required\u0020Filter\u0020class\u0020list",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterCollector.html#method_getRequiredFilterClasses"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterCollector\u003A\u003AcreateRouter\u0028\u0029",
             "name": "createRouter",
@@ -4501,10 +4576,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_find"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003AfindClasses\u0028\u0029",
+            "name": "findClasses",
+            "summary": "",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_findClasses"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003AgetRequiredFilters\u0028\u0029",
             "name": "getRequiredFilters",
             "summary": "Returns\u0020Required\u0020Filters",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_getRequiredFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003AgetRequiredFilterClasses\u0028\u0029",
+            "name": "getRequiredFilterClasses",
+            "summary": "Returns\u0020Required\u0020Filter\u0020classes",
+            "url": "classes/CodeIgniter-Commands-Utilities-Routes-FilterFinder.html#method_getRequiredFilterClasses"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Utilities\\Routes\\FilterFinder\u003A\u003A\u0024router",
             "name": "router",
@@ -4883,8 +4968,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003A\u0024didDiscovery",
             "name": "didDiscovery",
-            "summary": "Has\u0020module\u0020discovery\u0020happened\u0020yet\u003F",
+            "summary": "Has\u0020module\u0020discovery\u0020completed\u003F",
             "url": "classes/CodeIgniter-Config-BaseConfig.html#property_didDiscovery"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003A\u0024discovering",
+            "name": "discovering",
+            "summary": "Is\u0020module\u0020discovery\u0020running\u0020or\u0020not\u003F",
+            "url": "classes/CodeIgniter-Config-BaseConfig.html#property_discovering"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003A\u0024registrarFile",
+            "name": "registrarFile",
+            "summary": "The\u0020processing\u0020Registrar\u0020file\u0020for\u0020error\u0020message.",
+            "url": "classes/CodeIgniter-Config-BaseConfig.html#property_registrarFile"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003A\u0024moduleConfig",
             "name": "moduleConfig",
@@ -4950,6 +5045,11 @@ Search.appendIndex(
             "name": "injectMock",
             "summary": "Inject\u0020mock\u0020object\u0020for\u0020testing.",
             "url": "classes/CodeIgniter-Config-BaseService.html#method_injectMock"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003AresetServicesCache\u0028\u0029",
+            "name": "resetServicesCache",
+            "summary": "Resets\u0020the\u0020service\u0020cache.",
+            "url": "classes/CodeIgniter-Config-BaseService.html#method_resetServicesCache"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003AbuildServicesCache\u0028\u0029",
             "name": "buildServicesCache",
@@ -5576,11 +5676,6 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020new\u0020Cookie\u0020that\u0020will\u0020expire\u0020the\u0020cookie\u0020from\u0020the\u0020browser.",
             "url": "classes/CodeIgniter-Cookie-CloneableCookieInterface.html#method_withExpired"
         },                {
-            "fqsen": "\\CodeIgniter\\Cookie\\CloneableCookieInterface\u003A\u003AwithNeverExpiring\u0028\u0029",
-            "name": "withNeverExpiring",
-            "summary": "Creates\u0020a\u0020new\u0020Cookie\u0020that\u0020will\u0020virtually\u0020never\u0020expire\u0020from\u0020the\u0020browser.",
-            "url": "classes/CodeIgniter-Cookie-CloneableCookieInterface.html#method_withNeverExpiring"
-        },                {
             "fqsen": "\\CodeIgniter\\Cookie\\CloneableCookieInterface\u003A\u003AwithPath\u0028\u0029",
             "name": "withPath",
             "summary": "Creates\u0020a\u0020new\u0020Cookie\u0020with\u0020a\u0020new\u0020path\u0020on\u0020the\u0020server\u0020the\u0020cookie\u0020is\u0020available.",
@@ -5735,11 +5830,6 @@ Search.appendIndex(
             "name": "withExpired",
             "summary": "Creates\u0020a\u0020new\u0020Cookie\u0020that\u0020will\u0020expire\u0020the\u0020cookie\u0020from\u0020the\u0020browser.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_withExpired"
-        },                {
-            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AwithNeverExpiring\u0028\u0029",
-            "name": "withNeverExpiring",
-            "summary": "Creates\u0020a\u0020new\u0020Cookie\u0020that\u0020will\u0020virtually\u0020never\u0020expire\u0020from\u0020the\u0020browser.",
-            "url": "classes/CodeIgniter-Cookie-Cookie.html#method_withNeverExpiring"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AwithPath\u0028\u0029",
             "name": "withPath",
@@ -6046,11 +6136,6 @@ Search.appendIndex(
             "summary": "Removes\u0020a\u0020cookie\u0020from\u0020a\u0020collection\u0020and\u0020returns\u0020an\u0020updated\u0020collection.",
             "url": "classes/CodeIgniter-Cookie-CookieStore.html#method_remove"
         },                {
-            "fqsen": "\\CodeIgniter\\Cookie\\CookieStore\u003A\u003Adispatch\u0028\u0029",
-            "name": "dispatch",
-            "summary": "Dispatches\u0020all\u0020cookies\u0020in\u0020store.",
-            "url": "classes/CodeIgniter-Cookie-CookieStore.html#method_dispatch"
-        },                {
             "fqsen": "\\CodeIgniter\\Cookie\\CookieStore\u003A\u003Adisplay\u0028\u0029",
             "name": "display",
             "summary": "Returns\u0020all\u0020cookie\u0020instances\u0020in\u0020store.",
@@ -6075,16 +6160,6 @@ Search.appendIndex(
             "name": "validateCookies",
             "summary": "Validates\u0020all\u0020cookies\u0020passed\u0020to\u0020be\u0020instances\u0020of\u0020Cookie.",
             "url": "classes/CodeIgniter-Cookie-CookieStore.html#method_validateCookies"
-        },                {
-            "fqsen": "\\CodeIgniter\\Cookie\\CookieStore\u003A\u003AsetRawCookie\u0028\u0029",
-            "name": "setRawCookie",
-            "summary": "Extracted\u0020call\u0020to\u0020\u0060setrawcookie\u0028\u0029\u0060\u0020in\u0020order\u0020to\u0020run\u0020unit\u0020tests\u0020on\u0020it.",
-            "url": "classes/CodeIgniter-Cookie-CookieStore.html#method_setRawCookie"
-        },                {
-            "fqsen": "\\CodeIgniter\\Cookie\\CookieStore\u003A\u003AsetCookie\u0028\u0029",
-            "name": "setCookie",
-            "summary": "Extracted\u0020call\u0020to\u0020\u0060setcookie\u0028\u0029\u0060\u0020in\u0020order\u0020to\u0020run\u0020unit\u0020tests\u0020on\u0020it.",
-            "url": "classes/CodeIgniter-Cookie-CookieStore.html#method_setCookie"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\CookieStore\u003A\u003A\u0024cookies",
             "name": "cookies",
@@ -7091,6 +7166,11 @@ Search.appendIndex(
             "summary": "Rollback\u0020Transaction",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_transRollback"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AresetTransStatus\u0028\u0029",
+            "name": "resetTransStatus",
+            "summary": "Reset\u0020transaction\u0020status\u0020\u002D\u0020to\u0020restart\u0020transactions\u0020after\u0020strict\u0020mode\u0020failure",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_resetTransStatus"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_transBegin\u0028\u0029",
             "name": "_transBegin",
             "summary": "Begin\u0020Transaction",
@@ -7155,6 +7235,11 @@ Search.appendIndex(
             "name": "escapeIdentifier",
             "summary": "Escape\u0020the\u0020SQL\u0020Identifier",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_escapeIdentifier"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AescapeTableName\u0028\u0029",
+            "name": "escapeTableName",
+            "summary": "Returns\u0020escaped\u0020table\u0020name\u0020with\u0020alias.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_escapeTableName"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AescapeIdentifiers\u0028\u0029",
             "name": "escapeIdentifiers",
@@ -7993,7 +8078,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Exceptions\\DatabaseException",
             "name": "DatabaseException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Database-Exceptions-DatabaseException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Exceptions\\DatabaseException\u003A\u003AgetExitCode\u0028\u0029",
@@ -8003,7 +8088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Exceptions\\DataException",
             "name": "DataException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Database-Exceptions-DataException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Exceptions\\DataException\u003A\u003AforInvalidMethodTriggered\u0028\u0029",
@@ -8760,6 +8845,11 @@ Search.appendIndex(
             "name": "numberNative",
             "summary": "Use\u0020MYSQLI_OPT_INT_AND_FLOAT_NATIVE",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#property_numberNative"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A\u0024foundRows",
+            "name": "foundRows",
+            "summary": "Use\u0020MYSQLI_CLIENT_FOUND_ROWS",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#property_foundRows"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge",
             "name": "Forge",
@@ -10446,6 +10536,11 @@ Search.appendIndex(
             "summary": "The\u0020milliseconds\u0020to\u0020sleep",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#property_busyTimeout"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A\u0024synchronous",
+            "name": "synchronous",
+            "summary": "The\u0020setting\u0020of\u0020the\u0020\u0022synchronous\u0022\u0020flag",
+            "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#property_synchronous"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge",
             "name": "Forge",
             "summary": "Forge\u0020for\u0020SQLite3",
@@ -11251,6 +11346,81 @@ Search.appendIndex(
             "summary": "OPTIMIZE\u0020TABLE\u0020statement",
             "url": "classes/CodeIgniter-Database-SQLSRV-Utils.html#property_optimizeTable"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName",
+            "name": "TableName",
+            "summary": "Represents\u0020a\u0020table\u0020name\u0020in\u0020SQL.",
+            "url": "classes/CodeIgniter-Database-TableName.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003Acreate\u0028\u0029",
+            "name": "create",
+            "summary": "Creates\u0020a\u0020new\u0020instance.",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_create"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AfromActualName\u0028\u0029",
+            "name": "fromActualName",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020from\u0020an\u0020actual\u0020table\u0020name.",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_fromActualName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AfromFullName\u0028\u0029",
+            "name": "fromFullName",
+            "summary": "Creates\u0020a\u0020new\u0020instance\u0020from\u0020full\u0020name.",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_fromFullName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AgetTableName\u0028\u0029",
+            "name": "getTableName",
+            "summary": "Returns\u0020the\u0020single\u0020segment\u0020table\u0020name\u0020w\/o\u0020DB\u0020prefix.",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_getTableName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AgetActualTableName\u0028\u0029",
+            "name": "getActualTableName",
+            "summary": "Returns\u0020the\u0020actual\u0020single\u0020segment\u0020table\u0020name\u0020w\/z\u0020DB\u0020prefix.",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_getActualTableName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AgetAlias\u0028\u0029",
+            "name": "getAlias",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_getAlias"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AgetSchema\u0028\u0029",
+            "name": "getSchema",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_getSchema"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003AgetDatabase\u0028\u0029",
+            "name": "getDatabase",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#method_getDatabase"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A\u0024actualTable",
+            "name": "actualTable",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#property_actualTable"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A\u0024logicalTable",
+            "name": "logicalTable",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#property_logicalTable"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A\u0024schema",
+            "name": "schema",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#property_schema"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A\u0024database",
+            "name": "database",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#property_database"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\TableName\u003A\u003A\u0024alias",
+            "name": "alias",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-TableName.html#property_alias"
+        },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\ArrayCast",
             "name": "ArrayCast",
             "summary": "Class\u0020ArrayCast",
@@ -11340,6 +11510,11 @@ Search.appendIndex(
             "name": "set",
             "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
             "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html#method_set"
+        },                {
+            "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\DatetimeCast\u003A\u003AgetDateTimeFormat\u0028\u0029",
+            "name": "getDateTimeFormat",
+            "summary": "Gets\u0020DateTime\u0020format\u0020from\u0020the\u0020DB\u0020connection.",
+            "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html#method_getDateTimeFormat"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\FloatCast",
             "name": "FloatCast",
@@ -11566,6 +11741,11 @@ Search.appendIndex(
             "summary": "Determines\u0020the\u0020view\u0020to\u0020display\u0020based\u0020on\u0020the\u0020exception\u0020thrown,\u0020HTTP\u0020status\ncode,\u0020whether\u0020an\u0020HTTP\u0020or\u0020CLI\u0020request,\u0020etc.",
             "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_determineView"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003AisDisplayErrorsEnabled\u0028\u0029",
+            "name": "isDisplayErrorsEnabled",
+            "summary": "",
+            "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_isDisplayErrorsEnabled"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003A\u0024request",
             "name": "request",
             "summary": "ResponseTrait\u0020needs\u0020this.",
@@ -11610,6 +11790,16 @@ Search.appendIndex(
             "name": "errorHandler",
             "summary": "The\u0020callback\u0020to\u0020be\u0020registered\u0020to\u0020\u0060set_error_handler\u0028\u0029\u0060.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_errorHandler"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AisSessionSidDeprecationError\u0028\u0029",
+            "name": "isSessionSidDeprecationError",
+            "summary": "Handles\u0020session.sid_length\u0020and\u0020session.sid_bits_per_character\u0020deprecations\nin\u0020PHP\u00208.4.",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_isSessionSidDeprecationError"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AisImplicitNullableDeprecationError\u0028\u0029",
+            "name": "isImplicitNullableDeprecationError",
+            "summary": "Workaround\u0020to\u0020implicit\u0020nullable\u0020deprecation\u0020errors\u0020in\u0020PHP\u00208.4.",
+            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_isImplicitNullableDeprecationError"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AshutdownHandler\u0028\u0029",
             "name": "shutdownHandler",
@@ -13526,9 +13716,19 @@ Search.appendIndex(
             "summary": "A\u0020list\u0020of\u0020found\u0020files.",
             "url": "classes/CodeIgniter-Events-Events.html#property_files"
         },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\BadFunctionCallException",
+            "name": "BadFunctionCallException",
+            "summary": "Exception\u0020thrown\u0020if\u0020a\u0020function\u0020is\u0020called\u0020in\u0020the\u0020wrong\u0020way,\u0020or\u0020the\u0020function\ndoes\u0020not\u0020exist.",
+            "url": "classes/CodeIgniter-Exceptions-BadFunctionCallException.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\BadMethodCallException",
+            "name": "BadMethodCallException",
+            "summary": "Exception\u0020thrown\u0020if\u0020a\u0020method\u0020is\u0020called\u0020in\u0020the\u0020wrong\u0020way,\u0020or\u0020the\u0020method\ndoes\u0020not\u0020exist.",
+            "url": "classes/CodeIgniter-Exceptions-BadMethodCallException.html"
+        },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\ConfigException",
             "name": "ConfigException",
-            "summary": "Exception\u0020for\u0020automatic\u0020logging.",
+            "summary": "Exception\u0020thrown\u0020if\u0020the\u0020value\u0020of\u0020the\u0020Config\u0020class\u0020is\u0020invalid\u0020or\u0020the\u0020type\u0020is\nincorrect.",
             "url": "classes/CodeIgniter-Exceptions-ConfigException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\ConfigException\u003A\u003AgetExitCode\u0028\u0029",
@@ -13646,6 +13846,16 @@ Search.appendIndex(
             "summary": "Interface\u0020for\u0020Exceptions\u0020that\u0020has\u0020exception\u0020code\u0020as\u0020HTTP\u0020status\u0020code.",
             "url": "classes/CodeIgniter-Exceptions-HTTPExceptionInterface.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\InvalidArgumentException",
+            "name": "InvalidArgumentException",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020argument\u0020is\u0020not\u0020of\u0020the\u0020expected\u0020type.",
+            "url": "classes/CodeIgniter-Exceptions-InvalidArgumentException.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\LogicException",
+            "name": "LogicException",
+            "summary": "Exception\u0020that\u0020represents\u0020error\u0020in\u0020the\u0020program\u0020logic.",
+            "url": "classes/CodeIgniter-Exceptions-LogicException.html"
+        },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\ModelException",
             "name": "ModelException",
             "summary": "Model\u0020Exceptions.",
@@ -13668,7 +13878,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException",
             "name": "PageNotFoundException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Exceptions-PageNotFoundException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\PageNotFoundException\u003A\u003AforPageNotFound\u0028\u0029",
@@ -13706,9 +13916,14 @@ Search.appendIndex(
             "summary": "HTTP\u0020status\u0020code",
             "url": "classes/CodeIgniter-Exceptions-PageNotFoundException.html#property_code"
         },                {
+            "fqsen": "\\CodeIgniter\\Exceptions\\RuntimeException",
+            "name": "RuntimeException",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
+            "url": "classes/CodeIgniter-Exceptions-RuntimeException.html"
+        },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\TestException",
             "name": "TestException",
-            "summary": "Exception\u0020for\u0020automatic\u0020logging.",
+            "summary": "Exception\u0020thrown\u0020when\u0020there\u0020is\u0020an\u0020error\u0020with\u0020the\u0020test\u0020code.",
             "url": "classes/CodeIgniter-Exceptions-TestException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Exceptions\\TestException\u003A\u003AforInvalidMockClass\u0028\u0029",
@@ -13716,9 +13931,14 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Exceptions-TestException.html#method_forInvalidMockClass"
         },                {
+            "fqsen": "\\CodeIgniter\\Files\\Exceptions\\ExceptionInterface",
+            "name": "ExceptionInterface",
+            "summary": "Provides\u0020a\u0020domain\u002Dlevel\u0020interface\u0020for\u0020broad\u0020capture\nof\u0020all\u0020Files\u002Drelated\u0020exceptions.",
+            "url": "classes/CodeIgniter-Files-Exceptions-ExceptionInterface.html"
+        },                {
             "fqsen": "\\CodeIgniter\\Files\\Exceptions\\FileException",
             "name": "FileException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Files-Exceptions-FileException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Files\\Exceptions\\FileException\u003A\u003AforUnableToMove\u0028\u0029",
@@ -13738,7 +13958,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Files\\Exceptions\\FileNotFoundException",
             "name": "FileNotFoundException",
-            "summary": "",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Files-Exceptions-FileNotFoundException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Files\\Exceptions\\FileNotFoundException\u003A\u003AforFileNotFound\u0028\u0029",
@@ -13760,6 +13980,16 @@ Search.appendIndex(
             "name": "getSize",
             "summary": "Retrieve\u0020the\u0020file\u0020size.",
             "url": "classes/CodeIgniter-Files-File.html#method_getSize"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSizeByBinaryUnit\u0028\u0029",
+            "name": "getSizeByBinaryUnit",
+            "summary": "Retrieve\u0020the\u0020file\u0020size\u0020by\u0020unit,\u0020calculated\u0020in\u0020IEC\u0020standards\u0020with\u00201024\u0020as\u0020base\u0020value.",
+            "url": "classes/CodeIgniter-Files-File.html#method_getSizeByBinaryUnit"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSizeByMetricUnit\u0028\u0029",
+            "name": "getSizeByMetricUnit",
+            "summary": "Retrieve\u0020the\u0020file\u0020size\u0020by\u0020unit,\u0020calculated\u0020in\u0020metric\u0020standards\u0020with\u00201000\u0020as\u0020base\u0020value.",
+            "url": "classes/CodeIgniter-Files-File.html#method_getSizeByMetricUnit"
         },                {
             "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSizeByUnit\u0028\u0029",
             "name": "getSizeByUnit",
@@ -13790,6 +14020,11 @@ Search.appendIndex(
             "name": "getDestination",
             "summary": "Returns\u0020the\u0020destination\u0020path\u0020for\u0020the\u0020move\u0020operation\u0020where\u0020overwriting\u0020is\u0020not\u0020expected.",
             "url": "classes/CodeIgniter-Files-File.html#method_getDestination"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003AgetSizeByUnitInternal\u0028\u0029",
+            "name": "getSizeByUnitInternal",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-File.html#method_getSizeByUnitInternal"
         },                {
             "fqsen": "\\CodeIgniter\\Files\\File\u003A\u003A\u0024size",
             "name": "size",
@@ -13891,6 +14126,11 @@ Search.appendIndex(
             "summary": "Keeps\u0020only\u0020the\u0020files\u0020from\u0020the\u0020list\u0020that\u0020match\n\u0028within\u0020the\u0020optional\u0020scope\u0029.",
             "url": "classes/CodeIgniter-Files-FileCollection.html#method_retainPattern"
         },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileCollection\u003A\u003AretainMultiplePatterns\u0028\u0029",
+            "name": "retainMultiplePatterns",
+            "summary": "Keeps\u0020only\u0020the\u0020files\u0020from\u0020the\u0020list\u0020that\u0020match\u0020multiple\u0020patterns\n\u0028within\u0020the\u0020optional\u0020scope\u0029.",
+            "url": "classes/CodeIgniter-Files-FileCollection.html#method_retainMultiplePatterns"
+        },                {
             "fqsen": "\\CodeIgniter\\Files\\FileCollection\u003A\u003Acount\u0028\u0029",
             "name": "count",
             "summary": "Returns\u0020the\u0020current\u0020number\u0020of\u0020files\u0020in\u0020the\u0020collection.",
@@ -13905,6 +14145,41 @@ Search.appendIndex(
             "name": "files",
             "summary": "The\u0020current\u0020list\u0020of\u0020file\u0020paths.",
             "url": "classes/CodeIgniter-Files-FileCollection.html#property_files"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit",
+            "name": "FileSizeUnit",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003AfromString\u0028\u0029",
+            "name": "fromString",
+            "summary": "Allows\u0020the\u0020creation\u0020of\u0020a\u0020FileSizeUnit\u0020from\u0020Strings\u0020like\u0020\u0022kb\u0022\u0020or\u0020\u0022mb\u0022",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#method_fromString"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003AB",
+            "name": "B",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#enumcase_B"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003AKB",
+            "name": "KB",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#enumcase_KB"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003AMB",
+            "name": "MB",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#enumcase_MB"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003AGB",
+            "name": "GB",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#enumcase_GB"
+        },                {
+            "fqsen": "\\CodeIgniter\\Files\\FileSizeUnit\u003A\u003ATB",
+            "name": "TB",
+            "summary": "",
+            "url": "classes/CodeIgniter-Files-FileSizeUnit.html#enumcase_TB"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Cors",
             "name": "Cors",
@@ -14008,7 +14283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AdiscoverFilters\u0028\u0029",
             "name": "discoverFilters",
-            "summary": "If\u0020discoverFilters\u0020is\u0020enabled\u0020in\u0020Config\u0020then\u0020system\u0020will\u0020try\u0020to\nauto\u002Ddiscover\u0020custom\u0020filters\u0020files\u0020in\u0020Namespaces\u0020and\u0020allow\u0020access\u0020to\nthe\u0020config\u0020object\u0020via\u0020the\u0020variable\u0020\u0024filters\u0020as\u0020with\u0020the\u0020routes\u0020file",
+            "summary": "If\u0020discoverFilters\u0020is\u0020enabled\u0020in\u0020Config\u0020then\u0020system\u0020will\u0020try\u0020to\nauto\u002Ddiscover\u0020custom\u0020filters\u0020files\u0020in\u0020namespaces\u0020and\u0020allow\u0020access\u0020to\nthe\u0020config\u0020object\u0020via\u0020the\u0020variable\u0020\u0024filters\u0020as\u0020with\u0020the\u0020routes\u0020file.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_discoverFilters"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AsetResponse\u0028\u0029",
@@ -14018,7 +14293,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "Runs\u0020through\u0020all\u0020of\u0020the\u0020filters\u0020for\u0020the\u0020specified\nuri\u0020and\u0020position.",
+            "summary": "Runs\u0020through\u0020all\u0020the\u0020filters\u0020\u0028except\u0020\u0022Required\u0020Filters\u0022\u0029\u0020for\u0020the\u0020specified\nURI\u0020and\u0020position.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_run"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003ArunBefore\u0028\u0029",
@@ -14030,6 +14305,16 @@ Search.appendIndex(
             "name": "runAfter",
             "summary": "",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_runAfter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AcreateFilter\u0028\u0029",
+            "name": "createFilter",
+            "summary": "",
+            "url": "classes/CodeIgniter-Filters-Filters.html#method_createFilter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AgetRequiredClasses\u0028\u0029",
+            "name": "getRequiredClasses",
+            "summary": "Returns\u0020the\u0020\u0022Required\u0020Filters\u0022\u0020class\u0020list.",
+            "url": "classes/CodeIgniter-Filters-Filters.html#method_getRequiredClasses"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AsetToolbarToLast\u0028\u0029",
             "name": "setToolbarToLast",
@@ -14096,11 +14381,6 @@ Search.appendIndex(
             "summary": "Add\u0020any\u0020applicable\u0020configured\u0020filters\u0020to\u0020the\u0020mix.",
             "url": "classes/CodeIgniter-Filters-Filters.html#method_processFilters"
         },                {
-            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AregisterArguments\u0028\u0029",
-            "name": "registerArguments",
-            "summary": "",
-            "url": "classes/CodeIgniter-Filters-Filters.html#method_registerArguments"
-        },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003AprocessAliasesToClass\u0028\u0029",
             "name": "processAliasesToClass",
             "summary": "Maps\u0020filter\u0020aliases\u0020to\u0020the\u0020equivalent\u0020filter\u0020classes",
@@ -14123,7 +14403,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024config",
             "name": "config",
-            "summary": "The\u0020original\u0020config\u0020file",
+            "summary": "The\u0020Config\\Filters\u0020instance",
             "url": "classes/CodeIgniter-Filters-Filters.html#property_config"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024request",
@@ -14138,23 +14418,28 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024modules",
             "name": "modules",
-            "summary": "Handle\u0020to\u0020the\u0020modules\u0020config.",
+            "summary": "The\u0020Config\\Modules\u0020instance",
             "url": "classes/CodeIgniter-Filters-Filters.html#property_modules"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024initialized",
             "name": "initialized",
-            "summary": "Whether\u0020we\u0027ve\u0020done\u0020initial\u0020processing\non\u0020the\u0020filter\u0020lists.",
+            "summary": "Whether\u0020we\u0027ve\u0020done\u0020initial\u0020processing\u0020on\u0020the\u0020filter\u0020lists.",
             "url": "classes/CodeIgniter-Filters-Filters.html#property_initialized"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024filters",
             "name": "filters",
-            "summary": "The\u0020processed\u0020filters\u0020that\u0020will\nbe\u0020used\u0020to\u0020check\u0020against.",
+            "summary": "The\u0020filter\u0020list\u0020to\u0020execute\u0020for\u0020the\u0020current\u0020request\u0020\u0028URI\u0020path\u0029.",
             "url": "classes/CodeIgniter-Filters-Filters.html#property_filters"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024filtersClass",
             "name": "filtersClass",
-            "summary": "The\u0020collection\u0020of\u0020filters\u0027\u0020class\u0020names\u0020that\u0020will\nbe\u0020used\u0020to\u0020execute\u0020in\u0020each\u0020position.",
+            "summary": "The\u0020collection\u0020of\u0020filter\u0020classnames\u0020and\u0020their\u0020arguments\u0020to\u0020execute\u0020for\nthe\u0020current\u0020request\u0020\u0028URI\u0020path\u0029.",
             "url": "classes/CodeIgniter-Filters-Filters.html#property_filtersClass"
+        },                {
+            "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024filterClassInstances",
+            "name": "filterClassInstances",
+            "summary": "List\u0020of\u0020filter\u0020class\u0020instances.",
+            "url": "classes/CodeIgniter-Filters-Filters.html#property_filterClassInstances"
         },                {
             "fqsen": "\\CodeIgniter\\Filters\\Filters\u003A\u003A\u0024arguments",
             "name": "arguments",
@@ -15068,7 +15353,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException",
             "name": "HoneypotException",
-            "summary": "Exception\u0020for\u0020automatic\u0020logging.",
+            "summary": "Exception\u0020thrown\u0020if\u0020the\u0020value\u0020of\u0020the\u0020Config\u0020class\u0020is\u0020invalid\u0020or\u0020the\u0020type\u0020is\nincorrect.",
             "url": "classes/CodeIgniter-Honeypot-Exceptions-HoneypotException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Honeypot\\Exceptions\\HoneypotException\u003A\u003AforNoTemplate\u0028\u0029",
@@ -15596,6 +15881,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-HTTP-Cors.html#property_config"
         },                {
+            "fqsen": "\\CURL_HTTP_VERSION_3",
+            "name": "CURL_HTTP_VERSION_3",
+            "summary": "",
+            "url": "namespaces/default.html#constant_CURL_HTTP_VERSION_3"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest",
             "name": "CURLRequest",
             "summary": "A\u0020lightweight\u0020HTTP\u0020client\u0020for\u0020sending\u0020synchronous\u0020HTTP\u0020requests\u0020via\u0020cURL.",
@@ -15890,6 +16180,11 @@ Search.appendIndex(
             "name": "code",
             "summary": "HTTP\u0020status\u0020code\u0020for\u0020Bad\u0020Request",
             "url": "classes/CodeIgniter-HTTP-Exceptions-BadRequestException.html#property_code"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\ExceptionInterface",
+            "name": "ExceptionInterface",
+            "summary": "Provides\u0020a\u0020domain\u002Dlevel\u0020interface\u0020for\u0020broad\u0020capture\nof\u0020all\u0020HTTP\u002Drelated\u0020exceptions.",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-ExceptionInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException",
             "name": "HTTPException",
@@ -16836,6 +17131,11 @@ Search.appendIndex(
             "summary": "Does\u0020the\u0020grunt\u0020work\u0020of\u0020comparing\u0020any\u0020of\u0020the\u0020app\u002Dsupported\u0020values\nagainst\u0020a\u0020given\u0020Accept\u002A\u0020header\u0020string.",
             "url": "classes/CodeIgniter-HTTP-Negotiate.html#method_getBestMatch"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Negotiate\u003A\u003AgetBestLocaleMatch\u0028\u0029",
+            "name": "getBestLocaleMatch",
+            "summary": "Try\u0020to\u0020find\u0020the\u0020best\u0020matching\u0020locale.\u0020It\u0020supports\u0020strict\u0020locale\u0020comparison.",
+            "url": "classes/CodeIgniter-HTTP-Negotiate.html#method_getBestLocaleMatch"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Negotiate\u003A\u003AparseHeader\u0028\u0029",
             "name": "parseHeader",
             "summary": "Parses\u0020an\u0020Accept\u002A\u0020header\u0020into\u0020it\u0027s\u0020multiple\u0020values.",
@@ -17111,11 +17411,6 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020response\u0020status\u0020code.",
             "url": "classes/CodeIgniter-HTTP-Response.html#method_getStatusCode"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\Response\u003A\u003AgetReason\u0028\u0029",
-            "name": "getReason",
-            "summary": "Gets\u0020the\u0020response\u0020response\u0020phrase\u0020associated\u0020with\u0020the\u0020status\u0020code.",
-            "url": "classes/CodeIgniter-HTTP-Response.html#method_getReason"
-        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Response\u003A\u003AgetReasonPhrase\u0028\u0029",
             "name": "getReasonPhrase",
             "summary": "Gets\u0020the\u0020response\u0020reason\u0020phrase\u0020associated\u0020with\u0020the\u0020status\u0020code.",
@@ -17150,11 +17445,6 @@ Search.appendIndex(
             "name": "setStatusCode",
             "summary": "Return\u0020an\u0020instance\u0020with\u0020the\u0020specified\u0020status\u0020code\u0020and,\u0020optionally,\u0020reason\u0020phrase.",
             "url": "classes/CodeIgniter-HTTP-ResponseInterface.html#method_setStatusCode"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\ResponseInterface\u003A\u003AgetReason\u0028\u0029",
-            "name": "getReason",
-            "summary": "Gets\u0020the\u0020response\u0020phrase\u0020associated\u0020with\u0020the\u0020status\u0020code.",
-            "url": "classes/CodeIgniter-HTTP-ResponseInterface.html#method_getReason"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ResponseInterface\u003A\u003AgetReasonPhrase\u0028\u0029",
             "name": "getReasonPhrase",
@@ -18531,6 +18821,11 @@ Search.appendIndex(
             "summary": "Legacy\u0020Time\u0020class.",
             "url": "classes/CodeIgniter-I18n-TimeLegacy.html"
         },                {
+            "fqsen": "\\CodeIgniter\\I18n\\TimeLegacy\u003A\u003AsetTimestamp\u0028\u0029",
+            "name": "setTimestamp",
+            "summary": "Returns\u0020a\u0020new\u0020instance\u0020with\u0020the\u0020date\u0020set\u0020to\u0020the\u0020new\u0020timestamp.",
+            "url": "classes/CodeIgniter-I18n-TimeLegacy.html#method_setTimestamp"
+        },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait",
             "name": "TimeTrait",
             "summary": "This\u0020trait\u0020has\u0020properties\u0020and\u0020methods\u0020for\u0020Time\u0020and\u0020TimeLegacy.",
@@ -18735,11 +19030,6 @@ Search.appendIndex(
             "name": "setTimezone",
             "summary": "Returns\u0020a\u0020new\u0020instance\u0020with\u0020the\u0020revised\u0020timezone.",
             "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_setTimezone"
-        },                {
-            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AsetTimestamp\u0028\u0029",
-            "name": "setTimestamp",
-            "summary": "Returns\u0020a\u0020new\u0020instance\u0020with\u0020the\u0020date\u0020set\u0020to\u0020the\u0020new\u0020timestamp.",
-            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_setTimestamp"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AaddSeconds\u0028\u0029",
             "name": "addSeconds",
@@ -19786,11 +20076,6 @@ Search.appendIndex(
             "summary": "Determines\u0020the\u0020file\u0020and\u0020line\u0020that\u0020the\u0020logging\u0020call\nwas\u0020made\u0020from\u0020by\u0020analyzing\u0020the\u0020backtrace.",
             "url": "classes/CodeIgniter-Log-Logger.html#method_determineFile"
         },                {
-            "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003AcleanFileNames\u0028\u0029",
-            "name": "cleanFileNames",
-            "summary": "Cleans\u0020the\u0020paths\u0020of\u0020filenames\u0020by\u0020replacing\u0020APPPATH,\u0020SYSTEMPATH,\u0020FCPATH\nwith\u0020the\u0020actual\u0020var.\u0020i.e.",
-            "url": "classes/CodeIgniter-Log-Logger.html#method_cleanFileNames"
-        },                {
             "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003A\u0024logLevels",
             "name": "logLevels",
             "summary": "Used\u0020by\u0020the\u0020logThreshold\u0020Config\u0020setting\u0020to\u0020define\nwhich\u0020errors\u0020to\u0020show.",
@@ -20341,6 +20626,11 @@ Search.appendIndex(
             "summary": "Updates\u0020the\u0020first\u0020and\u0020last\u0020pages\u0020based\u0020on\u0020\u0024surroundCount,\nwhich\u0020is\u0020the\u0020number\u0020of\u0020links\u0020surrounding\u0020the\u0020active\u0020page\nto\u0020show.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_updatePages"
         },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AupdatePerPages\u0028\u0029",
+            "name": "updatePerPages",
+            "summary": "Updates\u0020the\u0020start\u0020and\u0020end\u0020items\u0020per\u0020pages,\u0020which\u0020is\nthe\u0020number\u0020of\u0020items\u0020displayed\u0020on\u0020the\u0020active\u0020page.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_updatePerPages"
+        },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AhasPreviousPage\u0028\u0029",
             "name": "hasPreviousPage",
             "summary": "Checks\u0020to\u0020see\u0020if\u0020there\u0020is\u0020a\u0020\u0022previous\u0022\u0020page\u0020before\u0020our\u0020\u0022first\u0022\u0020page.",
@@ -20391,6 +20681,26 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020next\u0020page\u0020number.",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getNextPageNumber"
         },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetTotal\u0028\u0029",
+            "name": "getTotal",
+            "summary": "Returns\u0020the\u0020total\u0020items\u0020of\u0020the\u0020page.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getTotal"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetPerPage\u0028\u0029",
+            "name": "getPerPage",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020items\u0020to\u0020be\u0020displayed\u0020on\u0020the\u0020page.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getPerPage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetPerPageStart\u0028\u0029",
+            "name": "getPerPageStart",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020items\u0020the\u0020page\u0020starts\u0020with.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getPerPageStart"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AgetPerPageEnd\u0028\u0029",
+            "name": "getPerPageEnd",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020items\u0020the\u0020page\u0020ends\u0020with.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method_getPerPageEnd"
+        },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024first",
             "name": "first",
             "summary": "First\u0020page\u0020number\u0020in\u0020the\u0020set\u0020of\u0020links\u0020to\u0020be\u0020displayed.",
@@ -20430,6 +20740,21 @@ Search.appendIndex(
             "name": "pageSelector",
             "summary": "Name\u0020of\u0020\u0024_GET\u0020parameter",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_pageSelector"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024perPage",
+            "name": "perPage",
+            "summary": "Returns\u0020the\u0020number\u0020of\u0020results\u0020per\u0020page\u0020that\u0020should\u0020be\u0020shown.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_perPage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024perPageStart",
+            "name": "perPageStart",
+            "summary": "The\u0020number\u0020of\u0020items\u0020the\u0020page\u0020starts\u0020with.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_perPageStart"
+        },                {
+            "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A\u0024perPageEnd",
+            "name": "perPageEnd",
+            "summary": "The\u0020number\u0020of\u0020items\u0020the\u0020page\u0020ends\u0020with.",
+            "url": "classes/CodeIgniter-Pager-PagerRenderer.html#property_perPageEnd"
         },                {
             "fqsen": "\\CodeIgniter\\Publisher\\ContentReplacer",
             "name": "ContentReplacer",
@@ -21011,15 +21336,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Router-DefinedRouteCollector.html#property_routeCollection"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RedirectException",
-            "name": "RedirectException",
-            "summary": "RedirectException",
-            "url": "classes/CodeIgniter-Router-Exceptions-RedirectException.html"
-        },                {
-            "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RedirectException\u003A\u003A\u0024code",
-            "name": "code",
-            "summary": "HTTP\u0020status\u0020code\u0020for\u0020redirects",
-            "url": "classes/CodeIgniter-Router-Exceptions-RedirectException.html#property_code"
+            "fqsen": "\\CodeIgniter\\Router\\Exceptions\\ExceptionInterface",
+            "name": "ExceptionInterface",
+            "summary": "Provides\u0020a\u0020domain\u002Dlevel\u0020interface\u0020for\u0020broad\u0020capture\nof\u0020all\u0020Router\u002Drelated\u0020exceptions.",
+            "url": "classes/CodeIgniter-Router-Exceptions-ExceptionInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Exceptions\\RouterException",
             "name": "RouterException",
@@ -21491,6 +21811,11 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020default\u0020namespace\u0020to\u0020use\u0020for\u0020Controllers\u0020when\u0020no\u0020other\nnamespace\u0020has\u0020been\u0020specified.",
             "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_setDefaultNamespace"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AgetDefaultNamespace\u0028\u0029",
+            "name": "getDefaultNamespace",
+            "summary": "Returns\u0020the\u0020default\u0020namespace.",
+            "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_getDefaultNamespace"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AsetDefaultController\u0028\u0029",
             "name": "setDefaultController",
             "summary": "Sets\u0020the\u0020default\u0020controller\u0020to\u0020use\u0020when\u0020no\u0020other\u0020controller\u0020has\u0020been\nspecified.",
@@ -21546,6 +21871,16 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020raw\u0020array\u0020of\u0020available\u0020routes.",
             "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_getRoutes"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AgetRoutesOptions\u0028\u0029",
+            "name": "getRoutesOptions",
+            "summary": "Returns\u0020one\u0020or\u0020all\u0020routes\u0020options",
+            "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_getRoutesOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AsetHTTPVerb\u0028\u0029",
+            "name": "setHTTPVerb",
+            "summary": "Sets\u0020the\u0020current\u0020HTTP\u0020verb.",
+            "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_setHTTPVerb"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AgetHTTPVerb\u0028\u0029",
             "name": "getHTTPVerb",
             "summary": "Returns\u0020the\u0020current\u0020HTTP\u0020Verb\u0020being\u0020used.",
@@ -21570,6 +21905,16 @@ Search.appendIndex(
             "name": "shouldUseSupportedLocalesOnly",
             "summary": "Get\u0020the\u0020flag\u0020that\u0020limit\u0020or\u0020not\u0020the\u0020routes\u0020with\u0020\u007Blocale\u007D\u0020placeholder\u0020to\u0020App\u003A\u003A\u0024supportedLocales",
             "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_shouldUseSupportedLocalesOnly"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AisFiltered\u0028\u0029",
+            "name": "isFiltered",
+            "summary": "Checks\u0020a\u0020route\u0020\u0028using\u0020the\u0020\u0022from\u0022\u0029\u0020to\u0020see\u0020if\u0020it\u0027s\u0020filtered\u0020or\u0020not.",
+            "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_isFiltered"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\RouteCollectionInterface\u003A\u003AgetFiltersForRoute\u0028\u0029",
+            "name": "getFiltersForRoute",
+            "summary": "Returns\u0020the\u0020filters\u0020that\u0020should\u0020be\u0020applied\u0020for\u0020a\u0020single\u0020route,\u0020along\nwith\u0020any\u0020parameters\u0020it\u0020might\u0020have.\u0020Parameters\u0020are\u0020found\u0020by\u0020splitting\nthe\u0020parameter\u0020name\u0020on\u0020a\u0020colon\u0020to\u0020separate\u0020the\u0020filter\u0020name\u0020from\u0020the\u0020parameter\u0020list,\nand\u0020the\u0020splitting\u0020the\u0020result\u0020on\u0020commas.\u0020So\u003A",
+            "url": "classes/CodeIgniter-Router-RouteCollectionInterface.html#method_getFiltersForRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router",
             "name": "Router",
@@ -24806,11 +25151,6 @@ Search.appendIndex(
             "summary": "Used\u0020by\u0020CIUnitTestCase\u0020class\u0020to\u0020provide\u0020\u002D\u003EassertLogged\u0028\u0029\u0020methods.",
             "url": "classes/CodeIgniter-Test-TestLogger.html#method_didLog"
         },                {
-            "fqsen": "\\CodeIgniter\\Test\\TestLogger\u003A\u003Acleanup\u0028\u0029",
-            "name": "cleanup",
-            "summary": "Expose\u0020filenames.",
-            "url": "classes/CodeIgniter-Test-TestLogger.html#method_cleanup"
-        },                {
             "fqsen": "\\CodeIgniter\\Test\\TestLogger\u003A\u003A\u0024op_logs",
             "name": "op_logs",
             "summary": "",
@@ -25216,46 +25556,6 @@ Search.appendIndex(
             "summary": "File\u0020validation\u0020rules",
             "url": "classes/CodeIgniter-Validation-FileRules.html"
         },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method___construct"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Auploaded\u0028\u0029",
-            "name": "uploaded",
-            "summary": "Verifies\u0020that\u0020\u0024name\u0020is\u0020the\u0020name\u0020of\u0020a\u0020valid\u0020uploaded\u0020file.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_uploaded"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Amax_size\u0028\u0029",
-            "name": "max_size",
-            "summary": "Verifies\u0020if\u0020the\u0020file\u0027s\u0020size\u0020in\u0020Kilobytes\u0020is\u0020no\u0020larger\u0020than\u0020the\u0020parameter.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_max_size"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Ais_image\u0028\u0029",
-            "name": "is_image",
-            "summary": "Uses\u0020the\u0020mime\u0020config\u0020file\u0020to\u0020determine\u0020if\u0020a\u0020file\u0020is\u0020considered\u0020an\u0020\u0022image\u0022,\nwhich\u0020for\u0020our\u0020purposes\u0020basically\u0020means\u0020that\u0020it\u0027s\u0020a\u0020raster\u0020image\u0020or\u0020svg.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_is_image"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Amime_in\u0028\u0029",
-            "name": "mime_in",
-            "summary": "Checks\u0020to\u0020see\u0020if\u0020an\u0020uploaded\u0020file\u0027s\u0020mime\u0020type\u0020matches\u0020one\u0020in\u0020the\u0020parameter.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_mime_in"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Aext_in\u0028\u0029",
-            "name": "ext_in",
-            "summary": "Checks\u0020to\u0020see\u0020if\u0020an\u0020uploaded\u0020file\u0027s\u0020extension\u0020matches\u0020one\u0020in\u0020the\u0020parameter.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_ext_in"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003Amax_dims\u0028\u0029",
-            "name": "max_dims",
-            "summary": "Checks\u0020an\u0020uploaded\u0020file\u0020to\u0020verify\u0020that\u0020the\u0020dimensions\u0020are\u0020within\na\u0020specified\u0020allowable\u0020dimension.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#method_max_dims"
-        },                {
-            "fqsen": "\\CodeIgniter\\Validation\\FileRules\u003A\u003A\u0024request",
-            "name": "request",
-            "summary": "Request\u0020instance.\u0020So\u0020we\u0020can\u0020get\u0020access\u0020to\u0020the\u0020files.",
-            "url": "classes/CodeIgniter-Validation-FileRules.html#property_request"
-        },                {
             "fqsen": "\\CodeIgniter\\Validation\\FormatRules",
             "name": "FormatRules",
             "summary": "Format\u0020validation\u0020Rules.",
@@ -25421,6 +25721,11 @@ Search.appendIndex(
             "summary": "Checks\u0020the\u0020database\u0020to\u0020see\u0020if\u0020the\u0020given\u0020value\u0020is\u0020unique.\u0020Can\nignore\u0020a\u0020single\u0020record\u0020by\u0020field\/value\u0020to\u0020make\u0020it\u0020useful\u0020during\nrecord\u0020updates.",
             "url": "classes/CodeIgniter-Validation-Rules.html#method_is_unique"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003AprepareUniqueQuery\u0028\u0029",
+            "name": "prepareUniqueQuery",
+            "summary": "Prepares\u0020the\u0020database\u0020query\u0020for\u0020uniqueness\u0020checks.",
+            "url": "classes/CodeIgniter-Validation-Rules.html#method_prepareUniqueQuery"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003Aless_than\u0028\u0029",
             "name": "less_than",
             "summary": "Less\u0020than",
@@ -25500,6 +25805,51 @@ Search.appendIndex(
             "name": "FileRules",
             "summary": "File\u0020validation\u0020rules",
             "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Auploaded\u0028\u0029",
+            "name": "uploaded",
+            "summary": "Verifies\u0020that\u0020\u0024name\u0020is\u0020the\u0020name\u0020of\u0020a\u0020valid\u0020uploaded\u0020file.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_uploaded"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Amax_size\u0028\u0029",
+            "name": "max_size",
+            "summary": "Verifies\u0020if\u0020the\u0020file\u0027s\u0020size\u0020in\u0020Kilobytes\u0020is\u0020no\u0020larger\u0020than\u0020the\u0020parameter.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_max_size"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Ais_image\u0028\u0029",
+            "name": "is_image",
+            "summary": "Uses\u0020the\u0020mime\u0020config\u0020file\u0020to\u0020determine\u0020if\u0020a\u0020file\u0020is\u0020considered\u0020an\u0020\u0022image\u0022,\nwhich\u0020for\u0020our\u0020purposes\u0020basically\u0020means\u0020that\u0020it\u0027s\u0020a\u0020raster\u0020image\u0020or\u0020svg.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_is_image"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Amime_in\u0028\u0029",
+            "name": "mime_in",
+            "summary": "Checks\u0020to\u0020see\u0020if\u0020an\u0020uploaded\u0020file\u0027s\u0020mime\u0020type\u0020matches\u0020one\u0020in\u0020the\u0020parameter.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_mime_in"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Aext_in\u0028\u0029",
+            "name": "ext_in",
+            "summary": "Checks\u0020to\u0020see\u0020if\u0020an\u0020uploaded\u0020file\u0027s\u0020extension\u0020matches\u0020one\u0020in\u0020the\u0020parameter.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_ext_in"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Amax_dims\u0028\u0029",
+            "name": "max_dims",
+            "summary": "Checks\u0020an\u0020uploaded\u0020file\u0020to\u0020verify\u0020that\u0020the\u0020dimensions\u0020are\u0020within\na\u0020specified\u0020allowable\u0020dimension.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_max_dims"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003Amin_dims\u0028\u0029",
+            "name": "min_dims",
+            "summary": "Checks\u0020an\u0020uploaded\u0020file\u0020to\u0020verify\u0020that\u0020the\u0020dimensions\u0020are\u0020greater\u0020than\na\u0020specified\u0020dimension.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_min_dims"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "Request\u0020instance.\u0020So\u0020we\u0020can\u0020get\u0020access\u0020to\u0020the\u0020files.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#property_request"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FormatRules",
             "name": "FormatRules",
@@ -26750,11 +27100,6 @@ Search.appendIndex(
             "name": "sections",
             "summary": "Holds\u0020the\u0020sections\u0020and\u0020their\u0020data.",
             "url": "classes/CodeIgniter-View-View.html#property_sections"
-        },                {
-            "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024currentSection",
-            "name": "currentSection",
-            "summary": "The\u0020name\u0020of\u0020the\u0020current\u0020section\u0020being\u0020rendered,\nif\u0020any.",
-            "url": "classes/CodeIgniter-View-View.html#property_currentSection"
         },                {
             "fqsen": "\\CodeIgniter\\View\\View\u003A\u003A\u0024sectionStack",
             "name": "sectionStack",

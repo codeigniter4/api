@@ -383,7 +383,21 @@ the correct file extension attached.</dd>
 <dd>Retrieve the file size.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit">getSizeByUnit()</a>
+    <a class="" href="classes/CodeIgniter-Files-File.html#method_getSizeByBinaryUnit">getSizeByBinaryUnit()</a>
+    <span>
+                                &nbsp;: int|string    </span>
+</dt>
+<dd>Retrieve the file size by unit, calculated in IEC standards with 1024 as base value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-Files-File.html#method_getSizeByMetricUnit">getSizeByMetricUnit()</a>
+    <span>
+                                &nbsp;: int|string    </span>
+</dt>
+<dd>Retrieve the file size by unit, calculated in metric standards with 1000 as base value.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="-deprecated" href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit">getSizeByUnit()</a>
     <span>
                                 &nbsp;: false|int|string    </span>
 </dt>
@@ -403,6 +417,12 @@ getType() method. If the mime type is unknown, will return null.</dd>
                                 &nbsp;: <a href="classes/CodeIgniter-Files-File.html"><abbr title="\CodeIgniter\Files\File">File</abbr></a>    </span>
 </dt>
 <dd>Moves a file to a new location.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Files-File.html#method_getSizeByUnitInternal">getSizeByUnitInternal()</a>
+    <span>
+                                &nbsp;: int|string    </span>
+</dt>
 
     </dl>
 
@@ -580,7 +600,7 @@ that the path is really a file.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">164</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -647,7 +667,7 @@ For the all other cases, it appends an integer starting from zero before the fil
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">108</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 
     </aside>
 
@@ -692,7 +712,7 @@ determine the type of file, like finfo, or mime_content_type().</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">147</span>
 
     </aside>
 
@@ -783,9 +803,9 @@ does not exist or an error occurs.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSizeByUnit">
-        getSizeByUnit()
-        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getSizeByBinaryUnit">
+        getSizeByBinaryUnit()
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByBinaryUnit" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
@@ -795,13 +815,164 @@ does not exist or an error occurs.</p>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Retrieve the file size by unit.</p>
+        <p class="phpdocumentor-summary">Retrieve the file size by unit, calculated in IEC standards with 1024 as base value.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getSizeByBinaryUnit</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FileSizeUnit::B</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">3</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$unit</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">FileSizeUnit::B</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$precision</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">3</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByBinaryUnit#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>positive-int $precision</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int|string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSizeByMetricUnit">
+        getSizeByMetricUnit()
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByMetricUnit" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">88</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Retrieve the file size by unit, calculated in metric standards with 1000 as base value.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getSizeByMetricUnit</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">FileSizeUnit::B</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">3</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$unit</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">FileSizeUnit::B</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$precision</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">3</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByMetricUnit#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">phpstan-param</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>positive-int $precision</p>
+</section>
+
+                                    </dd>
+                                            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int|string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+            -deprecated                                            "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSizeByUnit">
+        getSizeByUnit()
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">100</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Retrieve the file size by unit.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">getSizeByUnit</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;b&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|string</span></code>
 
     <div class="phpdocumentor-label-line">
+        </div>
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>Use getSizeByBinaryUnit() or getSizeByMetricUnit() instead</p>
+
+            </article>
         </div>
     
     
@@ -840,7 +1011,7 @@ does not exist or an error occurs.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">113</span>
 
     </aside>
 
@@ -880,7 +1051,7 @@ getType() method. If the mime type is unknown, will return null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 
     </aside>
 
@@ -926,6 +1097,68 @@ getType() method. If the mime type is unknown, will return null.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Files-File.html"><abbr title="\CodeIgniter\Files\File">File</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSizeByUnitInternal">
+        getSizeByUnitInternal()
+        <a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnitInternal" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Files/File.php"><a href="files/system-files-file.html"><abbr title="system/Files/File.php">File.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">215</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getSizeByUnitInternal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fileSizeBase</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unit</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$precision</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$fileSizeBase</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$unit</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/CodeIgniter-Files-FileSizeUnit.html"><abbr title="\CodeIgniter\Files\FileSizeUnit">FileSizeUnit</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$precision</span>
+                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int|string</span>
             </section>
 
 </article>
@@ -1055,9 +1288,12 @@ getType() method. If the mime type is unknown, will return null.</p>
                                             <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getMimeType">getMimeType()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getRandomName">getRandomName()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getSize">getSize()</a></li>
-                                            <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit">getSizeByUnit()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getSizeByBinaryUnit">getSizeByBinaryUnit()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getSizeByMetricUnit">getSizeByMetricUnit()</a></li>
+                                            <li class="-deprecated"><a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnit">getSizeByUnit()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Files-File.html#method_guessExtension">guessExtension()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Files-File.html#method_move">move()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Files-File.html#method_getSizeByUnitInternal">getSizeByUnitInternal()</a></li>
                                     </ul>
             </li>
                     </ul>
