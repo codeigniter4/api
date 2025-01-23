@@ -16001,6 +16001,11 @@ Search.appendIndex(
             "summary": "Does\u0020the\u0020actual\u0020work\u0020of\u0020initializing\u0020cURL,\u0020setting\u0020the\u0020options,\nand\u0020grabbing\u0020the\u0020output.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_sendRequest"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AhandleRedirectHeaders\u0028\u0029",
+            "name": "handleRedirectHeaders",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_handleRedirectHeaders"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024response",
             "name": "response",
             "summary": "The\u0020response\u0020object\u0020associated\u0020with\u0020this\u0020request",
