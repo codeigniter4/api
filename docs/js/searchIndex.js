@@ -15876,6 +15876,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-HTTP-Cors.html#method_setExposeHeaders"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Cors\u003A\u003AhasResponseHeaders\u0028\u0029",
+            "name": "hasResponseHeaders",
+            "summary": "Check\u0020if\u0020response\u0020headers\u0020were\u0020set",
+            "url": "classes/CodeIgniter-HTTP-Cors.html#method_hasResponseHeaders"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Cors\u003A\u003A\u0024config",
             "name": "config",
             "summary": "",
