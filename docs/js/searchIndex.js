@@ -798,7 +798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024protectFields",
             "name": "protectFields",
-            "summary": "If\u0020this\u0020model\u0020should\u0020use\u0020\u0022softDeletes\u0022\u0020and\nsimply\u0020set\u0020a\u0020date\u0020when\u0020rows\u0020are\u0020deleted,\u0020or\ndo\u0020hard\u0020deletes.",
+            "summary": "Determines\u0020whether\u0020the\u0020model\u0020should\u0020protect\u0020field\u0020names\u0020during\nmass\u0020assignment\u0020operations\u0020such\u0020as\u0020insert\u0028\u0029\u0020and\u0020update\u0028\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#property_protectFields"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024allowedFields",
