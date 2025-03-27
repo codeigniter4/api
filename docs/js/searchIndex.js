@@ -9046,11 +9046,6 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020LIMIT\u0020clause.",
             "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method__limit"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003AresetSelect\u0028\u0029",
-            "name": "resetSelect",
-            "summary": "Resets\u0020the\u0020query\u0020builder\u0020values.\u0020\u0020Called\u0020by\u0020the\u0020get\u0028\u0029\u0020function",
-            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_resetSelect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003A_updateBatch\u0028\u0029",
             "name": "_updateBatch",
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020batch\u0020update\u0020string\u0020from\u0020the\u0020supplied\u0020data",
@@ -9085,11 +9080,6 @@ Search.appendIndex(
             "name": "countString",
             "summary": "COUNT\u0020string",
             "url": "classes/CodeIgniter-Database-OCI8-Builder.html#property_countString"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003A\u0024limitUsed",
-            "name": "limitUsed",
-            "summary": "Limit\u0020used\u0020flag",
-            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#property_limitUsed"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003A\u0024db",
             "name": "db",
