@@ -18703,7 +18703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeDifference",
             "name": "TimeDifference",
-            "summary": "Class\u0020TimeDifference",
+            "summary": "",
             "url": "classes/CodeIgniter-I18n-TimeDifference.html"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeDifference\u003A\u003A__construct\u0028\u0029",
