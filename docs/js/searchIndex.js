@@ -7903,7 +7903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Config",
             "name": "Config",
-            "summary": "Class\u0020Config",
+            "summary": "Class\u0020BaseConfig",
             "url": "classes/CodeIgniter-Database-Config.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003Aconnect\u0028\u0029",
@@ -10688,7 +10688,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table",
             "name": "Table",
-            "summary": "Class\u0020Table",
+            "summary": "Provides\u0020missing\u0020features\u0020for\u0020altering\u0020tables\u0020that\u0020are\u0020common\nin\u0020other\u0020supported\u0020databases,\u0020but\u0020are\u0020missing\u0020from\u0020SQLite.",
             "url": "classes/CodeIgniter-Database-SQLite3-Table.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Table\u003A\u003A__construct\u0028\u0029",
@@ -24648,7 +24648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCURLRequest",
             "name": "MockCURLRequest",
-            "summary": "Class\u0020MockCURLRequest",
+            "summary": "Simply\u0020allows\u0020us\u0020to\u0020not\u0020actually\u0020call\u0020cURL\u0020during\u0020the\ntest\u0020runs.\u0020Instead,\u0020we\u0020can\u0020set\u0020the\u0020desired\u0020output\nand\u0020get\u0020back\u0020the\u0020set\u0020options.",
             "url": "classes/CodeIgniter-Test-Mock-MockCURLRequest.html"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCURLRequest\u003A\u003AsetOutput\u0028\u0029",
@@ -24663,12 +24663,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCURLRequest\u003A\u003AgetBaseURI\u0028\u0029",
             "name": "getBaseURI",
-            "summary": "",
+            "summary": "for\u0020testing\u0020purposes\u0020only",
             "url": "classes/CodeIgniter-Test-Mock-MockCURLRequest.html#method_getBaseURI"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCURLRequest\u003A\u003AgetDelay\u0028\u0029",
             "name": "getDelay",
-            "summary": "",
+            "summary": "for\u0020testing\u0020purposes\u0020only",
             "url": "classes/CodeIgniter-Test-Mock-MockCURLRequest.html#method_getDelay"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockCURLRequest\u003A\u003A\u0024curl_options",
@@ -24883,17 +24883,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockResponse",
             "name": "MockResponse",
-            "summary": "Class\u0020MockResponse",
+            "summary": "Representation\u0020of\u0020an\u0020outgoing,\u0020server\u002Dside\u0020response.",
             "url": "classes/CodeIgniter-Test-Mock-MockResponse.html"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockResponse\u003A\u003AgetPretend\u0028\u0029",
             "name": "getPretend",
-            "summary": "",
+            "summary": "For\u0020testing.",
             "url": "classes/CodeIgniter-Test-Mock-MockResponse.html#method_getPretend"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockResponse\u003A\u003Amisbehave\u0028\u0029",
             "name": "misbehave",
-            "summary": "",
+            "summary": "Artificial\u0020error\u0020for\u0020testing",
             "url": "classes/CodeIgniter-Test-Mock-MockResponse.html#method_misbehave"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockResponse\u003A\u003A\u0024pretend",
@@ -25028,7 +25028,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockTable\u003A\u003A__call\u0028\u0029",
             "name": "__call",
-            "summary": "",
+            "summary": "Override\u0020inaccessible\u0020protected\u0020method",
             "url": "classes/CodeIgniter-Test-Mock-MockTable.html#method___call"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\PhpStreamWrapper",
