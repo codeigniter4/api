@@ -23088,7 +23088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AmarkAsFlashdata\u0028\u0029",
             "name": "markAsFlashdata",
-            "summary": "Mark\u0020a\u0020session\u0020property\u0020or\u0020properties\u0020as\u0020flashdata.",
+            "summary": "Mark\u0020a\u0020session\u0020property\u0020or\u0020properties\u0020as\u0020flashdata.\u0020This\u0020returns\n\u0060false\u0060\u0020if\u0020any\u0020of\u0020the\u0020properties\u0020were\u0020not\u0020already\u0020set.",
             "url": "classes/CodeIgniter-Session-Session.html#method_markAsFlashdata"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AunmarkFlashdata\u0028\u0029",
@@ -23273,7 +23273,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\SessionInterface\u003A\u003AmarkAsFlashdata\u0028\u0029",
             "name": "markAsFlashdata",
-            "summary": "Mark\u0020a\u0020session\u0020property\u0020or\u0020properties\u0020as\u0020flashdata.",
+            "summary": "Mark\u0020a\u0020session\u0020property\u0020or\u0020properties\u0020as\u0020flashdata.\u0020This\u0020returns\n\u0060false\u0060\u0020if\u0020any\u0020of\u0020the\u0020properties\u0020were\u0020not\u0020already\u0020set.",
             "url": "classes/CodeIgniter-Session-SessionInterface.html#method_markAsFlashdata"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\SessionInterface\u003A\u003AunmarkFlashdata\u0028\u0029",
