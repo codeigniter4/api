@@ -966,6 +966,11 @@ Search.appendIndex(
             "summary": "Used\u0020by\u0020\u0060public\/index.php\u0060",
             "url": "classes/CodeIgniter-Boot.html#method_bootWeb"
         },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003AbootConsole\u0028\u0029",
+            "name": "bootConsole",
+            "summary": "Used\u0020by\u0020command\u0020line\u0020scripts\u0020other\u0020than\n\u002A\u0020\u0060spark\u0060\n\u002A\u0020\u0060php\u002Dcli\u0060\n\u002A\u0020\u0060phpunit\u0060",
+            "url": "classes/CodeIgniter-Boot.html#method_bootConsole"
+        },                {
             "fqsen": "\\CodeIgniter\\Boot\u003A\u003AbootSpark\u0028\u0029",
             "name": "bootSpark",
             "summary": "Used\u0020by\u0020\u0060spark\u0060",
@@ -25485,6 +25490,11 @@ Search.appendIndex(
             "name": "protectBracedQuotes",
             "summary": "whether\u0020or\u0020not\u0020to\u0020protect\u0020quotes\u0020within\u0020\u007B\u0020curly\u0020braces\u0020\u007D",
             "url": "classes/CodeIgniter-Typography-Typography.html#property_protectBracedQuotes"
+        },                {
+            "fqsen": "\\COMPOSER_PATH",
+            "name": "COMPOSER_PATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_COMPOSER_PATH"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\CreditCardRules",
             "name": "CreditCardRules",
