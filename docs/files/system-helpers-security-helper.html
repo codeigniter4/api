@@ -289,7 +289,7 @@ the LICENSE file that was distributed with this source code.</p>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Sanitize a filename to use in a URI.</dd>
+<dd>Sanitize Filename</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a class="" href="namespaces/default.html#function_strip_image_tags">strip_image_tags()</a>
@@ -326,18 +326,25 @@ the LICENSE file that was distributed with this source code.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/security_helper.php"><a href="files/system-helpers-security-helper.html"><abbr title="system/Helpers/security_helper.php">security_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sanitize a filename to use in a URI.</p>
+        <p class="phpdocumentor-summary">Sanitize Filename</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                    <span class="phpdocumentor-signature__name">sanitize_filename</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">sanitize_filename</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$relativePath</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-    
+        <section class="phpdocumentor-description"><p>Tries to sanitize filenames in order to prevent directory traversal attempts
+and other security threats, which is particularly useful for files that
+were supplied via user input.</p>
+<p>If it is acceptable for the user input to include relative paths,
+e.g. file/in/some/approved/folder.txt, you can set the second optional
+parameter, $relativePath to TRUE.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -345,7 +352,18 @@ the LICENSE file that was distributed with this source code.</p>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Input file name</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$relativePath</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Whether to preserve paths</p>
+</section>
+
             </dd>
             </dl>
 
@@ -366,7 +384,7 @@ the LICENSE file that was distributed with this source code.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/security_helper.php"><a href="files/system-helpers-security-helper.html"><abbr title="system/Helpers/security_helper.php">security_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -406,7 +424,7 @@ the LICENSE file that was distributed with this source code.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/security_helper.php"><a href="files/system-helpers-security-helper.html"><abbr title="system/Helpers/security_helper.php">security_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 

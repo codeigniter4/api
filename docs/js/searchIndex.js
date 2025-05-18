@@ -15138,7 +15138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\sanitize_filename\u0028\u0029",
             "name": "sanitize_filename",
-            "summary": "Sanitize\u0020a\u0020filename\u0020to\u0020use\u0020in\u0020a\u0020URI.",
+            "summary": "Sanitize\u0020Filename",
             "url": "namespaces/default.html#function_sanitize_filename"
         },                {
             "fqsen": "\\strip_image_tags\u0028\u0029",
