@@ -25491,6 +25491,11 @@ Search.appendIndex(
             "summary": "whether\u0020or\u0020not\u0020to\u0020protect\u0020quotes\u0020within\u0020\u007B\u0020curly\u0020braces\u0020\u007D",
             "url": "classes/CodeIgniter-Typography-Typography.html#property_protectBracedQuotes"
         },                {
+            "fqsen": "\\SUPPORTPATH",
+            "name": "SUPPORTPATH",
+            "summary": "",
+            "url": "namespaces/default.html#constant_SUPPORTPATH"
+        },                {
             "fqsen": "\\COMPOSER_PATH",
             "name": "COMPOSER_PATH",
             "summary": "",
