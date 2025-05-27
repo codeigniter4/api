@@ -14603,7 +14603,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Format\\Format\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "",
             "url": "classes/CodeIgniter-Format-Format.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Format\\Format\u003A\u003AgetConfig\u0028\u0029",
@@ -14618,7 +14618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Format\\Format\u003A\u003A\u0024config",
             "name": "config",
-            "summary": "Configuration\u0020instance",
+            "summary": "",
             "url": "classes/CodeIgniter-Format-Format.html#property_config"
         },                {
             "fqsen": "\\CodeIgniter\\Format\\FormatterInterface",
