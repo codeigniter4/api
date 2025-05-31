@@ -12283,7 +12283,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Logs\u003A\u003Adisplay\u0028\u0029",
             "name": "display",
-            "summary": "Returns\u0020the\u0020data\u0020of\u0020this\u0020collector\u0020to\u0020be\u0020formatted\u0020in\u0020the\u0020toolbar",
+            "summary": "Returns\u0020the\u0020data\u0020of\u0020this\u0020collector\u0020to\u0020be\u0020formatted\u0020in\u0020the\u0020toolbar.",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Logs.html#method_display"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Logs\u003A\u003AisEmpty\u0028\u0029",
@@ -19858,7 +19858,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\BaseHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Log-Handlers-BaseHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\BaseHandler\u003A\u003AcanHandle\u0028\u0029",
@@ -19883,12 +19883,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\ChromeLoggerHandler",
             "name": "ChromeLoggerHandler",
-            "summary": "Class\u0020ChromeLoggerHandler",
+            "summary": "Allows\u0020for\u0020logging\u0020items\u0020to\u0020the\u0020Chrome\u0020console\u0020for\u0020debugging.",
             "url": "classes/CodeIgniter-Log-Handlers-ChromeLoggerHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\ChromeLoggerHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Log-Handlers-ChromeLoggerHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\ChromeLoggerHandler\u003A\u003Ahandle\u0028\u0029",
@@ -19973,7 +19973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\FileHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Log-Handlers-FileHandler.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Handlers\\FileHandler\u003A\u003Ahandle\u0028\u0029",
@@ -20088,7 +20088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003A\u0024loggableLevels",
             "name": "loggableLevels",
-            "summary": "Array\u0020of\u0020levels\u0020to\u0020be\u0020logged.",
+            "summary": "Array\u0020of\u0020levels\u0020to\u0020be\u0020logged.\u0020The\u0020rest\u0020will\u0020be\u0020ignored.",
             "url": "classes/CodeIgniter-Log-Logger.html#property_loggableLevels"
         },                {
             "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003A\u0024filePermissions",
@@ -24728,12 +24728,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockFileLogger",
             "name": "MockFileLogger",
-            "summary": "Class\u0020MockFileLogger",
+            "summary": "Extends\u0020FileHandler,\u0020exposing\u0020some\u0020inner\u0020workings",
             "url": "classes/CodeIgniter-Test-Mock-MockFileLogger.html"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockFileLogger\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Test-Mock-MockFileLogger.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockFileLogger\u003A\u003A\u0024destination",
@@ -24828,17 +24828,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockLogger\u003A\u003A\u0024threshold",
             "name": "threshold",
-            "summary": "",
+            "summary": "\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\nError\u0020Logging\u0020Threshold\n\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D",
             "url": "classes/CodeIgniter-Test-Mock-MockLogger.html#property_threshold"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockLogger\u003A\u003A\u0024dateFormat",
             "name": "dateFormat",
-            "summary": "",
+            "summary": "\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\nDate\u0020Format\u0020for\u0020Logs\n\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D",
             "url": "classes/CodeIgniter-Test-Mock-MockLogger.html#property_dateFormat"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockLogger\u003A\u003A\u0024handlers",
             "name": "handlers",
-            "summary": "",
+            "summary": "\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\nLog\u0020Handlers\n\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D\u002D",
             "url": "classes/CodeIgniter-Test-Mock-MockLogger.html#property_handlers"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockQuery",
