@@ -1398,7 +1398,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AgetItem\u0028\u0029",
             "name": "getItem",
-            "summary": "Does\u0020the\u0020heavy\u0020lifting\u0020of\u0020actually\u0020retrieving\u0020the\u0020file\u0020and\nverifying\u0020it\u0027s\u0020age.",
+            "summary": "Does\u0020the\u0020heavy\u0020lifting\u0020of\u0020actually\u0020retrieving\u0020the\u0020file\u0020and\nverifying\u0020its\u0020age.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_getItem"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AwriteFile\u0028\u0029",
