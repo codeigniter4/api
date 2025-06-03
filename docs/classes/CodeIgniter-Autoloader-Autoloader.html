@@ -351,28 +351,28 @@ The Config array consists of 2 primary keys, both of which are associative array
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#property_classmap">$classmap</a>
     <span>
-                        &nbsp;: array&lt;class-string, string&gt;            </span>
+                        &nbsp;: array&lt;class-string, non-empty-string&gt;            </span>
 </dt>
 <dd>Stores class name as key, and path as values.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#property_files">$files</a>
     <span>
-                        &nbsp;: array&lt;int, string&gt;            </span>
+                        &nbsp;: array&lt;int, non-empty-string&gt;            </span>
 </dt>
 <dd>Stores files as a list.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#property_helpers">$helpers</a>
     <span>
-                        &nbsp;: array&lt;int, string&gt;            </span>
+                        &nbsp;: array&lt;int, non-empty-string&gt;            </span>
 </dt>
 <dd>Stores helper list.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#property_prefixes">$prefixes</a>
     <span>
-                        &nbsp;: array&lt;string, array&lt;int, string&gt;&gt;            </span>
+                        &nbsp;: array&lt;non-empty-string, array&lt;int, non-empty-string&gt;&gt;            </span>
 </dt>
 <dd>Stores namespaces as key, and path as values.</dd>
 
@@ -425,7 +425,8 @@ the valid parts that we&#039;ll need.</dd>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Register the loader with the SPL autoloader stack.</dd>
+<dd>Register the loader with the SPL autoloader stack
+in the following order:</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#method_removeNamespace">removeNamespace()</a>
@@ -446,7 +447,7 @@ the valid parts that we&#039;ll need.</dd>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Unregister autoloader.</dd>
+<dd>Unregisters the autoloader from the SPL autoload stack.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="-deprecated" href="classes/CodeIgniter-Autoloader-Autoloader.html#method_discoverComposerNamespaces">discoverComposerNamespaces()</a>
@@ -458,14 +459,14 @@ the valid parts that we&#039;ll need.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#method_includeFile">includeFile()</a>
     <span>
-                                &nbsp;: false|string    </span>
+                                &nbsp;: false|non-empty-string    </span>
 </dt>
 <dd>A central way to include a file. Split out primarily for testing purposes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Autoloader-Autoloader.html#method_loadInNamespace">loadInNamespace()</a>
     <span>
-                                &nbsp;: false|string    </span>
+                                &nbsp;: false|non-empty-string    </span>
 </dt>
 <dd>Loads the class file for a given class name.</dd>
 
@@ -532,7 +533,7 @@ the valid parts that we&#039;ll need.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;class-string, string&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;class-string, non-empty-string&gt;</span>
     <span class="phpdocumentor-signature__name">$classmap</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -569,7 +570,7 @@ the valid parts that we&#039;ll need.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;int, non-empty-string&gt;</span>
     <span class="phpdocumentor-signature__name">$files</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -606,7 +607,7 @@ the valid parts that we&#039;ll need.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;int, non-empty-string&gt;</span>
     <span class="phpdocumentor-signature__name">$helpers</span>
      = <span class="phpdocumentor-signature__default-value">[&#039;url&#039;]</span></code>
 
@@ -645,7 +646,7 @@ the valid parts that we&#039;ll need.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string, array&lt;int, string&gt;&gt;</span>
+        <span class="phpdocumentor-signature__type">array&lt;non-empty-string, array&lt;int, non-empty-string&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$prefixes</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -678,7 +679,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">194</span>
+    <span class="phpdocumentor-element-found-in__line">193</span>
 
     </aside>
 
@@ -686,7 +687,7 @@ the valid parts that we&#039;ll need.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addNamespace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string, array&lt;int, string&gt;|string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$namespace</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addNamespace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;non-empty-string, array&lt;int, non-empty-string&gt;|non-empty-string&gt;|non-empty-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$namespace</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -696,7 +697,7 @@ the valid parts that we&#039;ll need.</dd>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$namespace</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string, array&lt;int, string&gt;|string&gt;|string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;non-empty-string, array&lt;int, non-empty-string&gt;|non-empty-string&gt;|non-empty-string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -734,7 +735,7 @@ the valid parts that we&#039;ll need.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 
     </aside>
 
@@ -918,11 +919,12 @@ the valid parts that we&#039;ll need.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">167</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Register the loader with the SPL autoloader stack.</p>
+        <p class="phpdocumentor-summary">Register the loader with the SPL autoloader stack
+in the following order:</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -931,7 +933,13 @@ the valid parts that we&#039;ll need.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><ol>
+<li>Classmap loader</li>
+<li>PSR-4 autoloader</li>
+<li>Non-class files</li>
+</ol>
+</section>
+
     
     
 
@@ -953,7 +961,7 @@ the valid parts that we&#039;ll need.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 
     </aside>
 
@@ -1068,11 +1076,11 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">180</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Unregister autoloader.</p>
+        <p class="phpdocumentor-summary">Unregisters the autoloader from the SPL autoload stack.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1081,9 +1089,7 @@ and end of filename.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>This method is for testing.</p>
-</section>
-
+    
     
     
 
@@ -1155,7 +1161,7 @@ and end of filename.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">includeFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
+                    <span class="phpdocumentor-signature__name">includeFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|non-empty-string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1178,7 +1184,7 @@ and end of filename.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">false|string</span>
+        <span class="phpdocumentor-signature__response_type">false|non-empty-string</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>The filename on success, false if the file is not loaded</p>
 </section>
@@ -1200,7 +1206,7 @@ and end of filename.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Autoloader/Autoloader.php"><a href="files/system-autoloader-autoloader.html"><abbr title="system/Autoloader/Autoloader.php">Autoloader.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -1208,7 +1214,7 @@ and end of filename.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">loadInNamespace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|string</span></code>
+                    <span class="phpdocumentor-signature__name">loadInNamespace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$class</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|non-empty-string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1218,10 +1224,10 @@ and end of filename.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$class</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">class-string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The fully-qualified class name</p>
+                    <section class="phpdocumentor-description"><p>The fully qualified class name.</p>
 </section>
 
             </dd>
@@ -1233,7 +1239,7 @@ and end of filename.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">false|string</span>
+        <span class="phpdocumentor-signature__response_type">false|non-empty-string</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>The mapped file name on success, or boolean false on fail</p>
 </section>

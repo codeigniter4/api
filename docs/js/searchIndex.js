@@ -118,12 +118,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003Aregister\u0028\u0029",
             "name": "register",
-            "summary": "Register\u0020the\u0020loader\u0020with\u0020the\u0020SPL\u0020autoloader\u0020stack.",
+            "summary": "Register\u0020the\u0020loader\u0020with\u0020the\u0020SPL\u0020autoloader\u0020stack\nin\u0020the\u0020following\u0020order\u003A",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_register"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003Aunregister\u0028\u0029",
             "name": "unregister",
-            "summary": "Unregister\u0020autoloader.",
+            "summary": "Unregisters\u0020the\u0020autoloader\u0020from\u0020the\u0020SPL\u0020autoload\u0020stack.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method_unregister"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003AaddNamespace\u0028\u0029",
