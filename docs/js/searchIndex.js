@@ -1093,7 +1093,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheInterface",
             "name": "CacheInterface",
-            "summary": "Cache\u0020interface",
+            "summary": "",
             "url": "classes/CodeIgniter-Cache-CacheInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheInterface\u003A\u003Ainitialize\u0028\u0029",
@@ -1148,7 +1148,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Exceptions\\CacheException",
             "name": "CacheException",
-            "summary": "CacheException",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-Cache-Exceptions-CacheException.html"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Exceptions\\CacheException\u003A\u003AforUnableToWrite\u0028\u0029",
@@ -1768,7 +1768,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\ResponseCache\u003A\u003A\u0024ttl",
             "name": "ttl",
-            "summary": "Cache\u0020time\u0020to\u0020live.",
+            "summary": "Cache\u0020time\u0020to\u0020live\u0020\u0028TTL\u0029\u0020in\u0020seconds.",
             "url": "classes/CodeIgniter-Cache-ResponseCache.html#property_ttl"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\ResponseCache\u003A\u003A\u0024cache",

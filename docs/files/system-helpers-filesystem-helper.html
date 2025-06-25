@@ -321,14 +321,14 @@ into the target directory, i.e. &quot;mirror&quot; its contents.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a class="" href="namespaces/default.html#function_get_dir_file_info">get_dir_file_info()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, array{name: string, server_path: string, size: int, date: int, relative_path: string}&gt;    </span>
 </dt>
 <dd>Get Directory File Information</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -function -">
     <a class="" href="namespaces/default.html#function_get_file_info">get_file_info()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+                                &nbsp;: array{name?: string, server_path?: string, size?: int, date?: int, readable?: bool, writable?: bool, executable?: bool, fileperms?: int}|null    </span>
 </dt>
 <dd>Get File Info</dd>
 
@@ -722,7 +722,7 @@ Any sub-folders contained within the specified path are read as well.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">259</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 
     </aside>
 
@@ -731,7 +731,7 @@ Any sub-folders contained within the specified path are read as well.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                    <span class="phpdocumentor-signature__name">get_dir_file_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sourceDir</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$topLevelOnly</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursion</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">get_dir_file_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sourceDir</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$topLevelOnly</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursion</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array{name: string, server_path: string, size: int, date: int, relative_path: string}&gt;</span></code>
 
         <section class="phpdocumentor-description"><p>Reads the specified directory and builds an array containing the filenames,
 filesize, dates, and permissions</p>
@@ -773,7 +773,7 @@ filesize, dates, and permissions</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, array{name: string, server_path: string, size: int, date: int, relative_path: string}&gt;</span>
             </section>
 
 </article>
@@ -786,7 +786,7 @@ filesize, dates, and permissions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">306</span>
+    <span class="phpdocumentor-element-found-in__line">323</span>
 
     </aside>
 
@@ -795,7 +795,7 @@ filesize, dates, and permissions</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility"></span>
-                    <span class="phpdocumentor-signature__name">get_file_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnedValues</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[&#039;name&#039;, &#039;server_path&#039;, &#039;size&#039;, &#039;date&#039;]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+                    <span class="phpdocumentor-signature__name">get_file_info</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$returnedValues</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[&#039;name&#039;, &#039;server_path&#039;, &#039;size&#039;, &#039;date&#039;]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array{name?: string, server_path?: string, size?: int, date?: int, readable?: bool, writable?: bool, executable?: bool, fileperms?: int}|null</span></code>
 
         <section class="phpdocumentor-description"><p>Given a file and path, returns the name, path, size, date modified
 Second parameter allows you to explicitly declare what information you want returned
@@ -816,7 +816,7 @@ Returns false if the file cannot be found.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$returnedValues</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;int, string&gt;|string</span>
                  = <span class="phpdocumentor-signature__argument__default-value">[&#039;name&#039;, &#039;server_path&#039;, &#039;size&#039;, &#039;date&#039;]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Array or comma separated string of information returned</p>
@@ -829,7 +829,7 @@ Returns false if the file cannot be found.</p>
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+        <span class="phpdocumentor-signature__response_type">array{name?: string, server_path?: string, size?: int, date?: int, readable?: bool, writable?: bool, executable?: bool, fileperms?: int}|null</span>
             </section>
 
 </article>
@@ -842,7 +842,7 @@ Returns false if the file cannot be found.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">384</span>
 
     </aside>
 
@@ -887,7 +887,7 @@ standard symbolic notation representing that value</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">415</span>
+    <span class="phpdocumentor-element-found-in__line">432</span>
 
     </aside>
 
@@ -932,7 +932,7 @@ a three character string representing the file's octal permissions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">427</span>
+    <span class="phpdocumentor-element-found-in__line">444</span>
 
     </aside>
 
@@ -983,7 +983,7 @@ a three character string representing the file's octal permissions</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Helpers/filesystem_helper.php"><a href="files/system-helpers-filesystem-helper.html"><abbr title="system/Helpers/filesystem_helper.php">filesystem_helper.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">439</span>
+    <span class="phpdocumentor-element-found-in__line">456</span>
 
     </aside>
 
