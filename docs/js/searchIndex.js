@@ -16001,10 +16001,15 @@ Search.appendIndex(
             "summary": "Does\u0020the\u0020actual\u0020work\u0020of\u0020initializing\u0020cURL,\u0020setting\u0020the\u0020options,\nand\u0020grabbing\u0020the\u0020output.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_sendRequest"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AhandleRedirectHeaders\u0028\u0029",
-            "name": "handleRedirectHeaders",
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AremoveIntermediateResponses\u0028\u0029",
+            "name": "removeIntermediateResponses",
             "summary": "",
-            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_handleRedirectHeaders"
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_removeIntermediateResponses"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AshouldRemoveCurrentResponse\u0028\u0029",
+            "name": "shouldRemoveCurrentResponse",
+            "summary": "Check\u0020if\u0020the\u0020current\u0020response\u0020\u0028at\u0020the\u0020beginning\u0020of\u0020output\u0029\u0020should\u0020be\u0020removed.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_shouldRemoveCurrentResponse"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024response",
             "name": "response",
