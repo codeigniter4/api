@@ -2238,7 +2238,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\GeneratorTrait\u003A\u003AnormalizeInputClassName\u0028\u0029",
             "name": "normalizeInputClassName",
-            "summary": "Normalize\u0020input\u0020classname.",
+            "summary": "",
             "url": "classes/CodeIgniter-CLI-GeneratorTrait.html#method_normalizeInputClassName"
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\GeneratorTrait\u003A\u003ArenderTemplate\u0028\u0029",
