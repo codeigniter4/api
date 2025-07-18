@@ -16098,7 +16098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003AgetContentDisposition\u0028\u0029",
             "name": "getContentDisposition",
-            "summary": "get\u0020Content\u002DDisposition\u0020Header\u0020string.",
+            "summary": "Get\u0020Content\u002DDisposition\u0020Header\u0020string.",
             "url": "classes/CodeIgniter-HTTP-DownloadResponse.html#method_getContentDisposition"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse\u003A\u003AsetStatusCode\u0028\u0029",
