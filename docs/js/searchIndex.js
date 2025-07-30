@@ -12836,6 +12836,11 @@ Search.appendIndex(
             "summary": "Determines\u0020the\u0020values\u0020that\u0020should\u0020be\u0020stored\u0020in\u0020\u0024archive.",
             "url": "classes/CodeIgniter-Email-Email.html#method_setArchiveValues"
         },                {
+            "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003AisSMTPConnected\u0028\u0029",
+            "name": "isSMTPConnected",
+            "summary": "Checks\u0020if\u0020there\u0020is\u0020an\u0020active\u0020SMTP\u0020connection.",
+            "url": "classes/CodeIgniter-Email-Email.html#method_isSMTPConnected"
+        },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024archive",
             "name": "archive",
             "summary": "Properties\u0020from\u0020the\u0020last\u0020successful\u0020send.",
