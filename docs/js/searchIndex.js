@@ -19823,7 +19823,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language\u003A\u003ArequireFile\u0028\u0029",
             "name": "requireFile",
-            "summary": "A\u0020simple\u0020method\u0020for\u0020including\u0020files\u0020that\u0020can\u0020be\noverridden\u0020during\u0020testing.",
+            "summary": "A\u0020simple\u0020method\u0020for\u0020including\u0020files\u0020that\u0020can\u0020be\u0020overridden\u0020during\u0020testing.",
             "url": "classes/CodeIgniter-Language-Language.html#method_requireFile"
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language\u003A\u003A\u0024language",
@@ -19833,12 +19833,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language\u003A\u003A\u0024locale",
             "name": "locale",
-            "summary": "The\u0020current\u0020language\/locale\u0020to\u0020work\u0020with.",
+            "summary": "The\u0020current\u0020locale\u0020to\u0020work\u0020with.",
             "url": "classes/CodeIgniter-Language-Language.html#property_locale"
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language\u003A\u003A\u0024intlSupport",
             "name": "intlSupport",
-            "summary": "Boolean\u0020value\u0020whether\u0020the\u0020intl\nlibraries\u0020exist\u0020on\u0020the\u0020system.",
+            "summary": "Boolean\u0020value\u0020whether\u0020the\u0020\u0060intl\u0060\u0020extension\u0020exists\u0020on\u0020the\u0020system.",
             "url": "classes/CodeIgniter-Language-Language.html#property_intlSupport"
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language\u003A\u003A\u0024loadedFiles",
