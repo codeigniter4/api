@@ -5593,7 +5593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Controller",
             "name": "Controller",
-            "summary": "Class\u0020Controller",
+            "summary": "",
             "url": "classes/CodeIgniter-Controller.html"
         },                {
             "fqsen": "\\CodeIgniter\\Controller\u003A\u003AinitController\u0028\u0029",
@@ -20973,7 +20973,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\RESTful\\BaseResource",
             "name": "BaseResource",
-            "summary": "Class\u0020Controller",
+            "summary": "",
             "url": "classes/CodeIgniter-RESTful-BaseResource.html"
         },                {
             "fqsen": "\\CodeIgniter\\RESTful\\BaseResource\u003A\u003AinitController\u0028\u0029",
