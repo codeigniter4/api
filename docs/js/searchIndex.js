@@ -22158,7 +22158,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\CheckPhpIni",
             "name": "CheckPhpIni",
-            "summary": "Checks\u0020php.ini\u0020settings",
+            "summary": "Checks\u0020php.ini\u0020settings\u0020in\u0020production\u0020environment.",
             "url": "classes/CodeIgniter-Security-CheckPhpIni.html"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\CheckPhpIni\u003A\u003Arun\u0028\u0029",
@@ -22175,6 +22175,11 @@ Search.appendIndex(
             "name": "outputForWeb",
             "summary": "",
             "url": "classes/CodeIgniter-Security-CheckPhpIni.html#method_outputForWeb"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\CheckPhpIni\u003A\u003AcheckIni\u0028\u0029",
+            "name": "checkIni",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-CheckPhpIni.html#method_checkIni"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Exceptions\\SecurityException",
             "name": "SecurityException",
