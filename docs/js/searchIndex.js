@@ -9156,6 +9156,11 @@ Search.appendIndex(
             "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__fieldData"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AnormalizeDefault\u0028\u0029",
+            "name": "normalizeDefault",
+            "summary": "Removes\u0020trailing\u0020whitespace\u0020from\u0020default\u0020values\nreturned\u0020in\u0020database\u0020column\u0020metadata\u0020queries.",
+            "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method_normalizeDefault"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
             "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
@@ -11025,6 +11030,11 @@ Search.appendIndex(
             "name": "_fieldData",
             "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method__fieldData"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003AnormalizeDefault\u0028\u0029",
+            "name": "normalizeDefault",
+            "summary": "Normalizes\u0020SQL\u0020Server\u0020COLUMN_DEFAULT\u0020values.",
+            "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method_normalizeDefault"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_transBegin\u0028\u0029",
             "name": "_transBegin",
