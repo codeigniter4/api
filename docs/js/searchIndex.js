@@ -696,6 +696,11 @@ Search.appendIndex(
             "summary": "A\u0020simple\u0020event\u0020trigger\u0020for\u0020Model\u0020Events\u0020that\u0020allows\u0020additional\ndata\u0020manipulation\u0020within\u0020the\u0020model.\u0020Specifically\u0020intended\u0020for\nusage\u0020by\u0020child\u0020models\u0020this\u0020can\u0020be\u0020used\u0020to\u0020format\u0020data,\nsave\/load\u0020related\u0020classes,\u0020etc.",
             "url": "classes/CodeIgniter-BaseModel.html#method_trigger"
         },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtransformDataRowToArray\u0028\u0029",
+            "name": "transformDataRowToArray",
+            "summary": "If\u0020the\u0020model\u0020is\u0020using\u0020casts,\u0020this\u0020will\u0020convert\u0020the\u0020data\nin\u0020\u0024row\u0020according\u0020to\u0020the\u0020rules\u0020defined\u0020in\u0020\u0060\u0024casts\u0060.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_transformDataRowToArray"
+        },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AasArray\u0028\u0029",
             "name": "asArray",
             "summary": "Sets\u0020the\u0020return\u0020type\u0020of\u0020the\u0020results\u0020to\u0020be\u0020as\u0020an\u0020associative\u0020array.",
