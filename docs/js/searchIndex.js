@@ -23378,27 +23378,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AresetFactories\u0028\u0029",
             "name": "resetFactories",
-            "summary": "Resets\u0020shared\u0020instanced\u0020for\u0020all\u0020Factories\u0020components",
+            "summary": "Resets\u0020shared\u0020instanced\u0020for\u0020all\u0020Factories\u0020components.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_resetFactories"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AresetServices\u0028\u0029",
             "name": "resetServices",
-            "summary": "Resets\u0020shared\u0020instanced\u0020for\u0020all\u0020Services",
+            "summary": "Resets\u0020shared\u0020instanced\u0020for\u0020all\u0020Services.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_resetServices"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AmockCache\u0028\u0029",
             "name": "mockCache",
-            "summary": "Injects\u0020the\u0020mock\u0020Cache\u0020driver\u0020to\u0020prevent\u0020filesystem\u0020collisions",
+            "summary": "Injects\u0020the\u0020mock\u0020Cache\u0020driver\u0020to\u0020prevent\u0020filesystem\u0020collisions.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_mockCache"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AmockEmail\u0028\u0029",
             "name": "mockEmail",
-            "summary": "Injects\u0020the\u0020mock\u0020email\u0020driver\u0020so\u0020no\u0020emails\u0020really\u0020send",
+            "summary": "Injects\u0020the\u0020mock\u0020email\u0020driver\u0020so\u0020no\u0020emails\u0020really\u0020send.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_mockEmail"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AmockSession\u0028\u0029",
             "name": "mockSession",
-            "summary": "Injects\u0020the\u0020mock\u0020session\u0020driver\u0020into\u0020Services",
+            "summary": "Injects\u0020the\u0020mock\u0020session\u0020driver\u0020into\u0020Services.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_mockSession"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AassertLogged\u0028\u0029",
@@ -23518,12 +23518,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024seeder",
             "name": "seeder",
-            "summary": "Seeder\u0020instance",
+            "summary": "Seeder\u0020instance.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_seeder"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024insertCache",
             "name": "insertCache",
-            "summary": "Stores\u0020information\u0020needed\u0020to\u0020remove\u0020any\nrows\u0020inserted\u0020via\u0020\u0024this\u002D\u003EhasInDatabase\u0028\u0029\u003B",
+            "summary": "Stores\u0020information\u0020needed\u0020to\u0020remove\u0020any\nrows\u0020inserted\u0020via\u0020\u0024this\u002D\u003EhasInDatabase\u0028\u0029.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_insertCache"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024routes",
@@ -23538,17 +23538,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024clean",
             "name": "clean",
-            "summary": "Enabled\u0020auto\u0020clean\u0020op\u0020buffer\u0020after\u0020request\u0020call",
+            "summary": "Enabled\u0020auto\u0020clean\u0020op\u0020buffer\u0020after\u0020request\u0020call.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_clean"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024headers",
             "name": "headers",
-            "summary": "Custom\u0020request\u0027s\u0020headers",
+            "summary": "Custom\u0020request\u0027s\u0020headers.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_headers"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024bodyFormat",
             "name": "bodyFormat",
-            "summary": "Allows\u0020for\u0020formatting\u0020the\u0020request\u0020body\u0020to\u0020what\nthe\u0020controller\u0020is\u0020going\u0020to\u0020expect",
+            "summary": "Allows\u0020for\u0020formatting\u0020the\u0020request\u0020body\u0020to\u0020what\nthe\u0020controller\u0020is\u0020going\u0020to\u0020expect.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#property_bodyFormat"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003A\u0024requestBody",
