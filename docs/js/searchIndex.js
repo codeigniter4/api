@@ -11756,6 +11756,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_isDisplayErrorsEnabled"
         },                {
+            "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003AsanitizeData\u0028\u0029",
+            "name": "sanitizeData",
+            "summary": "Sanitizes\u0020data\u0020to\u0020remove\u0020non\u002DJSON\u002Dserializable\u0020values\u0020like\u0020resources\u0020and\u0020closures.",
+            "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_sanitizeData"
+        },                {
             "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003A\u0024request",
             "name": "request",
             "summary": "ResponseTrait\u0020needs\u0020this.",
