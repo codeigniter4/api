@@ -25381,6 +25381,11 @@ Search.appendIndex(
             "summary": "Returns\u0020the\u0020number\u0020of\u0020seconds\u0020until\u0020the\u0020next\u0020available\u0020token\u0020will\nbe\u0020released\u0020for\u0020usage.",
             "url": "classes/CodeIgniter-Throttle-Throttler.html#method_getTokenTime"
         },                {
+            "fqsen": "\\CodeIgniter\\Throttle\\Throttler\u003A\u003Acheck\u0028\u0029",
+            "name": "check",
+            "summary": "Restricts\u0020the\u0020number\u0020of\u0020requests\u0020made\u0020by\u0020a\u0020single\u0020IP\u0020address\u0020within\na\u0020set\u0020number\u0020of\u0020seconds.",
+            "url": "classes/CodeIgniter-Throttle-Throttler.html#method_check"
+        },                {
             "fqsen": "\\CodeIgniter\\Throttle\\Throttler\u003A\u003Aremove\u0028\u0029",
             "name": "remove",
             "summary": "",
