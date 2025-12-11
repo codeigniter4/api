@@ -11628,7 +11628,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\DataCaster\u003A\u003A\u0024castHandlers",
             "name": "castHandlers",
-            "summary": "Convert\u0020handlers",
+            "summary": "Convert\u0020handlers.",
             "url": "classes/CodeIgniter-DataCaster-DataCaster.html#property_castHandlers"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\DataCaster\u003A\u003A\u0024helper",
@@ -13308,47 +13308,47 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ArrayCast",
             "name": "ArrayCast",
-            "summary": "Class\u0020ArrayCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-ArrayCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ArrayCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-ArrayCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ArrayCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
             "url": "classes/CodeIgniter-Entity-Cast-ArrayCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\BaseCast",
             "name": "BaseCast",
-            "summary": "Class\u0020BaseCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-BaseCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\BaseCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-BaseCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\BaseCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
             "url": "classes/CodeIgniter-Entity-Cast-BaseCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\BooleanCast",
             "name": "BooleanCast",
-            "summary": "Class\u0020BooleanCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-BooleanCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\BooleanCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-BooleanCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\CastInterface",
             "name": "CastInterface",
-            "summary": "Interface\u0020CastInterface",
+            "summary": "The\u0020methods\u0020work\u0020at\u0020\u00281\u0029\u00284\u0029\u0020only.",
             "url": "classes/CodeIgniter-Entity-Cast-CastInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\CastInterface\u003A\u003Aget\u0028\u0029",
@@ -13363,117 +13363,117 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\CSVCast",
             "name": "CSVCast",
-            "summary": "Class\u0020CSVCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-CSVCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\CSVCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-CSVCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\CSVCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
             "url": "classes/CodeIgniter-Entity-Cast-CSVCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\DatetimeCast",
             "name": "DatetimeCast",
-            "summary": "Class\u0020DatetimeCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-DatetimeCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\DatetimeCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-DatetimeCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\FloatCast",
             "name": "FloatCast",
-            "summary": "Class\u0020FloatCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-FloatCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\FloatCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-FloatCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\IntBoolCast",
             "name": "IntBoolCast",
-            "summary": "Int\u0020Bool\u0020Cast",
+            "summary": "DB\u0020column\u003A\u0020int\u0020\u00280\/1\u0029\u0020\u003C\u002D\u002D\u003E\u0020Class\u0020property\u003A\u0020bool",
             "url": "classes/CodeIgniter-Entity-Cast-IntBoolCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\IntBoolCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-IntBoolCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\IntBoolCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
             "url": "classes/CodeIgniter-Entity-Cast-IntBoolCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\IntegerCast",
             "name": "IntegerCast",
-            "summary": "Class\u0020IntegerCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-IntegerCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\IntegerCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-IntegerCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\JsonCast",
             "name": "JsonCast",
-            "summary": "Class\u0020JsonCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-JsonCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\JsonCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-JsonCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\JsonCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
             "url": "classes/CodeIgniter-Entity-Cast-JsonCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ObjectCast",
             "name": "ObjectCast",
-            "summary": "Class\u0020ObjectCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-ObjectCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ObjectCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-ObjectCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\StringCast",
             "name": "StringCast",
-            "summary": "Class\u0020StringCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-StringCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\StringCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-StringCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\TimestampCast",
             "name": "TimestampCast",
-            "summary": "Class\u0020TimestampCast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-TimestampCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\TimestampCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-TimestampCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\URICast",
             "name": "URICast",
-            "summary": "Class\u0020URICast",
+            "summary": "",
             "url": "classes/CodeIgniter-Entity-Cast-URICast.html"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\URICast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-URICast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity",
