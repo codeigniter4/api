@@ -264,6 +264,9 @@
         </div>
     
     
+            <span class="phpdocumentor-element__extends">
+            uses
+                            <a href="classes/CodeIgniter-CLI-SignalTrait.html"><abbr title="\CodeIgniter\CLI\SignalTrait">SignalTrait</abbr></a>                    </span>
     </h2>
 
 <div class="phpdocumentor-label-line">
@@ -274,7 +277,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -360,6 +363,48 @@ when listing commands.</dd>
 </dt>
 <dd>the Command&#039;s usage</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPcntlAvailable">$isPcntlAvailable</a>
+    <span>
+                        &nbsp;: bool|null            </span>
+</dt>
+<dd>Cached result of PCNTL extension availability.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPosixAvailable">$isPosixAvailable</a>
+    <span>
+                        &nbsp;: bool|null            </span>
+</dt>
+<dd>Cached result of POSIX extension availability.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_registeredSignals">$registeredSignals</a>
+    <span>
+                        &nbsp;: array&lt;int, int&gt;            </span>
+</dt>
+<dd>Array of registered signals.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_running">$running</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Whether the process should continue running (false = termination requested).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalMethodMap">$signalMethodMap</a>
+    <span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
+</dt>
+<dd>Signal-to-method mapping.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalsBlocked">$signalsBlocked</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Whether signals are currently blocked.</dd>
+
     </dl>
 
 <h4 id="toc-methods">
@@ -417,6 +462,13 @@ when listing commands.</dd>
 <dd>Show Help includes (Usage, Arguments, Description, Options).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_blockSignals">blockSignals()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Block ALL interruptible signals during critical sections.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-CLI-BaseCommand.html#method_call">call()</a>
     <span>
                                 &nbsp;: int|void    </span>
@@ -424,11 +476,137 @@ when listing commands.</dd>
 <dd>Can be used by a command to run other commands.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_getProcessState">getProcessState()</a>
+    <span>
+                                &nbsp;: array{pid: int, running: bool, pcntl_available: bool, registered_signals: int, registered_signals_names: array<int,string>, signals_blocked: bool, explicit_mappings: int, memory_usage_mb: float, memory_peak_mb: float, session_id?: false|int, process_group?: false|int, has_controlling_terminal?: bool}    </span>
+</dt>
+<dd>Get comprehensive process state information.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignalName">getSignalName()</a>
+    <span>
+                                &nbsp;: string    </span>
+</dt>
+<dd>Get human-readable signal name.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignals">getSignals()</a>
+    <span>
+                                &nbsp;: array&lt;int, int&gt;    </span>
+</dt>
+<dd>Get list of registered signals.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_handleSignal">handleSignal()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Handle incoming signals.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_hasSignals">hasSignals()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if signals are registered.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPcntlAvailable">isPcntlAvailable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if PCNTL extension is available (cached).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPosixAvailable">isPosixAvailable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if POSIX extension is available (cached).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_isRunning">isRunning()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if the process is currently running (not terminated).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_mapSignal">mapSignal()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Add or update signal-to-method mapping at runtime.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_registerSignals">registerSignals()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Register signal handlers.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_requestTermination">requestTermination()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Request immediate termination.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_resetState">resetState()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Reset all states (for testing or restart scenarios).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_shouldTerminate">shouldTerminate()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if command should terminate.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-CLI-BaseCommand.html#method_showError">showError()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>A simple method to display an error with line/file, in child commands.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_signalsBlocked">signalsBlocked()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if signals are currently blocked.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_unblockSignals">unblockSignals()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Unblock previously blocked signals.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_unregisterSignals">unregisterSignals()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Unregister all signals (cleanup).</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_withSignalsBlocked">withSignalsBlocked()</a>
+    <span>
+                                &nbsp;: <abbr title="\CodeIgniter\CLI\TReturn">TReturn</abbr>    </span>
+</dt>
+<dd>Execute a callable with ALL signals blocked to prevent ANY interruption during critical operations.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-CLI-SignalTrait.html#method_callCustomHandler">callCustomHandler()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Call custom signal handler if one is mapped for this signal.</dd>
 
     </dl>
 
@@ -571,7 +749,7 @@ when listing commands.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 
     </aside>
 
@@ -609,7 +787,7 @@ when listing commands.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -648,7 +826,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">38</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -686,7 +864,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 
     </aside>
 
@@ -724,7 +902,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -736,6 +914,234 @@ when listing commands.</p>
             <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$usage</span>
      = <span class="phpdocumentor-signature__default-value">&#039;migrate [options]&#039;</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_isPcntlAvailable">
+        $isPcntlAvailable
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPcntlAvailable" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">53</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Cached result of PCNTL extension availability.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool|null</span>
+    <span class="phpdocumentor-signature__name">$isPcntlAvailable</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_isPosixAvailable">
+        $isPosixAvailable
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPosixAvailable" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Cached result of POSIX extension availability.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">bool|null</span>
+    <span class="phpdocumentor-signature__name">$isPosixAvailable</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_registeredSignals">
+        $registeredSignals
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_registeredSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Array of registered signals.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, int&gt;</span>
+    <span class="phpdocumentor-signature__name">$registeredSignals</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_running">
+        $running
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_running" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">29</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether the process should continue running (false = termination requested).</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$running</span>
+     = <span class="phpdocumentor-signature__default-value">true</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_signalMethodMap">
+        $signalMethodMap
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalMethodMap" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">48</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Signal-to-method mapping.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$signalMethodMap</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_signalsBlocked">
+        $signalsBlocked
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalsBlocked" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">34</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Whether signals are currently blocked.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$signalsBlocked</span>
+     = <span class="phpdocumentor-signature__default-value">false</span></code>
 
     
     
@@ -993,7 +1399,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Database/Migrate.php"><a href="files/system-commands-database-migrate.html"><abbr title="system/Commands/Database/Migrate.php">Migrate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 
     </aside>
 
@@ -1141,6 +1547,43 @@ when listing commands.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_blockSignals">
+        blockSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_blockSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">255</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Block ALL interruptible signals during critical sections.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">blockSignals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Only SIGKILL (unblockable) can terminate the process.</p>
+</section>
+
+    
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_call">
         call()
         <a href="classes/CodeIgniter-CLI-BaseCommand.html#method_call" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1212,6 +1655,551 @@ when listing commands.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getProcessState">
+        getProcessState()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getProcessState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">375</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get comprehensive process state information.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getProcessState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array{pid: int, running: bool, pcntl_available: bool, registered_signals: int, registered_signals_names: array<int,string>, signals_blocked: bool, explicit_mappings: int, memory_usage_mb: float, memory_peak_mb: float, session_id?: false|int, process_group?: false|int, has_controlling_terminal?: bool}</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array{pid: int, running: bool, pcntl_available: bool, registered_signals: int, registered_signals_names: array<int,string>, signals_blocked: bool, explicit_mappings: int, memory_usage_mb: float, memory_peak_mb: float, session_id?: false|int, process_group?: false|int, has_controlling_terminal?: bool}</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSignalName">
+        getSignalName()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignalName" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">305</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get human-readable signal name.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getSignalName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signal</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signal</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSignals">
+        getSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">352</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get list of registered signals.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">getSignals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, int&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, int&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_handleSignal">
+        handleSignal()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_handleSignal" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Handle incoming signals.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">handleSignal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signal</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signal</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_hasSignals">
+        hasSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_hasSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">342</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if signals are registered.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">hasSignals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isPcntlAvailable">
+        isPcntlAvailable()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPcntlAvailable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">63</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if PCNTL extension is available (cached).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">isPcntlAvailable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isPosixAvailable">
+        isPosixAvailable()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPosixAvailable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if POSIX extension is available (cached).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">isPosixAvailable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isRunning">
+        isRunning()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isRunning" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">197</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if the process is currently running (not terminated).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">isRunning</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_mapSignal">
+        mapSignal()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_mapSignal" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">297</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Add or update signal-to-method mapping at runtime.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">mapSignal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signal</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signal</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$method</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_registerSignals">
+        registerSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_registerSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">97</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Register signal handlers.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">registerSignals</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;int, int&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signals</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$methodMap</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signals</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, int&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>List of signals to handle</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$methodMap</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Optional signal-to-method mapping</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_requestTermination">
+        requestTermination()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_requestTermination" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">205</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Request immediate termination.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">requestTermination</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resetState">
+        resetState()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_resetState" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">213</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reset all states (for testing or restart scenarios).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">resetState</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_shouldTerminate">
+        shouldTerminate()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_shouldTerminate" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">189</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if command should terminate.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">shouldTerminate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_showError">
         showError()
         <a href="classes/CodeIgniter-CLI-BaseCommand.html#method_showError" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1239,6 +2227,234 @@ when listing commands.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$e</span>
                 : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\Throwable">Throwable</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_signalsBlocked">
+        signalsBlocked()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_signalsBlocked" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">289</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if signals are currently blocked.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">signalsBlocked</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unblockSignals">
+        unblockSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_unblockSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">272</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Unblock previously blocked signals.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">unblockSignals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_unregisterSignals">
+        unregisterSignals()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_unregisterSignals" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">325</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Unregister all signals (cleanup).</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">unregisterSignals</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_withSignalsBlocked">
+        withSignalsBlocked()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_withSignalsBlocked" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">240</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Execute a callable with ALL signals blocked to prevent ANY interruption during critical operations.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">withSignalsBlocked</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">callable(): <abbr title="\CodeIgniter\CLI\TReturn">TReturn</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$operation</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CodeIgniter\CLI\TReturn">TReturn</abbr></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>This blocks ALL interruptible signals including:</p>
+<ul>
+<li>Termination signals (SIGTERM, SIGINT, etc.)</li>
+<li>Pause/resume signals (SIGTSTP, SIGCONT)</li>
+<li>Custom signals (SIGUSR1, SIGUSR2)</li>
+</ul>
+<p>Only SIGKILL (unblockable) can still terminate the process.
+Use this for database transactions, file operations, or any critical atomic operations.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$operation</span>
+                : <span class="phpdocumentor-argument-list__argument__type">callable(): <abbr title="\CodeIgniter\CLI\TReturn">TReturn</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_withSignalsBlocked#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">template</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\CodeIgniter\CLI\TReturn">TReturn</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_callCustomHandler">
+        callCustomHandler()
+        <a href="classes/CodeIgniter-CLI-SignalTrait.html#method_callCustomHandler" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/SignalTrait.php"><a href="files/system-cli-signaltrait.html"><abbr title="system/CLI/SignalTrait.php">SignalTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">169</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Call custom signal handler if one is mapped for this signal.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">callCustomHandler</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$signal</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Falls back to generic onInterruption() method if no explicit mapping exists.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$signal</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1374,6 +2590,12 @@ when listing commands.</p>
                                                     <li class=""><a href="classes/CodeIgniter-Commands-Database-Migrate.html#property_name">$name</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Commands-Database-Migrate.html#property_options">$options</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Commands-Database-Migrate.html#property_usage">$usage</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPcntlAvailable">$isPcntlAvailable</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_isPosixAvailable">$isPosixAvailable</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_registeredSignals">$registeredSignals</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_running">$running</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalMethodMap">$signalMethodMap</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#property_signalsBlocked">$signalsBlocked</a></li>
                                             </ul>
                 </li>
             
@@ -1387,8 +2609,27 @@ when listing commands.</p>
                                             <li class=""><a href="classes/CodeIgniter-Commands-Database-Migrate.html#method_run">run()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-BaseCommand.html#method_setPad">setPad()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-BaseCommand.html#method_showHelp">showHelp()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_blockSignals">blockSignals()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-BaseCommand.html#method_call">call()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getProcessState">getProcessState()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignalName">getSignalName()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_getSignals">getSignals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_handleSignal">handleSignal()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_hasSignals">hasSignals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPcntlAvailable">isPcntlAvailable()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isPosixAvailable">isPosixAvailable()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_isRunning">isRunning()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_mapSignal">mapSignal()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_registerSignals">registerSignals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_requestTermination">requestTermination()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_resetState">resetState()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_shouldTerminate">shouldTerminate()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-BaseCommand.html#method_showError">showError()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_signalsBlocked">signalsBlocked()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_unblockSignals">unblockSignals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_unregisterSignals">unregisterSignals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_withSignalsBlocked">withSignalsBlocked()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-SignalTrait.html#method_callCustomHandler">callCustomHandler()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -345,7 +345,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#property_config">$config</a>
     <span>
-                        &nbsp;: array{host: string, password: string|null, port: int, timeout: int, database: int}            </span>
+                        &nbsp;: array{host: string, password: string|null, port: int, timeout: int, persistent: bool, database: int}            </span>
 </dt>
 <dd>Default config</dd>
 
@@ -379,13 +379,6 @@
 <dd>Note: Use `CacheFactory::getHandler()` to instantiate.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___destruct">__destruct()</a>
-    <span>
-                                &nbsp;: mixed    </span>
-</dt>
-<dd>Closes the connection to Redis if present.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_clean">clean()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -395,7 +388,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_decrement">decrement()</a>
     <span>
-                                &nbsp;: bool|int    </span>
+                                &nbsp;: int    </span>
 </dt>
 <dd>Performs atomic decrementation of a raw stored value.</dd>
 
@@ -430,14 +423,14 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_getMetaData">getMetaData()</a>
     <span>
-                                &nbsp;: array&lt;string, mixed&gt;|false|null    </span>
+                                &nbsp;: array&lt;string, mixed&gt;|null    </span>
 </dt>
 <dd>Returns detailed information about the specific item in the cache.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_increment">increment()</a>
     <span>
-                                &nbsp;: bool|int    </span>
+                                &nbsp;: int    </span>
 </dt>
 <dd>Performs atomic incrementation of a raw stored value.</dd>
 
@@ -456,11 +449,26 @@
 <dd>Determines if the driver is supported on this system.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_ping">ping()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Check if connection is alive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_reconnect">reconnect()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Reconnect to the cache server.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_remember">remember()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Get an item from the cache, or execute the given Closure and store the result.</dd>
+<dd>Attempts to get an item from the cache, or executes the callback
+and stores the result on cache miss.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_save">save()</a>
@@ -497,7 +505,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/BaseHandler.php"><a href="files/system-cache-handlers-basehandler.html"><abbr title="system/Cache/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 
     </aside>
 
@@ -528,7 +536,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/BaseHandler.php"><a href="files/system-cache-handlers-basehandler.html"><abbr title="system/Cache/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 
     </aside>
 
@@ -584,7 +592,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -593,9 +601,9 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array{host: string, password: string|null, port: int, timeout: int, database: int}</span>
+            <span class="phpdocumentor-signature__type">array{host: string, password: string|null, port: int, timeout: int, persistent: bool, database: int}</span>
     <span class="phpdocumentor-signature__name">$config</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;host&#039; =&gt; &#039;127.0.0.1&#039;, &#039;password&#039; =&gt; null, &#039;port&#039; =&gt; 6379, &#039;timeout&#039; =&gt; 0, &#039;database&#039; =&gt; 0]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;host&#039; =&gt; &#039;127.0.0.1&#039;, &#039;password&#039; =&gt; null, &#039;port&#039; =&gt; 6379, &#039;timeout&#039; =&gt; 0, &#039;persistent&#039; =&gt; false, &#039;database&#039; =&gt; 0]</span></code>
 
     
     
@@ -622,7 +630,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/BaseHandler.php"><a href="files/system-cache-handlers-basehandler.html"><abbr title="system/Cache/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 
     </aside>
 
@@ -662,7 +670,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -705,7 +713,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -742,41 +750,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___destruct">
-        __destruct()
-        <a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___destruct" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">68</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Closes the connection to Redis if present.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__destruct</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_clean">
         clean()
         <a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_clean" class="headerlink"><i class="fas fa-link"></i></a>
@@ -785,7 +758,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 
     </aside>
 
@@ -828,7 +801,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 
     </aside>
 
@@ -836,7 +809,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">decrement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|int</span></code>
+                    <span class="phpdocumentor-signature__name">decrement</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -870,7 +843,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool|int</span>
+        <span class="phpdocumentor-signature__response_type">int</span>
             </section>
 
 </article>
@@ -888,7 +861,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">151</span>
 
     </aside>
 
@@ -943,7 +916,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 
     </aside>
 
@@ -977,6 +950,10 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">int</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Number of deleted items</p>
+</section>
+
             </section>
 
 </article>
@@ -994,7 +971,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
@@ -1041,7 +1018,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 
     </aside>
 
@@ -1054,7 +1031,10 @@
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>The information returned and the structure of the data
+varies depending on the handler.</p>
+</section>
+
     
     
 
@@ -1080,7 +1060,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
@@ -1088,7 +1068,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getMetaData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|false|null</span></code>
+                    <span class="phpdocumentor-signature__name">getMetaData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1113,11 +1093,10 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|false|null</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|null</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>Returns null if the item does not exist, otherwise array&lt;string, mixed&gt;
-with at least the 'expire' key for absolute epoch expiry (or null).
-Some handlers may return false when an item does not exist, which is deprecated.</p>
+with at least the 'expire' key for absolute epoch expiry (or null).</p>
 </section>
 
             </section>
@@ -1137,7 +1116,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">177</span>
 
     </aside>
 
@@ -1145,7 +1124,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">increment</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool|int</span></code>
+                    <span class="phpdocumentor-signature__name">increment</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">1</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1179,7 +1158,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool|int</span>
+        <span class="phpdocumentor-signature__response_type">int</span>
             </section>
 
 </article>
@@ -1197,7 +1176,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
@@ -1232,7 +1211,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 
     </aside>
 
@@ -1263,6 +1242,90 @@ Some handlers may return false when an item does not exist, which is deprecated.
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_ping">
+        ping()
+        <a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_ping" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Check if connection is alive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">ping</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Default implementation for handlers that don't require connection management.
+Handlers with persistent connections (Redis, Predis, Memcached) should override this.</p>
+</section>
+
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_reconnect">
+        reconnect()
+        <a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_reconnect" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">238</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Reconnect to the cache server.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">reconnect</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Default implementation for handlers that don't require connection management.
+Handlers with persistent connections (Redis, Predis, Memcached) should override this.</p>
+</section>
+
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_remember">
         remember()
         <a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_remember" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1271,15 +1334,16 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/BaseHandler.php"><a href="files/system-cache-handlers-basehandler.html"><abbr title="system/Cache/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get an item from the cache, or execute the given Closure and store the result.</p>
+        <p class="phpdocumentor-summary">Attempts to get an item from the cache, or executes the callback
+and stores the result on cache miss.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">remember</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">callable(): mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">remember</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><abbr title="\Closure">Closure</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1301,16 +1365,16 @@ Some handlers may return false when an item does not exist, which is deprecated.
                 : <span class="phpdocumentor-argument-list__argument__type">int</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Time to live</p>
+                    <section class="phpdocumentor-description"><p>Time To Live, in seconds</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$callback</span>
-                : <span class="phpdocumentor-argument-list__argument__type">callable(): mixed</span>
+                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\Closure">Closure</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Callback return value</p>
+                    <section class="phpdocumentor-description"><p>Callback executed on cache miss</p>
 </section>
 
             </dd>
@@ -1336,7 +1400,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/RedisHandler.php"><a href="files/system-cache-handlers-redishandler.html"><abbr title="system/Cache/Handlers/RedisHandler.php">RedisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">134</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -1409,7 +1473,7 @@ Some handlers may return false when an item does not exist, which is deprecated.
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/BaseHandler.php"><a href="files/system-cache-handlers-basehandler.html"><abbr title="system/Cache/Handlers/BaseHandler.php">BaseHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">59</span>
 
     </aside>
 
@@ -1608,7 +1672,6 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___destruct">__destruct()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_clean">clean()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_decrement">decrement()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_delete">delete()</a></li>
@@ -1619,6 +1682,8 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_increment">increment()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_initialize">initialize()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_isSupported">isSupported()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_ping">ping()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_reconnect">reconnect()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_remember">remember()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_save">save()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_validateKey">validateKey()</a></li>

@@ -270,7 +270,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
@@ -342,6 +342,19 @@ to help defeat XSS attacks.</p>
 
 
 
+<h4 id="toc-constants">
+    Constants
+    <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#toc-constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#constant_DIRECTIVES_ALLOWING_SOURCE_LISTS">DIRECTIVES_ALLOWING_SOURCE_LISTS</a>
+    <span>
+        &nbsp;= [&#039;base-uri&#039; =&gt; &#039;baseURI&#039;, &#039;child-src&#039; =&gt; &#039;childSrc&#039;, &#039;connect-src&#039; =&gt; &#039;connectSrc&#039;, &#039;default-src&#039; =&gt; &#039;defaultSrc&#039;, &#039;font-src&#039; =&gt; &#039;fontSrc&#039;, &#039;form-action&#039; =&gt; &#039;formAction&#039;, &#039;frame-ancestors&#039; =&gt; &#039;frameAncestors&#039;, &#039;frame-src&#039; =&gt; &#039;frameSrc&#039;, &#039;img-src&#039; =&gt; &#039;imageSrc&#039;, &#039;media-src&#039; =&gt; &#039;mediaSrc&#039;, &#039;object-src&#039; =&gt; &#039;objectSrc&#039;, &#039;plugin-types&#039; =&gt; &#039;pluginTypes&#039;, &#039;script-src&#039; =&gt; &#039;scriptSrc&#039;, &#039;style-src&#039; =&gt; &#039;styleSrc&#039;, &#039;sandbox&#039; =&gt; &#039;sandbox&#039;, &#039;manifest-src&#039; =&gt; &#039;manifestSrc&#039;, &#039;script-src-elem&#039; =&gt; &#039;scriptSrcElem&#039;, &#039;script-src-attr&#039; =&gt; &#039;scriptSrcAttr&#039;, &#039;style-src-elem&#039; =&gt; &#039;styleSrcElem&#039;, &#039;style-src-attr&#039; =&gt; &#039;styleSrcAttr&#039;, &#039;worker-src&#039; =&gt; &#039;workerSrc&#039;]                            </span>
+</dt>
+
+    </dl>
 
 
 <h4 id="toc-properties">
@@ -355,28 +368,29 @@ to help defeat XSS attacks.</p>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Replace nonce tag automatically</dd>
+<dd>Replace nonce tags automatically?</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_baseURI">$baseURI</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string|null            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `base-uri` directive restricts the URLs that can be used to specify the document base URL.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_childSrc">$childSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `child-src` directive governs the creation of nested browsing contexts as well
+as Worker execution contexts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_connectSrc">$connectSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `connect-src` directive restricts which URLs the protected resource can load using script interfaces.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_CSPEnabled">$CSPEnabled</a>
@@ -388,180 +402,235 @@ to help defeat XSS attacks.</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_defaultSrc">$defaultSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string|null            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `default-src` directive sets a default source list for a number of directives.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_directives">$directives</a>
     <span>
                         &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>CSP directives</dd>
+<dd>Map of CSP directives to this class&#039;s properties.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_fontSrc">$fontSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `font-src` directive restricts from where the protected resource can load fonts.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_formAction">$formAction</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `form-action` directive restricts which URLs can be used as the action of HTML form elements.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_frameAncestors">$frameAncestors</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `frame-ancestors` directive indicates whether the user agent should allow embedding
+the resource using a `frame`, `iframe`, `object`, `embed` or `applet` element,
+or equivalent functionality in non-HTML resources.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_frameSrc">$frameSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `frame-src` directive restricts the URLs which may be loaded into child navigables.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_imageSrc">$imageSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `img-src` directive restricts from where the protected resource can load images.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_manifestSrc">$manifestSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `manifest-src` directive restricts the URLs from which application manifests may be loaded.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_mediaSrc">$mediaSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `media-src` directive restricts from where the protected resource can load video,
+audio, and associated text tracks.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces">$nonces</a>
+    <a class="-deprecated" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces">$nonces</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>Set of nonces generated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_objectSrc">$objectSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `object-src` directive restricts from where the protected resource can load plugins.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_pluginTypes">$pluginTypes</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `plugin-types` directive restricts the set of plugins that can be invoked by the
+protected resource by limiting the types of resources that can be embedded.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnly">$reportOnly</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>Set to `true` to make all directives report-only instead of enforced.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnlyHeaders">$reportOnlyHeaders</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>An array of header info to build
-that should only be reported.</dd>
+<dd>An array of header info to build that should only be reported.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportTo">$reportTo</a>
+    <span>
+                        &nbsp;: string|null            </span>
+</dt>
+<dd>The `report-to` directive specifies a named group in a Reporting API
+endpoint to which the user agent sends reports about policy violation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportURI">$reportURI</a>
     <span>
                         &nbsp;: string|null            </span>
 </dt>
-<dd>A set of endpoints to which csp violation reports will be sent when
-particular behaviors are prevented.</dd>
+<dd>The `report-uri` directive specifies a URL to which the user agent sends reports about policy violation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_sandbox">$sandbox</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `sandbox` directive specifies an HTML sandbox policy that the user agent applies to the protected resource.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonce">$scriptNonce</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
-<dd>Nonce for script</dd>
+<dd>Nonce for script tags.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonceTag">$scriptNonceTag</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>Nonce tag for script</dd>
+<dd>Nonce placeholder for script tags.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrc">$scriptSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `script-src` directive restricts which scripts the protected resource can execute.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcAttr">$scriptSrcAttr</a>
+    <span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
+</dt>
+<dd>The `script-src-attr` directive applies to event handlers and, if present,
+it will override the `script-src` directive for relevant checks.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcElem">$scriptSrcElem</a>
+    <span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
+</dt>
+<dd>The `script-src-elem` directive applies to all script requests and script blocks.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonce">$styleNonce</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
-<dd>Nonce for style</dd>
+<dd>Nonce for style tags.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonceTag">$styleNonceTag</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>Nonce tag for style</dd>
+<dd>Nonce placeholder for style tags.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrc">$styleSrc</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string            </span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>The `style-src` directive restricts which styles the user may applies to the protected resource.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcAttr">$styleSrcAttr</a>
+    <span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
+</dt>
+<dd>The `style-src-attr` directive governs the behaviour of style attributes.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcElem">$styleSrcElem</a>
+    <span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
+</dt>
+<dd>The `style-src-elem` directive governs the behaviour of styles except
+for styles defined in inline attributes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_tempHeaders">$tempHeaders</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>An array of header info since we have
-to build ourselves before passing to Response.</dd>
+<dd>An array of header info since we have to build
+ourselves before passing to a Response object.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_upgradeInsecureRequests">$upgradeInsecureRequests</a>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>Instructs user agents to rewrite URL schemes by changing HTTP to HTTPS.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_validSources">$validSources</a>
     <span>
                         &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
-<dd>Used for security enforcement</dd>
+<dd>Set of valid keyword-sources.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_workerSrc">$workerSrc</a>
+    <span>
+                        &nbsp;: array&lt;string, bool&gt;|string            </span>
+</dt>
+<dd>The `worker-src` directive restricts the URLs which may be loaded as a `Worker`,
+`SharedWorker`, or `ServiceWorker`.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportingEndpoints">$reportingEndpoints</a>
+    <span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
+</dt>
+<dd>Map of reporting endpoints to their URLs.</dd>
 
     </dl>
 
@@ -576,133 +645,160 @@ to build ourselves before passing to Response.</dd>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor.</dd>
+<dd>Stores our default values from the Config file.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addBaseURI">addBaseURI()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new baseURI value. Can be either a URI class or a simple string.</dd>
+<dd>Adds a new value to the `base-uri` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addChildSrc">addChildSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `child-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addConnectSrc">addConnectSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `connect-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFontSrc">addFontSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `font-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFormAction">addFormAction()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `form-action` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFrameAncestor">addFrameAncestor()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new resource that should allow embedding the resource using
-&lt;frame&gt;, &lt;iframe&gt;, &lt;object&gt;, &lt;embed&gt;, or &lt;applet&gt;</dd>
+<dd>Adds a new value to the `frame-ancestors` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFrameSrc">addFrameSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for valid frame sources. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `frame-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addImageSrc">addImageSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for valid image sources. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `img-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addManifestSrc">addManifestSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for manifest sources. Can be either
-a URI class or simple string.</dd>
+<dd>Adds a new value to the `manifest-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addMediaSrc">addMediaSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for valid video and audio. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `media-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addObjectSrc">addObjectSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for Flash and other plugin sources. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `object-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addPluginType">addPluginType()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Limits the types of plugins that can be used. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `plugin-types` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addReportingEndpoints">addReportingEndpoints()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds reporting endpoints to the `Reporting-Endpoints` header.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addSandbox">addSandbox()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>specifies an HTML sandbox policy that the user agent applies to
-the protected resource.</dd>
+<dd>Adds a new value to the `sandbox` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrc">addScriptSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for javascript file sources. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `script-src` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcAttr">addScriptSrcAttr()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds a new value to the `script-src-attr` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcElem">addScriptSrcElem()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds a new value to the `script-src-elem` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrc">addStyleSrc()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for CSS file sources. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `style-src` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcAttr">addStyleSrcAttr()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds a new value to the `style-src-attr` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcElem">addStyleSrcElem()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds a new value to the `style-src-elem` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addWorkerSrc">addWorkerSrc()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Adds a new value to the `worker-src` directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective">clearDirective()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Clear the directive.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_enabled">enabled()</a>
@@ -748,8 +844,15 @@ all filtering.</dd>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</dd>
+<dd>Adds a new value to the `default-src` directive.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportToEndpoint">setReportToEndpoint()</a>
+    <span>
+                                &nbsp;: static    </span>
+</dt>
+<dd>Specifies a named group in a Reporting API endpoint to which the user
+agent sends reports about policy violation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportURI">setReportURI()</a>
@@ -757,15 +860,14 @@ a URI class or a simple string.</dd>
                                 &nbsp;: $this    </span>
 </dt>
 <dd>Specifies a URL where a browser will send reports when a content
-security policy is violated. Can be either a URI class or a simple string.</dd>
+security policy is violated.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_upgradeInsecureRequests">upgradeInsecureRequests()</a>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Sets whether the user agents should rewrite URL schemes, changing
-HTTP to HTTPS.</dd>
+<dd>Sets whether the user agents should rewrite URL schemes, changing HTTP to HTTPS.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addOption">addOption()</a>
@@ -779,7 +881,7 @@ HTTP to HTTPS.</dd>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Adds a directive and it&#039;s options to the appropriate header. The $values
+<dd>Adds a directive and its options to the appropriate header. The $values
 array might have options that are geared toward either the regular or the
 reportOnly header, since it&#039;s viable to have both simultaneously.</dd>
 
@@ -806,6 +908,43 @@ headers.</dd>
 
 
         
+    <section class="phpdocumentor-constants">
+        <h3 class="phpdocumentor-elements__header" id="constants">
+            Constants
+            <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_DIRECTIVES_ALLOWING_SOURCE_LISTS">
+        DIRECTIVES_ALLOWING_SOURCE_LISTS
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#constant_DIRECTIVES_ALLOWING_SOURCE_LISTS" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">32</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">DIRECTIVES_ALLOWING_SOURCE_LISTS</span>
+    = <span class="phpdocumentor-signature__default-value">[&#039;base-uri&#039; =&gt; &#039;baseURI&#039;, &#039;child-src&#039; =&gt; &#039;childSrc&#039;, &#039;connect-src&#039; =&gt; &#039;connectSrc&#039;, &#039;default-src&#039; =&gt; &#039;defaultSrc&#039;, &#039;font-src&#039; =&gt; &#039;fontSrc&#039;, &#039;form-action&#039; =&gt; &#039;formAction&#039;, &#039;frame-ancestors&#039; =&gt; &#039;frameAncestors&#039;, &#039;frame-src&#039; =&gt; &#039;frameSrc&#039;, &#039;img-src&#039; =&gt; &#039;imageSrc&#039;, &#039;media-src&#039; =&gt; &#039;mediaSrc&#039;, &#039;object-src&#039; =&gt; &#039;objectSrc&#039;, &#039;plugin-types&#039; =&gt; &#039;pluginTypes&#039;, &#039;script-src&#039; =&gt; &#039;scriptSrc&#039;, &#039;style-src&#039; =&gt; &#039;styleSrc&#039;, &#039;sandbox&#039; =&gt; &#039;sandbox&#039;, &#039;manifest-src&#039; =&gt; &#039;manifestSrc&#039;, &#039;script-src-elem&#039; =&gt; &#039;scriptSrcElem&#039;, &#039;script-src-attr&#039; =&gt; &#039;scriptSrcAttr&#039;, &#039;style-src-elem&#039; =&gt; &#039;styleSrcElem&#039;, &#039;style-src-attr&#039; =&gt; &#039;styleSrcAttr&#039;, &#039;worker-src&#039; =&gt; &#039;workerSrc&#039;]</span>
+</code>
+
+
+    
+    
+    
+
+        
+    </article>
+            </section>
 
         
     <section class="phpdocumentor-properties">
@@ -831,11 +970,11 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">320</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Replace nonce tag automatically</p>
+        <p class="phpdocumentor-summary">Replace nonce tags automatically?</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -869,16 +1008,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `base-uri` directive restricts the URLs that can be used to specify the document base URL.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string|null</span>
     <span class="phpdocumentor-signature__name">$baseURI</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -907,16 +1046,17 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `child-src` directive governs the creation of nested browsing contexts as well
+as Worker execution contexts.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$childSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -945,16 +1085,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `connect-src` directive restricts which URLs the protected resource can load using script interfaces.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$connectSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -983,7 +1123,7 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">265</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 
     </aside>
 
@@ -1021,16 +1161,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `default-src` directive sets a default source list for a number of directives.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string|null</span>
     <span class="phpdocumentor-signature__name">$defaultSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1059,23 +1199,21 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">CSP directives</p>
+        <p class="phpdocumentor-summary">Map of CSP directives to this class&#039;s properties.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
             <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$directives</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;base-uri&#039; =&gt; &#039;baseURI&#039;, &#039;child-src&#039; =&gt; &#039;childSrc&#039;, &#039;connect-src&#039; =&gt; &#039;connectSrc&#039;, &#039;default-src&#039; =&gt; &#039;defaultSrc&#039;, &#039;font-src&#039; =&gt; &#039;fontSrc&#039;, &#039;form-action&#039; =&gt; &#039;formAction&#039;, &#039;frame-ancestors&#039; =&gt; &#039;frameAncestors&#039;, &#039;frame-src&#039; =&gt; &#039;frameSrc&#039;, &#039;img-src&#039; =&gt; &#039;imageSrc&#039;, &#039;media-src&#039; =&gt; &#039;mediaSrc&#039;, &#039;object-src&#039; =&gt; &#039;objectSrc&#039;, &#039;plugin-types&#039; =&gt; &#039;pluginTypes&#039;, &#039;script-src&#039; =&gt; &#039;scriptSrc&#039;, &#039;style-src&#039; =&gt; &#039;styleSrc&#039;, &#039;manifest-src&#039; =&gt; &#039;manifestSrc&#039;, &#039;sandbox&#039; =&gt; &#039;sandbox&#039;, &#039;report-uri&#039; =&gt; &#039;reportURI&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[...self::DIRECTIVES_ALLOWING_SOURCE_LISTS, &#039;report-uri&#039; =&gt; &#039;reportURI&#039;, &#039;report-to&#039; =&gt; &#039;reportTo&#039;]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>[name =&gt; property]</p>
-</section>
-
+    
     
 
         
@@ -1099,16 +1237,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `font-src` directive restricts from where the protected resource can load fonts.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$fontSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1137,16 +1275,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `form-action` directive restricts which URLs can be used as the action of HTML form elements.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$formAction</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1175,16 +1313,18 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `frame-ancestors` directive indicates whether the user agent should allow embedding
+the resource using a `frame`, `iframe`, `object`, `embed` or `applet` element,
+or equivalent functionality in non-HTML resources.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$frameAncestors</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1213,16 +1353,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `frame-src` directive restricts the URLs which may be loaded into child navigables.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$frameSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1251,16 +1391,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">131</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `img-src` directive restricts from where the protected resource can load images.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$imageSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1289,16 +1429,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">159</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `manifest-src` directive restricts the URLs from which application manifests may be loaded.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$manifestSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1327,16 +1467,17 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `media-src` directive restricts from where the protected resource can load video,
+audio, and associated text tracks.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$mediaSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1353,7 +1494,7 @@ headers.</dd>
             phpdocumentor-element
             -property
             -protected
-                                                                    "
+                        -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="property_nonces">
         $nonces
@@ -1365,16 +1506,23 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">Set of nonces generated.</p>
 
+                <div class="phpdocumentor-admonition">
+        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+            <article>
+                <p>Never used.</p>
+
+            </article>
+        </div>
     
-    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$nonces</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1403,16 +1551,16 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `object-src` directive restricts from where the protected resource can load plugins.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$objectSrc</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1441,16 +1589,17 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">154</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `plugin-types` directive restricts the set of plugins that can be invoked by the
+protected resource by limiting the types of resources that can be embedded.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$pluginTypes</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1479,11 +1628,11 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">188</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">Set to `true` to make all directives report-only instead of enforced.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1517,19 +1666,57 @@ headers.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">258</span>
+    <span class="phpdocumentor-element-found-in__line">335</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">An array of header info to build
-that should only be reported.</p>
+        <p class="phpdocumentor-summary">An array of header info to build that should only be reported.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$reportOnlyHeaders</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_reportTo">
+        $reportTo
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportTo" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">188</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `report-to` directive specifies a named group in a Reporting API
+endpoint to which the user agent sends reports about policy violation.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$reportTo</span>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
     
@@ -1556,12 +1743,11 @@ that should only be reported.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">174</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">A set of endpoints to which csp violation reports will be sent when
-particular behaviors are prevented.</p>
+        <p class="phpdocumentor-summary">The `report-uri` directive specifies a URL to which the user agent sends reports about policy violation.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1595,16 +1781,16 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `sandbox` directive specifies an HTML sandbox policy that the user agent applies to the protected resource.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$sandbox</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1633,16 +1819,16 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">299</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Nonce for script</p>
+        <p class="phpdocumentor-summary">Nonce for script tags.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$scriptNonce</span>
     </code>
 
@@ -1671,11 +1857,11 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Nonce tag for script</p>
+        <p class="phpdocumentor-summary">Nonce placeholder for script tags.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1709,17 +1895,94 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `script-src` directive restricts which scripts the protected resource can execute.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$scriptSrc</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_scriptSrcAttr">
+        $scriptSrcAttr
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcAttr" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">214</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `script-src-attr` directive applies to event handlers and, if present,
+it will override the `script-src` directive for relevant checks.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
+    <span class="phpdocumentor-signature__name">$scriptSrcAttr</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_scriptSrcElem">
+        $scriptSrcElem
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcElem" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">206</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `script-src-elem` directive applies to all script requests and script blocks.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
+    <span class="phpdocumentor-signature__name">$scriptSrcElem</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
@@ -1747,16 +2010,16 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Nonce for style</p>
+        <p class="phpdocumentor-summary">Nonce for style tags.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
     <span class="phpdocumentor-signature__name">$styleNonce</span>
     </code>
 
@@ -1785,11 +2048,11 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">228</span>
+    <span class="phpdocumentor-element-found-in__line">306</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Nonce tag for style</p>
+        <p class="phpdocumentor-summary">Nonce placeholder for style tags.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1823,17 +2086,94 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">152</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">The `style-src` directive restricts which styles the user may applies to the protected resource.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
     <span class="phpdocumentor-signature__name">$styleSrc</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_styleSrcAttr">
+        $styleSrcAttr
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcAttr" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">229</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `style-src-attr` directive governs the behaviour of style attributes.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
+    <span class="phpdocumentor-signature__name">$styleSrcAttr</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_styleSrcElem">
+        $styleSrcElem
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcElem" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">222</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `style-src-elem` directive governs the behaviour of styles except
+for styles defined in inline attributes.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
+    <span class="phpdocumentor-signature__name">$styleSrcElem</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
@@ -1861,17 +2201,17 @@ particular behaviors are prevented.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">328</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">An array of header info since we have
-to build ourselves before passing to Response.</p>
+        <p class="phpdocumentor-summary">An array of header info since we have to build
+ourselves before passing to a Response object.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$tempHeaders</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1900,11 +2240,11 @@ to build ourselves before passing to Response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">Instructs user agents to rewrite URL schemes by changing HTTP to HTTPS.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1938,18 +2278,126 @@ to build ourselves before passing to Response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Used for security enforcement</p>
+        <p class="phpdocumentor-summary">Set of valid keyword-sources.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
             <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$validSources</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;self&#039;, &#039;none&#039;, &#039;unsafe-inline&#039;, &#039;unsafe-eval&#039;]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[
+    // CSP2 keywords
+    &#039;self&#039;,
+    &#039;none&#039;,
+    &#039;unsafe-inline&#039;,
+    &#039;unsafe-eval&#039;,
+    // CSP3 keywords
+    &#039;strict-dynamic&#039;,
+    &#039;unsafe-hashes&#039;,
+    &#039;report-sample&#039;,
+    &#039;unsafe-allow-redirects&#039;,
+    &#039;wasm-unsafe-eval&#039;,
+    &#039;trusted-types-eval&#039;,
+    &#039;report-sha256&#039;,
+    &#039;report-sha384&#039;,
+    &#039;report-sha512&#039;,
+]</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_validSources#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP3/#source-expression">https://www.w3.org/TR/CSP3/#source-expression</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_workerSrc">
+        $workerSrc
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_workerSrc" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">237</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">The `worker-src` directive restricts the URLs which may be loaded as a `Worker`,
+`SharedWorker`, or `ServiceWorker`.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">protected</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, bool&gt;|string</span>
+    <span class="phpdocumentor-signature__name">$workerSrc</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_reportingEndpoints">
+        $reportingEndpoints
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportingEndpoints" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">349</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Map of reporting endpoints to their URLs.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$reportingEndpoints</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
     
@@ -1981,11 +2429,11 @@ to build ourselves before passing to Response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor.</p>
+        <p class="phpdocumentor-summary">Stores our default values from the Config file.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1994,9 +2442,7 @@ to build ourselves before passing to Response.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>Stores our default values from the Config file.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2028,27 +2474,27 @@ to build ourselves before passing to Response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">369</span>
+    <span class="phpdocumentor-element-found-in__line">464</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new baseURI value. Can be either a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `base-uri` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addBaseURI</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addBaseURI</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>baseURI restricts the URLs that can appear in a page's <base> element.</p>
+        <section class="phpdocumentor-description"><p><code class="prettyprint">base-uri</code> restricts the URLs that can appear in a page's <base> element.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2101,21 +2547,20 @@ to build ourselves before passing to Response.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">390</span>
+    <span class="phpdocumentor-element-found-in__line">484</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `child-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addChildSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addChildSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>child-src lists the URLs for workers and embedded frame contents.
+        <section class="phpdocumentor-description"><p><code class="prettyprint">child-src</code> lists the URLs for workers and embedded frame contents.
 For example: child-src https://youtube.com would enable embedding
 videos from YouTube but not from other origins.</p>
 </section>
@@ -2124,7 +2569,7 @@ videos from YouTube but not from other origins.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2177,21 +2622,20 @@ videos from YouTube but not from other origins.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">503</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `connect-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addConnectSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addConnectSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>connect-src limits the origins to which you can connect
+        <section class="phpdocumentor-description"><p><code class="prettyprint">connect-src</code> limits the origins to which you can connect
 (via XHR, WebSockets, and EventSource).</p>
 </section>
 
@@ -2199,7 +2643,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2252,28 +2696,27 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">449</span>
+    <span class="phpdocumentor-element-found-in__line">540</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `font-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addFontSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addFontSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>font-src specifies the origins that can serve web fonts.</p>
+        <section class="phpdocumentor-description"><p><code class="prettyprint">font-src</code> specifies the origins that can serve web fonts.</p>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2326,16 +2769,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">556</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `form-action` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addFormAction</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addFormAction</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2345,7 +2787,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2398,16 +2840,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">483</span>
+    <span class="phpdocumentor-element-found-in__line">572</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new resource that should allow embedding the resource using
-&lt;frame&gt;, &lt;iframe&gt;, &lt;object&gt;, &lt;embed&gt;, or &lt;applet&gt;</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `frame-ancestors` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addFrameAncestor</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addFrameAncestor</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2417,7 +2858,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2470,16 +2911,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">500</span>
+    <span class="phpdocumentor-element-found-in__line">588</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for valid frame sources. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `frame-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addFrameSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addFrameSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2489,7 +2929,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2542,16 +2982,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for valid image sources. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `img-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addImageSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addImageSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2561,7 +3000,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2614,16 +3053,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">636</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for manifest sources. Can be either
-a URI class or simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `manifest-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addManifestSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addManifestSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2633,7 +3071,7 @@ a URI class or simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2686,16 +3124,15 @@ a URI class or simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">534</span>
+    <span class="phpdocumentor-element-found-in__line">620</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for valid video and audio. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `media-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addMediaSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addMediaSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2705,7 +3142,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2758,16 +3195,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">568</span>
+    <span class="phpdocumentor-element-found-in__line">652</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for Flash and other plugin sources. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `object-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addObjectSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addObjectSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2777,7 +3213,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2830,16 +3266,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">585</span>
+    <span class="phpdocumentor-element-found-in__line">668</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Limits the types of plugins that can be used. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `plugin-types` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addPluginType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mime</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addPluginType</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$mime</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2849,12 +3284,10 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$mime</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>One or more plugin mime types, separate by spaces</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
@@ -2896,6 +3329,55 @@ a URI class or a simple string.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_addReportingEndpoints">
+        addReportingEndpoints()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addReportingEndpoints" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">856</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds reporting endpoints to the `Reporting-Endpoints` header.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addReportingEndpoints</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoint</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$endpoint</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_addSandbox">
         addSandbox()
         <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addSandbox" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2904,16 +3386,15 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">620</span>
+    <span class="phpdocumentor-element-found-in__line">684</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">specifies an HTML sandbox policy that the user agent applies to
-the protected resource.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `sandbox` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addSandbox</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addSandbox</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$flags</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2923,12 +3404,10 @@ the protected resource.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$flags</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An array of sandbox flags that can be added to the directive.</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
@@ -2978,16 +3457,15 @@ the protected resource.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">637</span>
+    <span class="phpdocumentor-element-found-in__line">700</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for javascript file sources. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `script-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addScriptSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addScriptSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2997,7 +3475,7 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3022,7 +3500,7 @@ a URI class or a simple string.</p>
                     <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="http://www.w3.org/TR/CSP/#directive-connect-src">http://www.w3.org/TR/CSP/#directive-connect-src</a></span>
+                                                                                    <span class="phpdocumentor-tag-link"><a href="http://www.w3.org/TR/CSP/#directive-script-src">http://www.w3.org/TR/CSP/#directive-script-src</a></span>
                                         
                                              
                                     </dd>
@@ -3042,24 +3520,23 @@ a URI class or a simple string.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_addStyleSrc">
-        addStyleSrc()
-        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrc" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_addScriptSrcAttr">
+        addScriptSrcAttr()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcAttr" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">654</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for CSS file sources. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `script-src-attr` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addStyleSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">addScriptSrcAttr</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3069,7 +3546,149 @@ a URI class or a simple string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcAttr#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-script-src-attr">https://www.w3.org/TR/CSP/#directive-script-src-attr</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addScriptSrcElem">
+        addScriptSrcElem()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcElem" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">714</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new value to the `script-src-elem` directive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addScriptSrcElem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$uri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcElem#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-script-src-elem">https://www.w3.org/TR/CSP/#directive-script-src-elem</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addStyleSrc">
+        addStyleSrc()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrc" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">744</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new value to the `style-src` directive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addStyleSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$uri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3094,7 +3713,7 @@ a URI class or a simple string.</p>
                     <span class="phpdocumentor-tag__name">see</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                    <span class="phpdocumentor-tag-link"><a href="http://www.w3.org/TR/CSP/#directive-connect-src">http://www.w3.org/TR/CSP/#directive-connect-src</a></span>
+                                                                                    <span class="phpdocumentor-tag-link"><a href="http://www.w3.org/TR/CSP/#directive-style-src">http://www.w3.org/TR/CSP/#directive-style-src</a></span>
                                         
                                              
                                     </dd>
@@ -3114,6 +3733,219 @@ a URI class or a simple string.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_addStyleSrcAttr">
+        addStyleSrcAttr()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcAttr" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">772</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new value to the `style-src-attr` directive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addStyleSrcAttr</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$uri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcAttr#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-style-src-attr">https://www.w3.org/TR/CSP/#directive-style-src-attr</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addStyleSrcElem">
+        addStyleSrcElem()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcElem" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">758</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new value to the `style-src-elem` directive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addStyleSrcElem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$uri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcElem#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-style-src-elem">https://www.w3.org/TR/CSP/#directive-style-src-elem</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addWorkerSrc">
+        addWorkerSrc()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addWorkerSrc" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">786</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Adds a new value to the `worker-src` directive.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">addWorkerSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$uri</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$explicitReporting</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addWorkerSrc#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-worker-src">https://www.w3.org/TR/CSP/#directive-worker-src</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_clearDirective">
         clearDirective()
         <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3122,12 +3954,11 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">834</span>
+    <span class="phpdocumentor-element-found-in__line">1034</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Clear the directive.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">clearDirective</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$directive</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
@@ -3143,9 +3974,7 @@ a URI class or a simple string.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>CSP directive</p>
-</section>
-
+                
             </dd>
             </dl>
 
@@ -3169,7 +3998,7 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">295</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
@@ -3208,7 +4037,7 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">333</span>
+    <span class="phpdocumentor-element-found-in__line">428</span>
 
     </aside>
 
@@ -3255,7 +4084,7 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">411</span>
 
     </aside>
 
@@ -3294,7 +4123,7 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">303</span>
+    <span class="phpdocumentor-element-found-in__line">398</span>
 
     </aside>
 
@@ -3333,7 +4162,7 @@ a URI class or a simple string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">351</span>
+    <span class="phpdocumentor-element-found-in__line">446</span>
 
     </aside>
 
@@ -3386,21 +4215,20 @@ all filtering.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a new valid endpoint for a form&#039;s action. Can be either
-a URI class or a simple string.</p>
+        <p class="phpdocumentor-summary">Adds a new value to the `default-src` directive.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setDefaultSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">setDefaultSrc</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$explicitReporting</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>default_src is the URI that is used for many of the settings when
+        <section class="phpdocumentor-description"><p><code class="prettyprint">default-src</code> is the URI that is used for many of the settings when
 no other source has been set.</p>
 </section>
 
@@ -3408,7 +4236,7 @@ no other source has been set.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$uri</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3453,6 +4281,74 @@ no other source has been set.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_setReportToEndpoint">
+        setReportToEndpoint()
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportToEndpoint" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">832</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Specifies a named group in a Reporting API endpoint to which the user
+agent sends reports about policy violation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setReportToEndpoint</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoint</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$endpoint</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the reporting endpoint. Set <code class="prettyprint">''</code> if you
+want to remove this directive at runtime.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportToEndpoint#tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">see</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.w3.org/TR/CSP/#directive-report-to">https://www.w3.org/TR/CSP/#directive-report-to</a></span>
+                                        
+                                             
+                                    </dd>
+                                            </dl>
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_setReportURI">
         setReportURI()
         <a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportURI" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3461,12 +4357,12 @@ no other source has been set.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">603</span>
+    <span class="phpdocumentor-element-found-in__line">816</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Specifies a URL where a browser will send reports when a content
-security policy is violated. Can be either a URI class or a simple string.</p>
+security policy is violated.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3529,12 +4425,11 @@ this directive at runtime.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">667</span>
+    <span class="phpdocumentor-element-found-in__line">798</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sets whether the user agents should rewrite URL schemes, changing
-HTTP to HTTPS.</p>
+        <p class="phpdocumentor-summary">Sets whether the user agents should rewrite URL schemes, changing HTTP to HTTPS.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -3579,7 +4474,7 @@ HTTP to HTTPS.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">681</span>
+    <span class="phpdocumentor-element-found-in__line">872</span>
 
     </aside>
 
@@ -3638,17 +4533,17 @@ HTTP to HTTPS.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">794</span>
+    <span class="phpdocumentor-element-found-in__line">998</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Adds a directive and it&#039;s options to the appropriate header. The $values
+        <p class="phpdocumentor-summary">Adds a directive and its options to the appropriate header. The $values
 array might have options that are geared toward either the regular or the
 reportOnly header, since it&#039;s viable to have both simultaneously.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">addToHeader</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">addToHeader</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string, bool&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3665,7 +4560,7 @@ reportOnly header, since it&#039;s viable to have both simultaneously.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$values</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, bool&gt;|string</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3692,7 +4587,7 @@ reportOnly header, since it&#039;s viable to have both simultaneously.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">732</span>
+    <span class="phpdocumentor-element-found-in__line">920</span>
 
     </aside>
 
@@ -3739,7 +4634,7 @@ with their values to the response object.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/ContentSecurityPolicy.php"><a href="files/system-http-contentsecuritypolicy.html"><abbr title="system/HTTP/ContentSecurityPolicy.php">ContentSecurityPolicy.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">704</span>
+    <span class="phpdocumentor-element-found-in__line">893</span>
 
     </aside>
 
@@ -3879,10 +4774,17 @@ headers.</p>
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                        <li><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#toc-constants">Constants</a></li>
                                                             <li><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#toc-properties">Properties</a></li>
                                                             <li><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Constants</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#constant_DIRECTIVES_ALLOWING_SOURCE_LISTS">DIRECTIVES_ALLOWING_SOURCE_LISTS</a></li>
+                                            </ul>
+                </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
@@ -3901,22 +4803,29 @@ headers.</p>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_imageSrc">$imageSrc</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_manifestSrc">$manifestSrc</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_mediaSrc">$mediaSrc</a></li>
-                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces">$nonces</a></li>
+                                                    <li class="-deprecated"><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces">$nonces</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_objectSrc">$objectSrc</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_pluginTypes">$pluginTypes</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnly">$reportOnly</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnlyHeaders">$reportOnlyHeaders</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportTo">$reportTo</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportURI">$reportURI</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_sandbox">$sandbox</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonce">$scriptNonce</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonceTag">$scriptNonceTag</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrc">$scriptSrc</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcAttr">$scriptSrcAttr</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcElem">$scriptSrcElem</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonce">$styleNonce</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonceTag">$styleNonceTag</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrc">$styleSrc</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcAttr">$styleSrcAttr</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcElem">$styleSrcElem</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_tempHeaders">$tempHeaders</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_upgradeInsecureRequests">$upgradeInsecureRequests</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_validSources">$validSources</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_workerSrc">$workerSrc</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportingEndpoints">$reportingEndpoints</a></li>
                                             </ul>
                 </li>
             
@@ -3936,9 +4845,15 @@ headers.</p>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addMediaSrc">addMediaSrc()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addObjectSrc">addObjectSrc()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addPluginType">addPluginType()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addReportingEndpoints">addReportingEndpoints()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addSandbox">addSandbox()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrc">addScriptSrc()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcAttr">addScriptSrcAttr()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcElem">addScriptSrcElem()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrc">addStyleSrc()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcAttr">addStyleSrcAttr()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcElem">addStyleSrcElem()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addWorkerSrc">addWorkerSrc()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective">clearDirective()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_enabled">enabled()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_finalize">finalize()</a></li>
@@ -3946,6 +4861,7 @@ headers.</p>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_getStyleNonce">getStyleNonce()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_reportOnly">reportOnly()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setDefaultSrc">setDefaultSrc()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportToEndpoint">setReportToEndpoint()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportURI">setReportURI()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_upgradeInsecureRequests">upgradeInsecureRequests()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addOption">addOption()</a></li>

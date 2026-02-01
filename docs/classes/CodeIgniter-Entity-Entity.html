@@ -273,7 +273,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 
     </aside>
 
@@ -339,7 +339,7 @@
     <span>
                         &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>Custom convert handlers</dd>
+<dd>Custom convert handlers.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#property_casts">$casts</a>
@@ -352,7 +352,7 @@ they are accessed.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#property_dataCaster">$dataCaster</a>
     <span>
-                        &nbsp;: <a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>            </span>
+                        &nbsp;: <a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>|null            </span>
 </dt>
 <dd>The data caster.</dd>
 
@@ -386,14 +386,21 @@ nulls where we shouldn&#039;t.</dd>
     <span>
                         &nbsp;: bool            </span>
 </dt>
-<dd>Holds info whenever properties have to be casted</dd>
+<dd>Holds info whenever properties have to be casted.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-Entity-Entity.html#property__onlyScalars">$_onlyScalars</a>
+    <span>
+                        &nbsp;: bool            </span>
+</dt>
+<dd>Indicates whether all attributes are scalars (for optimization).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#property_defaultCastHandlers">$defaultCastHandlers</a>
     <span>
                         &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
-<dd>Default convert handlers</dd>
+<dd>Default convert handlers.</dd>
 
     </dl>
 
@@ -413,7 +420,7 @@ nulls where we shouldn&#039;t.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method___get">__get()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|bool|float|int|object|string|null    </span>
+                                &nbsp;: array&lt;int|string, mixed&gt;|bool|float|int|object|string|null    </span>
 </dt>
 <dd>Magic method to allow retrieval of protected and private class properties
 either by their name, or through a `getCamelCasedProperty()` method.</dd>
@@ -447,7 +454,7 @@ easily set, either through a direct access or a
     <span>
                                 &nbsp;: bool|<a href="classes/CodeIgniter-Entity-Entity.html"><abbr title="\CodeIgniter\Entity\Entity">Entity</abbr></a>    </span>
 </dt>
-<dd>Change the value of the private $_cast property</dd>
+<dd>Change the value of the private $_cast property.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_fill">fill()</a>
@@ -472,21 +479,14 @@ properties have changed.</dd>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Set raw data array without any mutations</dd>
+<dd>Set raw data array without any mutations.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_jsonSerialize">jsonSerialize()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
-<dd>Support for json_encode()</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="-deprecated" href="classes/CodeIgniter-Entity-Entity.html#method_setAttributes">setAttributes()</a>
-    <span>
-                                &nbsp;: $this    </span>
-</dt>
-<dd>Set raw data array without any mutations</dd>
+<dd>Support for json_encode().</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_syncOriginal">syncOriginal()</a>
@@ -498,7 +498,7 @@ properties have changed.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_toArray">toArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>General method that will return all public and protected values
 of this entity as an array. All values are accessed through the
@@ -507,16 +507,23 @@ __get() magic method so will have any casts, etc applied to them.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_toRawArray">toRawArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>Returns the raw values of the current attributes.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_castAs">castAs()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|bool|float|int|object|string|null    </span>
+                                &nbsp;: array&lt;int|string, mixed&gt;|bool|float|int|object|string|null    </span>
 </dt>
 <dd>Provides the ability to cast an item as a specific data type.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_dataCaster">dataCaster()</a>
+    <span>
+                                &nbsp;: <a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>|null    </span>
+</dt>
+<dd>Returns a DataCaster instance when casts are defined.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_hasMappedProperty">hasMappedProperty()</a>
@@ -538,15 +545,29 @@ __get() magic method so will have any casts, etc applied to them.</dd>
                                 &nbsp;: string    </span>
 </dt>
 <dd>Checks the datamap to see if this property name is being mapped,
-and returns the db column name, if any, or the original property name.</dd>
+and returns the DB column name, if any, or the original property name.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_mutateDate">mutateDate()</a>
     <span>
                                 &nbsp;: <a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a>    </span>
 </dt>
-<dd>Converts the given string|timestamp|DateTime|Time instance
+<dd>Converts the given string|timestamp|DateTimeInterface instance
 into the &quot;CodeIgniter\I18n\Time&quot; object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_containsOnlyEntities">containsOnlyEntities()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks if an array contains only Entity instances.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Entity-Entity.html#method_normalizeValue">normalizeValue()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Recursively normalize a value for comparison.</dd>
 
     </dl>
 
@@ -578,7 +599,7 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 
     </aside>
 
@@ -616,11 +637,11 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Custom convert handlers</p>
+        <p class="phpdocumentor-summary">Custom convert handlers.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -654,7 +675,7 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 
     </aside>
 
@@ -693,7 +714,7 @@ they are accessed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 
     </aside>
 
@@ -702,9 +723,9 @@ they are accessed.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a></span>
+            <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$dataCaster</span>
-    </code>
+     = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
     
@@ -731,7 +752,7 @@ they are accessed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -776,7 +797,7 @@ $datamap = [
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
@@ -814,7 +835,7 @@ $datamap = [
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">120</span>
+    <span class="phpdocumentor-element-found-in__line">124</span>
 
     </aside>
 
@@ -854,17 +875,55 @@ nulls where we shouldn&#039;t.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Holds info whenever properties have to be casted</p>
+        <p class="phpdocumentor-summary">Holds info whenever properties have to be casted.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__type">bool</span>
     <span class="phpdocumentor-signature__name">$_cast</span>
+     = <span class="phpdocumentor-signature__default-value">true</span></code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property__onlyScalars">
+        $_onlyScalars
+        <a href="classes/CodeIgniter-Entity-Entity.html#property__onlyScalars" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Indicates whether all attributes are scalars (for optimization).</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$_onlyScalars</span>
      = <span class="phpdocumentor-signature__default-value">true</span></code>
 
     
@@ -892,18 +951,18 @@ nulls where we shouldn&#039;t.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Default convert handlers</p>
+        <p class="phpdocumentor-summary">Default convert handlers.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$defaultCastHandlers</span>
-     = <span class="phpdocumentor-signature__default-value">[&#039;array&#039; =&gt; \CodeIgniter\Entity\Cast\ArrayCast::class, &#039;bool&#039; =&gt; \CodeIgniter\Entity\Cast\BooleanCast::class, &#039;boolean&#039; =&gt; \CodeIgniter\Entity\Cast\BooleanCast::class, &#039;csv&#039; =&gt; \CodeIgniter\Entity\Cast\CSVCast::class, &#039;datetime&#039; =&gt; \CodeIgniter\Entity\Cast\DatetimeCast::class, &#039;double&#039; =&gt; \CodeIgniter\Entity\Cast\FloatCast::class, &#039;float&#039; =&gt; \CodeIgniter\Entity\Cast\FloatCast::class, &#039;int&#039; =&gt; \CodeIgniter\Entity\Cast\IntegerCast::class, &#039;integer&#039; =&gt; \CodeIgniter\Entity\Cast\IntegerCast::class, &#039;int-bool&#039; =&gt; \CodeIgniter\Entity\Cast\IntBoolCast::class, &#039;json&#039; =&gt; \CodeIgniter\Entity\Cast\JsonCast::class, &#039;object&#039; =&gt; \CodeIgniter\Entity\Cast\ObjectCast::class, &#039;string&#039; =&gt; \CodeIgniter\Entity\Cast\StringCast::class, &#039;timestamp&#039; =&gt; \CodeIgniter\Entity\Cast\TimestampCast::class, &#039;uri&#039; =&gt; \CodeIgniter\Entity\Cast\URICast::class]</span></code>
+     = <span class="phpdocumentor-signature__default-value">[&#039;array&#039; =&gt; \CodeIgniter\Entity\Cast\ArrayCast::class, &#039;bool&#039; =&gt; \CodeIgniter\Entity\Cast\BooleanCast::class, &#039;boolean&#039; =&gt; \CodeIgniter\Entity\Cast\BooleanCast::class, &#039;csv&#039; =&gt; \CodeIgniter\Entity\Cast\CSVCast::class, &#039;datetime&#039; =&gt; \CodeIgniter\Entity\Cast\DatetimeCast::class, &#039;double&#039; =&gt; \CodeIgniter\Entity\Cast\FloatCast::class, &#039;enum&#039; =&gt; \CodeIgniter\Entity\Cast\EnumCast::class, &#039;float&#039; =&gt; \CodeIgniter\Entity\Cast\FloatCast::class, &#039;int&#039; =&gt; \CodeIgniter\Entity\Cast\IntegerCast::class, &#039;integer&#039; =&gt; \CodeIgniter\Entity\Cast\IntegerCast::class, &#039;int-bool&#039; =&gt; \CodeIgniter\Entity\Cast\IntBoolCast::class, &#039;json&#039; =&gt; \CodeIgniter\Entity\Cast\JsonCast::class, &#039;object&#039; =&gt; \CodeIgniter\Entity\Cast\ObjectCast::class, &#039;string&#039; =&gt; \CodeIgniter\Entity\Cast\StringCast::class, &#039;timestamp&#039; =&gt; \CodeIgniter\Entity\Cast\TimestampCast::class, &#039;uri&#039; =&gt; \CodeIgniter\Entity\Cast\URICast::class]</span></code>
 
     
     
@@ -935,7 +994,7 @@ nulls where we shouldn&#039;t.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">146</span>
 
     </aside>
 
@@ -943,7 +1002,7 @@ nulls where we shouldn&#039;t.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -953,7 +1012,7 @@ nulls where we shouldn&#039;t.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -980,7 +1039,7 @@ nulls where we shouldn&#039;t.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">476</span>
+    <span class="phpdocumentor-element-found-in__line">689</span>
 
     </aside>
 
@@ -989,7 +1048,7 @@ either by their name, or through a `getCamelCasedProperty()` method.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">__get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1025,22 +1084,13 @@ $p = $this-&gt;getMyProperty()</p>
                                                             
                                              
                                     </dd>
-                                                <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">params</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>string $key class property</p>
-</section>
-
-                                    </dd>
                                             </dl>
 
         
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null</span>
             </section>
 
 </article>
@@ -1058,7 +1108,7 @@ $p = $this-&gt;getMyProperty()</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">517</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 
     </aside>
 
@@ -1108,7 +1158,7 @@ exists named like for __get().</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">425</span>
+    <span class="phpdocumentor-element-found-in__line">640</span>
 
     </aside>
 
@@ -1118,7 +1168,7 @@ easily set, either through a direct access or a
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">__set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1139,7 +1189,7 @@ $this-&gt;setMyProperty() = $p;</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$value</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1181,7 +1231,7 @@ $this-&gt;setMyProperty() = $p;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">537</span>
+    <span class="phpdocumentor-element-found-in__line">750</span>
 
     </aside>
 
@@ -1226,11 +1276,11 @@ $this-&gt;setMyProperty() = $p;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">614</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Change the value of the private $_cast property</p>
+        <p class="phpdocumentor-summary">Change the value of the private $_cast property.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1275,7 +1325,7 @@ $this-&gt;setMyProperty() = $p;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">158</span>
+    <span class="phpdocumentor-element-found-in__line">164</span>
 
     </aside>
 
@@ -1285,7 +1335,7 @@ that may or may not exist.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">fill</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string, array&lt;string|int, mixed&gt;|bool|float|int|object|string|null&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">fill</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string, array&lt;int|string, mixed&gt;|bool|float|int|object|string|null&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1295,7 +1345,7 @@ that may or may not exist.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, array&lt;string|int, mixed&gt;|bool|float|int|object|string|null&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, array&lt;int|string, mixed&gt;|bool|float|int|object|string|null&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1326,7 +1376,7 @@ that may or may not exist.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">280</span>
+    <span class="phpdocumentor-element-found-in__line">374</span>
 
     </aside>
 
@@ -1349,9 +1399,7 @@ properties have changed.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>class property</p>
-</section>
-
+                
             </dd>
             </dl>
 
@@ -1379,15 +1427,15 @@ properties have changed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Set raw data array without any mutations</p>
+        <p class="phpdocumentor-summary">Set raw data array without any mutations.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">injectRawData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">injectRawData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1397,7 +1445,7 @@ properties have changed.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1428,15 +1476,15 @@ properties have changed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">604</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Support for json_encode()</p>
+        <p class="phpdocumentor-summary">Support for json_encode().</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">jsonSerialize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">jsonSerialize</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1446,77 +1494,10 @@ properties have changed.</p>
     
 
         
-            <section class="phpdocumentor-attributes">
-            <h5 class="phpdocumentor-elements__header" id="attributes">
-                Attributes <a href="classes/CodeIgniter-Entity-Entity.html#method_jsonSerialize#attributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-            </h5>
-                            <dl class="phpdocumentor-argument-list">
-    <dt class="phpdocumentor-argument-list__entry">
-        #[<abbr title="\ReturnTypeWillChange">ReturnTypeWillChange</abbr>]
-    </dt>
-    </dl>
-                    </section>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-            -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="method_setAttributes">
-        setAttributes()
-        <a href="classes/CodeIgniter-Entity-Entity.html#method_setAttributes" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">323</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Set raw data array without any mutations</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setAttributes</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use injectRawData() instead.</p>
-
-            </article>
-        </div>
-    
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">$this</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
             </section>
 
 </article>
@@ -1534,7 +1515,7 @@ properties have changed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">352</span>
 
     </aside>
 
@@ -1547,7 +1528,10 @@ properties have changed.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Objects and arrays are normalized and JSON-encoded for reliable change detection,
+while scalars are stored as-is for performance.</p>
+</section>
+
     
     
 
@@ -1573,7 +1557,7 @@ properties have changed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
@@ -1583,7 +1567,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cast</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cast</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1596,7 +1580,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">bool</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If true, only return values that have changed since object creation</p>
+                    <section class="phpdocumentor-description"><p>If true, only return values that have changed since object creation.</p>
 </section>
 
             </dd>
@@ -1626,7 +1610,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
             </section>
 
 </article>
@@ -1644,7 +1628,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -1652,7 +1636,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">toRawArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">toRawArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$onlyChanged</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$recursive</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1665,7 +1649,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">bool</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">false</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If true, only return values that have changed since object creation</p>
+                    <section class="phpdocumentor-description"><p>If true, only return values that have changed since object creation.</p>
 </section>
 
             </dd>
@@ -1686,7 +1670,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
             </section>
 
 </article>
@@ -1704,7 +1688,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">563</span>
 
     </aside>
 
@@ -1712,7 +1696,7 @@ __get() magic method so will have any casts, etc applied to them.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">castAs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">bool|float|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attribute</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'get'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span></code>
+                    <span class="phpdocumentor-signature__name">castAs</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">bool|float|int|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$attribute</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$method</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'get'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1773,7 +1757,48 @@ instead of casting $value when $value is null.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|bool|float|int|object|string|null</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int|string, mixed&gt;|bool|float|int|object|string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_dataCaster">
+        dataCaster()
+        <a href="classes/CodeIgniter-Entity-Entity.html#method_dataCaster" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">579</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns a DataCaster instance when casts are defined.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">dataCaster</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>If no casts are configured, no DataCaster is created and null is returned.</p>
+</section>
+
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-DataCaster-DataCaster.html"><abbr title="\CodeIgniter\DataCaster\DataCaster">DataCaster</abbr></a>|null</span>
             </section>
 
 </article>
@@ -1791,7 +1816,7 @@ instead of casting $value when $value is null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">566</span>
+    <span class="phpdocumentor-element-found-in__line">779</span>
 
     </aside>
 
@@ -1840,7 +1865,7 @@ instead of casting $value when $value is null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">551</span>
+    <span class="phpdocumentor-element-found-in__line">764</span>
 
     </aside>
 
@@ -1889,12 +1914,12 @@ instead of casting $value when $value is null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">334</span>
+    <span class="phpdocumentor-element-found-in__line">522</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Checks the datamap to see if this property name is being mapped,
-and returns the db column name, if any, or the original property name.</p>
+and returns the DB column name, if any, or the original property name.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1923,7 +1948,7 @@ and returns the db column name, if any, or the original property name.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>db column name</p>
+                <section class="phpdocumentor-description"><p>Database column name.</p>
 </section>
 
             </section>
@@ -1943,16 +1968,16 @@ and returns the db column name, if any, or the original property name.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">357</span>
+    <span class="phpdocumentor-element-found-in__line">545</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Converts the given string|timestamp|DateTime|Time instance
+        <p class="phpdocumentor-summary">Converts the given string|timestamp|DateTimeInterface instance
 into the &quot;CodeIgniter\I18n\Time&quot; object.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">mutateDate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\DateTime">DateTime</abbr>|float|int|string|<a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">mutateDate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\DateTimeInterface">DateTimeInterface</abbr>|float|int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1962,7 +1987,7 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$value</span>
-                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\DateTime">DateTime</abbr>|float|int|string|<a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a></span>
+                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="\DateTimeInterface">DateTimeInterface</abbr>|float|int|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1993,6 +2018,104 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</p>
         <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-I18n-Time.html"><abbr title="\CodeIgniter\I18n\Time">Time</abbr></a></span>
             </section>
 
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_containsOnlyEntities">
+        containsOnlyEntities()
+        <a href="classes/CodeIgniter-Entity-Entity.html#method_containsOnlyEntities" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">426</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks if an array contains only Entity instances.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">containsOnlyEntities</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int|string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>This allows optimization for per-entity change tracking.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int|string, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_normalizeValue">
+        normalizeValue()
+        <a href="classes/CodeIgniter-Entity-Entity.html#method_normalizeValue" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Entity/Entity.php"><a href="files/system-entity-entity.html"><abbr title="system/Entity/Entity.php">Entity.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">445</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Recursively normalize a value for comparison.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">normalizeValue</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Converts objects and arrays to a JSON-encodable format.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$data</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
 </article>
             </section>
 
@@ -2117,6 +2240,7 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</p>
                                                     <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#property_dates">$dates</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#property_original">$original</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#property__cast">$_cast</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#property__onlyScalars">$_onlyScalars</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#property_defaultCastHandlers">$defaultCastHandlers</a></li>
                                             </ul>
                 </li>
@@ -2134,15 +2258,17 @@ into the &quot;CodeIgniter\I18n\Time&quot; object.</p>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_hasChanged">hasChanged()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_injectRawData">injectRawData()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_jsonSerialize">jsonSerialize()</a></li>
-                                            <li class="-deprecated"><a href="classes/CodeIgniter-Entity-Entity.html#method_setAttributes">setAttributes()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_syncOriginal">syncOriginal()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_toArray">toArray()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_toRawArray">toRawArray()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_castAs">castAs()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_dataCaster">dataCaster()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_hasMappedProperty">hasMappedProperty()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_isMappedDbColumn">isMappedDbColumn()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_mapProperty">mapProperty()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_mutateDate">mutateDate()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_containsOnlyEntities">containsOnlyEntities()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Entity-Entity.html#method_normalizeValue">normalizeValue()</a></li>
                                     </ul>
             </li>
                     </ul>

@@ -1,6 +1,101 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\CodeIgniter\\API\\ApiException",
+            "name": "ApiException",
+            "summary": "Custom\u0020exception\u0020for\u0020API\u002Drelated\u0020errors.",
+            "url": "classes/CodeIgniter-API-ApiException.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ApiException\u003A\u003AforInvalidFields\u0028\u0029",
+            "name": "forInvalidFields",
+            "summary": "Thrown\u0020when\u0020the\u0020fields\u0020requested\u0020in\u0020a\u0020URL\u0020are\u0020not\u0020valid.",
+            "url": "classes/CodeIgniter-API-ApiException.html#method_forInvalidFields"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ApiException\u003A\u003AforInvalidIncludes\u0028\u0029",
+            "name": "forInvalidIncludes",
+            "summary": "Thrown\u0020when\u0020the\u0020includes\u0020requested\u0020in\u0020a\u0020URL\u0020are\u0020not\u0020valid.",
+            "url": "classes/CodeIgniter-API-ApiException.html#method_forInvalidIncludes"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ApiException\u003A\u003AforMissingInclude\u0028\u0029",
+            "name": "forMissingInclude",
+            "summary": "Thrown\u0020when\u0020an\u0020include\u0020is\u0020requested,\u0020but\u0020the\u0020method\u0020to\u0020handle\u0020it\ndoes\u0020not\u0020exist\u0020on\u0020the\u0020model.",
+            "url": "classes/CodeIgniter-API-ApiException.html#method_forMissingInclude"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ApiException\u003A\u003AforTransformerNotFound\u0028\u0029",
+            "name": "forTransformerNotFound",
+            "summary": "Thrown\u0020when\u0020a\u0020transformer\u0020class\u0020cannot\u0020be\u0020found.",
+            "url": "classes/CodeIgniter-API-ApiException.html#method_forTransformerNotFound"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ApiException\u003A\u003AforInvalidTransformer\u0028\u0029",
+            "name": "forInvalidTransformer",
+            "summary": "Thrown\u0020when\u0020a\u0020transformer\u0020class\u0020does\u0020not\u0020implement\u0020TransformerInterface.",
+            "url": "classes/CodeIgniter-API-ApiException.html#method_forInvalidTransformer"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer",
+            "name": "BaseTransformer",
+            "summary": "Base\u0020class\u0020for\u0020transforming\u0020resources\u0020into\u0020arrays.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "Converts\u0020the\u0020resource\u0020to\u0020an\u0020array\u0020representation.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_toArray"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003Atransform\u0028\u0029",
+            "name": "transform",
+            "summary": "Transforms\u0020the\u0020given\u0020resource\u0020into\u0020an\u0020array\u0020using\nthe\u0020\u0024this\u002D\u003EtoArray\u0028\u0029.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_transform"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AtransformMany\u0028\u0029",
+            "name": "transformMany",
+            "summary": "Transforms\u0020a\u0020collection\u0020of\u0020resources\u0020using\u0020\u0024this\u002D\u003Etransform\u0028\u0029\u0020on\u0020each\u0020item.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_transformMany"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AgetAllowedFields\u0028\u0029",
+            "name": "getAllowedFields",
+            "summary": "Define\u0020which\u0020fields\u0020can\u0020be\u0020requested\u0020via\u0020the\u0020\u0027fields\u0027\u0020query\u0020parameter.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_getAllowedFields"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AgetAllowedIncludes\u0028\u0029",
+            "name": "getAllowedIncludes",
+            "summary": "Define\u0020which\u0020related\u0020resources\u0020can\u0020be\u0020included\u0020via\u0020the\u0020\u0027include\u0027\u0020query\u0020parameter.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_getAllowedIncludes"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AlimitFields\u0028\u0029",
+            "name": "limitFields",
+            "summary": "Limits\u0020the\u0020given\u0020data\u0020array\u0020to\u0020only\u0020the\u0020fields\u0020specified",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_limitFields"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003AinsertIncludes\u0028\u0029",
+            "name": "insertIncludes",
+            "summary": "Checks\u0020the\u0020request\u0020for\u0020\u0027include\u0027\u0020query\u0020variable,\u0020and\u0020if\u0020present,\ncalls\u0020the\u0020corresponding\u0020include\u007BResource\u007D\u0020methods\u0020to\u0020add\u0020related\u0020data.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#method_insertIncludes"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024fields",
+            "name": "fields",
+            "summary": "",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#property_fields"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024includes",
+            "name": "includes",
+            "summary": "",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#property_includes"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024resource",
+            "name": "resource",
+            "summary": "",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#property_resource"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024request",
+            "name": "request",
+            "summary": "",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#property_request"
+        },                {
             "fqsen": "\\CodeIgniter\\API\\ResponseTrait",
             "name": "ResponseTrait",
             "summary": "Provides\u0020common,\u0020more\u0020readable,\u0020methods\u0020to\u0020provide\nconsistent\u0020HTTP\u0020responses\u0020under\u0020a\u0020variety\u0020of\u0020common\nsituations\u0020when\u0020working\u0020as\u0020an\u0020API.",
@@ -86,6 +181,21 @@ Search.appendIndex(
             "summary": "Sets\u0020the\u0020format\u0020the\u0020response\u0020should\u0020be\u0020in.",
             "url": "classes/CodeIgniter-API-ResponseTrait.html#method_setResponseFormat"
         },                {
+            "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003Apaginate\u0028\u0029",
+            "name": "paginate",
+            "summary": "Paginates\u0020the\u0020given\u0020model\u0020or\u0020query\u0020builder\u0020and\u0020returns\nan\u0020array\u0020containing\u0020the\u0020paginated\u0020results\u0020along\u0020with\nmetadata\u0020such\u0020as\u0020total\u0020items,\u0020total\u0020pages,\u0020current\u0020page,\nand\u0020items\u0020per\u0020page.",
+            "url": "classes/CodeIgniter-API-ResponseTrait.html#method_paginate"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003AbuildLinks\u0028\u0029",
+            "name": "buildLinks",
+            "summary": "Builds\u0020pagination\u0020links\u0020based\u0020on\u0020the\u0020current\u0020request\u0020URI\u0020and\u0020pagination\u0020metadata.",
+            "url": "classes/CodeIgniter-API-ResponseTrait.html#method_buildLinks"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003AlinkHeader\u0028\u0029",
+            "name": "linkHeader",
+            "summary": "Formats\u0020the\u0020pagination\u0020links\u0020into\u0020a\u0020single\u0020Link\u0020header\u0020string\nfor\u0020middleware\/machine\u0020use.",
+            "url": "classes/CodeIgniter-API-ResponseTrait.html#method_linkHeader"
+        },                {
             "fqsen": "\\CodeIgniter\\API\\ResponseTrait\u003A\u003A\u0024codes",
             "name": "codes",
             "summary": "Allows\u0020child\u0020classes\u0020to\u0020override\u0020the\nstatus\u0020code\u0020that\u0020is\u0020used\u0020in\u0020their\u0020API.",
@@ -95,6 +205,26 @@ Search.appendIndex(
             "name": "formatter",
             "summary": "Current\u0020Formatter\u0020instance.\u0020This\u0020is\u0020usually\u0020set\u0020by\u0020ResponseTrait\u003A\u003Aformat",
             "url": "classes/CodeIgniter-API-ResponseTrait.html#property_formatter"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\TransformerInterface",
+            "name": "TransformerInterface",
+            "summary": "Interface\u0020for\u0020transforming\u0020resources\u0020into\u0020arrays.",
+            "url": "classes/CodeIgniter-API-TransformerInterface.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\TransformerInterface\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "Converts\u0020the\u0020resource\u0020to\u0020an\u0020array\u0020representation.",
+            "url": "classes/CodeIgniter-API-TransformerInterface.html#method_toArray"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\TransformerInterface\u003A\u003Atransform\u0028\u0029",
+            "name": "transform",
+            "summary": "Transforms\u0020the\u0020given\u0020resource\u0020into\u0020an\u0020array.",
+            "url": "classes/CodeIgniter-API-TransformerInterface.html#method_transform"
+        },                {
+            "fqsen": "\\CodeIgniter\\API\\TransformerInterface\u003A\u003AtransformMany\u0028\u0029",
+            "name": "transformMany",
+            "summary": "Transforms\u0020a\u0020collection\u0020of\u0020resources\u0020using\u0020\u0024this\u002D\u003Etransform\u0028\u0029\u0020on\u0020each\u0020item.",
+            "url": "classes/CodeIgniter-API-TransformerInterface.html#method_transformMany"
         },                {
             "fqsen": "\\VENDORPATH",
             "name": "VENDORPATH",
@@ -393,7 +523,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel",
             "name": "BaseModel",
-            "summary": "The\u0020BaseModel\u0020class\u0020provides\u0020a\u0020number\u0020of\u0020convenient\u0020features\u0020that\nmakes\u0020working\u0020with\u0020a\u0020databases\u0020less\u0020painful.\u0020Extending\u0020this\u0020class\nprovide\u0020means\u0020of\u0020implementing\u0020various\u0020database\u0020systems",
+            "summary": "The\u0020BaseModel\u0020class\u0020provides\u0020a\u0020number\u0020of\u0020convenient\u0020features\u0020that\nmakes\u0020working\u0020with\u0020a\u0020databases\u0020less\u0020painful.\u0020Extending\u0020this\u0020class\nprovide\u0020means\u0020of\u0020implementing\u0020various\u0020database\u0020systems.",
             "url": "classes/CodeIgniter-BaseModel.html"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A__construct\u0028\u0029",
@@ -418,7 +548,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoFind\u0028\u0029",
             "name": "doFind",
-            "summary": "Fetches\u0020the\u0020row\u0020of\u0020database.",
+            "summary": "Fetches\u0020the\u0020row\u0028s\u0029\u0020of\u0020database\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doFind"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoFindColumn\u0028\u0029",
@@ -458,17 +588,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoDelete\u0028\u0029",
             "name": "doDelete",
-            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches.",
+            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches\nthe\u0020table\u0027s\u0020primary\u0020key.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doDelete"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoPurgeDeleted\u0028\u0029",
             "name": "doPurgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted.",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028value\u0020of\u0020column\u0020\u0024deletedField\u0020is\u0020not\u0020null\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doPurgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoOnlyDeleted\u0028\u0029",
             "name": "doOnlyDeleted",
-            "summary": "Works\u0020with\u0020the\u0020find\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted.",
+            "summary": "Works\u0020with\u0020the\u0020\u0024this\u002D\u003Efind\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted\u0020\u0028value\u0020of\u0020column\u0020\u0024deletedField\u0020is\u0020not\u0020null\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doOnlyDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoReplace\u0028\u0029",
@@ -483,7 +613,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AgetIdValue\u0028\u0029",
             "name": "getIdValue",
-            "summary": "Public\u0020getter\u0020to\u0020return\u0020the\u0020id\u0020value\u0020using\u0020the\u0020idValue\u0028\u0029\u0020method.",
+            "summary": "Public\u0020getter\u0020to\u0020return\u0020the\u0020ID\u0020value\u0020for\u0020the\u0020data\u0020array\u0020or\u0020object.",
             "url": "classes/CodeIgniter-BaseModel.html#method_getIdValue"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AcountAllResults\u0028\u0029",
@@ -518,7 +648,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "A\u0020convenience\u0020method\u0020that\u0020will\u0020attempt\u0020to\u0020determine\u0020whether\u0020the\ndata\u0020should\u0020be\u0020inserted\u0020or\u0020updated.\u0020Will\u0020work\u0020with\u0020either\nan\u0020array\u0020or\u0020object.\u0020When\u0020using\u0020with\u0020custom\u0020class\u0020objects,\nyou\u0020must\u0020ensure\u0020that\u0020the\u0020class\u0020will\u0020provide\u0020access\u0020to\u0020the\u0020class\nvariables,\u0020even\u0020if\u0020through\u0020a\u0020magic\u0020method.",
+            "summary": "A\u0020convenience\u0020method\u0020that\u0020will\u0020attempt\u0020to\u0020determine\u0020whether\u0020the\ndata\u0020should\u0020be\u0020inserted\u0020or\u0020updated.",
             "url": "classes/CodeIgniter-BaseModel.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AshouldUpdate\u0028\u0029",
@@ -530,6 +660,11 @@ Search.appendIndex(
             "name": "getInsertID",
             "summary": "Returns\u0020last\u0020insert\u0020ID\u0020or\u00200.",
             "url": "classes/CodeIgniter-BaseModel.html#method_getInsertID"
+        },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AvalidateID\u0028\u0029",
+            "name": "validateID",
+            "summary": "Validates\u0020that\u0020the\u0020primary\u0020key\u0020values\u0020are\u0020valid\u0020for\u0020update\/delete\/insert\u0020operations.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_validateID"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Ainsert\u0028\u0029",
             "name": "insert",
@@ -568,7 +703,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003ApurgeDeleted\u0028\u0029",
             "name": "purgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029.",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028value\u0020of\u0020column\u0020\u0024deletedField\u0020is\u0020not\u0020null\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#method_purgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AwithDeleted\u0028\u0029",
@@ -578,7 +713,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AonlyDeleted\u0028\u0029",
             "name": "onlyDeleted",
-            "summary": "Works\u0020with\u0020the\u0020find\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted.",
+            "summary": "Works\u0020with\u0020the\u0020\u0024this\u002D\u003Efind\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted.",
             "url": "classes/CodeIgniter-BaseModel.html#method_onlyDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Areplace\u0028\u0029",
@@ -588,7 +723,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Aerrors\u0028\u0029",
             "name": "errors",
-            "summary": "Grabs\u0020the\u0020last\u0020error\u0028s\u0029\u0020that\u0020occurred.\u0020If\u0020data\u0020was\u0020validated,\nit\u0020will\u0020first\u0020check\u0020for\u0020errors\u0020there,\u0020otherwise\u0020will\u0020try\u0020to\ngrab\u0020the\u0020last\u0020error\u0020from\u0020the\u0020Database\u0020connection.",
+            "summary": "Grabs\u0020the\u0020last\u0020error\u0028s\u0029\u0020that\u0020occurred.",
             "url": "classes/CodeIgniter-BaseModel.html#method_errors"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Apaginate\u0028\u0029",
@@ -618,7 +753,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetDate\u0028\u0029",
             "name": "setDate",
-            "summary": "Sets\u0020the\u0020date\u0020or\u0020current\u0020date\u0020if\u0020null\u0020value\u0020is\u0020passed.",
+            "summary": "Sets\u0020the\u0020timestamp\u0020or\u0020current\u0020timestamp\u0020if\u0020null\u0020value\u0020is\u0020passed.",
             "url": "classes/CodeIgniter-BaseModel.html#method_setDate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AintToDate\u0028\u0029",
@@ -633,7 +768,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024skipValidation",
             "name": "skipValidation",
-            "summary": "Skip\u0020the\u0020model\u0027s\u0020validation.\u0020Used\u0020in\u0020conjunction\u0020with\u0020skipValidation\u0028\u0029\nto\u0020skip\u0020data\u0020validation\u0020for\u0020any\u0020future\u0020calls.",
+            "summary": "Skip\u0020the\u0020model\u0027s\u0020validation.",
             "url": "classes/CodeIgniter-BaseModel.html#property_skipValidation"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetValidationMessages\u0028\u0029",
@@ -688,18 +823,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024allowCallbacks",
             "name": "allowCallbacks",
-            "summary": "Whether\u0020to\u0020trigger\u0020the\u0020defined\u0020callbacks",
+            "summary": "Whether\u0020to\u0020trigger\u0020the\u0020defined\u0020callbacks.",
             "url": "classes/CodeIgniter-BaseModel.html#property_allowCallbacks"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003Atrigger\u0028\u0029",
             "name": "trigger",
             "summary": "A\u0020simple\u0020event\u0020trigger\u0020for\u0020Model\u0020Events\u0020that\u0020allows\u0020additional\ndata\u0020manipulation\u0020within\u0020the\u0020model.\u0020Specifically\u0020intended\u0020for\nusage\u0020by\u0020child\u0020models\u0020this\u0020can\u0020be\u0020used\u0020to\u0020format\u0020data,\nsave\/load\u0020related\u0020classes,\u0020etc.",
             "url": "classes/CodeIgniter-BaseModel.html#method_trigger"
-        },                {
-            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AtransformDataRowToArray\u0028\u0029",
-            "name": "transformDataRowToArray",
-            "summary": "If\u0020the\u0020model\u0020is\u0020using\u0020casts,\u0020this\u0020will\u0020convert\u0020the\u0020data\nin\u0020\u0024row\u0020according\u0020to\u0020the\u0020rules\u0020defined\u0020in\u0020\u0060\u0024casts\u0060.",
-            "url": "classes/CodeIgniter-BaseModel.html#method_transformDataRowToArray"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AasArray\u0028\u0029",
             "name": "asArray",
@@ -733,12 +863,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A__get\u0028\u0029",
             "name": "__get",
-            "summary": "Provides\u0020the\u0020db\u0020connection\u0020and\u0020model\u0027s\u0020properties.",
+            "summary": "Provides\u0020the\u0020DB\u0020connection\u0020and\u0020model\u0027s\u0020properties.",
             "url": "classes/CodeIgniter-BaseModel.html#method___get"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A__isset\u0028\u0029",
             "name": "__isset",
-            "summary": "Checks\u0020for\u0020the\u0020existence\u0020of\u0020properties\u0020across\u0020this\u0020model,\u0020and\u0020db\u0020connection.",
+            "summary": "Checks\u0020for\u0020the\u0020existence\u0020of\u0020properties\u0020across\u0020this\u0020model,\u0020and\u0020DB\u0020connection.",
             "url": "classes/CodeIgniter-BaseModel.html#method___isset"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A__call\u0028\u0029",
@@ -763,12 +893,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024db",
             "name": "db",
-            "summary": "Database\u0020Connection",
+            "summary": "Database\u0020Connection.",
             "url": "classes/CodeIgniter-BaseModel.html#property_db"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024insertID",
             "name": "insertID",
-            "summary": "Last\u0020insert\u0020ID",
+            "summary": "Last\u0020insert\u0020ID.",
             "url": "classes/CodeIgniter-BaseModel.html#property_insertID"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024DBGroup",
@@ -783,7 +913,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024tempReturnType",
             "name": "tempReturnType",
-            "summary": "Used\u0020by\u0020asArray\u0028\u0029\u0020and\u0020asObject\u0028\u0029\u0020to\u0020provide\ntemporary\u0020overrides\u0020of\u0020model\u0020default.",
+            "summary": "The\u0020temporary\u0020format\u0020of\u0020the\u0020result.",
             "url": "classes/CodeIgniter-BaseModel.html#property_tempReturnType"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024casts",
@@ -803,7 +933,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024protectFields",
             "name": "protectFields",
-            "summary": "Determines\u0020whether\u0020the\u0020model\u0020should\u0020protect\u0020field\u0020names\u0020during\nmass\u0020assignment\u0020operations\u0020such\u0020as\u0020insert\u0028\u0029\u0020and\u0020update\u0028\u0029.",
+            "summary": "Determines\u0020whether\u0020the\u0020model\u0020should\u0020protect\u0020field\u0020names\u0020during\nmass\u0020assignment\u0020operations\u0020such\u0020as\u0020\u0024this\u002D\u003Einsert\u0028\u0029,\u0020\u0024this\u002D\u003Eupdate\u0028\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#property_protectFields"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024allowedFields",
@@ -823,12 +953,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024createdField",
             "name": "createdField",
-            "summary": "The\u0020column\u0020used\u0020for\u0020insert\u0020timestamps",
+            "summary": "The\u0020column\u0020used\u0020for\u0020insert\u0020timestamps.",
             "url": "classes/CodeIgniter-BaseModel.html#property_createdField"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024updatedField",
             "name": "updatedField",
-            "summary": "The\u0020column\u0020used\u0020for\u0020update\u0020timestamps",
+            "summary": "The\u0020column\u0020used\u0020for\u0020update\u0020timestamps.",
             "url": "classes/CodeIgniter-BaseModel.html#property_updatedField"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024useSoftDeletes",
@@ -838,12 +968,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024tempUseSoftDeletes",
             "name": "tempUseSoftDeletes",
-            "summary": "Used\u0020by\u0020withDeleted\u0020to\u0020override\u0020the\nmodel\u0027s\u0020softDelete\u0020setting.",
+            "summary": "Used\u0020by\u0020\u0024this\u002D\u003EwithDeleted\u0028\u0029\u0020to\u0020override\u0020the\nmodel\u0027s\u0020\u0022softDelete\u0022\u0020setting.",
             "url": "classes/CodeIgniter-BaseModel.html#property_tempUseSoftDeletes"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024deletedField",
             "name": "deletedField",
-            "summary": "The\u0020column\u0020used\u0020to\u0020save\u0020soft\u0020delete\u0020state",
+            "summary": "The\u0020column\u0020used\u0020to\u0020save\u0020soft\u0020delete\u0020state.",
             "url": "classes/CodeIgniter-BaseModel.html#property_deletedField"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024updateOnlyChanged",
@@ -853,7 +983,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024validationRules",
             "name": "validationRules",
-            "summary": "Rules\u0020used\u0020to\u0020validate\u0020data\u0020in\u0020insert\u0028\u0029,\u0020update\u0028\u0029,\u0020and\u0020save\u0028\u0029\u0020methods.",
+            "summary": "Rules\u0020used\u0020to\u0020validate\u0020data\u0020in\u0020insert\u0028\u0029,\u0020update\u0028\u0029,\u0020save\u0028\u0029,\ninsertBatch\u0028\u0029,\u0020and\u0020updateBatch\u0028\u0029\u0020methods.",
             "url": "classes/CodeIgniter-BaseModel.html#property_validationRules"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024validationMessages",
@@ -868,67 +998,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024tempAllowCallbacks",
             "name": "tempAllowCallbacks",
-            "summary": "Used\u0020by\u0020allowCallbacks\u0028\u0029\u0020to\u0020override\u0020the\nmodel\u0027s\u0020allowCallbacks\u0020setting.",
+            "summary": "Used\u0020by\u0020\u0024this\u002D\u003EallowCallbacks\u0028\u0029\u0020to\u0020override\u0020the\nmodel\u0027s\u0020\u0024allowCallbacks\u0020setting.",
             "url": "classes/CodeIgniter-BaseModel.html#property_tempAllowCallbacks"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeInsert",
             "name": "beforeInsert",
-            "summary": "Callbacks\u0020for\u0020beforeInsert",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeInsert\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeInsert"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterInsert",
             "name": "afterInsert",
-            "summary": "Callbacks\u0020for\u0020afterInsert",
+            "summary": "Callbacks\u0020for\u0020\u0022afterInsert\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterInsert"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeUpdate",
             "name": "beforeUpdate",
-            "summary": "Callbacks\u0020for\u0020beforeUpdate",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeUpdate\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterUpdate",
             "name": "afterUpdate",
-            "summary": "Callbacks\u0020for\u0020afterUpdate",
+            "summary": "Callbacks\u0020for\u0020\u0022afterUpdate\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeInsertBatch",
             "name": "beforeInsertBatch",
-            "summary": "Callbacks\u0020for\u0020beforeInsertBatch",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeInsertBatch\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeInsertBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterInsertBatch",
             "name": "afterInsertBatch",
-            "summary": "Callbacks\u0020for\u0020afterInsertBatch",
+            "summary": "Callbacks\u0020for\u0020\u0022afterInsertBatch\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterInsertBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeUpdateBatch",
             "name": "beforeUpdateBatch",
-            "summary": "Callbacks\u0020for\u0020beforeUpdateBatch",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeUpdateBatch\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeUpdateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterUpdateBatch",
             "name": "afterUpdateBatch",
-            "summary": "Callbacks\u0020for\u0020afterUpdateBatch",
+            "summary": "Callbacks\u0020for\u0020\u0022afterUpdateBatch\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterUpdateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeFind",
             "name": "beforeFind",
-            "summary": "Callbacks\u0020for\u0020beforeFind",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeFind\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeFind"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterFind",
             "name": "afterFind",
-            "summary": "Callbacks\u0020for\u0020afterFind",
+            "summary": "Callbacks\u0020for\u0020\u0022afterFind\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterFind"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024beforeDelete",
             "name": "beforeDelete",
-            "summary": "Callbacks\u0020for\u0020beforeDelete",
+            "summary": "Callbacks\u0020for\u0020\u0022beforeDelete\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_beforeDelete"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024afterDelete",
             "name": "afterDelete",
-            "summary": "Callbacks\u0020for\u0020afterDelete",
+            "summary": "Callbacks\u0020for\u0020\u0022afterDelete\u0022\u0020event.",
             "url": "classes/CodeIgniter-BaseModel.html#property_afterDelete"
         },                {
             "fqsen": "\\ENVIRONMENT",
@@ -970,6 +1100,11 @@ Search.appendIndex(
             "name": "bootWeb",
             "summary": "Used\u0020by\u0020\u0060public\/index.php\u0060",
             "url": "classes/CodeIgniter-Boot.html#method_bootWeb"
+        },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003AbootWorker\u0028\u0029",
+            "name": "bootWorker",
+            "summary": "Bootstrap\u0020for\u0020FrankenPHP\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-Boot.html#method_bootWorker"
         },                {
             "fqsen": "\\CodeIgniter\\Boot\u003A\u003AbootConsole\u0028\u0029",
             "name": "bootConsole",
@@ -1021,6 +1156,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Boot.html#method_loadCommonFunctions"
         },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003AloadCommonFunctionsMock\u0028\u0029",
+            "name": "loadCommonFunctionsMock",
+            "summary": "",
+            "url": "classes/CodeIgniter-Boot.html#method_loadCommonFunctionsMock"
+        },                {
             "fqsen": "\\CodeIgniter\\Boot\u003A\u003AloadAutoloader\u0028\u0029",
             "name": "loadAutoloader",
             "summary": "The\u0020autoloader\u0020allows\u0020all\u0020the\u0020pieces\u0020to\u0020work\u0020together\u0020in\u0020the\u0020framework.",
@@ -1040,6 +1180,11 @@ Search.appendIndex(
             "name": "checkMissingExtensions",
             "summary": "",
             "url": "classes/CodeIgniter-Boot.html#method_checkMissingExtensions"
+        },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003AcheckOptimizationsForWorker\u0028\u0029",
+            "name": "checkOptimizationsForWorker",
+            "summary": "",
+            "url": "classes/CodeIgniter-Boot.html#method_checkOptimizationsForWorker"
         },                {
             "fqsen": "\\CodeIgniter\\Boot\u003A\u003AinitializeKint\u0028\u0029",
             "name": "initializeKint",
@@ -1116,10 +1261,20 @@ Search.appendIndex(
             "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-CacheInterface.html#method_save"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\CacheInterface\u003A\u003Aremember\u0028\u0029",
+            "name": "remember",
+            "summary": "Attempts\u0020to\u0020get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020executes\u0020the\u0020callback\nand\u0020stores\u0020the\u0020result\u0020on\u0020cache\u0020miss.",
+            "url": "classes/CodeIgniter-Cache-CacheInterface.html#method_remember"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheInterface\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
             "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-CacheInterface.html#method_delete"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\CacheInterface\u003A\u003AdeleteMatching\u0028\u0029",
+            "name": "deleteMatching",
+            "summary": "Deletes\u0020items\u0020from\u0020the\u0020cache\u0020store\u0020matching\u0020a\u0020given\u0020pattern.",
+            "url": "classes/CodeIgniter-Cache-CacheInterface.html#method_deleteMatching"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheInterface\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
@@ -1236,6 +1391,76 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Cache-FactoriesCache.html#property_cache"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler",
+            "name": "ApcuHandler",
+            "summary": "APCu\u0020cache\u0020handler",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Ainitialize\u0028\u0029",
+            "name": "initialize",
+            "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_initialize"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_save"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Aremember\u0028\u0029",
+            "name": "remember",
+            "summary": "Attempts\u0020to\u0020get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020executes\u0020the\u0020callback\nand\u0020stores\u0020the\u0020result\u0020on\u0020cache\u0020miss.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_remember"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Adelete\u0028\u0029",
+            "name": "delete",
+            "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_delete"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003AdeleteMatching\u0028\u0029",
+            "name": "deleteMatching",
+            "summary": "Deletes\u0020items\u0020from\u0020the\u0020cache\u0020store\u0020matching\u0020a\u0020given\u0020pattern.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_deleteMatching"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Aincrement\u0028\u0029",
+            "name": "increment",
+            "summary": "Performs\u0020atomic\u0020incrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_increment"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Adecrement\u0028\u0029",
+            "name": "decrement",
+            "summary": "Performs\u0020atomic\u0020decrementation\u0020of\u0020a\u0020raw\u0020stored\u0020value.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_decrement"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003Aclean\u0028\u0029",
+            "name": "clean",
+            "summary": "Will\u0020delete\u0020all\u0020items\u0020in\u0020the\u0020entire\u0020cache.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_clean"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003AgetCacheInfo\u0028\u0029",
+            "name": "getCacheInfo",
+            "summary": "Returns\u0020information\u0020on\u0020the\u0020entire\u0020cache.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_getCacheInfo"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003AgetMetaData\u0028\u0029",
+            "name": "getMetaData",
+            "summary": "Returns\u0020detailed\u0020information\u0020about\u0020the\u0020specific\u0020item\u0020in\u0020the\u0020cache.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_getMetaData"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\ApcuHandler\u003A\u003AisSupported\u0028\u0029",
+            "name": "isSupported",
+            "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
+            "url": "classes/CodeIgniter-Cache-Handlers-ApcuHandler.html#method_isSupported"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler",
             "name": "BaseHandler",
             "summary": "Base\u0020class\u0020for\u0020cache\u0020handling",
@@ -1248,13 +1473,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler\u003A\u003Aremember\u0028\u0029",
             "name": "remember",
-            "summary": "Get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020execute\u0020the\u0020given\u0020Closure\u0020and\u0020store\u0020the\u0020result.",
+            "summary": "Attempts\u0020to\u0020get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020executes\u0020the\u0020callback\nand\u0020stores\u0020the\u0020result\u0020on\u0020cache\u0020miss.",
             "url": "classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_remember"
         },                {
-            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler\u003A\u003AdeleteMatching\u0028\u0029",
-            "name": "deleteMatching",
-            "summary": "Deletes\u0020items\u0020from\u0020the\u0020cache\u0020store\u0020matching\u0020a\u0020given\u0020pattern.",
-            "url": "classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_deleteMatching"
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler\u003A\u003Aping\u0028\u0029",
+            "name": "ping",
+            "summary": "Check\u0020if\u0020connection\u0020is\u0020alive.",
+            "url": "classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_ping"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler\u003A\u003Areconnect\u0028\u0029",
+            "name": "reconnect",
+            "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
+            "url": "classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_reconnect"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\BaseHandler\u003A\u003ARESERVED_CHARACTERS",
             "name": "RESERVED_CHARACTERS",
@@ -1288,7 +1518,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Aremember\u0028\u0029",
             "name": "remember",
-            "summary": "Get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020execute\u0020the\u0020given\u0020Closure\u0020and\u0020store\u0020the\u0020result.",
+            "summary": "Attempts\u0020to\u0020get\u0020an\u0020item\u0020from\u0020the\u0020cache,\u0020or\u0020executes\u0020the\u0020callback\nand\u0020stores\u0020the\u0020result\u0020on\u0020cache\u0020miss.",
             "url": "classes/CodeIgniter-Cache-Handlers-DummyHandler.html#method_remember"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\DummyHandler\u003A\u003Asave\u0028\u0029",
@@ -1451,11 +1681,6 @@ Search.appendIndex(
             "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method___construct"
         },                {
-            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003A__destruct\u0028\u0029",
-            "name": "__destruct",
-            "summary": "Closes\u0020the\u0020connection\u0020to\u0020Memcache\u0028d\u0029\u0020if\u0020present.",
-            "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method___destruct"
-        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
             "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
@@ -1510,6 +1735,16 @@ Search.appendIndex(
             "name": "isSupported",
             "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_isSupported"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Aping\u0028\u0029",
+            "name": "ping",
+            "summary": "Check\u0020if\u0020connection\u0020is\u0020alive.",
+            "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_ping"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003Areconnect\u0028\u0029",
+            "name": "reconnect",
+            "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
+            "url": "classes/CodeIgniter-Cache-Handlers-MemcachedHandler.html#method_reconnect"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\MemcachedHandler\u003A\u003A\u0024memcached",
             "name": "memcached",
@@ -1586,6 +1821,16 @@ Search.appendIndex(
             "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isSupported"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Aping\u0028\u0029",
+            "name": "ping",
+            "summary": "Check\u0020if\u0020connection\u0020is\u0020alive.",
+            "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_ping"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Areconnect\u0028\u0029",
+            "name": "reconnect",
+            "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
+            "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_reconnect"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003A\u0024config",
             "name": "config",
             "summary": "Default\u0020config",
@@ -1605,11 +1850,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Note\u003A\u0020Use\u0020\u0060CacheFactory\u003A\u003AgetHandler\u0028\u0029\u0060\u0020to\u0020instantiate.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___construct"
-        },                {
-            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A__destruct\u0028\u0029",
-            "name": "__destruct",
-            "summary": "Closes\u0020the\u0020connection\u0020to\u0020Redis\u0020if\u0020present.",
-            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method___destruct"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
@@ -1665,6 +1905,16 @@ Search.appendIndex(
             "name": "isSupported",
             "summary": "Determines\u0020if\u0020the\u0020driver\u0020is\u0020supported\u0020on\u0020this\u0020system.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_isSupported"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Aping\u0028\u0029",
+            "name": "ping",
+            "summary": "Check\u0020if\u0020connection\u0020is\u0020alive.",
+            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_ping"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Areconnect\u0028\u0029",
+            "name": "reconnect",
+            "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
+            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_reconnect"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A\u0024config",
             "name": "config",
@@ -2346,6 +2596,121 @@ Search.appendIndex(
             "summary": "Is\u0020the\u0020readline\u0020library\u0020on\u0020the\u0020system\u003F",
             "url": "classes/CodeIgniter-CLI-InputOutput.html#property_readlineSupport"
         },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait",
+            "name": "SignalTrait",
+            "summary": "Signal\u0020Trait",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024isPcntlAvailable",
+            "name": "isPcntlAvailable",
+            "summary": "Cached\u0020result\u0020of\u0020PCNTL\u0020extension\u0020availability.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_isPcntlAvailable"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024isPosixAvailable",
+            "name": "isPosixAvailable",
+            "summary": "Cached\u0020result\u0020of\u0020POSIX\u0020extension\u0020availability.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_isPosixAvailable"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AregisterSignals\u0028\u0029",
+            "name": "registerSignals",
+            "summary": "Register\u0020signal\u0020handlers.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_registerSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AhandleSignal\u0028\u0029",
+            "name": "handleSignal",
+            "summary": "Handle\u0020incoming\u0020signals.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_handleSignal"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AcallCustomHandler\u0028\u0029",
+            "name": "callCustomHandler",
+            "summary": "Call\u0020custom\u0020signal\u0020handler\u0020if\u0020one\u0020is\u0020mapped\u0020for\u0020this\u0020signal.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_callCustomHandler"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AshouldTerminate\u0028\u0029",
+            "name": "shouldTerminate",
+            "summary": "Check\u0020if\u0020command\u0020should\u0020terminate.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_shouldTerminate"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AisRunning\u0028\u0029",
+            "name": "isRunning",
+            "summary": "Check\u0020if\u0020the\u0020process\u0020is\u0020currently\u0020running\u0020\u0028not\u0020terminated\u0029.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_isRunning"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003ArequestTermination\u0028\u0029",
+            "name": "requestTermination",
+            "summary": "Request\u0020immediate\u0020termination.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_requestTermination"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AresetState\u0028\u0029",
+            "name": "resetState",
+            "summary": "Reset\u0020all\u0020states\u0020\u0028for\u0020testing\u0020or\u0020restart\u0020scenarios\u0029.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_resetState"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AwithSignalsBlocked\u0028\u0029",
+            "name": "withSignalsBlocked",
+            "summary": "Execute\u0020a\u0020callable\u0020with\u0020ALL\u0020signals\u0020blocked\u0020to\u0020prevent\u0020ANY\u0020interruption\u0020during\u0020critical\u0020operations.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_withSignalsBlocked"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AblockSignals\u0028\u0029",
+            "name": "blockSignals",
+            "summary": "Block\u0020ALL\u0020interruptible\u0020signals\u0020during\u0020critical\u0020sections.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_blockSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AunblockSignals\u0028\u0029",
+            "name": "unblockSignals",
+            "summary": "Unblock\u0020previously\u0020blocked\u0020signals.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_unblockSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024signalsBlocked",
+            "name": "signalsBlocked",
+            "summary": "Whether\u0020signals\u0020are\u0020currently\u0020blocked.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_signalsBlocked"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AmapSignal\u0028\u0029",
+            "name": "mapSignal",
+            "summary": "Add\u0020or\u0020update\u0020signal\u002Dto\u002Dmethod\u0020mapping\u0020at\u0020runtime.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_mapSignal"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AgetSignalName\u0028\u0029",
+            "name": "getSignalName",
+            "summary": "Get\u0020human\u002Dreadable\u0020signal\u0020name.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_getSignalName"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AunregisterSignals\u0028\u0029",
+            "name": "unregisterSignals",
+            "summary": "Unregister\u0020all\u0020signals\u0020\u0028cleanup\u0029.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_unregisterSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AhasSignals\u0028\u0029",
+            "name": "hasSignals",
+            "summary": "Check\u0020if\u0020signals\u0020are\u0020registered.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_hasSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AgetSignals\u0028\u0029",
+            "name": "getSignals",
+            "summary": "Get\u0020list\u0020of\u0020registered\u0020signals.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_getSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003AgetProcessState\u0028\u0029",
+            "name": "getProcessState",
+            "summary": "Get\u0020comprehensive\u0020process\u0020state\u0020information.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#method_getProcessState"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024running",
+            "name": "running",
+            "summary": "Whether\u0020the\u0020process\u0020should\u0020continue\u0020running\u0020\u0028false\u0020\u003D\u0020termination\u0020requested\u0029.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_running"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024registeredSignals",
+            "name": "registeredSignals",
+            "summary": "Array\u0020of\u0020registered\u0020signals.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_registeredSignals"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\SignalTrait\u003A\u003A\u0024signalMethodMap",
+            "name": "signalMethodMap",
+            "summary": "Signal\u002Dto\u002Dmethod\u0020mapping.",
+            "url": "classes/CodeIgniter-CLI-SignalTrait.html#property_signalMethodMap"
+        },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter",
             "name": "CodeIgniter",
             "summary": "This\u0020class\u0020is\u0020the\u0020core\u0020of\u0020the\u0020framework,\u0020and\u0020will\u0020analyse\u0020the\nrequest,\u0020route\u0020it\u0020to\u0020a\u0020controller,\u0020and\u0020send\u0020back\u0020the\u0020response.",
@@ -2361,10 +2726,10 @@ Search.appendIndex(
             "summary": "Handles\u0020some\u0020basic\u0020app\u0020and\u0020environment\u0020setup.",
             "url": "classes/CodeIgniter-CodeIgniter.html#method_initialize"
         },                {
-            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AresolvePlatformExtensions\u0028\u0029",
-            "name": "resolvePlatformExtensions",
-            "summary": "Checks\u0020system\u0020for\u0020missing\u0020required\u0020PHP\u0020extensions.",
-            "url": "classes/CodeIgniter-CodeIgniter.html#method_resolvePlatformExtensions"
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AresetForWorkerMode\u0028\u0029",
+            "name": "resetForWorkerMode",
+            "summary": "Reset\u0020request\u002Dspecific\u0020state\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_resetForWorkerMode"
         },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AinitializeKint\u0028\u0029",
             "name": "initializeKint",
@@ -3566,6 +3931,51 @@ Search.appendIndex(
             "summary": "The\u0020Command\u0027s\u0020Options",
             "url": "classes/CodeIgniter-Commands-Generators-TestGenerator.html#property_options"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator",
+            "name": "TransformerGenerator",
+            "summary": "Generates\u0020a\u0020skeleton\u0020transformer\u0020file.",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Actually\u0020execute\u0020a\u0020command.",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#method_run"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003Aprepare\u0028\u0029",
+            "name": "prepare",
+            "summary": "Prepare\u0020options\u0020and\u0020do\u0020the\u0020necessary\u0020replacements.",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#method_prepare"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024group",
+            "name": "group",
+            "summary": "The\u0020Command\u0027s\u0020Group",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_group"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "The\u0020Command\u0027s\u0020Name",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_name"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "The\u0020Command\u0027s\u0020Description",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_description"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024usage",
+            "name": "usage",
+            "summary": "The\u0020Command\u0027s\u0020Usage",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_usage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024arguments",
+            "name": "arguments",
+            "summary": "The\u0020Command\u0027s\u0020Arguments",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_arguments"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Generators\\TransformerGenerator\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "The\u0020Command\u0027s\u0020Options",
+            "url": "classes/CodeIgniter-Commands-Generators-TransformerGenerator.html#property_options"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Generators\\ValidationGenerator",
             "name": "ValidationGenerator",
             "summary": "Generates\u0020a\u0020skeleton\u0020Validation\u0020file.",
@@ -4681,6 +5091,91 @@ Search.appendIndex(
             "summary": "the\u0020Command\u0027s\u0020Options",
             "url": "classes/CodeIgniter-Commands-Utilities-Routes.html#property_options"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall",
+            "name": "WorkerInstall",
+            "summary": "Install\u0020Worker\u0020Mode\u0020for\u0020FrankenPHP.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Actually\u0020execute\u0020a\u0020command.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#method_run"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003AshowNextSteps\u0028\u0029",
+            "name": "showNextSteps",
+            "summary": "Display\u0020next\u0020steps\u0020to\u0020the\u0020user",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#method_showNextSteps"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024group",
+            "name": "group",
+            "summary": "The\u0020group\u0020the\u0020command\u0020is\u0020lumped\u0020under\nwhen\u0020listing\u0020commands.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_group"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "The\u0020Command\u0027s\u0020name",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_name"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "the\u0020Command\u0027s\u0020short\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_description"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024usage",
+            "name": "usage",
+            "summary": "the\u0020Command\u0027s\u0020usage\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_usage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "the\u0020Command\u0027s\u0020options\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_options"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerInstall\u003A\u003A\u0024templates",
+            "name": "templates",
+            "summary": "Template\u0020file\u0020mappings\u0020\u0028template\u0020\u003D\u003E\u0020destination\u0020path\u0029",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerInstall.html#property_templates"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall",
+            "name": "WorkerUninstall",
+            "summary": "Uninstall\u0020Worker\u0020Mode\u0020for\u0020FrankenPHP.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003Arun\u0028\u0029",
+            "name": "run",
+            "summary": "Actually\u0020execute\u0020a\u0020command.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#method_run"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024group",
+            "name": "group",
+            "summary": "The\u0020group\u0020the\u0020command\u0020is\u0020lumped\u0020under\nwhen\u0020listing\u0020commands.",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_group"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "The\u0020Command\u0027s\u0020name",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_name"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024description",
+            "name": "description",
+            "summary": "the\u0020Command\u0027s\u0020short\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_description"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024usage",
+            "name": "usage",
+            "summary": "the\u0020Command\u0027s\u0020usage\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_usage"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024options",
+            "name": "options",
+            "summary": "the\u0020Command\u0027s\u0020options\u0020description",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_options"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker\\WorkerUninstall\u003A\u003A\u0024files",
+            "name": "files",
+            "summary": "Files\u0020to\u0020remove\u0020\u0028must\u0020match\u0020Install\u0020command\u0029",
+            "url": "classes/CodeIgniter-Commands-Worker-WorkerUninstall.html#property_files"
+        },                {
             "fqsen": "\\app_timezone\u0028\u0029",
             "name": "app_timezone",
             "summary": "Returns\u0020the\u0020timezone\u0020the\u0020application\u0020has\u0020been\u0020set\u0020to\u0020display\ndates\u0020in.\u0020This\u0020might\u0020be\u0020different\u0020than\u0020the\u0020timezone\u0020set\nat\u0020the\u0020server\u0020level,\u0020as\u0020you\u0020often\u0020want\u0020to\u0020stores\u0020dates\u0020in\u0020UTC\nand\u0020convert\u0020them\u0020on\u0020the\u0020fly\u0020for\u0020the\u0020user.",
@@ -4826,6 +5321,11 @@ Search.appendIndex(
             "summary": "Remove\u0020Invisible\u0020Characters",
             "url": "namespaces/default.html#function_remove_invisible_characters"
         },                {
+            "fqsen": "\\render_backtrace\u0028\u0029",
+            "name": "render_backtrace",
+            "summary": "Renders\u0020a\u0020backtrace\u0020in\u0020a\u0020nice\u0020string\u0020format.",
+            "url": "namespaces/default.html#function_render_backtrace"
+        },                {
             "fqsen": "\\request\u0028\u0029",
             "name": "request",
             "summary": "Returns\u0020the\u0020shared\u0020Request.",
@@ -4951,6 +5451,11 @@ Search.appendIndex(
             "summary": "Will\u0020attempt\u0020to\u0020get\u0020environment\u0020variables\u0020with\u0020names\nthat\u0020match\u0020the\u0020properties\u0020of\u0020the\u0020child\u0020class.",
             "url": "classes/CodeIgniter-Config-BaseConfig.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003AparseEncryptionKey\u0028\u0029",
+            "name": "parseEncryptionKey",
+            "summary": "Parse\u0020encryption\u0020key\u0020with\u0020hex2bin\u003A\u0020or\u0020base64\u003A\u0020prefix",
+            "url": "classes/CodeIgniter-Config-BaseConfig.html#method_parseEncryptionKey"
+        },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseConfig\u003A\u003AinitEnvValue\u0028\u0029",
             "name": "initEnvValue",
             "summary": "Initialization\u0020an\u0020environment\u002Dspecific\u0020configuration\u0020setting",
@@ -5006,6 +5511,11 @@ Search.appendIndex(
             "summary": "Simple\u0020method\u0020to\u0020get\u0020an\u0020entry\u0020fast.",
             "url": "classes/CodeIgniter-Config-BaseService.html#method_get"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003Ahas\u0028\u0029",
+            "name": "has",
+            "summary": "Checks\u0020if\u0020a\u0020service\u0020instance\u0020has\u0020been\u0020created.",
+            "url": "classes/CodeIgniter-Config-BaseService.html#method_has"
+        },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003Aset\u0028\u0029",
             "name": "set",
             "summary": "Sets\u0020an\u0020entry.",
@@ -5045,6 +5555,16 @@ Search.appendIndex(
             "name": "reset",
             "summary": "Reset\u0020shared\u0020instances\u0020and\u0020mocks\u0020for\u0020testing.",
             "url": "classes/CodeIgniter-Config-BaseService.html#method_reset"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003AreconnectCacheForWorkerMode\u0028\u0029",
+            "name": "reconnectCacheForWorkerMode",
+            "summary": "Reconnect\u0020cache\u0020connection\u0020for\u0020worker\u0020mode\u0020at\u0020the\u0020start\u0020of\u0020a\u0020request.",
+            "url": "classes/CodeIgniter-Config-BaseService.html#method_reconnectCacheForWorkerMode"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003AresetForWorkerMode\u0028\u0029",
+            "name": "resetForWorkerMode",
+            "summary": "Resets\u0020all\u0020services\u0020except\u0020those\u0020in\u0020the\u0020persistent\u0020list.",
+            "url": "classes/CodeIgniter-Config-BaseService.html#method_resetForWorkerMode"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\BaseService\u003A\u003AresetSingle\u0028\u0029",
             "name": "resetSingle",
@@ -5345,6 +5865,11 @@ Search.appendIndex(
             "name": "autoRoute",
             "summary": "If\u0020TRUE,\u0020the\u0020system\u0020will\u0020attempt\u0020to\u0020match\u0020the\u0020URI\u0020against\nControllers\u0020by\u0020matching\u0020each\u0020segment\u0020against\u0020folders\/files\nin\u0020APPPATH\/Controllers,\u0020when\u0020a\u0020match\u0020wasn\u0027t\u0020found\u0020against\ndefined\u0020routes.",
             "url": "classes/CodeIgniter-Config-Routing.html#property_autoRoute"
+        },                {
+            "fqsen": "\\CodeIgniter\\Config\\Routing\u003A\u003A\u0024useControllerAttributes",
+            "name": "useControllerAttributes",
+            "summary": "If\u0020TRUE,\u0020the\u0020system\u0020will\u0020look\u0020for\u0020attributes\u0020on\u0020controller\nclass\u0020and\u0020methods\u0020that\u0020can\u0020run\u0020before\u0020and\u0020after\u0020the\ncontroller\/method.",
+            "url": "classes/CodeIgniter-Config-Routing.html#property_useControllerAttributes"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\Routing\u003A\u003A\u0024prioritize",
             "name": "prioritize",
@@ -7071,10 +7596,25 @@ Search.appendIndex(
             "summary": "Close\u0020the\u0020database\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_close"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Areconnect\u0028\u0029",
+            "name": "reconnect",
+            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_reconnect"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
             "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method__close"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Aping\u0028\u0029",
+            "name": "ping",
+            "summary": "Check\u0020if\u0020the\u0020connection\u0020is\u0020still\u0020alive.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_ping"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_ping\u0028\u0029",
+            "name": "_ping",
+            "summary": "Driver\u002Dspecific\u0020ping\u0020implementation.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method__ping"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003ApersistentConnect\u0028\u0029",
             "name": "persistentConnect",
@@ -7946,6 +8486,16 @@ Search.appendIndex(
             "summary": "Ensures\u0020the\u0020database\u0020Connection\u0020Manager\/Factory\u0020is\u0020loaded\u0020and\u0020ready\u0020to\u0020use.",
             "url": "classes/CodeIgniter-Database-Config.html#method_ensureFactory"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003AreconnectForWorkerMode\u0028\u0029",
+            "name": "reconnectForWorkerMode",
+            "summary": "Reconnect\u0020database\u0020connections\u0020for\u0020worker\u0020mode\u0020at\u0020the\u0020start\u0020of\u0020a\u0020request.",
+            "url": "classes/CodeIgniter-Database-Config.html#method_reconnectForWorkerMode"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003AcleanupForWorkerMode\u0028\u0029",
+            "name": "cleanupForWorkerMode",
+            "summary": "Cleanup\u0020database\u0020connections\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-Database-Config.html#method_cleanupForWorkerMode"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Config\u003A\u003A\u0024instances",
             "name": "instances",
             "summary": "Cache\u0020for\u0020instance\u0020of\u0020any\u0020connections\u0020that\nhave\u0020been\u0020requested\u0020as\u0020a\u0020\u0022shared\u0022\u0020instance.",
@@ -8616,6 +9166,21 @@ Search.appendIndex(
             "summary": "Ensures\u0020that\u0020we\u0020have\u0020created\u0020our\u0020migrations\u0020table\nin\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-MigrationRunner.html#method_ensureTable"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003AensureLockTable\u0028\u0029",
+            "name": "ensureLockTable",
+            "summary": "Ensures\u0020that\u0020we\u0020have\u0020created\u0020our\u0020migration\nlock\u0020table\u0020in\u0020the\u0020database.",
+            "url": "classes/CodeIgniter-Database-MigrationRunner.html#method_ensureLockTable"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003AacquireMigrationLock\u0028\u0029",
+            "name": "acquireMigrationLock",
+            "summary": "Acquire\u0020exclusive\u0020lock\u0020on\u0020migrations\u0020to\u0020prevent\u0020concurrent\u0020execution",
+            "url": "classes/CodeIgniter-Database-MigrationRunner.html#method_acquireMigrationLock"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003AreleaseMigrationLock\u0028\u0029",
+            "name": "releaseMigrationLock",
+            "summary": "Release\u0020migration\u0020lock",
+            "url": "classes/CodeIgniter-Database-MigrationRunner.html#method_releaseMigrationLock"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003Amigrate\u0028\u0029",
             "name": "migrate",
             "summary": "Handles\u0020the\u0020actual\u0020running\u0020of\u0020a\u0020migration.",
@@ -8671,6 +9236,16 @@ Search.appendIndex(
             "summary": "Tracks\u0020whether\u0020we\u0020have\u0020already\u0020ensured\nthe\u0020table\u0020exists\u0020or\u0020not.",
             "url": "classes/CodeIgniter-Database-MigrationRunner.html#property_tableChecked"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A\u0024lock",
+            "name": "lock",
+            "summary": "Lock\u0020the\u0020migration\u0020table.",
+            "url": "classes/CodeIgniter-Database-MigrationRunner.html#property_lock"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A\u0024lockTableChecked",
+            "name": "lockTableChecked",
+            "summary": "Tracks\u0020whether\u0020we\u0020have\u0020already\u0020ensured\nthe\u0020lock\u0020table\u0020exists\u0020or\u0020not.",
+            "url": "classes/CodeIgniter-Database-MigrationRunner.html#property_lockTableChecked"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\MigrationRunner\u003A\u003A\u0024path",
             "name": "path",
             "summary": "The\u0020full\u0020path\u0020to\u0020locate\u0020migration\u0020files.",
@@ -8720,11 +9295,6 @@ Search.appendIndex(
             "name": "connect",
             "summary": "Connect\u0020to\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method_connect"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method_reconnect"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
@@ -9111,15 +9681,15 @@ Search.appendIndex(
             "summary": "Connect\u0020to\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method_connect"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method_reconnect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
             "summary": "Close\u0020the\u0020database\u0020connection.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__close"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_ping\u0028\u0029",
+            "name": "_ping",
+            "summary": "Ping\u0020the\u0020database\u0020connection.",
+            "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__ping"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AsetDatabase\u0028\u0029",
             "name": "setDatabase",
@@ -9591,15 +10161,15 @@ Search.appendIndex(
             "summary": "Converts\u0020the\u0020DSN\u0020with\u0020semicolon\u0020syntax.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_convertDSN"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method_reconnect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
             "summary": "Close\u0020the\u0020database\u0020connection.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__close"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_ping\u0028\u0029",
+            "name": "_ping",
+            "summary": "Ping\u0020the\u0020database\u0020connection.",
+            "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__ping"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003AsetDatabase\u0028\u0029",
             "name": "setDatabase",
@@ -10028,12 +10598,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AmatchNamedBinds\u0028\u0029",
             "name": "matchNamedBinds",
-            "summary": "Match\u0020bindings",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Query.html#method_matchNamedBinds"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AmatchSimpleBinds\u0028\u0029",
             "name": "matchSimpleBinds",
-            "summary": "Match\u0020bindings",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Query.html#method_matchSimpleBinds"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AdebugToolbarDisplay\u0028\u0029",
@@ -10098,7 +10668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\QueryInterface",
             "name": "QueryInterface",
-            "summary": "Interface\u0020QueryInterface",
+            "summary": "Represents\u0020a\u0020single\u0020statement\u0020that\u0020can\u0020be\u0020executed\u0020against\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-QueryInterface.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\QueryInterface\u003A\u003AsetQuery\u0028\u0029",
@@ -10150,6 +10720,11 @@ Search.appendIndex(
             "name": "swapPrefix",
             "summary": "Swaps\u0020out\u0020one\u0020table\u0020prefix\u0020for\u0020a\u0020new\u0020one.",
             "url": "classes/CodeIgniter-Database-QueryInterface.html#method_swapPrefix"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\QueryInterface\u003A\u003AgetOriginalQuery\u0028\u0029",
+            "name": "getOriginalQuery",
+            "summary": "Returns\u0020the\u0020original\u0020SQL\u0020that\u0020was\u0020passed\u0020into\u0020the\u0020system.",
+            "url": "classes/CodeIgniter-Database-QueryInterface.html#method_getOriginalQuery"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\RawSql",
             "name": "RawSql",
@@ -10415,11 +10990,6 @@ Search.appendIndex(
             "name": "connect",
             "summary": "Connect\u0020to\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method_connect"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method_reconnect"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
@@ -10981,11 +11551,6 @@ Search.appendIndex(
             "summary": "Connect\u0020to\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method_connect"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003Areconnect\u0028\u0029",
-            "name": "reconnect",
-            "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
-            "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method_reconnect"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
             "summary": "Close\u0020the\u0020database\u0020connection.",
@@ -11526,6 +12091,21 @@ Search.appendIndex(
             "summary": "Gets\u0020DateTime\u0020format\u0020from\u0020the\u0020DB\u0020connection.",
             "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html#method_getDateTimeFormat"
         },                {
+            "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast",
+            "name": "EnumCast",
+            "summary": "Class\u0020EnumCast",
+            "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast\u003A\u003Aset\u0028\u0029",
+            "name": "set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html#method_set"
+        },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\FloatCast",
             "name": "FloatCast",
             "summary": "Class\u0020FloatCast",
@@ -11876,11 +12456,6 @@ Search.appendIndex(
             "summary": "Creates\u0020a\u0020syntax\u002Dhighlighted\u0020version\u0020of\u0020a\u0020PHP\u0020file.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_highlightFile"
         },                {
-            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003ArenderBacktrace\u0028\u0029",
-            "name": "renderBacktrace",
-            "summary": "",
-            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_renderBacktrace"
-        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003A\u0024ob_level",
             "name": "ob_level",
             "summary": "Nesting\u0020level\u0020of\u0020the\u0020output\u0020buffering\u0020mechanism",
@@ -12125,6 +12700,11 @@ Search.appendIndex(
             "name": "getConnections",
             "summary": "Gets\u0020the\u0020connections\u0020from\u0020the\u0020database\u0020config",
             "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Database.html#method_getConnections"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Database\u003A\u003Areset\u0028\u0029",
+            "name": "reset",
+            "summary": "Reset\u0020collector\u0020state\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-Debug-Toolbar-Collectors-Database.html#method_reset"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\\Collectors\\Database\u003A\u003A\u0024hasTimeline",
             "name": "hasTimeline",
@@ -12525,6 +13105,21 @@ Search.appendIndex(
             "name": "format",
             "summary": "Format\u0020output",
             "url": "classes/CodeIgniter-Debug-Toolbar.html#method_format"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\u003A\u003AhasNativeHeaderConflict\u0028\u0029",
+            "name": "hasNativeHeaderConflict",
+            "summary": "Checks\u0020if\u0020the\u0020native\u0020PHP\u0020headers\u0020indicate\u0020a\u0020non\u002DHTML\u0020response\nor\u0020if\u0020headers\u0020are\u0020already\u0020sent.",
+            "url": "classes/CodeIgniter-Debug-Toolbar.html#method_hasNativeHeaderConflict"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\u003A\u003AshouldDisableToolbar\u0028\u0029",
+            "name": "shouldDisableToolbar",
+            "summary": "Determine\u0020if\u0020the\u0020toolbar\u0020should\u0020be\u0020disabled\u0020based\u0020on\u0020the\u0020request\u0020headers.",
+            "url": "classes/CodeIgniter-Debug-Toolbar.html#method_shouldDisableToolbar"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\Toolbar\u003A\u003Areset\u0028\u0029",
+            "name": "reset",
+            "summary": "Reset\u0020all\u0020collectors\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-Debug-Toolbar.html#method_reset"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\Toolbar\u003A\u003A\u0024config",
             "name": "config",
@@ -13021,6 +13616,11 @@ Search.appendIndex(
             "summary": "Whether\u0020to\u0020perform\u0020SMTP\u0020authentication",
             "url": "classes/CodeIgniter-Email-Email.html#property_SMTPAuth"
         },                {
+            "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024SMTPAuthMethod",
+            "name": "SMTPAuthMethod",
+            "summary": "Which\u0020SMTP\u0020authentication\u0020method\u0020to\u0020use\u003A\u0020login,\u0020plain",
+            "url": "classes/CodeIgniter-Email-Email.html#property_SMTPAuthMethod"
+        },                {
             "fqsen": "\\CodeIgniter\\Email\\Email\u003A\u003A\u0024replyToFlag",
             "name": "replyToFlag",
             "summary": "Whether\u0020to\u0020send\u0020a\u0020Reply\u002DTo\u0020header",
@@ -13306,6 +13906,46 @@ Search.appendIndex(
             "summary": "Block\u0020size\u0020for\u0020padding\u0020message.",
             "url": "classes/CodeIgniter-Encryption-Handlers-SodiumHandler.html#property_blockSize"
         },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator",
+            "name": "KeyRotationDecorator",
+            "summary": "Key\u0020Rotation\u0020Decorator",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003Aencrypt\u0028\u0029",
+            "name": "encrypt",
+            "summary": "Encrypt\u0020\u002D\u0020convert\u0020plaintext\u0020into\u0020ciphertext",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#method_encrypt"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003Adecrypt\u0028\u0029",
+            "name": "decrypt",
+            "summary": "Decrypt\u0020\u002D\u0020convert\u0020ciphertext\u0020into\u0020plaintext",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#method_decrypt"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003A__get\u0028\u0029",
+            "name": "__get",
+            "summary": "Delegate\u0020property\u0020access\u0020to\u0020the\u0020inner\u0020handler.",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#method___get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003A__isset\u0028\u0029",
+            "name": "__isset",
+            "summary": "Delegate\u0020property\u0020existence\u0020check\u0020to\u0020inner\u0020handler.",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#method___isset"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003A\u0024innerHandler",
+            "name": "innerHandler",
+            "summary": "",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#property_innerHandler"
+        },                {
+            "fqsen": "\\CodeIgniter\\Encryption\\KeyRotationDecorator\u003A\u003A\u0024previousKeys",
+            "name": "previousKeys",
+            "summary": "",
+            "url": "classes/CodeIgniter-Encryption-KeyRotationDecorator.html#property_previousKeys"
+        },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\ArrayCast",
             "name": "ArrayCast",
             "summary": "",
@@ -13385,6 +14025,21 @@ Search.appendIndex(
             "name": "get",
             "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-Entity-Cast-DatetimeCast.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Cast\\EnumCast",
+            "name": "EnumCast",
+            "summary": "",
+            "url": "classes/CodeIgniter-Entity-Cast-EnumCast.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Cast\\EnumCast\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "Takes\u0020a\u0020raw\u0020value\u0020from\u0020Entity,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "url": "classes/CodeIgniter-Entity-Cast-EnumCast.html#method_get"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Cast\\EnumCast\u003A\u003Aset\u0028\u0029",
+            "name": "set",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020raw\u0020value\u0020for\u0020Entity.",
+            "url": "classes/CodeIgniter-Entity-Cast-EnumCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Cast\\FloatCast",
             "name": "FloatCast",
@@ -13511,24 +14166,29 @@ Search.appendIndex(
             "summary": "Checks\u0020a\u0020property\u0020to\u0020see\u0020if\u0020it\u0020has\u0020changed\u0020since\u0020the\u0020entity\nwas\u0020created.\u0020Or,\u0020without\u0020a\u0020parameter,\u0020checks\u0020if\u0020any\nproperties\u0020have\u0020changed.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_hasChanged"
         },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AcontainsOnlyEntities\u0028\u0029",
+            "name": "containsOnlyEntities",
+            "summary": "Checks\u0020if\u0020an\u0020array\u0020contains\u0020only\u0020Entity\u0020instances.",
+            "url": "classes/CodeIgniter-Entity-Entity.html#method_containsOnlyEntities"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AnormalizeValue\u0028\u0029",
+            "name": "normalizeValue",
+            "summary": "Recursively\u0020normalize\u0020a\u0020value\u0020for\u0020comparison.",
+            "url": "classes/CodeIgniter-Entity-Entity.html#method_normalizeValue"
+        },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AinjectRawData\u0028\u0029",
             "name": "injectRawData",
-            "summary": "Set\u0020raw\u0020data\u0020array\u0020without\u0020any\u0020mutations",
+            "summary": "Set\u0020raw\u0020data\u0020array\u0020without\u0020any\u0020mutations.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_injectRawData"
-        },                {
-            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AsetAttributes\u0028\u0029",
-            "name": "setAttributes",
-            "summary": "Set\u0020raw\u0020data\u0020array\u0020without\u0020any\u0020mutations",
-            "url": "classes/CodeIgniter-Entity-Entity.html#method_setAttributes"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AmapProperty\u0028\u0029",
             "name": "mapProperty",
-            "summary": "Checks\u0020the\u0020datamap\u0020to\u0020see\u0020if\u0020this\u0020property\u0020name\u0020is\u0020being\u0020mapped,\nand\u0020returns\u0020the\u0020db\u0020column\u0020name,\u0020if\u0020any,\u0020or\u0020the\u0020original\u0020property\u0020name.",
+            "summary": "Checks\u0020the\u0020datamap\u0020to\u0020see\u0020if\u0020this\u0020property\u0020name\u0020is\u0020being\u0020mapped,\nand\u0020returns\u0020the\u0020DB\u0020column\u0020name,\u0020if\u0020any,\u0020or\u0020the\u0020original\u0020property\u0020name.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_mapProperty"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AmutateDate\u0028\u0029",
             "name": "mutateDate",
-            "summary": "Converts\u0020the\u0020given\u0020string\u007Ctimestamp\u007CDateTime\u007CTime\u0020instance\ninto\u0020the\u0020\u0022CodeIgniter\\I18n\\Time\u0022\u0020object.",
+            "summary": "Converts\u0020the\u0020given\u0020string\u007Ctimestamp\u007CDateTimeInterface\u0020instance\ninto\u0020the\u0020\u0022CodeIgniter\\I18n\\Time\u0022\u0020object.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_mutateDate"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AcastAs\u0028\u0029",
@@ -13536,14 +14196,19 @@ Search.appendIndex(
             "summary": "Provides\u0020the\u0020ability\u0020to\u0020cast\u0020an\u0020item\u0020as\u0020a\u0020specific\u0020data\u0020type.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_castAs"
         },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024dataCaster",
+            "name": "dataCaster",
+            "summary": "The\u0020data\u0020caster.",
+            "url": "classes/CodeIgniter-Entity-Entity.html#property_dataCaster"
+        },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003AjsonSerialize\u0028\u0029",
             "name": "jsonSerialize",
-            "summary": "Support\u0020for\u0020json_encode\u0028\u0029",
+            "summary": "Support\u0020for\u0020json_encode\u0028\u0029.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_jsonSerialize"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003Acast\u0028\u0029",
             "name": "cast",
-            "summary": "Change\u0020the\u0020value\u0020of\u0020the\u0020private\u0020\u0024_cast\u0020property",
+            "summary": "Change\u0020the\u0020value\u0020of\u0020the\u0020private\u0020\u0024_cast\u0020property.",
             "url": "classes/CodeIgniter-Entity-Entity.html#method_cast"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A__set\u0028\u0029",
@@ -13593,12 +14258,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024castHandlers",
             "name": "castHandlers",
-            "summary": "Custom\u0020convert\u0020handlers",
+            "summary": "Custom\u0020convert\u0020handlers.",
             "url": "classes/CodeIgniter-Entity-Entity.html#property_castHandlers"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024defaultCastHandlers",
             "name": "defaultCastHandlers",
-            "summary": "Default\u0020convert\u0020handlers",
+            "summary": "Default\u0020convert\u0020handlers.",
             "url": "classes/CodeIgniter-Entity-Entity.html#property_defaultCastHandlers"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024attributes",
@@ -13611,15 +14276,15 @@ Search.appendIndex(
             "summary": "Holds\u0020original\u0020copies\u0020of\u0020all\u0020class\u0020vars\u0020so\u0020we\u0020can\u0020determine\nwhat\u0027s\u0020actually\u0020been\u0020changed\u0020and\u0020not\u0020accidentally\u0020write\nnulls\u0020where\u0020we\u0020shouldn\u0027t.",
             "url": "classes/CodeIgniter-Entity-Entity.html#property_original"
         },                {
-            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024dataCaster",
-            "name": "dataCaster",
-            "summary": "The\u0020data\u0020caster.",
-            "url": "classes/CodeIgniter-Entity-Entity.html#property_dataCaster"
-        },                {
             "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024_cast",
             "name": "_cast",
-            "summary": "Holds\u0020info\u0020whenever\u0020properties\u0020have\u0020to\u0020be\u0020casted",
+            "summary": "Holds\u0020info\u0020whenever\u0020properties\u0020have\u0020to\u0020be\u0020casted.",
             "url": "classes/CodeIgniter-Entity-Entity.html#property__cast"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Entity\u003A\u003A\u0024_onlyScalars",
+            "name": "_onlyScalars",
+            "summary": "Indicates\u0020whether\u0020all\u0020attributes\u0020are\u0020scalars\u0020\u0028for\u0020optimization\u0029.",
+            "url": "classes/CodeIgniter-Entity-Entity.html#property__onlyScalars"
         },                {
             "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException",
             "name": "CastException",
@@ -13650,6 +14315,31 @@ Search.appendIndex(
             "name": "forInvalidTimestamp",
             "summary": "Thrown\u0020when\u0020the\u0020casting\u0020timestamp\u0020is\u0020not\u0020correct\u0020timestamp.",
             "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forInvalidTimestamp"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException\u003A\u003AforMissingEnumClass\u0028\u0029",
+            "name": "forMissingEnumClass",
+            "summary": "Thrown\u0020when\u0020the\u0020enum\u0020class\u0020is\u0020not\u0020specified\u0020in\u0020cast\u0020parameters.",
+            "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forMissingEnumClass"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException\u003A\u003AforNotEnum\u0028\u0029",
+            "name": "forNotEnum",
+            "summary": "Thrown\u0020when\u0020the\u0020specified\u0020class\u0020is\u0020not\u0020an\u0020enum.",
+            "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forNotEnum"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException\u003A\u003AforInvalidEnumValue\u0028\u0029",
+            "name": "forInvalidEnumValue",
+            "summary": "Thrown\u0020when\u0020an\u0020invalid\u0020value\u0020is\u0020provided\u0020for\u0020an\u0020enum.",
+            "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forInvalidEnumValue"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException\u003A\u003AforInvalidEnumCaseName\u0028\u0029",
+            "name": "forInvalidEnumCaseName",
+            "summary": "Thrown\u0020when\u0020an\u0020invalid\u0020case\u0020name\u0020is\u0020provided\u0020for\u0020a\u0020unit\u0020enum.",
+            "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forInvalidEnumCaseName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Entity\\Exceptions\\CastException\u003A\u003AforInvalidEnumType\u0028\u0029",
+            "name": "forInvalidEnumType",
+            "summary": "Thrown\u0020when\u0020an\u0020enum\u0020instance\u0020of\u0020wrong\u0020type\u0020is\u0020provided.",
+            "url": "classes/CodeIgniter-Entity-Exceptions-CastException.html#method_forInvalidEnumType"
         },                {
             "fqsen": "\\CodeIgniter\\Events\\Events",
             "name": "Events",
@@ -13705,6 +14395,11 @@ Search.appendIndex(
             "name": "getPerformanceLogs",
             "summary": "Getter\u0020for\u0020the\u0020performance\u0020log\u0020records.",
             "url": "classes/CodeIgniter-Events-Events.html#method_getPerformanceLogs"
+        },                {
+            "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003AcleanupForWorkerMode\u0028\u0029",
+            "name": "cleanupForWorkerMode",
+            "summary": "Cleanup\u0020performance\u0020log\u0020and\u0020request\u002Dspecific\u0020listeners\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-Events-Events.html#method_cleanupForWorkerMode"
         },                {
             "fqsen": "\\CodeIgniter\\Events\\Events\u003A\u003APRIORITY_LOW",
             "name": "PRIORITY_LOW",
@@ -14561,6 +15256,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Filters-PageCache.html#property_pageCache"
         },                {
+            "fqsen": "\\CodeIgniter\\Filters\\PageCache\u003A\u003A\u0024cacheStatusCodes",
+            "name": "cacheStatusCodes",
+            "summary": "",
+            "url": "classes/CodeIgniter-Filters-PageCache.html#property_cacheStatusCodes"
+        },                {
             "fqsen": "\\CodeIgniter\\Filters\\PerformanceMetrics",
             "name": "PerformanceMetrics",
             "summary": "Performance\u0020Metrics\u0020filter",
@@ -15366,6 +16066,11 @@ Search.appendIndex(
             "summary": "Determines\u0020if\u0020current\u0020url\u0020path\u0020contains\nthe\u0020given\u0020path.\u0020It\u0020may\u0020contain\u0020a\u0020wildcard\u0020\u0028\u002A\u0029\nwhich\u0020will\u0020allow\u0020any\u0020valid\u0020character.",
             "url": "namespaces/default.html#function_url_is"
         },                {
+            "fqsen": "\\parse_subdomain\u0028\u0029",
+            "name": "parse_subdomain",
+            "summary": "Parses\u0020the\u0020subdomain\u0020from\u0020the\u0020current\u0020host\u0020name.",
+            "url": "namespaces/default.html#function_parse_subdomain"
+        },                {
             "fqsen": "\\xml_convert\u0028\u0029",
             "name": "xml_convert",
             "summary": "Convert\u0020Reserved\u0020XML\u0020characters\u0020to\u0020Entities",
@@ -15543,7 +16248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "Stores\u0020our\u0020default\u0020values\u0020from\u0020the\u0020Config\u0020file.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003Aenabled\u0028\u0029",
@@ -15568,98 +16273,133 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportOnly",
             "name": "reportOnly",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "Set\u0020to\u0020\u0060true\u0060\u0020to\u0020make\u0020all\u0020directives\u0020report\u002Donly\u0020instead\u0020of\u0020enforced.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnly"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddBaseURI\u0028\u0029",
             "name": "addBaseURI",
-            "summary": "Adds\u0020a\u0020new\u0020baseURI\u0020value.\u0020Can\u0020be\u0020either\u0020a\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060base\u002Duri\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addBaseURI"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddChildSrc\u0028\u0029",
             "name": "addChildSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020a\u0020form\u0027s\u0020action.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060child\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addChildSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddConnectSrc\u0028\u0029",
             "name": "addConnectSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020a\u0020form\u0027s\u0020action.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060connect\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addConnectSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AsetDefaultSrc\u0028\u0029",
             "name": "setDefaultSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020a\u0020form\u0027s\u0020action.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060default\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setDefaultSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddFontSrc\u0028\u0029",
             "name": "addFontSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020a\u0020form\u0027s\u0020action.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060font\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFontSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddFormAction\u0028\u0029",
             "name": "addFormAction",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020a\u0020form\u0027s\u0020action.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060form\u002Daction\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFormAction"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddFrameAncestor\u0028\u0029",
             "name": "addFrameAncestor",
-            "summary": "Adds\u0020a\u0020new\u0020resource\u0020that\u0020should\u0020allow\u0020embedding\u0020the\u0020resource\u0020using\n\u003Cframe\u003E,\u0020\u003Ciframe\u003E,\u0020\u003Cobject\u003E,\u0020\u003Cembed\u003E,\u0020or\u0020\u003Capplet\u003E",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060frame\u002Dancestors\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFrameAncestor"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddFrameSrc\u0028\u0029",
             "name": "addFrameSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020valid\u0020frame\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060frame\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addFrameSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddImageSrc\u0028\u0029",
             "name": "addImageSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020valid\u0020image\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060img\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addImageSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddMediaSrc\u0028\u0029",
             "name": "addMediaSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020valid\u0020video\u0020and\u0020audio.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060media\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addMediaSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddManifestSrc\u0028\u0029",
             "name": "addManifestSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020manifest\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060manifest\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addManifestSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddObjectSrc\u0028\u0029",
             "name": "addObjectSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020Flash\u0020and\u0020other\u0020plugin\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060object\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addObjectSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddPluginType\u0028\u0029",
             "name": "addPluginType",
-            "summary": "Limits\u0020the\u0020types\u0020of\u0020plugins\u0020that\u0020can\u0020be\u0020used.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060plugin\u002Dtypes\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addPluginType"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AsetReportURI\u0028\u0029",
-            "name": "setReportURI",
-            "summary": "Specifies\u0020a\u0020URL\u0020where\u0020a\u0020browser\u0020will\u0020send\u0020reports\u0020when\u0020a\u0020content\nsecurity\u0020policy\u0020is\u0020violated.\u0020Can\u0020be\u0020either\u0020a\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
-            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportURI"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddSandbox\u0028\u0029",
             "name": "addSandbox",
-            "summary": "specifies\u0020an\u0020HTML\u0020sandbox\u0020policy\u0020that\u0020the\u0020user\u0020agent\u0020applies\u0020to\nthe\u0020protected\u0020resource.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060sandbox\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addSandbox"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddScriptSrc\u0028\u0029",
             "name": "addScriptSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020javascript\u0020file\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060script\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrc"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddScriptSrcElem\u0028\u0029",
+            "name": "addScriptSrcElem",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060script\u002Dsrc\u002Delem\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcElem"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddScriptSrcAttr\u0028\u0029",
+            "name": "addScriptSrcAttr",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060script\u002Dsrc\u002Dattr\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addScriptSrcAttr"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddStyleSrc\u0028\u0029",
             "name": "addStyleSrc",
-            "summary": "Adds\u0020a\u0020new\u0020valid\u0020endpoint\u0020for\u0020CSS\u0020file\u0020sources.\u0020Can\u0020be\u0020either\na\u0020URI\u0020class\u0020or\u0020a\u0020simple\u0020string.",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060style\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrc"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddStyleSrcElem\u0028\u0029",
+            "name": "addStyleSrcElem",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060style\u002Dsrc\u002Delem\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcElem"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddStyleSrcAttr\u0028\u0029",
+            "name": "addStyleSrcAttr",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060style\u002Dsrc\u002Dattr\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addStyleSrcAttr"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddWorkerSrc\u0028\u0029",
+            "name": "addWorkerSrc",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060worker\u002Dsrc\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addWorkerSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024upgradeInsecureRequests",
             "name": "upgradeInsecureRequests",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "Instructs\u0020user\u0020agents\u0020to\u0020rewrite\u0020URL\u0020schemes\u0020by\u0020changing\u0020HTTP\u0020to\u0020HTTPS.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_upgradeInsecureRequests"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AsetReportURI\u0028\u0029",
+            "name": "setReportURI",
+            "summary": "Specifies\u0020a\u0020URL\u0020where\u0020a\u0020browser\u0020will\u0020send\u0020reports\u0020when\u0020a\u0020content\nsecurity\u0020policy\u0020is\u0020violated.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportURI"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AsetReportToEndpoint\u0028\u0029",
+            "name": "setReportToEndpoint",
+            "summary": "Specifies\u0020a\u0020named\u0020group\u0020in\u0020a\u0020Reporting\u0020API\u0020endpoint\u0020to\u0020which\u0020the\u0020user\nagent\u0020sends\u0020reports\u0020about\u0020policy\u0020violation.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setReportToEndpoint"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddReportingEndpoints\u0028\u0029",
+            "name": "addReportingEndpoints",
+            "summary": "Adds\u0020reporting\u0020endpoints\u0020to\u0020the\u0020\u0060Reporting\u002DEndpoints\u0060\u0020header.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addReportingEndpoints"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddOption\u0028\u0029",
             "name": "addOption",
@@ -15678,153 +16418,193 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddToHeader\u0028\u0029",
             "name": "addToHeader",
-            "summary": "Adds\u0020a\u0020directive\u0020and\u0020it\u0027s\u0020options\u0020to\u0020the\u0020appropriate\u0020header.\u0020The\u0020\u0024values\narray\u0020might\u0020have\u0020options\u0020that\u0020are\u0020geared\u0020toward\u0020either\u0020the\u0020regular\u0020or\u0020the\nreportOnly\u0020header,\u0020since\u0020it\u0027s\u0020viable\u0020to\u0020have\u0020both\u0020simultaneously.",
+            "summary": "Adds\u0020a\u0020directive\u0020and\u0020its\u0020options\u0020to\u0020the\u0020appropriate\u0020header.\u0020The\u0020\u0024values\narray\u0020might\u0020have\u0020options\u0020that\u0020are\u0020geared\u0020toward\u0020either\u0020the\u0020regular\u0020or\u0020the\nreportOnly\u0020header,\u0020since\u0020it\u0027s\u0020viable\u0020to\u0020have\u0020both\u0020simultaneously.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addToHeader"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AclearDirective\u0028\u0029",
             "name": "clearDirective",
-            "summary": "Clear\u0020the\u0020directive.",
+            "summary": "",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003ADIRECTIVES_ALLOWING_SOURCE_LISTS",
+            "name": "DIRECTIVES_ALLOWING_SOURCE_LISTS",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#constant_DIRECTIVES_ALLOWING_SOURCE_LISTS"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024directives",
             "name": "directives",
-            "summary": "CSP\u0020directives",
+            "summary": "Map\u0020of\u0020CSP\u0020directives\u0020to\u0020this\u0020class\u0027s\u0020properties.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_directives"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024baseURI",
             "name": "baseURI",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060base\u002Duri\u0060\u0020directive\u0020restricts\u0020the\u0020URLs\u0020that\u0020can\u0020be\u0020used\u0020to\u0020specify\u0020the\u0020document\u0020base\u0020URL.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_baseURI"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024childSrc",
             "name": "childSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060child\u002Dsrc\u0060\u0020directive\u0020governs\u0020the\u0020creation\u0020of\u0020nested\u0020browsing\u0020contexts\u0020as\u0020well\nas\u0020Worker\u0020execution\u0020contexts.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_childSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024connectSrc",
             "name": "connectSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060connect\u002Dsrc\u0060\u0020directive\u0020restricts\u0020which\u0020URLs\u0020the\u0020protected\u0020resource\u0020can\u0020load\u0020using\u0020script\u0020interfaces.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_connectSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024defaultSrc",
             "name": "defaultSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060default\u002Dsrc\u0060\u0020directive\u0020sets\u0020a\u0020default\u0020source\u0020list\u0020for\u0020a\u0020number\u0020of\u0020directives.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_defaultSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024fontSrc",
             "name": "fontSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060font\u002Dsrc\u0060\u0020directive\u0020restricts\u0020from\u0020where\u0020the\u0020protected\u0020resource\u0020can\u0020load\u0020fonts.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_fontSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024formAction",
             "name": "formAction",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060form\u002Daction\u0060\u0020directive\u0020restricts\u0020which\u0020URLs\u0020can\u0020be\u0020used\u0020as\u0020the\u0020action\u0020of\u0020HTML\u0020form\u0020elements.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_formAction"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024frameAncestors",
             "name": "frameAncestors",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060frame\u002Dancestors\u0060\u0020directive\u0020indicates\u0020whether\u0020the\u0020user\u0020agent\u0020should\u0020allow\u0020embedding\nthe\u0020resource\u0020using\u0020a\u0020\u0060frame\u0060,\u0020\u0060iframe\u0060,\u0020\u0060object\u0060,\u0020\u0060embed\u0060\u0020or\u0020\u0060applet\u0060\u0020element,\nor\u0020equivalent\u0020functionality\u0020in\u0020non\u002DHTML\u0020resources.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_frameAncestors"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024frameSrc",
             "name": "frameSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060frame\u002Dsrc\u0060\u0020directive\u0020restricts\u0020the\u0020URLs\u0020which\u0020may\u0020be\u0020loaded\u0020into\u0020child\u0020navigables.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_frameSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024imageSrc",
             "name": "imageSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060img\u002Dsrc\u0060\u0020directive\u0020restricts\u0020from\u0020where\u0020the\u0020protected\u0020resource\u0020can\u0020load\u0020images.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_imageSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024mediaSrc",
             "name": "mediaSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060media\u002Dsrc\u0060\u0020directive\u0020restricts\u0020from\u0020where\u0020the\u0020protected\u0020resource\u0020can\u0020load\u0020video,\naudio,\u0020and\u0020associated\u0020text\u0020tracks.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_mediaSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024objectSrc",
             "name": "objectSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060object\u002Dsrc\u0060\u0020directive\u0020restricts\u0020from\u0020where\u0020the\u0020protected\u0020resource\u0020can\u0020load\u0020plugins.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_objectSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024pluginTypes",
             "name": "pluginTypes",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060plugin\u002Dtypes\u0060\u0020directive\u0020restricts\u0020the\u0020set\u0020of\u0020plugins\u0020that\u0020can\u0020be\u0020invoked\u0020by\u0020the\nprotected\u0020resource\u0020by\u0020limiting\u0020the\u0020types\u0020of\u0020resources\u0020that\u0020can\u0020be\u0020embedded.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_pluginTypes"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptSrc",
             "name": "scriptSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060script\u002Dsrc\u0060\u0020directive\u0020restricts\u0020which\u0020scripts\u0020the\u0020protected\u0020resource\u0020can\u0020execute.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleSrc",
             "name": "styleSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060style\u002Dsrc\u0060\u0020directive\u0020restricts\u0020which\u0020styles\u0020the\u0020user\u0020may\u0020applies\u0020to\u0020the\u0020protected\u0020resource.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrc"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024manifestSrc",
-            "name": "manifestSrc",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
-            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_manifestSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024sandbox",
             "name": "sandbox",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "The\u0020\u0060sandbox\u0060\u0020directive\u0020specifies\u0020an\u0020HTML\u0020sandbox\u0020policy\u0020that\u0020the\u0020user\u0020agent\u0020applies\u0020to\u0020the\u0020protected\u0020resource.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_sandbox"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportURI",
             "name": "reportURI",
-            "summary": "A\u0020set\u0020of\u0020endpoints\u0020to\u0020which\u0020csp\u0020violation\u0020reports\u0020will\u0020be\u0020sent\u0020when\nparticular\u0020behaviors\u0020are\u0020prevented.",
+            "summary": "The\u0020\u0060report\u002Duri\u0060\u0020directive\u0020specifies\u0020a\u0020URL\u0020to\u0020which\u0020the\u0020user\u0020agent\u0020sends\u0020reports\u0020about\u0020policy\u0020violation.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportURI"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportTo",
+            "name": "reportTo",
+            "summary": "The\u0020\u0060report\u002Dto\u0060\u0020directive\u0020specifies\u0020a\u0020named\u0020group\u0020in\u0020a\u0020Reporting\u0020API\nendpoint\u0020to\u0020which\u0020the\u0020user\u0020agent\u0020sends\u0020reports\u0020about\u0020policy\u0020violation.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportTo"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024manifestSrc",
+            "name": "manifestSrc",
+            "summary": "The\u0020\u0060manifest\u002Dsrc\u0060\u0020directive\u0020restricts\u0020the\u0020URLs\u0020from\u0020which\u0020application\u0020manifests\u0020may\u0020be\u0020loaded.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_manifestSrc"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptSrcElem",
+            "name": "scriptSrcElem",
+            "summary": "The\u0020\u0060script\u002Dsrc\u002Delem\u0060\u0020directive\u0020applies\u0020to\u0020all\u0020script\u0020requests\u0020and\u0020script\u0020blocks.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcElem"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptSrcAttr",
+            "name": "scriptSrcAttr",
+            "summary": "The\u0020\u0060script\u002Dsrc\u002Dattr\u0060\u0020directive\u0020applies\u0020to\u0020event\u0020handlers\u0020and,\u0020if\u0020present,\nit\u0020will\u0020override\u0020the\u0020\u0060script\u002Dsrc\u0060\u0020directive\u0020for\u0020relevant\u0020checks.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptSrcAttr"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleSrcElem",
+            "name": "styleSrcElem",
+            "summary": "The\u0020\u0060style\u002Dsrc\u002Delem\u0060\u0020directive\u0020governs\u0020the\u0020behaviour\u0020of\u0020styles\u0020except\nfor\u0020styles\u0020defined\u0020in\u0020inline\u0020attributes.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcElem"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleSrcAttr",
+            "name": "styleSrcAttr",
+            "summary": "The\u0020\u0060style\u002Dsrc\u002Dattr\u0060\u0020directive\u0020governs\u0020the\u0020behaviour\u0020of\u0020style\u0020attributes.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleSrcAttr"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024workerSrc",
+            "name": "workerSrc",
+            "summary": "The\u0020\u0060worker\u002Dsrc\u0060\u0020directive\u0020restricts\u0020the\u0020URLs\u0020which\u0020may\u0020be\u0020loaded\u0020as\u0020a\u0020\u0060Worker\u0060,\n\u0060SharedWorker\u0060,\u0020or\u0020\u0060ServiceWorker\u0060.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_workerSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024validSources",
             "name": "validSources",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "Set\u0020of\u0020valid\u0020keyword\u002Dsources.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_validSources"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024nonces",
             "name": "nonces",
-            "summary": "Used\u0020for\u0020security\u0020enforcement",
+            "summary": "Set\u0020of\u0020nonces\u0020generated.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_nonces"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleNonce",
             "name": "styleNonce",
-            "summary": "Nonce\u0020for\u0020style",
+            "summary": "Nonce\u0020for\u0020style\u0020tags.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonce"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptNonce",
             "name": "scriptNonce",
-            "summary": "Nonce\u0020for\u0020script",
+            "summary": "Nonce\u0020for\u0020script\u0020tags.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonce"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024styleNonceTag",
             "name": "styleNonceTag",
-            "summary": "Nonce\u0020tag\u0020for\u0020style",
+            "summary": "Nonce\u0020placeholder\u0020for\u0020style\u0020tags.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_styleNonceTag"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024scriptNonceTag",
             "name": "scriptNonceTag",
-            "summary": "Nonce\u0020tag\u0020for\u0020script",
+            "summary": "Nonce\u0020placeholder\u0020for\u0020script\u0020tags.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_scriptNonceTag"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024autoNonce",
             "name": "autoNonce",
-            "summary": "Replace\u0020nonce\u0020tag\u0020automatically",
+            "summary": "Replace\u0020nonce\u0020tags\u0020automatically\u003F",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_autoNonce"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024tempHeaders",
             "name": "tempHeaders",
-            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020since\u0020we\u0020have\nto\u0020build\u0020ourselves\u0020before\u0020passing\u0020to\u0020Response.",
+            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020since\u0020we\u0020have\u0020to\u0020build\nourselves\u0020before\u0020passing\u0020to\u0020a\u0020Response\u0020object.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_tempHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportOnlyHeaders",
             "name": "reportOnlyHeaders",
-            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020to\u0020build\nthat\u0020should\u0020only\u0020be\u0020reported.",
+            "summary": "An\u0020array\u0020of\u0020header\u0020info\u0020to\u0020build\u0020that\u0020should\u0020only\u0020be\u0020reported.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportOnlyHeaders"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024CSPEnabled",
             "name": "CSPEnabled",
             "summary": "Whether\u0020Content\u0020Security\u0020Policy\u0020is\u0020being\u0020enforced.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_CSPEnabled"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003A\u0024reportingEndpoints",
+            "name": "reportingEndpoints",
+            "summary": "Map\u0020of\u0020reporting\u0020endpoints\u0020to\u0020their\u0020URLs.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#property_reportingEndpoints"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Cors",
             "name": "Cors",
@@ -16080,6 +16860,11 @@ Search.appendIndex(
             "name": "shareOptions",
             "summary": "Whether\u0020share\u0020options\u0020between\u0020requests\u0020or\u0020not.",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_shareOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024shareConnection",
+            "name": "shareConnection",
+            "summary": "The\u0020share\u0020connection\u0020instance.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_shareConnection"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\DownloadResponse",
             "name": "DownloadResponse",
@@ -16670,26 +17455,6 @@ Search.appendIndex(
             "name": "detectLocale",
             "summary": "Handles\u0020setting\u0020up\u0020the\u0020locale,\u0020perhaps\u0020auto\u002Ddetecting\u0020through\ncontent\u0020negotiation.",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_detectLocale"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AdetectURI\u0028\u0029",
-            "name": "detectURI",
-            "summary": "Sets\u0020up\u0020our\u0020URI\u0020object\u0020based\u0020on\u0020the\u0020information\u0020we\u0020have.\u0020This\u0020is\neither\u0020provided\u0020by\u0020the\u0020user\u0020in\u0020the\u0020baseURL\u0020Config\u0020setting,\u0020or\ndetermined\u0020from\u0020the\u0020environment\u0020as\u0020needed.",
-            "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_detectURI"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AdetectPath\u0028\u0029",
-            "name": "detectPath",
-            "summary": "Detects\u0020the\u0020relative\u0020path\u0020based\u0020on\nthe\u0020URIProtocol\u0020Config\u0020setting.",
-            "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_detectPath"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AparseRequestURI\u0028\u0029",
-            "name": "parseRequestURI",
-            "summary": "Will\u0020parse\u0020the\u0020REQUEST_URI\u0020and\u0020automatically\u0020detect\u0020the\u0020URI\u0020from\u0020it,\nfixing\u0020the\u0020query\u0020string\u0020if\u0020necessary.",
-            "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_parseRequestURI"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AparseQueryString\u0028\u0029",
-            "name": "parseQueryString",
-            "summary": "Parse\u0020QUERY_STRING",
-            "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_parseQueryString"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003Anegotiate\u0028\u0029",
             "name": "negotiate",
@@ -19091,6 +19856,16 @@ Search.appendIndex(
             "summary": "Returns\u0020a\u0020new\u0020Time\u0020instance\u0020with\u0020\u0024months\u0020added\u0020to\u0020the\u0020time.",
             "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_addMonths"
         },                {
+            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AaddCalendarMonths\u0028\u0029",
+            "name": "addCalendarMonths",
+            "summary": "Returns\u0020a\u0020new\u0020Time\u0020instance\u0020with\u0020\u0024months\u0020calendar\u0020months\u0020added\u0020to\u0020the\u0020time.",
+            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_addCalendarMonths"
+        },                {
+            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AsubCalendarMonths\u0028\u0029",
+            "name": "subCalendarMonths",
+            "summary": "Returns\u0020a\u0020new\u0020Time\u0020instance\u0020with\u0020\u0024months\u0020calendar\u0020months\u0020subtracted\u0020from\u0020the\u0020time",
+            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_subCalendarMonths"
+        },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AaddYears\u0028\u0029",
             "name": "addYears",
             "summary": "Returns\u0020a\u0020new\u0020Time\u0020instance\u0020with\u0020\u0024years\u0020added\u0020to\u0020the\u0020time.",
@@ -19170,6 +19945,16 @@ Search.appendIndex(
             "name": "isAfter",
             "summary": "Determines\u0020if\u0020the\u0020current\u0020instance\u0027s\u0020time\u0020is\u0020after\u0020\u0024testTime,\nafter\u0020converting\u0020in\u0020UTC.",
             "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_isAfter"
+        },                {
+            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AisPast\u0028\u0029",
+            "name": "isPast",
+            "summary": "Determines\u0020if\u0020the\u0020current\u0020instance\u0027s\u0020time\u0020is\u0020in\u0020the\u0020past.",
+            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_isPast"
+        },                {
+            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003AisFuture\u0028\u0029",
+            "name": "isFuture",
+            "summary": "Determines\u0020if\u0020the\u0020current\u0020instance\u0027s\u0020time\u0020is\u0020in\u0020the\u0020future.",
+            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method_isFuture"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003Ahumanize\u0028\u0029",
             "name": "humanize",
@@ -19466,6 +20251,11 @@ Search.appendIndex(
             "summary": "Return\u0020image\u0020height.",
             "url": "classes/CodeIgniter-Images-Handlers-BaseHandler.html#method_getHeight"
         },                {
+            "fqsen": "\\CodeIgniter\\Images\\Handlers\\BaseHandler\u003A\u003AclearMetadata\u0028\u0029",
+            "name": "clearMetadata",
+            "summary": "Placeholder\u0020method\u0020for\u0020implementing\u0020metadata\u0020clearing\u0020logic.",
+            "url": "classes/CodeIgniter-Images-Handlers-BaseHandler.html#method_clearMetadata"
+        },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\BaseHandler\u003A\u003A\u0024config",
             "name": "config",
             "summary": "Configuration\u0020settings.",
@@ -19608,13 +20398,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler",
             "name": "ImageMagickHandler",
-            "summary": "Class\u0020ImageMagickHandler",
+            "summary": "Image\u0020handler\u0020for\u0020Imagick\u0020extension.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Constructor.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AensureResource\u0028\u0029",
+            "name": "ensureResource",
+            "summary": "Loads\u0020the\u0020image\u0020for\u0020manipulation.",
+            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_ensureResource"
+        },                {
+            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003Aprocess\u0028\u0029",
+            "name": "process",
+            "summary": "Handles\u0020all\u0020the\u0020grunt\u0020work\u0020of\u0020resizing,\u0020etc.",
+            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_process"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A_resize\u0028\u0029",
             "name": "_resize",
@@ -19638,38 +20438,23 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A_flip\u0028\u0029",
             "name": "_flip",
-            "summary": "Flips\u0020an\u0020image\u0020along\u0020it\u0027s\u0020vertical\u0020or\u0020horizontal\u0020axis.",
+            "summary": "Flips\u0020an\u0020image\u0020along\u0020its\u0020vertical\u0020or\u0020horizontal\u0020axis.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method__flip"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AgetVersion\u0028\u0029",
             "name": "getVersion",
-            "summary": "Get\u0020driver\u0020version",
+            "summary": "Get\u0020a\u0020driver\u0020version",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_getVersion"
-        },                {
-            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003Aprocess\u0028\u0029",
-            "name": "process",
-            "summary": "Handles\u0020all\u0020of\u0020the\u0020grunt\u0020work\u0020of\u0020resizing,\u0020etc.",
-            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_process"
-        },                {
-            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "Saves\u0020any\u0020changes\u0020that\u0020have\u0020been\u0020made\u0020to\u0020file.\u0020If\u0020no\u0020new\u0020filename\u0020is\nprovided,\u0020the\u0020existing\u0020image\u0020is\u0020overwritten,\u0020otherwise\u0020a\u0020copy\u0020of\u0020the\nfile\u0020is\u0020made\u0020at\u0020\u0024target.",
-            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_save"
-        },                {
-            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AgetResourcePath\u0028\u0029",
-            "name": "getResourcePath",
-            "summary": "Get\u0020Image\u0020Resource",
-            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_getResourcePath"
-        },                {
-            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AensureResource\u0028\u0029",
-            "name": "ensureResource",
-            "summary": "Make\u0020the\u0020image\u0020resource\u0020object\u0020if\u0020needed",
-            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_ensureResource"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AsupportedFormatCheck\u0028\u0029",
             "name": "supportedFormatCheck",
-            "summary": "Check\u0020if\u0020given\u0020image\u0020format\u0020is\u0020supported",
+            "summary": "Check\u0020if\u0020a\u0020given\u0020image\u0020format\u0020is\u0020supported",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_supportedFormatCheck"
+        },                {
+            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003Asave\u0028\u0029",
+            "name": "save",
+            "summary": "Saves\u0020any\u0020changes\u0020that\u0020have\u0020been\u0020made\u0020to\u0020the\u0020file.\u0020If\u0020no\u0020new\u0020filename\u0020is\nprovided,\u0020the\u0020existing\u0020image\u0020is\u0020overwritten\u003B\u0020otherwise\u0020a\u0020copy\u0020of\u0020the\nfile\u0020is\u0020made\u0020at\u0020\u0024target.",
+            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_save"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A_text\u0028\u0029",
             "name": "_text",
@@ -19691,9 +20476,14 @@ Search.appendIndex(
             "summary": "Reads\u0020the\u0020EXIF\u0020information\u0020from\u0020the\u0020image\u0020and\u0020modifies\u0020the\u0020orientation\nso\u0020that\u0020displays\u0020correctly\u0020in\u0020the\u0020browser.\u0020This\u0020is\u0020especially\u0020an\u0020issue\nwith\u0020images\u0020taken\u0020by\u0020smartphones\u0020who\u0020always\u0020store\u0020the\u0020image\u0020up\u002Dright,\nbut\u0020set\u0020the\u0020orientation\u0020flag\u0020to\u0020display\u0020it\u0020correctly.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_reorient"
         },                {
+            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003AclearMetadata\u0028\u0029",
+            "name": "clearMetadata",
+            "summary": "Clears\u0020metadata\u0020from\u0020the\u0020image.",
+            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_clearMetadata"
+        },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A\u0024resource",
             "name": "resource",
-            "summary": "Stores\u0020image\u0020resource\u0020in\u0020memory.",
+            "summary": "Stores\u0020Imagick\u0020instance.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#property_resource"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Image",
@@ -19795,6 +20585,11 @@ Search.appendIndex(
             "name": "save",
             "summary": "Saves\u0020any\u0020changes\u0020that\u0020have\u0020been\u0020made\u0020to\u0020file.",
             "url": "classes/CodeIgniter-Images-ImageHandlerInterface.html#method_save"
+        },                {
+            "fqsen": "\\CodeIgniter\\Images\\ImageHandlerInterface\u003A\u003AclearMetadata\u0028\u0029",
+            "name": "clearMetadata",
+            "summary": "Clear\u0020metadata\u0020before\u0020saving\u0020image\u0020as\u0020a\u0020new\u0020file.",
+            "url": "classes/CodeIgniter-Images-ImageHandlerInterface.html#method_clearMetadata"
         },                {
             "fqsen": "\\CodeIgniter\\Language\\Language",
             "name": "Language",
@@ -20168,67 +20963,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AsetTable\u0028\u0029",
             "name": "setTable",
-            "summary": "Specify\u0020the\u0020table\u0020associated\u0020with\u0020a\u0020model",
+            "summary": "Specify\u0020the\u0020table\u0020associated\u0020with\u0020a\u0020model.",
             "url": "classes/CodeIgniter-Model.html#method_setTable"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFind\u0028\u0029",
             "name": "doFind",
-            "summary": "Fetches\u0020the\u0020row\u0028s\u0029\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
+            "summary": "Fetches\u0020the\u0020row\u0028s\u0029\u0020of\u0020database\u0020with\u0020a\u0020primary\u0020key\nmatching\u0020\u0024id.",
             "url": "classes/CodeIgniter-Model.html#method_doFind"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFindColumn\u0028\u0029",
             "name": "doFindColumn",
-            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database\u0020from\u0020\u0024this\u002D\u003Etable.",
+            "summary": "Fetches\u0020the\u0020column\u0020of\u0020database.",
             "url": "classes/CodeIgniter-Model.html#method_doFindColumn"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFindAll\u0028\u0029",
             "name": "doFindAll",
-            "summary": "Works\u0020with\u0020the\u0020current\u0020Query\u0020Builder\u0020instance\u0020to\u0020return\nall\u0020results,\u0020while\u0020optionally\u0020limiting\u0020them.",
+            "summary": "Fetches\u0020all\u0020results,\u0020while\u0020optionally\u0020limiting\u0020them.",
             "url": "classes/CodeIgniter-Model.html#method_doFindAll"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoFirst\u0028\u0029",
             "name": "doFirst",
-            "summary": "Returns\u0020the\u0020first\u0020row\u0020of\u0020the\u0020result\u0020set.\u0020Will\u0020take\u0020any\u0020previous\nQuery\u0020Builder\u0020calls\u0020into\u0020account\u0020when\u0020determining\u0020the\u0020result\u0020set.",
+            "summary": "Returns\u0020the\u0020first\u0020row\u0020of\u0020the\u0020result\u0020set.",
             "url": "classes/CodeIgniter-Model.html#method_doFirst"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoInsert\u0028\u0029",
             "name": "doInsert",
-            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020table.",
+            "summary": "Inserts\u0020data\u0020into\u0020the\u0020current\u0020database.",
             "url": "classes/CodeIgniter-Model.html#method_doInsert"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoInsertBatch\u0028\u0029",
             "name": "doInsertBatch",
-            "summary": "Compiles\u0020batch\u0020insert\u0020strings\u0020and\u0020runs\u0020the\u0020queries,\u0020validating\u0020each\u0020row\u0020prior.",
+            "summary": "Compiles\u0020batch\u0020insert\u0020and\u0020runs\u0020the\u0020queries,\u0020validating\u0020each\u0020row\u0020prior.",
             "url": "classes/CodeIgniter-Model.html#method_doInsertBatch"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoUpdate\u0028\u0029",
             "name": "doUpdate",
-            "summary": "Updates\u0020a\u0020single\u0020record\u0020in\u0020\u0024this\u002D\u003Etable.",
+            "summary": "Updates\u0020a\u0020single\u0020record\u0020in\u0020the\u0020database.",
             "url": "classes/CodeIgniter-Model.html#method_doUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoUpdateBatch\u0028\u0029",
             "name": "doUpdateBatch",
-            "summary": "Compiles\u0020an\u0020update\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
+            "summary": "Compiles\u0020an\u0020update\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-Model.html#method_doUpdateBatch"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoDelete\u0028\u0029",
             "name": "doDelete",
-            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020\u0024this\u002D\u003Etable\u0020where\u0020\u0024id\u0020matches\nthe\u0020table\u0027s\u0020primaryKey\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
+            "summary": "Deletes\u0020a\u0020single\u0020record\u0020from\u0020the\u0020database\u0020where\u0020\u0024id\u0020matches\nthe\u0020table\u0027s\u0020primary\u0020key.",
             "url": "classes/CodeIgniter-Model.html#method_doDelete"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoPurgeDeleted\u0028\u0029",
             "name": "doPurgeDeleted",
-            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028deleted\u0020\u003D\u00201\u0029\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
+            "summary": "Permanently\u0020deletes\u0020all\u0020rows\u0020that\u0020have\u0020been\u0020marked\u0020as\u0020deleted\nthrough\u0020soft\u0020deletes\u0020\u0028value\u0020of\u0020column\u0020\u0024deletedField\u0020is\u0020not\u0020null\u0029.",
             "url": "classes/CodeIgniter-Model.html#method_doPurgeDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoOnlyDeleted\u0028\u0029",
             "name": "doOnlyDeleted",
-            "summary": "Works\u0020with\u0020the\u0020find\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted.",
+            "summary": "Works\u0020with\u0020the\u0020\u0024this\u002D\u003Efind\u002A\u0020methods\u0020to\u0020return\u0020only\u0020the\u0020rows\u0020that\nhave\u0020been\u0020deleted\u0020\u0028value\u0020of\u0020column\u0020\u0024deletedField\u0020is\u0020not\u0020null\u0029.",
             "url": "classes/CodeIgniter-Model.html#method_doOnlyDeleted"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoReplace\u0028\u0029",
             "name": "doReplace",
-            "summary": "Compiles\u0020a\u0020replace\u0020into\u0020string\u0020and\u0020runs\u0020the\u0020query\nThis\u0020method\u0020works\u0020only\u0020with\u0020dbCalls.",
+            "summary": "Compiles\u0020a\u0020replace\u0020and\u0020runs\u0020the\u0020query.",
             "url": "classes/CodeIgniter-Model.html#method_doReplace"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoErrors\u0028\u0029",
@@ -20238,22 +21033,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AgetIdValue\u0028\u0029",
             "name": "getIdValue",
-            "summary": "Returns\u0020the\u0020id\u0020value\u0020for\u0020the\u0020data\u0020array\u0020or\u0020object",
+            "summary": "Public\u0020getter\u0020to\u0020return\u0020the\u0020ID\u0020value\u0020for\u0020the\u0020data\u0020array\u0020or\u0020object.",
             "url": "classes/CodeIgniter-Model.html#method_getIdValue"
-        },                {
-            "fqsen": "\\CodeIgniter\\Model\u003A\u003Achunk\u0028\u0029",
-            "name": "chunk",
-            "summary": "Loops\u0020over\u0020records\u0020in\u0020batches,\u0020allowing\u0020you\u0020to\u0020operate\u0020on\u0020them.",
-            "url": "classes/CodeIgniter-Model.html#method_chunk"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AcountAllResults\u0028\u0029",
             "name": "countAllResults",
             "summary": "Override\u0020countAllResults\u0020to\u0020account\u0020for\u0020soft\u0020deleted\u0020accounts.",
             "url": "classes/CodeIgniter-Model.html#method_countAllResults"
         },                {
+            "fqsen": "\\CodeIgniter\\Model\u003A\u003Achunk\u0028\u0029",
+            "name": "chunk",
+            "summary": "Loops\u0020over\u0020records\u0020in\u0020batches,\u0020allowing\u0020you\u0020to\u0020operate\u0020on\u0020them.",
+            "url": "classes/CodeIgniter-Model.html#method_chunk"
+        },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024builder",
             "name": "builder",
-            "summary": "Query\u0020Builder\u0020object",
+            "summary": "Query\u0020Builder\u0020object.",
             "url": "classes/CodeIgniter-Model.html#property_builder"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003Aset\u0028\u0029",
@@ -20263,7 +21058,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003AshouldUpdate\u0028\u0029",
             "name": "shouldUpdate",
-            "summary": "This\u0020method\u0020is\u0020called\u0020on\u0020save\u0020to\u0020determine\u0020if\u0020entry\u0020have\u0020to\u0020be\u0020updated\nIf\u0020this\u0020method\u0020return\u0020false\u0020insert\u0020operation\u0020will\u0020be\u0020executed",
+            "summary": "This\u0020method\u0020is\u0020called\u0020on\u0020save\u0020to\u0020determine\u0020if\u0020entry\u0020have\u0020to\u0020be\u0020updated.",
             "url": "classes/CodeIgniter-Model.html#method_shouldUpdate"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003Ainsert\u0028\u0029",
@@ -20308,7 +21103,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024table",
             "name": "table",
-            "summary": "Name\u0020of\u0020database\u0020table",
+            "summary": "Name\u0020of\u0020database\u0020table.",
             "url": "classes/CodeIgniter-Model.html#property_table"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A\u0024primaryKey",
@@ -21111,6 +21906,141 @@ Search.appendIndex(
             "summary": "Process\u0020the\u0020deletion\u0020of\u0020a\u0020specific\u0020resource\u0020object",
             "url": "classes/CodeIgniter-RESTful-ResourcePresenter.html#method_delete"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache",
+            "name": "Cache",
+            "summary": "Cache\u0020Attribute",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Process\u0020the\u0020attribute\u0020before\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Process\u0020the\u0020attribute\u0020after\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#method_after"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003AgenerateCacheKey\u0028\u0029",
+            "name": "generateCacheKey",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#method_generateCacheKey"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003A\u0024for",
+            "name": "for",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#property_for"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Cache\u003A\u003A\u0024key",
+            "name": "key",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Cache.html#property_key"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter",
+            "name": "Filter",
+            "summary": "Filter\u0020Attribute",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Process\u0020the\u0020attribute\u0020before\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Process\u0020the\u0020attribute\u0020after\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#method_after"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003AgetFilters\u0028\u0029",
+            "name": "getFilters",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#method_getFilters"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003A\u0024by",
+            "name": "by",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#property_by"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Filter\u003A\u003A\u0024having",
+            "name": "having",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Filter.html#property_having"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict",
+            "name": "Restrict",
+            "summary": "Restrict\u0020Attribute",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method___construct"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Process\u0020the\u0020attribute\u0020before\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Process\u0020the\u0020attribute\u0020after\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method_after"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003AcheckEnvironment\u0028\u0029",
+            "name": "checkEnvironment",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method_checkEnvironment"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003AcheckHostname\u0028\u0029",
+            "name": "checkHostname",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method_checkHostname"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003AcheckSubdomain\u0028\u0029",
+            "name": "checkSubdomain",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#method_checkSubdomain"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003A\u0024environment",
+            "name": "environment",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#property_environment"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003A\u0024hostname",
+            "name": "hostname",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#property_hostname"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\Restrict\u003A\u003A\u0024subdomain",
+            "name": "subdomain",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-Restrict.html#property_subdomain"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\RouteAttributeInterface",
+            "name": "RouteAttributeInterface",
+            "summary": "",
+            "url": "classes/CodeIgniter-Router-Attributes-RouteAttributeInterface.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\RouteAttributeInterface\u003A\u003Abefore\u0028\u0029",
+            "name": "before",
+            "summary": "Process\u0020the\u0020attribute\u0020before\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-RouteAttributeInterface.html#method_before"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes\\RouteAttributeInterface\u003A\u003Aafter\u0028\u0029",
+            "name": "after",
+            "summary": "Process\u0020the\u0020attribute\u0020after\u0020the\u0020controller\u0020is\u0020executed.",
+            "url": "classes/CodeIgniter-Router-Attributes-RouteAttributeInterface.html#method_after"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter",
             "name": "AutoRouter",
             "summary": "Router\u0020for\u0020Auto\u002DRouting",
@@ -21676,11 +22606,6 @@ Search.appendIndex(
             "summary": "Compares\u0020the\u0020subdomain\u0028s\u0029\u0020passed\u0020in\u0020against\u0020the\u0020current\u0020subdomain\non\u0020this\u0020page\u0020request.",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_checkSubdomains"
         },                {
-            "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AdetermineCurrentSubdomain\u0028\u0029",
-            "name": "determineCurrentSubdomain",
-            "summary": "Examines\u0020the\u0020HTTP_HOST\u0020to\u0020get\u0020the\u0020best\u0020match\u0020for\u0020the\u0020subdomain.\u0020It\nwon\u0027t\u0020be\u0020perfect,\u0020but\u0020should\u0020work\u0020for\u0020our\u0020needs.",
-            "url": "classes/CodeIgniter-Router-RouteCollection.html#method_determineCurrentSubdomain"
-        },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AresetRoutes\u0028\u0029",
             "name": "resetRoutes",
             "summary": "Reset\u0020the\u0020routes,\u0020so\u0020that\u0020a\u0020test\u0020case\u0020can\u0020provide\u0020the\nexplicit\u0020ones\u0020needed\u0020for\u0020it.",
@@ -22081,6 +23006,26 @@ Search.appendIndex(
             "summary": "Checks\u0020disallowed\u0020characters",
             "url": "classes/CodeIgniter-Router-Router.html#method_checkDisallowedChars"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AprocessRouteAttributes\u0028\u0029",
+            "name": "processRouteAttributes",
+            "summary": "Extracts\u0020PHP\u0020attributes\u0020from\u0020the\u0020resolved\u0020controller\u0020and\u0020method.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_processRouteAttributes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AexecuteBeforeAttributes\u0028\u0029",
+            "name": "executeBeforeAttributes",
+            "summary": "Execute\u0020beforeController\u0028\u0029\u0020on\u0020all\u0020route\u0020attributes.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_executeBeforeAttributes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AexecuteAfterAttributes\u0028\u0029",
+            "name": "executeAfterAttributes",
+            "summary": "Execute\u0020afterController\u0028\u0029\u0020on\u0020all\u0020route\u0020attributes.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_executeAfterAttributes"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AgetRouteAttributes\u0028\u0029",
+            "name": "getRouteAttributes",
+            "summary": "Returns\u0020the\u0020route\u0020attributes\u0020collected\u0020during\u0020routing\nfor\u0020the\u0020current\u0020route.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_getRouteAttributes"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AHTTP_METHODS",
             "name": "HTTP_METHODS",
             "summary": "List\u0020of\u0020allowed\u0020HTTP\u0020methods\u0020\u0028and\u0020CLI\u0020for\u0020command\u0020line\u0020use\u0029.",
@@ -22135,6 +23080,11 @@ Search.appendIndex(
             "name": "autoRouter",
             "summary": "",
             "url": "classes/CodeIgniter-Router-Router.html#property_autoRouter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024routeAttributes",
+            "name": "routeAttributes",
+            "summary": "Route\u0020attributes\u0020collected\u0020during\u0020routing\u0020for\u0020the\u0020current\u0020route.",
+            "url": "classes/CodeIgniter-Router-Router.html#property_routeAttributes"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003A\u0024permittedURIChars",
             "name": "permittedURIChars",
@@ -22533,7 +23483,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\ArrayHandler\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Destroys\u0020a\u0020session",
+            "summary": "Destroys\u0020a\u0020session.",
             "url": "classes/CodeIgniter-Session-Handlers-ArrayHandler.html#method_destroy"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\ArrayHandler\u003A\u003Agc\u0028\u0029",
@@ -22548,7 +23498,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler",
             "name": "BaseHandler",
-            "summary": "Base\u0020class\u0020for\u0020session\u0020handling",
+            "summary": "Base\u0020class\u0020for\u0020session\u0020handling.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A__construct\u0028\u0029",
@@ -22588,17 +23538,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookiePrefix",
             "name": "cookiePrefix",
-            "summary": "Cookie\u0020prefix",
+            "summary": "Cookie\u0020prefix.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookiePrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookieDomain",
             "name": "cookieDomain",
-            "summary": "Cookie\u0020domain",
+            "summary": "Cookie\u0020domain.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookieDomain"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookiePath",
             "name": "cookiePath",
-            "summary": "Cookie\u0020path",
+            "summary": "Cookie\u0020path.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookiePath"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookieSecure",
@@ -22608,7 +23558,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookieName",
             "name": "cookieName",
-            "summary": "Cookie\u0020name\u0020to\u0020use",
+            "summary": "Cookie\u0020name\u0020to\u0020use.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookieName"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024matchIP",
@@ -22618,12 +23568,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024sessionID",
             "name": "sessionID",
-            "summary": "Current\u0020session\u0020ID",
+            "summary": "Current\u0020session\u0020ID.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_sessionID"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024savePath",
             "name": "savePath",
-            "summary": "The\u0020\u0027save\u0020path\u0027\u0020for\u0020the\u0020session\nvaries\u0020between",
+            "summary": "The\u0020\u0027save\u0020path\u0027\u0020for\u0020the\u0020session\nvaries\u0020between.",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_savePath"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024ipAddress",
@@ -22683,7 +23633,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler",
             "name": "DatabaseHandler",
-            "summary": "Base\u0020database\u0020session\u0020handler",
+            "summary": "Base\u0020database\u0020session\u0020handler.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A__construct\u0028\u0029",
@@ -22703,12 +23653,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AsetSelect\u0028\u0029",
             "name": "setSelect",
-            "summary": "Sets\u0020SELECT\u0020clause",
+            "summary": "Sets\u0020SELECT\u0020clause.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_setSelect"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AdecodeData\u0028\u0029",
             "name": "decodeData",
-            "summary": "Decodes\u0020column\u0020data",
+            "summary": "Decodes\u0020column\u0020data.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_decodeData"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Awrite\u0028\u0029",
@@ -22718,7 +23668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003AprepareData\u0028\u0029",
             "name": "prepareData",
-            "summary": "Prepare\u0020data\u0020to\u0020insert\/update",
+            "summary": "Prepare\u0020data\u0020to\u0020insert\/update.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_prepareData"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Aclose\u0028\u0029",
@@ -22728,7 +23678,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Destroys\u0020a\u0020session",
+            "summary": "Destroys\u0020a\u0020session.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#method_destroy"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003Agc\u0028\u0029",
@@ -22758,22 +23708,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024platform",
             "name": "platform",
-            "summary": "The\u0020database\u0020type",
+            "summary": "The\u0020database\u0020type.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_platform"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024rowExists",
             "name": "rowExists",
-            "summary": "Row\u0020exists\u0020flag",
+            "summary": "Row\u0020exists\u0020flag.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_rowExists"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\DatabaseHandler\u003A\u003A\u0024idPrefix",
             "name": "idPrefix",
-            "summary": "ID\u0020prefix\u0020for\u0020multiple\u0020session\u0020cookies",
+            "summary": "ID\u0020prefix\u0020for\u0020multiple\u0020session\u0020cookies.",
             "url": "classes/CodeIgniter-Session-Handlers-DatabaseHandler.html#property_idPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler",
             "name": "FileHandler",
-            "summary": "Session\u0020handler\u0020using\u0020file\u0020system\u0020for\u0020storage",
+            "summary": "Session\u0020handler\u0020using\u0020file\u0020system\u0020for\u0020storage.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A__construct\u0028\u0029",
@@ -22803,7 +23753,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Destroys\u0020a\u0020session",
+            "summary": "Destroys\u0020a\u0020session.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#method_destroy"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003Agc\u0028\u0029",
@@ -22813,7 +23763,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003AconfigureSessionIDRegex\u0028\u0029",
             "name": "configureSessionIDRegex",
-            "summary": "Configure\u0020Session\u0020ID\u0020regular\u0020expression",
+            "summary": "Configure\u0020Session\u0020ID\u0020regular\u0020expression.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#method_configureSessionIDRegex"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024savePath",
@@ -22823,12 +23773,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024fileHandle",
             "name": "fileHandle",
-            "summary": "The\u0020file\u0020handle",
+            "summary": "The\u0020file\u0020handle.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#property_fileHandle"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024filePath",
             "name": "filePath",
-            "summary": "File\u0020Name",
+            "summary": "File\u0020Name.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#property_filePath"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024fileNew",
@@ -22843,12 +23793,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024sessionIDRegex",
             "name": "sessionIDRegex",
-            "summary": "Regex\u0020of\u0020session\u0020ID",
+            "summary": "Regex\u0020of\u0020session\u0020ID.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#property_sessionIDRegex"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler",
             "name": "MemcachedHandler",
-            "summary": "Session\u0020handler\u0020using\u0020Memcache\u0020for\u0020persistence",
+            "summary": "Session\u0020handler\u0020using\u0020Memcached\u0020for\u0020persistence.",
             "url": "classes/CodeIgniter-Session-Handlers-MemcachedHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003A__construct\u0028\u0029",
@@ -22878,7 +23828,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Destroys\u0020a\u0020session",
+            "summary": "Destroys\u0020a\u0020session.",
             "url": "classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_destroy"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003Agc\u0028\u0029",
@@ -22893,17 +23843,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003AreleaseLock\u0028\u0029",
             "name": "releaseLock",
-            "summary": "Releases\u0020a\u0020previously\u0020acquired\u0020lock",
+            "summary": "Releases\u0020a\u0020previously\u0020acquired\u0020lock.",
             "url": "classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#method_releaseLock"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003A\u0024memcached",
             "name": "memcached",
-            "summary": "Memcached\u0020instance",
+            "summary": "Memcached\u0020instance.",
             "url": "classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_memcached"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003A\u0024keyPrefix",
             "name": "keyPrefix",
-            "summary": "Key\u0020prefix",
+            "summary": "Key\u0020prefix.",
             "url": "classes/CodeIgniter-Session-Handlers-MemcachedHandler.html#property_keyPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\MemcachedHandler\u003A\u003A\u0024lockKey",
@@ -22918,7 +23868,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler",
             "name": "RedisHandler",
-            "summary": "Session\u0020handler\u0020using\u0020Redis\u0020for\u0020persistence",
+            "summary": "Session\u0020handler\u0020using\u0020Redis\u0020for\u0020persistence.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A__construct\u0028\u0029",
@@ -22953,7 +23903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003Adestroy\u0028\u0029",
             "name": "destroy",
-            "summary": "Destroys\u0020a\u0020session",
+            "summary": "Destroys\u0020a\u0020session.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#method_destroy"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003Agc\u0028\u0029",
@@ -22968,7 +23918,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003AreleaseLock\u0028\u0029",
             "name": "releaseLock",
-            "summary": "Releases\u0020a\u0020previously\u0020acquired\u0020lock",
+            "summary": "Releases\u0020a\u0020previously\u0020acquired\u0020lock.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#method_releaseLock"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003ADEFAULT_PORT",
@@ -22983,22 +23933,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024redis",
             "name": "redis",
-            "summary": "phpRedis\u0020instance",
+            "summary": "phpRedis\u0020instance.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#property_redis"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024keyPrefix",
             "name": "keyPrefix",
-            "summary": "Key\u0020prefix",
+            "summary": "Key\u0020prefix.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#property_keyPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024lockKey",
             "name": "lockKey",
-            "summary": "Lock\u0020key",
+            "summary": "Lock\u0020key.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#property_lockKey"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024keyExists",
             "name": "keyExists",
-            "summary": "Key\u0020exists\u0020flag",
+            "summary": "Key\u0020exists\u0020flag.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#property_keyExists"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\RedisHandler\u003A\u003A\u0024sessionExpiration",
@@ -23016,6 +23966,41 @@ Search.appendIndex(
             "summary": "Maximum\u0020number\u0020of\u0020lock\u0020acquisition\u0020attempts.",
             "url": "classes/CodeIgniter-Session-Handlers-RedisHandler.html#property_lockMaxRetries"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection",
+            "name": "PersistsConnection",
+            "summary": "Trait\u0020for\u0020session\u0020handlers\u0020that\u0020need\u0020persistent\u0020connections.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003AgetConnectionIdentifier\u0028\u0029",
+            "name": "getConnectionIdentifier",
+            "summary": "Get\u0020connection\u0020identifier\u0020based\u0020on\u0020configuration.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#method_getConnectionIdentifier"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003AhasPersistentConnection\u0028\u0029",
+            "name": "hasPersistentConnection",
+            "summary": "Check\u0020if\u0020a\u0020persistent\u0020connection\u0020exists\u0020for\u0020this\u0020configuration.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#method_hasPersistentConnection"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003AgetPersistentConnection\u0028\u0029",
+            "name": "getPersistentConnection",
+            "summary": "Get\u0020the\u0020persistent\u0020connection\u0020for\u0020this\u0020configuration.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#method_getPersistentConnection"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003AsetPersistentConnection\u0028\u0029",
+            "name": "setPersistentConnection",
+            "summary": "Store\u0020a\u0020connection\u0020for\u0020persistence.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#method_setPersistentConnection"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003AresetPersistentConnections\u0028\u0029",
+            "name": "resetPersistentConnections",
+            "summary": "Reset\u0020all\u0020persistent\u0020connections\u0020\u0028useful\u0020for\u0020testing\u0029.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#method_resetPersistentConnections"
+        },                {
+            "fqsen": "\\CodeIgniter\\Session\\PersistsConnection\u003A\u003A\u0024connectionPool",
+            "name": "connectionPool",
+            "summary": "Connection\u0020pool\u0020keyed\u0020by\u0020connection\u0020identifier.",
+            "url": "classes/CodeIgniter-Session-PersistsConnection.html#property_connectionPool"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Session",
             "name": "Session",
             "summary": "Implementation\u0020of\u0020CodeIgniter\u0020session\u0020container.",
@@ -23023,18 +24008,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "Extract\u0020configuration\u0020settings\u0020and\u0020save\u0020them\u0020here.",
             "url": "classes/CodeIgniter-Session-Session.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Astart\u0028\u0029",
             "name": "start",
             "summary": "Initialize\u0020the\u0020session\u0020container\u0020and\u0020starts\u0020up\u0020the\u0020session.",
             "url": "classes/CodeIgniter-Session-Session.html#method_start"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Astop\u0028\u0029",
-            "name": "stop",
-            "summary": "Destroys\u0020the\u0020current\u0020session.",
-            "url": "classes/CodeIgniter-Session-Session.html#method_stop"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Aconfigure\u0028\u0029",
             "name": "configure",
@@ -23043,12 +24023,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AconfigureSidLength\u0028\u0029",
             "name": "configureSidLength",
-            "summary": "Configure\u0020session\u0020ID\u0020length",
+            "summary": "Configure\u0020session\u0020ID\u0020length.",
             "url": "classes/CodeIgniter-Session-Session.html#method_configureSidLength"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AinitVars\u0028\u0029",
             "name": "initVars",
-            "summary": "Handle\u0020temporary\u0020variables",
+            "summary": "Handle\u0020temporary\u0020variables.",
             "url": "classes/CodeIgniter-Session-Session.html#method_initVars"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003Aregenerate\u0028\u0029",
@@ -23098,7 +24078,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A__set\u0028\u0029",
             "name": "__set",
-            "summary": "Magic\u0020method\u0020to\u0020set\u0020variables\u0020in\u0020the\u0020session\u0020by\u0020simply\u0020calling\n\u0020\u0024session\u002D\u003Efoo\u0020\u003D\u0020bar\u003B",
+            "summary": "Magic\u0020method\u0020to\u0020set\u0020variables\u0020in\u0020the\u0020session\u0020by\u0020simply\u0020calling\n\u0020\u0024session\u002D\u003Efoo\u0020\u003D\u0020\u0027bar\u0027\u003B",
             "url": "classes/CodeIgniter-Session-Session.html#method___set"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A__get\u0028\u0029",
@@ -23191,74 +24171,19 @@ Search.appendIndex(
             "summary": "Instance\u0020of\u0020the\u0020driver\u0020to\u0020use.",
             "url": "classes/CodeIgniter-Session-Session.html#property_driver"
         },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionDriverName",
-            "name": "sessionDriverName",
-            "summary": "The\u0020storage\u0020driver\u0020to\u0020use\u003A\u0020files,\u0020database,\u0020redis,\u0020memcached",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionDriverName"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionCookieName",
-            "name": "sessionCookieName",
-            "summary": "The\u0020session\u0020cookie\u0020name,\u0020must\u0020contain\u0020only\u0020\u005B0\u002D9a\u002Dz_\u002D\u005D\u0020characters.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionCookieName"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionExpiration",
-            "name": "sessionExpiration",
-            "summary": "The\u0020number\u0020of\u0020SECONDS\u0020you\u0020want\u0020the\u0020session\u0020to\u0020last.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionExpiration"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionSavePath",
-            "name": "sessionSavePath",
-            "summary": "The\u0020location\u0020to\u0020save\u0020sessions\u0020to,\u0020driver\u0020dependent.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionSavePath"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionMatchIP",
-            "name": "sessionMatchIP",
-            "summary": "Whether\u0020to\u0020match\u0020the\u0020user\u0027s\u0020IP\u0020address\u0020when\u0020reading\u0020the\u0020session\u0020data.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionMatchIP"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionTimeToUpdate",
-            "name": "sessionTimeToUpdate",
-            "summary": "How\u0020many\u0020seconds\u0020between\u0020CI\u0020regenerating\u0020the\u0020session\u0020ID.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionTimeToUpdate"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sessionRegenerateDestroy",
-            "name": "sessionRegenerateDestroy",
-            "summary": "Whether\u0020to\u0020destroy\u0020session\u0020data\u0020associated\u0020with\u0020the\u0020old\u0020session\u0020ID\nwhen\u0020auto\u002Dregenerating\u0020the\u0020session\u0020ID.\u0020When\u0020set\u0020to\u0020FALSE,\u0020the\u0020data\nwill\u0020be\u0020later\u0020deleted\u0020by\u0020the\u0020garbage\u0020collector.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_sessionRegenerateDestroy"
-        },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024cookie",
             "name": "cookie",
             "summary": "The\u0020session\u0020cookie\u0020instance.",
             "url": "classes/CodeIgniter-Session-Session.html#property_cookie"
         },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024cookieDomain",
-            "name": "cookieDomain",
-            "summary": "The\u0020domain\u0020name\u0020to\u0020use\u0020for\u0020cookies.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_cookieDomain"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024cookiePath",
-            "name": "cookiePath",
-            "summary": "Path\u0020used\u0020for\u0020storing\u0020cookies.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_cookiePath"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024cookieSecure",
-            "name": "cookieSecure",
-            "summary": "Cookie\u0020will\u0020only\u0020be\u0020set\u0020if\u0020a\u0020secure\u0020HTTPS\u0020connection\u0020exists.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_cookieSecure"
-        },                {
-            "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024cookieSameSite",
-            "name": "cookieSameSite",
-            "summary": "Cookie\u0020SameSite\u0020setting\u0020as\u0020described\u0020in\u0020RFC6265\nMust\u0020be\u0020\u0027None\u0027,\u0020\u0027Lax\u0027\u0020or\u0020\u0027Strict\u0027.",
-            "url": "classes/CodeIgniter-Session-Session.html#property_cookieSameSite"
-        },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024sidRegexp",
             "name": "sidRegexp",
-            "summary": "sid\u0020regex\u0020expression",
+            "summary": "Session\u0020ID\u0020regex\u0020expression.",
             "url": "classes/CodeIgniter-Session-Session.html#property_sidRegexp"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003A\u0024config",
             "name": "config",
-            "summary": "Session\u0020Config",
+            "summary": "",
             "url": "classes/CodeIgniter-Session-Session.html#property_config"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\SessionInterface",
@@ -27286,6 +28211,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/codeigniter-commands-utilities-routes-autorouterimproved.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Worker",
+            "name": "Worker",
+            "summary": "",
+            "url": "namespaces/codeigniter-commands-worker.html"
+        },                {
             "fqsen": "\\CodeIgniter\\Config",
             "name": "Config",
             "summary": "",
@@ -27555,6 +28485,11 @@ Search.appendIndex(
             "name": "RESTful",
             "summary": "",
             "url": "namespaces/codeigniter-restful.html"
+        },                {
+            "fqsen": "\\CodeIgniter\\Router\\Attributes",
+            "name": "Attributes",
+            "summary": "",
+            "url": "namespaces/codeigniter-router-attributes.html"
         },                {
             "fqsen": "\\CodeIgniter\\Router",
             "name": "Router",

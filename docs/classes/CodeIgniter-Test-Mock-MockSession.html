@@ -333,7 +333,6 @@ that doesn't interact with the session or cookies at all.</p>
     <span>
                         &nbsp;: <abbr title="\Config\Session">Session</abbr>            </span>
 </dt>
-<dd>Session Config</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Session-Session.html#property_cookie">$cookie</a>
@@ -343,35 +342,6 @@ that doesn't interact with the session or cookies at all.</p>
 <dd>The session cookie instance.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_cookieDomain">$cookieDomain</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>The domain name to use for cookies.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_cookiePath">$cookiePath</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>Path used for storing cookies.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_cookieSameSite">$cookieSameSite</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>Cookie SameSite setting as described in RFC6265
-Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_cookieSecure">$cookieSecure</a>
-    <span>
-                        &nbsp;: bool            </span>
-</dt>
-<dd>Cookie will only be set if a secure HTTPS connection exists.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Session-Session.html#property_driver">$driver</a>
     <span>
                         &nbsp;: <abbr title="\SessionHandlerInterface">SessionHandlerInterface</abbr>            </span>
@@ -379,62 +349,11 @@ Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</dd>
 <dd>Instance of the driver to use.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionCookieName">$sessionCookieName</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>The session cookie name, must contain only [0-9a-z_-] characters.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionDriverName">$sessionDriverName</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>The storage driver to use: files, database, redis, memcached</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionExpiration">$sessionExpiration</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-<dd>The number of SECONDS you want the session to last.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionMatchIP">$sessionMatchIP</a>
-    <span>
-                        &nbsp;: bool            </span>
-</dt>
-<dd>Whether to match the user&#039;s IP address when reading the session data.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionRegenerateDestroy">$sessionRegenerateDestroy</a>
-    <span>
-                        &nbsp;: bool            </span>
-</dt>
-<dd>Whether to destroy session data associated with the old session ID
-when auto-regenerating the session ID. When set to FALSE, the data
-will be later deleted by the garbage collector.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionSavePath">$sessionSavePath</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>The location to save sessions to, driver dependent.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#property_sessionTimeToUpdate">$sessionTimeToUpdate</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-<dd>How many seconds between CI regenerating the session ID.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Session-Session.html#property_sidRegexp">$sidRegexp</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
-<dd>sid regex expression</dd>
+<dd>Session ID regex expression.</dd>
 
     </dl>
 
@@ -449,7 +368,7 @@ will be later deleted by the garbage collector.</dd>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor.</dd>
+<dd>Extract configuration settings and save them here.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Session-Session.html#method___get">__get()</a>
@@ -472,7 +391,7 @@ will be later deleted by the garbage collector.</dd>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Magic method to set variables in the session by simply calling
- $session-&gt;foo = bar;</dd>
+ $session-&gt;foo = &#039;bar&#039;;</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Session-Session.html#method_close">close()</a>
@@ -612,13 +531,6 @@ with a set lifespan.</dd>
 <dd>Initialize the session container and starts up the session.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="-deprecated" href="classes/CodeIgniter-Session-Session.html#method_stop">stop()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Destroys the current session.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Session-Session.html#method_unmarkFlashdata">unmarkFlashdata()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -645,14 +557,14 @@ lifespan and allowing it to live as long as the session does.</dd>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Configure session ID length</dd>
+<dd>Configure session ID length.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Session-Session.html#method_initVars">initVars()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Handle temporary variables</dd>
+<dd>Handle temporary variables.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Test-Mock-MockSession.html#method_setCookie">setCookie()</a>
@@ -817,12 +729,11 @@ lifespan and allowing it to live as long as the session does.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Session Config</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
@@ -855,7 +766,7 @@ lifespan and allowing it to live as long as the session does.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">126</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
@@ -867,191 +778,6 @@ lifespan and allowing it to live as long as the session does.</dd>
             <span class="phpdocumentor-signature__type"><a href="classes/CodeIgniter-Cookie-Cookie.html"><abbr title="\CodeIgniter\Cookie\Cookie">Cookie</abbr></a></span>
     <span class="phpdocumentor-signature__name">$cookie</span>
     </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_cookieDomain">
-        $cookieDomain
-        <a href="classes/CodeIgniter-Session-Session.html#property_cookieDomain" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">136</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The domain name to use for cookies.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>No longer used.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$cookieDomain</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;&#039;</span></code>
-
-        <section class="phpdocumentor-description"><p>Set to .your-domain.com for site-wide cookies.</p>
-</section>
-
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_cookiePath">
-        $cookiePath
-        <a href="classes/CodeIgniter-Session-Session.html#property_cookiePath" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">146</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Path used for storing cookies.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>No longer used.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$cookiePath</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;/&#039;</span></code>
-
-        <section class="phpdocumentor-description"><p>Typically will be a forward slash.</p>
-</section>
-
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_cookieSameSite">
-        $cookieSameSite
-        <a href="classes/CodeIgniter-Session-Session.html#property_cookieSameSite" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">165</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Cookie SameSite setting as described in RFC6265
-Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>No longer used.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$cookieSameSite</span>
-     = <span class="phpdocumentor-signature__default-value">\CodeIgniter\Cookie\Cookie::SAMESITE_LAX</span></code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_cookieSecure">
-        $cookieSecure
-        <a href="classes/CodeIgniter-Session-Session.html#property_cookieSecure" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">155</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Cookie will only be set if a secure HTTPS connection exists.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>No longer used.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$cookieSecure</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
 
     
     
@@ -1078,7 +804,7 @@ Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 
     </aside>
 
@@ -1090,349 +816,6 @@ Must be &#039;None&#039;, &#039;Lax&#039; or &#039;Strict&#039;.</p>
             <span class="phpdocumentor-signature__type"><abbr title="\SessionHandlerInterface">SessionHandlerInterface</abbr></span>
     <span class="phpdocumentor-signature__name">$driver</span>
     </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionCookieName">
-        $sessionCookieName
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionCookieName" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">59</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The session cookie name, must contain only [0-9a-z_-] characters.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;cookieName.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$sessionCookieName</span>
-     = <span class="phpdocumentor-signature__default-value">&#039;ci_session&#039;</span></code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionDriverName">
-        $sessionDriverName
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionDriverName" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">50</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The storage driver to use: files, database, redis, memcached</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;driver.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$sessionDriverName</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionExpiration">
-        $sessionExpiration
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionExpiration" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">69</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The number of SECONDS you want the session to last.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;expiration.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$sessionExpiration</span>
-     = <span class="phpdocumentor-signature__default-value">7200</span></code>
-
-        <section class="phpdocumentor-description"><p>Setting it to 0 (zero) means expire when the browser is closed.</p>
-</section>
-
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionMatchIP">
-        $sessionMatchIP
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionMatchIP" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">99</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Whether to match the user&#039;s IP address when reading the session data.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;matchIP.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$sessionMatchIP</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-        <section class="phpdocumentor-description"><p>WARNING: If you're using the database driver, don't forget to update
-your session table's PRIMARY KEY when changing this setting.</p>
-</section>
-
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionRegenerateDestroy">
-        $sessionRegenerateDestroy
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionRegenerateDestroy" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">119</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Whether to destroy session data associated with the old session ID
-when auto-regenerating the session ID. When set to FALSE, the data
-will be later deleted by the garbage collector.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;regenerateDestroy.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$sessionRegenerateDestroy</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionSavePath">
-        $sessionSavePath
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionSavePath" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">87</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">The location to save sessions to, driver dependent.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;savePath.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$sessionSavePath</span>
-    </code>
-
-        <section class="phpdocumentor-description"><p>For the 'files' driver, it's a path to a writable directory.
-WARNING: Only absolute paths are supported!</p>
-<p>For the 'database' driver, it's a table name.</p>
-</section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionSavePath#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">todo</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>address memcache &amp; redis needs</p>
-<p>IMPORTANT: You are REQUIRED to set a valid save path!</p>
-</section>
-
-                                    </dd>
-                                            </dl>
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                        -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="property_sessionTimeToUpdate">
-        $sessionTimeToUpdate
-        <a href="classes/CodeIgniter-Session-Session.html#property_sessionTimeToUpdate" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">108</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">How many seconds between CI regenerating the session ID.</p>
-
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use $this-&gt;config-&gt;timeToUpdate.</p>
-
-            </article>
-        </div>
-    
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-        <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$sessionTimeToUpdate</span>
-     = <span class="phpdocumentor-signature__default-value">300</span></code>
 
     
     
@@ -1459,11 +842,11 @@ WARNING: Only absolute paths are supported!</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">sid regex expression</p>
+        <p class="phpdocumentor-summary">Session ID regex expression.</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -1502,11 +885,11 @@ WARNING: Only absolute paths are supported!</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">184</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor.</p>
+        <p class="phpdocumentor-summary">Extract configuration settings and save them here.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1515,9 +898,7 @@ WARNING: Only absolute paths are supported!</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>Extract configuration settings and save them here.</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1556,7 +937,7 @@ WARNING: Only absolute paths are supported!</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">572</span>
+    <span class="phpdocumentor-element-found-in__line">382</span>
 
     </aside>
 
@@ -1578,9 +959,7 @@ WARNING: Only absolute paths are supported!</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Identifier of the session property to remove.</p>
-</section>
-
+                
             </dd>
             </dl>
 
@@ -1604,7 +983,7 @@ WARNING: Only absolute paths are supported!</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">595</span>
+    <span class="phpdocumentor-element-found-in__line">403</span>
 
     </aside>
 
@@ -1628,9 +1007,7 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Identifier of the session property to remove.</p>
-</section>
-
+                
             </dd>
             </dl>
 
@@ -1658,12 +1035,12 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">559</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 
     </aside>
 
         <p class="phpdocumentor-summary">Magic method to set variables in the session by simply calling
- $session-&gt;foo = bar;</p>
+ $session-&gt;foo = &#039;bar&#039;;</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1680,9 +1057,7 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Identifier of the session property to set.</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$value</span>
@@ -1713,7 +1088,7 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">432</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 
     </aside>
 
@@ -1748,7 +1123,7 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">418</span>
+    <span class="phpdocumentor-element-found-in__line">274</span>
 
     </aside>
 
@@ -1783,7 +1158,7 @@ Mostly used by internal PHP functions, users should stick to <code class="pretty
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">481</span>
+    <span class="phpdocumentor-element-found-in__line">310</span>
 
     </aside>
 
@@ -1809,7 +1184,7 @@ property key.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Identifier of the session property to retrieve</p>
+                    <section class="phpdocumentor-description"><p>Identifier of the session property to retrieve.</p>
 </section>
 
             </dd>
@@ -1839,7 +1214,7 @@ property key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">629</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 
     </aside>
 
@@ -1862,7 +1237,7 @@ property key.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property identifier</p>
+                    <section class="phpdocumentor-description"><p>Property identifier.</p>
 </section>
 
             </dd>
@@ -1892,7 +1267,7 @@ property key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">719</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -1931,7 +1306,7 @@ property key.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">760</span>
+    <span class="phpdocumentor-element-found-in__line">502</span>
 
     </aside>
 
@@ -1953,7 +1328,7 @@ in the session.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Session data key</p>
+                    <section class="phpdocumentor-description"><p>Session data key.</p>
 </section>
 
             </dd>
@@ -1983,7 +1358,7 @@ in the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">870</span>
+    <span class="phpdocumentor-element-found-in__line">583</span>
 
     </aside>
 
@@ -2022,7 +1397,7 @@ in the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">510</span>
+    <span class="phpdocumentor-element-found-in__line">334</span>
 
     </aside>
 
@@ -2073,7 +1448,7 @@ in the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">659</span>
+    <span class="phpdocumentor-element-found-in__line">437</span>
 
     </aside>
 
@@ -2081,7 +1456,7 @@ in the session.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">keepFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">keepFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2091,10 +1466,10 @@ in the session.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property identifier or array of them</p>
+                    <section class="phpdocumentor-description"><p>Property identifier or array of them.</p>
 </section>
 
             </dd>
@@ -2120,7 +1495,7 @@ in the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">670</span>
+    <span class="phpdocumentor-element-found-in__line">442</span>
 
     </aside>
 
@@ -2129,7 +1504,7 @@ in the session.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">markAsFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">markAsFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2139,10 +1514,10 @@ in the session.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property identifier or array of them</p>
+                    <section class="phpdocumentor-description"><p>Property identifier or array of them.</p>
 </section>
 
             </dd>
@@ -2172,7 +1547,7 @@ in the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">805</span>
+    <span class="phpdocumentor-element-found-in__line">531</span>
 
     </aside>
 
@@ -2181,7 +1556,7 @@ it has a set lifespan within the session.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">markAsTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">300</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">markAsTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">300</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2193,7 +1568,7 @@ it has a set lifespan within the session.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Property identifier or array of them</p>
@@ -2235,7 +1610,7 @@ it has a set lifespan within the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">523</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 
     </aside>
 
@@ -2338,7 +1713,7 @@ it has a set lifespan within the session.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">541</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 
     </aside>
 
@@ -2346,7 +1721,7 @@ it has a set lifespan within the session.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">remove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">remove</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2360,7 +1735,7 @@ of a specific session property to remove.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Identifier of the session property or properties to remove.</p>
@@ -2389,7 +1764,7 @@ of a specific session property to remove.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">790</span>
+    <span class="phpdocumentor-element-found-in__line">525</span>
 
     </aside>
 
@@ -2410,7 +1785,7 @@ of a specific session property to remove.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Session data key</p>
+                    <section class="phpdocumentor-description"><p>Session data key.</p>
 </section>
 
             </dd>
@@ -2436,7 +1811,7 @@ of a specific session property to remove.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">455</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 
     </aside>
 
@@ -2444,7 +1819,7 @@ of a specific session property to remove.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2459,10 +1834,10 @@ to be set as session properties.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property name or associative array of properties</p>
+                    <section class="phpdocumentor-description"><p>Property name or associative array of properties.</p>
 </section>
 
             </dd>
@@ -2471,7 +1846,7 @@ to be set as session properties.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property value if single key provided</p>
+                    <section class="phpdocumentor-description"><p>Property value if single key provided.</p>
 </section>
 
             </dd>
@@ -2497,7 +1872,7 @@ to be set as session properties.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">614</span>
+    <span class="phpdocumentor-element-found-in__line">408</span>
 
     </aside>
 
@@ -2505,7 +1880,7 @@ to be set as session properties.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2521,7 +1896,7 @@ flashdata property, with $value containing the property value.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Property identifier or associative array of properties</p>
@@ -2559,7 +1934,7 @@ flashdata property, with $value containing the property value.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">746</span>
+    <span class="phpdocumentor-element-found-in__line">496</span>
 
     </aside>
 
@@ -2568,7 +1943,7 @@ with a set lifespan.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">300</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ttl</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">300</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2578,10 +1953,10 @@ with a set lifespan.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$data</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Session data key or associative array of items</p>
+                    <section class="phpdocumentor-description"><p>Session data key or associative array of items.</p>
 </section>
 
             </dd>
@@ -2590,7 +1965,7 @@ with a set lifespan.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Value to store</p>
+                    <section class="phpdocumentor-description"><p>Value to store.</p>
 </section>
 
             </dd>
@@ -2599,7 +1974,7 @@ with a set lifespan.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">int</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">300</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Time-to-live in seconds</p>
+                    <section class="phpdocumentor-description"><p>Time-to-live in seconds.</p>
 </section>
 
             </dd>
@@ -2625,7 +2000,7 @@ with a set lifespan.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -2654,48 +2029,6 @@ with a set lifespan.</p>
         class="phpdocumentor-element
             -method
             -public
-            -deprecated                                            "
->
-    <h4 class="phpdocumentor-element__name" id="method_stop">
-        stop()
-        <a href="classes/CodeIgniter-Session-Session.html#method_stop" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">274</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Destroys the current session.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature -deprecated">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">stop</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-                <div class="phpdocumentor-admonition">
-        <svg class="phpdocumentor-admonition__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-            <article>
-                <p>Use destroy() instead.</p>
-
-            </article>
-        </div>
-    
-    
-    
-    
-
-        
-    
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_unmarkFlashdata">
@@ -2706,7 +2039,7 @@ with a set lifespan.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">693</span>
+    <span class="phpdocumentor-element-found-in__line">458</span>
 
     </aside>
 
@@ -2714,7 +2047,7 @@ with a set lifespan.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">unmarkFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">unmarkFlashdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2724,10 +2057,10 @@ with a set lifespan.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property identifier or array of them</p>
+                    <section class="phpdocumentor-description"><p>Property identifier or array of them.</p>
 </section>
 
             </dd>
@@ -2753,7 +2086,7 @@ with a set lifespan.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">844</span>
+    <span class="phpdocumentor-element-found-in__line">562</span>
 
     </aside>
 
@@ -2762,7 +2095,7 @@ lifespan and allowing it to live as long as the session does.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">unmarkTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">unmarkTempdata</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2772,10 +2105,10 @@ lifespan and allowing it to live as long as the session does.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Property identifier or array of them</p>
+                    <section class="phpdocumentor-description"><p>Property identifier or array of them.</p>
 </section>
 
             </dd>
@@ -2801,7 +2134,7 @@ lifespan and allowing it to live as long as the session does.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">286</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 
     </aside>
 
@@ -2838,11 +2171,11 @@ lifespan and allowing it to live as long as the session does.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">329</span>
+    <span class="phpdocumentor-element-found-in__line">197</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Configure session ID length</p>
+        <p class="phpdocumentor-summary">Configure session ID length.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -2876,11 +2209,11 @@ See https://wiki.php.net/rfc/deprecations_php_8_4#sessionsid_length_and_sessions
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Session/Session.php"><a href="files/system-session-session.html"><abbr title="system/Session/Session.php">Session.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Handle temporary variables</p>
+        <p class="phpdocumentor-summary">Handle temporary variables.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -3131,18 +2464,7 @@ See https://wiki.php.net/rfc/deprecations_php_8_4#sessionsid_length_and_sessions
                                                     <li class=""><a href="classes/CodeIgniter-Session-Session.html#property_session_id">$session_id</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Session-Session.html#property_config">$config</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Session-Session.html#property_cookie">$cookie</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_cookieDomain">$cookieDomain</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_cookiePath">$cookiePath</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_cookieSameSite">$cookieSameSite</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_cookieSecure">$cookieSecure</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Session-Session.html#property_driver">$driver</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionCookieName">$sessionCookieName</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionDriverName">$sessionDriverName</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionExpiration">$sessionExpiration</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionMatchIP">$sessionMatchIP</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionRegenerateDestroy">$sessionRegenerateDestroy</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionSavePath">$sessionSavePath</a></li>
-                                                    <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#property_sessionTimeToUpdate">$sessionTimeToUpdate</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Session-Session.html#property_sidRegexp">$sidRegexp</a></li>
                                             </ul>
                 </li>
@@ -3173,7 +2495,6 @@ See https://wiki.php.net/rfc/deprecations_php_8_4#sessionsid_length_and_sessions
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_setFlashdata">setFlashdata()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_setTempdata">setTempdata()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_start">start()</a></li>
-                                            <li class="-deprecated"><a href="classes/CodeIgniter-Session-Session.html#method_stop">stop()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_unmarkFlashdata">unmarkFlashdata()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_unmarkTempdata">unmarkTempdata()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Session-Session.html#method_configure">configure()</a></li>
