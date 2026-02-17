@@ -19996,10 +19996,10 @@ Search.appendIndex(
             "summary": "Allow\u0020for\u0020property\u002Dtype\u0020checking\u0020to\u0020any\u0020getX\u0020method.",
             "url": "classes/CodeIgniter-I18n-TimeTrait.html#method___isset"
         },                {
-            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003A__wakeup\u0028\u0029",
-            "name": "__wakeup",
+            "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003A__unserialize\u0028\u0029",
+            "name": "__unserialize",
             "summary": "This\u0020is\u0020called\u0020when\u0020we\u0020unserialize\u0020the\u0020Time\u0020object.",
-            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method___wakeup"
+            "url": "classes/CodeIgniter-I18n-TimeTrait.html#method___unserialize"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003A\u0024timezone",
             "name": "timezone",
