@@ -12391,11 +12391,6 @@ Search.appendIndex(
             "summary": "Handles\u0020session.sid_length\u0020and\u0020session.sid_bits_per_character\u0020deprecations\nin\u0020PHP\u00208.4.",
             "url": "classes/CodeIgniter-Debug-Exceptions.html#method_isSessionSidDeprecationError"
         },                {
-            "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AisImplicitNullableDeprecationError\u0028\u0029",
-            "name": "isImplicitNullableDeprecationError",
-            "summary": "Workaround\u0020to\u0020implicit\u0020nullable\u0020deprecation\u0020errors\u0020in\u0020PHP\u00208.4.",
-            "url": "classes/CodeIgniter-Debug-Exceptions.html#method_isImplicitNullableDeprecationError"
-        },                {
             "fqsen": "\\CodeIgniter\\Debug\\Exceptions\u003A\u003AshutdownHandler\u0028\u0029",
             "name": "shutdownHandler",
             "summary": "Checks\u0020to\u0020see\u0020if\u0020any\u0020errors\u0020have\u0020happened\u0020during\u0020shutdown\u0020that\nneed\u0020to\u0020be\u0020caught\u0020and\u0020handle\u0020them.",
