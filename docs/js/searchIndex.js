@@ -23203,7 +23203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003Averify\u0028\u0029",
             "name": "verify",
-            "summary": "CSRF\u0020verification.",
+            "summary": "CSRF\u0020Verify",
             "url": "classes/CodeIgniter-Security-Security.html#method_verify"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AremoveTokenInRequest\u0028\u0029",
@@ -23215,6 +23215,11 @@ Search.appendIndex(
             "name": "getPostedToken",
             "summary": "",
             "url": "classes/CodeIgniter-Security-Security.html#method_getPostedToken"
+        },                {
+            "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AisNonEmptyTokenString\u0028\u0029",
+            "name": "isNonEmptyTokenString",
+            "summary": "",
+            "url": "classes/CodeIgniter-Security-Security.html#method_isNonEmptyTokenString"
         },                {
             "fqsen": "\\CodeIgniter\\Security\\Security\u003A\u003AgetHash\u0028\u0029",
             "name": "getHash",
