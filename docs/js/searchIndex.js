@@ -11711,6 +11711,11 @@ Search.appendIndex(
             "summary": "Create\u0020database",
             "url": "classes/CodeIgniter-Database-SQLSRV-Forge.html#method_createDatabase"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003AdropDatabase\u0028\u0029",
+            "name": "dropDatabase",
+            "summary": "Drop\u0020database",
+            "url": "classes/CodeIgniter-Database-SQLSRV-Forge.html#method_dropDatabase"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003A_createTableAttributes\u0028\u0029",
             "name": "_createTableAttributes",
             "summary": "CREATE\u0020TABLE\u0020attributes",
