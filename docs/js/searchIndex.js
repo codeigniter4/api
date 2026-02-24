@@ -2306,16 +2306,6 @@ Search.appendIndex(
             "summary": "While\u0020the\u0020library\u0020is\u0020intended\u0020for\u0020use\u0020on\u0020CLI\u0020commands,\ncommands\u0020can\u0020be\u0020called\u0020from\u0020controllers\u0020and\u0020elsewhere\nso\u0020we\u0020need\u0020a\u0020way\u0020to\u0020allow\u0020them\u0020to\u0020still\u0020work.",
             "url": "classes/CodeIgniter-CLI-CLI.html#method_fwrite"
         },                {
-            "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003AsetInputOutput\u0028\u0029",
-            "name": "setInputOutput",
-            "summary": "Testing\u0020purpose\u0020only",
-            "url": "classes/CodeIgniter-CLI-CLI.html#method_setInputOutput"
-        },                {
-            "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003AresetInputOutput\u0028\u0029",
-            "name": "resetInputOutput",
-            "summary": "Testing\u0020purpose\u0020only",
-            "url": "classes/CodeIgniter-CLI-CLI.html#method_resetInputOutput"
-        },                {
             "fqsen": "\\CodeIgniter\\CLI\\CLI\u003A\u003A\u0024readline_support",
             "name": "readline_support",
             "summary": "Is\u0020the\u0020readline\u0020library\u0020on\u0020the\u0020system\u003F",
