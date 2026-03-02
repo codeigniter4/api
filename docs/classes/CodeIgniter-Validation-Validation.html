@@ -582,6 +582,16 @@ so that we can collect all of the first errors.</dd>
 <dd>Split rules string by pipe operator.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_collectMissingPaths">collectMissingPaths()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Recursively walks the data structure, expanding wildcard segments over
+all array keys, and appends to $result by reference. Only concrete leaf
+paths where the key is genuinely absent are recorded - intermediate
+missing segments are silently skipped so `*` never appears in a result.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_getRegex">getRegex()</a>
     <span>
                                 &nbsp;: string    </span>
@@ -619,6 +629,14 @@ so that we can collect all of the first errors.</dd>
                                 &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
 <dd>Retrieves valid placeholder fields.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_walkForAllPossiblePaths">walkForAllPossiblePaths()</a>
+    <span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
+</dt>
+<dd>Entry point: allocates a single accumulator and delegates to the
+recursive collector, so no intermediate arrays are built or unpacked.</dd>
 
     </dl>
 
@@ -1062,7 +1080,7 @@ rule1, rule2, ...
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 
     </aside>
 
@@ -1145,7 +1163,7 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">870</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 
     </aside>
 
@@ -1195,7 +1213,7 @@ set).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">898</span>
+    <span class="phpdocumentor-element-found-in__line">907</span>
 
     </aside>
 
@@ -1254,7 +1272,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">644</span>
+    <span class="phpdocumentor-element-found-in__line">653</span>
 
     </aside>
 
@@ -1326,7 +1344,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">622</span>
+    <span class="phpdocumentor-element-found-in__line">631</span>
 
     </aside>
 
@@ -1365,7 +1383,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 
     </aside>
 
@@ -1404,7 +1422,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">861</span>
+    <span class="phpdocumentor-element-found-in__line">870</span>
 
     </aside>
 
@@ -1453,7 +1471,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">630</span>
+    <span class="phpdocumentor-element-found-in__line">639</span>
 
     </aside>
 
@@ -1502,7 +1520,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">682</span>
+    <span class="phpdocumentor-element-found-in__line">691</span>
 
     </aside>
 
@@ -1553,7 +1571,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">744</span>
+    <span class="phpdocumentor-element-found-in__line">753</span>
 
     </aside>
 
@@ -1626,7 +1644,7 @@ for {group}_errors for an array of custom error messages.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">994</span>
+    <span class="phpdocumentor-element-found-in__line">1083</span>
 
     </aside>
 
@@ -1736,7 +1754,7 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">906</span>
+    <span class="phpdocumentor-element-found-in__line">915</span>
 
     </aside>
 
@@ -1792,7 +1810,7 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">547</span>
+    <span class="phpdocumentor-element-found-in__line">556</span>
 
     </aside>
 
@@ -1889,7 +1907,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">666</span>
+    <span class="phpdocumentor-element-found-in__line">675</span>
 
     </aside>
 
@@ -1953,7 +1971,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">587</span>
+    <span class="phpdocumentor-element-found-in__line">596</span>
 
     </aside>
 
@@ -2023,7 +2041,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">698</span>
+    <span class="phpdocumentor-element-found-in__line">707</span>
 
     </aside>
 
@@ -2081,7 +2099,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">505</span>
+    <span class="phpdocumentor-element-found-in__line">514</span>
 
     </aside>
 
@@ -2131,7 +2149,7 @@ array values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">786</span>
+    <span class="phpdocumentor-element-found-in__line">795</span>
 
     </aside>
 
@@ -2195,7 +2213,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">919</span>
+    <span class="phpdocumentor-element-found-in__line">928</span>
 
     </aside>
 
@@ -2281,7 +2299,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">719</span>
+    <span class="phpdocumentor-element-found-in__line">728</span>
 
     </aside>
 
@@ -2317,7 +2335,7 @@ Config\Validation and stores them locally so we can use them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">276</span>
+    <span class="phpdocumentor-element-found-in__line">285</span>
 
     </aside>
 
@@ -2408,7 +2426,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">952</span>
+    <span class="phpdocumentor-element-found-in__line">961</span>
 
     </aside>
 
@@ -2447,6 +2465,89 @@ so that we can collect all of the first errors.</p>
         class="phpdocumentor-element
             -method
             -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_collectMissingPaths">
+        collectMissingPaths()
+        <a href="classes/CodeIgniter-Validation-Validation.html#method_collectMissingPaths" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1027</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Recursively walks the data structure, expanding wildcard segments over
+all array keys, and appends to $result by reference. Only concrete leaf
+paths where the key is genuinely absent are recorded - intermediate
+missing segments are silently skipped so `*` never appears in a result.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">collectMissingPaths</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segments</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$index</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int<0, max>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segmentCount</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$current</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefix</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$result</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$segments</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$index</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$segmentCount</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int<0, max></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$current</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$prefix</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$result</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
                                     -static                    "
 >
     <h4 class="phpdocumentor-element__name" id="method_getRegex">
@@ -2457,7 +2558,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -2506,7 +2607,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">470</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -2554,7 +2655,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">478</span>
+    <span class="phpdocumentor-element-found-in__line">487</span>
 
     </aside>
 
@@ -2603,7 +2704,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">384</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 
     </aside>
 
@@ -2671,7 +2772,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">426</span>
+    <span class="phpdocumentor-element-found-in__line">435</span>
 
     </aside>
 
@@ -2739,7 +2840,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">845</span>
+    <span class="phpdocumentor-element-found-in__line">854</span>
 
     </aside>
 
@@ -2778,6 +2879,70 @@ so that we can collect all of the first errors.</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_walkForAllPossiblePaths">
+        walkForAllPossiblePaths()
+        <a href="classes/CodeIgniter-Validation-Validation.html#method_walkForAllPossiblePaths" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1008</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Entry point: allocates a single accumulator and delegates to the
+recursive collector, so no intermediate arrays are built or unpacked.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">walkForAllPossiblePaths</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$segments</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$current</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefix</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$segments</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$current</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$prefix</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -2935,12 +3100,14 @@ so that we can collect all of the first errors.</p>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_loadRuleSets">loadRuleSets()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_processRules">processRules()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_splitRules">splitRules()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_collectMissingPaths">collectMissingPaths()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_getRegex">getRegex()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_isClosure">isClosure()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_isStringList">isStringList()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_processIfExist">processIfExist()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_processPermitEmpty">processPermitEmpty()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_retrievePlaceholders">retrievePlaceholders()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Validation-Validation.html#method_walkForAllPossiblePaths">walkForAllPossiblePaths()</a></li>
                                     </ul>
             </li>
                     </ul>

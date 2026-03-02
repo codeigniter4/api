@@ -27216,6 +27216,16 @@ Search.appendIndex(
             "summary": "Split\u0020rules\u0020string\u0020by\u0020pipe\u0020operator.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_splitRules"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AwalkForAllPossiblePaths\u0028\u0029",
+            "name": "walkForAllPossiblePaths",
+            "summary": "Entry\u0020point\u003A\u0020allocates\u0020a\u0020single\u0020accumulator\u0020and\u0020delegates\u0020to\u0020the\nrecursive\u0020collector,\u0020so\u0020no\u0020intermediate\u0020arrays\u0020are\u0020built\u0020or\u0020unpacked.",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_walkForAllPossiblePaths"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AcollectMissingPaths\u0028\u0029",
+            "name": "collectMissingPaths",
+            "summary": "Recursively\u0020walks\u0020the\u0020data\u0020structure,\u0020expanding\u0020wildcard\u0020segments\u0020over\nall\u0020array\u0020keys,\u0020and\u0020appends\u0020to\u0020\u0024result\u0020by\u0020reference.\u0020Only\u0020concrete\u0020leaf\npaths\u0020where\u0020the\u0020key\u0020is\u0020genuinely\u0020absent\u0020are\u0020recorded\u0020\u002D\u0020intermediate\nmissing\u0020segments\u0020are\u0020silently\u0020skipped\u0020so\u0020\u0060\u002A\u0060\u0020never\u0020appears\u0020in\u0020a\u0020result.",
+            "url": "classes/CodeIgniter-Validation-Validation.html#method_collectMissingPaths"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003Areset\u0028\u0029",
             "name": "reset",
             "summary": "Resets\u0020the\u0020class\u0020to\u0020a\u0020blank\u0020slate.\u0020Should\u0020be\u0020called\u0020whenever\nyou\u0020need\u0020to\u0020process\u0020more\u0020than\u0020one\u0020array.",
