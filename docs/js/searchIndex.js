@@ -23001,6 +23001,11 @@ Search.appendIndex(
             "summary": "Extracts\u0020PHP\u0020attributes\u0020from\u0020the\u0020resolved\u0020controller\u0020and\u0020method.",
             "url": "classes/CodeIgniter-Router-Router.html#method_processRouteAttributes"
         },                {
+            "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AlogRouteAttributeInstantiationFailure\u0028\u0029",
+            "name": "logRouteAttributeInstantiationFailure",
+            "summary": "Logs\u0020an\u0020attribute\u0020instantiation\u0020failure\u0020with\u0020the\u0020resolved\u0020route\u0020context.",
+            "url": "classes/CodeIgniter-Router-Router.html#method_logRouteAttributeInstantiationFailure"
+        },                {
             "fqsen": "\\CodeIgniter\\Router\\Router\u003A\u003AexecuteBeforeAttributes\u0028\u0029",
             "name": "executeBeforeAttributes",
             "summary": "Execute\u0020beforeController\u0028\u0029\u0020on\u0020all\u0020route\u0020attributes.",
