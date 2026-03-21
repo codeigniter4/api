@@ -7576,6 +7576,16 @@ Search.appendIndex(
             "summary": "Saves\u0020our\u0020connection\u0020settings.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method___construct"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AcastScalarValueForTypedProperty\u0028\u0029",
+            "name": "castScalarValueForTypedProperty",
+            "summary": "Some\u0020config\u0020values\u0020\u0028especially\u0020env\u0020overrides\u0020without\u0020clear\u0020source\u0020type\u0029\ncan\u0020still\u0020reach\u0020us\u0020as\u0020strings.\u0020Coerce\u0020them\u0020for\u0020typed\u0020properties\u0020to\u0020keep\nstrict\u0020typing\u0020compatible.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_castScalarValueForTypedProperty"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AgetBuiltinPropertyTypesMap\u0028\u0029",
+            "name": "getBuiltinPropertyTypesMap",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_getBuiltinPropertyTypesMap"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
             "summary": "Initializes\u0020the\u0020database\u0020connection\/settings.",
@@ -7945,6 +7955,11 @@ Search.appendIndex(
             "name": "__isset",
             "summary": "Checker\u0020for\u0020properties\u0020existence.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method___isset"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024propertyBuiltinTypesCache",
+            "name": "propertyBuiltinTypesCache",
+            "summary": "Cached\u0020builtin\u0020type\u0020names\u0020per\u0020class\/property.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#property_propertyBuiltinTypesCache"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024DSN",
             "name": "DSN",
