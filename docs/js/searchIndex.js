@@ -11463,7 +11463,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Builder\u003A\u003AaddIdentity\u0028\u0029",
             "name": "addIdentity",
-            "summary": "Add\u0020permision\u0020statements\u0020for\u0020index\u0020value\u0020inserts",
+            "summary": "Add\u0020permission\u0020statements\u0020for\u0020index\u0020value\u0020inserts",
             "url": "classes/CodeIgniter-Database-SQLSRV-Builder.html#method_addIdentity"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Builder\u003A\u003A_limit\u0028\u0029",
