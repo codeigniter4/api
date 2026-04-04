@@ -236,6 +236,11 @@ Search.appendIndex(
             "summary": "An\u0020autoloader\u0020that\u0020uses\u0020both\u0020PSR4\u0020autoloading,\u0020and\u0020traditional\u0020classmaps.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#method___construct"
+        },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003Ainitialize\u0028\u0029",
             "name": "initialize",
             "summary": "Reads\u0020in\u0020the\u0020configuration\u0020array\u0020\u0028described\u0020above\u0029\u0020and\u0020stores\nthe\u0020valid\u0020parts\u0020that\u0020we\u0027ll\u0020need.",
@@ -335,6 +340,11 @@ Search.appendIndex(
             "name": "helpers",
             "summary": "Stores\u0020helper\u0020list.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#property_helpers"
+        },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003A\u0024composerPath",
+            "name": "composerPath",
+            "summary": "",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#property_composerPath"
         },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\FileLocator",
             "name": "FileLocator",
