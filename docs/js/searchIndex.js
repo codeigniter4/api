@@ -341,6 +341,11 @@ Search.appendIndex(
             "summary": "Stores\u0020helper\u0020list.",
             "url": "classes/CodeIgniter-Autoloader-Autoloader.html#property_helpers"
         },                {
+            "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003A\u0024registeredClosures",
+            "name": "registeredClosures",
+            "summary": "Stores\u0020the\u0020closures\u0020registered\u0020with\u0020spl_autoload_register\u0028\u0029\nso\u0020that\u0020unregister\u0028\u0029\u0020can\u0020remove\u0020the\u0020exact\u0020same\u0020instances.",
+            "url": "classes/CodeIgniter-Autoloader-Autoloader.html#property_registeredClosures"
+        },                {
             "fqsen": "\\CodeIgniter\\Autoloader\\Autoloader\u003A\u003A\u0024composerPath",
             "name": "composerPath",
             "summary": "",
