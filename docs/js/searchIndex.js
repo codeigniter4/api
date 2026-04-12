@@ -6088,7 +6088,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\View",
             "name": "View",
-            "summary": "View\u0020configuration",
+            "summary": "View\u0020configuration.",
             "url": "classes/CodeIgniter-Config-View.html"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A__construct\u0028\u0029",
@@ -6098,7 +6098,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A\u0024saveData",
             "name": "saveData",
-            "summary": "When\u0020false,\u0020the\u0020view\u0020method\u0020will\u0020clear\u0020the\u0020data\u0020between\u0020each\ncall.",
+            "summary": "When\u0020false,\u0020the\u0020view\u0020method\u0020will\u0020clear\u0020the\u0020data\u0020between\u0020each\u0020call.",
             "url": "classes/CodeIgniter-Config-View.html#property_saveData"
         },                {
             "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A\u0024filters",
@@ -15858,7 +15858,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\trace\u0028\u0029",
             "name": "trace",
-            "summary": "trace\u0020function",
+            "summary": "Generic\u0020trace\u0020function\u0020in\u0020case\u0020that\u0020Kint\u0020is\u0020not\u0020loaded.",
             "url": "namespaces/default.html#function_trace"
         },                {
             "fqsen": "\\number_to_size\u0028\u0029",
