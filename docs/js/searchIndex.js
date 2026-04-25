@@ -2736,6 +2736,11 @@ Search.appendIndex(
             "summary": "Reset\u0020request\u002Dspecific\u0020state\u0020for\u0020worker\u0020mode.",
             "url": "classes/CodeIgniter-CodeIgniter.html#method_resetForWorkerMode"
         },                {
+            "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AresetKintForWorkerMode\u0028\u0029",
+            "name": "resetKintForWorkerMode",
+            "summary": "Resets\u0020Kint\u0020request\u002Dspecific\u0020state\u0020for\u0020worker\u0020mode.",
+            "url": "classes/CodeIgniter-CodeIgniter.html#method_resetKintForWorkerMode"
+        },                {
             "fqsen": "\\CodeIgniter\\CodeIgniter\u003A\u003AinitializeKint\u0028\u0029",
             "name": "initializeKint",
             "summary": "Initializes\u0020Kint",
