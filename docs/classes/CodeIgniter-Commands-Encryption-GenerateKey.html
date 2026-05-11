@@ -441,7 +441,10 @@
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Get the regex of the current encryption key.</dd>
+<dd>Returns the regex used to locate an active `encryption.key = ...` setting in the `.env`
+contents. The single capture group spans everything up to (and including) the `=` and any
+separating whitespace, so a `preg_replace` substitution preserves an optional `export`
+prefix while rewriting only the value.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Commands-Encryption-GenerateKey.html#method_setNewEncryptionKey">setNewEncryptionKey()</a>
@@ -1358,11 +1361,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Encryption/GenerateKey.php"><a href="files/system-commands-encryption-generatekey.html"><abbr title="system/Commands/Encryption/GenerateKey.php">GenerateKey.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Get the regex of the current encryption key.</p>
+        <p class="phpdocumentor-summary">Returns the regex used to locate an active `encryption.key = ...` setting in the `.env`
+contents. The single capture group spans everything up to (and including) the `=` and any
+separating whitespace, so a `preg_replace` substitution preserves an optional `export`
+prefix while rewriting only the value.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -1371,7 +1377,10 @@
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>The <code class="prettyprint">$oldKey</code> parameter is retained for backward compatibility with subclasses that
+override this method; it is no longer consulted because the pattern matches any value.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">

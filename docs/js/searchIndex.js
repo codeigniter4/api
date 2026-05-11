@@ -3428,7 +3428,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Encryption\\GenerateKey\u003A\u003AkeyPattern\u0028\u0029",
             "name": "keyPattern",
-            "summary": "Get\u0020the\u0020regex\u0020of\u0020the\u0020current\u0020encryption\u0020key.",
+            "summary": "Returns\u0020the\u0020regex\u0020used\u0020to\u0020locate\u0020an\u0020active\u0020\u0060encryption.key\u0020\u003D\u0020...\u0060\u0020setting\u0020in\u0020the\u0020\u0060.env\u0060\ncontents.\u0020The\u0020single\u0020capture\u0020group\u0020spans\u0020everything\u0020up\u0020to\u0020\u0028and\u0020including\u0029\u0020the\u0020\u0060\u003D\u0060\u0020and\u0020any\nseparating\u0020whitespace,\u0020so\u0020a\u0020\u0060preg_replace\u0060\u0020substitution\u0020preserves\u0020an\u0020optional\u0020\u0060export\u0060\nprefix\u0020while\u0020rewriting\u0020only\u0020the\u0020value.",
             "url": "classes/CodeIgniter-Commands-Encryption-GenerateKey.html#method_keyPattern"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Encryption\\GenerateKey\u003A\u003A\u0024group",
