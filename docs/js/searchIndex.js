@@ -4183,13 +4183,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Server\\Serve",
             "name": "Serve",
-            "summary": "Launch\u0020the\u0020PHP\u0020development\u0020server",
+            "summary": "Launch\u0020the\u0020PHP\u0020development\u0020server.",
             "url": "classes/CodeIgniter-Commands-Server-Serve.html"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Server\\Serve\u003A\u003Arun\u0028\u0029",
             "name": "run",
-            "summary": "Run\u0020the\u0020server",
+            "summary": "Run\u0020the\u0020server.",
             "url": "classes/CodeIgniter-Commands-Server-Serve.html#method_run"
+        },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Server\\Serve\u003A\u003AbuildServeCommand\u0028\u0029",
+            "name": "buildServeCommand",
+            "summary": "Builds\u0020the\u0020shell\u0020command\u0020passed\u0020to\u0020PHP\u0027s\u0020built\u002Din\u0020webserver,\u0020escaping\nevery\u0020user\u002Dinfluenced\u0020argument\u0020so\u0020it\u0020cannot\u0020be\u0020interpreted\u0020by\u0020\/bin\/sh.",
+            "url": "classes/CodeIgniter-Commands-Server-Serve.html#method_buildServeCommand"
         },                {
             "fqsen": "\\CodeIgniter\\Commands\\Server\\Serve\u003A\u003A\u0024group",
             "name": "group",
