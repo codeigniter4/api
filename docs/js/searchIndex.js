@@ -76,6 +76,11 @@ Search.appendIndex(
             "summary": "Checks\u0020the\u0020request\u0020for\u0020\u0027include\u0027\u0020query\u0020variable,\u0020and\u0020if\u0020present,\ncalls\u0020the\u0020corresponding\u0020include\u007BResource\u007D\u0020methods\u0020to\u0020add\u0020related\u0020data.",
             "url": "classes/CodeIgniter-API-BaseTransformer.html#method_insertIncludes"
         },                {
+            "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024depth",
+            "name": "depth",
+            "summary": "Nesting\u0020depth\u0020of\u0020the\u0020transformation\u0020currently\u0020in\u0020progress\u0020\u00280\u0020\u003D\u0020root\u0029.",
+            "url": "classes/CodeIgniter-API-BaseTransformer.html#property_depth"
+        },                {
             "fqsen": "\\CodeIgniter\\API\\BaseTransformer\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "",
