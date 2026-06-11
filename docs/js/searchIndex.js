@@ -21111,11 +21111,6 @@ Search.appendIndex(
             "summary": "Updates\u0020a\u0020single\u0020record\u0020in\u0020the\u0020database.\u0020If\u0020an\u0020object\u0020is\u0020provided,\nit\u0020will\u0020attempt\u0020to\u0020convert\u0020it\u0020into\u0020an\u0020array.",
             "url": "classes/CodeIgniter-Model.html#method_update"
         },                {
-            "fqsen": "\\CodeIgniter\\Model\u003A\u003AobjectToRawArray\u0028\u0029",
-            "name": "objectToRawArray",
-            "summary": "Takes\u0020a\u0020class\u0020and\u0020returns\u0020an\u0020array\u0020of\u0020its\u0020public\u0020and\u0020protected\nproperties\u0020as\u0020an\u0020array\u0020with\u0020raw\u0020values.",
-            "url": "classes/CodeIgniter-Model.html#method_objectToRawArray"
-        },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003A__get\u0028\u0029",
             "name": "__get",
             "summary": "Provides\/instantiates\u0020the\u0020builder\/db\u0020connection\u0020and\u0020model\u0027s\u0020table\/primary\u0020key\u0020names\u0020and\u0020return\u0020type.",
