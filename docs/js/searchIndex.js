@@ -25151,6 +25151,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Test-Filters-CITestStreamFilter.html#method_removeOutputFilter"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter\u003A\u003AhasOutputFilter\u0028\u0029",
+            "name": "hasOutputFilter",
+            "summary": "Whether\u0020an\u0020output\u0020filter\u0020is\u0020currently\u0020attached\u0020to\u0020STDOUT.",
+            "url": "classes/CodeIgniter-Test-Filters-CITestStreamFilter.html#method_hasOutputFilter"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter\u003A\u003AhasErrorFilter\u0028\u0029",
+            "name": "hasErrorFilter",
+            "summary": "Whether\u0020an\u0020error\u0020filter\u0020is\u0020currently\u0020attached\u0020to\u0020STDERR.",
+            "url": "classes/CodeIgniter-Test-Filters-CITestStreamFilter.html#method_hasErrorFilter"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\Filters\\CITestStreamFilter\u003A\u003AremoveFilter\u0028\u0029",
             "name": "removeFilter",
             "summary": "",
@@ -25795,6 +25805,11 @@ Search.appendIndex(
             "name": "outputs",
             "summary": "Output\u0020lines.",
             "url": "classes/CodeIgniter-Test-Mock-MockInputOutput.html#property_outputs"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockInputOutput\u003A\u003A\u0024priorFilterState",
+            "name": "priorFilterState",
+            "summary": "Snapshot\u0020of\u0020the\u0020shared\u0020CITestStreamFilter\u0020state\u0020captured\u0020before\u0020this\nobject\u0020attaches\u0020its\u0020own\u0020filters,\u0020restored\u0020once\u0020it\u0020is\u0020done.\u0020Lets\u0020a\u0020test\ncombine\u0020MockInputOutput\u0020with\u0020an\u0020enclosing\u0020StreamFilterTrait\u0020without\u0020the\nlatter\u0027s\u0020filters\u0020being\u0020torn\u0020down.",
+            "url": "classes/CodeIgniter-Test-Mock-MockInputOutput.html#property_priorFilterState"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockLanguage",
             "name": "MockLanguage",
