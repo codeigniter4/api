@@ -4256,6 +4256,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Commands-Translation-LocalizationFinder.html#method_process"
         },                {
+            "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationFinder\u003A\u003AfindResolvedTranslations\u0028\u0029",
+            "name": "findResolvedTranslations",
+            "summary": "Loads\u0020the\u0020translations\u0020already\u0020resolvable\u0020for\u0020the\u0020given\u0020file\u0020and\u0020locale\nfrom\u0020every\u0020registered\u0020namespace\u0020\u0028framework,\u0020packages,\u0020and\u0020app\u0029.",
+            "url": "classes/CodeIgniter-Commands-Translation-LocalizationFinder.html#method_findResolvedTranslations"
+        },                {
             "fqsen": "\\CodeIgniter\\Commands\\Translation\\LocalizationFinder\u003A\u003AfindTranslationsInFile\u0028\u0029",
             "name": "findTranslationsInFile",
             "summary": "",
