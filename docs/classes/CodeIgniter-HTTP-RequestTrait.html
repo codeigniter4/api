@@ -372,12 +372,28 @@ compliant with the framework's own RequestInterface.</p>
 <dd>Allows manually setting the value of PHP global, like $_GET, $_POST, etc.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-HTTP-RequestTrait.html#method_isFromTrustedProxy">isFromTrustedProxy()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks if the request comes from one of the trusted proxies
+configured in Config\App::$proxyIPs.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="-deprecated" href="classes/CodeIgniter-HTTP-RequestTrait.html#method_populateGlobals">populateGlobals()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>Saves a copy of the current state of one of several PHP globals,
 so we can retrieve them later.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-HTTP-RequestTrait.html#method_checkIPAgainstProxy">checkIPAgainstProxy()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks if the given IP address matches the trusted proxy entry,
+which may be a single IP address or a subnet in CIDR notation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP">getClientIP()</a>
@@ -550,7 +566,7 @@ so we can retrieve them later.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">288</span>
 
     </aside>
 
@@ -628,7 +644,7 @@ filter_input_array method.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">220</span>
+    <span class="phpdocumentor-element-found-in__line">246</span>
 
     </aside>
 
@@ -743,7 +759,7 @@ then will return '0.0.0.0'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 
     </aside>
 
@@ -806,7 +822,7 @@ then will return '0.0.0.0'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">234</span>
+    <span class="phpdocumentor-element-found-in__line">260</span>
 
     </aside>
 
@@ -854,6 +870,46 @@ then will return '0.0.0.0'.</p>
         class="phpdocumentor-element
             -method
             -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isFromTrustedProxy">
+        isFromTrustedProxy()
+        <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_isFromTrustedProxy" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">139</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks if the request comes from one of the trusted proxies
+configured in Config\App::$proxyIPs.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">isFromTrustedProxy</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
             -deprecated                                            "
 >
     <h4 class="phpdocumentor-element__name" id="method_populateGlobals">
@@ -864,7 +920,7 @@ then will return '0.0.0.0'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">354</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -911,6 +967,65 @@ so we can retrieve them later.</p>
             -private
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_checkIPAgainstProxy">
+        checkIPAgainstProxy()
+        <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_checkIPAgainstProxy" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">167</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks if the given IP address matches the trusted proxy entry,
+which may be a single IP address or a subnet in CIDR notation.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">checkIPAgainstProxy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ip</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$proxyIP</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Supports both IPv4 and IPv6.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$ip</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$proxyIP</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_getClientIP">
         getClientIP()
         <a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP" class="headerlink"><i class="fas fa-link"></i></a>
@@ -919,7 +1034,7 @@ so we can retrieve them later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/RequestTrait.php"><a href="files/system-http-requesttrait.html"><abbr title="system/HTTP/RequestTrait.php">RequestTrait.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">170</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 
     </aside>
 
@@ -988,7 +1103,9 @@ so we can retrieve them later.</p>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getIPAddress">getIPAddress()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getServer">getServer()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_setGlobal">setGlobal()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_isFromTrustedProxy">isFromTrustedProxy()</a></li>
                                             <li class="-deprecated"><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_populateGlobals">populateGlobals()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_checkIPAgainstProxy">checkIPAgainstProxy()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP">getClientIP()</a></li>
                                     </ul>
             </li>

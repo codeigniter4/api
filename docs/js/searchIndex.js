@@ -18186,6 +18186,16 @@ Search.appendIndex(
             "summary": "Gets\u0020the\u0020client\u0020IP\u0020address\u0020from\u0020the\u0020HTTP\u0020header.",
             "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_getClientIP"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003AisFromTrustedProxy\u0028\u0029",
+            "name": "isFromTrustedProxy",
+            "summary": "Checks\u0020if\u0020the\u0020request\u0020comes\u0020from\u0020one\u0020of\u0020the\u0020trusted\u0020proxies\nconfigured\u0020in\u0020Config\\App\u003A\u003A\u0024proxyIPs.",
+            "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_isFromTrustedProxy"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003AcheckIPAgainstProxy\u0028\u0029",
+            "name": "checkIPAgainstProxy",
+            "summary": "Checks\u0020if\u0020the\u0020given\u0020IP\u0020address\u0020matches\u0020the\u0020trusted\u0020proxy\u0020entry,\nwhich\u0020may\u0020be\u0020a\u0020single\u0020IP\u0020address\u0020or\u0020a\u0020subnet\u0020in\u0020CIDR\u0020notation.",
+            "url": "classes/CodeIgniter-HTTP-RequestTrait.html#method_checkIPAgainstProxy"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\RequestTrait\u003A\u003AgetServer\u0028\u0029",
             "name": "getServer",
             "summary": "Fetch\u0020an\u0020item\u0020from\u0020the\u0020\u0024_SERVER\u0020array.",
