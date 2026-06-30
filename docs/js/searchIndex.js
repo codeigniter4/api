@@ -7331,6 +7331,11 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020batch\u0020update\u0020string\u0020from\u0020the\u0020supplied\u0020data",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AconvertWhereBindsForBatch\u0028\u0029",
+            "name": "convertWhereBindsForBatch",
+            "summary": "Escapes\u0020and\u0020substitutes\u0020the\u0020WHERE\u0020binds\u0020into\u0020the\u0020QBWhere\u0020conditions\nfor\u0020batch\u0020delete\u0020queries.",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_convertWhereBindsForBatch"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003Aincrement\u0028\u0029",
             "name": "increment",
             "summary": "Increments\u0020a\u0020numeric\u0020column\u0020by\u0020the\u0020specified\u0020value.",
