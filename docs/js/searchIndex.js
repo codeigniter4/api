@@ -26901,6 +26901,16 @@ Search.appendIndex(
             "summary": "Checks\u0020an\u0020uploaded\u0020file\u0020to\u0020verify\u0020that\u0020the\u0020dimensions\u0020are\u0020greater\u0020than\na\u0020specified\u0020dimension.",
             "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_min_dims"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003AhasInvalidImageClientExtension\u0028\u0029",
+            "name": "hasInvalidImageClientExtension",
+            "summary": "Reject\u0020filenames\u0020with\u0020non\u002Dempty\u0020extensions\u0020that\u0020are\u0020not\u0020image\u0020types.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_hasInvalidImageClientExtension"
+        },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003AhasMismatchedClientExtension\u0028\u0029",
+            "name": "hasMismatchedClientExtension",
+            "summary": "Reject\u0020filenames\u0020with\u0020non\u002Dempty\u0020extensions\u0020that\u0020do\u0020not\u0020match\u0020the\u0020detected\u0020content.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_hasMismatchedClientExtension"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003A\u0024request",
             "name": "request",
             "summary": "Request\u0020instance.\u0020So\u0020we\u0020can\u0020get\u0020access\u0020to\u0020the\u0020files.",
