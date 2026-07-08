@@ -16846,6 +16846,56 @@ Search.appendIndex(
             "summary": "Set\u0020CURL\u0020options",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_setCURLOptions"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyAuthOptions\u0028\u0029",
+            "name": "applyAuthOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyAuthOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplySslOptions\u0028\u0029",
+            "name": "applySslOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applySslOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyProxyOptions\u0028\u0029",
+            "name": "applyProxyOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyProxyOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyDebugOptions\u0028\u0029",
+            "name": "applyDebugOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyDebugOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyRedirectOptions\u0028\u0029",
+            "name": "applyRedirectOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyRedirectOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyConnectionOptions\u0028\u0029",
+            "name": "applyConnectionOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyConnectionOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyBodyOptions\u0028\u0029",
+            "name": "applyBodyOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyBodyOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyResponseOptions\u0028\u0029",
+            "name": "applyResponseOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyResponseOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyProtocolOptions\u0028\u0029",
+            "name": "applyProtocolOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyProtocolOptions"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AapplyClientOptions\u0028\u0029",
+            "name": "applyClientOptions",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#method_applyClientOptions"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003AsendRequest\u0028\u0029",
             "name": "sendRequest",
             "summary": "Does\u0020the\u0020actual\u0020work\u0020of\u0020initializing\u0020cURL,\u0020setting\u0020the\u0020options,\nand\u0020grabbing\u0020the\u0020output.",
