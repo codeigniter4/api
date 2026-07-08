@@ -20956,6 +20956,11 @@ Search.appendIndex(
             "summary": "Replaces\u0020any\u0020placeholders\u0020in\u0020the\u0020message\u0020with\u0020variables\nfrom\u0020the\u0020context,\u0020as\u0020well\u0020as\u0020a\u0020few\u0020special\u0020items\u0020like\u003A",
             "url": "classes/CodeIgniter-Log-Logger.html#method_interpolate"
         },                {
+            "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003AstringifyContextValue\u0028\u0029",
+            "name": "stringifyContextValue",
+            "summary": "Converts\u0020context\u0020values\u0020to\u0020strings\u0020without\u0020raising\u0020PHP\u0020errors.",
+            "url": "classes/CodeIgniter-Log-Logger.html#method_stringifyContextValue"
+        },                {
             "fqsen": "\\CodeIgniter\\Log\\Logger\u003A\u003AdetermineFile\u0028\u0029",
             "name": "determineFile",
             "summary": "Determines\u0020the\u0020file\u0020and\u0020line\u0020that\u0020the\u0020logging\u0020call\nwas\u0020made\u0020from\u0020by\u0020analyzing\u0020the\u0020backtrace.",
