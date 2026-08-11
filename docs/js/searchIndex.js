@@ -26891,6 +26891,11 @@ Search.appendIndex(
             "summary": "The\u0020field\u0020exists\u0020in\u0020\u0024data.",
             "url": "classes/CodeIgniter-Validation-Rules.html#method_field_exists"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\Rules\u003A\u003AisBlank\u0028\u0029",
+            "name": "isBlank",
+            "summary": "Whether\u0020the\u0020value\u0020counts\u0020as\u0020blank\u0020for\u0020the\u0020\u0060required_with\u0060\u0020and\n\u0060required_without\u0060\u0020rules.",
+            "url": "classes/CodeIgniter-Validation-Rules.html#method_isBlank"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\CreditCardRules",
             "name": "CreditCardRules",
             "summary": "Class\u0020CreditCardRules",
