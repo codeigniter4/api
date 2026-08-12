@@ -12048,17 +12048,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\ArrayCast",
             "name": "ArrayCast",
-            "summary": "Class\u0020ArrayCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Barray\u0020\u002D\u002D\u003E\u0020string\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020string\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020string",
             "url": "classes/CodeIgniter-DataCaster-Cast-ArrayCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\ArrayCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-ArrayCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\ArrayCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-ArrayCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BaseCast",
@@ -12068,12 +12068,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BaseCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-BaseCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BaseCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-BaseCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BaseCast\u003A\u003AinvalidTypeValueError\u0028\u0029",
@@ -12083,12 +12083,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BooleanCast",
             "name": "BooleanCast",
-            "summary": "Class\u0020BooleanCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Bbool\u0020\u002D\u002D\u003E\u0020bool\u0020\u0020\u0020\u0020\u0020\u0020\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020bool\u007Cint\u00280\/1\u0029\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u007Cint\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020bool\u007Cint\u00280\/1\u0029",
             "url": "classes/CodeIgniter-DataCaster-Cast-BooleanCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\BooleanCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-BooleanCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CastInterface",
@@ -12098,42 +12098,42 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CastInterface\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-CastInterface.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CastInterface\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-CastInterface.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CSVCast",
             "name": "CSVCast",
-            "summary": "Class\u0020CSVCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Barray\u0020\u002D\u002D\u003E\u0020string\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020string\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020string",
             "url": "classes/CodeIgniter-DataCaster-Cast-CSVCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CSVCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-CSVCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\CSVCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-CSVCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\DatetimeCast",
             "name": "DatetimeCast",
-            "summary": "Class\u0020DatetimeCast",
+            "summary": "\u0028PHP\u0029\u0020\u005BTime\u0020\u002D\u002D\u003E\u0020string\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020datetime\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020datetime",
             "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\DatetimeCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\DatetimeCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-DatetimeCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\DatetimeCast\u003A\u003AgetDateTimeFormat\u0028\u0029",
@@ -12143,27 +12143,27 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast",
             "name": "EnumCast",
-            "summary": "Class\u0020EnumCast",
+            "summary": "Handles\u0020casting\u0020for\u0020PHP\u0020enums\u0020\u0028both\u0020backed\u0020and\u0020unit\u0020enums\u0029",
             "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\EnumCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-EnumCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\FloatCast",
             "name": "FloatCast",
-            "summary": "Class\u0020FloatCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Bfloat\u0020\u002D\u002D\u003E\u0020float\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020float\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020float\u007Cstring\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020float",
             "url": "classes/CodeIgniter-DataCaster-Cast-FloatCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\FloatCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-FloatCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\IntBoolCast",
@@ -12173,67 +12173,67 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\IntBoolCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-IntBoolCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\IntBoolCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-IntBoolCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\IntegerCast",
             "name": "IntegerCast",
-            "summary": "Class\u0020IntegerCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Bint\u0020\u002D\u002D\u003E\u0020int\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020int\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020int\u007Cstring\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020int",
             "url": "classes/CodeIgniter-DataCaster-Cast-IntegerCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\IntegerCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-IntegerCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\JsonCast",
             "name": "JsonCast",
-            "summary": "Class\u0020JsonCast",
+            "summary": "\u0028PHP\u0029\u0020\u005Barray\u007CstdClass\u0020\u002D\u002D\u003E\u0020string\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020string\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020string",
             "url": "classes/CodeIgniter-DataCaster-Cast-JsonCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\JsonCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-JsonCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\JsonCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-JsonCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\TimestampCast",
             "name": "TimestampCast",
-            "summary": "Class\u0020TimestampCast",
+            "summary": "\u0028PHP\u0029\u0020\u005BTime\u0020\u002D\u002D\u003E\u0020int\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020int\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020int\u007Cstring\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020int",
             "url": "classes/CodeIgniter-DataCaster-Cast-TimestampCast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\TimestampCast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-TimestampCast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\TimestampCast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-TimestampCast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\URICast",
             "name": "URICast",
-            "summary": "Class\u0020URICast",
+            "summary": "\u0028PHP\u0029\u0020\u005BURI\u0020\u002D\u002D\u003E\u0020string\u005D\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020driver\u0029\u0020\u002D\u002D\u003E\u0020\u0028DB\u0020column\u0029\u0020string\n\u0020\u0020\u0020\u0020\u0020\u0020\u005B\u0020\u0020\u0020\u0020\u003C\u002D\u002D\u0020string\u005D\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020driver\u0029\u0020\u003C\u002D\u002D\u0020\u0028DB\u0020column\u0029\u0020string",
             "url": "classes/CodeIgniter-DataCaster-Cast-URICast.html"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\URICast\u003A\u003Aget\u0028\u0029",
             "name": "get",
-            "summary": "Takes\u0020a\u0020value\u0020from\u0020DataSource,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
+            "summary": "Takes\u0020a\u0020value\u0020from\u0020a\u0020data\u0020source,\u0020returns\u0020its\u0020value\u0020for\u0020PHP.",
             "url": "classes/CodeIgniter-DataCaster-Cast-URICast.html#method_get"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\Cast\\URICast\u003A\u003Aset\u0028\u0029",
             "name": "set",
-            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020DataSource.",
+            "summary": "Takes\u0020a\u0020PHP\u0020value,\u0020returns\u0020its\u0020value\u0020for\u0020a\u0020data\u0020source.",
             "url": "classes/CodeIgniter-DataCaster-Cast-URICast.html#method_set"
         },                {
             "fqsen": "\\CodeIgniter\\DataCaster\\DataCaster",
