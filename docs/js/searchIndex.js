@@ -20188,7 +20188,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\BaseHandler",
             "name": "BaseHandler",
-            "summary": "Base\u0020image\u0020handling\u0020implementation",
+            "summary": "Base\u0020image\u0020handling\u0020implementation.",
             "url": "classes/CodeIgniter-Images-Handlers-BaseHandler.html"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Handlers\\BaseHandler\u003A\u003A__construct\u0028\u0029",
@@ -20585,11 +20585,6 @@ Search.appendIndex(
             "name": "clearMetadata",
             "summary": "Clears\u0020metadata\u0020from\u0020the\u0020image.",
             "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#method_clearMetadata"
-        },                {
-            "fqsen": "\\CodeIgniter\\Images\\Handlers\\ImageMagickHandler\u003A\u003A\u0024resource",
-            "name": "resource",
-            "summary": "Stores\u0020Imagick\u0020instance.",
-            "url": "classes/CodeIgniter-Images-Handlers-ImageMagickHandler.html#property_resource"
         },                {
             "fqsen": "\\CodeIgniter\\Images\\Image",
             "name": "Image",
