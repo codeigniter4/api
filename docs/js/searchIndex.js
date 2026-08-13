@@ -9706,11 +9706,6 @@ Search.appendIndex(
             "summary": "COUNT\u0020string",
             "url": "classes/CodeIgniter-Database-OCI8-Builder.html#property_countString"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003A\u0024db",
-            "name": "db",
-            "summary": "A\u0020reference\u0020to\u0020the\u0020database\u0020connection.",
-            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#property_db"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection",
             "name": "Connection",
             "summary": "Connection\u0020for\u0020OCI8",
@@ -10015,11 +10010,6 @@ Search.appendIndex(
             "name": "parameterize",
             "summary": "Replaces\u0020the\u0020\u003F\u0020placeholders\u0020with\u0020\u003A0,\u0020\u003A1,\u0020etc\u0020parameters\u0020for\u0020use\nwithin\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#method_parameterize"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A\u0024db",
-            "name": "db",
-            "summary": "A\u0020reference\u0020to\u0020the\u0020db\u0020connection\u0020to\u0020use.",
-            "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#property_db"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A\u0024lastInsertTableName",
             "name": "lastInsertTableName",
@@ -10415,11 +10405,6 @@ Search.appendIndex(
             "name": "_unsigned",
             "summary": "UNSIGNED\u0020support",
             "url": "classes/CodeIgniter-Database-Postgre-Forge.html#property__unsigned"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Forge\u003A\u003A\u0024db",
-            "name": "db",
-            "summary": "The\u0020active\u0020database\u0020connection.",
-            "url": "classes/CodeIgniter-Database-Postgre-Forge.html#property_db"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery",
             "name": "PreparedQuery",
@@ -11236,11 +11221,6 @@ Search.appendIndex(
             "summary": "DROP\u0020INDEX\u0020statement",
             "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#property_dropIndexStr"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003A\u0024db",
-            "name": "db",
-            "summary": "The\u0020active\u0020database\u0020connection.",
-            "url": "classes/CodeIgniter-Database-SQLite3-Forge.html#property_db"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Forge\u003A\u003A\u0024_unsigned",
             "name": "_unsigned",
             "summary": "UNSIGNED\u0020support",
@@ -11895,11 +11875,6 @@ Search.appendIndex(
             "name": "parameters",
             "summary": "Parameters\u0020array\u0020used\u0020to\u0020store\u0020the\u0020dynamic\u0020variables.",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_parameters"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A\u0024db",
-            "name": "db",
-            "summary": "A\u0020reference\u0020to\u0020the\u0020db\u0020connection\u0020to\u0020use.",
-            "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#property_db"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Result",
             "name": "Result",
