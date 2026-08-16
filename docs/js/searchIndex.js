@@ -27208,7 +27208,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003Acheck\u0028\u0029",
             "name": "check",
-            "summary": "Runs\u0020the\u0020validation\u0020process,\u0020returning\u0020true\u0020or\u0020false\u0020determining\u0020whether\nvalidation\u0020was\u0020successful\u0020or\u0020not.",
+            "summary": "Check\u003B\u0020runs\u0020the\u0020validation\u0020process,\u0020returning\u0020true\u0020or\u0020false\ndetermining\u0020whether\u0020or\u0020not\u0020validation\u0020was\u0020successful.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_check"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AgetValidated\u0028\u0029",
@@ -27248,7 +27248,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AsetRule\u0028\u0029",
             "name": "setRule",
-            "summary": "Sets\u0020\u0028or\u0020adds\u0029\u0020an\u0020individual\u0020rule\u0020and\u0020custom\u0020error\u0020messages\u0020for\u0020a\u0020single\nfield.",
+            "summary": "Sets\u0020an\u0020individual\u0020rule\u0020and\u0020custom\u0020error\u0020messages\u0020for\u0020a\u0020single\u0020field.",
             "url": "classes/CodeIgniter-Validation-Validation.html#method_setRule"
         },                {
             "fqsen": "\\CodeIgniter\\Validation\\Validation\u003A\u003AsetRules\u0028\u0029",

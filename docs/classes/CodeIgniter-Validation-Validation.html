@@ -276,7 +276,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 
     </aside>
 
@@ -339,7 +339,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_customErrors">$customErrors</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, array&lt;string, string&gt;&gt;            </span>
 </dt>
 <dd>Stores custom error message to use
 during validation. Where &#039;key&#039; is the alias.</dd>
@@ -347,7 +347,7 @@ during validation. Where &#039;key&#039; is the alias.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_data">$data</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, mixed&gt;            </span>
 </dt>
 <dd>The data that should be validated,
 where &#039;key&#039; is the alias, with value.</dd>
@@ -355,35 +355,35 @@ where &#039;key&#039; is the alias, with value.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_errors">$errors</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 <dd>Any generated errors during validation.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_rules">$rules</a>
     <span>
-                        &nbsp;: array&lt;string|int, array{label?: string, rules: list<string>}&gt;            </span>
+                        &nbsp;: array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;            </span>
 </dt>
 <dd>Stores the actual rules that should be run against $data.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_ruleSetFiles">$ruleSetFiles</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, class-string&gt;            </span>
 </dt>
 <dd>Files to load with validation functions.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_ruleSetInstances">$ruleSetInstances</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;class-string, object&gt;            </span>
 </dt>
 <dd>The loaded instances of our validation files.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#property_validated">$validated</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, mixed&gt;            </span>
 </dt>
 <dd>The data that was actually validated.</dd>
 
@@ -414,8 +414,8 @@ where &#039;key&#039; is the alias, with value.</dd>
     <span>
                                 &nbsp;: bool    </span>
 </dt>
-<dd>Runs the validation process, returning true or false determining whether
-validation was successful or not.</dd>
+<dd>Check; runs the validation process, returning true or false
+determining whether or not validation was successful.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_getError">getError()</a>
@@ -443,7 +443,7 @@ a run() call. The array should be in the following format:</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_getRules">getRules()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string|int, array{label?: string, rules: list<string>}&gt;    </span>
 </dt>
 <dd>Returns all of the rules currently defined.</dd>
 
@@ -510,8 +510,7 @@ validation was successful or not.</dd>
     <span>
                                 &nbsp;: $this    </span>
 </dt>
-<dd>Sets (or adds) an individual rule and custom error messages for a single
-field.</dd>
+<dd>Sets an individual rule and custom error messages for a single field.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_setRuleGroup">setRuleGroup()</a>
@@ -545,7 +544,7 @@ array values.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_fillPlaceholders">fillPlaceholders()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;    </span>
 </dt>
 <dd>Replace any placeholders within the rules with the values that
 match the &#039;key&#039; of any properties being set. For example, if
@@ -579,7 +578,7 @@ so that we can collect all of the first errors.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_splitRules">splitRules()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
 </dt>
 <dd>Split rules string by pipe operator.</dd>
 
@@ -616,19 +615,19 @@ missing segments are silently skipped so `*` never appears in a result.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_processIfExist">processIfExist()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|true    </span>
+                                &nbsp;: array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_processPermitEmpty">processPermitEmpty()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|true    </span>
+                                &nbsp;: array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Validation-Validation.html#method_retrievePlaceholders">retrievePlaceholders()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
 </dt>
 <dd>Retrieves valid placeholder fields.</dd>
 
@@ -718,7 +717,7 @@ during validation. Where &#039;key&#039; is the alias.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, array&lt;string, string&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$customErrors</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -757,7 +756,7 @@ where &#039;key&#039; is the alias, with value.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$data</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -795,7 +794,7 @@ where &#039;key&#039; is the alias, with value.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$errors</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -835,21 +834,22 @@ where &#039;key&#039; is the alias, with value.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, array{label?: string, rules: list<string>}&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;</span>
     <span class="phpdocumentor-signature__name">$rules</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
-    
-        <section class="phpdocumentor-description"><p>[
-field1 =&gt; [
-'label' =&gt; label,
-'rules' =&gt; [
-rule1, rule2, ...
-],
-],
-]</p>
+        <section class="phpdocumentor-description"><pre class="prettyprint"><code class="prettyprint">[
+    field1 =&gt; [
+        'label' =&gt; label,
+        'rules' =&gt; [
+             rule1, rule2, ...
+         ],
+    ],
+]
+</code></pre>
 </section>
 
+    
     
 
         
@@ -873,7 +873,7 @@ rule1, rule2, ...
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 
     </aside>
 
@@ -882,7 +882,7 @@ rule1, rule2, ...
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, class-string&gt;</span>
     <span class="phpdocumentor-signature__name">$ruleSetFiles</span>
     </code>
 
@@ -911,7 +911,7 @@ rule1, rule2, ...
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -920,7 +920,7 @@ rule1, rule2, ...
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;class-string, object&gt;</span>
     <span class="phpdocumentor-signature__name">$ruleSetInstances</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -958,7 +958,7 @@ rule1, rule2, ...
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validated</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1082,16 +1082,16 @@ rule1, rule2, ...
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">250</span>
+    <span class="phpdocumentor-element-found-in__line">229</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Runs the validation process, returning true or false determining whether
-validation was successful or not.</p>
+        <p class="phpdocumentor-summary">Check; runs the validation process, returning true or false
+determining whether or not validation was successful.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbGroup</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">check</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbGroup</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1104,31 +1104,27 @@ validation was successful or not.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The data to validate.</p>
+                    <section class="phpdocumentor-description"><p>Value to validate.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The validation rules.</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$errors</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The custom error message.</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$dbGroup</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The database group to use.</p>
@@ -1165,7 +1161,7 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">879</span>
+    <span class="phpdocumentor-element-found-in__line">815</span>
 
     </aside>
 
@@ -1215,7 +1211,7 @@ set).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">907</span>
+    <span class="phpdocumentor-element-found-in__line">843</span>
 
     </aside>
 
@@ -1273,7 +1269,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">653</span>
+    <span class="phpdocumentor-element-found-in__line">594</span>
 
     </aside>
 
@@ -1344,7 +1340,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">631</span>
+    <span class="phpdocumentor-element-found-in__line">572</span>
 
     </aside>
 
@@ -1352,7 +1348,7 @@ a run() call. The array should be in the following format:</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getRules</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getRules</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array{label?: string, rules: list<string>}&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1365,7 +1361,7 @@ a run() call. The array should be in the following format:</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, array{label?: string, rules: list<string>}&gt;</span>
             </section>
 
 </article>
@@ -1383,7 +1379,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">269</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 
     </aside>
 
@@ -1422,7 +1418,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">870</span>
+    <span class="phpdocumentor-element-found-in__line">806</span>
 
     </aside>
 
@@ -1471,7 +1467,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">639</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 
     </aside>
 
@@ -1520,7 +1516,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">691</span>
+    <span class="phpdocumentor-element-found-in__line">632</span>
 
     </aside>
 
@@ -1571,7 +1567,7 @@ a run() call. The array should be in the following format:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">753</span>
+    <span class="phpdocumentor-element-found-in__line">680</span>
 
     </aside>
 
@@ -1579,7 +1575,7 @@ a run() call. The array should be in the following format:</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">loadRuleGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">non-empty-string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string|int, mixed&gt;&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">loadRuleGroup</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string|int, mixed&gt;&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1594,7 +1590,7 @@ for {group}_errors for an array of custom error messages.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$group</span>
-                : <span class="phpdocumentor-argument-list__argument__type">non-empty-string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1602,30 +1598,12 @@ for {group}_errors for an array of custom error messages.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="method_loadRuleGroup_tags">
-        Tags
-        <a href="classes/CodeIgniter-Validation-Validation.html#method_loadRuleGroup_tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                    <dt class="phpdocumentor-tag-list__entry">
-                <span class="phpdocumentor-tag__name">throws</span>
-            </dt>
-                            <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Validation-Exceptions-ValidationException.html"><abbr title="\CodeIgniter\Validation\Exceptions\ValidationException">ValidationException</abbr></a></span>
-                                                                                    
-                                    </dd>
-                        </dl>
 
         
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string|int, mixed&gt;&gt;</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>[rules, customErrors]</p>
-</section>
-
             </section>
 
 </article>
@@ -1643,7 +1621,7 @@ for {group}_errors for an array of custom error messages.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1082</span>
+    <span class="phpdocumentor-element-found-in__line">1020</span>
 
     </aside>
 
@@ -1683,7 +1661,7 @@ you need to process more than one array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
@@ -1692,7 +1670,7 @@ validation was successful or not.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">run</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>|non-empty-string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbGroup</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">run</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$dbGroup</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1720,7 +1698,7 @@ validation was successful or not.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$dbGroup</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-BaseConnection.html"><abbr title="\CodeIgniter\Database\BaseConnection">BaseConnection</abbr></a>|non-empty-string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The database group to use.</p>
@@ -1753,7 +1731,7 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">915</span>
+    <span class="phpdocumentor-element-found-in__line">851</span>
 
     </aside>
 
@@ -1809,26 +1787,23 @@ validation was successful or not.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">556</span>
+    <span class="phpdocumentor-element-found-in__line">518</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Sets (or adds) an individual rule and custom error messages for a single
-field.</p>
+        <p class="phpdocumentor-summary">Sets an individual rule and custom error messages for a single field.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setRule</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">setRule</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$errors</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
         <section class="phpdocumentor-description"><p>The custom error message should be just the messages that apply to
-this field, like so:
-[
-'rule1' =&gt; 'message1',
-'rule2' =&gt; 'message2',
-]</p>
+this field, like so:</p>
+<pre class="prettyprint"><code class="prettyprint">['rule1' =&gt; 'message', 'rule2' =&gt; 'message']
+</code></pre>
 </section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
@@ -1849,39 +1824,21 @@ this field, like so:
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The validation rules.</p>
-</section>
-
+                
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$errors</span>
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The custom error message.</p>
-</section>
-
+                
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="method_setRule_tags">
-        Tags
-        <a href="classes/CodeIgniter-Validation-Validation.html#method_setRule_tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                    <dt class="phpdocumentor-tag-list__entry">
-                <span class="phpdocumentor-tag__name">throws</span>
-            </dt>
-                            <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Exceptions-InvalidArgumentException.html"><abbr title="\CodeIgniter\Exceptions\InvalidArgumentException">InvalidArgumentException</abbr></a></span>
-                                                                                    
-                                    </dd>
-                        </dl>
 
         
     
@@ -1905,7 +1862,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">675</span>
+    <span class="phpdocumentor-element-found-in__line">616</span>
 
     </aside>
 
@@ -1968,7 +1925,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">596</span>
+    <span class="phpdocumentor-element-found-in__line">540</span>
 
     </aside>
 
@@ -1981,19 +1938,7 @@ this field, like so:
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>Rules should be an array formatted like:
-[
-'field' =&gt; 'rule1|rule2'
-]</p>
-<p>The $errors array should be formatted like:
-[
-'field' =&gt; [
-'rule1' =&gt; 'message1',
-'rule2' =&gt; 'message2',
-],
-]</p>
-</section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -2008,9 +1953,7 @@ this field, like so:
                 : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>An array of custom error messages</p>
-</section>
-
+                
             </dd>
             </dl>
 
@@ -2038,7 +1981,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">707</span>
+    <span class="phpdocumentor-element-found-in__line">648</span>
 
     </aside>
 
@@ -2096,7 +2039,7 @@ this field, like so:
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">514</span>
+    <span class="phpdocumentor-element-found-in__line">494</span>
 
     </aside>
 
@@ -2146,7 +2089,7 @@ array values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">795</span>
+    <span class="phpdocumentor-element-found-in__line">727</span>
 
     </aside>
 
@@ -2156,7 +2099,7 @@ we had the following $data array:</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">fillPlaceholders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">fillPlaceholders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2172,7 +2115,7 @@ we had the following $data array:</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2192,7 +2135,7 @@ we had the following $data array:</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, array{label?: string|null, rules: list<callable|string>}&gt;</span>
             </section>
 
 </article>
@@ -2210,7 +2153,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">928</span>
+    <span class="phpdocumentor-element-found-in__line">864</span>
 
     </aside>
 
@@ -2296,7 +2239,7 @@ we had the following $data array:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">728</span>
+    <span class="phpdocumentor-element-found-in__line">669</span>
 
     </aside>
 
@@ -2332,7 +2275,7 @@ Config\Validation and stores them locally so we can use them.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">285</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 
     </aside>
 
@@ -2343,7 +2286,7 @@ so that we can collect all of the first errors.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">processRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$originalField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">processRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$label</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$originalField</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2374,7 +2317,7 @@ so that we can collect all of the first errors.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2423,7 +2366,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">961</span>
+    <span class="phpdocumentor-element-found-in__line">899</span>
 
     </aside>
 
@@ -2431,7 +2374,7 @@ so that we can collect all of the first errors.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">splitRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">splitRules</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2454,7 +2397,7 @@ so that we can collect all of the first errors.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -2472,7 +2415,7 @@ so that we can collect all of the first errors.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1026</span>
+    <span class="phpdocumentor-element-found-in__line">964</span>
 
     </aside>
 
@@ -2555,7 +2498,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 
     </aside>
 
@@ -2604,14 +2547,14 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">479</span>
+    <span class="phpdocumentor-element-found-in__line">457</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">isClosure</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">callable(Array, Array, Array, Array): Array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">isClosure</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2621,7 +2564,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rule</span>
-                : <span class="phpdocumentor-argument-list__argument__type">callable(Array, Array, Array, Array): Array</span>
+                : <span class="phpdocumentor-argument-list__argument__type">callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2652,7 +2595,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">487</span>
+    <span class="phpdocumentor-element-found-in__line">467</span>
 
     </aside>
 
@@ -2701,14 +2644,14 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">393</span>
+    <span class="phpdocumentor-element-found-in__line">370</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">processIfExist</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|true</span></code>
+                    <span class="phpdocumentor-signature__name">processIfExist</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2725,7 +2668,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2747,7 +2690,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|true</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>The modified rules or true if we return early</p>
 </section>
@@ -2769,14 +2712,14 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">435</span>
+    <span class="phpdocumentor-element-found-in__line">413</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">processPermitEmpty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|true</span></code>
+                    <span class="phpdocumentor-signature__name">processPermitEmpty</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rules</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2793,7 +2736,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$rules</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -2815,7 +2758,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|true</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, callable(mixed, array&lt;string|int, mixed&gt;=, Array=, Array=): Array|string&gt;|true</span>
                     &mdash;
                 <section class="phpdocumentor-description"><p>The modified rules or true if we return early</p>
 </section>
@@ -2837,7 +2780,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">854</span>
+    <span class="phpdocumentor-element-found-in__line">790</span>
 
     </aside>
 
@@ -2845,7 +2788,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">retrievePlaceholders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">retrievePlaceholders</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$rule</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$data</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2875,7 +2818,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -2893,7 +2836,7 @@ missing segments are silently skipped so `*` never appears in a result.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Validation/Validation.php"><a href="files/system-validation-validation.html"><abbr title="system/Validation/Validation.php">Validation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1008</span>
+    <span class="phpdocumentor-element-found-in__line">946</span>
 
     </aside>
 
