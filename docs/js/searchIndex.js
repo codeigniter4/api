@@ -22128,7 +22128,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AgetRoute\u0028\u0029",
             "name": "getRoute",
-            "summary": "Attempts\u0020to\u0020match\u0020a\u0020URI\u0020path\u0020against\u0020Controllers\u0020and\u0020directories\nfound\u0020in\u0020APPPATH\/Controllers,\u0020to\u0020find\u0020a\u0020matching\u0020route.",
+            "summary": "Returns\u0020the\u0020directory\u0020name,\u0020controller\u0020name,\u0020controller\u0020method,\u0020and\u0020any\u0020parameters\u0020for\u0020the\u0020given\u0020URI\u0020and\u0020HTTP\u0020verb.",
             "url": "classes/CodeIgniter-Router-AutoRouter.html#method_getRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AsetTranslateURIDashes\u0028\u0029",
@@ -22138,7 +22138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AscanControllers\u0028\u0029",
             "name": "scanControllers",
-            "summary": "Scans\u0020the\u0020controller\u0020directory,\u0020attempting\u0020to\u0020locate\u0020a\u0020controller\u0020matching\u0020the\u0020supplied\u0020uri\u0020\u0024segments",
+            "summary": "Scans\u0020the\u0020controller\u0020directory,\u0020attempting\u0020to\u0020locate\u0020a\u0020controller\u0020matching\u0020the\u0020supplied\u0020uri\u0020\u0060\u0024segments\u0060.",
             "url": "classes/CodeIgniter-Router-AutoRouter.html#method_scanControllers"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouter\u003A\u003AisValidSegment\u0028\u0029",
@@ -22218,7 +22218,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003AgetRoute\u0028\u0029",
             "name": "getRoute",
-            "summary": "Finds\u0020controller,\u0020method\u0020and\u0020params\u0020from\u0020the\u0020URI.",
+            "summary": "Returns\u0020the\u0020directory\u0020name,\u0020controller\u0020name,\u0020controller\u0020method,\u0020and\u0020any\u0020parameters\u0020for\u0020the\u0020given\u0020URI\u0020and\u0020HTTP\u0020verb.",
             "url": "classes/CodeIgniter-Router-AutoRouterImproved.html#method_getRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterImproved\u003A\u003AsetDirectory\u0028\u0029",
@@ -22353,7 +22353,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\AutoRouterInterface\u003A\u003AgetRoute\u0028\u0029",
             "name": "getRoute",
-            "summary": "Returns\u0020controller,\u0020method\u0020and\u0020params\u0020from\u0020the\u0020URI.",
+            "summary": "Returns\u0020the\u0020directory\u0020name,\u0020controller\u0020name,\u0020controller\u0020method,\u0020and\u0020any\u0020parameters\u0020for\u0020the\u0020given\u0020URI\u0020and\u0020HTTP\u0020verb.",
             "url": "classes/CodeIgniter-Router-AutoRouterInterface.html#method_getRoute"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\DefinedRouteCollector",
@@ -22493,7 +22493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AgetDefaultNamespace\u0028\u0029",
             "name": "getDefaultNamespace",
-            "summary": "Returns\u0020the\u0020default\u0020namespace\u0020as\u0020set\u0020in\u0020the\u0020Routes\u0020config\u0020file.",
+            "summary": "Returns\u0020the\u0020default\u0020namespace.",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#method_getDefaultNamespace"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003AshouldTranslateURIDashes\u0028\u0029",
@@ -22768,12 +22768,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024routesNames",
             "name": "routesNames",
-            "summary": "Array\u0020of\u0020routes\u0020names",
+            "summary": "Array\u0020of\u0020routes\u0020names\n\u0060\u0060\u0060\n\u005Bverb\u0020\u003D\u003E\u0020\u005BrouteName\u0020\u003D\u003E\u0020routeKey\u0028regex\u0029\u005D\u005D\n\u0060\u0060\u0060",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#property_routesNames"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024routesOptions",
             "name": "routesOptions",
-            "summary": "Array\u0020of\u0020routes\u0020options",
+            "summary": "Array\u0020of\u0020routes\u0020options\n\u0060\u0060\u0060\n\u005B\n\u0020\u0020\u0020\u0020verb\u0020\u003D\u003E\u0020\u005B\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020routeKey\u0028regex\u0029\u0020\u003D\u003E\u0020\u005B\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020key\u0020\u003D\u003E\u0020value,\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u005D\n\u0020\u0020\u0020\u0020\u005D,\n\u005D\n\u0060\u0060\u0060",
             "url": "classes/CodeIgniter-Router-RouteCollection.html#property_routesOptions"
         },                {
             "fqsen": "\\CodeIgniter\\Router\\RouteCollection\u003A\u003A\u0024HTTPVerb",

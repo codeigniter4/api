@@ -382,7 +382,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/CodeIgniter-Router-AutoRouterImproved.html#property_moduleRoutes">$moduleRoutes</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, string&gt;            </span>
 </dt>
 <dd>Map of URI segments and namespaces.</dd>
 
@@ -460,9 +460,9 @@ to underscores when determining method names.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_getRoute">getRoute()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array{string|null, string, string, list<string>}    </span>
 </dt>
-<dd>Finds controller, method and params from the URI.</dd>
+<dd>Returns the directory name, controller name, controller method, and any parameters for the given URI and HTTP verb.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_checkParameters">checkParameters()</a>
@@ -499,7 +499,7 @@ to underscores when determining method names.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Router-AutoRouterImproved.html#method_createSegments">createSegments()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
@@ -611,7 +611,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 
     </aside>
 
@@ -651,7 +651,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -688,7 +688,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">119</span>
+    <span class="phpdocumentor-element-found-in__line">118</span>
 
     </aside>
 
@@ -802,7 +802,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 
     </aside>
 
@@ -842,7 +842,7 @@ to underscores when determining method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
@@ -851,20 +851,16 @@ to underscores when determining method names.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
     <span class="phpdocumentor-signature__name">$moduleRoutes</span>
     </code>
 
-        <section class="phpdocumentor-description"><p>The key is the first URI segment. The value is the controller namespace.
-E.g.,
-[
-'blog' =&gt; 'Acme\Blog\Controllers',
-]</p>
+        <section class="phpdocumentor-description"><p>The key is the first URI segment. The value is the controller namespace.</p>
+<pre class="prettyprint"><code class="prettyprint">  ['blog' =&gt; 'Acme\Blog\Controllers']
+</code></pre>
 </section>
 
-        <section class="phpdocumentor-description"><p>[ uri_segment =&gt; namespace ]</p>
-</section>
-
+    
     
 
         
@@ -926,7 +922,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 
     </aside>
 
@@ -1004,7 +1000,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 
     </aside>
 
@@ -1042,7 +1038,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -1080,7 +1076,7 @@ E.g.,
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">123</span>
 
     </aside>
 
@@ -1159,7 +1155,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">103</span>
+    <span class="phpdocumentor-element-found-in__line">102</span>
 
     </aside>
 
@@ -1202,7 +1198,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">109</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 
     </aside>
 
@@ -1276,15 +1272,15 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Finds controller, method and params from the URI.</p>
+        <p class="phpdocumentor-summary">Returns the directory name, controller name, controller method, and any parameters for the given URI and HTTP verb.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getRoute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$httpVerb</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getRoute</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$httpVerb</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array{string|null, string, string, list<string>}</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1316,11 +1312,7 @@ to underscores when determining method names.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>[directory_name, controller_name, controller_method, params]</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">array{string|null, string, string, list<string>}</span>
             </section>
 
 </article>
@@ -1338,7 +1330,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">426</span>
+    <span class="phpdocumentor-element-found-in__line">421</span>
 
     </aside>
 
@@ -1372,7 +1364,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">454</span>
+    <span class="phpdocumentor-element-found-in__line">449</span>
 
     </aside>
 
@@ -1406,7 +1398,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">469</span>
+    <span class="phpdocumentor-element-found-in__line">464</span>
 
     </aside>
 
@@ -1440,7 +1432,7 @@ to underscores when determining method names.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">497</span>
+    <span class="phpdocumentor-element-found-in__line">492</span>
 
     </aside>
 
@@ -1488,7 +1480,7 @@ The case may be a bit incorrect.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">516</span>
+    <span class="phpdocumentor-element-found-in__line">511</span>
 
     </aside>
 
@@ -1536,14 +1528,14 @@ The case may be a bit incorrect.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">138</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">createSegments</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">createSegments</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$uri</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1566,7 +1558,7 @@ The case may be a bit incorrect.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -1584,7 +1576,7 @@ The case may be a bit incorrect.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">544</span>
+    <span class="phpdocumentor-element-found-in__line">539</span>
 
     </aside>
 
@@ -1635,7 +1627,7 @@ The case may be a bit incorrect.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 
     </aside>
 
@@ -1669,7 +1661,7 @@ The case may be a bit incorrect.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 
     </aside>
 
@@ -1715,7 +1707,7 @@ ends there. The remaining segments are parameters to the controller.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
@@ -1758,7 +1750,7 @@ ends there. The remaining segments are parameters to the controller.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">391</span>
+    <span class="phpdocumentor-element-found-in__line">386</span>
 
     </aside>
 
@@ -1793,7 +1785,7 @@ ends there. The remaining segments are parameters to the controller.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/AutoRouterImproved.php"><a href="files/system-router-autorouterimproved.html"><abbr title="system/Router/AutoRouterImproved.php">AutoRouterImproved.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">552</span>
+    <span class="phpdocumentor-element-found-in__line">547</span>
 
     </aside>
 

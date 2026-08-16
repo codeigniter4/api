@@ -373,7 +373,7 @@ and the splitting the result on commas. So:</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Router-RouteCollectionInterface.html#method_getRoutes">getRoutes()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, array&lt;string, string&gt;|callable(mixed...): Array|string&gt;    </span>
 </dt>
 <dd>Returns the raw array of available routes.</dd>
 
@@ -516,7 +516,7 @@ doesn&#039;t work well with PHP method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -524,12 +524,15 @@ doesn&#039;t work well with PHP method names.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$from</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|callable(mixed...): Array|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$to</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-RouteCollectionInterface.html"><abbr title="\CodeIgniter\Router\RouteCollectionInterface">RouteCollectionInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">add</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$from</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|callable(mixed...): Array|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$to</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-RouteCollectionInterface.html"><abbr title="\CodeIgniter\Router\RouteCollectionInterface">RouteCollectionInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Example:
+$routes-&gt;add('news', 'Posts::index');</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -552,7 +555,7 @@ doesn&#039;t work well with PHP method names.</dd>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$options</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The route options</p>
@@ -585,7 +588,7 @@ doesn&#039;t work well with PHP method names.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">55</span>
 
     </aside>
 
@@ -595,7 +598,7 @@ the routes more human-friendly.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">addPlaceholder</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$placeholder</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pattern</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-RouteCollectionInterface.html"><abbr title="\CodeIgniter\Router\RouteCollectionInterface">RouteCollectionInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">addPlaceholder</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$placeholder</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pattern</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Router-RouteCollectionInterface.html"><abbr title="\CodeIgniter\Router\RouteCollectionInterface">RouteCollectionInterface</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -608,7 +611,7 @@ multiple placeholders added at once.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$placeholder</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -648,7 +651,7 @@ multiple placeholders added at once.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 
     </aside>
 
@@ -704,7 +707,7 @@ be removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">146</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 
     </aside>
 
@@ -759,7 +762,7 @@ removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">156</span>
 
     </aside>
 
@@ -798,7 +801,7 @@ removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -837,7 +840,7 @@ removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">266</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -907,7 +910,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">213</span>
 
     </aside>
 
@@ -946,7 +949,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 
     </aside>
 
@@ -995,7 +998,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">181</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 
     </aside>
 
@@ -1003,7 +1006,7 @@ and the splitting the result on commas. So:</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getRoutes</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">non-empty-string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$verb</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includeWildcard</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getRoutes</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">non-empty-string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$verb</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$includeWildcard</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string, string&gt;|callable(mixed...): Array|string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1037,7 +1040,7 @@ and the splitting the result on commas. So:</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string, string&gt;|callable(mixed...): Array|string&gt;</span>
             </section>
 
 </article>
@@ -1055,7 +1058,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">191</span>
+    <span class="phpdocumentor-element-found-in__line">196</span>
 
     </aside>
 
@@ -1119,7 +1122,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">249</span>
+    <span class="phpdocumentor-element-found-in__line">256</span>
 
     </aside>
 
@@ -1177,7 +1180,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">232</span>
+    <span class="phpdocumentor-element-found-in__line">239</span>
 
     </aside>
 
@@ -1226,7 +1229,7 @@ and the splitting the result on commas. So:</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 
     </aside>
 
@@ -1256,7 +1259,7 @@ and get the route that leads to it.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Named route or Controller::method</p>
+                    <section class="phpdocumentor-description"><p>Route name or Controller::method</p>
 </section>
 
             </dd>
@@ -1265,7 +1268,10 @@ and get the route that leads to it.</p>
                 : <span class="phpdocumentor-argument-list__argument__type">int|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>One or more parameters to be passed to the route.
+The last parameter allows you to set the locale.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1297,7 +1303,7 @@ and get the route that leads to it.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
@@ -1366,7 +1372,7 @@ be removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 
     </aside>
 
@@ -1436,7 +1442,7 @@ the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">79</span>
 
     </aside>
 
@@ -1502,7 +1508,7 @@ removed in the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 
     </aside>
 
@@ -1552,7 +1558,7 @@ method has been set in the route.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -1602,7 +1608,7 @@ namespace has been specified.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 
     </aside>
 
@@ -1615,7 +1621,9 @@ namespace has been specified.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-    
+        <section class="phpdocumentor-description"><p>Used primarily for testing.</p>
+</section>
+
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1653,7 +1661,7 @@ namespace has been specified.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
@@ -1724,7 +1732,7 @@ the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 
     </aside>
 
@@ -1779,7 +1787,7 @@ the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">163</span>
+    <span class="phpdocumentor-element-found-in__line">166</span>
 
     </aside>
 
@@ -1834,7 +1842,7 @@ the future.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Router/RouteCollectionInterface.php"><a href="files/system-router-routecollectioninterface.html"><abbr title="system/Router/RouteCollectionInterface.php">RouteCollectionInterface.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">249</span>
 
     </aside>
 
