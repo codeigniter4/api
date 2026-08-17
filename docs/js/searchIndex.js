@@ -17366,11 +17366,6 @@ Search.appendIndex(
             "summary": "The\u0020filename\u0020given\u0020to\u0020a\u0020file\u0020during\u0020a\u0020move.",
             "url": "classes/CodeIgniter-HTTP-Files-UploadedFile.html#property_name"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\Files\\UploadedFile\u003A\u003A\u0024originalMimeType",
-            "name": "originalMimeType",
-            "summary": "The\u0020type\u0020of\u0020file\u0020as\u0020provided\u0020by\u0020PHP",
-            "url": "classes/CodeIgniter-HTTP-Files-UploadedFile.html#property_originalMimeType"
-        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Files\\UploadedFile\u003A\u003A\u0024error",
             "name": "error",
             "summary": "The\u0020error\u0020constant\u0020of\u0020the\u0020upload\n\u0028one\u0020of\u0020PHP\u0027s\u0020UPLOADERRXXX\u0020constants\u0029",
@@ -17803,7 +17798,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageInterface\u003A\u003AsetHeader\u0028\u0029",
             "name": "setHeader",
-            "summary": "Sets\u0020a\u0020header\u0020and\u0020it\u0027s\u0020value.",
+            "summary": "Sets\u0020a\u0020header\u0020and\u0020its\u0020value.",
             "url": "classes/CodeIgniter-HTTP-MessageInterface.html#method_setHeader"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\MessageInterface\u003A\u003AremoveHeader\u0028\u0029",
