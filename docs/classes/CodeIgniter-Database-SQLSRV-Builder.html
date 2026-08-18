@@ -357,7 +357,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBGroupBy">$QBGroupBy</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, array{field: string, escape: bool}|string&gt;            </span>
 </dt>
 <dd>QB GROUP BY data</dd>
 
@@ -371,7 +371,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOrderBy">$QBOrderBy</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|string|null            </span>
+                        &nbsp;: array&lt;int, array{field: string, direction: string, escape: bool}|string&gt;|string|null            </span>
 </dt>
 <dd>QB ORDER BY data</dd>
 
@@ -385,7 +385,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_binds">$binds</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, array{mixed, bool}&gt;            </span>
 </dt>
 <dd>Collects the named parameters and
 their values for later binding
@@ -394,7 +394,7 @@ in the Query object.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_bindsKeyCount">$bindsKeyCount</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;string, int&gt;            </span>
 </dt>
 <dd>Collects the key count for named parameters
 in the Query object.</dd>
@@ -439,7 +439,7 @@ allow limit update queries with WHERE.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_joinTypes">$joinTypes</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
 <dd>Tables relation types</dd>
 
@@ -460,14 +460,14 @@ allow limit update queries with WHERE.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBFrom">$QBFrom</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
 <dd>QB FROM data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBHaving">$QBHaving</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;            </span>
 </dt>
 <dd>QB HAVING data</dd>
 
@@ -483,7 +483,7 @@ duplicate keys.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBJoin">$QBJoin</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
 <dd>QB JOIN data</dd>
 
@@ -512,7 +512,7 @@ list of column names.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBOptions">$QBOptions</a>
     <span>
-                        &nbsp;: array{updateFieldsAdditional?: array, tableIdentity?: string, updateFields?: array, constraints?: array, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}            </span>
+                        &nbsp;: <abbr title="array{updateFieldsAdditional?: array<string,\CodeIgniter\Database\RawSql|string>, tableIdentity?: string, updateFields?: array<string,\CodeIgniter\Database\RawSql|string>, constraints?: array<array-key,\CodeIgniter\Database\RawSql|string>, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}">RawSql|string>, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}</abbr>            </span>
 </dt>
 <dd>QB Options data
 Holds additional options and data used to render SQL
@@ -542,7 +542,7 @@ and is reset by resetWrite()</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#property_QBWhere">$QBWhere</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;            </span>
 </dt>
 <dd>QB WHERE data</dd>
 
@@ -563,7 +563,7 @@ and is reset by resetWrite()</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-SQLSRV-Builder.html#property_randomKeyword">$randomKeyword</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;int, string&gt;            </span>
 </dt>
 <dd>ORDER BY random keyword</dd>
 
@@ -684,7 +684,7 @@ returned by an Query Builder query.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method_get">get()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>    </span>
+                                &nbsp;: false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string    </span>
 </dt>
 <dd>Compiles the select statement based on the other functions called
 and runs the query</dd>
@@ -692,7 +692,7 @@ and runs the query</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_getBinds">getBinds()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, array{mixed, bool}&gt;    </span>
 </dt>
 <dd>Returns an array of bind values and their
 named parameters for binding in the Query object later.</dd>
@@ -714,7 +714,7 @@ named parameters for binding in the Query object later.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_getCompiledQBWhere">getCompiledQBWhere()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;    </span>
 </dt>
 <dd>Compiles the set conditions and returns the sql statement</dd>
 
@@ -742,7 +742,7 @@ named parameters for binding in the Query object later.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_getSetData">getSetData()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, string&gt;|array&lt;int, array&lt;int, int|string&gt;&gt;    </span>
 </dt>
 <dd>Returns the previously set() data, alternatively resetting it if needed.</dd>
 
@@ -756,7 +756,7 @@ named parameters for binding in the Query object later.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_getWhere">getWhere()</a>
     <span>
-                                &nbsp;: <a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>    </span>
+                                &nbsp;: false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string    </span>
 </dt>
 <dd>Allows the where clause, limit and offset to be added directly</dd>
 
@@ -1336,7 +1336,7 @@ on match delete and insert</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_batchObjectToArray">batchObjectToArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;|array&lt;int, array&lt;string, mixed&gt;&gt;    </span>
 </dt>
 <dd>Takes an object as input and converts the class variables to array key/vals</dd>
 
@@ -1415,21 +1415,21 @@ for batch delete queries.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Database-SQLSRV-Builder.html#method_fieldsFromQuery">fieldsFromQuery()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
 </dt>
 <dd>Gets column names from a select query</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_formatValues">formatValues()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, string&gt;    </span>
 </dt>
 <dd>Converts value array of array to array of strings</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_getOperator">getOperator()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|false|string    </span>
+                                &nbsp;: false|array&lt;int, string&gt;|string    </span>
 </dt>
 <dd>Returns the SQL string operator</dd>
 
@@ -1483,7 +1483,7 @@ for batch delete queries.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseBuilder.html#method_objectToArray">objectToArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;string, mixed&gt;    </span>
 </dt>
 <dd>Takes an object as input and converts the class variables to array key/vals</dd>
 
@@ -1681,7 +1681,7 @@ chosen to be updated.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, array{field: string, escape: bool}|string&gt;</span>
     <span class="phpdocumentor-signature__name">$QBGroupBy</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1759,7 +1759,7 @@ chosen to be updated.</dd>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|string|null</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, array{field: string, direction: string, escape: bool}|string&gt;|string|null</span>
     <span class="phpdocumentor-signature__name">$QBOrderBy</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1840,7 +1840,7 @@ in the Query object.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, array{mixed, bool}&gt;</span>
     <span class="phpdocumentor-signature__name">$binds</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -1879,7 +1879,7 @@ in the Query object.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, int&gt;</span>
     <span class="phpdocumentor-signature__name">$bindsKeyCount</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2129,7 +2129,7 @@ allow limit update queries with WHERE.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$joinTypes</span>
      = <span class="phpdocumentor-signature__default-value">[&#039;LEFT&#039;, &#039;RIGHT&#039;, &#039;OUTER&#039;, &#039;INNER&#039;, &#039;LEFT OUTER&#039;, &#039;RIGHT OUTER&#039;]</span></code>
 
@@ -2243,7 +2243,7 @@ allow limit update queries with WHERE.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$QBFrom</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2281,7 +2281,7 @@ allow limit update queries with WHERE.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;</span>
     <span class="phpdocumentor-signature__name">$QBHaving</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2359,7 +2359,7 @@ duplicate keys.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$QBJoin</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2514,7 +2514,7 @@ and is reset by resetWrite()</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array{updateFieldsAdditional?: array, tableIdentity?: string, updateFields?: array, constraints?: array, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}</span>
+            <span class="phpdocumentor-signature__type"><abbr title="array{updateFieldsAdditional?: array<string,\CodeIgniter\Database\RawSql|string>, tableIdentity?: string, updateFields?: array<string,\CodeIgniter\Database\RawSql|string>, constraints?: array<array-key,\CodeIgniter\Database\RawSql|string>, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}">RawSql|string>, setQueryAsData?: string, sql?: string, alias?: string, fieldTypes?: array<string,array<string,string>>}</abbr></span>
     <span class="phpdocumentor-signature__name">$QBOptions</span>
     </code>
 
@@ -2668,7 +2668,7 @@ and is reset by resetWrite()</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;</span>
     <span class="phpdocumentor-signature__name">$QBWhere</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -2782,7 +2782,7 @@ and is reset by resetWrite()</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">protected</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;int, string&gt;</span>
     <span class="phpdocumentor-signature__name">$randomKeyword</span>
      = <span class="phpdocumentor-signature__default-value">[&#039;NEWID()&#039;, &#039;RAND(%d)&#039;]</span></code>
 
@@ -2974,7 +2974,7 @@ the value is empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">310</span>
 
     </aside>
 
@@ -2982,7 +2982,7 @@ the value is empty string.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><a href="classes/CodeIgniter-Database-ConnectionInterface.html"><abbr title="\CodeIgniter\Database\ConnectionInterface">ConnectionInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, string&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$tableName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><a href="classes/CodeIgniter-Database-ConnectionInterface.html"><abbr title="\CodeIgniter\Database\ConnectionInterface">ConnectionInterface</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$db</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -2992,11 +2992,10 @@ the value is empty string.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$tableName</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, string&gt;|string|<a href="classes/CodeIgniter-Database-TableName.html"><abbr title="\CodeIgniter\Database\TableName">TableName</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>tablename or tablenames with or without aliases</p>
-<p>Examples of $tableName: <code class="prettyprint">mytable</code>, <code class="prettyprint">jobs j</code>, <code class="prettyprint">jobs j, users u</code>, <code class="prettyprint">['jobs j','users u']</code></p>
 </section>
 
             </dd>
@@ -3009,10 +3008,12 @@ the value is empty string.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$options</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Examples of $tableName: <code class="prettyprint">mytable</code>, <code class="prettyprint">jobs j</code>, <code class="prettyprint">jobs j, users u</code>, <code class="prettyprint">['jobs j','users u']</code></p>
+</section>
+
             </dd>
             </dl>
 
@@ -3108,7 +3109,7 @@ the particular table</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1707</span>
+    <span class="phpdocumentor-element-found-in__line">1712</span>
 
     </aside>
 
@@ -3158,7 +3159,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">347</span>
 
     </aside>
 
@@ -3330,7 +3331,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2874</span>
+    <span class="phpdocumentor-element-found-in__line">2887</span>
 
     </aside>
 
@@ -3338,7 +3339,7 @@ returned by an Query Builder query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3357,7 +3358,7 @@ returned by an Query Builder query.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$constraints</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3399,7 +3400,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">571</span>
+    <span class="phpdocumentor-element-found-in__line">574</span>
 
     </aside>
 
@@ -3448,7 +3449,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2754</span>
+    <span class="phpdocumentor-element-found-in__line">2767</span>
 
     </aside>
 
@@ -3491,7 +3492,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">583</span>
+    <span class="phpdocumentor-element-found-in__line">586</span>
 
     </aside>
 
@@ -3499,7 +3500,7 @@ returned by an Query Builder query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$from</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$overwrite</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+                    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, string&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$from</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$overwrite</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3509,7 +3510,7 @@ returned by an Query Builder query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$from</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, string&gt;|string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -3547,7 +3548,7 @@ returned by an Query Builder query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">612</span>
+    <span class="phpdocumentor-element-found-in__line">615</span>
 
     </aside>
 
@@ -3615,7 +3616,7 @@ and runs the query</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3652,7 +3653,7 @@ and runs the query</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type">false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string</span>
             </section>
 
 </article>
@@ -3670,7 +3671,7 @@ and runs the query</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">375</span>
+    <span class="phpdocumentor-element-found-in__line">378</span>
 
     </aside>
 
@@ -3679,7 +3680,7 @@ named parameters for binding in the Query object later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getBinds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getBinds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array{mixed, bool}&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3692,7 +3693,7 @@ named parameters for binding in the Query object later.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, array{mixed, bool}&gt;</span>
             </section>
 
 </article>
@@ -3710,7 +3711,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2807</span>
+    <span class="phpdocumentor-element-found-in__line">2820</span>
 
     </aside>
 
@@ -3759,7 +3760,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2296</span>
+    <span class="phpdocumentor-element-found-in__line">2307</span>
 
     </aside>
 
@@ -3822,7 +3823,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1766</span>
+    <span class="phpdocumentor-element-found-in__line">1771</span>
 
     </aside>
 
@@ -3830,7 +3831,7 @@ named parameters for binding in the Query object later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCompiledQBWhere</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getCompiledQBWhere</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -3843,7 +3844,7 @@ named parameters for binding in the Query object later.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, <abbr title="array{condition: \CodeIgniter\Database\RawSql|string, escape: bool}">RawSql|string, escape: bool}</abbr>&gt;</span>
             </section>
 
 </article>
@@ -3861,7 +3862,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1611</span>
+    <span class="phpdocumentor-element-found-in__line">1616</span>
 
     </aside>
 
@@ -3910,7 +3911,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2474</span>
+    <span class="phpdocumentor-element-found-in__line">2487</span>
 
     </aside>
 
@@ -3959,7 +3960,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1933</span>
+    <span class="phpdocumentor-element-found-in__line">1938</span>
 
     </aside>
 
@@ -4012,7 +4013,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1597</span>
+    <span class="phpdocumentor-element-found-in__line">1602</span>
 
     </aside>
 
@@ -4020,7 +4021,7 @@ named parameters for binding in the Query object later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getSetData</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$clean</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getSetData</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$clean</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;|array&lt;int, array&lt;int, int|string&gt;&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4043,7 +4044,7 @@ named parameters for binding in the Query object later.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, string&gt;|array&lt;int, array&lt;int, int|string&gt;&gt;</span>
             </section>
 
 </article>
@@ -4061,7 +4062,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">366</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 
     </aside>
 
@@ -4100,7 +4101,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1778</span>
+    <span class="phpdocumentor-element-found-in__line">1783</span>
 
     </aside>
 
@@ -4108,7 +4109,7 @@ named parameters for binding in the Query object later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getWhere</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">getWhere</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$reset</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">true</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4118,7 +4119,7 @@ named parameters for binding in the Query object later.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$where</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -4152,7 +4153,7 @@ named parameters for binding in the Query object later.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a></span>
+        <span class="phpdocumentor-signature__response_type">false|<a href="classes/CodeIgniter-Database-ResultInterface.html"><abbr title="\CodeIgniter\Database\ResultInterface">ResultInterface</abbr></a>|string</span>
             </section>
 
 </article>
@@ -4170,14 +4171,14 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1413</span>
+    <span class="phpdocumentor-element-found-in__line">1416</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">groupBy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$by</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">groupBy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$by</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4187,7 +4188,7 @@ named parameters for binding in the Query object later.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$by</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -4225,7 +4226,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1297</span>
+    <span class="phpdocumentor-element-found-in__line">1300</span>
 
     </aside>
 
@@ -4264,7 +4265,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1257</span>
+    <span class="phpdocumentor-element-found-in__line">1260</span>
 
     </aside>
 
@@ -4303,7 +4304,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1447</span>
+    <span class="phpdocumentor-element-found-in__line">1450</span>
 
     </aside>
 
@@ -4311,7 +4312,7 @@ named parameters for binding in the Query object later.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">having</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">having</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4321,7 +4322,7 @@ named parameters for binding in the Query object later.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -4366,7 +4367,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1347</span>
+    <span class="phpdocumentor-element-found-in__line">1350</span>
 
     </aside>
 
@@ -4405,7 +4406,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1307</span>
+    <span class="phpdocumentor-element-found-in__line">1310</span>
 
     </aside>
 
@@ -4444,7 +4445,7 @@ named parameters for binding in the Query object later.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">902</span>
+    <span class="phpdocumentor-element-found-in__line">905</span>
 
     </aside>
 
@@ -4510,7 +4511,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1062</span>
+    <span class="phpdocumentor-element-found-in__line">1065</span>
 
     </aside>
 
@@ -4518,7 +4519,7 @@ joined with &#039;AND&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">havingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">havingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4530,7 +4531,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -4589,7 +4590,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">928</span>
+    <span class="phpdocumentor-element-found-in__line">931</span>
 
     </aside>
 
@@ -4655,7 +4656,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">388</span>
+    <span class="phpdocumentor-element-found-in__line">391</span>
 
     </aside>
 
@@ -4763,7 +4764,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2329</span>
+    <span class="phpdocumentor-element-found-in__line">2340</span>
 
     </aside>
 
@@ -4833,7 +4834,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2216</span>
+    <span class="phpdocumentor-element-found-in__line">2227</span>
 
     </aside>
 
@@ -4972,7 +4973,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1010</span>
+    <span class="phpdocumentor-element-found-in__line">1013</span>
 
     </aside>
 
@@ -4980,7 +4981,7 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">like</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">like</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -4992,7 +4993,7 @@ update or delete query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5051,7 +5052,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1522</span>
+    <span class="phpdocumentor-element-found-in__line">1525</span>
 
     </aside>
 
@@ -5106,7 +5107,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1277</span>
+    <span class="phpdocumentor-element-found-in__line">1280</span>
 
     </aside>
 
@@ -5145,7 +5146,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1327</span>
+    <span class="phpdocumentor-element-found-in__line">1330</span>
 
     </aside>
 
@@ -5184,7 +5185,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1075</span>
+    <span class="phpdocumentor-element-found-in__line">1078</span>
 
     </aside>
 
@@ -5192,7 +5193,7 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">notHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">notHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5204,7 +5205,7 @@ update or delete query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5263,7 +5264,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1023</span>
+    <span class="phpdocumentor-element-found-in__line">1026</span>
 
     </aside>
 
@@ -5271,7 +5272,7 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">notLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">notLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5283,7 +5284,7 @@ update or delete query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5342,7 +5343,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1545</span>
+    <span class="phpdocumentor-element-found-in__line">1548</span>
 
     </aside>
 
@@ -5391,7 +5392,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2118</span>
+    <span class="phpdocumentor-element-found-in__line">2123</span>
 
     </aside>
 
@@ -5399,7 +5400,7 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">onConstraint</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">onConstraint</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5409,7 +5410,7 @@ update or delete query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$set</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>A string of columns, key value pairs, or RawSql</p>
@@ -5442,7 +5443,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1470</span>
+    <span class="phpdocumentor-element-found-in__line">1473</span>
 
     </aside>
 
@@ -5506,7 +5507,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1267</span>
+    <span class="phpdocumentor-element-found-in__line">1270</span>
 
     </aside>
 
@@ -5545,7 +5546,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1460</span>
+    <span class="phpdocumentor-element-found-in__line">1463</span>
 
     </aside>
 
@@ -5553,7 +5554,7 @@ update or delete query.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orHaving</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orHaving</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5563,7 +5564,7 @@ update or delete query.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5608,7 +5609,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1317</span>
+    <span class="phpdocumentor-element-found-in__line">1320</span>
 
     </aside>
 
@@ -5647,7 +5648,7 @@ update or delete query.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">915</span>
+    <span class="phpdocumentor-element-found-in__line">918</span>
 
     </aside>
 
@@ -5713,7 +5714,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1088</span>
+    <span class="phpdocumentor-element-found-in__line">1091</span>
 
     </aside>
 
@@ -5721,7 +5722,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5733,7 +5734,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5792,7 +5793,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">941</span>
+    <span class="phpdocumentor-element-found-in__line">944</span>
 
     </aside>
 
@@ -5858,7 +5859,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1036</span>
+    <span class="phpdocumentor-element-found-in__line">1039</span>
 
     </aside>
 
@@ -5866,7 +5867,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -5878,7 +5879,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -5937,7 +5938,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1287</span>
+    <span class="phpdocumentor-element-found-in__line">1290</span>
 
     </aside>
 
@@ -5976,7 +5977,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1337</span>
+    <span class="phpdocumentor-element-found-in__line">1340</span>
 
     </aside>
 
@@ -6015,7 +6016,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1101</span>
+    <span class="phpdocumentor-element-found-in__line">1104</span>
 
     </aside>
 
@@ -6023,7 +6024,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orNotHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orNotHavingLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6035,7 +6036,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -6094,7 +6095,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1049</span>
+    <span class="phpdocumentor-element-found-in__line">1052</span>
 
     </aside>
 
@@ -6102,7 +6103,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orNotLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orNotLike</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$field</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$match</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$side</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'both'</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$insensitiveSearch</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6114,7 +6115,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$field</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -6173,7 +6174,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">732</span>
+    <span class="phpdocumentor-element-found-in__line">735</span>
 
     </aside>
 
@@ -6181,7 +6182,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">orWhere</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">orWhere</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6194,7 +6195,7 @@ Separates multiple calls with 'OR'.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -6239,7 +6240,7 @@ Separates multiple calls with 'OR'.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">863</span>
+    <span class="phpdocumentor-element-found-in__line">866</span>
 
     </aside>
 
@@ -6305,7 +6306,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">889</span>
+    <span class="phpdocumentor-element-found-in__line">892</span>
 
     </aside>
 
@@ -6434,7 +6435,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3410</span>
+    <span class="phpdocumentor-element-found-in__line">3423</span>
 
     </aside>
 
@@ -6473,7 +6474,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">403</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 
     </aside>
 
@@ -6531,7 +6532,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">476</span>
+    <span class="phpdocumentor-element-found-in__line">479</span>
 
     </aside>
 
@@ -6587,7 +6588,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">496</span>
+    <span class="phpdocumentor-element-found-in__line">499</span>
 
     </aside>
 
@@ -6643,7 +6644,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">456</span>
+    <span class="phpdocumentor-element-found-in__line">459</span>
 
     </aside>
 
@@ -6699,7 +6700,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">466</span>
+    <span class="phpdocumentor-element-found-in__line">469</span>
 
     </aside>
 
@@ -6755,7 +6756,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">504</span>
+    <span class="phpdocumentor-element-found-in__line">507</span>
 
     </aside>
 
@@ -6811,7 +6812,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">486</span>
+    <span class="phpdocumentor-element-found-in__line">489</span>
 
     </aside>
 
@@ -6867,7 +6868,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1571</span>
+    <span class="phpdocumentor-element-found-in__line">1574</span>
 
     </aside>
 
@@ -6875,7 +6876,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -6885,7 +6886,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|object|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|object|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Field name, or an array of field/value pairs, or an object</p>
@@ -6936,7 +6937,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1869</span>
+    <span class="phpdocumentor-element-found-in__line">1874</span>
 
     </aside>
 
@@ -7001,7 +7002,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2280</span>
+    <span class="phpdocumentor-element-found-in__line">2291</span>
 
     </aside>
 
@@ -7070,7 +7071,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2153</span>
+    <span class="phpdocumentor-element-found-in__line">2158</span>
 
     </aside>
 
@@ -7078,7 +7079,7 @@ joined with &#039;OR&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setQueryAsData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$columns</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">setQueryAsData</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a>|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$columns</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/CodeIgniter-Database-BaseBuilder.html"><abbr title="\CodeIgniter\Database\BaseBuilder">BaseBuilder</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7102,7 +7103,7 @@ joined with &#039;OR&#039; if appropriate.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$columns</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>an array or comma delimited string of columns</p>
@@ -7135,7 +7136,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2738</span>
+    <span class="phpdocumentor-element-found-in__line">2751</span>
 
     </aside>
 
@@ -7218,7 +7219,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">356</span>
+    <span class="phpdocumentor-element-found-in__line">357</span>
 
     </aside>
 
@@ -7267,7 +7268,7 @@ joined with &#039;OR&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2776</span>
+    <span class="phpdocumentor-element-found-in__line">2789</span>
 
     </aside>
 
@@ -7312,7 +7313,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1217</span>
+    <span class="phpdocumentor-element-found-in__line">1220</span>
 
     </aside>
 
@@ -7361,7 +7362,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1229</span>
+    <span class="phpdocumentor-element-found-in__line">1232</span>
 
     </aside>
 
@@ -7410,7 +7411,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2497</span>
+    <span class="phpdocumentor-element-found-in__line">2510</span>
 
     </aside>
 
@@ -7418,7 +7419,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$where</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$limit</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7435,7 +7436,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$where</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -7487,7 +7488,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2600</span>
+    <span class="phpdocumentor-element-found-in__line">2613</span>
 
     </aside>
 
@@ -7495,7 +7496,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">updateBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$constraints</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$batchSize</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">100</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|int|array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7514,7 +7515,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$constraints</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -7556,7 +7557,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2076</span>
+    <span class="phpdocumentor-element-found-in__line">2081</span>
 
     </aside>
 
@@ -7564,7 +7565,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">updateFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>&gt;|array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$addToDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignore</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">updateFields</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, <a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>&gt;|array&lt;int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$set</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$addToDefault</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$ignore</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7590,7 +7591,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$ignore</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;|null</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>ignores items in set</p>
@@ -7623,7 +7624,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1953</span>
+    <span class="phpdocumentor-element-found-in__line">1958</span>
 
     </aside>
 
@@ -7697,7 +7698,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1989</span>
+    <span class="phpdocumentor-element-found-in__line">1994</span>
 
     </aside>
 
@@ -7932,7 +7933,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">716</span>
+    <span class="phpdocumentor-element-found-in__line">719</span>
 
     </aside>
 
@@ -7940,7 +7941,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">where</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">where</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -7952,7 +7953,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -7997,7 +7998,7 @@ This function maps to &quot;DELETE FROM table&quot;</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">850</span>
+    <span class="phpdocumentor-element-found-in__line">853</span>
 
     </aside>
 
@@ -8063,7 +8064,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">876</span>
+    <span class="phpdocumentor-element-found-in__line">879</span>
 
     </aside>
 
@@ -8180,7 +8181,7 @@ joined with &#039;AND&#039; if appropriate.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2910</span>
+    <span class="phpdocumentor-element-found-in__line">2923</span>
 
     </aside>
 
@@ -8188,7 +8189,7 @@ joined with &#039;AND&#039; if appropriate.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">_deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, int|string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">_deleteBatch</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$keys</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;int, array&lt;int, int|string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -8216,7 +8217,7 @@ joined with &#039;AND&#039; if appropriate.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$values</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, int|string&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, array&lt;int, int|string&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>QBSet</p>
@@ -8459,7 +8460,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1120</span>
+    <span class="phpdocumentor-element-found-in__line">1123</span>
 
     </aside>
 
@@ -8606,7 +8607,7 @@ about operator precedence.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1201</span>
+    <span class="phpdocumentor-element-found-in__line">1204</span>
 
     </aside>
 
@@ -8923,7 +8924,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2643</span>
+    <span class="phpdocumentor-element-found-in__line">2656</span>
 
     </aside>
 
@@ -9090,7 +9091,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">959</span>
+    <span class="phpdocumentor-element-found-in__line">962</span>
 
     </aside>
 
@@ -9212,7 +9213,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1242</span>
+    <span class="phpdocumentor-element-found-in__line">1245</span>
 
     </aside>
 
@@ -9287,7 +9288,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1816</span>
+    <span class="phpdocumentor-element-found-in__line">1821</span>
 
     </aside>
 
@@ -9361,7 +9362,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3362</span>
+    <span class="phpdocumentor-element-found-in__line">3375</span>
 
     </aside>
 
@@ -9369,7 +9370,7 @@ then this method maps to 'DELETE FROM table'</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">batchObjectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">batchObjectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|array&lt;int, array&lt;string, mixed&gt;&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9379,7 +9380,7 @@ then this method maps to 'DELETE FROM table'</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$object</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|object</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -9392,7 +9393,7 @@ then this method maps to 'DELETE FROM table'</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|array&lt;int, array&lt;string, mixed&gt;&gt;</span>
             </section>
 
 </article>
@@ -9410,7 +9411,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3621</span>
+    <span class="phpdocumentor-element-found-in__line">3634</span>
 
     </aside>
 
@@ -9476,7 +9477,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3600</span>
+    <span class="phpdocumentor-element-found-in__line">3613</span>
 
     </aside>
 
@@ -9521,7 +9522,7 @@ then this method maps to 'DELETE FROM table'</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1626</span>
+    <span class="phpdocumentor-element-found-in__line">1631</span>
 
     </aside>
 
@@ -9571,7 +9572,7 @@ inserted and prefixes swapped out.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3269</span>
+    <span class="phpdocumentor-element-found-in__line">3282</span>
 
     </aside>
 
@@ -9614,7 +9615,7 @@ only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3160</span>
+    <span class="phpdocumentor-element-found-in__line">3173</span>
 
     </aside>
 
@@ -9664,7 +9665,7 @@ the Database Driver for the specific statement.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3296</span>
+    <span class="phpdocumentor-element-found-in__line">3309</span>
 
     </aside>
 
@@ -9758,7 +9759,7 @@ only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3180</span>
+    <span class="phpdocumentor-element-found-in__line">3193</span>
 
     </aside>
 
@@ -9817,7 +9818,7 @@ join() and prefixTable is added only if needed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2988</span>
+    <span class="phpdocumentor-element-found-in__line">3001</span>
 
     </aside>
 
@@ -9872,7 +9873,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">555</span>
+    <span class="phpdocumentor-element-found-in__line">558</span>
 
     </aside>
 
@@ -9929,7 +9930,7 @@ injected into the SQL as raw, unescaped values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">fieldsFromQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">fieldsFromQuery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$sql</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9952,7 +9953,7 @@ injected into the SQL as raw, unescaped values.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -9970,7 +9971,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2204</span>
+    <span class="phpdocumentor-element-found-in__line">2215</span>
 
     </aside>
 
@@ -9978,7 +9979,7 @@ injected into the SQL as raw, unescaped values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">formatValues</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">formatValues</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, array&lt;string|int, int|string&gt;&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$values</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -9988,7 +9989,7 @@ injected into the SQL as raw, unescaped values.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$values</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, array&lt;string|int, int|string&gt;&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -10001,7 +10002,7 @@ injected into the SQL as raw, unescaped values.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
             </section>
 
 </article>
@@ -10019,7 +10020,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3500</span>
+    <span class="phpdocumentor-element-found-in__line">3513</span>
 
     </aside>
 
@@ -10027,7 +10028,7 @@ injected into the SQL as raw, unescaped values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">getOperator</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$list</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|false|string</span></code>
+                    <span class="phpdocumentor-signature__name">getOperator</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$str</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$list</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">false|array&lt;int, string&gt;|string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -10057,7 +10058,7 @@ injected into the SQL as raw, unescaped values.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|false|string</span>
+        <span class="phpdocumentor-signature__response_type">false|array&lt;int, string&gt;|string</span>
             </section>
 
 </article>
@@ -10075,7 +10076,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1378</span>
+    <span class="phpdocumentor-element-found-in__line">1381</span>
 
     </aside>
 
@@ -10124,7 +10125,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1398</span>
+    <span class="phpdocumentor-element-found-in__line">1401</span>
 
     </aside>
 
@@ -10207,7 +10208,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1357</span>
+    <span class="phpdocumentor-element-found-in__line">1360</span>
 
     </aside>
 
@@ -10270,7 +10271,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3487</span>
+    <span class="phpdocumentor-element-found-in__line">3500</span>
 
     </aside>
 
@@ -10319,7 +10320,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3386</span>
+    <span class="phpdocumentor-element-found-in__line">3399</span>
 
     </aside>
 
@@ -10368,7 +10369,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3611</span>
+    <span class="phpdocumentor-element-found-in__line">3624</span>
 
     </aside>
 
@@ -10481,7 +10482,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3334</span>
+    <span class="phpdocumentor-element-found-in__line">3347</span>
 
     </aside>
 
@@ -10489,7 +10490,7 @@ injected into the SQL as raw, unescaped values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">objectToArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|object&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -10499,7 +10500,7 @@ injected into the SQL as raw, unescaped values.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$object</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|object</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|object</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -10512,7 +10513,7 @@ injected into the SQL as raw, unescaped values.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;</span>
             </section>
 
 </article>
@@ -10530,7 +10531,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3425</span>
+    <span class="phpdocumentor-element-found-in__line">3438</span>
 
     </aside>
 
@@ -10538,7 +10539,7 @@ injected into the SQL as raw, unescaped values.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">resetRun</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$qbResetItems</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">resetRun</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$qbResetItems</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -10548,7 +10549,7 @@ injected into the SQL as raw, unescaped values.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$qbResetItems</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>An array of fields to reset</p>
@@ -10577,7 +10578,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3437</span>
+    <span class="phpdocumentor-element-found-in__line">3450</span>
 
     </aside>
 
@@ -10612,7 +10613,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3470</span>
+    <span class="phpdocumentor-element-found-in__line">3483</span>
 
     </aside>
 
@@ -10649,7 +10650,7 @@ injected into the SQL as raw, unescaped values.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3568</span>
+    <span class="phpdocumentor-element-found-in__line">3581</span>
 
     </aside>
 
@@ -10716,7 +10717,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3064</span>
+    <span class="phpdocumentor-element-found-in__line">3077</span>
 
     </aside>
 
@@ -10724,7 +10725,7 @@ arrays instead, so lets take advantage of that here.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">trackAliases</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+                    <span class="phpdocumentor-signature__name">trackAliases</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, string&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$table</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -10734,7 +10735,7 @@ arrays instead, so lets take advantage of that here.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$table</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, string&gt;|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The table to inspect</p>
@@ -10767,7 +10768,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">3316</span>
+    <span class="phpdocumentor-element-found-in__line">3329</span>
 
     </aside>
 
@@ -10815,7 +10816,7 @@ arrays instead, so lets take advantage of that here.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2391</span>
+    <span class="phpdocumentor-element-found-in__line">2402</span>
 
     </aside>
 
@@ -10870,7 +10871,7 @@ has been chosen to be inserted into.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2579</span>
+    <span class="phpdocumentor-element-found-in__line">2592</span>
 
     </aside>
 
@@ -10925,14 +10926,14 @@ chosen to be updated.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseBuilder.php"><a href="files/system-database-basebuilder.html"><abbr title="system/Database/BaseBuilder.php">BaseBuilder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">748</span>
+    <span class="phpdocumentor-element-found-in__line">751</span>
 
     </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">whereHaving</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$qbKey</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'AND '</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
+                    <span class="phpdocumentor-signature__name">whereHaving</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$qbKey</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'AND '</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$escape</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">$this</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -10949,7 +10950,7 @@ chosen to be updated.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string, mixed&gt;|<a href="classes/CodeIgniter-Database-RawSql.html"><abbr title="\CodeIgniter\Database\RawSql">RawSql</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
