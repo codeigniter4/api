@@ -9488,7 +9488,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge\u003A\u003A_alterTable\u0028\u0029",
             "name": "_alterTable",
-            "summary": "ALTER\u0020TABLE",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-MySQLi-Forge.html#method__alterTable"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge\u003A\u003A_processColumn\u0028\u0029",
@@ -9903,7 +9903,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Forge\u003A\u003A_alterTable\u0028\u0029",
             "name": "_alterTable",
-            "summary": "ALTER\u0020TABLE",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-OCI8-Forge.html#method__alterTable"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Forge\u003A\u003A_attributeAutoIncrement\u0028\u0029",
@@ -11743,7 +11743,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003A_createTableAttributes\u0028\u0029",
             "name": "_createTableAttributes",
-            "summary": "CREATE\u0020TABLE\u0020attributes",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-Forge.html#method__createTableAttributes"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Forge\u003A\u003A_alterTable\u0028\u0029",
