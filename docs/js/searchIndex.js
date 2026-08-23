@@ -7613,7 +7613,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Saves\u0020our\u0020connection\u0020settings.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AcastScalarValueForTypedProperty\u0028\u0029",
@@ -8133,7 +8133,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024dataCache",
             "name": "dataCache",
-            "summary": "Holds\u0020previously\u0020looked\u0020up\u0020data\nfor\u0020performance\u0020reasons.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#property_dataCache"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A\u0024connectTime",
@@ -9318,7 +9318,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Close\u0020the\u0020database\u0020connection.",
+            "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003AsetDatabase\u0028\u0029",
@@ -9358,7 +9358,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_listTables\u0028\u0029",
             "name": "_listTables",
-            "summary": "Generates\u0020the\u0020SQL\u0020for\u0020listing\u0020tables\u0020in\u0020a\u0020platform\u002Ddependent\u0020manner.",
+            "summary": "Uses\u0020escapeLikeStringDirect\u0028\u0029.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__listTables"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_listColumns\u0028\u0029",
@@ -9368,17 +9368,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_fieldData\u0028\u0029",
             "name": "_fieldData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
+            "summary": "Platform\u002Dspecific\u0020field\u0020data\u0020information.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__fieldData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
+            "summary": "Platform\u002Dspecific\u0020index\u0020data.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__indexData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_foreignKeyData\u0028\u0029",
             "name": "_foreignKeyData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020Foreign\u0020key\u0020data",
+            "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__foreignKeyData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
@@ -9698,7 +9698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Close\u0020the\u0020database\u0020connection.",
+            "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_ping\u0028\u0029",
@@ -9743,7 +9743,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_fieldData\u0028\u0029",
             "name": "_fieldData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
+            "summary": "Platform\u002Dspecific\u0020field\u0020data\u0020information.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__fieldData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AnormalizeDefault\u0028\u0029",
@@ -9753,12 +9753,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
+            "summary": "Platform\u002Dspecific\u0020index\u0020data.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__indexData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_foreignKeyData\u0028\u0029",
             "name": "_foreignKeyData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020Foreign\u0020key\u0020data",
+            "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__foreignKeyData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
@@ -10173,7 +10173,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Close\u0020the\u0020database\u0020connection.",
+            "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_ping\u0028\u0029",
@@ -10228,17 +10228,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_fieldData\u0028\u0029",
             "name": "_fieldData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
+            "summary": "Platform\u002Dspecific\u0020field\u0020data\u0020information.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__fieldData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
+            "summary": "Platform\u002Dspecific\u0020index\u0020data.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__indexData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_foreignKeyData\u0028\u0029",
             "name": "_foreignKeyData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020Foreign\u0020key\u0020data",
+            "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-Postgre-Connection.html#method__foreignKeyData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Connection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
@@ -10998,7 +10998,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Close\u0020the\u0020database\u0020connection.",
+            "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003AsetDatabase\u0028\u0029",
@@ -11043,17 +11043,17 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_fieldData\u0028\u0029",
             "name": "_fieldData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
+            "summary": "Platform\u002Dspecific\u0020field\u0020data\u0020information.",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method__fieldData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
+            "summary": "Platform\u002Dspecific\u0020index\u0020data.",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method__indexData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_foreignKeyData\u0028\u0029",
             "name": "_foreignKeyData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020Foreign\u0020key\u0020data",
+            "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-SQLite3-Connection.html#method__foreignKeyData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Connection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
@@ -11543,7 +11543,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Class\u0020constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003Aconnect\u0028\u0029",
@@ -11553,7 +11553,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Close\u0020the\u0020database\u0020connection.",
+            "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_escapeString\u0028\u0029",
@@ -11578,12 +11578,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_indexData\u0028\u0029",
             "name": "_indexData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020index\u0020data",
+            "summary": "Platform\u002Dspecific\u0020index\u0020data.",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method__indexData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_foreignKeyData\u0028\u0029",
             "name": "_foreignKeyData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020Foreign\u0020key\u0020data\nreferenced_object_id\u0020\u0020parent_object_id",
+            "summary": "Platform\u002Dspecific\u0020foreign\u0020keys\u0020data.",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method__foreignKeyData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_disableForeignKeyChecks\u0028\u0029",
@@ -11598,7 +11598,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003A_fieldData\u0028\u0029",
             "name": "_fieldData",
-            "summary": "Returns\u0020an\u0020array\u0020of\u0020objects\u0020with\u0020field\u0020data",
+            "summary": "Platform\u002Dspecific\u0020field\u0020data\u0020information.",
             "url": "classes/CodeIgniter-Database-SQLSRV-Connection.html#method__fieldData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Connection\u003A\u003AnormalizeDefault\u0028\u0029",
