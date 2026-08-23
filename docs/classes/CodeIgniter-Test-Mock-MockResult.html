@@ -326,49 +326,43 @@
     <span>
                         &nbsp;: <abbr title="\CodeIgniter\Database\TConnection">TConnection</abbr>            </span>
 </dt>
-<dd>Connection ID</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_currentRow">$currentRow</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
-<dd>Current Row index</dd>
+<dd>Current row index</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_customResultObject">$customResultObject</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: array&lt;class-string, array&lt;int, object&gt;&gt;            </span>
 </dt>
-<dd>Custom Result Object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_resultArray">$resultArray</a>
     <span>
                         &nbsp;: array&lt;int, array&lt;string|int, mixed&gt;&gt;            </span>
 </dt>
-<dd>Result Array</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_resultID">$resultID</a>
     <span>
                         &nbsp;: false|<abbr title="\CodeIgniter\Database\TResult">TResult</abbr>            </span>
 </dt>
-<dd>Result ID</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_resultObject">$resultObject</a>
     <span>
                         &nbsp;: array&lt;int, object&gt;            </span>
 </dt>
-<dd>Result Object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_rowData">$rowData</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
+                        &nbsp;: array&lt;string, mixed&gt;|null            </span>
 </dt>
-<dd>Row data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#property_numRows">$numRows</a>
@@ -390,12 +384,11 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Test-Mock-MockResult.html#method_dataSeek">dataSeek()</a>
     <span>
-                                &nbsp;: bool    </span>
+                                &nbsp;: true    </span>
 </dt>
 <dd>Moves the internal pointer to the desired offset. This is called
 internally before fetching results to make sure the result set
@@ -411,7 +404,7 @@ starts at zero.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getCustomResultObject">getCustomResultObject()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, object&gt;    </span>
 </dt>
 <dd>Returns the results as an array of custom objects.</dd>
 
@@ -446,21 +439,21 @@ starts at zero.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getFirstRow">getFirstRow()</a>
     <span>
-                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
+                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
 </dt>
 <dd>Returns the &quot;first&quot; row of the current results.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getLastRow">getLastRow()</a>
     <span>
-                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
+                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
 </dt>
 <dd>Returns the &quot;last&quot; row of the current results.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getNextRow">getNextRow()</a>
     <span>
-                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
+                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
 </dt>
 <dd>Returns the &quot;next&quot; row of the current results.</dd>
 
@@ -469,19 +462,21 @@ starts at zero.</dd>
     <span>
                                 &nbsp;: int    </span>
 </dt>
-<dd>Gets the number of fields in the result set.</dd>
+<dd>Number of rows in the result set; checks for previous count, falls
+back on counting resultArray or resultObject, finally fetching resultArray
+if nothing was previously fetched</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getPreviousRow">getPreviousRow()</a>
     <span>
-                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
+                                &nbsp;: <abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr>    </span>
 </dt>
 <dd>Returns the &quot;previous&quot; row of the current results.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getResult">getResult()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: <abbr title="($type is "array" ? list<array<string,mixed>> : ($type is "object" ? list<\stdClass> : list<object>))">stdClass> : list<object>))</abbr>    </span>
 </dt>
 <dd>Retrieve the results of the query. Typically an array of
 individual data rows, which can be either an &#039;array&#039;, an
@@ -490,7 +485,7 @@ individual data rows, which can be either an &#039;array&#039;, an
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getResultArray">getResultArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, array&lt;string, mixed&gt;&gt;    </span>
 </dt>
 <dd>Returns the results as an array of arrays.</dd>
 
@@ -504,7 +499,7 @@ individual data rows, which can be either an &#039;array&#039;, an
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getRow">getRow()</a>
     <span>
-                                &nbsp;: <abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr>    </span>
+                                &nbsp;: <abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr>    </span>
 </dt>
 <dd>Wrapper object to return a row as either an array, an object, or
 a custom class.</dd>
@@ -512,7 +507,7 @@ a custom class.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getRowArray">getRowArray()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+                                &nbsp;: array&lt;string, mixed&gt;|null    </span>
 </dt>
 <dd>Returns a single row from the results as an array.</dd>
 
@@ -526,7 +521,7 @@ a custom class.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a class="" href="classes/CodeIgniter-Database-BaseResult.html#method_getUnbufferedRow">getUnbufferedRow()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;|object|null    </span>
+                                &nbsp;: array&lt;string, mixed&gt;|object|null    </span>
 </dt>
 <dd>Returns an unbuffered row and move the pointer to the next row.</dd>
 
@@ -581,12 +576,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Connection ID</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
@@ -619,11 +613,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Current Row index</p>
+        <p class="phpdocumentor-summary">Current row index</p>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
@@ -657,16 +651,15 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Custom Result Object</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+            <span class="phpdocumentor-signature__type">array&lt;class-string, array&lt;int, object&gt;&gt;</span>
     <span class="phpdocumentor-signature__name">$customResultObject</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
@@ -695,12 +688,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Result Array</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
@@ -733,12 +725,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">39</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Result ID</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
@@ -771,12 +762,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Result Object</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
@@ -809,16 +799,15 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">69</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Row data</p>
-
+    
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+            <span class="phpdocumentor-signature__type">array&lt;string, mixed&gt;|null</span>
     <span class="phpdocumentor-signature__name">$rowData</span>
     </code>
 
@@ -847,7 +836,7 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">64</span>
 
     </aside>
 
@@ -890,12 +879,11 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
                     <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\CodeIgniter\Database\TConnection">TConnection</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$connID</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><abbr title="\CodeIgniter\Database\TResult">TResult</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__reference-operator">&amp;</span><span class="phpdocumentor-signature__argument__name">$resultID</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
@@ -942,7 +930,7 @@ a custom class.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">70</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 
     </aside>
 
@@ -952,7 +940,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">dataSeek</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+                    <span class="phpdocumentor-signature__name">dataSeek</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">true</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -975,7 +963,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
+        <span class="phpdocumentor-signature__response_type">true</span>
             </section>
 
 </article>
@@ -993,7 +981,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
@@ -1028,7 +1016,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">94</span>
 
     </aside>
 
@@ -1036,7 +1024,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCustomResultObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getCustomResultObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1046,10 +1034,12 @@ starts at zero.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$className</span>
-                : <span class="phpdocumentor-argument-list__argument__type">class-string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The name of the class to use.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1059,7 +1049,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span>
             </section>
 
 </article>
@@ -1077,7 +1067,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">301</span>
+    <span class="phpdocumentor-element-found-in__line">236</span>
 
     </aside>
 
@@ -1085,7 +1075,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCustomRowObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type"><abbr title="class-string<\CodeIgniter\Database\T>">T></abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CodeIgniter\Database\T">T</abbr>|null</span></code>
+                    <span class="phpdocumentor-signature__name">getCustomRowObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\CodeIgniter\Database\T">T</abbr>|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1106,7 +1096,7 @@ starts at zero.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$className</span>
-                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="class-string<\CodeIgniter\Database\T>">T></abbr></span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1114,19 +1104,6 @@ starts at zero.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="method_getCustomRowObject_tags">
-        Tags
-        <a href="classes/CodeIgniter-Database-BaseResult.html#method_getCustomRowObject_tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                    <dt class="phpdocumentor-tag-list__entry">
-                <span class="phpdocumentor-tag__name">template</span>
-            </dt>
-                            <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        
-                                    </dd>
-                        </dl>
 
         
     
@@ -1150,7 +1127,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 
     </aside>
 
@@ -1189,7 +1166,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 
     </aside>
 
@@ -1228,7 +1205,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -1267,7 +1244,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">391</span>
+    <span class="phpdocumentor-element-found-in__line">301</span>
 
     </aside>
 
@@ -1275,7 +1252,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getFirstRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getFirstRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1300,7 +1277,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
             </section>
 
 </article>
@@ -1318,7 +1295,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">401</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 
     </aside>
 
@@ -1326,7 +1303,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getLastRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getLastRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1351,7 +1328,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
             </section>
 
 </article>
@@ -1369,7 +1346,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">411</span>
+    <span class="phpdocumentor-element-found-in__line">315</span>
 
     </aside>
 
@@ -1377,7 +1354,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getNextRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getNextRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1402,7 +1379,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
             </section>
 
 </article>
@@ -1420,11 +1397,13 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Gets the number of fields in the result set.</p>
+        <p class="phpdocumentor-summary">Number of rows in the result set; checks for previous count, falls
+back on counting resultArray or resultObject, finally fetching resultArray
+if nothing was previously fetched</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -1459,7 +1438,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">424</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 
     </aside>
 
@@ -1467,7 +1446,7 @@ starts at zero.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPreviousRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getPreviousRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1492,7 +1471,7 @@ starts at zero.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null))">T|null))</abbr></span>
             </section>
 
 </article>
@@ -1510,7 +1489,7 @@ starts at zero.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 
     </aside>
 
@@ -1520,7 +1499,7 @@ individual data rows, which can be either an &#039;array&#039;, an
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getResult</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getResult</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($type is "array" ? list<array<string,mixed>> : ($type is "object" ? list<\stdClass> : list<object>))">stdClass> : list<object>))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1545,7 +1524,7 @@ individual data rows, which can be either an &#039;array&#039;, an
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($type is "array" ? list<array<string,mixed>> : ($type is "object" ? list<\stdClass> : list<object>))">stdClass> : list<object>))</abbr></span>
             </section>
 
 </article>
@@ -1563,7 +1542,7 @@ individual data rows, which can be either an &#039;array&#039;, an
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">140</span>
 
     </aside>
 
@@ -1571,7 +1550,7 @@ individual data rows, which can be either an &#039;array&#039;, an
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getResultArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getResultArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string, mixed&gt;&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1586,7 +1565,7 @@ individual data rows, which can be either an &#039;array&#039;, an
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, array&lt;string, mixed&gt;&gt;</span>
             </section>
 
 </article>
@@ -1604,7 +1583,7 @@ individual data rows, which can be either an &#039;array&#039;, an
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">212</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -1645,7 +1624,7 @@ individual data rows, which can be either an &#039;array&#039;, an
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">261</span>
+    <span class="phpdocumentor-element-found-in__line">208</span>
 
     </aside>
 
@@ -1654,7 +1633,7 @@ a custom class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">"array"|"object"|<abbr title="class-string<\CodeIgniter\Database\T>">T></abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr></span></code>
+                    <span class="phpdocumentor-signature__name">getRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1666,7 +1645,7 @@ a custom class.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$n</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">0</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The index of the results to return, or column name.</p>
@@ -1675,7 +1654,7 @@ a custom class.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$type</span>
-                : <span class="phpdocumentor-argument-list__argument__type">"array"|"object"|<abbr title="class-string<\CodeIgniter\Database\T>">T></abbr></span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">'object'</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The type of result object. 'array', 'object' or class name.</p>
@@ -1685,25 +1664,12 @@ a custom class.</p>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="method_getRow_tags">
-        Tags
-        <a href="classes/CodeIgniter-Database-BaseResult.html#method_getRow_tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                    <dt class="phpdocumentor-tag-list__entry">
-                <span class="phpdocumentor-tag__name">template</span>
-            </dt>
-                            <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        
-                                    </dd>
-                        </dl>
 
         
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr></span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="($n is string ? float|int|string|null : ($type is "object" ? \stdClass|null : ($type is "array" ? array<string,mixed>|null : \CodeIgniter\Database\T|null)))">T|null)))</abbr></span>
             </section>
 
 </article>
@@ -1721,7 +1687,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">253</span>
 
     </aside>
 
@@ -1729,7 +1695,7 @@ a custom class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getRowArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
+                    <span class="phpdocumentor-signature__name">getRowArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$n</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">0</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1754,7 +1720,7 @@ a custom class.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|null</span>
             </section>
 
 </article>
@@ -1772,7 +1738,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">346</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 
     </aside>
 
@@ -1823,7 +1789,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">339</span>
 
     </aside>
 
@@ -1831,7 +1797,7 @@ a custom class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getUnbufferedRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|object|null</span></code>
+                    <span class="phpdocumentor-signature__name">getUnbufferedRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$type</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">'object'</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|object|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1854,7 +1820,7 @@ a custom class.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|object|null</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;string, mixed&gt;|object|null</span>
             </section>
 
 </article>
@@ -1872,7 +1838,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Database/BaseResult.php"><a href="files/system-database-baseresult.html"><abbr title="system/Database/BaseResult.php">BaseResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">368</span>
+    <span class="phpdocumentor-element-found-in__line">281</span>
 
     </aside>
 
@@ -1880,7 +1846,7 @@ a custom class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;|object|<abbr title="\stdClass">stdClass</abbr>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">setRow</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1890,14 +1856,14 @@ a custom class.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$key</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$value</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;|object|<abbr title="\stdClass">stdClass</abbr>|null</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1924,7 +1890,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">60</span>
 
     </aside>
 
@@ -1937,9 +1903,7 @@ a custom class.</p>
     <div class="phpdocumentor-label-line">
         </div>
     
-        <section class="phpdocumentor-description"><p>Overridden by driver classes.</p>
-</section>
-
+    
     
     
 
@@ -1965,7 +1929,7 @@ a custom class.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Test/Mock/MockResult.php"><a href="files/system-test-mock-mockresult.html"><abbr title="system/Test/Mock/MockResult.php">MockResult.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -1973,7 +1937,7 @@ a custom class.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">fetchObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\stdClass::class">stdClass::class</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
+                    <span class="phpdocumentor-signature__name">fetchObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$className</span><span> = </span><span class="phpdocumentor-signature__argument__default-value"><abbr title="\stdClass::class">stdClass::class</abbr></span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">object</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1983,7 +1947,7 @@ a custom class.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$className</span>
-                : <span class="phpdocumentor-argument-list__argument__type">class-string</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
                  = <span class="phpdocumentor-argument-list__argument__default-value"><abbr title="\stdClass::class">stdClass::class</abbr></span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 

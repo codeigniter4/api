@@ -8278,7 +8278,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AgetResult\u0028\u0029",
@@ -8361,31 +8361,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#method_isValidResultId"
         },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AgetFieldCount\u0028\u0029",
-            "name": "getFieldCount",
-            "summary": "Gets\u0020the\u0020number\u0020of\u0020fields\u0020in\u0020the\u0020result\u0020set.",
-            "url": "classes/CodeIgniter-Database-BaseResult.html#method_getFieldCount"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AgetFieldNames\u0028\u0029",
-            "name": "getFieldNames",
-            "summary": "Generates\u0020an\u0020array\u0020of\u0020column\u0020names\u0020in\u0020the\u0020result\u0020set.",
-            "url": "classes/CodeIgniter-Database-BaseResult.html#method_getFieldNames"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AgetFieldData\u0028\u0029",
-            "name": "getFieldData",
-            "summary": "Generates\u0020an\u0020array\u0020of\u0020objects\u0020representing\u0020field\u0020meta\u002Ddata.",
-            "url": "classes/CodeIgniter-Database-BaseResult.html#method_getFieldData"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AfreeResult\u0028\u0029",
-            "name": "freeResult",
-            "summary": "Frees\u0020the\u0020current\u0020result.",
-            "url": "classes/CodeIgniter-Database-BaseResult.html#method_freeResult"
-        },                {
-            "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AdataSeek\u0028\u0029",
-            "name": "dataSeek",
-            "summary": "Moves\u0020the\u0020internal\u0020pointer\u0020to\u0020the\u0020desired\u0020offset.\u0020This\u0020is\u0020called\ninternally\u0020before\u0020fetching\u0020results\u0020to\u0020make\u0020sure\u0020the\u0020result\u0020set\nstarts\u0020at\u0020zero.",
-            "url": "classes/CodeIgniter-Database-BaseResult.html#method_dataSeek"
-        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003AfetchAssoc\u0028\u0029",
             "name": "fetchAssoc",
             "summary": "Returns\u0020the\u0020result\u0020set\u0020as\u0020an\u0020array.",
@@ -8398,32 +8373,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024connID",
             "name": "connID",
-            "summary": "Connection\u0020ID",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_connID"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024resultID",
             "name": "resultID",
-            "summary": "Result\u0020ID",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_resultID"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024resultArray",
             "name": "resultArray",
-            "summary": "Result\u0020Array",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_resultArray"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024resultObject",
             "name": "resultObject",
-            "summary": "Result\u0020Object",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_resultObject"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024customResultObject",
             "name": "customResultObject",
-            "summary": "Custom\u0020Result\u0020Object",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_customResultObject"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024currentRow",
             "name": "currentRow",
-            "summary": "Current\u0020Row\u0020index",
+            "summary": "Current\u0020row\u0020index",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_currentRow"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024numRows",
@@ -8433,7 +8408,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseResult\u003A\u003A\u0024rowData",
             "name": "rowData",
-            "summary": "Row\u0020data",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseResult.html#property_rowData"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils",
@@ -9608,7 +9583,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Result\u003A\u003AgetNumRows\u0028\u0029",
             "name": "getNumRows",
-            "summary": "Returns\u0020the\u0020number\u0020of\u0020rows\u0020in\u0020the\u0020resultID\u0020\u0028i.e.,\u0020mysqli_result\u0020object\u0029",
+            "summary": "Number\u0020of\u0020rows\u0020in\u0020the\u0020result\u0020set\u003B\u0020checks\u0020for\u0020previous\u0020count,\u0020falls\nback\u0020on\u0020counting\u0020resultArray\u0020or\u0020resultObject,\u0020finally\u0020fetching\u0020resultArray\nif\u0020nothing\u0020was\u0020previously\u0020fetched",
             "url": "classes/CodeIgniter-Database-MySQLi-Result.html#method_getNumRows"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Utils",
@@ -10488,7 +10463,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Result\u003A\u003AgetNumRows\u0028\u0029",
             "name": "getNumRows",
-            "summary": "Returns\u0020the\u0020number\u0020of\u0020rows\u0020in\u0020the\u0020resultID\u0020\u0028i.e.,\u0020PostgreSQL\u0020query\u0020result\u0020resource\u0029",
+            "summary": "Number\u0020of\u0020rows\u0020in\u0020the\u0020result\u0020set\u003B\u0020checks\u0020for\u0020previous\u0020count,\u0020falls\nback\u0020on\u0020counting\u0020resultArray\u0020or\u0020resultObject,\u0020finally\u0020fetching\u0020resultArray\nif\u0020nothing\u0020was\u0020previously\u0020fetched",
             "url": "classes/CodeIgniter-Database-Postgre-Result.html#method_getNumRows"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Utils",
@@ -11918,7 +11893,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Result\u003A\u003AgetNumRows\u0028\u0029",
             "name": "getNumRows",
-            "summary": "Returns\u0020the\u0020number\u0020of\u0020rows\u0020in\u0020the\u0020resultID\u0020\u0028i.e.,\u0020SQLSRV\u0020query\u0020result\u0020resource\u0029",
+            "summary": "Number\u0020of\u0020rows\u0020in\u0020the\u0020result\u0020set\u003B\u0020checks\u0020for\u0020previous\u0020count,\u0020falls\nback\u0020on\u0020counting\u0020resultArray\u0020or\u0020resultObject,\u0020finally\u0020fetching\u0020resultArray\nif\u0020nothing\u0020was\u0020previously\u0020fetched",
             "url": "classes/CodeIgniter-Database-SQLSRV-Result.html#method_getNumRows"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Utils",
@@ -26003,7 +25978,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockResult\u003A\u003AgetNumRows\u0028\u0029",
             "name": "getNumRows",
-            "summary": "Gets\u0020the\u0020number\u0020of\u0020fields\u0020in\u0020the\u0020result\u0020set.",
+            "summary": "Number\u0020of\u0020rows\u0020in\u0020the\u0020result\u0020set\u003B\u0020checks\u0020for\u0020previous\u0020count,\u0020falls\nback\u0020on\u0020counting\u0020resultArray\u0020or\u0020resultObject,\u0020finally\u0020fetching\u0020resultArray\nif\u0020nothing\u0020was\u0020previously\u0020fetched",
             "url": "classes/CodeIgniter-Test-Mock-MockResult.html#method_getNumRows"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockSecurity",
