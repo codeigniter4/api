@@ -8193,7 +8193,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "The\u0020database\u002Ddependent\u0020portion\u0020of\u0020the\u0020prepare\u0020statement.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003Aexecute\u0028\u0029",
@@ -8203,7 +8203,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "The\u0020database\u0020dependant\u0020version\u0020of\u0020the\u0020execute\u0020method.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003A_getResult\u0028\u0029",
@@ -8213,12 +8213,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003Aclose\u0028\u0029",
             "name": "close",
-            "summary": "Explicitly\u0020closes\u0020the\u0020prepared\u0020statement.",
+            "summary": "Explicitly\u0020closes\u0020the\u0020statement.",
             "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method_close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "The\u0020database\u002Ddependent\u0020version\u0020of\u0020the\u0020close\u0020method.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BasePreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BasePreparedQuery\u003A\u003AgetQueryString\u0028\u0029",
@@ -8413,12 +8413,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils",
             "name": "BaseUtils",
-            "summary": "Class\u0020BaseUtils",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseUtils.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Class\u0020constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseUtils.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils\u003A\u003A\u0024listDatabases",
@@ -8463,12 +8463,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseUtils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseUtils\u003A\u003A\u0024db",
             "name": "db",
-            "summary": "Database\u0020object",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-BaseUtils.html#property_db"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Config",
@@ -9523,22 +9523,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\PreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "Prepares\u0020the\u0020query\u0020against\u0020the\u0020database,\u0020and\u0020saves\u0020the\u0020connection\ninfo\u0020necessary\u0020to\u0020execute\u0020the\u0020query\u0020later.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-MySQLi-PreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.\u0020Upon\u0020success,\u0020will\u0020return\u0020a\u0020Results\u0020object.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-MySQLi-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020on\u0020failure.",
+            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-MySQLi-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\PreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Deallocate\u0020prepared\u0020statements.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-MySQLi-PreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Result",
@@ -9593,7 +9593,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Utils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-MySQLi-Utils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Utils\u003A\u003A\u0024listDatabases",
@@ -9963,22 +9963,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "Prepares\u0020the\u0020query\u0020against\u0020the\u0020database,\u0020and\u0020saves\u0020the\u0020connection\ninfo\u0020necessary\u0020to\u0020execute\u0020the\u0020query\u0020later.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.\u0020Upon\u0020success,\u0020will\u0020return\u0020a\u0020Results\u0020object.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020statement\u0020resource\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020when\u0020preparing\u0020failed.",
+            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Deallocate\u0020prepared\u0020statements.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-OCI8-PreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\PreparedQuery\u003A\u003Aparameterize\u0028\u0029",
@@ -10038,7 +10038,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Utils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-OCI8-Utils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Utils\u003A\u003A\u0024listDatabases",
@@ -10388,22 +10388,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "Prepares\u0020the\u0020query\u0020against\u0020the\u0020database,\u0020and\u0020saves\u0020the\u0020connection\ninfo\u0020necessary\u0020to\u0020execute\u0020the\u0020query\u0020later.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Postgre-PreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.\u0020Upon\u0020success,\u0020will\u0020return\u0020a\u0020Results\u0020object.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Postgre-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020on\u0020failure.",
+            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-Postgre-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Deallocate\u0020prepared\u0020statements.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Postgre-PreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\PreparedQuery\u003A\u003Aparameterize\u0028\u0029",
@@ -10473,7 +10473,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Utils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-Postgre-Utils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Utils\u003A\u003A\u0024listDatabases",
@@ -10503,7 +10503,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\PreparedQueryInterface\u003A\u003Aclose\u0028\u0029",
             "name": "close",
-            "summary": "Explicity\u0020closes\u0020the\u0020statement.",
+            "summary": "Explicitly\u0020closes\u0020the\u0020statement.",
             "url": "classes/CodeIgniter-Database-PreparedQueryInterface.html#method_close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\PreparedQueryInterface\u003A\u003AgetQueryString\u0028\u0029",
@@ -11208,22 +11208,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\PreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "Prepares\u0020the\u0020query\u0020against\u0020the\u0020database,\u0020and\u0020saves\u0020the\u0020connection\ninfo\u0020necessary\u0020to\u0020execute\u0020the\u0020query\u0020later.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLite3-PreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.\u0020Upon\u0020success,\u0020will\u0020return\u0020a\u0020Results\u0020object.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLite3-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020on\u0020failure.",
+            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-SQLite3-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\PreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Deallocate\u0020prepared\u0020statements.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLite3-PreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\PreparedQuery\u003A\u003A\u0024result",
@@ -11398,7 +11398,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Utils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLite3-Utils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLite3\\Utils\u003A\u003A\u0024optimizeTable",
@@ -11813,7 +11813,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery",
             "name": "PreparedQuery",
-            "summary": "Prepared\u0020query\u0020for\u0020Postgre",
+            "summary": "Prepared\u0020query\u0020for\u0020SQLSRV",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A__construct\u0028\u0029",
@@ -11823,22 +11823,22 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_prepare\u0028\u0029",
             "name": "_prepare",
-            "summary": "Prepares\u0020the\u0020query\u0020against\u0020the\u0020database,\u0020and\u0020saves\u0020the\u0020connection\ninfo\u0020necessary\u0020to\u0020execute\u0020the\u0020query\u0020later.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__prepare"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_execute\u0028\u0029",
             "name": "_execute",
-            "summary": "Takes\u0020a\u0020new\u0020set\u0020of\u0020data\u0020and\u0020runs\u0020it\u0020against\u0020the\u0020currently\nprepared\u0020query.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__execute"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_getResult\u0028\u0029",
             "name": "_getResult",
-            "summary": "Returns\u0020the\u0020statement\u0020resource\u0020for\u0020the\u0020prepared\u0020query\u0020or\u0020false\u0020when\u0020preparing\u0020failed.",
+            "summary": "Returns\u0020the\u0020result\u0020object\u0020for\u0020the\u0020prepared\u0020query.",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__getResult"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003A_close\u0028\u0029",
             "name": "_close",
-            "summary": "Deallocate\u0020prepared\u0020statements.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-PreparedQuery.html#method__close"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\PreparedQuery\u003A\u003Aparameterize\u0028\u0029",
@@ -11903,12 +11903,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Utils\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Class\u0020constructor",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-Utils.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Utils\u003A\u003A_backup\u0028\u0029",
             "name": "_backup",
-            "summary": "Platform\u0020dependent\u0020version\u0020of\u0020the\u0020backup\u0020function.",
+            "summary": "",
             "url": "classes/CodeIgniter-Database-SQLSRV-Utils.html#method__backup"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\SQLSRV\\Utils\u003A\u003A\u0024listDatabases",
