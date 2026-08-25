@@ -471,7 +471,7 @@ when listing commands.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Commands-Translation-LocalizationFinder.html#method_arrayToTableRows">arrayToTableRows()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: array&lt;int, array{string, string}&gt;    </span>
 </dt>
 <dd>Convert multi arrays to specific CLI table rows (flat array)</dd>
 
@@ -499,7 +499,7 @@ from every registered namespace (framework, packages, and app).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
     <a class="" href="classes/CodeIgniter-Commands-Translation-LocalizationFinder.html#method_findTranslationsInFile">findTranslationsInFile()</a>
     <span>
-                                &nbsp;: array&lt;string, array&lt;string|int, mixed&gt;&gt;    </span>
+                                &nbsp;: array{foundLanguageKeys: array<string,array<string,string>>, badLanguageKeys: array<int,array<int,string>>}    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -private">
@@ -1486,7 +1486,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 
     </aside>
 
@@ -1494,7 +1494,7 @@ when listing commands.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">arrayToTableRows</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$langFileName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$array</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">arrayToTableRows</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$langFileName</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$array</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, array{string, string}&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1524,7 +1524,7 @@ when listing commands.</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, array{string, string}&gt;</span>
             </section>
 
 </article>
@@ -1542,7 +1542,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">341</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -1550,7 +1550,7 @@ when listing commands.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">buildMultiArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fromKeys</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lastArrayValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">buildMultiArray</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, string&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fromKeys</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lastArrayValue</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1560,7 +1560,7 @@ when listing commands.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$fromKeys</span>
-                : <span class="phpdocumentor-argument-list__argument__type">array&lt;string|int, mixed&gt;</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, string&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -1598,7 +1598,7 @@ when listing commands.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">399</span>
+    <span class="phpdocumentor-element-found-in__line">410</span>
 
     </aside>
 
@@ -1710,7 +1710,7 @@ from every registered namespace (framework, packages, and app).</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-                    <span class="phpdocumentor-signature__name">findTranslationsInFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\SplFileInfo">SplFileInfo</abbr>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, mixed&gt;&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">findTranslationsInFile</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type"><abbr title="\SplFileInfo">SplFileInfo</abbr>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array{foundLanguageKeys: array<string,array<string,string>>, badLanguageKeys: array<int,array<int,string>>}</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1733,7 +1733,7 @@ from every registered namespace (framework, packages, and app).</p>
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string, array&lt;string|int, mixed&gt;&gt;</span>
+        <span class="phpdocumentor-signature__response_type">array{foundLanguageKeys: array<string,array<string,string>>, badLanguageKeys: array<int,array<int,string>>}</span>
             </section>
 
 </article>
@@ -1799,7 +1799,7 @@ from every registered namespace (framework, packages, and app).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">389</span>
+    <span class="phpdocumentor-element-found-in__line">400</span>
 
     </aside>
 
@@ -1905,7 +1905,7 @@ from every registered namespace (framework, packages, and app).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">299</span>
+    <span class="phpdocumentor-element-found-in__line">302</span>
 
     </aside>
 
@@ -1953,7 +1953,7 @@ from every registered namespace (framework, packages, and app).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">276</span>
+    <span class="phpdocumentor-element-found-in__line">279</span>
 
     </aside>
 
@@ -2001,7 +2001,7 @@ from every registered namespace (framework, packages, and app).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Commands/Translation/LocalizationFinder.php"><a href="files/system-commands-translation-localizationfinder.html"><abbr title="system/Commands/Translation/LocalizationFinder.php">LocalizationFinder.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">393</span>
 
     </aside>
 
