@@ -21448,7 +21448,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor.",
+            "summary": "",
             "url": "classes/CodeIgniter-Pager-PagerRenderer.html#method___construct"
         },                {
             "fqsen": "\\CodeIgniter\\Pager\\PagerRenderer\u003A\u003AsetSurroundCount\u0028\u0029",
