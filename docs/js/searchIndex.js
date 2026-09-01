@@ -17343,7 +17343,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Files\\UploadedFile\u003A\u003A\u0024error",
             "name": "error",
-            "summary": "The\u0020error\u0020constant\u0020of\u0020the\u0020upload\n\u0028one\u0020of\u0020PHP\u0027s\u0020UPLOADERRXXX\u0020constants\u0029",
+            "summary": "The\u0020error\u0020constant\u0020of\u0020the\u0020upload\n\u0028one\u0020of\u0020PHP\u0027s\u0020UPLOAD_ERR_XXX\u0020constants\u0029",
             "url": "classes/CodeIgniter-HTTP-Files-UploadedFile.html#property_error"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Files\\UploadedFileInterface",
