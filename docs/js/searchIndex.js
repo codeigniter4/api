@@ -2601,6 +2601,11 @@ Search.appendIndex(
             "summary": "While\u0020the\u0020library\u0020is\u0020intended\u0020for\u0020use\u0020on\u0020CLI\u0020commands,\ncommands\u0020can\u0020be\u0020called\u0020from\u0020controllers\u0020and\u0020elsewhere\nso\u0020we\u0020need\u0020a\u0020way\u0020to\u0020allow\u0020them\u0020to\u0020still\u0020work.",
             "url": "classes/CodeIgniter-CLI-InputOutput.html#method_fwrite"
         },                {
+            "fqsen": "\\CodeIgniter\\CLI\\InputOutput\u003A\u003AmarkAnsiNonPrinting\u0028\u0029",
+            "name": "markAnsiNonPrinting",
+            "summary": "Wraps\u0020ANSI\u0020escape\u0020sequences\u0020in\u0020readline\u0027s\u0020non\u002Dprinting\u0020markers\u0020so\u0020line\u002Dredraw\u0020column\u0020accounting\u0020skips\u0020them.",
+            "url": "classes/CodeIgniter-CLI-InputOutput.html#method_markAnsiNonPrinting"
+        },                {
             "fqsen": "\\CodeIgniter\\CLI\\InputOutput\u003A\u003A\u0024readlineSupport",
             "name": "readlineSupport",
             "summary": "Is\u0020the\u0020readline\u0020library\u0020on\u0020the\u0020system\u003F",
