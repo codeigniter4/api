@@ -23818,7 +23818,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003AconfigureSessionIDRegex\u0028\u0029",
             "name": "configureSessionIDRegex",
-            "summary": "Configure\u0020Session\u0020ID\u0020regular\u0020expression.",
+            "summary": "Configure\u0020Session\u0020ID\u0020regular\u0020expression.\u0020To\u0020make\u0020life\u0020easier,\u0020we\u0020force\u0020the\u0020PHP\u0020defaults\u0020because\u0020PHP\u00209\u0020forces\u0020them.",
             "url": "classes/CodeIgniter-Session-Handlers-FileHandler.html#method_configureSessionIDRegex"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\FileHandler\u003A\u003A\u0024savePath",
@@ -24078,7 +24078,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AconfigureSidLength\u0028\u0029",
             "name": "configureSidLength",
-            "summary": "Configure\u0020session\u0020ID\u0020length.",
+            "summary": "Configure\u0020session\u0020ID\u0020length.\u0020To\u0020make\u0020life\u0020easier,\u0020we\u0020force\u0020the\u0020PHP\u0020defaults\u0020because\u0020PHP\u00209\u0020forces\u0020them.",
             "url": "classes/CodeIgniter-Session-Session.html#method_configureSidLength"
         },                {
             "fqsen": "\\CodeIgniter\\Session\\Session\u003A\u003AinitVars\u0028\u0029",
