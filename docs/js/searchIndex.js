@@ -6471,6 +6471,11 @@ Search.appendIndex(
             "summary": "Validates\u0020the\u0020cookie\u0020name\u0020per\u0020RFC\u00202616.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validateName"
         },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidateValue\u0028\u0029",
+            "name": "validateValue",
+            "summary": "Validates\u0020the\u0020cookie\u0020value.",
+            "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validateValue"
+        },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidatePrefix\u0028\u0029",
             "name": "validatePrefix",
             "summary": "Validates\u0020the\u0020special\u0020prefixes\u0020if\u0020some\u0020attribute\u0020requirements\u0020are\u0020met.",
@@ -6540,6 +6545,11 @@ Search.appendIndex(
             "name": "reservedCharsList",
             "summary": "A\u0020cookie\u0020name\u0020can\u0020be\u0020any\u0020US\u002DASCII\u0020characters,\u0020except\u0020control\u0020characters,\nspaces,\u0020tabs,\u0020or\u0020separator\u0020characters.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#property_reservedCharsList"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003A\u0024reservedValueCharsList",
+            "name": "reservedValueCharsList",
+            "summary": "",
+            "url": "classes/CodeIgniter-Cookie-Cookie.html#property_reservedValueCharsList"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\CookieInterface",
             "name": "CookieInterface",
@@ -6755,6 +6765,11 @@ Search.appendIndex(
             "name": "forEmptyCookieName",
             "summary": "Thrown\u0020when\u0020the\u0020cookie\u0020name\u0020is\u0020empty.",
             "url": "classes/CodeIgniter-Cookie-Exceptions-CookieException.html#method_forEmptyCookieName"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Exceptions\\CookieException\u003A\u003AforInvalidCookieValue\u0028\u0029",
+            "name": "forInvalidCookieValue",
+            "summary": "Thrown\u0020when\u0020the\u0020cookie\u0020value\u0020contains\u0020invalid\u0020characters.",
+            "url": "classes/CodeIgniter-Cookie-Exceptions-CookieException.html#method_forInvalidCookieValue"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Exceptions\\CookieException\u003A\u003AforInvalidSecurePrefix\u0028\u0029",
             "name": "forInvalidSecurePrefix",
