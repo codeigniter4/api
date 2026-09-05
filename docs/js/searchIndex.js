@@ -8668,7 +8668,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003AcheckDbExtension\u0028\u0029",
             "name": "checkDbExtension",
-            "summary": "Check\u0020the\u0020PHP\u0020database\u0020extension\u0020is\u0020loaded.",
+            "summary": "Check\u0020if\u0020the\u0020PHP\u0020database\u0020extension\u0020is\u0020loaded.",
             "url": "classes/CodeIgniter-Database-Database.html#method_checkDbExtension"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Database\u003A\u003A\u0024connections",
