@@ -349,6 +349,14 @@ so we need a way to allow them to still work.</dd>
 </dt>
 <dd>Wraps ANSI escape sequences in readline&#039;s non-printing markers so line-redraw column accounting skips them.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-CLI-InputOutput.html#method_readlinePrompt">readlinePrompt()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>Builds the prompt handed to readline(), or returns null when the caller has to write
+the prompt to STDOUT itself because the line-editing library cannot render it.</dd>
+
     </dl>
 
 
@@ -456,7 +464,7 @@ so we need a way to allow them to still work.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/InputOutput.php"><a href="files/system-cli-inputoutput.html"><abbr title="system/CLI/InputOutput.php">InputOutput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">82</span>
 
     </aside>
 
@@ -567,7 +575,7 @@ php index.php user -v --v -name=John --name=John</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/InputOutput.php"><a href="files/system-cli-inputoutput.html"><abbr title="system/CLI/InputOutput.php">InputOutput.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">92</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 
     </aside>
 
@@ -599,6 +607,71 @@ php index.php user -v --v -name=John --name=John</p>
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_readlinePrompt">
+        readlinePrompt()
+        <a href="classes/CodeIgniter-CLI-InputOutput.html#method_readlinePrompt" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/CLI/InputOutput.php"><a href="files/system-cli-inputoutput.html"><abbr title="system/CLI/InputOutput.php">InputOutput.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Builds the prompt handed to readline(), or returns null when the caller has to write
+the prompt to STDOUT itself because the line-editing library cannot render it.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">readlinePrompt</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prefix</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$libraryVersion</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>GNU readline gets ANSI sequences wrapped in its non-printing markers so line-redraw
+column accounting skips them. Libedit reports &quot;EditLine wrapper&quot; and mangles the
+markers, so it gets the raw prompt. Windows builds use WinEditLine, which prints ANSI
+sequences literally, and readline_info() omits the version there (php-src guards it
+with #ifndef PHP_WIN32), so they get no prompt.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$prefix</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$libraryVersion</span>
+                : <span class="phpdocumentor-argument-list__argument__type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The value of readline_info('library_version')</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
             </section>
 
 </article>
@@ -635,6 +708,7 @@ php index.php user -v --v -name=John --name=John</p>
                                             <li class=""><a href="classes/CodeIgniter-CLI-InputOutput.html#method_fwrite">fwrite()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-InputOutput.html#method_input">input()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-CLI-InputOutput.html#method_markAnsiNonPrinting">markAnsiNonPrinting()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-CLI-InputOutput.html#method_readlinePrompt">readlinePrompt()</a></li>
                                     </ul>
             </li>
                     </ul>
