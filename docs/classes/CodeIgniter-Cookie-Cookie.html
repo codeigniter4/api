@@ -426,6 +426,13 @@ lowercase attribute names. Do not camelCase!</dd>
 spaces, tabs, or separator characters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedPrefixCharsList">$reservedPrefixCharsList</a>
+    <span>
+                        &nbsp;: string            </span>
+</dt>
+<dd>Prohibited characters in cookie prefix and name per PHP setcookie() constraints.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
     <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedValueCharsList">$reservedValueCharsList</a>
     <span>
                         &nbsp;: string            </span>
@@ -709,6 +716,13 @@ the values from the `CookieConfig` config or an array.</dd>
 <dd>Converts expires time to Unix format.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#method_validateDomain">validateDomain()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Validates the cookie domain per PHP setcookie() constraints.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#method_validateName">validateName()</a>
     <span>
                                 &nbsp;: void    </span>
@@ -716,11 +730,19 @@ the values from the `CookieConfig` config or an array.</dd>
 <dd>Validates the cookie name per RFC 2616.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePath">validatePath()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Validates the cookie path per PHP setcookie() constraints.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePrefix">validatePrefix()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
-<dd>Validates the special prefixes if some attribute requirements are met.</dd>
+<dd>Validates the special prefixes if some attribute requirements are met,
+and ensures the prefix contains no PHP-prohibited characters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
     <a class="" href="classes/CodeIgniter-Cookie-Cookie.html#method_validateSameSite">validateSameSite()</a>
@@ -1189,7 +1211,7 @@ spaces, tabs, or separator characters.</p>
         <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
     <span class="phpdocumentor-signature__name">$reservedCharsList</span>
-     = <span class="phpdocumentor-signature__default-value">&quot;=,; \t\r\n\v\f()&lt;&gt;@:\\\&quot;/[]?{}&quot;</span></code>
+     = <span class="phpdocumentor-signature__default-value">&quot;=,; \t\r\n\v\f\x00()&lt;&gt;@:\\\&quot;/[]?{}&quot;</span></code>
 
     
     
@@ -1224,6 +1246,58 @@ spaces, tabs, or separator characters.</p>
             -private
             -static                                                        "
 >
+    <h4 class="phpdocumentor-element__name" id="property_reservedPrefixCharsList">
+        $reservedPrefixCharsList
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedPrefixCharsList" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">137</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Prohibited characters in cookie prefix and name per PHP setcookie() constraints.</p>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$reservedPrefixCharsList</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;=,; \t\r\n\v\f\x00&quot;</span></code>
+
+    
+    
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="property_reservedPrefixCharsList_tags">
+        Tags
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedPrefixCharsList_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">see</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                                    <span class="phpdocumentor-tag-link"><a href="https://www.php.net/manual/en/function.setcookie.php">https://www.php.net/manual/en/function.setcookie.php</a></span>
+                                                                
+                                    </dd>
+                        </dl>
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+            -static                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_reservedValueCharsList">
         $reservedValueCharsList
         <a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedValueCharsList" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1234,7 +1308,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 
     </aside>
 
@@ -1290,7 +1364,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 
     </aside>
 
@@ -1298,7 +1372,7 @@ spaces, tabs, or separator characters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__final">final</span>            <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type"><abbr title="array{prefix?: string, max-age?: int|numeric-string, expires?: \DateTimeInterface|int|string, path?: string, domain?: string, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}">DateTimeInterface|int|string, path?: string, domain?: string, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+        <span class="phpdocumentor-signature__final">final</span>            <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">''</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type"><abbr title="array{prefix?: string|null, max-age?: int|numeric-string, expires?: \DateTimeInterface|int|string, path?: string|null, domain?: string|null, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}">DateTimeInterface|int|string, path?: string|null, domain?: string|null, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">[]</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1326,7 +1400,7 @@ spaces, tabs, or separator characters.</p>
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-argument-list__argument__name">$options</span>
-                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="array{prefix?: string, max-age?: int|numeric-string, expires?: \DateTimeInterface|int|string, path?: string, domain?: string, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}">DateTimeInterface|int|string, path?: string, domain?: string, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}</abbr></span>
+                : <span class="phpdocumentor-argument-list__argument__type"><abbr title="array{prefix?: string|null, max-age?: int|numeric-string, expires?: \DateTimeInterface|int|string, path?: string|null, domain?: string|null, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}">DateTimeInterface|int|string, path?: string|null, domain?: string|null, secure?: bool, httponly?: bool, samesite?: string, raw?: bool}</abbr></span>
                  = <span class="phpdocumentor-argument-list__argument__default-value">[]</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The cookie's options</p>
@@ -1369,7 +1443,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">668</span>
+    <span class="phpdocumentor-element-found-in__line">679</span>
 
     </aside>
 
@@ -1408,7 +1482,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">203</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 
     </aside>
 
@@ -1478,7 +1552,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">389</span>
+    <span class="phpdocumentor-element-found-in__line">398</span>
 
     </aside>
 
@@ -1517,7 +1591,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">355</span>
+    <span class="phpdocumentor-element-found-in__line">364</span>
 
     </aside>
 
@@ -1556,7 +1630,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">347</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 
     </aside>
 
@@ -1595,7 +1669,7 @@ spaces, tabs, or separator characters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">296</span>
+    <span class="phpdocumentor-element-found-in__line">305</span>
 
     </aside>
 
@@ -1635,7 +1709,7 @@ of its prefixed name, path, and domain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">380</span>
 
     </aside>
 
@@ -1674,7 +1748,7 @@ of its prefixed name, path, and domain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">312</span>
+    <span class="phpdocumentor-element-found-in__line">321</span>
 
     </aside>
 
@@ -1713,7 +1787,7 @@ of its prefixed name, path, and domain.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">429</span>
+    <span class="phpdocumentor-element-found-in__line">438</span>
 
     </aside>
 
@@ -1753,7 +1827,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">381</span>
+    <span class="phpdocumentor-element-found-in__line">390</span>
 
     </aside>
 
@@ -1792,7 +1866,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">304</span>
+    <span class="phpdocumentor-element-found-in__line">313</span>
 
     </aside>
 
@@ -1831,7 +1905,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">329</span>
 
     </aside>
 
@@ -1870,7 +1944,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">413</span>
+    <span class="phpdocumentor-element-found-in__line">422</span>
 
     </aside>
 
@@ -1909,7 +1983,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">339</span>
+    <span class="phpdocumentor-element-found-in__line">348</span>
 
     </aside>
 
@@ -1948,7 +2022,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">363</span>
+    <span class="phpdocumentor-element-found-in__line">372</span>
 
     </aside>
 
@@ -1987,7 +2061,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">405</span>
+    <span class="phpdocumentor-element-found-in__line">414</span>
 
     </aside>
 
@@ -2026,7 +2100,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">421</span>
+    <span class="phpdocumentor-element-found-in__line">430</span>
 
     </aside>
 
@@ -2065,7 +2139,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">397</span>
+    <span class="phpdocumentor-element-found-in__line">406</span>
 
     </aside>
 
@@ -2104,7 +2178,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">607</span>
+    <span class="phpdocumentor-element-found-in__line">618</span>
 
     </aside>
 
@@ -2153,7 +2227,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">619</span>
+    <span class="phpdocumentor-element-found-in__line">630</span>
 
     </aside>
 
@@ -2216,7 +2290,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">636</span>
+    <span class="phpdocumentor-element-found-in__line">647</span>
 
     </aside>
 
@@ -2282,7 +2356,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">648</span>
+    <span class="phpdocumentor-element-found-in__line">659</span>
 
     </aside>
 
@@ -2341,7 +2415,7 @@ available on PHP 7.3+</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">165</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 
     </aside>
 
@@ -2397,7 +2471,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">719</span>
+    <span class="phpdocumentor-element-found-in__line">730</span>
 
     </aside>
 
@@ -2436,7 +2510,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">660</span>
+    <span class="phpdocumentor-element-found-in__line">671</span>
 
     </aside>
 
@@ -2475,7 +2549,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">530</span>
+    <span class="phpdocumentor-element-found-in__line">540</span>
 
     </aside>
 
@@ -2524,7 +2598,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">503</span>
+    <span class="phpdocumentor-element-found-in__line">512</span>
 
     </aside>
 
@@ -2563,7 +2637,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">491</span>
+    <span class="phpdocumentor-element-found-in__line">500</span>
 
     </aside>
 
@@ -2612,7 +2686,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">560</span>
+    <span class="phpdocumentor-element-found-in__line">571</span>
 
     </aside>
 
@@ -2661,7 +2735,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">463</span>
+    <span class="phpdocumentor-element-found-in__line">472</span>
 
     </aside>
 
@@ -2710,7 +2784,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">515</span>
+    <span class="phpdocumentor-element-found-in__line">524</span>
 
     </aside>
 
@@ -2759,7 +2833,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">449</span>
+    <span class="phpdocumentor-element-found-in__line">458</span>
 
     </aside>
 
@@ -2808,7 +2882,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">586</span>
+    <span class="phpdocumentor-element-found-in__line">597</span>
 
     </aside>
 
@@ -2857,7 +2931,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">572</span>
+    <span class="phpdocumentor-element-found-in__line">583</span>
 
     </aside>
 
@@ -2906,7 +2980,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">545</span>
+    <span class="phpdocumentor-element-found-in__line">556</span>
 
     </aside>
 
@@ -2955,7 +3029,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">477</span>
+    <span class="phpdocumentor-element-found-in__line">486</span>
 
     </aside>
 
@@ -3004,7 +3078,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">734</span>
+    <span class="phpdocumentor-element-found-in__line">745</span>
 
     </aside>
 
@@ -3045,6 +3119,65 @@ the values from the `CookieConfig` config or an array.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_validateDomain">
+        validateDomain()
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateDomain" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">821</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Validates the cookie domain per PHP setcookie() constraints.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">validateDomain</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$domain</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$domain</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_validateDomain_tags">
+        Tags
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateDomain_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">throws</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Cookie-Exceptions-CookieException.html"><abbr title="\CodeIgniter\Cookie\Exceptions\CookieException">CookieException</abbr></a></span>
+                                                                                    
+                                    </dd>
+                        </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_validateName">
         validateName()
         <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateName" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3053,7 +3186,7 @@ the values from the `CookieConfig` config or an array.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">767</span>
+    <span class="phpdocumentor-element-found-in__line">778</span>
 
     </aside>
 
@@ -3114,6 +3247,65 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_validatePath">
+        validatePath()
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePath" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">809</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Validates the cookie path per PHP setcookie() constraints.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">validatePath</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$path</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$path</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="method_validatePath_tags">
+        Tags
+        <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePath_tags" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                    <dt class="phpdocumentor-tag-list__entry">
+                <span class="phpdocumentor-tag__name">throws</span>
+            </dt>
+                            <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/CodeIgniter-Cookie-Exceptions-CookieException.html"><abbr title="\CodeIgniter\Cookie\Exceptions\CookieException">CookieException</abbr></a></span>
+                                                                                    
+                                    </dd>
+                        </dl>
+
+        
+    
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_validatePrefix">
         validatePrefix()
         <a href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePrefix" class="headerlink"><i class="fas fa-link"></i></a>
@@ -3122,11 +3314,12 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">798</span>
+    <span class="phpdocumentor-element-found-in__line">834</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Validates the special prefixes if some attribute requirements are met.</p>
+        <p class="phpdocumentor-summary">Validates the special prefixes if some attribute requirements are met,
+and ensures the prefix contains no PHP-prohibited characters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
@@ -3202,7 +3395,7 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">816</span>
+    <span class="phpdocumentor-element-found-in__line">856</span>
 
     </aside>
 
@@ -3275,7 +3468,7 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cookie/Cookie.php"><a href="files/system-cookie-cookie.html"><abbr title="system/Cookie/Cookie.php">Cookie.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">786</span>
+    <span class="phpdocumentor-element-found-in__line">797</span>
 
     </aside>
 
@@ -3364,6 +3557,7 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
                                                     <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#property_value">$value</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#property_defaults">$defaults</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedCharsList">$reservedCharsList</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedPrefixCharsList">$reservedPrefixCharsList</a></li>
                                                     <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#property_reservedValueCharsList">$reservedValueCharsList</a></li>
                                             </ul>
                 </li>
@@ -3409,7 +3603,9 @@ as <code class="prettyprint">setrawcookie()</code> will reject this.</p>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_withSecure">withSecure()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_withValue">withValue()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_convertExpiresTimestamp">convertExpiresTimestamp()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateDomain">validateDomain()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateName">validateName()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePath">validatePath()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validatePrefix">validatePrefix()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateSameSite">validateSameSite()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cookie-Cookie.html#method_validateValue">validateValue()</a></li>

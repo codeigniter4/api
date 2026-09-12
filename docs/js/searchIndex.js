@@ -6481,9 +6481,19 @@ Search.appendIndex(
             "summary": "Validates\u0020the\u0020cookie\u0020value.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validateValue"
         },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidatePath\u0028\u0029",
+            "name": "validatePath",
+            "summary": "Validates\u0020the\u0020cookie\u0020path\u0020per\u0020PHP\u0020setcookie\u0028\u0029\u0020constraints.",
+            "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validatePath"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidateDomain\u0028\u0029",
+            "name": "validateDomain",
+            "summary": "Validates\u0020the\u0020cookie\u0020domain\u0020per\u0020PHP\u0020setcookie\u0028\u0029\u0020constraints.",
+            "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validateDomain"
+        },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidatePrefix\u0028\u0029",
             "name": "validatePrefix",
-            "summary": "Validates\u0020the\u0020special\u0020prefixes\u0020if\u0020some\u0020attribute\u0020requirements\u0020are\u0020met.",
+            "summary": "Validates\u0020the\u0020special\u0020prefixes\u0020if\u0020some\u0020attribute\u0020requirements\u0020are\u0020met,\nand\u0020ensures\u0020the\u0020prefix\u0020contains\u0020no\u0020PHP\u002Dprohibited\u0020characters.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#method_validatePrefix"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003AvalidateSameSite\u0028\u0029",
@@ -6550,6 +6560,11 @@ Search.appendIndex(
             "name": "reservedCharsList",
             "summary": "A\u0020cookie\u0020name\u0020can\u0020be\u0020any\u0020US\u002DASCII\u0020characters,\u0020except\u0020control\u0020characters,\nspaces,\u0020tabs,\u0020or\u0020separator\u0020characters.",
             "url": "classes/CodeIgniter-Cookie-Cookie.html#property_reservedCharsList"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003A\u0024reservedPrefixCharsList",
+            "name": "reservedPrefixCharsList",
+            "summary": "Prohibited\u0020characters\u0020in\u0020cookie\u0020prefix\u0020and\u0020name\u0020per\u0020PHP\u0020setcookie\u0028\u0029\u0020constraints.",
+            "url": "classes/CodeIgniter-Cookie-Cookie.html#property_reservedPrefixCharsList"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Cookie\u003A\u003A\u0024reservedValueCharsList",
             "name": "reservedValueCharsList",
@@ -6775,6 +6790,16 @@ Search.appendIndex(
             "name": "forInvalidCookieValue",
             "summary": "Thrown\u0020when\u0020the\u0020cookie\u0020value\u0020contains\u0020invalid\u0020characters.",
             "url": "classes/CodeIgniter-Cookie-Exceptions-CookieException.html#method_forInvalidCookieValue"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Exceptions\\CookieException\u003A\u003AforInvalidCookiePath\u0028\u0029",
+            "name": "forInvalidCookiePath",
+            "summary": "Thrown\u0020when\u0020the\u0020cookie\u0020path\u0020contains\u0020invalid\u0020characters.",
+            "url": "classes/CodeIgniter-Cookie-Exceptions-CookieException.html#method_forInvalidCookiePath"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cookie\\Exceptions\\CookieException\u003A\u003AforInvalidCookieDomain\u0028\u0029",
+            "name": "forInvalidCookieDomain",
+            "summary": "Thrown\u0020when\u0020the\u0020cookie\u0020domain\u0020contains\u0020invalid\u0020characters.",
+            "url": "classes/CodeIgniter-Cookie-Exceptions-CookieException.html#method_forInvalidCookieDomain"
         },                {
             "fqsen": "\\CodeIgniter\\Cookie\\Exceptions\\CookieException\u003A\u003AforInvalidSecurePrefix\u0028\u0029",
             "name": "forInvalidSecurePrefix",
