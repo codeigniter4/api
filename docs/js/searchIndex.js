@@ -24421,6 +24421,11 @@ Search.appendIndex(
             "summary": "Resets\u0020shared\u0020instanced\u0020for\u0020all\u0020Services.",
             "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_resetServices"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AresetIsWindowsMock\u0028\u0029",
+            "name": "resetIsWindowsMock",
+            "summary": "Resets\u0020the\u0020mocked\u0020is_windows\u0028\u0029\u0020function\u0020back\u0020to\u0020default\u0020state.",
+            "url": "classes/CodeIgniter-Test-CIUnitTestCase.html#method_resetIsWindowsMock"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\CIUnitTestCase\u003A\u003AmockCache\u0028\u0029",
             "name": "mockCache",
             "summary": "Injects\u0020the\u0020mock\u0020Cache\u0020driver\u0020to\u0020prevent\u0020filesystem\u0020collisions.",
