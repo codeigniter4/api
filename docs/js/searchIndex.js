@@ -27921,6 +27921,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-View-Parser.html#property_replacementTokenPrefix"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024conditionalSources",
+            "name": "conditionalSources",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-Parser.html#property_conditionalSources"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Plugins",
             "name": "Plugins",
             "summary": "View\u0020plugins",
