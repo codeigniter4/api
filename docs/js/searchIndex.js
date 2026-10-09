@@ -10181,6 +10181,16 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020batch\u0020update\u0020string\u0020from\u0020the\u0020supplied\u0020data",
             "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method__updateBatch"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003AgetSourceType\u0028\u0029",
+            "name": "getSourceType",
+            "summary": "Returns\u0020the\u0020type\u0020shared\u0020by\u0020every\u0020destination\u0020column\u0020fed\u0020from\u0020the\u0020source\u0020key,\u0020or\u0020null\u0020when\u0020they\u0020differ.",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_getSourceType"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003AcastValue\u0028\u0029",
+            "name": "castValue",
+            "summary": "Returns\u0020the\u0020literal\u0020cast\u0020to\u0020the\u0020column\u0020type,\u0020except\u0020a\u0020numeric\u0020literal\u0020for\u0020a\u0020numeric\u0020column,\u0020which\u0020stays\u0020as\u0020is\u0020so\u0020a\u0020non\u002Dintegral\u0020value\u0020never\u0020rounds\u0020into\u0020a\u0020match.",
+            "url": "classes/CodeIgniter-Database-Postgre-Builder.html#method_castValue"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\Postgre\\Builder\u003A\u003Acast\u0028\u0029",
             "name": "cast",
             "summary": "Returns\u0020cast\u0020expression.",
