@@ -6141,6 +6141,11 @@ Search.appendIndex(
             "summary": "Parser\u0020Plugins\u0020provide\u0020a\u0020way\u0020to\u0020extend\u0020the\u0020functionality\u0020provided\nby\u0020the\u0020core\u0020Parser\u0020by\u0020creating\u0020aliases\u0020that\u0020will\u0020be\u0020replaced\u0020with\nany\u0020callable.\u0020Can\u0020be\u0020single\u0020or\u0020tag\u0020pair.",
             "url": "classes/CodeIgniter-Config-View.html#property_plugins"
         },                {
+            "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A\u0024restrictParserConditionals",
+            "name": "restrictParserConditionals",
+            "summary": "When\u0020true,\u0020Parser\u0020conditionals\u0020may\u0020only\u0020contain\u0020variables,\u0020literals,\narithmetic,\u0020comparison\u0020and\u0020logical\u0020operators,\u0020and\u0020parentheses.\u0020Enable\nthis\u0020when\u0020less\u002Dtrusted\u0020users\u0020can\u0020edit\u0020Parser\u0020templates.\u0020Can\u0020be\u0020overridden\u0020per\ncall\u0020with\u0020the\u0020\u0060restrictConditionals\u0060\u0020render\u0020option.",
+            "url": "classes/CodeIgniter-Config-View.html#property_restrictParserConditionals"
+        },                {
             "fqsen": "\\CodeIgniter\\Config\\View\u003A\u003A\u0024coreFilters",
             "name": "coreFilters",
             "summary": "Built\u002Din\u0020View\u0020filters.",
@@ -27666,6 +27671,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-View-Exceptions-ViewException.html#method_forTagSyntaxError"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Exceptions\\ViewException\u003A\u003AforRestrictedConditional\u0028\u0029",
+            "name": "forRestrictedConditional",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-Exceptions-ViewException.html#method_forRestrictedConditional"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Exceptions\\ViewException\u003A\u003AforInvalidDecorator\u0028\u0029",
             "name": "forInvalidDecorator",
             "summary": "",
@@ -27821,6 +27831,11 @@ Search.appendIndex(
             "summary": "Parses\u0020any\u0020conditionals\u0020in\u0020the\u0020code,\u0020removing\u0020blocks\u0020that\u0020don\u0027t\npass\u0020so\u0020we\u0020don\u0027t\u0020try\u0020to\u0020parse\u0020it\u0020later.",
             "url": "classes/CodeIgniter-View-Parser.html#method_parseConditionals"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AisRestrictedCondition\u0028\u0029",
+            "name": "isRestrictedCondition",
+            "summary": "Checks\u0020that\u0020a\u0020conditional\u0020expression\u0020only\u0020contains\u0020variables,\nliterals,\u0020arithmetic,\u0020comparison\u0020and\u0020logical\u0020operators,\u0020and\u0020grouping\u0020parentheses.",
+            "url": "classes/CodeIgniter-View-Parser.html#method_isRestrictedCondition"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AsetDelimiters\u0028\u0029",
             "name": "setDelimiters",
             "summary": "Over\u002Dride\u0020the\u0020substitution\u0020field\u0020delimiters.",
@@ -27925,6 +27940,11 @@ Search.appendIndex(
             "name": "conditionalSources",
             "summary": "",
             "url": "classes/CodeIgniter-View-Parser.html#property_conditionalSources"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024restrictConditionals",
+            "name": "restrictConditionals",
+            "summary": "Whether\u0020conditionals\u0020in\u0020the\u0020template\u0020being\u0020parsed\u0020are\u0020restricted\nto\u0020variables,\u0020literals,\u0020arithmetic,\u0020comparison\u0020and\u0020logical\u0020operators.",
+            "url": "classes/CodeIgniter-View-Parser.html#property_restrictConditionals"
         },                {
             "fqsen": "\\CodeIgniter\\View\\Plugins",
             "name": "Plugins",
