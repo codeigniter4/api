@@ -27781,6 +27781,11 @@ Search.appendIndex(
             "summary": "Parse\u0020a\u0020template",
             "url": "classes/CodeIgniter-View-Parser.html#method_parse"
         },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AparseTemplate\u0028\u0029",
+            "name": "parseTemplate",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-Parser.html#method_parseTemplate"
+        },                {
             "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AparseSingle\u0028\u0029",
             "name": "parseSingle",
             "summary": "Parse\u0020a\u0020single\u0020key\/value,\u0020extracting\u0020it",
@@ -27825,6 +27830,11 @@ Search.appendIndex(
             "name": "replaceSingle",
             "summary": "Handles\u0020replacing\u0020a\u0020pseudo\u002Dvariable\u0020with\u0020the\u0020actual\u0020content.\u0020Will\u0020double\u002Dcheck\nfor\u0020escaping\u0020brackets.",
             "url": "classes/CodeIgniter-View-Parser.html#method_replaceSingle"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AprotectReplacement\u0028\u0029",
+            "name": "protectReplacement",
+            "summary": "Keeps\u0020rendered\u0020data\u0020opaque\u0020until\u0020all\u0020template\u0020processing\u0020is\u0020complete.",
+            "url": "classes/CodeIgniter-View-Parser.html#method_protectReplacement"
         },                {
             "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003AprepareReplacement\u0028\u0029",
             "name": "prepareReplacement",
@@ -27895,6 +27905,16 @@ Search.appendIndex(
             "name": "dataContexts",
             "summary": "Stores\u0020the\u0020context\u0020for\u0020each\u0020data\u0020element\nwhen\u0020set\u0020by\u0020\u0060setData\u0060\u0020so\u0020the\u0020context\u0020is\u0020respected.",
             "url": "classes/CodeIgniter-View-Parser.html#property_dataContexts"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024replacementTokens",
+            "name": "replacementTokens",
+            "summary": "Substitution\u0020values\u0020are\u0020temporarily\u0020replaced\u0020with\u0020opaque\u0020tokens\u0020so\u0020they\ncannot\u0020be\u0020interpreted\u0020as\u0020Parser\u0020syntax\u0020by\u0020a\u0020later\u0020substitution\u0020pass.",
+            "url": "classes/CodeIgniter-View-Parser.html#property_replacementTokens"
+        },                {
+            "fqsen": "\\CodeIgniter\\View\\Parser\u003A\u003A\u0024replacementTokenPrefix",
+            "name": "replacementTokenPrefix",
+            "summary": "",
+            "url": "classes/CodeIgniter-View-Parser.html#property_replacementTokenPrefix"
         },                {
             "fqsen": "\\CodeIgniter\\View\\Plugins",
             "name": "Plugins",
