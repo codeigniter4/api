@@ -9721,6 +9721,26 @@ Search.appendIndex(
             "summary": "Gets\u0020column\u0020names\u0020from\u0020a\u0020select\u0020query",
             "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_fieldsFromQuery"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003AlongestValues\u0028\u0029",
+            "name": "longestValues",
+            "summary": "Returns\u0020the\u0020longest\u0020escaped\u0020value\u0020per\u0020key\u0020across\u0020the\u0020batch.",
+            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_longestValues"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003AgetSourceField\u0028\u0029",
+            "name": "getSourceField",
+            "summary": "Returns\u0020the\u0020field\u0020shared\u0020by\u0020every\u0020destination\u0020column\u0020fed\u0020from\u0020the\u0020source\u0020key,\u0020or\u0020null\u0020when\u0020their\u0020types\u0020differ.",
+            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_getSourceField"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003Acast\u0028\u0029",
+            "name": "cast",
+            "summary": "Returns\u0020the\u0020literal\u0020converted\u0020to\u0020the\u0020field\u0020type,\u0020or\u0020unchanged\u0020when\u0020the\u0020field\u0020is\u0020unknown\u0020or\u0020a\u0020LOB.",
+            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_cast"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003AgetField\u0028\u0029",
+            "name": "getField",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-OCI8-Builder.html#method_getField"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Builder\u003A\u003A\u0024escapeChar",
             "name": "escapeChar",
             "summary": "Identifier\u0020escape\u0020character",
