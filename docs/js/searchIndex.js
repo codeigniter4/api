@@ -7866,6 +7866,11 @@ Search.appendIndex(
             "summary": "Protect\u0020identifiers\u0020flag",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#property_protectIdentifiers"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AtrimEscapeChar\u0028\u0029",
+            "name": "trimEscapeChar",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_trimEscapeChar"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AprotectDotItem\u0028\u0029",
             "name": "protectDotItem",
             "summary": "",
