@@ -16966,6 +16966,11 @@ Search.appendIndex(
             "summary": "The\u0020URI\u0020associated\u0020with\u0020this\u0020request",
             "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_baseURI"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024defaultBaseURI",
+            "name": "defaultBaseURI",
+            "summary": "The\u0020constructor\u0027s\u0020base\u0020URI,\u0020preserved\u0020independently\u0020of\u0020per\u002Drequest\u0020changes.",
+            "url": "classes/CodeIgniter-HTTP-CURLRequest.html#property_defaultBaseURI"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\CURLRequest\u003A\u003A\u0024config",
             "name": "config",
             "summary": "The\u0020setting\u0020values",
