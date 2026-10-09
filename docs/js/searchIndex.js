@@ -27001,6 +27001,11 @@ Search.appendIndex(
             "summary": "Reject\u0020filenames\u0020with\u0020non\u002Dempty\u0020extensions\u0020that\u0020do\u0020not\u0020match\u0020the\u0020detected\u0020content.",
             "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_hasMismatchedClientExtension"
         },                {
+            "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003AhasUnsafeClientFilename\u0028\u0029",
+            "name": "hasUnsafeClientFilename",
+            "summary": "Reject\u0020trailing\u002Ddot\u0020names\u0020and\u0020names\u0020with\u0020a\u0020PHP\u0020extension\u0020before\u0020the\u0020final\u0020extension.",
+            "url": "classes/CodeIgniter-Validation-StrictRules-FileRules.html#method_hasUnsafeClientFilename"
+        },                {
             "fqsen": "\\CodeIgniter\\Validation\\StrictRules\\FileRules\u003A\u003A\u0024request",
             "name": "request",
             "summary": "Request\u0020instance.\u0020So\u0020we\u0020can\u0020get\u0020access\u0020to\u0020the\u0020files.",
