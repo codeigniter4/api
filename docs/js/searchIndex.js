@@ -15401,6 +15401,11 @@ Search.appendIndex(
             "summary": "Thrown\u0020when\u0020the\u0020supplied\u0020MIME\u0020type\u0020has\u0020no\ndefined\u0020Formatter\u0020class.",
             "url": "classes/CodeIgniter-Format-Exceptions-FormatException.html#method_forInvalidMime"
         },                {
+            "fqsen": "\\CodeIgniter\\Format\\Exceptions\\FormatException\u003A\u003AforInvalidXMLValue\u0028\u0029",
+            "name": "forInvalidXMLValue",
+            "summary": "Thrown\u0020in\u0020XMLFormatter\u0020when\u0020a\u0020value\u0020cannot\u0020be\u0020converted\nto\u0020a\u0020string.",
+            "url": "classes/CodeIgniter-Format-Exceptions-FormatException.html#method_forInvalidXMLValue"
+        },                {
             "fqsen": "\\CodeIgniter\\Format\\Exceptions\\FormatException\u003A\u003AforMissingExtension\u0028\u0029",
             "name": "forMissingExtension",
             "summary": "Thrown\u0020on\u0020XMLFormatter\u0020when\u0020the\u0020\u0060simplexml\u0060\u0020extension\nis\u0020not\u0020installed.",
