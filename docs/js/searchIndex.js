@@ -19156,6 +19156,11 @@ Search.appendIndex(
             "summary": "Create\u0020current\u0020URI\u0020object.",
             "url": "classes/CodeIgniter-HTTP-SiteURIFactory.html#method_createURIFromRoutePath"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\SiteURIFactory\u003A\u003ArefreshRequestAfterGetChange\u0028\u0029",
+            "name": "refreshRequestAfterGetChange",
+            "summary": "Update\u0020REQUEST\u0020once\u0020during\u0020URI\u0020parsing,\u0020leaving\u0020application\u002Ddefined\u0020values\u0020alone.",
+            "url": "classes/CodeIgniter-HTTP-SiteURIFactory.html#method_refreshRequestAfterGetChange"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\SiteURIFactory\u003A\u003AgetHost\u0028\u0029",
             "name": "getHost",
             "summary": "",
