@@ -15733,7 +15733,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\set_value\u0028\u0029",
             "name": "set_value",
-            "summary": "Form\u0020Value",
+            "summary": "Grabs\u0020a\u0020value\u0020from\u0020the\u0020POST\u0020array\u0020for\u0020the\u0020specified\u0020field\u0020so\u0020you\u0020can\nre\u002Dpopulate\u0020an\u0020input\u0020field\u0020or\u0020textarea",
             "url": "namespaces/default.html#function_set_value"
         },                {
             "fqsen": "\\set_select\u0028\u0029",
