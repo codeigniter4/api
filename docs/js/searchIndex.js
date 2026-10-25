@@ -16381,9 +16381,14 @@ Search.appendIndex(
             "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060connect\u002Dsrc\u0060\u0020directive.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addConnectSrc"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddDefaultSrc\u0028\u0029",
+            "name": "addDefaultSrc",
+            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060default\u002Dsrc\u0060\u0020directive.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addDefaultSrc"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AsetDefaultSrc\u0028\u0029",
             "name": "setDefaultSrc",
-            "summary": "Adds\u0020a\u0020new\u0020value\u0020to\u0020the\u0020\u0060default\u002Dsrc\u0060\u0020directive.",
+            "summary": "Sets\u0020the\u0020\u0060default\u002Dsrc\u0060\u0020directive,\u0020replacing\u0020any\u0020existing\u0020sources.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_setDefaultSrc"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddFontSrc\u0028\u0029",
