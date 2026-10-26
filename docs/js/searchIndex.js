@@ -17598,7 +17598,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AgetPostMaxSize\u0028\u0029",
             "name": "getPostMaxSize",
-            "summary": "",
+            "summary": "Converts\u0020the\u0020\u0060post_max_size\u0060\u0020ini\u0020value\u0020to\u0020bytes.",
             "url": "classes/CodeIgniter-HTTP-IncomingRequest.html#method_getPostMaxSize"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\IncomingRequest\u003A\u003AdetectLocale\u0028\u0029",
