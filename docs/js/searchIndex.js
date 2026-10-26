@@ -16501,6 +16501,11 @@ Search.appendIndex(
             "summary": "DRY\u0020method\u0020to\u0020add\u0020an\u0020string\u0020or\u0020array\u0020to\u0020a\u0020class\u0020property.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addOption"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AstringToOptions\u0028\u0029",
+            "name": "stringToOptions",
+            "summary": "Converts\u0020a\u0020string\u0020directive\u0020value\u0020into\u0020an\u0020array\u0020of\u0020options.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_stringToOptions"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AgenerateNonces\u0028\u0029",
             "name": "generateNonces",
             "summary": "Scans\u0020the\u0020body\u0020of\u0020the\u0020request\u0020message\u0020and\u0020replaces\u0020any\u0020nonce\nplaceholders\u0020with\u0020actual\u0020nonces,\u0020that\u0020we\u0027ll\u0020then\u0020add\u0020to\u0020our\nheaders.",
