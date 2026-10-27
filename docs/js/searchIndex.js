@@ -2453,13 +2453,18 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\Exceptions\\CLIException",
             "name": "CLIException",
-            "summary": "CLIException",
+            "summary": "Exception\u0020thrown\u0020if\u0020an\u0020error\u0020which\u0020can\u0020only\u0020be\u0020found\u0020on\u0020runtime\u0020occurs.",
             "url": "classes/CodeIgniter-CLI-Exceptions-CLIException.html"
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\Exceptions\\CLIException\u003A\u003AforInvalidColor\u0028\u0029",
             "name": "forInvalidColor",
             "summary": "Thrown\u0020when\u0020\u0060\u0024color\u0060\u0020specified\u0020for\u0020\u0060\u0024type\u0060\u0020is\u0020not\u0020within\u0020the\nallowed\u0020list\u0020of\u0020colors.",
             "url": "classes/CodeIgniter-CLI-Exceptions-CLIException.html#method_forInvalidColor"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\Exceptions\\CLIException\u003A\u003AforInputEnded\u0028\u0029",
+            "name": "forInputEnded",
+            "summary": "Thrown\u0020when\u0020a\u0020prompt\u0020must\u0020ask\u0020again\u0020but\u0020the\u0020input\u0020has\u0020ended.",
+            "url": "classes/CodeIgniter-CLI-Exceptions-CLIException.html#method_forInputEnded"
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\GeneratorTrait",
             "name": "GeneratorTrait",
@@ -2596,6 +2601,11 @@ Search.appendIndex(
             "summary": "Get\u0020input\u0020from\u0020the\u0020shell,\u0020using\u0020readline\u0020or\u0020the\u0020standard\u0020STDIN",
             "url": "classes/CodeIgniter-CLI-InputOutput.html#method_input"
         },                {
+            "fqsen": "\\CodeIgniter\\CLI\\InputOutput\u003A\u003AisAtEnd\u0028\u0029",
+            "name": "isAtEnd",
+            "summary": "Whether\u0020the\u0020last\u0020\u0060input\u0028\u0029\u0060\u0020found\u0020the\u0020end\u0020of\u0020an\u0020input\u0020other\u0020than\u0020a\u0020terminal,\nso\u0020that\u0020no\u0020later\u0020read\u0020can\u0020bring\u0020an\u0020answer.\u0020At\u0020a\u0020terminal,\u0020\u0060Ctrl\u002BD\u0060\u0020ends\u0020only\nthe\u0020current\u0020read,\u0020and\u0020\u0060input\u0028\u0029\u0060\u0020returns\u0020an\u0020empty\u0020string\u0020as\u0020for\u0020an\u0020empty\u0020line.",
+            "url": "classes/CodeIgniter-CLI-InputOutput.html#method_isAtEnd"
+        },                {
             "fqsen": "\\CodeIgniter\\CLI\\InputOutput\u003A\u003Afwrite\u0028\u0029",
             "name": "fwrite",
             "summary": "While\u0020the\u0020library\u0020is\u0020intended\u0020for\u0020use\u0020on\u0020CLI\u0020commands,\ncommands\u0020can\u0020be\u0020called\u0020from\u0020controllers\u0020and\u0020elsewhere\nso\u0020we\u0020need\u0020a\u0020way\u0020to\u0020allow\u0020them\u0020to\u0020still\u0020work.",
@@ -2615,6 +2625,11 @@ Search.appendIndex(
             "name": "readlineSupport",
             "summary": "Is\u0020the\u0020readline\u0020library\u0020on\u0020the\u0020system\u003F",
             "url": "classes/CodeIgniter-CLI-InputOutput.html#property_readlineSupport"
+        },                {
+            "fqsen": "\\CodeIgniter\\CLI\\InputOutput\u003A\u003A\u0024atEnd",
+            "name": "atEnd",
+            "summary": "",
+            "url": "classes/CodeIgniter-CLI-InputOutput.html#property_atEnd"
         },                {
             "fqsen": "\\CodeIgniter\\CLI\\SignalTrait",
             "name": "SignalTrait",
@@ -25926,6 +25941,11 @@ Search.appendIndex(
             "summary": "Get\u0020input\u0020from\u0020the\u0020shell,\u0020using\u0020readline\u0020or\u0020the\u0020standard\u0020STDIN",
             "url": "classes/CodeIgniter-Test-Mock-MockInputOutput.html#method_input"
         },                {
+            "fqsen": "\\CodeIgniter\\Test\\Mock\\MockInputOutput\u003A\u003AisAtEnd\u0028\u0029",
+            "name": "isAtEnd",
+            "summary": "Whether\u0020the\u0020scripted\u0020answers\u0020have\u0020run\u0020out,\u0020so\u0020that\u0020a\u0020scripted\u0020empty\u0020answer\u0020before\u0020the\u0020last\u0020stays\u0020an\u0020empty\u0020line.",
+            "url": "classes/CodeIgniter-Test-Mock-MockInputOutput.html#method_isAtEnd"
+        },                {
             "fqsen": "\\CodeIgniter\\Test\\Mock\\MockInputOutput\u003A\u003Afwrite\u0028\u0029",
             "name": "fwrite",
             "summary": "While\u0020the\u0020library\u0020is\u0020intended\u0020for\u0020use\u0020on\u0020CLI\u0020commands,\ncommands\u0020can\u0020be\u0020called\u0020from\u0020controllers\u0020and\u0020elsewhere\nso\u0020we\u0020need\u0020a\u0020way\u0020to\u0020allow\u0020them\u0020to\u0020still\u0020work.",
@@ -26210,6 +26230,11 @@ Search.appendIndex(
             "name": "stream_open",
             "summary": "",
             "url": "classes/CodeIgniter-Test-PhpStreamWrapper.html#method_stream_open"
+        },                {
+            "fqsen": "\\CodeIgniter\\Test\\PhpStreamWrapper\u003A\u003Astream_cast\u0028\u0029",
+            "name": "stream_cast",
+            "summary": "Returns\u0020\u0060false\u0060,\u0020since\u0020the\u0020stream\u0020has\u0020no\u0020descriptor.",
+            "url": "classes/CodeIgniter-Test-PhpStreamWrapper.html#method_stream_cast"
         },                {
             "fqsen": "\\CodeIgniter\\Test\\PhpStreamWrapper\u003A\u003Astream_read\u0028\u0029",
             "name": "stream_read",
