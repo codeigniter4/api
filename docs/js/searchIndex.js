@@ -16496,15 +16496,15 @@ Search.appendIndex(
             "summary": "Adds\u0020reporting\u0020endpoints\u0020to\u0020the\u0020\u0060Reporting\u002DEndpoints\u0060\u0020header.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addReportingEndpoints"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AclearDirective\u0028\u0029",
+            "name": "clearDirective",
+            "summary": "",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AaddOption\u0028\u0029",
             "name": "addOption",
             "summary": "DRY\u0020method\u0020to\u0020add\u0020an\u0020string\u0020or\u0020array\u0020to\u0020a\u0020class\u0020property.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addOption"
-        },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AstringToOptions\u0028\u0029",
-            "name": "stringToOptions",
-            "summary": "Converts\u0020a\u0020string\u0020directive\u0020value\u0020into\u0020an\u0020array\u0020of\u0020options.",
-            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_stringToOptions"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AgenerateNonces\u0028\u0029",
             "name": "generateNonces",
@@ -16521,10 +16521,10 @@ Search.appendIndex(
             "summary": "Adds\u0020a\u0020directive\u0020and\u0020its\u0020options\u0020to\u0020the\u0020appropriate\u0020header.\u0020The\u0020\u0024values\narray\u0020might\u0020have\u0020options\u0020that\u0020are\u0020geared\u0020toward\u0020either\u0020the\u0020regular\u0020or\u0020the\nreportOnly\u0020header,\u0020since\u0020it\u0027s\u0020viable\u0020to\u0020have\u0020both\u0020simultaneously.",
             "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_addToHeader"
         },                {
-            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AclearDirective\u0028\u0029",
-            "name": "clearDirective",
-            "summary": "",
-            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_clearDirective"
+            "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003AparseSourceList\u0028\u0029",
+            "name": "parseSourceList",
+            "summary": "Converts\u0020a\u0020string\u0020directive\u0020value\u0020into\u0020an\u0020array\u0020of\u0020options.",
+            "url": "classes/CodeIgniter-HTTP-ContentSecurityPolicy.html#method_parseSourceList"
         },                {
             "fqsen": "\\CodeIgniter\\HTTP\\ContentSecurityPolicy\u003A\u003ADIRECTIVES_ALLOWING_SOURCE_LISTS",
             "name": "DIRECTIVES_ALLOWING_SOURCE_LISTS",
