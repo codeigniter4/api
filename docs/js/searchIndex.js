@@ -9496,6 +9496,21 @@ Search.appendIndex(
             "summary": "Rollback\u0020Transaction",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method__transRollback"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003AmarkServerRolledBackTransaction\u0028\u0029",
+            "name": "markServerRolledBackTransaction",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method_markServerRolledBackTransaction"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003AserverTransactionRestartPending\u0028\u0029",
+            "name": "serverTransactionRestartPending",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method_serverTransactionRestartPending"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003AclearDeadlockTransactionState\u0028\u0029",
+            "name": "clearDeadlockTransactionState",
+            "summary": "",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#method_clearDeadlockTransactionState"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A\u0024DBDriver",
             "name": "DBDriver",
             "summary": "Database\u0020driver",
@@ -9530,6 +9545,16 @@ Search.appendIndex(
             "name": "foundRows",
             "summary": "Use\u0020MYSQLI_CLIENT_FOUND_ROWS",
             "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#property_foundRows"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A\u0024transServerRolledBack",
+            "name": "transServerRolledBack",
+            "summary": "InnoDB\u0020errno\u00201213\u0020ended\u0020this\u0020transaction.",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#property_transServerRolledBack"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Connection\u003A\u003A\u0024transNeedsServerRestart",
+            "name": "transNeedsServerRestart",
+            "summary": "The\u0020next\u0020statement\u0020must\u0020BEGIN\u0020before\u0020it\u0020runs.",
+            "url": "classes/CodeIgniter-Database-MySQLi-Connection.html#property_transNeedsServerRestart"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\MySQLi\\Forge",
             "name": "Forge",
