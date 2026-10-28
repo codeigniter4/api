@@ -18111,6 +18111,16 @@ Search.appendIndex(
             "summary": "Try\u0020to\u0020find\u0020the\u0020best\u0020matching\u0020locale.\u0020It\u0020supports\u0020strict\u0020locale\u0020comparison.",
             "url": "classes/CodeIgniter-HTTP-Negotiate.html#method_getBestLocaleMatch"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Negotiate\u003A\u003AisExcluded\u0028\u0029",
+            "name": "isExcluded",
+            "summary": "Checks\u0020whether\u0020the\u0020header\u0020excludes\u0020a\u0020supported\u0020value,\u0020that\u0020is,\u0020whether\nthe\u0020most\u0020specific\u0020value\u0020in\u0020the\u0020header\u0020that\u0020matches\u0020it\u0020has\u0020q\u003D0.",
+            "url": "classes/CodeIgniter-HTTP-Negotiate.html#method_isExcluded"
+        },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Negotiate\u003A\u003AgetMatchSpecificity\u0028\u0029",
+            "name": "getMatchSpecificity",
+            "summary": "Returns\u0020how\u0020specifically\u0020a\u0020header\u0020value\u0020matches\u0020a\u0020supported\u0020value,\u0020or\u0020\u002D1\nif\u0020it\u0020does\u0020not\u0020match\u0020it.\u0020A\u0020wildcard\u0020is\u0020the\u0020least\u0020specific.",
+            "url": "classes/CodeIgniter-HTTP-Negotiate.html#method_getMatchSpecificity"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Negotiate\u003A\u003AparseHeader\u0028\u0029",
             "name": "parseHeader",
             "summary": "Parses\u0020an\u0020Accept\u002A\u0020header\u0020into\u0020it\u0027s\u0020multiple\u0020values.",

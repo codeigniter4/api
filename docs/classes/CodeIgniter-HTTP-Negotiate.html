@@ -441,6 +441,22 @@ against a given Accept* header string.</dd>
 <dd>Checks two Accept values with matching &#039;values&#039; to see if their
 &#039;params&#039; are the same.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-HTTP-Negotiate.html#method_getMatchSpecificity">getMatchSpecificity()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Returns how specifically a header value matches a supported value, or -1
+if it does not match it. A wildcard is the least specific.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-HTTP-Negotiate.html#method_isExcluded">isExcluded()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks whether the header excludes a supported value, that is, whether
+the most specific value in the header that matches it has q=0.</dd>
+
     </dl>
 
 
@@ -721,7 +737,7 @@ type is returned.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">443</span>
+    <span class="phpdocumentor-element-found-in__line">565</span>
 
     </aside>
 
@@ -778,7 +794,7 @@ match a supported localed of fr</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">410</span>
+    <span class="phpdocumentor-element-found-in__line">532</span>
 
     </aside>
 
@@ -899,7 +915,7 @@ If FALSE, will return the first supported element.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">273</span>
+    <span class="phpdocumentor-element-found-in__line">395</span>
 
     </aside>
 
@@ -999,7 +1015,7 @@ If FALSE, will return the first supported element.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">216</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 
     </aside>
 
@@ -1160,7 +1176,7 @@ If FALSE, will return the first supported element.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">353</span>
+    <span class="phpdocumentor-element-found-in__line">475</span>
 
     </aside>
 
@@ -1230,7 +1246,7 @@ If FALSE, will return the first supported element.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">386</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 
     </aside>
 
@@ -1260,6 +1276,163 @@ If FALSE, will return the first supported element.</p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMatchSpecificity">
+        getMatchSpecificity()
+        <a href="classes/CodeIgniter-HTTP-Negotiate.html#method_getMatchSpecificity" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">334</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Returns how specifically a header value matches a supported value, or -1
+if it does not match it. A wildcard is the least specific.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">getMatchSpecificity</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array{value: string, q: float, params: array<string,string>}&nbsp;</span><span class="phpdocumentor-signature__argument__name">$accept</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">array{value: string, q: float, params: array<string,string>}&nbsp;</span><span class="phpdocumentor-signature__argument__name">$supported</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enforceTypes</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchLocales</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>A media range matches the media types of its type and subtype that have
+its parameters. &quot;text/html&quot; is more specific than &quot;text/<em>&quot;, which is more
+specific than a full wildcard, and a range is more specific than one of
+the same kind with fewer parameters, so &quot;text/html;level=1&quot; is more
+specific than &quot;text/html&quot;, and &quot;text/</em>;charset=utf-8&quot; than &quot;text/*&quot;
+(RFC 9110, Section 12.5.1). Types, subtypes, parameter names and charset
+values are compared ignoring case (RFC 9110, Section 8.3).
+A language range matches the tags that equal it or start with it followed
+by &quot;-&quot;, ignoring case, and is more specific with more subtags
+(RFC 4647, Section 3.3.1). Other values must be equal, ignoring case.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$accept</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array{value: string, q: float, params: array<string,string>}</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$supported</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array{value: string, q: float, params: array<string,string>}</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$enforceTypes</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$matchLocales</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isExcluded">
+        isExcluded()
+        <a href="classes/CodeIgniter-HTTP-Negotiate.html#method_isExcluded" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/HTTP/Negotiate.php"><a href="files/system-http-negotiate.html"><abbr title="system/HTTP/Negotiate.php">Negotiate.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">296</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks whether the header excludes a supported value, that is, whether
+the most specific value in the header that matches it has q=0.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+                    <span class="phpdocumentor-signature__name">isExcluded</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">array&lt;int, array{value: string, q: float, params: array<string,string>}&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$acceptable</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$supported</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enforceTypes</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$matchLocales</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$acceptable</span>
+                : <span class="phpdocumentor-argument-list__argument__type">array&lt;int, array{value: string, q: float, params: array<string,string>}&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$supported</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$enforceTypes</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>If TRUE, the values are media types.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$matchLocales</span>
+                : <span class="phpdocumentor-argument-list__argument__type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>If TRUE, the values are language tags.</p>
+</section>
+
             </dd>
             </dl>
 
@@ -1315,6 +1488,8 @@ If FALSE, will return the first supported element.</p>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-Negotiate.html#method_getBestMatch">getBestMatch()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-Negotiate.html#method_match">match()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-HTTP-Negotiate.html#method_matchParameters">matchParameters()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-Negotiate.html#method_getMatchSpecificity">getMatchSpecificity()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-HTTP-Negotiate.html#method_isExcluded">isExcluded()</a></li>
                                     </ul>
             </li>
                     </ul>
