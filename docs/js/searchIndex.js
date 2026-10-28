@@ -7711,6 +7711,11 @@ Search.appendIndex(
             "summary": "Keep\u0020or\u0020establish\u0020the\u0020connection\u0020if\u0020no\u0020queries\u0020have\u0020been\u0020sent\u0020for\na\u0020length\u0020of\u0020time\u0020exceeding\u0020the\u0020server\u0027s\u0020idle\u0020timeout.",
             "url": "classes/CodeIgniter-Database-BaseConnection.html#method_reconnect"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003AabandonLostTransaction\u0028\u0029",
+            "name": "abandonLostTransaction",
+            "summary": "The\u0020socket\u0020that\u0020owned\u0020the\u0020transaction\u0020is\u0020already\u0020closed.",
+            "url": "classes/CodeIgniter-Database-BaseConnection.html#method_abandonLostTransaction"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseConnection\u003A\u003A_close\u0028\u0029",
             "name": "_close",
             "summary": "Platform\u0020dependent\u0020way\u0020method\u0020for\u0020closing\u0020the\u0020connection.",
@@ -9910,6 +9915,11 @@ Search.appendIndex(
             "name": "_transRollback",
             "summary": "Rollback\u0020Transaction",
             "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method__transRollback"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AabandonLostTransaction\u0028\u0029",
+            "name": "abandonLostTransaction",
+            "summary": "Restore\u0020OCI_COMMIT_ON_SUCCESS.\u0020close\u0028\u0029\u0020does\u0020not,\u0020and\nOCI_NO_AUTO_COMMIT\u0020would\u0020leave\u0020later\u0020writes\u0020uncommitted.",
+            "url": "classes/CodeIgniter-Database-OCI8-Connection.html#method_abandonLostTransaction"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\OCI8\\Connection\u003A\u003AgetDatabase\u0028\u0029",
             "name": "getDatabase",
