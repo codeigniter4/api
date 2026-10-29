@@ -1356,6 +1356,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Cache-FactoriesCache-FileVarExportHandler.html"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\FactoriesCache\\FileVarExportHandler\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/CodeIgniter-Cache-FactoriesCache-FileVarExportHandler.html#method___construct"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\FactoriesCache\\FileVarExportHandler\u003A\u003Asave\u0028\u0029",
             "name": "save",
             "summary": "",
