@@ -20228,7 +20228,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003A__unserialize\u0028\u0029",
             "name": "__unserialize",
-            "summary": "This\u0020is\u0020called\u0020when\u0020we\u0020unserialize\u0020the\u0020Time\u0020object.",
+            "summary": "",
             "url": "classes/CodeIgniter-I18n-TimeTrait.html#method___unserialize"
         },                {
             "fqsen": "\\CodeIgniter\\I18n\\TimeTrait\u003A\u003A\u0024timezone",
