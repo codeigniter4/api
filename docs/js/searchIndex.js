@@ -771,6 +771,11 @@ Search.appendIndex(
             "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020inserted\u0020are\u0020in\nthe\u0020data\u0020array.",
             "url": "classes/CodeIgniter-BaseModel.html#method_doProtectFieldsForInsert"
         },                {
+            "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AdoProtectFieldsForReplace\u0028\u0029",
+            "name": "doProtectFieldsForReplace",
+            "summary": "Protects\u0020replacement\u0020data\u0020before\u0020generated\u0020timestamps\u0020are\u0020added.",
+            "url": "classes/CodeIgniter-BaseModel.html#method_doProtectFieldsForReplace"
+        },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003AsetDate\u0028\u0029",
             "name": "setDate",
             "summary": "Sets\u0020the\u0020timestamp\u0020or\u0020current\u0020timestamp\u0020if\u0020null\u0020value\u0020is\u0020passed.",
@@ -953,12 +958,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024protectFields",
             "name": "protectFields",
-            "summary": "Determines\u0020whether\u0020the\u0020model\u0020should\u0020protect\u0020field\u0020names\u0020during\nmass\u0020assignment\u0020operations\u0020such\u0020as\u0020\u0024this\u002D\u003Einsert\u0028\u0029,\u0020\u0024this\u002D\u003Eupdate\u0028\u0029.",
+            "summary": "Determines\u0020whether\u0020the\u0020model\u0020should\u0020protect\u0020field\u0020names\u0020during\nmass\u0020assignment\u0020operations\u0020such\u0020as\u0020\u0024this\u002D\u003Einsert\u0028\u0029,\u0020\u0024this\u002D\u003Eupdate\u0028\u0029,\u0020\u0024this\u002D\u003Ereplace\u0028\u0029.",
             "url": "classes/CodeIgniter-BaseModel.html#property_protectFields"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024allowedFields",
             "name": "allowedFields",
-            "summary": "An\u0020array\u0020of\u0020field\u0020names\u0020that\u0020are\u0020allowed\nto\u0020be\u0020set\u0020by\u0020the\u0020user\u0020in\u0020inserts\/updates.",
+            "summary": "An\u0020array\u0020of\u0020field\u0020names\u0020that\u0020are\u0020allowed\nto\u0020be\u0020set\u0020by\u0020the\u0020user\u0020in\u0020inserts\/updates\/replaces.",
             "url": "classes/CodeIgniter-BaseModel.html#property_allowedFields"
         },                {
             "fqsen": "\\CodeIgniter\\BaseModel\u003A\u003A\u0024useTimestamps",
@@ -21300,6 +21305,11 @@ Search.appendIndex(
             "name": "doProtectFieldsForInsert",
             "summary": "Ensures\u0020that\u0020only\u0020the\u0020fields\u0020that\u0020are\u0020allowed\u0020to\u0020be\u0020inserted\u0020are\u0020in\nthe\u0020data\u0020array.",
             "url": "classes/CodeIgniter-Model.html#method_doProtectFieldsForInsert"
+        },                {
+            "fqsen": "\\CodeIgniter\\Model\u003A\u003AdoProtectFieldsForReplace\u0028\u0029",
+            "name": "doProtectFieldsForReplace",
+            "summary": "Protects\u0020replacement\u0020data\u0020before\u0020generated\u0020timestamps\u0020are\u0020added.",
+            "url": "classes/CodeIgniter-Model.html#method_doProtectFieldsForReplace"
         },                {
             "fqsen": "\\CodeIgniter\\Model\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
