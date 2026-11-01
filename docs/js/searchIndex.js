@@ -7411,6 +7411,11 @@ Search.appendIndex(
             "summary": "Generates\u0020a\u0020platform\u002Dspecific\u0020batch\u0020update\u0020string\u0020from\u0020the\u0020supplied\u0020data",
             "url": "classes/CodeIgniter-Database-BaseBuilder.html#method__deleteBatch"
         },                {
+            "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AcompileBatchBinds\u0028\u0029",
+            "name": "compileBatchBinds",
+            "summary": "Escapes\u0020and\u0020substitutes\u0020the\u0020binds\u0020into\u0020a\u0020compiled\u0020batch\u0020query.",
+            "url": "classes/CodeIgniter-Database-BaseBuilder.html#method_compileBatchBinds"
+        },                {
             "fqsen": "\\CodeIgniter\\Database\\BaseBuilder\u003A\u003AconvertWhereBindsForBatch\u0028\u0029",
             "name": "convertWhereBindsForBatch",
             "summary": "Escapes\u0020and\u0020substitutes\u0020the\u0020WHERE\u0020binds\u0020into\u0020the\u0020QBWhere\u0020conditions\nfor\u0020batch\u0020delete\u0020queries.",
@@ -10755,6 +10760,36 @@ Search.appendIndex(
             "name": "matchNamedBinds",
             "summary": "",
             "url": "classes/CodeIgniter-Database-Query.html#method_matchNamedBinds"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AreplaceNamedPlaceholders\u0028\u0029",
+            "name": "replaceNamedPlaceholders",
+            "summary": "Works\u0020like\u0020strtr\u0028\u0029,\u0020but\u0020leaves\u0020quoted\u0020strings,\u0020quoted\u0020identifiers\nand\u0020comments\u0020untouched,\u0020so\u0020that\u0020values\u0020already\u0020rendered\u0020into\u0020the\u0020SQL\n\u0028escaped\u0020values,\u0020compiled\u0020subqueries\u0029\u0020are\u0020never\u0020treated\u0020as\u0020placeholders.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_replaceNamedPlaceholders"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AfindPlaceholderAt\u0028\u0029",
+            "name": "findPlaceholderAt",
+            "summary": "Returns\u0020the\u0020longest\u0020placeholder\u0020that\u0020starts\u0020at\u0020the\u0020given\u0020position,\nmatching\u0020the\u0020strtr\u0028\u0029\u0020behavior.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_findPlaceholderAt"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AgetMultibyteCharPattern\u0028\u0029",
+            "name": "getMultibyteCharPattern",
+            "summary": "Returns\u0020a\u0020pattern\u0020matching\u0020one\u0020multibyte\u0020character\u0020for\u0020connection\ncharsets\u0020in\u0020which\u0020a\u0020trailing\u0020byte\u0020may\u0020be\u0020an\u0020ASCII\u0020byte,\u0020such\u0020as\na\u0020backslash,\u0020or\u0020null\u0020when\u0020the\u0020charset\u0020does\u0020not\u0020need\u0020it.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_getMultibyteCharPattern"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AgetCharLength\u0028\u0029",
+            "name": "getCharLength",
+            "summary": "Returns\u0020the\u0020length\u0020in\u0020bytes\u0020of\u0020the\u0020character\u0020at\u0020the\u0020given\u0020position.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_getCharLength"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AfindCommentEnd\u0028\u0029",
+            "name": "findCommentEnd",
+            "summary": "Returns\u0020the\u0020position\u0020just\u0020after\u0020the\u0020end\u0020of\u0020the\u0020block\u0020comment\nthat\u0020starts\u0020at\u0020the\u0020given\u0020position.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_findCommentEnd"
+        },                {
+            "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AfindQuotedEnd\u0028\u0029",
+            "name": "findQuotedEnd",
+            "summary": "Returns\u0020the\u0020position\u0020just\u0020after\u0020the\u0020closing\u0020quote\u0020of\u0020the\u0020quoted\nstring\u0020or\u0020identifier\u0020that\u0020starts\u0020at\u0020the\u0020given\u0020position.",
+            "url": "classes/CodeIgniter-Database-Query.html#method_findQuotedEnd"
         },                {
             "fqsen": "\\CodeIgniter\\Database\\Query\u003A\u003AmatchSimpleBinds\u0028\u0029",
             "name": "matchSimpleBinds",
