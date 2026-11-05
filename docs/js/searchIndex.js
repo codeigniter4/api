@@ -1246,6 +1246,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CodeIgniter-Boot.html#method_runCommand"
         },                {
+            "fqsen": "\\CodeIgniter\\Boot\u003A\u003A\u0024workerMode",
+            "name": "workerMode",
+            "summary": "Whether\u0020the\u0020application\u0020was\u0020booted\u0020by\u0020\u0060bootWorker\u0028\u0029\u0060.",
+            "url": "classes/CodeIgniter-Boot.html#property_workerMode"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\CacheFactory",
             "name": "CacheFactory",
             "summary": "A\u0020factory\u0020for\u0020loading\u0020the\u0020desired",
@@ -12510,6 +12515,11 @@ Search.appendIndex(
             "name": "handle",
             "summary": "Determines\u0020the\u0020correct\u0020way\u0020to\u0020display\u0020the\u0020error.",
             "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_handle"
+        },                {
+            "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003AshouldExit\u0028\u0029",
+            "name": "shouldExit",
+            "summary": "Whether\u0020to\u0020end\u0020the\u0020script\u0020after\u0020the\u0020error\u0020is\u0020displayed.",
+            "url": "classes/CodeIgniter-Debug-ExceptionHandler.html#method_shouldExit"
         },                {
             "fqsen": "\\CodeIgniter\\Debug\\ExceptionHandler\u003A\u003AdetermineView\u0028\u0029",
             "name": "determineView",
