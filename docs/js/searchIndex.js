@@ -17361,6 +17361,11 @@ Search.appendIndex(
             "summary": "For\u0020Uploaded\u0020file\u0020move",
             "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forInvalidFile"
         },                {
+            "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException\u003A\u003AforInvalidFileName\u0028\u0029",
+            "name": "forInvalidFileName",
+            "summary": "For\u0020Uploaded\u0020file\u0020move",
+            "url": "classes/CodeIgniter-HTTP-Exceptions-HTTPException.html#method_forInvalidFileName"
+        },                {
             "fqsen": "\\CodeIgniter\\HTTP\\Exceptions\\HTTPException\u003A\u003AforMoveFailed\u0028\u0029",
             "name": "forMoveFailed",
             "summary": "For\u0020Uploaded\u0020file\u0020move",
