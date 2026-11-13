@@ -23851,6 +23851,11 @@ Search.appendIndex(
             "summary": "Cookie\u0020secure\u003F",
             "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookieSecure"
         },                {
+            "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookieSameSite",
+            "name": "cookieSameSite",
+            "summary": "Cookie\u0020SameSite\u0020setting.",
+            "url": "classes/CodeIgniter-Session-Handlers-BaseHandler.html#property_cookieSameSite"
+        },                {
             "fqsen": "\\CodeIgniter\\Session\\Handlers\\BaseHandler\u003A\u003A\u0024cookieName",
             "name": "cookieName",
             "summary": "Cookie\u0020name\u0020to\u0020use.",
