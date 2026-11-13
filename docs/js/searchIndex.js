@@ -12426,6 +12426,11 @@ Search.appendIndex(
             "summary": "The\u0020data\u0020caster.",
             "url": "classes/CodeIgniter-DataConverter-DataConverter.html#property_dataCaster"
         },                {
+            "fqsen": "\\CodeIgniter\\DataConverter\\DataConverter\u003A\u003A\u0024typeFields",
+            "name": "typeFields",
+            "summary": "List\u0020of\u0020field\u0020names\u0020defined\u0020in\u0020\u0024types.",
+            "url": "classes/CodeIgniter-DataConverter-DataConverter.html#property_typeFields"
+        },                {
             "fqsen": "\\CodeIgniter\\DataConverter\\DataConverter\u003A\u003A\u0024types",
             "name": "types",
             "summary": "Type\u0020definitions.",
