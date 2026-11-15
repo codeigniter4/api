@@ -16073,7 +16073,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\strip_image_tags\u0028\u0029",
             "name": "strip_image_tags",
-            "summary": "Strip\u0020Image\u0020Tags",
+            "summary": "Replaces\u0020image\u0020tags\u0020with\u0020their\u0020raw\u0020src\u0020values.",
             "url": "namespaces/default.html#function_strip_image_tags"
         },                {
             "fqsen": "\\encode_php_tags\u0028\u0029",
