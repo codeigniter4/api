@@ -15611,6 +15611,11 @@ Search.appendIndex(
             "summary": "array_key_exists\u0028\u0029\u0020with\u0020dot\u0020array\u0020syntax.",
             "url": "classes/CodeIgniter-Helpers-Array-ArrayHelper.html#method_dotKeyExists"
         },                {
+            "fqsen": "\\CodeIgniter\\Helpers\\Array\\ArrayHelper\u003A\u003AcheckDotKeyExists\u0028\u0029",
+            "name": "checkDotKeyExists",
+            "summary": "Recursively\u0020check\u0020if\u0020the\u0020key\u0020exists\u0020in\u0020the\u0020array\u0020with\u0020wildcards.",
+            "url": "classes/CodeIgniter-Helpers-Array-ArrayHelper.html#method_checkDotKeyExists"
+        },                {
             "fqsen": "\\CodeIgniter\\Helpers\\Array\\ArrayHelper\u003A\u003AgroupBy\u0028\u0029",
             "name": "groupBy",
             "summary": "Groups\u0020all\u0020rows\u0020by\u0020their\u0020index\u0020values.\u0020Result\u0027s\u0020depth\u0020equals\u0020number\u0020of\u0020indexes",
