@@ -1821,6 +1821,11 @@ Search.appendIndex(
             "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_save"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003AisEvalUnavailable\u0028\u0029",
+            "name": "isEvalUnavailable",
+            "summary": "Checks\u0020whether\u0020the\u0020exception\u0020only\u0020means\u0020that\u0020the\u0020EVAL\u0020command\u0020itself\u0020is\u0020not\navailable\u0020to\u0020this\u0020client,\u0020either\u0020because\u0020it\u0020was\u0020renamed\u0020or\u0020because\u0020ACL\u0020denies\u0020it.",
+            "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isEvalUnavailable"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
             "summary": "Deletes\u0020a\u0020specific\u0020item\u0020from\u0020the\u0020cache\u0020store.",
@@ -1871,6 +1876,11 @@ Search.appendIndex(
             "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
             "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_reconnect"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003ASAVE_SCRIPT",
+            "name": "SAVE_SCRIPT",
+            "summary": "Lua\u0020script\u0020to\u0020execute\u0020HMSET\u0020and\u0020EXPIREAT\u0020in\u0020a\u0020single\u0020round\u0020trip.",
+            "url": "classes/CodeIgniter-Cache-Handlers-PredisHandler.html#constant_SAVE_SCRIPT"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\PredisHandler\u003A\u003A\u0024config",
             "name": "config",
             "summary": "Default\u0020config",
@@ -1905,6 +1915,16 @@ Search.appendIndex(
             "name": "save",
             "summary": "Saves\u0020an\u0020item\u0020to\u0020the\u0020cache\u0020store.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_save"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AisEvalUnavailable\u0028\u0029",
+            "name": "isEvalUnavailable",
+            "summary": "Checks\u0020whether\u0020the\u0020message\u0020only\u0020means\u0020that\u0020the\u0020EVAL\u0020command\u0020itself\u0020is\u0020not\navailable\u0020to\u0020this\u0020client,\u0020either\u0020because\u0020it\u0020was\u0020renamed\u0020or\u0020because\u0020ACL\u0020denies\u0020it.",
+            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_isEvalUnavailable"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003AisDataCommandPermissionError\u0028\u0029",
+            "name": "isDataCommandPermissionError",
+            "summary": "Checks\u0020whether\u0020the\u0020message\u0020means\u0020that\u0020a\u0020data\u0020command\u0020executed\u0020inside\u0020the\nsave\u0020script\u0020was\u0020denied\u0020by\u0020an\u0020ACL.",
+            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_isDataCommandPermissionError"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
@@ -1955,6 +1975,11 @@ Search.appendIndex(
             "name": "reconnect",
             "summary": "Reconnect\u0020to\u0020the\u0020cache\u0020server.",
             "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#method_reconnect"
+        },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003ASAVE_SCRIPT",
+            "name": "SAVE_SCRIPT",
+            "summary": "Lua\u0020script\u0020to\u0020execute\u0020HMSET\u0020and\u0020EXPIREAT\u0020in\u0020a\u0020single\u0020round\u0020trip.",
+            "url": "classes/CodeIgniter-Cache-Handlers-RedisHandler.html#constant_SAVE_SCRIPT"
         },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\RedisHandler\u003A\u003A\u0024config",
             "name": "config",

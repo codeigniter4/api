@@ -277,7 +277,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 
     </aside>
 
@@ -320,6 +320,13 @@
         &nbsp;: mixed&nbsp;= &#039;{}()/\@:&#039;                            </span>
 </dt>
 <dd>Reserved characters that cannot be used in a key or tag. May be overridden by the config.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
+    <a class="" href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#constant_SAVE_SCRIPT">SAVE_SCRIPT</a>
+    <span>
+        &nbsp;: mixed&nbsp;= &lt;&lt;&lt;&#039;LUA&#039; local res = redis.pcall(&#039;HMSET&#039;, KEYS[...                            </span>
+</dt>
+<dd>Lua script to execute HMSET and EXPIREAT in a single round trip.</dd>
 
     </dl>
 
@@ -472,6 +479,14 @@ and stores the result on cache miss.</dd>
 </dt>
 <dd>Validates a cache key according to PSR-6.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -private">
+    <a class="" href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isEvalUnavailable">isEvalUnavailable()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Checks whether the exception only means that the EVAL command itself is not
+available to this client, either because it was renamed or because ACL denies it.</dd>
+
     </dl>
 
 
@@ -554,6 +569,56 @@ and stores the result on cache miss.</dd>
 
         
     </article>
+                    <article class="phpdocumentor-element -constant -private ">
+    <h4 class="phpdocumentor-element__name" id="constant_SAVE_SCRIPT">
+        SAVE_SCRIPT
+        <a href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#constant_SAVE_SCRIPT" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">43</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Lua script to execute HMSET and EXPIREAT in a single round trip.</p>
+
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">SAVE_SCRIPT</span>
+    = <span class="phpdocumentor-signature__default-value">&lt;&lt;&lt;&#039;LUA&#039;
+local res = redis.pcall(&#039;HMSET&#039;, KEYS[1], &#039;__ci_type&#039;, ARGV[2], &#039;__ci_value&#039;, ARGV[3])
+if type(res) == &#039;table&#039; and res.err then
+    return res
+end
+local exp = redis.pcall(&#039;EXPIREAT&#039;, KEYS[1], ARGV[1])
+if type(exp) == &#039;table&#039; and exp.err then
+    return exp
+end
+return 1
+LUA</span>
+</code>
+
+
+        <section class="phpdocumentor-description"><p>Both commands run through pcall and their error reply is returned as-is,
+so an HMSET error (e.g. WRONGTYPE) stops the script before EXPIREAT and
+every error keeps its original type and message. Predis raises
+ServerException for such a reply, which save() only swallows when it is
+about EVAL itself, so an ACL denial is never retried sequentially.</p>
+<p>If HMSET succeeds and EXPIREAT is rejected, the hash is stored without a
+TTL, exactly as with the previous sequential implementation (Redis does
+not roll back script effects).</p>
+</section>
+
+    
+    
+
+        
+    </article>
             </section>
 
         
@@ -580,7 +645,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 
     </aside>
 
@@ -658,7 +723,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 
     </aside>
 
@@ -701,7 +766,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">88</span>
 
     </aside>
 
@@ -746,7 +811,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">168</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 
     </aside>
 
@@ -789,7 +854,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 
     </aside>
 
@@ -849,7 +914,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">132</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 
     </aside>
 
@@ -904,7 +969,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">139</span>
+    <span class="phpdocumentor-element-found-in__line">199</span>
 
     </aside>
 
@@ -959,7 +1024,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">79</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 
     </aside>
 
@@ -1006,7 +1071,7 @@ and stores the result on cache miss.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">233</span>
 
     </aside>
 
@@ -1048,7 +1113,7 @@ varies depending on the handler.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">178</span>
+    <span class="phpdocumentor-element-found-in__line">238</span>
 
     </aside>
 
@@ -1104,7 +1169,7 @@ with at least the 'expire' key for absolute epoch expiry (or null).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">214</span>
 
     </aside>
 
@@ -1164,7 +1229,7 @@ with at least the 'expire' key for absolute epoch expiry (or null).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 
     </aside>
 
@@ -1199,7 +1264,7 @@ with at least the 'expire' key for absolute epoch expiry (or null).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 
     </aside>
 
@@ -1238,7 +1303,7 @@ with at least the 'expire' key for absolute epoch expiry (or null).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">203</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 
     </aside>
 
@@ -1280,7 +1345,7 @@ Handlers with persistent connections (Redis, Predis, Memcached) should override 
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
 
     </aside>
 
@@ -1388,7 +1453,7 @@ and stores the result on cache miss.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">99</span>
+    <span class="phpdocumentor-element-found-in__line">125</span>
 
     </aside>
 
@@ -1526,6 +1591,58 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
             </section>
 
 </article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -private
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_isEvalUnavailable">
+        isEvalUnavailable()
+        <a href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isEvalUnavailable" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="system/Cache/Handlers/PredisHandler.php"><a href="files/system-cache-handlers-predishandler.html"><abbr title="system/Cache/Handlers/PredisHandler.php">PredisHandler.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">186</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Checks whether the exception only means that the EVAL command itself is not
+available to this client, either because it was renamed or because ACL denies it.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">isEvalUnavailable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <section class="phpdocumentor-description"><p>Keep the patterns in sync with RedisHandler::isEvalUnavailable().</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$message</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
             </section>
 
         
@@ -1550,6 +1667,7 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
                     <ul class="phpdocumentor-list -clean">
                                                     <li class=""><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#constant_MAX_KEY_LENGTH">MAX_KEY_LENGTH</a></li>
                                                     <li class="-deprecated"><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#constant_RESERVED_CHARACTERS">RESERVED_CHARACTERS</a></li>
+                                                    <li class=""><a href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#constant_SAVE_SCRIPT">SAVE_SCRIPT</a></li>
                                             </ul>
                 </li>
             
@@ -1581,6 +1699,7 @@ From https://github.com/symfony/cache/blob/7b024c6726af21fd4984ac8d1eae2b9f3d90d
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_remember">remember()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_save">save()</a></li>
                                             <li class=""><a href="classes/CodeIgniter-Cache-Handlers-BaseHandler.html#method_validateKey">validateKey()</a></li>
+                                            <li class=""><a href="classes/CodeIgniter-Cache-Handlers-PredisHandler.html#method_isEvalUnavailable">isEvalUnavailable()</a></li>
                                     </ul>
             </li>
                     </ul>
