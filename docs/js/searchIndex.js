@@ -1616,6 +1616,11 @@ Search.appendIndex(
             "summary": "Takes\u0020care\u0020of\u0020any\u0020handler\u002Dspecific\u0020setup\u0020that\u0020must\u0020be\u0020done.",
             "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_initialize"
         },                {
+            "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003AvalidateKey\u0028\u0029",
+            "name": "validateKey",
+            "summary": "Validates\u0020a\u0020cache\u0020key\u0020and\u0020returns\u0020the\u0020file\u0020name\u0020the\u0020item\u0020is\u0020stored\u0020under.",
+            "url": "classes/CodeIgniter-Cache-Handlers-FileHandler.html#method_validateKey"
+        },                {
             "fqsen": "\\CodeIgniter\\Cache\\Handlers\\FileHandler\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Attempts\u0020to\u0020fetch\u0020an\u0020item\u0020from\u0020the\u0020cache\u0020store.",
